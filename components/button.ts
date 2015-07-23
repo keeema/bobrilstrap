@@ -1,67 +1,71 @@
-module Components {
+import { IBobrilNode, IBobrilComponent, IBobrilMouseEvent } from '../node_modules/bobril/index';
+import { TagComponent } from './tag';
+import { ITagData, Builder } from './builder';
+import { GlyphIcon } from './glyph-icons';
+import { Type } from './type';
+import { Size } from './size';
 
-  interface IButtonData extends ITagData {
-    caption?: string;
-    glyphIcon: GlyphIcon;
+export interface IButtonData extends ITagData {
+  caption?: string;
+  glyphIcon: GlyphIcon;
+}
+
+interface IButtonCtx {
+  data: IButtonData;
+}
+
+class ButtonComponent extends TagComponent {
+  getChildren(data: IButtonData): IBobrilNode[] {
+    var children = super.getChildren(data);
+
+    if (data.glyphIcon) {
+      children.push(GlyphIcon.getNode(data.glyphIcon));
+    }
+
+    if (data.caption)
+      children.push(data.caption);
+
+    return children;
+  }
+}
+
+let button = new ButtonComponent();
+
+export function getButton(key?: string): ButtonBuilder {
+  return new ButtonBuilder(key)
+}
+
+export class ButtonBuilder extends Builder<ButtonBuilder> {
+  data: IButtonData;
+
+  constructor(key?: string) {
+    super('button', key);
+    super.withClass('btn');
   }
 
-  interface IButtonCtx {
-    data: IButtonData;
+  withCaption(caption: string): ButtonBuilder {
+    this.data.caption = caption;
+    return this;
   }
 
-  class ButtonComponent extends TagComponent {
-    getChildren(data:IButtonData):IBobrilNode[]{
-      var children = super.getChildren(data);
-
-      if(data.glyphIcon){
-        children.push(GlyphIcon.getNode(data.glyphIcon));
-      }
-
-      if(data.caption)
-        children.push(data.caption);
-
-      return children;
-    }
+  ofType(size: Size): ButtonBuilder {
+    this.withClass('btn-' + size);
+    return this;
   }
 
-  let button = new ButtonComponent();
-
-  export function getButton(key?: string):ButtonBuilder{
-     return new ButtonBuilder(key)
+  ofSize(type: Type): ButtonBuilder {
+    this.withClass('btn-' + type);
+    return this;
   }
 
-  class ButtonBuilder extends Builder<ButtonBuilder> {
-    data: IButtonData;
+  withGlyphIcon(glyphIcon: GlyphIcon): ButtonBuilder {
+    this.data.glyphIcon = glyphIcon;
+    return this;
+  }
 
-    constructor(key?: string) {
-      super('button', key);
-      super.withClass('btn');
-    }
-
-    withCaption(caption: string): ButtonBuilder {
-      this.data.caption = caption;
-      return this;
-    }
-
-    ofType(size: Size): ButtonBuilder {
-      this.withClass('btn-' + size);
-      return this;
-    }
-
-    ofSize(type: Type): ButtonBuilder {
-      this.withClass('btn-' + type);
-      return this;
-    }
-
-    withGlyphIcon(glyphIcon:GlyphIcon):ButtonBuilder{
-      this.data.glyphIcon = glyphIcon;
-      return this;
-    }
-
-    node(): IBobrilNode {
-      var node = super.node();
-      node.component = button;
-      return node;
-    }
+  node(): IBobrilNode {
+    var node = super.node();
+    node.component = button;
+    return node;
   }
 }

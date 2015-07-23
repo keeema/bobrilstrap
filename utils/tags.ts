@@ -1,74 +1,39 @@
-module Utils {
-  export function tag(tagName: string, children?: any[], className?: string, style?: Object, key?: string, id?: string, attrs?: Object): IBobrilNode {
-    var tagBuilder = Components.getTag(tagName, key);
+import { IBobrilNode }  from '../node_modules/bobril/index';
+import { getTag }  from '../components/tag';
 
-    if(children)
-      tagBuilder.withContent(children);
+export function tag(tagName: string, children?: any[], className?: string, style?: Object, key?: string, id?: string, attrs?: Object): IBobrilNode {
+  var tagBuilder = getTag(tagName, key);
 
-    if(className)
-      tagBuilder.withClass(className)
+  if (children)
+    tagBuilder.withContent(children);
 
-    if(id)
-      tagBuilder.withAttribute('id', id)
+  if (className)
+    tagBuilder.withClass(className)
 
-    if(attrs)
-    Object.keys(attrs).forEach(key=> tagBuilder.withAttribute(key,attrs[key]));
+  if (id)
+    tagBuilder.withAttribute('id', id)
 
-    return tagBuilder.node();
-    /*
-    var tag = <IBobrilNode>{
-      tag: tagName,
-      attrs: { className: className },
-      children: children || []
-    }
+  if (attrs)
+    Object.keys(attrs).forEach(key=> tagBuilder.withAttribute(key, attrs[key]));
 
-    if (key)
-      tag.key = key;
+  return tagBuilder.node();
+}
 
-    if (id)
-      tag.attrs.id = id;
+export function a(content: string, href: string, className?: string, target?: string): IBobrilNode {
+  var attrs: any = { href: href };
+  if (className)
+    attrs.className = className;
 
-    if (style)
-      tag.style = style;
+  if (target)
+    attrs.target = target;
 
-    if (attrs)
-      Object.keys(attrs).forEach(key=> tag.attrs[key] = attrs[key]);
+  var children = [];
+  if (content)
+    children.push(content);
 
-    return tag;*/
-  }
-
-  export function a(content: string, href: string, className?: string, target?: string): IBobrilNode {
-    /*var tagBuilder = Components.getTag('a');
-
-    if(content)
-      tagBuilder.withContent([content]);
-
-    if(className)
-      tagBuilder.withClass(className);
-
-    if(href)
-      tagBuilder.withAttribute('href', href);
-
-    if(target)
-      tagBuilder.withAttribute('target', target);
-
-    return tagBuilder.node();*/
-
-    var attrs: any = { href: href };
-    if (className)
-      attrs.className = className;
-
-    if (target)
-      attrs.target = target;
-
-    var children = [];
-    if (content)
-      children.push(content);
-
-    return <IBobrilNode>{
-      tag: 'a',
-      attrs: attrs,
-      children: children
-    }
+  return <IBobrilNode>{
+    tag: 'a',
+    attrs: attrs,
+    children: children
   }
 }

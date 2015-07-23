@@ -8,7 +8,8 @@
     },
     "filesGlob": [
         "./**/*.ts",
-        "./node_modules/**/*.ts",
+        "!./node_modules/**/*.ts",
+        "./node_modules/**/*.d.ts",
         "./decl/**/*.d.ts"
     ],
     "files": [
@@ -21,8 +22,6 @@
         "./components/tag.ts",
         "./components/type.ts",
         "./decl/es6-promise/es6-promise.d.ts",
-        "./node_modules/bobril/index.d.ts",
-        "./node_modules/bobril/index.ts",
         "./sample/common/anchor-link.ts",
         "./sample/containers/callout.ts",
         "./sample/containers/docs.ts",
@@ -32,6 +31,7 @@
         "./sample/index.ts",
         "./sample/parts/glyphicons.ts",
         "./sample/parts/header.ts",
-        "./utils/tags.ts"
+        "./utils/tags.ts",
+        "./node_modules/bobril/index.d.ts"
     ]
 }

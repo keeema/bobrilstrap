@@ -1,0 +1,18 @@
+{
+  "name": "Bobrilstrap",
+  "version": "1.0.0",
+  "description": "Bobril wrappers for Bootstrap components.",
+  "keywords": [
+    "bootstrap",
+    "bobril"
+  ],
+  "author": {
+    "name": "Tomáš Růt",
+    "email": "rut.tomas@hotmail.com"
+  },
+  "dependencies": {
+    "bobril": "^3.9.0",
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4"
+  }
+}

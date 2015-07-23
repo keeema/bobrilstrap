@@ -1,0 +1,47 @@
+{
+    "version": "1.5.0-beta",
+    "compileOnSave": false,
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs"
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "./decl/*/*.d.ts"
+    ],
+    "files": [
+        "./components/builder.ts",
+        "./components/button.ts",
+        "./components/buttonGroup.ts",
+        "./components/buttonToolbar.ts",
+        "./components/glyph-icons.ts",
+        "./components/size.ts",
+        "./components/tag.ts",
+        "./components/type.ts",
+        "./decl/bobril/bobril.d.ts",
+        "./decl/bobril/bobril.dnd.d.ts",
+        "./decl/bobril/bobril.focus.d.ts",
+        "./decl/bobril/bobril.l10n.d.ts",
+        "./decl/bobril/bobril.media.d.ts",
+        "./decl/bobril/bobril.mouse.d.ts",
+        "./decl/bobril/bobril.onchange.d.ts",
+        "./decl/bobril/bobril.onkey.d.ts",
+        "./decl/bobril/bobril.promise.d.ts",
+        "./decl/bobril/bobril.router.d.ts",
+        "./decl/bobril/bobril.scroll.d.ts",
+        "./decl/bobril/bobril.style.d.ts",
+        "./decl/bobril/bobril.swipe.d.ts",
+        "./decl/bobril/bobril.vg.d.ts",
+        "./decl/es6-promise/es6-promise.d.ts",
+        "./sample/common/anchor-link.ts",
+        "./sample/containers/callout.ts",
+        "./sample/containers/docs.ts",
+        "./sample/containers/example.ts",
+        "./sample/containers/highlight.ts",
+        "./sample/containers/section.ts",
+        "./sample/index.ts",
+        "./sample/parts/glyphicons.ts",
+        "./sample/parts/header.ts",
+        "./utils/tags.ts"
+    ]
+}

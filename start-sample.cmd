@@ -1,1 +1,0 @@
-start /b cmd /c "node_modules\.bin\http-server.cmd" %*

@@ -10,13 +10,8 @@
     "name": "Tomáš Růt",
     "email": "rut.tomas@hotmail.com"
   },
-  "dependencies": {
-    "bobril": "^3.9.1",
-    "bootstrap": "^3.3.5",
-    "jquery": "^2.1.4",
-    "systemjs": "^0.18.4"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "http-server": "^0.8.0"
-  }
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0"
 }

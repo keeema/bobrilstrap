@@ -1,7 +1,8 @@
 class Builder<T> implements IBuilder<T> {
   key: string;
-  data: ITagData = {};
-  attrs: IBobrilAttributes = {};
+  data: ITagData = {
+    attrs: {}
+  };
 
   constructor(tagName: string, key?:string) {
     this.data.tagName = tagName;
@@ -31,7 +32,7 @@ class Builder<T> implements IBuilder<T> {
   }
 
   withAttribute(name: string, value: any): T {
-    this.attrs[name] = value;
+    this.data.attrs[name] = value;
     return <any>this;
   }
 
@@ -41,7 +42,7 @@ class Builder<T> implements IBuilder<T> {
   }
 
   node() {
-    var node = <IBobrilNode>{ data: this.data, attrs: this.attrs };
+    var node = <IBobrilNode>{ data: this.data, attrs: this.data.attrs };
 
     if (this.key)
       node.key = this.key;

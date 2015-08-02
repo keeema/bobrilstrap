@@ -3,12 +3,12 @@ interface ITagData {
     className?: string;
     content?: IBobrilNode[];
     tagName?: string;
+    attrs: IBobrilAttributes;
 }
 
 interface IBuilder<T> {
     key: string;
     data: ITagData;
-    attrs: IBobrilAttributes;
     withClass(className: string): T;
     withClasses(classNames: string[]): T;
     withContent(content: IBobrilNode[]): T;

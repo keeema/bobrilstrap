@@ -1,7 +1,8 @@
 var Builder = (function () {
     function Builder(tagName, key) {
-        this.data = {};
-        this.attrs = {};
+        this.data = {
+            attrs: {}
+        };
         this.data.tagName = tagName;
         this.key = tagName;
     }
@@ -24,7 +25,7 @@ var Builder = (function () {
         return this;
     };
     Builder.prototype.withAttribute = function (name, value) {
-        this.attrs[name] = value;
+        this.data.attrs[name] = value;
         return this;
     };
     Builder.prototype.handlingOnClick = function (callback) {
@@ -32,7 +33,7 @@ var Builder = (function () {
         return this;
     };
     Builder.prototype.node = function () {
-        var node = { data: this.data, attrs: this.attrs };
+        var node = { data: this.data, attrs: this.data.attrs };
         if (this.key)
             node.key = this.key;
         return node;
@@ -345,8 +346,10 @@ var GlyphIcon = GlyphIconStatic;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    __.prototype = b.prototype;
+    d.prototype = new __();
 };
+// Base component class for all components
 var TagComponent = (function () {
     function TagComponent() {
     }
@@ -386,7 +389,8 @@ var TagBuilder = (function (_super) {
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    __.prototype = b.prototype;
+    d.prototype = new __();
 };
 var ButtonComponent = (function (_super) {
     __extends(ButtonComponent, _super);
@@ -441,7 +445,8 @@ var ButtonBuilder = (function (_super) {
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    __.prototype = b.prototype;
+    d.prototype = new __();
 };
 var ButtonGroupComponent = (function (_super) {
     __extends(ButtonGroupComponent, _super);
@@ -484,7 +489,8 @@ var ButtonGroupBuilder = (function (_super) {
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    __.prototype = b.prototype;
+    d.prototype = new __();
 };
 var ButtonToolbarComponent = (function (_super) {
     __extends(ButtonToolbarComponent, _super);

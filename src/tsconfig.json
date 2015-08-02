@@ -7,9 +7,8 @@
         "declaration": false
     },
     "filesGlob": [
-        "../**/*.d.ts",
-        "./**/*.ts",
-        "!../node_modules/gulp-typescript/**/*.*"
+        "../decl/**/*.d.ts",
+        "./**/*.ts"
     ],
     "files": [
         "../decl/bobril/bobril.d.ts",
@@ -27,14 +26,6 @@
         "../decl/bobril/bobril.swipe.d.ts",
         "../decl/bobril/bobril.vg.d.ts",
         "../decl/es6-promise/es6-promise.d.ts",
-        "../src/builder.d.ts",
-        "../src/button.d.ts",
-        "../src/buttonGroup.d.ts",
-        "../src/buttonToolbar.d.ts",
-        "../src/glyph-icons.d.ts",
-        "../src/size.d.ts",
-        "../src/tag.d.ts",
-        "../src/type.d.ts",
         "./builder.d.ts",
         "./builder.ts",
         "./button.d.ts",

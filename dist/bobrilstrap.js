@@ -426,11 +426,11 @@ var ButtonBuilder = (function (_super) {
         this.data.caption = caption;
         return this;
     };
-    ButtonBuilder.prototype.ofType = function (size) {
+    ButtonBuilder.prototype.ofSize = function (size) {
         this.withClass('btn-' + size);
         return this;
     };
-    ButtonBuilder.prototype.ofSize = function (type) {
+    ButtonBuilder.prototype.ofType = function (type) {
         this.withClass('btn-' + type);
         return this;
     };

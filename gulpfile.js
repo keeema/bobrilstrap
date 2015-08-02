@@ -4,6 +4,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify');
     rename = require('gulp-rename');
     ts = require('gulp-typescript');
+    copy = require('gulp-copy');
+    flatten = require('gulp-flatten');
 
 var dist = './dist/'
 var build = './build/'
@@ -17,7 +19,7 @@ gulp.task('compileTs', ['cleanBuild'], function() {
   return tsResult.js.pipe(gulp.dest(build));
 });
 
-gulp.task('bundle', ['compileTs','cleanDist'], function() {
+gulp.task('bundle', ['compileTs','cleanDist','copyDecl'], function() {
   return gulp.src([
       'build/builder.js',
       'build/type.js',
@@ -46,8 +48,14 @@ gulp.task('cleanBuild', function() {
     .pipe(clean());
 });
 
+gulp.task('copyDecl',function(){
+  return gulp.src('./src/**/*.d.ts')
+  .pipe(flatten())
+  .pipe(gulp.dest(dist));
+});
+
 gulp.task('uglify', ['bundle'], function() {
-  return gulp.src('dist/bobrilstrap.js')
+  return gulp.src('./dist/bobrilstrap.js')
   .pipe(rename({suffix: '.min'}))
   .pipe(uglify())
     .pipe(gulp.dest(dist));

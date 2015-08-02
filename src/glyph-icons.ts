@@ -263,11 +263,11 @@ class GlyphIconStatic {
   static menuDown: string = 'menu-down';
   static menuUp: string = 'menu-up';
 
-  static getFullGlyphIconClasses(glyphIcon: GlyphIconStatic): string {
+  static getFullGlyphIconClasses(glyphIcon: IGlyphIcon): string {
     return 'glyphicon glyphicon-' + glyphIcon;
   }
 
-  static getNode(glyphIcon: GlyphIconStatic): IBobrilNode {
+  static getNode(glyphIcon: IGlyphIcon): IBobrilNode {
     return getTag('span')
       .withClass(GlyphIconStatic.getFullGlyphIconClasses(glyphIcon))
       .withAttribute('aria-hidden',true)

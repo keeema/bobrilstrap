@@ -32,17 +32,17 @@ class ButtonBuilder extends Builder<ButtonBuilder> implements IButtonBuilder {
     return this;
   }
 
-  ofType(size: SizeStatic): IButtonBuilder {
+  ofSize(size: ISize): IButtonBuilder {
     this.withClass('btn-' + size);
     return this;
   }
 
-  ofSize(type: TypeStatic): IButtonBuilder {
+  ofType(type: IType): IButtonBuilder {
     this.withClass('btn-' + type);
     return this;
   }
 
-  withGlyphIcon(glyphIcon: GlyphIconStatic): IButtonBuilder {
+  withGlyphIcon(glyphIcon: IGlyphIcon): IButtonBuilder {
     this.data.glyphIcon = glyphIcon;
     return this;
   }

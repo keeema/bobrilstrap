@@ -28,12 +28,16 @@ var Builder = (function () {
         this.data.attrs[name] = value;
         return this;
     };
+    Builder.prototype.withStyle = function (style) {
+        this.data.style = style;
+        return this;
+    };
     Builder.prototype.handlingOnClick = function (callback) {
         this.data.onClick = function (event) { return callback(event); };
         return this;
     };
     Builder.prototype.node = function () {
-        var node = { data: this.data, attrs: this.data.attrs };
+        var node = { data: this.data, attrs: this.data.attrs, style: this.data.style };
         if (this.key)
             node.key = this.key;
         return node;

@@ -3,5 +3,8 @@ function getCallout(content: IBobrilNode[], id?: string, type?: IType): IBobrilN
   if (type)
     className += ' bs-callout-' + type;
 
-  return tag('div', content, className, null, null, id)
+  return getTag('div')
+    .withContent(content)
+    .withClass(className)
+    .withAttribute('id',id).node();
 }

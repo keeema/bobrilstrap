@@ -1,8 +1,8 @@
 function getDocs(main: IBobrilNode[], complementary: IBobrilNode[]): IBobrilNode {
-  return tag('div', [
-    tag('div', [
-      tag('div', main, 'col-md-9'),
-      tag('div', complementary, 'col-md-3')
-    ], 'row')
-  ], 'container bs-docs-container');
+  return getTag('div').withClass('container bs-docs-container').withContent([
+    getTag('div').withClass('row').withContent([
+      getTag('div').withClass('col-md-9').withContent(main).node(),
+      getTag('div').withClass('col-md-3').withContent(complementary).node()
+    ]).node()
+  ]).node()
 }

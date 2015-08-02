@@ -1,3 +1,6 @@
 function getHighlight(nodes: IBobrilNode[]): IBobrilNode {
-  return tag('div', [tag('pre', nodes)], 'highlight');
+    return getTag('div')
+        .withClass('highlight')
+        .withContent([getTag('pre').withContent(nodes).node()])
+        .node();
 }

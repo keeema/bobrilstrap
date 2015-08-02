@@ -4,6 +4,7 @@ interface ITagData {
     content?: IBobrilNode[];
     tagName?: string;
     attrs: IBobrilAttributes;
+    style?: IBobrilStyle;
 }
 
 interface IBuilder<T> {
@@ -13,6 +14,7 @@ interface IBuilder<T> {
     withClasses(classNames: string[]): T;
     withContent(content: IBobrilNode[]): T;
     withAttribute(name: string, value: any): T;
+    withStyle(style:IBobrilStyle): T;
     handlingOnClick(callback: (event: IBobrilMouseEvent) => void): T;
     node(): IBobrilNode;
 }

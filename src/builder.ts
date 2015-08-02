@@ -1,52 +1,57 @@
 class Builder<T> implements IBuilder<T> {
-  key: string;
-  data: ITagData = {
-    attrs: {}
-  };
+    key: string;
+    data: ITagData = {
+        attrs: {}
+    };
 
-  constructor(tagName: string, key?:string) {
-    this.data.tagName = tagName;
-    this.key = tagName;
-  }
-
-  withClass(className: string): T {
-    if (!this.data.className)
-      this.data.className = className
-    else
-      this.data.className += ' ' + className;
-
-    return <any>this;
-  }
-
-  withClasses(classNames: string[]): T {
-    if (classNames) {
-      classNames.forEach((className) => this.withClass(className));
+    constructor(tagName: string, key?: string) {
+        this.data.tagName = tagName;
+        this.key = tagName;
     }
 
-    return <any>this;
-  }
+    withClass(className: string): T {
+        if (!this.data.className)
+            this.data.className = className
+        else
+            this.data.className += ' ' + className;
 
-  withContent(content: IBobrilNode[]): T {
-    this.data.content = content;
-    return <any>this;
-  }
+        return <any>this;
+    }
 
-  withAttribute(name: string, value: any): T {
-    this.data.attrs[name] = value;
-    return <any>this;
-  }
+    withClasses(classNames: string[]): T {
+        if (classNames) {
+            classNames.forEach((className) => this.withClass(className));
+        }
 
-  handlingOnClick(callback: (event: IBobrilMouseEvent) => void): T {
-    this.data.onClick = (event: IBobrilMouseEvent) => callback(event);
-    return <any>this;
-  }
+        return <any>this;
+    }
 
-  node() {
-    var node = <IBobrilNode>{ data: this.data, attrs: this.data.attrs };
+    withContent(content: IBobrilNode[]): T {
+        this.data.content = content;
+        return <any>this;
+    }
 
-    if (this.key)
-      node.key = this.key;
+    withAttribute(name: string, value: any): T {
+        this.data.attrs[name] = value;
+        return <any>this;
+    }
 
-    return node;
-  }
+    withStyle(style: IBobrilStyle): T {
+        this.data.style = style;
+        return <any>this;
+    }
+
+    handlingOnClick(callback: (event: IBobrilMouseEvent) => void): T {
+        this.data.onClick = (event: IBobrilMouseEvent) => callback(event);
+        return <any>this;
+    }
+
+    node() {
+        var node = <IBobrilNode>{ data: this.data, attrs: this.data.attrs, style: this.data.style };
+
+        if (this.key)
+            node.key = this.key;
+
+        return node;
+    }
 }

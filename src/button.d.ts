@@ -1,5 +1,3 @@
-/// <reference path="./button.ts"/>
-
 interface IButtonData extends ITagData {
     caption?: string;
     glyphIcon: GlyphIconStatic;

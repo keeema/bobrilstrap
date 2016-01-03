@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node"
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*"
+    ],
+    "files": [
+        "css.ts",
+        "example.ts",
+        "index.ts"
+    ]
+}

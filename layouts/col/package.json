@@ -1,0 +1,22 @@
+{
+    "name": "bobrilstrap-col",
+    "version": "0.0.1",
+    "description": "Columnt layout",
+    "typescript": {
+        "main": "index.ts"
+    },
+    "bobril": {
+        "example": "example.ts"
+    },
+    "author": "Tomáš Růt",
+    "license": "MIT",
+    "dependencies": {
+        "bobril": "*",
+        "bobrilstrap-tag": "*"
+    },
+    "devDependencies": {
+        "bobrilstrap-core": "*",
+        "bobrilstrap-row": "*",
+        "bobrilstrap-container": "*"
+    }
+}

@@ -1,7 +1,2 @@
-/node_modules
-/build
+/**/node_modules
 /**/*.js
-
-!/**/libs/**/*
-!/dist/**/*
-!/*.js

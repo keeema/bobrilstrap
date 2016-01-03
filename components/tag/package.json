@@ -1,0 +1,16 @@
+{
+  "name": "bobrilstrap-tag",
+  "version": "1.0.0",
+  "description": "Base common tag component",
+  "typescript": {
+    "main": "index.ts"
+  },
+  "bobril": {
+    "example": "example.ts"
+  },
+  "author": "Tomáš Růt",
+  "license": "MIT",
+  "dependencies": {
+    "bobril": "*"
+  }
+}

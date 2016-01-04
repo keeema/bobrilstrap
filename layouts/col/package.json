@@ -1,7 +1,7 @@
 {
     "name": "bobrilstrap-col",
     "version": "0.0.1",
-    "description": "Columnt layout",
+    "description": "Column layout",
     "typescript": {
         "main": "index.ts"
     },

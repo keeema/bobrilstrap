@@ -1,7 +1,7 @@
 {
-  "name": "bobrilstrap-row",
-  "version": "0.0.2",
-  "description": "Row layout",
+  "name": "bobrilstrap-typography",
+  "version": "0.0.1",
+  "description": "Typography styles",
   "typescript": {
     "main": "index.ts"
   },
@@ -11,11 +11,11 @@
   "author": "Tomáš Růt",
   "license": "MIT",
   "dependencies": {
-    "bobril": "*",
-    "bobrilstrap-element": "*"
+    "bobril": "*"
   },
   "devDependencies": {
     "bobrilstrap-core": "*",
-    "bobrilstrap-container": "*"
+    "bobrilstrap-container": "*",
+    "bobrilstrap-element": "*"
   }
 }

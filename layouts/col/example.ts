@@ -2,8 +2,7 @@ import * as b from 'bobril';
 import core from 'bobrilstrap-core';
 import container from 'bobrilstrap-container';
 import row from 'bobrilstrap-row';
-import { DeviceSize } from './index';
-import col from './index';
+import col, { DeviceSize } from './index';
 
 let style = b.styleDef({ backgroundColor: '#000', color: '#fff' });
 b.init(() => [

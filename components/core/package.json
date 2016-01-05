@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bobrilstrap core with bootstrap wrapper",
   "typescript": {
     "main": "index.ts"
@@ -14,6 +14,6 @@
     "bobril": "*"
   },
   "devDependencies": {
-    "bobrilstrap-tag": "*"
+    "bobrilstrap-element": "*"
   }
 }

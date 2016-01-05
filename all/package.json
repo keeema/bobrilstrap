@@ -1,6 +1,6 @@
 {
     "name": "bobrilstrap-all",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Set of all bobrilstrap components",
     "typescript": {
         "main": "index.ts"
@@ -12,11 +12,12 @@
     "license": "MIT",
     "dependencies": {
         "bobril": "*",
-        "bobrilstrap-core": "*",
-        "bobrilstrap-tag": "*",
-        "bobrilstrap-row": "*",
+        "bobrilstrap-col": "*",
         "bobrilstrap-container": "*",
-        "bobrilstrap-col": "*"
+        "bobrilstrap-core": "*",
+        "bobrilstrap-element": "*",
+        "bobrilstrap-row": "*",
+        "bobrilstrap-typography": "*"
     },
     "devDependencies": {
     }

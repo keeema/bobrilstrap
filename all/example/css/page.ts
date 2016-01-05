@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import container from 'bobrilstrap-container';
 import row from 'bobrilstrap-row';
-import tag from 'bobrilstrap-tag';
+import elem from 'bobrilstrap-element';
 import col, { DeviceSize } from 'bobrilstrap-col';
 import { styles } from '../styles/css';
 import header from '../common/header';

@@ -4,10 +4,12 @@
         "module": "commonjs",
         "moduleResolution": "node"
     },
-    "compileOnSave": false,
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*"
+    ],
     "files": [
         "example.ts",
-        "example/masterPage.ts",
         "index.ts"
     ]
 }

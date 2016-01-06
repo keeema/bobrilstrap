@@ -2,7 +2,9 @@ import * as b from 'bobril';
 import * as elem from 'bobrilstrap-element';
 
 interface IData extends elem.IData {
-    cols: IColType | IColType[];
+    deviceSize?: DeviceSize;
+    count?: number;
+    cols?: IColType | IColType[];
     offsets?: IColType | IColType[];
     pushes?: IColType | IColType[];
     pulls?: IColType | IColType[];
@@ -25,6 +27,7 @@ interface IColStyles {
 
 export default b.createDerivedComponent<IData>(elem.default, {
     render(ctx: ICtx, me: b.IBobrilNode) {
+        applySimplyDefinedStyle(me, ctx.data);
         applyCmpSyles(me, ctx.data.cols, colStyles);
         applyCmpSyles(me, ctx.data.offsets, colOffsetStyles);
         applyCmpSyles(me, ctx.data.pushes, colPushStyles);
@@ -58,17 +61,34 @@ function applyCmpSyles(me: b.IBobrilNode, colTypes: IColType | IColType[], style
     b.style(me, styles);
 }
 
+function applySimplyDefinedStyle(me: b.IBobrilNode, data: IData) {
+    if (isStyleAvailable(colStyles, data)) {
+        b.style(me, getStyle(colStyles, data));
+    }
+}
+
 function getCmpStyles(colTypes: IColType | IColType[], stylesSource: IColStyles): b.IBobrilStyle[] {
-    let cols: IColType[] =
-        colTypes
-            ? colTypes instanceof Array
-                ? colTypes
-                : <IColType[]>[colTypes]
-            : [];
+    let cols: IColType[] = getColTypeArray(colTypes);
 
     let styles: b.IBobrilStyle[] = cols
-        .filter(col => stylesSource[DeviceSize[col.deviceSize]] && stylesSource[DeviceSize[col.deviceSize]][col.count])
-        .map(col => stylesSource[DeviceSize[col.deviceSize]][col.count]);
+        .filter(col => isStyleAvailable(stylesSource, col))
+        .map(col => getStyle(stylesSource, col));
 
     return styles;
+}
+
+function getColTypeArray(colTypes: IColType | IColType[]): IColType[] {
+    return colTypes
+        ? colTypes instanceof Array
+            ? colTypes
+            : <IColType[]>[colTypes]
+        : [];
+}
+
+function isStyleAvailable(stylesSource: IColStyles, col: IColType | IData): boolean {
+    return stylesSource[DeviceSize[col.deviceSize]] && stylesSource[DeviceSize[col.deviceSize]][col.count];
+}
+
+function getStyle(stylesSource: IColStyles, col: IColType | IData) {
+    return stylesSource[DeviceSize[col.deviceSize]][col.count];
 }

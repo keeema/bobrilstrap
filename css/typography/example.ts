@@ -4,9 +4,6 @@ import container from 'bobrilstrap-container';
 import elem from 'bobrilstrap-element';
 import typography from './index';
 
-let btnStyle = b.styleDef('btn');
-let btnDefaultStyle = b.styleDef('btn-default');
-
 b.init(() => [
     core({}),
     container({}, [

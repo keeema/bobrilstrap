@@ -11,7 +11,7 @@ export interface ICtx extends b.IBobrilCtx {
     data: IData;
 }
 
-export default b.createVirtualComponent<IData>({
+export let create = b.createVirtualComponent<IData>({
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = ctx.data.tag || 'div';
         me.children = ctx.data.children;
@@ -19,3 +19,5 @@ export default b.createVirtualComponent<IData>({
         b.style(me, ctx.data.styles);
     }
 });
+
+export default create;

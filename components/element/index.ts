@@ -1,10 +1,13 @@
 import * as b from 'bobril';
 
-export interface IData {
-    tag?: string;
+export interface IBaseData {
     children?: b.IBobrilChildren;
     styles?: b.IBobrilStyles;
     attrs?: { [key: string]: any };
+}
+
+export interface IData extends IBaseData {
+    tag?: string;
 }
 
 export interface ICtx extends b.IBobrilCtx {

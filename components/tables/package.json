@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-tables",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Table styles",
   "typescript": {
     "main": "index.ts"

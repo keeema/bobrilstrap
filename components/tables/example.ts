@@ -8,10 +8,10 @@ b.init(() => [
     core({}),
     container({}, [
         table({}, getPeopleContent()),
-        table({ styles: tableStyle.tableStriped }, getPeopleContent()),
-        table({ styles: tableStyle.tableBordered }, getPeopleContent()),
-        table({ styles: tableStyle.tableHover }, getPeopleContent()),
-        table({ styles: tableStyle.tableCondensed }, getPeopleContent()),
+        table({ striped: true }, getPeopleContent()),
+        table({ bordered: true }, getPeopleContent()),
+        table({ hover: true }, getPeopleContent()),
+        table({ condensed: true }, getPeopleContent()),
     ])
 ]);
 

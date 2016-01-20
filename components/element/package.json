@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-element",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Base common component for elements",
   "typescript": {
     "main": "index.ts"

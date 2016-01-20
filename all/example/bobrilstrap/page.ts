@@ -11,6 +11,6 @@ export default b.createVirtualComponent({
 
 const texts = {
     header: 'Bobrilstrap',
-    headerContent: `Bobril wrapper most popular HTML, CSS, and JS framework for developing responsive,
+    headerContent: `Bobril wrapper of the most popular HTML, CSS, and JS framework for developing responsive,
      mobile first projects on the web - Bootstrap.`
 };

@@ -1,0 +1,19 @@
+{
+  "name": "bobrilstrap-td",
+  "version": "0.0.1",
+  "description": "Table column",
+  "typescript": {
+    "main": "index.ts"
+  },
+  "bobril": {    
+  },
+  "author": "Tomáš Růt",
+  "license": "MIT",
+  "dependencies": {
+    "bobril": "*",
+    "bobrilstrap-element": "*",
+    "bobrilstrap-context": "*"
+  },
+  "devDependencies": {
+  }
+}

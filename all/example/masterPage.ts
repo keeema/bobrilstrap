@@ -2,7 +2,8 @@ import * as b from 'bobril';
 import core from 'bobrilstrap-core';
 import container from 'bobrilstrap-container';
 import elem from 'bobrilstrap-element';
-import col, { DeviceSize } from 'bobrilstrap-col';
+import Size from 'bobrilstrap-size';
+import col from 'bobrilstrap-col';
 import exampleCssCore, {styles} from './styles/css';
 import exampleCssTheme from './styles/themeCss';
 

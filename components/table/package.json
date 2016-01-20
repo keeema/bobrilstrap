@@ -1,0 +1,26 @@
+{
+  "name": "bobrilstrap-table",
+  "version": "0.0.1",
+  "description": "Table component",
+  "typescript": {
+    "main": "index.ts"
+  },
+  "bobril": {
+    "example": "example.ts"
+  },
+  "author": "Tomáš Růt",
+  "license": "MIT",
+  "dependencies": {
+    "bobril": "*",
+    "bobrilstrap-element": "*"
+  },
+  "devDependencies": {
+    "bobrilstrap-core": "*",
+    "bobrilstrap-container": "*",
+    "bobrilstrap-tr": "*",
+    "bobrilstrap-td": "*",
+    "bobrilstrap-th": "*",
+    "bobrilstrap-tbody": "*",
+    "bobrilstrap-thead": "*"
+  }
+}

@@ -1,12 +1,11 @@
 {
-  "name": "bobrilstrap-tables",
+  "name": "bobrilstrap-tbody",
   "version": "0.0.2",
-  "description": "Table styles",
+  "description": "Table body",
   "typescript": {
     "main": "index.ts"
   },
-  "bobril": {
-    "example": "example.ts"
+  "bobril": {    
   },
   "author": "Tomáš Růt",
   "license": "MIT",
@@ -15,7 +14,5 @@
     "bobrilstrap-element": "*"
   },
   "devDependencies": {
-    "bobrilstrap-core": "*",
-    "bobrilstrap-container": "*"
   }
 }

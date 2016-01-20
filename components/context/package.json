@@ -1,0 +1,17 @@
+{
+    "name": "bobrilstrap-context",
+    "version": "0.0.2",
+    "description": "Context constants",
+    "typescript": {
+        "main": "index.ts"
+    },
+    "bobril": {
+    },
+    "author": "Tomáš Růt",
+    "license": "MIT",
+    "dependencies": {
+        "bobril": "*"
+    },
+    "devDependencies": {
+    }
+}

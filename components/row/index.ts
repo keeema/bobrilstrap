@@ -1,16 +1,16 @@
 import * as b from 'bobril';
-import * as elem from 'bobrilstrap-element';
+import elem, { IBaseData } from 'bobrilstrap-element';
 
-export interface IData extends elem.IData {
+export interface IData extends IBaseData {
 }
 
-interface ICtx extends elem.ICtx {
+interface ICtx extends b.IBobrilCtx {
     data: IData;
 }
 
 let rowStyle = b.styleDef('row');
 
-export default b.createDerivedComponent<IData>(elem.default, {
+export default b.createDerivedComponent<IData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, rowStyle);
     }

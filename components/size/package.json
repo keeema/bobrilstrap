@@ -1,0 +1,16 @@
+{
+    "name": "bobrilstrap-size",
+    "version": "0.0.1",
+    "description": "Size constants",
+    "typescript": {
+        "main": "index.ts"
+    },
+    "bobril": {
+    },
+    "author": "Tomáš Růt",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+}

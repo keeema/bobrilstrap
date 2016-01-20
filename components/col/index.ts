@@ -1,8 +1,9 @@
 import * as b from 'bobril';
-import * as elem from 'bobrilstrap-element';
+import elem, { IBaseData } from 'bobrilstrap-element';
+import Size from 'bobrilstrap-size';
 
-interface IData extends elem.IData {
-    deviceSize?: DeviceSize;
+interface IData extends IBaseData {
+    size?: Size;
     count?: number;
     cols?: IColType | IColType[];
     offsets?: IColType | IColType[];
@@ -10,22 +11,20 @@ interface IData extends elem.IData {
     pulls?: IColType | IColType[];
 }
 
-interface ICtx extends elem.ICtx {
+interface ICtx extends b.IBobrilCtx {
     data: IData;
 }
 
-export enum DeviceSize { xs = 0, sm = 1, md = 2, lg = 3 };
-
 interface IColType {
-    deviceSize: DeviceSize;
+    size: Size;
     count: number;
 }
 
 interface IColStyles {
-    [key: number]: { [key: number]: b.IBobrilStyle };
+    [key: string]: { [key: number]: b.IBobrilStyle };
 }
 
-export default b.createDerivedComponent<IData>(elem.default, {
+export let create = b.createDerivedComponent<IData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         applySimplyDefinedStyle(me, ctx.data);
         applyCmpSyles(me, ctx.data.cols, colStyles);
@@ -35,17 +34,20 @@ export default b.createDerivedComponent<IData>(elem.default, {
     }
 });
 
+export default create;
+export { Size };
+
 export let colStyles = getStyles((size, i) => `col-${size}-${i}`);
 export let colOffsetStyles = getStyles((size, i) => `col-${size}-offset-${i}`);
 export let colPushStyles = getStyles((size, i) => `col-${size}-push-${i}`);
 export let colPullStyles = getStyles((size, i) => `col-${size}-pull-${i}`);
 
-function getStyles(decorator: (size: string, count: number) => string): IColStyles {
+function getStyles(decorator: (size: Size, count: number) => string): IColStyles {
     var result: IColStyles = {};
 
-    Object.keys(DeviceSize).forEach(size => {
+    Object.keys(Size).forEach(size => {
         result[size] = {};
-        for (var i = 1; i <= 12; i++) {
+        for (let i = 1; i <= 12; i++) {
             result[size][i] = b.styleDef(decorator(size, i));
         }
     });
@@ -86,9 +88,10 @@ function getColTypeArray(colTypes: IColType | IColType[]): IColType[] {
 }
 
 function isStyleAvailable(stylesSource: IColStyles, col: IColType | IData): boolean {
-    return stylesSource[DeviceSize[col.deviceSize]] && stylesSource[DeviceSize[col.deviceSize]][col.count];
+    return col.size && col.count
+        && !!stylesSource[col.size.toString()] && !!stylesSource[col.size.toString()][col.count];
 }
 
 function getStyle(stylesSource: IColStyles, col: IColType | IData) {
-    return stylesSource[DeviceSize[col.deviceSize]][col.count];
+    return stylesSource[col.size.toString()][col.count];
 }

@@ -1,18 +1,18 @@
 import * as b from 'bobril';
-import * as elem from 'bobrilstrap-element';
+import elem, { IBaseData } from 'bobrilstrap-element';
 
-interface IData extends elem.IData {
+interface IData extends IBaseData {
     fluid?: boolean;
 }
 
-interface ICtx extends elem.ICtx {
+interface ICtx extends b.IBobrilCtx {
     data: IData;
 }
 
 export let containerStyle = b.styleDef('container');
 export let containerFluidStyle = b.styleDef('container-fluid');
 
-export default b.createDerivedComponent<IData>(elem.default, {
+export default b.createDerivedComponent<IData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {               
         b.style(me, ctx.data.fluid ? containerFluidStyle : containerStyle);
     }

@@ -15,6 +15,7 @@ export interface ICtx extends b.IBobrilCtx {
 }
 
 export let create = b.createVirtualComponent<IData>({
+    id: 'bobrilstrap-element',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = ctx.data.tag || 'div';
         me.children = ctx.data.children;

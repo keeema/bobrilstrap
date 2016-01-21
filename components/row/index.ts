@@ -11,6 +11,7 @@ interface ICtx extends b.IBobrilCtx {
 let rowStyle = b.styleDef('row');
 
 export default b.createDerivedComponent<IData>(elem, {
+    id: 'bobrilstrap-row',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, rowStyle);
     }

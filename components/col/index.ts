@@ -25,6 +25,7 @@ interface IColStyles {
 }
 
 export let create = b.createDerivedComponent<IData>(elem, {
+    id: 'bobrilstrap-col',
     render(ctx: ICtx, me: b.IBobrilNode) {
         applySimplyDefinedStyle(me, ctx.data);
         applyCmpSyles(me, ctx.data.cols, colStyles);

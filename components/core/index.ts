@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
 export default b.createVirtualComponent({
     init(ctx: ICtx) {
         ctx.cssNodeId = b.addRoot(() => {
-            return { tag: 'style', children: getCss() };
+            return { id: 'bobrilstrap-core', tag: 'style', children: getCss() };
         });
     },
     destroy(ctx: ICtx) {

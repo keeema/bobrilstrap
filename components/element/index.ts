@@ -5,6 +5,8 @@ export interface IBaseData {
     children?: b.IBobrilChildren;
     styles?: b.IBobrilStyles;
     attrs?: { [key: string]: any };
+
+    onClick?: (event: b.IBobrilMouseEvent) => boolean | void;
 }
 
 export interface IData extends IBaseData {
@@ -25,8 +27,13 @@ export let create = b.createVirtualComponent<IData>({
 
         if (ctx.data.key)
             b.withKey(me, ctx.data.key);
+    },
+    onClick(ctx: ICtx, event: b.IBobrilMouseEvent): boolean {
+        if (!ctx.data.onClick)
+            return false;
+
+        return !!ctx.data.onClick(event);
     }
 });
 
 export default create;
-

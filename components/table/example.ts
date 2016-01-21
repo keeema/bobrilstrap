@@ -5,92 +5,86 @@ import elem from 'bobrilstrap-element';
 import td from 'bobrilstrap-td';
 import tr from 'bobrilstrap-tr';
 import th from 'bobrilstrap-th';
-import thead from 'bobrilstrap-thead';
-import tbody from 'bobrilstrap-tbody';
+import thead, { IData as IHeadData } from 'bobrilstrap-thead';
+import tbody, { IData as IBodyData } from 'bobrilstrap-tbody';
 import Context from 'bobrilstrap-context';
-import table, { tableStyle } from './index';
+import table, { IData as ITableData} from './index';
 
 b.init(() => [
     core({}),
     container({}, [
-        table({}, getPeopleContent()),
-        table({ striped: true }, getPeopleContent()),
-        table({ bordered: true }, getPeopleContent()),
-        table({ hover: true }, getPeopleContent()),
-        table({ condensed: true }, getPeopleContent()),
-        table({}, getContextContentByRows()),
-        table({}, getContextContentByColumns()),
-        table({ responsive: true }, getPeopleContent())
-    ])
+        table({ head: getPeopleHeader(), body: getPeopleBody()}),
+        table({ striped: true, head: getPeopleHeader(), body: getPeopleBody() }),
+        table({ bordered: true, head: getPeopleHeader(), body: getPeopleBody() }),
+        table({ hover: true, head: getPeopleHeader(), body: getPeopleBody() }),
+        table({ condensed: true, head: getPeopleHeader(), body: getPeopleBody() }),
+        table({ responsive: true, head: getPeopleHeader(), body: getPeopleBody() }),
+   
+        table({  head: getContextHeader(), body: getContextBodyByRows() }),
+        table({  head: getContextHeader(), body: getContextBodyByColumns() }),
+     ])
 ]);
 
-function getPeopleContent(): b.IBobrilChildren {
-    return [
-        thead({}, [
-            tr({}, [
-                th({}, '#'), th({}, 'First Name'), th({}, 'Last Name'), th({}, 'Username')
-            ]),
-        ]),
-        tbody({}, [
-            tr({}, [
-                td({}, '1'), td({}, 'Mark'), td({}, 'Otto'), td({}, '@mdo')
-            ]),
-            tr({}, [
-                td({}, '2'), td({}, 'Jacob'), td({}, 'Thornton'), td({}, '@fat')
-            ]),
-            tr({}, [
-                td({}, '3'), td({}, 'Larry'), td({}, 'the Bird'), td({}, '@twitter')
-            ]),
-        ])
-    ];
+function getPeopleHeader() : IHeadData {
+    return  {
+        row: { headers: [{ children: '#' }, { children: 'First Name' }, { children: 'Last Name' }, { children: 'Username' }] }
+     };
 }
 
-function getContextContentByRows(): b.IBobrilChildren {
-    return [
-        thead({}, [
-            tr({}, [
-                th({}, '#'), th({}, 'Column heading'), th({}, 'Column heading'), th({}, 'Column heading')
-            ]),
-        ]),
-        tbody({}, Object.keys(Context).map((context, index): b.IBobrilChildren => {
-            return [
-                tr({ context }, [
-                    td({}, ((index * 2) + 1).toString()), td({}, 'Column content'), td({}, 'Column content'), td({}, '@Column content')
-                ]),
-                tr({}, [
-                    td({}, ((index * 2) + 2).toString()), td({}, 'Column content'), td({}, 'Column content'), td({}, '@Column content')
-                ]),
-            ];
+function getPeopleBody(): IBodyData {
+    return {
+        rows: [
+            { columns: [{ children: '1' }, { children: 'Mark' }, { children: 'Otto' }, { children: '@mdo' }] },
+            { columns: [{ children: '2' }, { children: 'Jacob' }, { children: 'Thornton' }, { children: '@fat' }] },
+            { columns: [{ children: '3' }, { children: 'Larry' }, { children: 'the Bird' }, { children: '@twitter' }] }
+        ]
+    } ;
+}
+
+function getContextHeader() : IHeadData {
+    return  {
+        row: { 
+            headers: [
+                { children: '#' }, 
+                { children: 'Column heading' },
+                { children: 'Column heading' }, 
+                { children: 'Column heading' }, 
+                { children: 'Column heading' }, 
+                { children: 'Column heading' }
+                ] 
+            }
+    };
+}
+
+function getContextBodyByRows(): IBodyData {    
+    return {
+        rows: [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => {
+            return {
+                context: item % 2 === 0 ? Object.keys(Context)[item / 2] : undefined,
+                columns: [
+                    { children: index.toString() }, 
+                    { children: 'Column content' },
+                    { children: 'Column content' },
+                    { children: 'Column content' },
+                    { children: 'Column content' },
+                    { children: 'Column content' }  
+                ]
+            };   
         })
-        )
-    ];
+    };
 }
 
-function getContextContentByColumns(): b.IBobrilChildren {
-    return [
-        thead({}, [
-            tr({}, [
-                th({}, '#'),
-                th({}, 'Column heading'),
-                th({}, 'Column heading'),
-                th({}, 'Column heading'),
-                th({}, 'Column heading'),
-                th({}, 'Column heading')
-            ]),
-        ]),
-        tbody({}, [
-            tr({}, [
-                td({}, '1'), Object.keys(Context).map((context): b.IBobrilChildren => td({ context }, 'Column content')),
-            ]),
-            tr({}, [
-                td({}, '2'), Object.keys(Context).map((context): b.IBobrilChildren => td({}, 'Column content')),
-            ]),
-            tr({}, [
-                td({}, '3'), Object.keys(Context).reverse().map((context): b.IBobrilChildren => td({ context }, 'Column content')),
-            ]),
-            tr({}, [
-                td({}, '4'), Object.keys(Context).map((context): b.IBobrilChildren => td({}, 'Column content'))
-            ])
-        ])
-    ];
+function getContextBodyByColumns(): IBodyData {    
+    return {
+        rows: [ 
+            { 
+                columns:  [ { children: '1' }, ...Object.keys(Context)
+                    .map(context => { return { context, children: 'Column content' }; })] 
+            },
+                { 
+                columns:  [{ children: '2' }, ...Object.keys(Context).reverse()
+                    .map(context => { return { context, children: 'Column content' }; })] }
+        ]   
+    };
 }
+

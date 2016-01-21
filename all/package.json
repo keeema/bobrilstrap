@@ -1,6 +1,6 @@
 {
-  "name": "bobrilstrap-all",
-  "version": "0.0.3",
+  "name": "bobrilstrap",
+  "version": "0.0.1",
   "description": "Set of all bobrilstrap components",
   "typescript": {
     "main": "index.ts"

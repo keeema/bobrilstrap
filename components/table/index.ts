@@ -1,7 +1,10 @@
 import * as b from 'bobril';
+import { wrapMe, mergeChildren} from 'bobrilstrap-helpers';
 import elem, { IBaseData } from 'bobrilstrap-element';
+import thead, { IData as THeadData } from 'bobrilstrap-thead';
+import tbody, { IData as TBodyData } from 'bobrilstrap-tbody';
 
-export let tableStyle = {
+export let tableStyles = {
     table: b.styleDef('table'),
     responsive: b.styleDef('table-responsive'),
     tableStriped: b.styleDef('table-striped'),
@@ -10,12 +13,15 @@ export let tableStyle = {
     tableCondensed: b.styleDef('table-condensed')
 };
 
-interface IData extends IBaseData {
+export interface IData extends IBaseData {
     striped?: boolean;
     bordered?: boolean;
     hover?: boolean;
     condensed?: boolean;
     responsive?: boolean;
+
+    head?: THeadData;
+    body?: TBodyData;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -26,26 +32,22 @@ export let create = b.createDerivedComponent<IData>(elem, {
     id: 'bobrilstrap-table',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'table';
-        b.style(me, tableStyle.table);
-        b.style(me, ctx.data.striped && tableStyle.tableStriped);
-        b.style(me, ctx.data.bordered && tableStyle.tableBordered);
-        b.style(me, ctx.data.hover && tableStyle.tableHover);
-        b.style(me, ctx.data.condensed && tableStyle.tableCondensed);
+        b.style(me, tableStyles.table);
+        b.style(me, ctx.data.striped && tableStyles.tableStriped);
+        b.style(me, ctx.data.bordered && tableStyles.tableBordered);
+        b.style(me, ctx.data.hover && tableStyles.tableHover);
+        b.style(me, ctx.data.condensed && tableStyles.tableCondensed);
+
+        if (ctx.data.head)
+            me.children = mergeChildren(me.children, thead(ctx.data.head));
+
+        if (ctx.data.body)
+            me.children = mergeChildren(me.children, tbody(ctx.data.body));
 
         if (ctx.data.responsive) {
-            wrapMe(me, tableStyle.responsive);
+            wrapMe(me, tableStyles.responsive);
         }
     }
 });
 
 export default create;
-
-function wrapMe(me: b.IBobrilNode, style: b.IBobrilStyle) {
-    me.children = { tag: me.tag, className: me.className, style: me.style, id: me['id'], attrs: me.attrs, children: me.children };
-    me.tag = 'div';
-    me.className = undefined;
-    me.style = undefined;
-    me['id'] = undefined;
-    me.attrs = undefined;
-    b.style(me, style);
-}

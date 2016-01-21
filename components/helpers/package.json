@@ -1,0 +1,19 @@
+{
+  "name": "bobrilstrap-helpers",
+  "version": "0.0.1",
+  "description": "Bobrilstrap helpers",
+  "typescript": {
+    "main": "index.ts"
+  },
+  "bobril": {
+    "example": "example.ts"
+  },
+  "author": "Tomáš Růt",
+  "license": "MIT",
+  "dependencies": {
+    "bobril": "*"
+  },
+  "devDependencies": {
+
+  }
+}

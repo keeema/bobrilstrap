@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-thead",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Table head",
   "typescript": {
     "main": "index.ts"
@@ -11,7 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "bobril": "*",
-    "bobrilstrap-element": "*"
+    "bobrilstrap-element": "*",
+    "bobrilstrap-tr": "*"
   },
   "devDependencies": {
   }

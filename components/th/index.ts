@@ -2,11 +2,14 @@ import * as b from 'bobril';
 import elem, { IBaseData } from 'bobrilstrap-element';
 import Context, { contextStyles } from 'bobrilstrap-context';
 
-interface ICtx extends b.IBobrilCtx {
-    data: IBaseData;
+export interface IData extends IBaseData {
 }
 
-export let create = b.createDerivedComponent<IBaseData>(elem, {
+interface ICtx extends b.IBobrilCtx {
+    data: IData;
+}
+
+export let create = b.createDerivedComponent<IData>(elem, {
     id: 'bobrilstrap-th',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'th';

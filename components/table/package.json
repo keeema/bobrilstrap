@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-table",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Table component",
   "typescript": {
     "main": "index.ts"
@@ -12,15 +12,16 @@
   "license": "MIT",
   "dependencies": {
     "bobril": "*",
-    "bobrilstrap-element": "*"
+    "bobrilstrap-element": "*",
+    "bobrilstrap-helpers": "0.0.1",
+    "bobrilstrap-tbody": "*",
+    "bobrilstrap-td": "*",
+    "bobrilstrap-th": "*",
+    "bobrilstrap-thead": "*",
+    "bobrilstrap-tr": "*"
   },
   "devDependencies": {
     "bobrilstrap-core": "*",
-    "bobrilstrap-container": "*",
-    "bobrilstrap-tr": "*",
-    "bobrilstrap-td": "*",
-    "bobrilstrap-th": "*",
-    "bobrilstrap-tbody": "*",
-    "bobrilstrap-thead": "*"
+    "bobrilstrap-container": "*"
   }
 }

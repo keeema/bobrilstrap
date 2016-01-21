@@ -1,0 +1,24 @@
+{
+    "name": "bobrilstrap-button",
+    "version": "0.0.1",
+    "description": "Button component",
+    "typescript": {
+        "main": "index.ts"
+    },
+    "bobril": {
+        "example": "example.ts"
+    },
+    "author": "Tomáš Růt",
+    "license": "MIT",
+    "dependencies": {
+        "bobril": "*",
+        "bobrilstrap-element": "*",
+        "bobrilstrap-size": "*",
+        "bobrilstrap-helpers": "*"
+    },
+    "devDependencies": {
+        "bobrilstrap-core": "*",
+        "bobrilstrap-container": "*",
+        "bobrilstrap-row": "*"
+    }
+}

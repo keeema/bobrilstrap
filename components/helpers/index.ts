@@ -17,7 +17,8 @@ export function mergeChildren(children: b.IBobrilChildren, item: b.IBobrilChildr
             : [children]
         : [];
 
-    resultChildren.push(item);
+    if(item)
+      resultChildren.push(item);
 
     return resultChildren;
 }

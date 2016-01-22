@@ -1,8 +1,8 @@
 import * as b from 'bobril';
-import { wrapMe, mergeChildren} from 'bobrilstrap-helpers';
+import { mergeToChildren } from 'bobrilstrap-bobril-helpers';
 import elem, { IBaseData } from 'bobrilstrap-element';
-import thead, { IData as THeadData } from 'bobrilstrap-thead';
-import tbody, { IData as TBodyData } from 'bobrilstrap-tbody';
+import thead, { IData as IHeadData } from 'bobrilstrap-thead';
+import tbody, { IData as IBodyData } from 'bobrilstrap-tbody';
 
 export let tableStyles = {
     table: b.styleDef('table'),
@@ -18,10 +18,9 @@ export interface IData extends IBaseData {
     bordered?: boolean;
     hover?: boolean;
     condensed?: boolean;
-    responsive?: boolean;
 
-    head?: THeadData;
-    body?: TBodyData;
+    head?: IHeadData;
+    body?: IBodyData;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -39,14 +38,10 @@ export let create = b.createDerivedComponent<IData>(elem, {
         b.style(me, ctx.data.condensed && tableStyles.tableCondensed);
 
         if (ctx.data.head)
-            me.children = mergeChildren(me.children, thead(ctx.data.head));
+            mergeToChildren(me, thead(ctx.data.head));
 
         if (ctx.data.body)
-            me.children = mergeChildren(me.children, tbody(ctx.data.body));
-
-        if (ctx.data.responsive) {
-            wrapMe(me, tableStyles.responsive);
-        }
+            mergeToChildren(me, tbody(ctx.data.body));
     }
 });
 

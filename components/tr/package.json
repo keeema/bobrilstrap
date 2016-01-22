@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-tr",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Table row",
   "typescript": {
     "main": "index.ts"
@@ -15,7 +15,7 @@
     "bobrilstrap-context": "*",
     "bobrilstrap-th": "*",
     "bobrilstrap-td": "*",
-    "bobrilstrap-helpers": "*"
+    "bobrilstrap-bobril-helpers": "*"
   },
   "devDependencies": {
   }

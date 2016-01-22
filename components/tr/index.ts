@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { mergeChildren } from 'bobrilstrap-helpers';
+import { mergeToChildren } from 'bobrilstrap-bobril-helpers';
 import elem, { IBaseData } from 'bobrilstrap-element';
 import Context, { contextStyles } from 'bobrilstrap-context';
 import th, { IData as IColumnData } from 'bobrilstrap-th';
@@ -22,9 +22,9 @@ export let create = b.createDerivedComponent<IData>(elem, {
             b.style(me, contextStyles[ctx.data.context.toString()]);
 
         if (ctx.data.columns) {
-           me.children = mergeChildren(me.children, ctx.data.columns.map(column => td(column)));
+            mergeToChildren(me, ctx.data.columns.map(column => td(column)));
         } else if (ctx.data.headers) {
-            me.children = mergeChildren(me.children, ctx.data.headers.map(header => th(header)));
+            mergeToChildren(me, ctx.data.headers.map(header => th(header)));
         }
     }
 });

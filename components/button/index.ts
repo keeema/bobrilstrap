@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from 'bobrilstrap-element';
 import Size from 'bobrilstrap-size';
-import { mergeChildren } from 'bobrilstrap-helpers';
+import { mergeToChildren } from 'bobrilstrap-bobril-helpers';
 
 export interface IData extends IBaseData {
     active?: boolean;
@@ -71,7 +71,7 @@ export let create = b.createDerivedComponent<IData>(elem, {
             if (ctx.data.tag === Tag.input) {
                 me.attrs['value'] = ctx.data.title;
             } else {
-                me.children = mergeChildren(me.children, ctx.data.title);
+                mergeToChildren(me, ctx.data.title);
             }
         }
         

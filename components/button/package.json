@@ -1,6 +1,6 @@
 {
     "name": "bobrilstrap-button",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Button component",
     "typescript": {
         "main": "index.ts"
@@ -14,7 +14,7 @@
         "bobril": "*",
         "bobrilstrap-element": "*",
         "bobrilstrap-size": "*",
-        "bobrilstrap-helpers": "*"
+        "bobrilstrap-bobril-helpers": "*"
     },
     "devDependencies": {
         "bobrilstrap-core": "*",

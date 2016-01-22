@@ -1,7 +1,7 @@
 {
-  "name": "bobrilstrap-table",
-  "version": "0.0.5",
-  "description": "Table component",
+  "name": "bobrilstrap-responsive-table",
+  "version": "0.0.1",
+  "description": "Responsive table component",
   "typescript": {
     "main": "index.ts"
   },
@@ -13,9 +13,7 @@
   "dependencies": {
     "bobril": "*",
     "bobrilstrap-element": "*",
-    "bobrilstrap-bobril-helpers": "*",
-    "bobrilstrap-tbody": "*",
-    "bobrilstrap-thead": "*"
+    "bobrilstrap-table": "*"
   },
   "devDependencies": {
     "bobrilstrap-core": "*",

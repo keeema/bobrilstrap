@@ -1,7 +1,7 @@
 {
-  "name": "bobrilstrap-helpers",
-  "version": "0.0.2",
-  "description": "Bobrilstrap helpers",
+  "name": "bobrilstrap-bobril-helpers",
+  "version": "0.0.3",
+  "description": "Bobrilstrap bobril helpers",
   "typescript": {
     "main": "index.ts"
   },

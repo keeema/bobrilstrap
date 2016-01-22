@@ -14,7 +14,6 @@ b.init(() => [
         table({ head: getPeopleHeader(), body: getPeopleBody(), bordered: true }),
         table({ head: getPeopleHeader(), body: getPeopleBody(), hover: true }),
         table({ head: getPeopleHeader(), body: getPeopleBody(), condensed: true }),
-        table({ head: getPeopleHeader(), body: getPeopleBody(), responsive: true }),
 
         table({ head: getContextHeader(), body: getContextBodyByRows() }),
         table({ head: getContextHeader(), body: getContextBodyByColumns() })

@@ -6,6 +6,7 @@ import inputCheckbox, { IData as IInputCheckBoxData} from 'bobrilstrap-input-che
 export interface IData extends IInputCheckBoxData {
     title?: string;
     labelData?: ILabelData;
+    inline?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -14,6 +15,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export let checkboxStyles = {
     checkbox: b.styleDef('checkbox'),
+    checkboxInline: b.styleDef('checkbox-inline'),
     disabled: b.styleDef('disabled')
 };
 
@@ -25,8 +27,12 @@ export default b.createDerivedComponent<IData>(elem, {
         let checkbox = inputCheckbox(ctx.data);
         let lbl = label(ctx.data.labelData || {}, [checkbox, ctx.data.title]);
 
-        if (ctx.data.disabled)
+        if (ctx.data.inline) {
+            me.tag = undefined;
+            b.style(lbl, checkboxStyles.checkboxInline);
+        } else if (ctx.data.disabled) {
             b.style(me, checkboxStyles.disabled);
+        }
 
         me.children = lbl;
     }

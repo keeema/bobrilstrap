@@ -9,10 +9,6 @@ interface ICtx extends b.IBobrilCtx {
     data: IData;
 }
 
-export let labelStyles = {
-    checkboxInline: b.styleDef('checkbox-inline'),
-};
-
 export default b.createDerivedComponent<IData>(elem, {
     id: 'bobrilstrap-label',
     render(ctx: ICtx, me: b.IBobrilNode) {

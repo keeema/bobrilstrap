@@ -13,7 +13,9 @@ b.init(() => {
         core({}),
         container({}, [
             checkbox({ value, title, onChange }),
-            checkbox({ value, title, onChange, disabled: true })
+            checkbox({ value, title, onChange, disabled: true }),
+            checkbox({ value, title, onChange, inline: true }),
+            checkbox({ value, title, onChange, inline: true })
         ])
     ];
 });

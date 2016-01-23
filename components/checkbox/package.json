@@ -1,7 +1,7 @@
 {
-  "name": "bobrilstrap-label",
-  "version": "0.0.2",
-  "description": "Label component",
+  "name": "bobrilstrap-checkbox",
+  "version": "0.0.1",
+  "description": "Checkbox component",
   "typescript": {
     "main": "index.ts"
   },
@@ -12,7 +12,9 @@
   "license": "MIT",
   "dependencies": {
     "bobril": "*",
-    "bobrilstrap-element": "*"
+    "bobrilstrap-element": "*",
+    "bobrilstrap-label": "*",
+    "bobrilstrap-input-checkbox": "*"
   },
   "devDependencies": {
     "bobrilstrap-core": "*",

@@ -2,6 +2,7 @@ import * as b from 'bobril';
 
 export interface IBaseData {
     key?: string;
+    id?: string;
     children?: b.IBobrilChildren;
     styles?: b.IBobrilStyles;
     attrs?: { [key: string]: any };
@@ -24,7 +25,11 @@ export let create = b.createVirtualComponent<IData>({
         me.tag = ctx.data.tag || 'div';
         me.children = ctx.data.children;
         me.attrs = ctx.data.attrs || {};
+
         b.style(me, ctx.data.styles);
+
+        if (ctx.data.id)
+            me.attrs.id = ctx.data.id;
 
         if (ctx.data.key)
             b.withKey(me, ctx.data.key);

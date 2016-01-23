@@ -10,7 +10,7 @@ b.init(() => {
     return [
         core({}),
         container({}, [
-            checkbox({ value, onChange })
+            checkbox({ value, onChange, id: 'my-checkbox' })
         ])
     ];
 });

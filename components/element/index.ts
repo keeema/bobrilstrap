@@ -7,6 +7,7 @@ export interface IBaseData {
     attrs?: { [key: string]: any };
 
     onClick?: (event: b.IBobrilMouseEvent) => boolean | void;
+    onChange?: (value) => void;
 }
 
 export interface IData extends IBaseData {
@@ -22,7 +23,7 @@ export let create = b.createVirtualComponent<IData>({
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = ctx.data.tag || 'div';
         me.children = ctx.data.children;
-        me.attrs = ctx.data.attrs;
+        me.attrs = ctx.data.attrs || {};
         b.style(me, ctx.data.styles);
 
         if (ctx.data.key)
@@ -33,6 +34,10 @@ export let create = b.createVirtualComponent<IData>({
             return false;
 
         return !!ctx.data.onClick(event);
+    },
+    onChange(ctx: ICtx, value: any): void {
+        if (ctx.data.onChange)
+            !!ctx.data.onChange(value);
     }
 });
 

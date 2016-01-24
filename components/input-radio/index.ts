@@ -2,14 +2,14 @@ import * as b from 'bobril';
 import elem, { IBaseData } from 'bobrilstrap-element';
 
 export interface IData extends IBaseData {
-    value: any;
-    checkedValue?: any;
+    value: string;
+    checkedValue?: string;
     checked?: boolean;
     name: string;
     disabled?: boolean;
     readonly?: boolean;
-    onChecked?: (value: any) => void;
-    onUnChecked?: (value: any) => void;
+    onChecked?: (value: string) => void;
+    onUnChecked?: (value: string) => void;
     onChange?: (checked: boolean) => void;
 }
 
@@ -32,7 +32,7 @@ export let create = b.createDerivedComponent<IData>(elem, {
         if (ctx.data.readonly)
             me.attrs['readonly'] = 'readonly';
     },
-    onChange(ctx: ICtx, value: any): void {
+    onChange(ctx: ICtx, value: boolean): void {
         if (ctx.data.onChange)
             ctx.data.onChange(value);
 

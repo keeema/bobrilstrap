@@ -3,7 +3,7 @@ import core from 'bobrilstrap-core';
 import elem from 'bobrilstrap-element';
 import row from 'bobrilstrap-row';
 import container from 'bobrilstrap-container';
-import select from './index';
+import select, { Size } from './index';
 
 let value = 'second';
 let valueMultiple = ['second'];
@@ -33,6 +33,7 @@ b.init(() => {
                     value,
                     onChange,
                     disabled: true,
+                    size: Size.sm,
                     options: [
                         { value: 'first', title: 'first value' },
                         { value: 'second', title: 'second value' },
@@ -46,7 +47,7 @@ b.init(() => {
                     value: valueMultiple,
                     onChange: onChangeMultiple,
                     multiple: true,
-                    size: 3,
+                    rows: 3,
                     options: [
                         { value: 'first', title: 'first value' },
                         { value: 'second', title: 'second value' },

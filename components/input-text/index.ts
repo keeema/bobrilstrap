@@ -22,6 +22,7 @@ export class Type {
 export interface IData extends IBaseData {
     value: string;
     placeholder?: string;
+    size?: Size;
     type?: Type;
     disabled?: boolean;
     readonly?: boolean;
@@ -33,8 +34,20 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export let inputTextStyles = {
-    formControl: b.styleDef('form-control')
+    formControl: b.styleDef('form-control'),
+    inputLg: b.styleDef('input-lg'),
+    inputSm: b.styleDef('input-sm')
 };
+
+export class Size {
+    static lg: string = 'lg';
+    static sm: string = 'sm';
+}
+
+export let inputTextSizeStyles = {
+    [Size.lg]: b.styleDef('input-lg'),
+    [Size.sm]: b.styleDef('input-sm')
+}
 
 export let create = b.createDerivedComponent<IData>(elem, {
     id: 'bobrilstrap-input-text',
@@ -43,7 +56,8 @@ export let create = b.createDerivedComponent<IData>(elem, {
         me.attrs['type'] = ctx.data.type || 'text';
         me.attrs.value = ctx.data.value;
         b.style(me, inputTextStyles.formControl);
-        
+        b.style(me, !!ctx.data.size && inputTextSizeStyles[ctx.data.size.toString()]);
+
         if (ctx.data.placeholder)
             me.attrs['placeholder'] = ctx.data.placeholder;
 

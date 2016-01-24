@@ -3,8 +3,8 @@ import core from 'bobrilstrap-core';
 import elem from 'bobrilstrap-element';
 import row from 'bobrilstrap-row';
 import container from 'bobrilstrap-container';
-import inputText, { Type } from './index';
-import col, { colStyles, Size } from 'bobrilstrap-col';
+import inputText, { Type, Size as TextSize } from './index';
+import col, { colStyles, Size as ColSize} from 'bobrilstrap-col';
 
 let value = '';
 let placeholder = 'Write a value...';
@@ -15,8 +15,14 @@ b.init(() => {
     return [
         core({}),
         container({}, [
-            row({}, col({ size: Size.md, count: 6 }, [
-                inputText({ value: value.toString(), id: 'my-text1', onChange, placeholder })
+            row({}, col({ size: ColSize.md, count: 6 }, [
+                inputText({ value: value.toString(), id: 'my-text1', onChange, placeholder, size: TextSize.lg })
+            ])),
+            row({}, col({ size: ColSize.md, count: 6 }, [
+                inputText({ value: value.toString(), id: 'my-text2', onChange, placeholder })
+            ])),
+            row({}, col({ size: ColSize.md, count: 6 }, [
+                inputText({ value: value.toString(), id: 'my-text3', onChange, placeholder, size: TextSize.sm })
             ])),
             row({}, elem({}, value.toString())),
         ])

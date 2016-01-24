@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-label",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Label component",
   "typescript": {
     "main": "index.ts"

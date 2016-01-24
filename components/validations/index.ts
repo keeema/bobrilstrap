@@ -7,16 +7,16 @@ export let validationStyles = {
     hasFeedback: b.styleDef('has-feedback')
 };
 
-export let validationStateStyle = {
-    [ValidationState.success]: validationStyles.hasSuccess,
-    [ValidationState.warning]: validationStyles.hasWarning,
-    [ValidationState.error]: validationStyles.hasErrors
-};
-
 export class ValidationState {
     static success: string = 'success';
     static warning: string = 'warning';
     static error: string = 'error';
 }
+
+export let validationStateStyle = {
+    [ValidationState.success]: validationStyles.hasSuccess,
+    [ValidationState.warning]: validationStyles.hasWarning,
+    [ValidationState.error]: validationStyles.hasErrors
+};
 
 export default ValidationState;

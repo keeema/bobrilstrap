@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-input-checkbox",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Checkbox input component",
   "typescript": {
     "main": "index.ts"
@@ -15,6 +15,6 @@
   "devDependencies": {
     "bobrilstrap-container": "*",
     "bobrilstrap-core": "*",
-    "bobrilstrap-row": "0.0.4"
+    "bobrilstrap-row": "*"
   }
 }

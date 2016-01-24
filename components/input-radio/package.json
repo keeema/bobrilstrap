@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-input-radio",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Radio input component",
   "typescript": {
     "main": "index.ts"
@@ -15,6 +15,6 @@
   "devDependencies": {
     "bobrilstrap-container": "*",
     "bobrilstrap-core": "*",
-    "bobrilstrap-row": "0.0.4"
+    "bobrilstrap-row": "*"
   }
 }

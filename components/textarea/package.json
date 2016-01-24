@@ -1,0 +1,21 @@
+{
+  "name": "bobrilstrap-textarea",
+  "version": "0.0.1",
+  "description": "Textarea component",
+  "typescript": {
+    "main": "index.ts"
+  },
+  "bobril": {},
+  "author": "Tomáš Růt",
+  "license": "MIT",
+  "dependencies": {
+    "bobril": "*",
+    "bobrilstrap-element": "*"
+  },
+  "devDependencies": {
+    "bobrilstrap-col": "*",
+    "bobrilstrap-container": "*",
+    "bobrilstrap-core": "*",
+    "bobrilstrap-row": "*"
+  }
+}

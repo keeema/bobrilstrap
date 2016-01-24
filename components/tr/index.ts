@@ -18,8 +18,7 @@ export let create = b.createDerivedComponent<IData>(elem, {
     id: 'bobrilstrap-tr',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'tr';
-        if (ctx.data.context)
-            b.style(me, contextStyles[ctx.data.context.toString()]);
+        b.style(me, !!ctx.data.context && contextStyles[ctx.data.context.toString()]);
 
         if (ctx.data.columns) {
             mergeToChildren(me, ctx.data.columns.map(column => td(column)));

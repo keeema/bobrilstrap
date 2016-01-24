@@ -13,8 +13,7 @@ export let create = b.createDerivedComponent<IData>(elem, {
     id: 'bobrilstrap-td',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'td';
-        if (ctx.data.context)
-            b.style(me, contextStyles[ctx.data.context.toString()]);
+        b.style(me, !!ctx.data.context && contextStyles[ctx.data.context.toString()]);
     }
 });
 

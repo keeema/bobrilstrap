@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-td",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Table column",
   "typescript": {
     "main": "index.ts"

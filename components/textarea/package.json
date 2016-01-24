@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-textarea",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Textarea component",
   "typescript": {
     "main": "index.ts"

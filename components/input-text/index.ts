@@ -21,12 +21,12 @@ export class Type {
 
 export interface IData extends IBaseData {
     value: string;
+    placeholder?: string;
     type?: Type;
     disabled?: boolean;
     readonly?: boolean;
     onChange?: (value: string) => void;
 }
-
 
 interface ICtx extends b.IBobrilCtx {
     data: IData;
@@ -34,7 +34,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export let inputTextStyles = {
     formControl: b.styleDef('form-control')
-}
+};
 
 export let create = b.createDerivedComponent<IData>(elem, {
     id: 'bobrilstrap-input-text',
@@ -43,6 +43,9 @@ export let create = b.createDerivedComponent<IData>(elem, {
         me.attrs['type'] = ctx.data.type || 'text';
         me.attrs.value = ctx.data.value;
         b.style(me, inputTextStyles.formControl);
+        
+        if (ctx.data.placeholder)
+            me.attrs['placeholder'] = ctx.data.placeholder;
 
         if (ctx.data.disabled)
             me.attrs['disabled'] = 'disabled';

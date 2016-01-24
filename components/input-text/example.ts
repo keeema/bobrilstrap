@@ -7,6 +7,7 @@ import inputText, { Type } from './index';
 import col, { colStyles, Size } from 'bobrilstrap-col';
 
 let value = '';
+let placeholder = 'Write a value...';
 let onChange = (newVal: string) => { value = newVal; b.invalidate(); };
 
 b.init(() => {
@@ -15,7 +16,7 @@ b.init(() => {
         core({}),
         container({}, [
             row({}, col({ size: Size.md, count: 6 }, [
-                inputText({ value: value.toString(), id: 'my-text1', onChange })
+                inputText({ value: value.toString(), id: 'my-text1', onChange, placeholder })
             ])),
             row({}, elem({}, value.toString())),
         ])

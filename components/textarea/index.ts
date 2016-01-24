@@ -3,13 +3,13 @@ import elem, { IBaseData } from 'bobrilstrap-element';
 
 export interface IData extends IBaseData {
     value: string;
+    placeholder?: string;
     rows?: number;
     fixedSize?: boolean;
     disabled?: boolean;
     readonly?: boolean;
     onChange?: (value: string) => void;
 }
-
 
 interface ICtx extends b.IBobrilCtx {
     data: IData;
@@ -31,7 +31,10 @@ export let create = b.createDerivedComponent<IData>(elem, {
 
         if (ctx.data.rows)
             me.attrs['rows'] = ctx.data.rows.toString();
-            
+
+        if (ctx.data.placeholder)
+            me.attrs['placeholder'] = ctx.data.placeholder.toString();
+
         if (ctx.data.disabled)
             me.attrs['disabled'] = 'disabled';
 

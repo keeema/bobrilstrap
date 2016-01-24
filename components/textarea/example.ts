@@ -7,6 +7,7 @@ import textarea from './index';
 import col, { colStyles, Size } from 'bobrilstrap-col';
 
 let value = '';
+let placeholder = 'Write a text...';
 let onChange = (newVal: string) => { value = newVal; b.invalidate(); };
 
 b.init(() => {
@@ -15,11 +16,11 @@ b.init(() => {
         core({}),
         container({}, [
             row({}, col({ size: Size.md, count: 6 }, [
-                textarea({ value: value, id: 'my-text1', onChange, rows: 5 })
+                textarea({ value: value, id: 'my-text1', onChange, rows: 5, placeholder })
             ])),
             row({}, elem({}, value.toString())),
-              row({}, col({ size: Size.md, count: 6 }, [
-                textarea({ value: value, id: 'my-text1', onChange, rows: 5, fixedSize: true })
+            row({}, col({ size: Size.md, count: 6 }, [
+                textarea({ value: value, id: 'my-text2', onChange, rows: 5, placeholder, fixedSize: true })
             ])),
             row({}, elem({}, value.toString()))
         ])

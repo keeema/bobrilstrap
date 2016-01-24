@@ -1,21 +1,26 @@
 import * as b from 'bobril';
 import core from 'bobrilstrap-core';
+import elem from 'bobrilstrap-element';
+import row from 'bobrilstrap-row';
 import container from 'bobrilstrap-container';
 import checkbox from './index';
 
-let value = true;
+let checked = true;
 let title = 'Test checkbox';
-let onChange = (newVal: boolean) => { value = newVal; b.invalidate(); };
+let onChange = (newVal: boolean) => { checked = newVal; b.invalidate(); };
 
 b.init(() => {
-    console.log(value);
+    console.log(checked);
     return [
         core({}),
         container({}, [
-            checkbox({ value, title, onChange }),
-            checkbox({ value, title, onChange, disabled: true }),
-            checkbox({ value, title, onChange, inline: true }),
-            checkbox({ value, title, onChange, inline: true })
+            row({}, [
+                checkbox({ checked, title, onChange }),
+                checkbox({ checked, title, onChange, disabled: true }),
+                checkbox({ checked, title, onChange, inline: true }),
+                checkbox({ checked, title, onChange, inline: true })
+            ]),
+            row({}, elem({}, checked.toString()))
         ])
     ];
 });

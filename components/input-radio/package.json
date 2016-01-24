@@ -1,7 +1,7 @@
 {
-  "name": "bobrilstrap-input-checkbox",
-  "version": "0.0.7",
-  "description": "Checkbox input component",
+  "name": "bobrilstrap-input-radio",
+  "version": "0.0.1",
+  "description": "Radio input component",
   "typescript": {
     "main": "index.ts"
   },

@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-input-text",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Text input component",
   "typescript": {
     "main": "index.ts"

@@ -1,6 +1,6 @@
 {
     "name": "bobrilstrap-button",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Button component",
     "typescript": {
         "main": "index.ts"

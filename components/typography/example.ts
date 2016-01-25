@@ -1,11 +1,12 @@
 import * as b from 'bobril';
-import core from 'bobrilstrap-core';
+import * as bsCore from 'bobrilstrap-core';
 import container from 'bobrilstrap-container';
 import elem from 'bobrilstrap-element';
 import typography from './index';
 
+bsCore.init();
+
 b.init(() => [
-    core({}),
     container({}, [
         elem({ tag: 'h1' }, 'h1. Bootstrap heading'),
         elem({ tag: 'h2' }, 'h2. Bootstrap heading'),

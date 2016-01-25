@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import core from 'bobrilstrap-core';
+import * as bsCore from 'bobrilstrap-core';
 import elem from 'bobrilstrap-element';
 import row from 'bobrilstrap-row';
 import container from 'bobrilstrap-container';
@@ -10,9 +10,10 @@ import label from 'bobrilstrap-label';
 import ValidationState from 'bobrilstrap-validations';
 import form from './index';
 
+bsCore.init();
+
 b.init(() => {
     return [
-        core({}),
         container({}, [
             row({}, col({ size: ColSize.md, count: 6 }, [
                 form({}, [

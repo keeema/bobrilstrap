@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-container",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Container layout",
   "typescript": {
     "main": "index.ts"

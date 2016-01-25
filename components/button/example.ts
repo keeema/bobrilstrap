@@ -1,11 +1,12 @@
 import * as b from 'bobril';
-import core from 'bobrilstrap-core';
+import * as bsCore from 'bobrilstrap-core';
 import container from 'bobrilstrap-container';
 import row from 'bobrilstrap-row';
 import button, { Size, Option, Tag, Type } from './index';
 
+bsCore.init();
+
 b.init(() => [
-    core({}),
     container({}, [
         row({}, [
             button({ tag: Tag.a, option: Option.default, onClick: () => alert('Clicked'), title: 'Link' }),

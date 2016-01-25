@@ -1,13 +1,14 @@
 import * as b from 'bobril';
-import core from 'bobrilstrap-core';
+import * as bsCore from 'bobrilstrap-core';
 import container from 'bobrilstrap-container';
 import { IData as IHeadData } from 'bobrilstrap-thead';
 import { IData as IBodyData } from 'bobrilstrap-tbody';
 import Context from 'bobrilstrap-context';
 import table from './index';
 
+bsCore.init();
+
 b.init(() => [
-    core({}),
     container({}, [
         table({ head: getPeopleHeader(), body: getPeopleBody() }),
         table({ head: getPeopleHeader(), body: getPeopleBody(), striped: true }),

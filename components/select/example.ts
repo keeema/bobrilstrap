@@ -1,9 +1,11 @@
 import * as b from 'bobril';
-import core from 'bobrilstrap-core';
+import * as bsCore from 'bobrilstrap-core';
 import elem from 'bobrilstrap-element';
 import row from 'bobrilstrap-row';
 import container from 'bobrilstrap-container';
 import select, { Size } from './index';
+
+bsCore.init();
 
 let value = 'second';
 let valueMultiple = ['second'];
@@ -14,7 +16,6 @@ let onChangeMultiple = (newVal: string[]) => { valueMultiple = newVal; b.invalid
 b.init(() => {
     console.log(value);
     return [
-        core({}),
         container({}, [
             row({}, [
                 select({

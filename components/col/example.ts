@@ -1,12 +1,14 @@
 import * as b from 'bobril';
-import core from 'bobrilstrap-core';
+import * as bsCore from 'bobrilstrap-core';
 import container from 'bobrilstrap-container';
 import row from 'bobrilstrap-row';
 import col, { Size } from './index';
 
+bsCore.init();
+
 let style = b.styleDef({ backgroundColor: '#000', color: '#fff' });
+
 b.init(() => [
-    core({}),
     container({}, [
         // Simple definition
         row({}, [

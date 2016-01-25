@@ -1,16 +1,17 @@
 import * as b from 'bobril';
 import elem from 'bobrilstrap-element';
-import core from 'bobrilstrap-core';
+import * as bsCore from 'bobrilstrap-core';
 import row from 'bobrilstrap-row';
 import container from 'bobrilstrap-container';
 import checkbox from './index';
+
+bsCore.init();
 
 let checkedValue = 'first';
 let onChecked = (value: string) => { checkedValue = value; b.invalidate(); };
 
 b.init(() => {
     return [
-        core({}),
         container({}, [
             row({}, [
                 checkbox({ value: 'first', name: 'my-group1', checkedValue, onChecked, id: 'my-radio1' }),

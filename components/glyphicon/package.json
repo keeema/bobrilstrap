@@ -1,0 +1,20 @@
+{
+  "name": "bobrilstrap-glyphicon",
+  "version": "0.0.1",
+  "description": "Glyphicon component",
+  "typescript": {
+    "main": "index.ts"
+  },
+  "bobril": {},
+  "author": "Tomáš Růt",
+  "license": "MIT",
+  "dependencies": {
+    "bobril": "*",
+    "bobrilstrap-element": "*"
+  },
+  "devDependencies": {
+    "bobrilstrap-container": "*",
+    "bobrilstrap-core": "*",
+    "bobrilstrap-row": "*"
+  }
+}

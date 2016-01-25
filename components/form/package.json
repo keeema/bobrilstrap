@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap-form",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Form component",
   "typescript": {
     "main": "index.ts"
@@ -19,6 +19,7 @@
     "bobrilstrap-row": "*",
     "bobrilstrap-form-group": "*",
     "bobrilstrap-label": "*",
-    "bobrilstrap-input-text": "*"
+    "bobrilstrap-input-text": "*",
+    "bobrilstrap-glyphicon": "*"
   }
 }

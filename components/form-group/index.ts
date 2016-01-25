@@ -31,7 +31,7 @@ export let formGroupSizeStyles = {
 export let create = b.createDerivedComponent<IData>(elem, {
     id: 'bobrilstrap-form-group',
     render(ctx: ICtx, me: b.IBobrilNode) {
-        me.tag = 'form-group';
+        me.tag = 'div';
         b.style(me, formGroupStyles.formGroup);
         b.style(me, !!ctx.data.hasFeedbeck && validationStyles.hasFeedback);
         b.style(me, !!ctx.data.validationState && validationStateStyle[ctx.data.validationState.toString()]);

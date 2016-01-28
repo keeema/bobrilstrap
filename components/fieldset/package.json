@@ -1,0 +1,18 @@
+{
+  "name": "bobrilstrap-fieldset",
+  "version": "0.0.1",
+  "description": "Fieldset component",
+  "typescript": {
+    "main": "index.ts"
+  },
+  "bobril": {    
+  },
+  "author": "Tomáš Růt",
+  "license": "MIT",
+  "dependencies": {
+    "bobril": "*",
+    "bobrilstrap-element": "*"
+  },
+  "devDependencies": {
+  }
+}

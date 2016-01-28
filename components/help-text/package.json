@@ -1,0 +1,22 @@
+{
+  "name": "bobrilstrap-help-text",
+  "version": "0.0.1",
+  "description": "Help-text component",
+  "typescript": {
+    "main": "index.ts"
+  },
+  "bobril": {    
+  },
+  "author": "Tomáš Růt",
+  "license": "MIT",
+  "dependencies": {
+    "bobril": "*",
+    "bobrilstrap-element": "*"
+  },
+  "devDependencies": {
+      "bobrilstrap-core": "*",
+      "bobrilstrap-container": "*",
+      "bobrilstrap-label": "*",
+      "bobrilstrap-input-text": "*"
+  }
+}

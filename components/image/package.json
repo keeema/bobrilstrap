@@ -1,7 +1,7 @@
 {
-  "name": "bobrilstrap-span",
-  "version": "0.0.2",
-  "description": "Span component",
+  "name": "bobrilstrap-image",
+  "version": "0.0.1",
+  "description": "Image component",
   "typescript": {
     "main": "index.ts"
   },

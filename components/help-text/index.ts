@@ -11,7 +11,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const helpTextStyle = b.styleDef('help-block');
 
-export let create = b.createDerivedComponent<IBaseData>(elem, {
+export let create = b.createDerivedComponent<IData>(elem, {
     id: 'bobrilstrap-help-text',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'span';

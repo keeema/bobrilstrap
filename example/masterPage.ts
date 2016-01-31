@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { container, element } from '../index';
+import { container, element, row, col, Size } from '../index';
 import { styles } from './bsexample/css';
 
 export default b.createVirtualComponent({

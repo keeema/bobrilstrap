@@ -1,10 +1,11 @@
 import * as b from 'bobril';
-import { container, element } from '../../index';
-import {styles} from '../bsexample/css';
+import { element, paragraph as p } from '../../index';
+import { styles } from '../bsexample/css';
 
-interface IData {
+export interface IData {
     header: string;
-    headerContent: string;
+    lead: string;
+    id: string;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -12,16 +13,14 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export default b.createVirtualComponent<IData>({
-    id: 'example-header',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    id: 'bs-docs-section',
+    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+        me.tag = 'div';
+        b.style(me, styles.bsDocsSection);
         me.children = [
-            element(
-                { styles: styles.bsDocsHeader, attrs: { id: 'content', tabindex: -1 } },
-                container({}, [
-                    element({ tag: 'h1' }, ctx.data.header),
-                    element({ tag: 'p' }, ctx.data.headerContent)
-                ])
-            )
+            element({ tag: 'h1', attrs: { id: ctx.data.id }, styles: styles.pageHeader }, ctx.data.header),
+            p({ styles: styles.lead }, ctx.data.lead),
+            ctx.data.children
         ];
     }
-})
+});

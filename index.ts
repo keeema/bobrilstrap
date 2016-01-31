@@ -11,6 +11,7 @@ export let container = containerComponent.default;
 import * as elementComponent  from './components/element';
 export * from './components/element';
 export let element = elementComponent.default;
+export let e = elementComponent.default;
 
 import * as rowComponent  from './components/row';
 export * from './components/row';
@@ -30,6 +31,10 @@ import * as checkboxComponent from './components/checkbox';
 export * from './components/checkbox';
 export let checkbox = checkboxComponent.default;
 
+import * as codeComponent from './components/code';
+export * from './components/code';
+export let code = codeComponent.default;
+
 import * as contextComponent from './components/context';
 export * from './components/context';
 export let context = contextComponent.default;
@@ -37,6 +42,10 @@ export let context = contextComponent.default;
 import * as fieldsetComponent from './components/fieldset';
 export * from './components/fieldset';
 export let fieldset = fieldsetComponent.default;
+
+import * as figureComponent from './components/figure';
+export * from './components/figure';
+export let figure = figureComponent.default;
 
 import * as formComponent from './components/form';
 export * from './components/form';
@@ -86,6 +95,14 @@ import * as labelComponent from './components/label';
 export * from './components/label';
 export let label = labelComponent.default;
 
+import * as liComponent from './components/li';
+export * from './components/li';
+export let li = liComponent.default;
+
+import * as olComponent from './components/ol';
+export * from './components/ol';
+export let ol = olComponent.default;
+
 import * as optionComponent from './components/option';
 export * from './components/option';
 export let option = optionComponent.default;
@@ -93,6 +110,11 @@ export let option = optionComponent.default;
 import * as paragraphComponent from './components/paragraph';
 export * from './components/paragraph';
 export let paragraph = paragraphComponent.default;
+export let p = paragraphComponent.default;
+
+import * as preComponent from './components/pre';
+export * from './components/pre';
+export let pre = preComponent.default;
 
 import * as radioComponent from './components/radio';
 export * from './components/radio';
@@ -142,12 +164,14 @@ import * as typographyComponent from './components/typography';
 export * from './components/typography';
 export let typography = typographyComponent.default;
 
+import * as ulComponent from './components/ul';
+export * from './components/ul';
+export let ul = ulComponent.default;
+
 import * as validationsComponent from './components/validations';
 export * from './components/validations';
 export let validations = validationsComponent.default;
 
 export function init(): void {
-    b.asset('bootstrap/css/bootstrap.css');
+    b.asset('./bootstrap/css/bootstrap.css');
 }
-
-

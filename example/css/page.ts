@@ -1,12 +1,16 @@
 import * as b from 'bobril';
-import { container, element } from '../../index';
 import { styles } from '../bsexample/css';
 import header from '../common/header';
+import docsContainer from '../common/docsContainer';
+import overview from './overview';
 
 export default b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
-            header(texts)
+            header(texts),
+            docsContainer({}, [
+                overview()
+            ])
         ];
     }
 })

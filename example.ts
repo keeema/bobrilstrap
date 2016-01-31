@@ -1,5 +1,6 @@
 import * as b from 'bobril';
 import { init as bobrilstrapInit } from './index';
+import { init as bsExampleInit } from './example/bsExample/css';
 import masterPage from './example/masterPage';
 import bobrilstrapPage from './example/bobrilstrap/page';
 import cssPage from './example/css/page';
@@ -16,8 +17,3 @@ b.routes(b.route({ handler: masterPage }, [
     b.route({ url: 'javascript', name: 'javascript', handler: javaScriptPage }),
     b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })
 ]));
-
-export function bsExampleInit() {
-    b.asset('example/bsexample/bootstrap-theme.min.css');
-    b.asset('example/bsexample/docs.min.css');
-}

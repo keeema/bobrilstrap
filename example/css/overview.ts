@@ -59,7 +59,7 @@ function containers(): b.IBobrilChildren {
     return [
         e({ tag: 'h2', attrs: { id: 'overview-containers' } }, 'Containers'),
         p({}, [
-            `Bootstrap requires a containing e to wrap site contents and house our grid system. You may choose one of two 
+            `Bootstrap requires a containing element to wrap site contents and house our grid system. You may choose one of two 
             containers to use in your projects. Note that, due to `,
             code({}, 'padding'),
             'and more, neither container is nestable.'

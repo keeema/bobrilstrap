@@ -1,5 +1,6 @@
 import * as b from 'bobril';
-import { e, p, ul, li, code, figure, pre, span } from '../../index';
+import { e, p, ul, li, code, figure, span } from '../../index';
+import pre, { langJs } from '../prettify/pre';
 import { styles } from '../bsexample/css';
 import section from '../common/section';
 
@@ -65,17 +66,17 @@ function containers(): b.IBobrilChildren {
             'and more, neither container is nestable.'
         ]),
         p({}, ['Use ', code({}, 'container({}, ...)'), ' for a responsive fixed width container.']),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: styles.languageJs }, [
-            'container({}, [', e({ tag: 'br' }),
-            '   ...', e({ tag: 'br' }),
-            '])', e({ tag: 'br' }),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            span({}, 'container({}, ['), e({ tag: 'br' }),
+            span({}, '   ...'), e({ tag: 'br' }),
+            span({}, '])')
         ]))),
         p({}, [
             'Use ',
             code({}, 'container({ fluid: true }, ...)'),
             ' for a full width container, spanning the entire width of your viewport.'
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: styles.languageJs }, [
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
             'container({ fluid: true }, [', e({ tag: 'br' }),
             '   ...', e({ tag: 'br' }),
             '])', e({ tag: 'br' }),

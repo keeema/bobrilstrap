@@ -56,10 +56,13 @@
         "example/common/header.ts",
         "example/common/section.ts",
         "example/components/page.ts",
+        "example/css/grid.ts",
         "example/css/overview.ts",
         "example/css/page.ts",
         "example/javaScript/page.ts",
         "example/masterPage.ts",
+        "example/prettify/pre.ts",
+        "example/prettify/prettify.ts",
         "index.ts"
     ]
 }

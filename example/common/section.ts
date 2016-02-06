@@ -4,7 +4,7 @@ import { styles } from '../bsexample/css';
 
 export interface IData {
     header: string;
-    lead: string;
+    lead: b.IBobrilChildren;
     id: string;
 }
 

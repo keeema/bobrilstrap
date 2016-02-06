@@ -1,3 +1,4 @@
+import prettify from './prettify/prettify';
 import * as b from 'bobril';
 import { container, element, row, col, Size } from '../index';
 import { styles } from './bsexample/css';
@@ -8,6 +9,9 @@ export default b.createVirtualComponent({
             getNavigation(),
             ctx.data.activeRouteHandler()
         ];
+    },
+    postUpdateDom() {
+        prettify.prettyPrint();
     }
 })
 

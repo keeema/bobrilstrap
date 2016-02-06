@@ -9,7 +9,6 @@ export const styles = {
     collapsed: b.styleDef('collapsed'),
     highlight: b.styleDef('highlight'),
     lead: b.styleDef('lead'),
-    languageJs: b.styleDef('language-js'),
     nav: b.styleDef('nav'),
     navbar: b.styleDef('navbar'),
     navbarBrand: b.styleDef('navbar-brand'),

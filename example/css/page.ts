@@ -3,13 +3,15 @@ import { styles } from '../bsexample/css';
 import header from '../common/header';
 import docsContainer from '../common/docsContainer';
 import overview from './overview';
+import grid from './grid';
 
 export default b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             header(texts),
             docsContainer({}, [
-                overview()
+                overview(),
+                grid()
             ])
         ];
     }

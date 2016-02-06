@@ -12,6 +12,5 @@
   "license": "MIT",
   "dependencies": {
     "bobril": "*"
-  },
-  "devDependencies": {}
+  }
 }

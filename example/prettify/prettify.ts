@@ -1,5 +1,6 @@
 import * as b from 'bobril';
 
 b.asset('./prettify.js');
-declare function prettyPrint();
-export default { prettyPrint };
+export let prettify = { prettyPrint: <Function>(<any>window).prettyPrint };
+
+export default prettify;

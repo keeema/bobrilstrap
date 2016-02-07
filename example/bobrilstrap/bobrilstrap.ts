@@ -21,7 +21,7 @@ export default b.createVirtualComponent({
                     ]))),
                     p({}, [
                         'To initialize the bobrilstrap framework add following lines to the ',
-                        code({}, 'simpleApp/src/app.ts'), 'file:'
+                        code({}, 'simpleApp/src/app.ts'), ' file:'
                     ]),
                     figure({ styles: styles.highlight }, prettifyPre({}, code({ styles: langJs }, [
                         span({}, `import * as bs from 'bobrilstrap';`), e({ tag: 'br' }),

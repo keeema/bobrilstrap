@@ -1,6 +1,6 @@
 import prettify from './prettify/prettify';
 import * as b from 'bobril';
-import { container, element, row, col, Size } from '../index';
+import { container, element, row, col, Size, a, Target } from '../index';
 import { styles } from './bsexample/css';
 
 export default b.createVirtualComponent({
@@ -21,7 +21,7 @@ function getNavigation(): b.IBobrilNode {
         container({}, [
             element(
                 { styles: styles.navbarHeader },
-                b.link(element({ tag: 'a', styles: styles.navbarBrand }, texts.bobrilstrap), 'bobrilstrap')
+                b.link(a({ styles: styles.navbarBrand }, texts.bobrilstrap), 'bobrilstrap')
             ),
             element({ tag: 'nav', styles: [styles.collapse, styles.navbarCollapse], attrs: { id: 'bs-navbar' } }, [
                 element({ tag: 'ul', styles: [styles.nav, styles.navbarNav] }, [
@@ -31,8 +31,8 @@ function getNavigation(): b.IBobrilNode {
 
                 ]),
                 element({ tag: 'ul', styles: [styles.nav, styles.navbarNav, styles.navbarRight] }, [
-                    element({ tag: 'li' }, element({ tag: 'a', attrs: { href: texts.githubLink, target: '_blank' } }, texts.gitHub)),
-                    element({ tag: 'li' }, element({ tag: 'a', attrs: { href: texts.bootsrapLink, target: '_blank' } }, texts.bootstrap))
+                    element({ tag: 'li' }, a({ href: texts.githubLink, target: Target.blank }, texts.gitHub)),
+                    element({ tag: 'li' }, a({ href: texts.bootsrapLink, target: Target.blank }, texts.bootstrap))
                 ])
             ])
         ])

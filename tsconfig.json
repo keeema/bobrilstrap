@@ -6,6 +6,7 @@
     },
     "compileOnSave": false,
     "files": [
+        "components/a.ts",
         "components/bobrilHelpers.ts",
         "components/button.ts",
         "components/checkbox.ts",
@@ -53,7 +54,7 @@
         "example/bobrilstrap/page.ts",
         "example/bsexample/css.ts",
         "example/common/docsContainer.ts",
-        "example/common/header.ts",
+        "example/common/docsHeader.ts",
         "example/common/section.ts",
         "example/components/page.ts",
         "example/css/grid.ts",

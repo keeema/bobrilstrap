@@ -1,5 +1,9 @@
 import * as b from 'bobril';
 
+import * as aComponent  from './components/a';
+export * from './components/a';
+export let a = aComponent.default;
+
 import * as colComponent  from './components/col';
 export * from './components/col';
 export let col = colComponent.default;

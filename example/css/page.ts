@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { styles } from '../bsexample/css';
-import header from '../common/header';
+import header from '../common/docsHeader';
 import docsContainer from '../common/docsContainer';
 import overview from './overview';
 import grid from './grid';

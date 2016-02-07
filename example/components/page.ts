@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import header from '../common/header';
+import header from '../common/docsHeader';
 
 export default b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { e, p, ul, li, code, figure, span } from '../../index';
+import { e, p, ul, li, code, figure, span, a, Target } from '../../index';
 import pre, { langJs } from '../prettify/pre';
 import { styles } from '../bsexample/css';
 import section from '../common/section';
@@ -47,11 +47,11 @@ function normalizeCss(): b.IBobrilChildren {
         e({ tag: 'h2', attrs: { id: 'overview-normalize' } }, 'Normalize.css'),
         p({}, [
             'For improved cross-browser rendering, we use ',
-            e({ tag: 'a', attrs: { href: 'http://necolas.github.io/normalize.css/', target: '_blank' } }, 'Normalize.css'),
+            a({ href: 'http://necolas.github.io/normalize.css/', target: Target.blank } , 'Normalize.css'),
             ', a project by ',
-            e({ tag: 'a', attrs: { href: 'https://twitter.com/necolas', target: '_blank' } }, 'Nicolas Gallagher'),
+            a({  href: 'https://twitter.com/necolas', target: Target.blank }, 'Nicolas Gallagher'),
             ' and ',
-            e({ tag: 'a', attrs: { href: 'https://twitter.com/jon_neal', target: '_blank' } }, 'Jonathan Neal.'),
+            a({  href: 'https://twitter.com/jon_neal', target: Target.blank }, 'Jonathan Neal.')
         ])
     ];
 }

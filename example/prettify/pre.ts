@@ -11,6 +11,7 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export default b.createDerivedComponent<IPreData>(pre, {
+    id: 'bobrilstrap-prettify-pre',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, prettyPrint);
     }

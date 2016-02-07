@@ -4,7 +4,7 @@ import { styles } from '../bsexample/css';
 
 export interface IData {
     header: string;
-    lead: b.IBobrilChildren;
+    lead?: b.IBobrilChildren;
     id: string;
 }
 
@@ -19,7 +19,7 @@ export default b.createVirtualComponent<IData>({
         b.style(me, styles.bsDocsSection);
         me.children = [
             element({ tag: 'h1', attrs: { id: ctx.data.id }, styles: styles.pageHeader }, ctx.data.header),
-            p({ styles: styles.lead }, ctx.data.lead),
+            !!ctx.data.lead && p({ styles: styles.lead }, ctx.data.lead),
             ctx.data.children
         ];
     }

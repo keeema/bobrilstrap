@@ -26,13 +26,14 @@ function getNavigation(): b.IBobrilNode {
             element({ tag: 'nav', styles: [styles.collapse, styles.navbarCollapse], attrs: { id: 'bs-navbar' } }, [
                 element({ tag: 'ul', styles: [styles.nav, styles.navbarNav] }, [
                     element({ tag: 'li' }, b.link(element({ tag: 'a' }, texts.css), 'css')),
-                    element({ tag: 'li' }, b.link(element({ tag: 'a' }, texts.components), 'components')),
-                    element({ tag: 'li' }, b.link(element({ tag: 'a' }, texts.javaScript), 'javascript'))
+                    //element({ tag: 'li' }, b.link(element({ tag: 'a' }, texts.components), 'components')),
+                    //element({ tag: 'li' }, b.link(element({ tag: 'a' }, texts.javaScript), 'javascript'))
 
                 ]),
                 element({ tag: 'ul', styles: [styles.nav, styles.navbarNav, styles.navbarRight] }, [
                     element({ tag: 'li' }, a({ href: texts.githubLink, target: Target.blank }, texts.gitHub)),
-                    element({ tag: 'li' }, a({ href: texts.bootsrapLink, target: Target.blank }, texts.bootstrap))
+                    element({ tag: 'li' }, a({ href: texts.bootsrapLink, target: Target.blank }, texts.bootstrap)),
+                    element({ tag: 'li' }, a({ href: texts.bobrilLink, target: Target.blank }, texts.bobril))
                 ])
             ])
         ])
@@ -43,6 +44,8 @@ const texts = {
     bobrilstrap: 'Bobrilstrap',
     bootstrap: 'Bootstrap',
     bootsrapLink: 'http://getbootstrap.com/',
+    bobril: 'Bobril',
+    bobrilLink: 'https://github.com/Bobris/Bobril',
     css: 'CSS',
     components: 'Components',
     gitHub: 'GitHub',

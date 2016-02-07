@@ -9,7 +9,7 @@ export default b.createVirtualComponent({
             {
                 header: 'Grid',
                 id: 'grid',
-                lead: `Bootstrap includes a responsive, mobile first fluid grid system that appropriately scales up to 12 
+                lead: `Bootstrap in Bobrilstrap includes a responsive, mobile first fluid grid system that appropriately scales up to 12 
                 columns as the device or viewport size increases. It includes predefined classes for easy layout options, 
                 as well as powerful mixins for generating more semantic layouts.`
             },

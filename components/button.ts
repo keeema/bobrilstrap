@@ -12,7 +12,7 @@ export interface IButtonData extends IBaseData {
     type?: ButtonType;
     tag?: ButtonTag;
     href?: any;
-    title?: string;
+    label?: string;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -65,11 +65,11 @@ export default b.createDerivedComponent<IButtonData>(elem, {
         let typeAttr = ctx.data.tag === ButtonTag.a ? 'role' : 'type';
         me.attrs[typeAttr] = (ctx.data.type || me.attrs[typeAttr] || ButtonType.button).toString();
 
-        if (ctx.data.title) {
+        if (ctx.data.label) {
             if (ctx.data.tag === ButtonTag.input) {
-                me.attrs['value'] = ctx.data.title;
+                me.attrs['value'] = ctx.data.label;
             } else {
-                mergeToChildren(me, ctx.data.title);
+                mergeToChildren(me, ctx.data.label);
             }
         }
         

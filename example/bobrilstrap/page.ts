@@ -1,10 +1,17 @@
 import * as b from 'bobril';
 import header from '../common/docsHeader';
+import bobrilDesc from './bobrilDesc';
+import bobrilstrap from './bobrilstrap';
+import docsContainer from '../common/docsContainer';
 
 export default b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
-            header(texts)
+            header(texts),
+            docsContainer({}, [
+                bobrilDesc(),
+                bobrilstrap()
+            ])
         ];
     }
 })

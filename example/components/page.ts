@@ -2,6 +2,10 @@ import * as b from 'bobril';
 import header from '../common/docsHeader';
 
 export default b.createVirtualComponent({
+    id: 'bobrilstrap-components',
+    init() {
+        document.title = 'Bobrilstrap - Components';
+    },
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             header(texts)

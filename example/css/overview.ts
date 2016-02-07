@@ -38,7 +38,6 @@ function typographyAndLinks(): b.IBobrilChildren {
             ]),
             li({}, ['Set the global link color via ', code({}, '@link-color'), ' and apply link underlines only on ', code({}, ':hover')])
         ]),
-        p({}, ['These styles can be found within .', code({}, 'scaffolding.less'), '.'])
     ];
 }
 
@@ -46,7 +45,7 @@ function normalizeCss(): b.IBobrilChildren {
     return [
         e({ tag: 'h2', attrs: { id: 'overview-normalize' } }, 'Normalize.css'),
         p({}, [
-            'For improved cross-browser rendering, we use ',
+            'For improved cross-browser rendering, bootstrap uses ',
             a({ href: 'http://necolas.github.io/normalize.css/', target: Target.blank } , 'Normalize.css'),
             ', a project by ',
             a({  href: 'https://twitter.com/necolas', target: Target.blank }, 'Nicolas Gallagher'),

@@ -51,6 +51,8 @@
         "components/ul.ts",
         "components/validations.ts",
         "example.ts",
+        "example/bobrilstrap/bobrilDesc.ts",
+        "example/bobrilstrap/bobrilstrap.ts",
         "example/bobrilstrap/page.ts",
         "example/bsexample/css.ts",
         "example/common/docsContainer.ts",

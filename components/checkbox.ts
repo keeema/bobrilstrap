@@ -4,7 +4,7 @@ import label, { ILabeldData as ILabelData} from './label';
 import inputCheckbox, { IInputCheckBoxData as IInputCheckBoxData} from './inputCheckbox';
 
 export interface ICheckboxData extends IInputCheckBoxData {
-    title?: string;
+    label?: string;
     labelData?: ILabelData;
     inline?: boolean;
 }
@@ -25,7 +25,7 @@ export default b.createDerivedComponent<ICheckboxData>(elem, {
         b.style(me, checkboxStyles.checkbox);
 
         let checkbox = inputCheckbox(ctx.data);
-        let lbl = label(ctx.data.labelData || {}, [checkbox, ctx.data.title]);
+        let lbl = label(ctx.data.labelData || {}, [checkbox, ctx.data.label]);
 
         if (ctx.data.inline) {
             me.tag = undefined;

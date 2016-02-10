@@ -136,6 +136,10 @@ import * as spanComponent from './components/span';
 export * from './components/span';
 export let span = spanComponent.default;
 
+import * as smallComponent from './components/small';
+export * from './components/small';
+export let small = smallComponent.default;
+
 import * as tableComponent from './components/table';
 export * from './components/table';
 export let table = tableComponent.default;

@@ -1,8 +1,8 @@
 import * as b from 'bobril';
 import { mergeToChildren } from './bobrilHelpers';
 import elem, { IBaseData } from './element';
-import thead, { ITHeadData as IHeadData } from './thead';
-import tbody, { ITBodyData as IBodyData } from './tbody';
+import thead, { ITHeadData } from './thead';
+import tbody, { ITBodyData } from './tbody';
 
 export let tableStyles = {
     table: b.styleDef('table'),
@@ -19,8 +19,8 @@ export interface ITableData extends IBaseData {
     hover?: boolean;
     condensed?: boolean;
 
-    head?: IHeadData;
-    body?: IBodyData;
+    head?: ITHeadData;
+    body?: ITBodyData;
 }
 
 interface ICtx extends b.IBobrilCtx {

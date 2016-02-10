@@ -39,6 +39,7 @@
         "components/row.ts",
         "components/select.ts",
         "components/size.ts",
+        "components/small.ts",
         "components/span.ts",
         "components/table.ts",
         "components/tbody.ts",

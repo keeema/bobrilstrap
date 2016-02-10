@@ -4,6 +4,7 @@ import Context, { contextStyles } from './context';
 
 export interface ITdData extends IBaseData {
     context?: Context;
+    colspan?: number;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -14,5 +15,7 @@ export default b.createDerivedComponent<ITdData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'td';
         b.style(me, !!ctx.data.context && contextStyles[ctx.data.context.toString()]);
+        if (ctx.data.colspan)
+            me.attrs['colspan'] = ctx.data.colspan.toString();
     }
 });

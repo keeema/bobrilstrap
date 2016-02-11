@@ -33,9 +33,9 @@ export default b.createVirtualComponent({
                         a({ href: 'https://github.com/Bobris/Bobril' }, 'predefined simpleApp bobril application skeleton'),
                         ' and run following commands in the root of downloaded folder:']),
                     figure({ styles: styles.highlight }, pre({}, [
-                        span({}, 'npm i bobril-build -g'), e({ tag: 'br' }),
-                        span({}, 'npm i'), e({ tag: 'br' }),
-                        span({}, 'bb')
+                        'npm i bobril-build -g', e({ tag: 'br' }),
+                        'npm i', e({ tag: 'br' }),
+                        'bb'
                     ])),
                     p({}, [
                         'Now is everything prepared for developing a new application based on bobril and you can see the result on ',

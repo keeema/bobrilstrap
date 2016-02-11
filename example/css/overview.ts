@@ -66,9 +66,9 @@ function containers(): b.IBobrilChildren {
         ]),
         p({}, ['Use ', code({}, 'container({}, ...)'), ' for a responsive fixed width container.']),
         figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
-            span({}, 'container({}, ['), e({ tag: 'br' }),
-            span({}, '   ...'), e({ tag: 'br' }),
-            span({}, '])')
+            'container({}, [', e({ tag: 'br' }),
+            '   ...', e({ tag: 'br' }),
+            '])'
         ]))),
         p({}, [
             'Use ',

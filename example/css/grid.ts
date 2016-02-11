@@ -1,6 +1,7 @@
 import * as b from 'bobril';
-import { e, p, ul, li, code, figure, pre, span, responsiveTable, th, td, tr, small, typography } from '../../index';
+import { e, p, ul, li, code, figure, span, responsiveTable, th, td, tr, small, typography, row, col, Size } from '../../index';
 import { styles } from '../bsexample/css';
+import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
 
 export default b.createVirtualComponent({
@@ -15,7 +16,9 @@ export default b.createVirtualComponent({
             },
             [
                 introduction(),
-                gridOptions()
+                gridOptions(),
+                exampleStackHorizontal(),
+                exampleFluidContainer()
             ]);
     }
 })
@@ -76,7 +79,7 @@ function gridOptions(): b.IBobrilChildren {
                             { children: [' Extra small devices ', small({}, 'Phones (<768px)')] },
                             { children: [' Small devices ', small({}, 'Tablets (≥768px)')] },
                             { children: [' Medium devices ', small({}, 'Desktops (≥992px)')] },
-                            { children: [' Large devices Desktops  ', small({}, '(≥1200px)')] }
+                            { children: [' Large devices ', small({}, 'Desktops (≥1200px)')] }
                         ]
                     }
                 },
@@ -101,10 +104,10 @@ function gridOptions(): b.IBobrilChildren {
                         {
                             headers: [{ children: 'Component data', styles: typography.textNowrap }],
                             columns: [
-                                { children: code({}, '{ size: Size.xs, ... }'), styles: typography.textNowrap },
-                                { children: code({}, '{ size: Size.xs, ... }'), styles: typography.textNowrap },
-                                { children: code({}, '{ size: Size.xs, ... }'), styles: typography.textNowrap },
-                                { children: code({}, '{ size: Size.xs, ... }'), styles: typography.textNowrap },
+                                { children: code({}, '{ size: Size.xs ... }'), styles: typography.textNowrap },
+                                { children: code({}, '{ size: Size.sm ... }'), styles: typography.textNowrap },
+                                { children: code({}, '{ size: Size.md ... }'), styles: typography.textNowrap },
+                                { children: code({}, '{ size: Size.lg ... }'), styles: typography.textNowrap },
                             ]
                         },
                         {
@@ -142,7 +145,97 @@ function gridOptions(): b.IBobrilChildren {
                         }
                     ]
                 }
-            },
+            }
         })
+    ];
+}
+
+function exampleStackHorizontal(): b.IBobrilChildren {
+    return [
+        e({ tag: 'h2', attrs: { id: 'grid-example-fluid' } }, 'Example: Fluid container'),
+        p({}, [
+            `Using a single set of `,
+            code({}, 'col({ size: ..., count: ... }, ...)'),
+            ` grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices 
+            (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any `,
+            code({}, 'row({}, ...)'),
+            '.'
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
+            col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)')
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.md, count: 8 }, 'col({ size: Size.md, count: 8 }, ...)'),
+            col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)')
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),
+            col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),
+            col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)')
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.md, count: 6 }, 'col({ size: Size.md, count: 6 }, ...)'),
+            col({ size: Size.md, count: 6 }, 'col({ size: Size.md, count: 6 }, ...)')
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)')`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 8 }, 'col({ size: Size.md, count: 8 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)')`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)')`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 6 }, 'col({ size: Size.md, count: 6 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 6 }, 'col({ size: Size.md, count: 6 }, ...)')`, e({ tag: 'br' }),
+            `])`, e({ tag: 'br' })
+        ]))),
+    ];
+}
+
+function exampleFluidContainer(): b.IBobrilChildren {
+    return [
+        e({ tag: 'h2', attrs: { id: 'grid-options' } }, 'Grid options'),
+        p({}, [
+            `Turn any fixed-width grid layout into a full-width layout by changing your outermost `,
+            code({}, 'container({}, ...)'),
+            ` to `,
+            code({ styles: typography.textNowrap }, 'container({ fluid: true }, ...)'),
+            `.`
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            'container({ fluid: true }, [', e({ tag: 'br' }),
+            '   row({}, [', e({ tag: 'br' }),
+            '      ...', e({ tag: 'br' }),
+            '   ])', e({ tag: 'br' }),
+            '])', e({ tag: 'br' }),
+        ])))
     ];
 }

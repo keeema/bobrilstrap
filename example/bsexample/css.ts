@@ -18,7 +18,8 @@ export const styles = {
     navbarRight: b.styleDef('navbar-right'),
     navbarStaticTop: b.styleDef('navbar-static-top'),
     navbarToggle: b.styleDef('navbar-toggle'),
-    pageHeader: b.styleDef('page-header')
+    pageHeader: b.styleDef('page-header'),
+    showGrid: b.styleDef('show-grid')
 };
 
 export function init() {

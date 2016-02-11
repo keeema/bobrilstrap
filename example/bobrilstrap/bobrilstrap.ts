@@ -16,16 +16,16 @@ export default b.createVirtualComponent({
                 [
                     p({}, `To install bobrilstrap to your bobril application stop the running bobril-build and run following commands:`),
                     figure({ styles: styles.highlight }, prettifyPre({}, code({ styles: langJs }, [
-                        span({}, 'npm i bobrilstrap --save'), e({ tag: 'br' }),
-                        span({}, 'bb')
+                        'npm i bobrilstrap --save', e({ tag: 'br' }),
+                        'bb'
                     ]))),
                     p({}, [
                         'To initialize the bobrilstrap framework add following lines to the ',
                         code({}, 'simpleApp/src/app.ts'), ' file:'
                     ]),
                     figure({ styles: styles.highlight }, prettifyPre({}, code({ styles: langJs }, [
-                        span({}, `import * as bs from 'bobrilstrap';`), e({ tag: 'br' }),
-                        span({}, 'bs.init();'), e({ tag: 'br' })
+                        `import * as bs from 'bobrilstrap';`, e({ tag: 'br' }),
+                        'bs.init();', e({ tag: 'br' })
                     ]))),
                     p({}, ['Now you can use the bobrilstrap components provided by the ', code({}, 'bobrilstrap'), ' package.']),
                 ])

@@ -18,7 +18,9 @@ export default b.createVirtualComponent({
                 introduction(),
                 gridOptions(),
                 exampleStackHorizontal(),
-                exampleFluidContainer()
+                exampleFluidContainer(),
+                exampleMobileAndDesktop(),
+                exampleColumnWrapping()
             ]);
     }
 })
@@ -237,5 +239,152 @@ function exampleFluidContainer(): b.IBobrilChildren {
             '   ])', e({ tag: 'br' }),
             '])', e({ tag: 'br' }),
         ])))
+    ];
+}
+
+function exampleMobileAndDesktop(): b.IBobrilChildren {
+    return [
+        e({ tag: 'h2', attrs: { id: 'grid-example-mixed' } }, 'Example: Mobile and desktop'),
+        p({}, [
+            `Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid settings at once
+             by adding complex data settings `,
+            code({}, 'col({ cols: [{ size: Size.xs, count: ... }, { size: Size.md, count: ... }] }, ...)'),
+            ` components. See the example below for a better idea of how it all works.`
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.md, count: 8 }] },
+                'col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.md, count: 8 }] }, ...)'
+            ),
+            col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'
+            )
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'
+            ),
+            col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'
+            ),
+            col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'
+            )
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ cols: [{ size: Size.xs, count: 6 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }] }, ...)'
+            ),
+            col({ cols: [{ size: Size.xs, count: 6 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }] }, ...)'
+            )
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.md, count: 8 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.md, count: 8 }] }, ...)'`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)`, e({ tag: 'br' }),
+            `    )'`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },,`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    )'`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }] }, ...)'`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }] }, ...)'`, e({ tag: 'br' }),
+            `    )`, e({ tag: 'br' }),
+            `])`
+        ]))),
+    ];
+}
+
+function exampleColumnWrapping(): b.IBobrilChildren {
+    return [
+        e({ tag: 'h2', attrs: { id: 'grid-example-wrapping' } }, 'Example: Column wrapping'),
+        p(
+            {},
+            `If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.`
+        ),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.xs, count: 9 }, 'col({ size: Size.xs, count: 9 }, ...)'),
+            col({ size: Size.xs, count: 4 }, [
+                'col({ size: Size.xs, count: 4 }, ...)',
+                e({ tag: 'br' }),
+                'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'
+            ]),
+            col({ size: Size.xs, count: 6 }, [
+                'col({ size: Size.xs, count: 6 }, ...)',
+                e({ tag: 'br' }),
+                'Subsequent columns continue along the new line.'
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.xs, count: 9 }, 'col({ size: Size.xs, count: 9 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.xs, count: 4 }, [`, e({ tag: 'br' }),
+            `        'col({ size: Size.xs, count: 4 }, ...)',`, e({ tag: 'br' }),
+            `        e({ tag: 'br' }),`, e({ tag: 'br' }),
+            `        'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'`, 
+            e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    col({ size: Size.xs, count: 6 }, [`, e({ tag: 'br' }),
+            `        'col({ size: Size.xs, count: 6 }, ...)',`, e({ tag: 'br' }),
+            `        e({ tag: 'br' }),`, e({ tag: 'br' }),
+            `        'Subsequent columns continue along the new line.'`, e({ tag: 'br' }),
+            `    ])`, e({ tag: 'br' }),
+            `])`
+        ])))
+    ];
+}
+
+
+function offsettingColumns(): b.IBobrilChildren {
+    return [
+        e({ tag: 'h2', attrs: { id: 'grid-offsetting' } }, 'Offsetting columns'),
+        // p(
+        //     {},
+        //     `If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.`
+        // ),
+        // row({ styles: styles.showGrid }, [
+        //     col({ size: Size.xs, count: 9 }, 'col({ size: Size.xs, count: 9 }, ...)'),
+        //     col({ size: Size.xs, count: 4 }, [
+        //         'col({ size: Size.xs, count: 4 }, ...)',
+        //         e({ tag: 'br' }),
+        //         'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'
+        //     ]),
+        //     col({ size: Size.xs, count: 6 }, [
+        //         'col({ size: Size.xs, count: 6 }, ...)',
+        //         e({ tag: 'br' }),
+        //         'Subsequent columns continue along the new line.'
+        //     ])
+        // ]),
+        // figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        //     `row({}, [`, e({ tag: 'br' }),
+        //     `    col({ size: Size.xs, count: 9 }, 'col({ size: Size.xs, count: 9 }, ...)'),`, e({ tag: 'br' }),
+        //     `    col({ size: Size.xs, count: 4 }, [`, e({ tag: 'br' }),
+        //     `        'col({ size: Size.xs, count: 4 }, ...)',`, e({ tag: 'br' }),
+        //     `        e({ tag: 'br' }),`, e({ tag: 'br' }),
+        //     `        'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'`, 
+        //     e({ tag: 'br' }),
+        //     `    ]),`, e({ tag: 'br' }),
+        //     `    col({ size: Size.xs, count: 6 }, [`, e({ tag: 'br' }),
+        //     `        'col({ size: Size.xs, count: 6 }, ...)',`, e({ tag: 'br' }),
+        //     `        e({ tag: 'br' }),`, e({ tag: 'br' }),
+        //     `        'Subsequent columns continue along the new line.'`, e({ tag: 'br' }),
+        //     `    ])`, e({ tag: 'br' }),
+        //     `])`
+        // ]))),
     ];
 }

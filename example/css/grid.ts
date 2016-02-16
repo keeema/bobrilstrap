@@ -20,7 +20,11 @@ export default b.createVirtualComponent({
                 exampleStackHorizontal(),
                 exampleFluidContainer(),
                 exampleMobileAndDesktop(),
-                exampleColumnWrapping()
+                exampleMobileTabletAndDesktop(),
+                exampleColumnWrapping(),
+                offsettingColumns(),
+                nestingColumns(),
+                columnOrdering()
             ]);
     }
 })
@@ -246,10 +250,10 @@ function exampleMobileAndDesktop(): b.IBobrilChildren {
     return [
         e({ tag: 'h2', attrs: { id: 'grid-example-mixed' } }, 'Example: Mobile and desktop'),
         p({}, [
-            `Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid settings at once
-             by adding complex data settings `,
+            `Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid layout at once
+             by adding complex input data `,
             code({}, 'col({ cols: [{ size: Size.xs, count: ... }, { size: Size.md, count: ... }] }, ...)'),
-            ` components. See the example below for a better idea of how it all works.`
+            ` for components. See the example below for a better idea of how it all works.`
         ]),
         row({ styles: styles.showGrid }, [
             col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.md, count: 8 }] },
@@ -310,6 +314,59 @@ function exampleMobileAndDesktop(): b.IBobrilChildren {
     ];
 }
 
+function exampleMobileTabletAndDesktop(): b.IBobrilChildren {
+    return [
+        e({ tag: 'h2', attrs: { id: 'grid-example-mixed-complete' } }, 'Example: Mobile, tablet and desktop'),
+        p({}, [
+            `Build on the previous example by creating even more dynamic and powerful layouts with tablet `,
+            code({}, 'col({ size: Size.sm, count: ... }, ...)'),
+            ` component input data.`
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.sm, count: 6 }, { size: Size.md, count: 8 }] },
+                'col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.sm, count: 6 }, { size: Size.md, count: 8 }, ...)'
+            ),
+            col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'
+            )
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] }, ...)'
+            ),
+            col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] }, ...)'
+            ),
+            col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] },
+                'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] }, ...)'
+            )
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.sm, count: 6 }, { size: Size.md, count: 8 }] },`,
+            e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.sm, count: 6 }, { size: Size.md, count: 8 }, ...)'`,
+            e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)`, e({ tag: 'br' }),
+            `    )'`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] },,`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    )'`, e({ tag: 'br' }),
+            `])`
+        ]))),
+    ];
+}
+
 function exampleColumnWrapping(): b.IBobrilChildren {
     return [
         e({ tag: 'h2', attrs: { id: 'grid-example-wrapping' } }, 'Example: Column wrapping'),
@@ -336,7 +393,7 @@ function exampleColumnWrapping(): b.IBobrilChildren {
             `    col({ size: Size.xs, count: 4 }, [`, e({ tag: 'br' }),
             `        'col({ size: Size.xs, count: 4 }, ...)',`, e({ tag: 'br' }),
             `        e({ tag: 'br' }),`, e({ tag: 'br' }),
-            `        'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'`, 
+            `        'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'`,
             e({ tag: 'br' }),
             `    ]),`, e({ tag: 'br' }),
             `    col({ size: Size.xs, count: 6 }, [`, e({ tag: 'br' }),
@@ -349,42 +406,120 @@ function exampleColumnWrapping(): b.IBobrilChildren {
     ];
 }
 
-
 function offsettingColumns(): b.IBobrilChildren {
     return [
         e({ tag: 'h2', attrs: { id: 'grid-offsetting' } }, 'Offsetting columns'),
-        // p(
-        //     {},
-        //     `If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.`
-        // ),
-        // row({ styles: styles.showGrid }, [
-        //     col({ size: Size.xs, count: 9 }, 'col({ size: Size.xs, count: 9 }, ...)'),
-        //     col({ size: Size.xs, count: 4 }, [
-        //         'col({ size: Size.xs, count: 4 }, ...)',
-        //         e({ tag: 'br' }),
-        //         'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'
-        //     ]),
-        //     col({ size: Size.xs, count: 6 }, [
-        //         'col({ size: Size.xs, count: 6 }, ...)',
-        //         e({ tag: 'br' }),
-        //         'Subsequent columns continue along the new line.'
-        //     ])
-        // ]),
-        // figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
-        //     `row({}, [`, e({ tag: 'br' }),
-        //     `    col({ size: Size.xs, count: 9 }, 'col({ size: Size.xs, count: 9 }, ...)'),`, e({ tag: 'br' }),
-        //     `    col({ size: Size.xs, count: 4 }, [`, e({ tag: 'br' }),
-        //     `        'col({ size: Size.xs, count: 4 }, ...)',`, e({ tag: 'br' }),
-        //     `        e({ tag: 'br' }),`, e({ tag: 'br' }),
-        //     `        'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'`, 
-        //     e({ tag: 'br' }),
-        //     `    ]),`, e({ tag: 'br' }),
-        //     `    col({ size: Size.xs, count: 6 }, [`, e({ tag: 'br' }),
-        //     `        'col({ size: Size.xs, count: 6 }, ...)',`, e({ tag: 'br' }),
-        //     `        e({ tag: 'br' }),`, e({ tag: 'br' }),
-        //     `        'Subsequent columns continue along the new line.'`, e({ tag: 'br' }),
-        //     `    ])`, e({ tag: 'br' }),
-        //     `])`
-        // ]))),
+        p({}, [
+            `Move columns to the right using `,
+            code({}, 'offsets'),
+            ` input data property. These classes increase the left margin of a column by * columns. `,
+            `For example, `,
+            code({}, 'col({ cols: ..., offsets: { size: Size.md, count:  }, ...)'),
+            ` moves column over four columns.`
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),
+            col({ size: Size.md, count: 4, offsets: { size: Size.md, count: 4 } },
+                'col({ size: Size.md, count: 4, offsets: { size: Size.md, count: 4 } }, ...)')
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } },
+                'col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } }, ...)'),
+            col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } },
+                'col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } }, ...)')
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.md, count: 6, offsets: { size: Size.md, count: 3 } },
+                'col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } }, ...)')
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 4, offsets: { size: Size.md, count: 4 } },`, e({ tag: 'br' }),
+            `        'col({ size: Size.md, count: 4, offsets: { size: Size.md, count: 4 } }, ...)')`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } },`, e({ tag: 'br' }),
+            `        'col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } },`, e({ tag: 'br' }),
+            `        'col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } }, ...)')`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 6, offsets: { size: Size.md, count: 3 } },`, e({ tag: 'br' }),
+            `        'col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } }, ...)')`, e({ tag: 'br' }),
+            `])`
+        ]))),
+    ];
+}
+
+function nestingColumns(): b.IBobrilChildren {
+    return [
+        e({ tag: 'h2', attrs: { id: 'grid-nesting' } }, 'Nesting columns'),
+        p({}, [
+            `To nest your content with the default grid, add a new `,
+            code({}, 'row({}, ...)'),
+            ` and set of `,
+            code({}, 'col({ ... }, ...)'),
+            ` columns within an existing `,
+            code({}, 'col({ ... }, ...)'),
+            `column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 `,
+            `available columns).`,
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.sm, count: 9 }, [
+                'Level 1: col({ size: Size.sm, count: 9 }, ...)',
+                row({}, [
+                    col({ cols: [{ size: Size.xs, count: 8 }, { size: Size.sm, count: 6 }] }, [
+                        'Level 2:  col({ cols: [{ size: Size.xs, count: 8 }, { size: Size.sm, count: 6 }] }, ...)'
+                    ]),
+                    col({ cols: [{ size: Size.xs, count: 8 }, { size: Size.sm, count: 6 }] }, [
+                        'Level 2:  col({ cols: [{ size: Size.xs, count: 8 }, { size: Size.sm, count: 6 }] }, ...)'
+                    ])
+                ])
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.sm, count: 9 }, [`, e({ tag: 'br' }),
+            `        'Level 1: col({ size: Size.sm, count: 9 }, ...)',`, e({ tag: 'br' }),
+            `        row({}, [`, e({ tag: 'br' }),
+            `            col({ cols: [{ size: Size.xs, count: 8 }, { size: Size.sm, count: 6 }] }, [`, e({ tag: 'br' }),
+            `                'Level 2:  col({ cols: [{ size: Size.xs, count: 8 }, { size: Size.sm, count: 6 }] }, ...)'`, e({ tag: 'br' }),
+            `            ]),`, e({ tag: 'br' }),
+            `            col({ cols: [{ size: Size.xs, count: 8 }, { size: Size.sm, count: 6 }] }, [`, e({ tag: 'br' }),
+            `                'Level 2:  col({ cols: [{ size: Size.xs, count: 8 }, { size: Size.sm, count: 6 }] }, ...)'`, e({ tag: 'br' }),
+            `            ]),`, e({ tag: 'br' }),
+            `        ])`, e({ tag: 'br' }),
+            `    ])`, e({ tag: 'br' }),
+            `])`
+        ]))),
+    ];
+}
+
+function columnOrdering(): b.IBobrilChildren {
+    return [
+        e({ tag: 'h2', attrs: { id: 'grid-column-ordering' } }, 'Column ordering'),
+        p({}, [
+            `Easily change the order of our built-in grid columns with `,
+            code({}, 'pushes'),
+            ` and `,
+            code({}, 'pulls'),
+            ` modifier properties on component input data.`,
+            
+        ]),
+        row({ styles: styles.showGrid }, [
+            col({ size: Size.md, count: 9, pushes: { size: Size.md, count: 3 } }, 
+                ' col({ size: Size.md, count: 9, pushes: { size: Size.md, count: 3 } }, ...)'),
+            col({ size: Size.md, count: 3, pulls: { size: Size.md, count: 9 } }, 
+                '{ size: Size.md, count: 3, pulls: { size: Size.md, count: 9 } , ...)')
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 9, pushes: { size: Size.md, count: 3 } }, `, e({ tag: 'br' }),
+            `        ' col({ size: Size.md, count: 9, pushes: { size: Size.md, count: 3 } }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.md, count: 3, pulls: { size: Size.md, count: 9 } }, `, e({ tag: 'br' }),
+            `        '{ size: Size.md, count: 3, pulls: { size: Size.md, count: 9 } , ...)')`, e({ tag: 'br' }),
+            `])`
+        ]))),
     ];
 }

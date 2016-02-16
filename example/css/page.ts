@@ -4,6 +4,7 @@ import header from '../common/docsHeader';
 import docsContainer from '../common/docsContainer';
 import overview from './overview';
 import grid from './grid';
+import typography from './typography';
 
 export default b.createVirtualComponent({
     id: 'bobrilstrap-css',
@@ -15,7 +16,8 @@ export default b.createVirtualComponent({
             header(texts),
             docsContainer({}, [
                 overview(),
-                grid()
+                grid(),
+                typography()
             ])
         ];
     }

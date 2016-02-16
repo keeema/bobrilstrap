@@ -6,7 +6,8 @@
     "main": "index.ts"
   },
   "bobril": {
-    "example": "example.ts"
+    "example": "example.ts",
+    "title" : "Bobrilstrap"
   },
   "author": "Tomáš Růt",
   "license": "MIT",

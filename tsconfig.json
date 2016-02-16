@@ -63,6 +63,7 @@
         "example/css/grid.ts",
         "example/css/overview.ts",
         "example/css/page.ts",
+        "example/css/typography.ts",
         "example/javaScript/page.ts",
         "example/masterPage.ts",
         "example/prettify/pre.ts",

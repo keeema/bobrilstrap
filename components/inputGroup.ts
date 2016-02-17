@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IInputGroupData;
 }
 
-export let inputGroupStyles = {
+export const inputGroupStyles = {
     inputGroup: b.styleDef('input-group'),
     inputGroupLg: b.styleDef('input-group-lg'),
     inputGroupSm: b.styleDef('input-group-sm')
@@ -23,12 +23,12 @@ export class InputGroupSize {
     static sm: string = 'sm';
 }
 
-export let inputGroupSizeStyles = {
+export const inputGroupSizeStyles = {
     [InputGroupSize.lg]: inputGroupStyles.inputGroupLg,
     [InputGroupSize.sm]: inputGroupStyles.inputGroupSm
 };
 
-export default b.createDerivedComponent<IInputGroupData>(elem, {
+export let inputGroup = b.createDerivedComponent<IInputGroupData>(elem, {
     id: 'bobrilstrap-input-group',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'div';
@@ -38,3 +38,5 @@ export default b.createDerivedComponent<IInputGroupData>(elem, {
         b.style(me, !!ctx.data.size && inputGroupSizeStyles[ctx.data.size.toString()]);
     }
 });
+
+export default inputGroup;

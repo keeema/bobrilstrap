@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IImageData;
 }
 
-export let imageStyle = {
+export const imageStyle = {
     centerBlock: b.styleDef('center-block'),
     imgResponsive: b.styleDef('img-responsive'),
     imgRounded: b.styleDef('img-rounded'),
@@ -26,7 +26,7 @@ export class ImageShape {
     static thumbnail: b.IBobrilStyle = imageStyle.imgThumbnail;
 }
 
-export default b.createDerivedComponent<IImageData>(elem, {
+export let image = b.createDerivedComponent<IImageData>(elem, {
     id: 'bobrilstrap-image',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'img';
@@ -36,3 +36,5 @@ export default b.createDerivedComponent<IImageData>(elem, {
 
     }
 });
+
+export default image;

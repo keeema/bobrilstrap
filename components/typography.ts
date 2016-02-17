@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 
-export default  {
+export const typography = {
     lead: b.styleDef('lead'),
     textLeft: b.styleDef('text-left'),
     textCenter: b.styleDef('text-center'),
@@ -15,4 +15,6 @@ export default  {
     listUnstyled: b.styleDef('list-unstyled'),
     listInline: b.styleDef('list-inline'),
     dlHorizontal: b.styleDef('dl-horizontal')
-}
+};
+
+export default typography;

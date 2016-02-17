@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IInputCheckBoxData;
 }
 
-export default b.createDerivedComponent<IInputCheckBoxData>(elem, {
+export let inputCheckbox = b.createDerivedComponent<IInputCheckBoxData>(elem, {
     id: 'bobrilstrap-input-checkbox',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'input';
@@ -26,3 +26,5 @@ export default b.createDerivedComponent<IInputCheckBoxData>(elem, {
             me.attrs['readonly'] = 'readonly';
     }
 });
+
+export default inputCheckbox;

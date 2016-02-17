@@ -11,7 +11,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IUlData;
 }
 
-export default b.createDerivedComponent<IUlData>(elem, {
+export let ul = b.createDerivedComponent<IUlData>(elem, {
     id: 'bobrilstrap-ul',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'ul';
@@ -19,3 +19,5 @@ export default b.createDerivedComponent<IUlData>(elem, {
         b.style(me, ctx.data.inline && typography.listInline);
     }
 });
+
+export default ul;

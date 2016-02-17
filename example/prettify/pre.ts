@@ -1,18 +1,14 @@
 import * as b from 'bobril';
-import { pre, IPreData } from '../../index';
+import { pre, IBaseData } from '../../index';
 
 b.asset('./prettify.css');
 b.asset('./atelier-dune-light.css');
 
 const prettyPrint = b.styleDef('prettyprint');
 
-interface ICtx extends b.IBobrilCtx {
-    data: IPreData;
-}
-
-export default b.createDerivedComponent<IPreData>(pre, {
+export default b.createDerivedComponent<IBaseData>(pre, {
     id: 'bobrilstrap-prettify-pre',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         b.style(me, prettyPrint);
     }
 })

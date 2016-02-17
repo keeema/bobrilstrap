@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 
-export default {
+export const helpers = {
     text: {
         mutated: b.styleDef('text-mutated'),
         primary: b.styleDef('text-primary'),
@@ -28,4 +28,6 @@ export default {
     srOnly: b.styleDef('sr-only'),
     srOnlyFocusable: b.styleDef('sr-only-focusable'),
     textHide: b.styleDef('text-hide')
-}
+};
+
+export default helpers;

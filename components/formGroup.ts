@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IFormGroupData;
 }
 
-export let formGroupStyles = {
+export const formGroupStyles = {
     formGroup: b.styleDef('form-group'),
     formGroupLg: b.styleDef('form-group-lg'),
     formGroupSm: b.styleDef('form-group-sm')
@@ -23,12 +23,12 @@ export class FormGroupSize {
     static sm: string = 'sm';
 }
 
-export let formGroupSizeStyles = {
+export const formGroupSizeStyles = {
     [FormGroupSize.lg]: formGroupStyles.formGroupLg,
     [FormGroupSize.sm]: formGroupStyles.formGroupSm
 };
 
-export default b.createDerivedComponent<IFormGroupData>(elem, {
+export let formGroup = b.createDerivedComponent<IFormGroupData>(elem, {
     id: 'bobrilstrap-form-group',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'div';
@@ -38,3 +38,5 @@ export default b.createDerivedComponent<IFormGroupData>(elem, {
         b.style(me, !!ctx.data.size && formGroupSizeStyles[ctx.data.size.toString()]);
     }
 });
+
+export default formGroup;

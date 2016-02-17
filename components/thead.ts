@@ -1,17 +1,17 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 import Context, { contextStyles } from './context';
-import tr, { ITrData as IRowData } from './tr';
+import tr, { ITrData } from './tr';
 
 export interface ITHeadData extends IBaseData {
-    row?: IRowData;
+    row?: ITrData;
 }
 
 interface ICtx extends b.IBobrilCtx {
     data: ITHeadData;
 }
 
-export default b.createDerivedComponent<ITHeadData>(elem, {
+export let thead = b.createDerivedComponent<ITHeadData>(elem, {
     id: 'bobrilstrap-thead',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'thead';
@@ -20,3 +20,5 @@ export default b.createDerivedComponent<ITHeadData>(elem, {
             me.children = tr(ctx.data.row);
     }
 });
+
+export default thead;

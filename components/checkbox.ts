@@ -13,19 +13,19 @@ interface ICtx extends b.IBobrilCtx {
     data: ICheckboxData;
 }
 
-export let checkboxStyles = {
+export const checkboxStyles = {
     checkbox: b.styleDef('checkbox'),
     checkboxInline: b.styleDef('checkbox-inline'),
     disabled: b.styleDef('disabled')
 };
 
-export default b.createDerivedComponent<ICheckboxData>(elem, {
+export let checkbox = b.createDerivedComponent<ICheckboxData>(elem, {
     id: 'bobrilstrap-checkbox',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, checkboxStyles.checkbox);
 
-        let checkbox = inputCheckbox(ctx.data);
-        let lbl = label(ctx.data.labelData || {}, [checkbox, ctx.data.label]);
+        let inputCheckboxNode = inputCheckbox(ctx.data);
+        let lbl = label(ctx.data.labelData || {}, [inputCheckboxNode, ctx.data.label]);
 
         if (ctx.data.inline) {
             me.tag = undefined;
@@ -37,3 +37,5 @@ export default b.createDerivedComponent<ICheckboxData>(elem, {
         me.children = lbl;
     }
 });
+
+export default checkbox;

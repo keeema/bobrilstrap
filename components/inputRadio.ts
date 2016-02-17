@@ -17,7 +17,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IInputRadioData;
 }
 
-export default b.createDerivedComponent<IInputRadioData>(elem, {
+export let inputRadio = b.createDerivedComponent<IInputRadioData>(elem, {
     id: 'bobrilstrap-input-radio',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'input';
@@ -43,3 +43,5 @@ export default b.createDerivedComponent<IInputRadioData>(elem, {
             ctx.data.onUnChecked(ctx.data.value);
     }
 });
+
+export default inputRadio;

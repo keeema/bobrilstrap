@@ -11,10 +11,12 @@ interface ICtx extends b.IBobrilCtx {
     data: IResponsiveTableData;
 }
 
-export default b.createDerivedComponent<IResponsiveTableData>(elem, {
+export let responsiveTable = b.createDerivedComponent<IResponsiveTableData>(elem, {
     id: 'bobrilstrap-responsive-table',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, tableStyles.responsive);
         mergeToChildren(me, table(ctx.data.table));
     }
 });
+
+export default responsiveTable;

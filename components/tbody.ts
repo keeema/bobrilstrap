@@ -1,16 +1,16 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
-import tr, { ITrData as IRowData } from './tr';
+import tr, { ITrData } from './tr';
 
 export interface ITBodyData extends IBaseData {
-    rows?: IRowData[];
+    rows?: ITrData[];
 }
 
 interface ICtx extends b.IBobrilCtx {
     data: ITBodyData;
 }
 
-export default b.createDerivedComponent<IBaseData>(elem, {
+export let tbody = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-tbody',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'tbody';
@@ -19,3 +19,5 @@ export default b.createDerivedComponent<IBaseData>(elem, {
             me.children = ctx.data.rows.map(row => tr(row));
     }    
 });
+
+export default tbody;

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { e, p, ul, li, code, figure, span, a, Target } from '../../index';
+import { e, p, ul, li, code, figure, span, a, Target, h1, h2 } from '../../index';
 import pre, { langJs } from '../prettify/pre';
 import { styles } from '../bsexample/css';
 import section from '../common/section';
@@ -23,7 +23,7 @@ export default b.createVirtualComponent({
 
 function typographyAndLinks(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'overview-type-links' } }, 'Typography and links'),
+        h2({ attrs: { id: 'overview-type-links' } }, 'Typography and links'),
         p({}, `Bootstrap sets basic global display, typography, and link styles. Specifically, we:`),
         ul({}, [
             li({}, ['Set ', code({}, 'background-color: #fff;'), ' on the ', code({}, 'body')]),
@@ -43,7 +43,7 @@ function typographyAndLinks(): b.IBobrilChildren {
 
 function normalizeCss(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'overview-normalize' } }, 'Normalize.css'),
+        h2({ attrs: { id: 'overview-normalize' } }, 'Normalize.css'),
         p({}, [
             'For improved cross-browser rendering, bootstrap uses ',
             a({ href: 'http://necolas.github.io/normalize.css/', target: Target.blank } , 'Normalize.css'),
@@ -57,7 +57,7 @@ function normalizeCss(): b.IBobrilChildren {
 
 function containers(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'overview-containers' } }, 'Containers'),
+        h2({ attrs: { id: 'overview-containers' } }, 'Containers'),
         p({}, [
             `Bootstrap requires a containing element to wrap site contents and house our grid system. You may choose one of two 
             containers to use in your projects. Note that, due to `,

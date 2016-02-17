@@ -4,7 +4,7 @@ import elem, { IBaseData } from './element';
 import thead, { ITHeadData } from './thead';
 import tbody, { ITBodyData } from './tbody';
 
-export let tableStyles = {
+export const tableStyles = {
     table: b.styleDef('table'),
     responsive: b.styleDef('table-responsive'),
     tableStriped: b.styleDef('table-striped'),
@@ -27,7 +27,7 @@ interface ICtx extends b.IBobrilCtx {
     data: ITableData;
 }
 
-export default b.createDerivedComponent<ITableData>(elem, {
+export let table = b.createDerivedComponent<ITableData>(elem, {
     id: 'bobrilstrap-table',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'table';
@@ -44,3 +44,5 @@ export default b.createDerivedComponent<ITableData>(elem, {
             mergeToChildren(me, tbody(ctx.data.body));
     }
 });
+
+export default table;

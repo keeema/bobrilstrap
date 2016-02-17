@@ -17,7 +17,7 @@ export interface IAData extends IBaseData {
 interface ICtx extends b.IBobrilCtx {
     data: IAData;
 }
-export default b.createDerivedComponent<IAData>(elem, {
+export let a = b.createDerivedComponent<IAData>(elem, {
     id: 'bobrilstrap-a',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'a';
@@ -29,3 +29,5 @@ export default b.createDerivedComponent<IAData>(elem, {
             me.attrs['name'] = ctx.data.name;
     }
 });
+
+export default a;

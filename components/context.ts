@@ -8,7 +8,7 @@ export class Context {
     static info: string = 'info';
 }
 
-export let contextStyles = {
+export const contextStyles = {
     active: b.styleDef('active'),
     success: b.styleDef('success'),
     warning: b.styleDef('warning'),

@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 
-export let validationStyles = {
+export const validationStyles = {
     hasSuccess: b.styleDef('has-success'),
     hasWarning : b.styleDef('has-warning '),
     hasErrors: b.styleDef('has-error'),
@@ -13,7 +13,7 @@ export class ValidationState {
     static error: string = 'error';
 }
 
-export let validationStateStyle = {
+export const validationStateStyle = {
     [ValidationState.success]: validationStyles.hasSuccess,
     [ValidationState.warning]: validationStyles.hasWarning,
     [ValidationState.error]: validationStyles.hasErrors

@@ -11,12 +11,12 @@ interface ICtx extends b.IBobrilCtx {
     data: ILabeldData;
 }
 
-export let labelStyles = {
+export const labelStyles = {
     srOnly: b.styleDef('sr-only'),
     controlLabel: b.styleDef('controlLabel')
 };
 
-export default b.createDerivedComponent<ILabeldData>(elem, {
+export let label = b.createDerivedComponent<ILabeldData>(elem, {
     id: 'bobrilstrap-label',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'label';
@@ -28,3 +28,5 @@ export default b.createDerivedComponent<ILabeldData>(elem, {
             me.attrs['for'] = ctx.data.for;
     }
 });
+
+export default label;

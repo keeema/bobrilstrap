@@ -1,5 +1,6 @@
 import * as b from 'bobril';
-import { init as bobrilstrapInit } from './index';
+import * as bs from './index';
+import bobrilstrapInit from './index';
 import { init as bsExampleInit } from './example/bsExample/css';
 import masterPage from './example/masterPage';
 import bobrilstrapPage from './example/bobrilstrap/page';

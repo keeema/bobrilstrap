@@ -15,12 +15,12 @@ interface ICtx extends b.IBobrilCtx {
     data: ITextareaData;
 }
 
-export let textareaStyles = {
+export const textareaStyles = {
     formControl: b.styleDef('form-control'),
     fixedSize: b.styleDef({ resize: 'none' })
 };
 
-export default b.createDerivedComponent<ITextareaData>(elem, {
+export let textarea = b.createDerivedComponent<ITextareaData>(elem, {
     id: 'bobrilstrap-textare',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'textarea';
@@ -42,3 +42,5 @@ export default b.createDerivedComponent<ITextareaData>(elem, {
             me.attrs['readonly'] = 'readonly';
     }
 });
+
+export default textarea;

@@ -19,7 +19,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IElementData;
 }
 
-export default b.createVirtualComponent<IElementData>({
+export let e = b.createVirtualComponent<IElementData>({
     id: 'bobrilstrap-element',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = ctx.data.tag || 'div';
@@ -45,3 +45,7 @@ export default b.createVirtualComponent<IElementData>({
             !!ctx.data.onChange(value);
     }
 });
+
+export let element = e;
+
+export default e;

@@ -33,7 +33,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IInputTextData;
 }
 
-export let inputTextStyles = {
+export const inputTextStyles = {
     formControl: b.styleDef('form-control'),
     inputLg: b.styleDef('input-lg'),
     inputSm: b.styleDef('input-sm')
@@ -44,12 +44,12 @@ export class InputTextSize {
     static sm: string = 'sm';
 }
 
-export let inputTextSizeStyles = {
+export const inputTextSizeStyles = {
     [InputTextSize.lg]: b.styleDef('input-lg'),
     [InputTextSize.sm]: b.styleDef('input-sm')
 };
 
-export default b.createDerivedComponent<IInputTextData>(elem, {
+export let inputText = b.createDerivedComponent<IInputTextData>(elem, {
     id: 'bobrilstrap-input-text',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'input';
@@ -68,3 +68,5 @@ export default b.createDerivedComponent<IInputTextData>(elem, {
             me.attrs['readonly'] = 'readonly';
     }
 });
+
+export default inputText;

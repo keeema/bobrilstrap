@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { e, p, ul, li, code, figure, span, responsiveTable, th, td, tr, small, typography, row, col, Size } from '../../index';
+import { e, p, ul, li, code, figure, span, responsiveTable, th, td, tr, small, typography, row, col, Size, h1, h2 } from '../../index';
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
@@ -31,7 +31,7 @@ export default b.createVirtualComponent({
 
 function introduction(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-intro' } }, 'Introduction'),
+        h2({ attrs: { id: 'grid-intro' } }, 'Introduction'),
         p({}, `Grid systems are used for creating page layouts through a series of rows 
         and columns that house your content. Here's how the Bootstrap grid system works:`),
         ul({}, [
@@ -72,7 +72,7 @@ function introduction(): b.IBobrilChildren {
 
 function gridOptions(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-options' } }, 'Grid options'),
+        h2({ attrs: { id: 'grid-options' } }, 'Grid options'),
         p({}, `See how aspects of the Bootstrap grid system work across multiple devices with a handy table.`),
         responsiveTable({
             table: {
@@ -158,7 +158,7 @@ function gridOptions(): b.IBobrilChildren {
 
 function exampleStackHorizontal(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-example-fluid' } }, 'Example: Fluid container'),
+        h2({ attrs: { id: 'grid-example-fluid' } }, 'Example: Fluid container'),
         p({}, [
             `Using a single set of `,
             code({}, 'col({ size: ..., count: ... }, ...)'),
@@ -228,7 +228,7 @@ function exampleStackHorizontal(): b.IBobrilChildren {
 
 function exampleFluidContainer(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-options' } }, 'Grid options'),
+        h2({ attrs: { id: 'grid-options' } }, 'Grid options'),
         p({}, [
             `Turn any fixed-width grid layout into a full-width layout by changing your outermost `,
             code({}, 'container({}, ...)'),
@@ -248,7 +248,7 @@ function exampleFluidContainer(): b.IBobrilChildren {
 
 function exampleMobileAndDesktop(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-example-mixed' } }, 'Example: Mobile and desktop'),
+        h2({ attrs: { id: 'grid-example-mixed' } }, 'Example: Mobile and desktop'),
         p({}, [
             `Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid layout at once
              by adding complex input data `,
@@ -316,7 +316,7 @@ function exampleMobileAndDesktop(): b.IBobrilChildren {
 
 function exampleMobileTabletAndDesktop(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-example-mixed-complete' } }, 'Example: Mobile, tablet and desktop'),
+        h2({ attrs: { id: 'grid-example-mixed-complete' } }, 'Example: Mobile, tablet and desktop'),
         p({}, [
             `Build on the previous example by creating even more dynamic and powerful layouts with tablet `,
             code({}, 'col({ size: Size.sm, count: ... }, ...)'),
@@ -369,7 +369,7 @@ function exampleMobileTabletAndDesktop(): b.IBobrilChildren {
 
 function exampleColumnWrapping(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-example-wrapping' } }, 'Example: Column wrapping'),
+        h2({ attrs: { id: 'grid-example-wrapping' } }, 'Example: Column wrapping'),
         p(
             {},
             `If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.`
@@ -408,7 +408,7 @@ function exampleColumnWrapping(): b.IBobrilChildren {
 
 function offsettingColumns(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-offsetting' } }, 'Offsetting columns'),
+        h2({ attrs: { id: 'grid-offsetting' } }, 'Offsetting columns'),
         p({}, [
             `Move columns to the right using `,
             code({}, 'offsets'),
@@ -454,7 +454,7 @@ function offsettingColumns(): b.IBobrilChildren {
 
 function nestingColumns(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-nesting' } }, 'Nesting columns'),
+        h2({ attrs: { id: 'grid-nesting' } }, 'Nesting columns'),
         p({}, [
             `To nest your content with the default grid, add a new `,
             code({}, 'row({}, ...)'),
@@ -498,7 +498,7 @@ function nestingColumns(): b.IBobrilChildren {
 
 function columnOrdering(): b.IBobrilChildren {
     return [
-        e({ tag: 'h2', attrs: { id: 'grid-column-ordering' } }, 'Column ordering'),
+        h2({ attrs: { id: 'grid-column-ordering' } }, 'Column ordering'),
         p({}, [
             `Easily change the order of our built-in grid columns with `,
             code({}, 'pushes'),

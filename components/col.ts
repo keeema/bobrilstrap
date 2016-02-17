@@ -24,7 +24,7 @@ interface IColStyles {
     [key: string]: { [key: number]: b.IBobrilStyle };
 }
 
-export default b.createDerivedComponent<IColData>(elem, {
+export const col = b.createDerivedComponent<IColData>(elem, {
     id: 'bobrilstrap-col',
     render(ctx: ICtx, me: b.IBobrilNode) {
         applySimplyDefinedStyle(me, ctx.data);
@@ -35,10 +35,12 @@ export default b.createDerivedComponent<IColData>(elem, {
     }
 });
 
-export let colStyles = getStyles((size, i) => `col-${size}-${i}`);
-export let colOffsetStyles = getStyles((size, i) => `col-${size}-offset-${i}`);
-export let colPushStyles = getStyles((size, i) => `col-${size}-push-${i}`);
-export let colPullStyles = getStyles((size, i) => `col-${size}-pull-${i}`);
+export default col;
+
+export const colStyles = getStyles((size, i) => `col-${size}-${i}`);
+export const colOffsetStyles = getStyles((size, i) => `col-${size}-offset-${i}`);
+export const colPushStyles = getStyles((size, i) => `col-${size}-push-${i}`);
+export const colPullStyles = getStyles((size, i) => `col-${size}-pull-${i}`);
 
 function getStyles(decorator: (size: Size, count: number) => string): IColStyles {
     var result: IColStyles = {};
@@ -71,8 +73,8 @@ function getCmpStyles(colTypes: IColType | IColType[], stylesSource: IColStyles)
     let cols: IColType[] = getColTypeArray(colTypes);
 
     let styles: b.IBobrilStyle[] = cols
-        .filter(col => isStyleAvailable(stylesSource, col))
-        .map(col => getStyle(stylesSource, col));
+        .filter(colType => isStyleAvailable(stylesSource, colType))
+        .map(colType => getStyle(stylesSource, colType));
 
     return styles;
 }
@@ -85,11 +87,11 @@ function getColTypeArray(colTypes: IColType | IColType[]): IColType[] {
         : [];
 }
 
-function isStyleAvailable(stylesSource: IColStyles, col: IColType | IColData): boolean {
-    return col.size && col.count
-        && !!stylesSource[col.size.toString()] && !!stylesSource[col.size.toString()][col.count];
+function isStyleAvailable(stylesSource: IColStyles, colType: IColType | IColData): boolean {
+    return colType.size && colType.count
+        && !!stylesSource[colType.size.toString()] && !!stylesSource[colType.size.toString()][colType.count];
 }
 
-function getStyle(stylesSource: IColStyles, col: IColType | IColData) {
-    return stylesSource[col.size.toString()][col.count];
+function getStyle(stylesSource: IColStyles, colType: IColType | IColData) {
+    return stylesSource[colType.size.toString()][colType.count];
 }

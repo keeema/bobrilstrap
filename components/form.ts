@@ -10,12 +10,12 @@ interface ICtx extends b.IBobrilCtx {
     data: IFormData;
 }
 
-export let formStyles = {
+export const formStyles = {
     formHorizontal: b.styleDef('form-horizontal'),
     formInline: b.styleDef('form-inline')
 };
 
-export default b.createDerivedComponent<IFormData>(elem, {
+export let form = b.createDerivedComponent<IFormData>(elem, {
     id: 'bobrilstrap-form',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'form';
@@ -23,3 +23,5 @@ export default b.createDerivedComponent<IFormData>(elem, {
         b.style(me, !!ctx.data.inline && formStyles.formInline);
     }
 });
+
+export default form;

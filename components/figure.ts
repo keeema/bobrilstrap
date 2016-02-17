@@ -2,17 +2,11 @@ import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 import typography from './typography';
 
-export interface IFigureData extends IBaseData {
-
-}
-
-interface ICtx extends b.IBobrilCtx {
-    data: IFigureData;
-}
-
-export default b.createDerivedComponent<IFigureData>(elem, {
+export let figure = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-figure',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = 'figure';
     }
 });
+
+export default figure;

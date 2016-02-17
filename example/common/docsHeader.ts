@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { container, element } from '../../index';
+import { container, element, p, h1 } from '../../index';
 import { styles } from '../bsexample/css';
 
 interface IData {
@@ -18,8 +18,8 @@ export default b.createVirtualComponent<IData>({
             element(
                 { styles: styles.bsDocsHeader, attrs: { id: 'content', tabindex: -1 } },
                 container({}, [
-                    element({ tag: 'h1' }, ctx.data.header),
-                    element({ tag: 'p' }, ctx.data.headerContent)
+                    h1({}, ctx.data.header),
+                    p({}, ctx.data.headerContent)
                 ])
             )
         ];

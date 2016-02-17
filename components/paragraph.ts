@@ -9,9 +9,13 @@ interface ICtx extends b.IBobrilCtx {
     data: IParagraphData;
 }
 
-export default b.createDerivedComponent<IParagraphData>(elem, {
+export let p = b.createDerivedComponent<IParagraphData>(elem, {
     id: 'bobrilstrap-paragraph',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'p';
     }
 });
+
+export let paragraph = p;
+
+export default p;

@@ -19,13 +19,13 @@ export let radioStyles = {
     disabled: b.styleDef('disabled')
 };
 
-export default b.createDerivedComponent<IRadioData>(elem, {
+export let radio = b.createDerivedComponent<IRadioData>(elem, {
     id: 'bobrilstrap-radio',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, radioStyles.radio);
 
-        let radio = inputRadio(ctx.data);
-        let lbl = label(ctx.data.labelData || {}, [radio, ctx.data.label]);
+        let inputRadioNode = inputRadio(ctx.data);
+        let lbl = label(ctx.data.labelData || {}, [inputRadioNode, ctx.data.label]);
 
         if (ctx.data.inline) {
             me.tag = undefined;
@@ -37,3 +37,5 @@ export default b.createDerivedComponent<IRadioData>(elem, {
         me.children = lbl;
     }
 });
+
+export default radio;

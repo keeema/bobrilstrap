@@ -10,7 +10,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IThData;   
 }
 
-export default b.createDerivedComponent<IThData>(elem, {
+export let th = b.createDerivedComponent<IThData>(elem, {
     id: 'bobrilstrap-th',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'th';
@@ -18,3 +18,5 @@ export default b.createDerivedComponent<IThData>(elem, {
             me.attrs['colspan'] = ctx.data.colspan.toString();
     }
 });
+
+export default th;

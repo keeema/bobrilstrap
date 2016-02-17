@@ -267,7 +267,7 @@ export class GlyphIconType {
     static menuUp: b.IBobrilStyle = b.styleDef('glyphicon-menu-up');
 }
 
-export let glyphIconStyles = {
+export const glyphIconStyles = {
     glyphicon: b.styleDef('glyphicon'),
     formControlFeedback: b.styleDef('form-control-feedback')
 };
@@ -281,7 +281,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IGlyphiconData;
 }
 
-export default b.createDerivedComponent<IGlyphiconData>(elem, {
+export let glyphicon = b.createDerivedComponent<IGlyphiconData>(elem, {
     id: 'bobrilstrap-glyphicon',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'span';
@@ -291,3 +291,5 @@ export default b.createDerivedComponent<IGlyphiconData>(elem, {
         b.style(me, !!ctx.data.formControlFeedback && glyphIconStyles.formControlFeedback);
     }
 });
+
+export default glyphicon;

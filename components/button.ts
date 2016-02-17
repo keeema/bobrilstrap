@@ -40,17 +40,17 @@ export class ButtonOption {
     static primary: string = 'primary';
 }
 
-export let buttonStyles = {
+export const buttonStyles = {
     active: b.styleDef('active'),
     disabled: b.styleDef('disabled'),
     btn: b.styleDef('btn'),
     btnBlock: b.styleDef('btn-block')
 };
 
-export let buttonSizeStyles = generateStyles(Size);
-export let buttonOptiontStyles = generateStyles(ButtonOption);
+export const buttonSizeStyles = generateStyles(Size);
+export const buttonOptiontStyles = generateStyles(ButtonOption);
 
-export default b.createDerivedComponent<IButtonData>(elem, {
+export let button = b.createDerivedComponent<IButtonData>(elem, {
     id: 'bobrilstrap-button',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = (ctx.data.tag || ButtonTag.button).toString();
@@ -87,6 +87,8 @@ export default b.createDerivedComponent<IButtonData>(elem, {
 
     }
 });
+
+export default button;
 
 function generateStyles(source: Object): { [key: string]: b.IBobrilStyle } {
     let result: { [key: string]: b.IBobrilStyle } = {};

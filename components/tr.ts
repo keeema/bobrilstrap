@@ -14,7 +14,7 @@ export interface ITrData extends IBaseData {
 interface ICtx extends b.IBobrilCtx {
     data: ITrData;
 }
-export default b.createDerivedComponent<ITrData>(elem, {
+export let tr = b.createDerivedComponent<ITrData>(elem, {
     id: 'bobrilstrap-tr',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'tr';
@@ -26,3 +26,5 @@ export default b.createDerivedComponent<ITrData>(elem, {
             me.children = mergeToChildren(me, ctx.data.columns.map(column => td(column)));
     }
 });
+
+export default tr;

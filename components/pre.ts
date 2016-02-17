@@ -1,17 +1,11 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 
-export interface IPreData extends IBaseData {
-
-}
-
-interface ICtx extends b.IBobrilCtx {
-    data: IPreData;
-}
-
-export default b.createDerivedComponent<IPreData>(elem, {
+export let pre = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-pre',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = 'pre';
     }
 });
+
+export default pre;

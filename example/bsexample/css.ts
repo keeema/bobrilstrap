@@ -5,6 +5,8 @@ export const styles = {
     bsDocsNav: b.styleDef('bs-docs-nav'),
     bsDocsHeader: b.styleDef('bs-docs-header'),
     bsDocsSection: b.styleDef('bs-docs-section'),
+    bsExample: b.styleDef('bs-example'),
+    bsExampleType: b.styleDef('bs-example-type'),
     collapse: b.styleDef('collapse'),
     collapsed: b.styleDef('collapsed'),
     highlight: b.styleDef('highlight'),
@@ -19,7 +21,8 @@ export const styles = {
     navbarStaticTop: b.styleDef('navbar-static-top'),
     navbarToggle: b.styleDef('navbar-toggle'),
     pageHeader: b.styleDef('page-header'),
-    showGrid: b.styleDef('show-grid')
+    showGrid: b.styleDef('show-grid'),
+    typeInfo: b.styleDef('type-info')
 };
 
 export function init() {

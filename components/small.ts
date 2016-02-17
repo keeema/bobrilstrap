@@ -1,17 +1,11 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 
-export interface ISmallData extends IBaseData {
-
-}
-
-interface ICtx extends b.IBobrilCtx {
-    data: ISmallData;
-}
-
-export default b.createDerivedComponent<ISmallData>(elem, {
+export let small = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-small',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = 'small';
     }
 });
+
+export default small;

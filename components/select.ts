@@ -16,7 +16,7 @@ interface ICtx extends b.IBobrilCtx {
     data: ISelectData;
 }
 
-export let selectStyles = {
+export const selectStyles = {
     formControl: b.styleDef('form-control')
 };
 
@@ -25,12 +25,12 @@ export class SelectSize {
     static sm: string = 'sm';
 }
 
-export let selectSizeStyles = {
+export const selectSizeStyles = {
     [SelectSize.lg]: b.styleDef('input-lg'),
     [SelectSize.sm]: b.styleDef('input-sm')
 };
 
-export default b.createDerivedComponent<ISelectData>(elem, {
+export let select = b.createDerivedComponent<ISelectData>(elem, {
     id: 'bobrilstrap-option',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'select';
@@ -49,3 +49,5 @@ export default b.createDerivedComponent<ISelectData>(elem, {
             me.attrs['multiple'] = 'multiple';
     }
 });
+
+export default select;

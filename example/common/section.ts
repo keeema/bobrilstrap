@@ -19,7 +19,7 @@ export default b.createVirtualComponent<IData>({
         b.style(me, styles.bsDocsSection);
         me.children = [
             h1({ attrs: { id: ctx.data.id }, styles: styles.pageHeader }, ctx.data.header),
-            !!ctx.data.lead && p({ styles: styles.lead }, ctx.data.lead),
+            !!ctx.data.lead && p({ lead: true }, ctx.data.lead),
             ctx.data.children
         ];
     }

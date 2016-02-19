@@ -14,7 +14,8 @@ export const typography = {
     blockquoteReverse: b.styleDef('blockquote-reverse'),
     listUnstyled: b.styleDef('list-unstyled'),
     listInline: b.styleDef('list-inline'),
-    dlHorizontal: b.styleDef('dl-horizontal')
+    dlHorizontal: b.styleDef('dl-horizontal'),
+    small: b.styleDef('small')
 };
 
 export default typography;

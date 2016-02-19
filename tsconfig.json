@@ -42,6 +42,7 @@
         "components/size.ts",
         "components/small.ts",
         "components/span.ts",
+        "components/strong.ts",
         "components/table.ts",
         "components/tbody.ts",
         "components/td.ts",

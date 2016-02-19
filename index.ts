@@ -36,6 +36,7 @@ export * from './components/select';
 export * from './components/size';
 export * from './components/span';
 export * from './components/small';
+export * from './components/strong';
 export * from './components/table';
 export * from './components/tbody';
 export * from './components/td';

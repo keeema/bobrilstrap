@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { a, e, p, ul, li, ol, code, figure, span, table, th, td, tr, small, typography, row, col, Size,
-h1, h2, h3, h4, h5, h6, strong, mark, del, s, ins, u, em, abbr, address, blockquote, cite, footer } from '../../index';
+h1, h2, h3, h4, h5, h6, strong, mark, del, s, ins, u, em, abbr, address, blockquote, cite, footer, dl, dt, dd } from '../../index';
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
@@ -20,7 +20,8 @@ export default b.createVirtualComponent({
                 transformatiomStyles(),
                 abbreviations(),
                 addresses(),
-                blockquotes()
+                blockquotes(),
+                lists()
             ]);
     }
 })
@@ -379,11 +380,135 @@ function blockquotes(): b.IBobrilChildren {
             `set a `, code({}, 'reverse'),
             ` input date property for a blockquote with right-aligned content.`
         ]),
-         e({ styles: styles.bsExample }, [
+        e({ styles: styles.bsExample }, [
             blockquote({ reverse: true }, p({}, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.'))
         ]),
         figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
             `blockquote({ reverse: true }, p({}, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.'))`
         ])))
+    ];
+}
+
+function lists(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'type-lists' } }, 'Lists'),
+        h3({ attrs: { id: 'unordered' } }, 'Unordered'),
+        p({}, `A list of items in which the order does not explicitly matter.`),
+        e({ styles: styles.bsExample }, ul({}, [
+            li({}, 'Lorem ipsum dolor sit amet'),
+            li({}, 'Consectetur adipiscing elit'),
+            li({}, 'Integer molestie lorem at massa'),
+            li({}, 'Facilisis in pretium nisl aliquet'),
+            li({}, 'Nulla volutpat aliquam velit'),
+            li({}, ul({}, [
+                li({}, 'Phasellus iaculis neque'),
+                li({}, 'Purus sodales ultricies'),
+                li({}, 'Vestibulum laoreet porttitor sem'),
+                li({}, 'Ac tristique libero volutpat at')
+            ])),
+            li({}, 'Faucibus porta lacus fringilla vel'),
+            li({}, 'Aenean sit amet erat nunc'),
+            li({}, 'Eget porttitor lorem')
+        ])),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `ul({}, [`, e({ tag: 'br' }),
+            `    li({}, ...)`, e({ tag: 'br' }),
+            `])`, e({ tag: 'br' }),
+        ]))),
+        h3({ attrs: { id: 'ordered' } }, 'Ordered'),
+        p({}, `A list of items in which the order does explicitly matter.`),
+        e({ styles: styles.bsExample }, ol({}, [
+            li({}, 'Lorem ipsum dolor sit amet'),
+            li({}, 'Consectetur adipiscing elit'),
+            li({}, 'Integer molestie lorem at massa'),
+            li({}, 'Facilisis in pretium nisl aliquet'),
+            li({}, 'Nulla volutpat aliquam velit'),
+            li({}, 'Faucibus porta lacus fringilla vel'),
+            li({}, 'Aenean sit amet erat nunc'),
+            li({}, 'Eget porttitor lorem')
+        ])),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `ol({}, [`, e({ tag: 'br' }),
+            `    li({}, ...)`, e({ tag: 'br' }),
+            `])`
+        ]))),
+        h3({ attrs: { id: 'unstyled' } }, 'Unstyled'),
+        p({}, [`Remove the default `, code({}, 'list-style'), ` and left margin on list items (immediate children only). 
+        This only applies to immediate children list items, meaning you will need to add the class for any nested lists as well.`]),
+        e({ styles: styles.bsExample }, ul({ unstyled: true }, [
+            li({}, 'Lorem ipsum dolor sit amet'),
+            li({}, 'Consectetur adipiscing elit'),
+            li({}, 'Integer molestie lorem at massa'),
+            li({}, 'Facilisis in pretium nisl aliquet'),
+            li({}, 'Nulla volutpat aliquam velit'),
+            li({}, ul({}, [
+                li({}, 'Phasellus iaculis neque'),
+                li({}, 'Purus sodales ultricies'),
+                li({}, 'Vestibulum laoreet porttitor sem'),
+                li({}, 'Ac tristique libero volutpat at')
+            ])),
+            li({}, 'Faucibus porta lacus fringilla vel'),
+            li({}, 'Aenean sit amet erat nunc'),
+            li({}, 'Eget porttitor lorem')
+        ])),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `ul({ unstyled: true }, [`, e({ tag: 'br' }),
+            `    li({}, ...)`, e({ tag: 'br' }),
+            `])`
+        ]))),
+        h3({ attrs: { id: 'inline' } }, 'Inline'),
+        p({}, [`Place all list items on a single line with `, code({}, 'display: inline-block;'), ` and some light padding.`]),
+        e({ styles: styles.bsExample }, ul({ inline: true }, [
+            li({}, 'Lorem ipsum'),
+            li({}, 'Phasellus iaculis'),
+            li({}, 'Nulla volutpat')
+        ])),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `ul({ inline: true }, [`, e({ tag: 'br' }),
+            `    li({}, ...)`, e({ tag: 'br' }),
+            `])`
+        ]))),
+        h3({ attrs: { id: 'description' } }, 'Description'),
+        p({}, `A list of terms with their associated descriptions.`),
+        e({ styles: styles.bsExample }, dl({}, [
+            dt({}, 'Description lists'),
+            dd({}, 'A description list is perfect for defining terms.'),
+            dt({}, 'Euismod'),
+            dd({}, 'Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.'),
+            dd({}, 'Donec id elit non mi porta gravida at eget metus.'),
+            dt({}, 'Malesuada porta'),
+            dd({}, 'Etiam porta sem malesuada magna mollis euismod.')
+        ])),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `dl({}, [`, e({ tag: 'br' }),
+            `    dt({}, ...)`, e({ tag: 'br' }),
+            `    dd({}, ...)`, e({ tag: 'br' }),
+            `])`
+        ]))),
+        h2({ attrs: { id: 'horizontal-description' } }, 'Horizontal description'),
+        p({}, [`Make terms and descriptions in `, code({}, `<dl>`), ` line up side-by-side. Starts off stacked like default `,
+            code({}, `<dl>`), `s, but when the navbar expands, so do these.`]),
+        e({ styles: styles.bsExample }, dl({ horizontal: true }, [
+            dt({}, 'Description lists'),
+            dd({}, 'A description list is perfect for defining terms.'),
+            dt({}, 'Euismod'),
+            dd({}, 'Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.'),
+            dd({}, 'Donec id elit non mi porta gravida at eget metus.'),
+            dt({}, 'Malesuada porta'),
+            dd({}, 'Etiam porta sem malesuada magna mollis euismod.'),
+            dt({}, 'Felis euismod semper eget lacinia'),
+            dd({}, 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.')
+        ])),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `dl({ horizontal: true }, [`, e({ tag: 'br' }),
+            `    dt({}, ...)`, e({ tag: 'br' }),
+            `    dd({}, ...)`, e({ tag: 'br' }),
+            `])`
+        ]))),
+        e({ styles: [styles.bsCallout, styles.bsCalloutInfo] }, [
+            h4({}, 'Auto-truncating'),
+            p({}, [`Horizontal description lists will truncate terms that are too long to fit in the left column with `,
+                code({}, 'text-overflow'), `. In narrower viewports, they will change to the default stacked layout.`])
+        ])
     ];
 }

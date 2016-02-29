@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { a, e, p, h2, h3, h4, code, figure, span, table } from '../../index';
+import { a, e, p, h2, h3, h4, code, figure, span, table, Context, ITdData, responsiveTable } from '../../index';
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
@@ -16,7 +16,9 @@ export default b.createVirtualComponent({
                 stripedRows(),
                 borderedTable(),
                 hoverRows(),
-                condensedTable()
+                condensedTable(),
+                contextualStyles(),
+                responsiveTables()
             ]);
     }
 })
@@ -25,8 +27,8 @@ function basicExample(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'tables-example' } }, 'Basic example'),
         p({}, [
-            `For basic styling—light padding and only horizontal dividers—uset the `,
-            code({}, 'table({}, ...)'),
+            `For basic styling—light padding and only horizontal dividers use the `,
+            code({}, 'table({ ... })'),
             ` component. It may seem super redundant, but given the widespread use of tables for other plugins like calendars 
             and date pickers, we've opted to isolate our custom table styles. Columns can be defined as array of `,
             code({}, 'string'), ` or `, code({}, 'ITdData'), ` and headers can be defined as array of `,
@@ -188,6 +190,167 @@ function condensedTable(): b.IBobrilChildren {
             `            { columns: ['2', 'Jacob', 'Thornton', '@fat'] },`, e({ tag: 'br' }),
             `            { columns: ['3', 'Larry', 'the Bird', '@twitter'] }`, e({ tag: 'br' }),
             `        ]`, e({ tag: 'br' }),
+            `    }`, e({ tag: 'br' }),
+            `})`
+        ])))
+    ];
+}
+
+function contextualStyles(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'tables-contextual-styles' } }, 'Contextual styles'),
+        p({}, [`Use `, code({}, 'Context'), ` styles to color table rows or individual cells.`]),
+        e({ styles: styles.bsExample }, table({
+            head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },
+            body: {
+                rows: [
+                    { columns: ['1', 'Column content', 'Column content', '@	Column content'], context: Context.active },
+                    { columns: ['2', 'Column content', 'Column content', '@	Column content'] },
+                    { columns: ['3', 'Column content', 'Column content', '@	Column content'], context: Context.success },
+                    { columns: ['4', 'Column content', 'Column content', '@	Column content'] },
+                    { columns: ['5', 'Column content', 'Column content', '@	Column content'], context: Context.warning },
+                    { columns: ['6', 'Column content', 'Column content', '@	Column content'] },
+                    { columns: ['7', 'Column content', 'Column content', '@	Column content'], context: Context.danger },
+                    { columns: ['8', 'Column content', 'Column content', '@	Column content'] },
+                    { columns: ['9', 'Column content', 'Column content', '@	Column content'], context: Context.info },
+                ]
+            }
+        })),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `table({`, e({ tag: 'br' }),
+            `    head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },`, e({ tag: 'br' }),
+            `    body: {`, e({ tag: 'br' }),
+            `        rows: [`, e({ tag: 'br' }),
+            `            { columns: ['1', ... ], context: Context.active },`, e({ tag: 'br' }),
+            `            { columns: ['2', ... ] },`, e({ tag: 'br' }),
+            `            { columns: ['3', ... ], context: Context.success },`, e({ tag: 'br' }),
+            `            { columns: ['4', ... ] },`, e({ tag: 'br' }),
+            `            { columns: ['5', ... ], context: Context.warning },`, e({ tag: 'br' }),
+            `            { columns: ['6', ... ] },`, e({ tag: 'br' }),
+            `            { columns: ['7', ... ], context: Context.danger },`, e({ tag: 'br' }),
+            `            { columns: ['8', ... ] },`, e({ tag: 'br' }),
+            `            { columns: ['9', ... ], context: Context.info },`, e({ tag: 'br' }),
+            `        ]`, e({ tag: 'br' }),
+            `    }`, e({ tag: 'br' }),
+            `})`
+        ]))),
+        e({ styles: styles.bsExample }, table({
+            head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading', 'Column heading', 'Column heading'] } },
+            body: {
+                rows: [
+                    {
+                        columns: [
+                            '1',
+                            <ITdData>{ children: 'Column content', context: Context.active },
+                            <ITdData>{ children: 'Column content', context: Context.success },
+                            <ITdData>{ children: 'Column content', context: Context.warning },
+                            <ITdData>{ children: 'Column content', context: Context.danger },
+                            <ITdData>{ children: 'Column content', context: Context.info }
+                        ]
+                    },
+                ]
+            }
+        })),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `table({`, e({ tag: 'br' }),
+            `    head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },`, e({ tag: 'br' }),
+            `    body: {`, e({ tag: 'br' }),
+            `        rows: [`, e({ tag: 'br' }),
+            `            {`, e({ tag: 'br' }),
+            `                columns: [`, e({ tag: 'br' }),
+            `                    '1',`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.active },`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.success },`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.warning },`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.danger },`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.info }`, e({ tag: 'br' }),
+            `                ]`, e({ tag: 'br' }),
+            `            },`, e({ tag: 'br' }),
+            `        ]`, e({ tag: 'br' }),
+            `    }`, e({ tag: 'br' }),
+            `})`
+        ]))),
+        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-tables-context-accessibility' } }, [
+            h4({}, 'Conveying meaning to assistive technologies'),
+            p({}, [
+                `Using color to add meaning to a table row or individual cell only provides a visual indication, which will not be 
+                conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color 
+                is either obvious from the content itself (the visible text in the relevant table row/cell), or is included through 
+                alternative means, such as additional text hidden with the `, code({}, 'srOnly'), ` style from `, code({}, 'helpers'), `.`
+            ])
+        ]),
+    ];
+}
+
+function responsiveTables(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'tables-responsive' } }, 'Responsive tables'),
+        p({}, [
+            `Create responsive tables by `, code({}, 'responsiveTable({ table: ... })'),
+            ` component to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, 
+            you will not see any difference in these tables.`
+        ]),
+        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-tables-responsive-overflow' } }, [
+            h4({}, 'Vertical clipping/truncation'),
+            p({}, [
+                `Responsive tables make use of `, code({}, 'overflow-y: hidden'),
+                `, which clips off any content that goes beyond the bottom or top edges of the table. In particular, 
+                this can clip off dropdown menus and other third-party widgets.`
+            ])
+        ]),
+        e({ styles: styles.bsExample }, [
+            responsiveTable({
+                table: {
+                    head: {
+                        row: {
+                            headers: [
+                                '#', 'Table heading', 'Table heading', 'Table heading', 'Table heading', 'Table heading', 'Table heading'
+                            ]
+                        }
+                    },
+                    body: {
+                        rows: [
+                            { columns: ['1', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell'] },
+                            { columns: ['2', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell'] },
+                            { columns: ['3', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell'] }
+                        ]
+                    }
+                }
+            }),
+            responsiveTable({
+                table: {
+                    bordered: true,
+                    head: {
+                        row: {
+                            headers: [
+                                '#', 'Table heading', 'Table heading', 'Table heading', 'Table heading', 'Table heading', 'Table heading'
+                            ]
+                        }
+                    },
+                    body: {
+                        rows: [
+                            { columns: ['1', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell'] },
+                            { columns: ['2', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell'] },
+                            { columns: ['3', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell', 'Table cell'] }
+                        ]
+                    }
+                }
+            })
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `responsiveTable({`, e({ tag: 'br' }),
+            `    table: {`, e({ tag: 'br' }),
+            `        bordered: true,`, e({ tag: 'br' }),
+            `        head: {`, e({ tag: 'br' }),
+            `            row: { headers: ['#', 'Table heading', ... ] }`, e({ tag: 'br' }),
+            `        },`, e({ tag: 'br' }),
+            `        body: {`, e({ tag: 'br' }),
+            `            rows: [`, e({ tag: 'br' }),
+            `                { columns: ['1', 'Table cell', ... ] },`, e({ tag: 'br' }),
+            `                { columns: ['2', 'Table cell', ... ] },`, e({ tag: 'br' }),
+            `                { columns: ['3', 'Table cell', ... ] }`, e({ tag: 'br' }),
+            `            ]`, e({ tag: 'br' }),
+            `        }`, e({ tag: 'br' }),
             `    }`, e({ tag: 'br' }),
             `})`
         ])))

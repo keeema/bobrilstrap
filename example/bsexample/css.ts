@@ -3,6 +3,7 @@ import * as b from 'bobril';
 export const styles = {
     bsCallout: b.styleDef('bs-callout'),
     bsCalloutInfo: b.styleDef('bs-callout-info'),
+    bsCalloutDanger: b.styleDef('bs-callout-danger'),
     bsDocsContainer: b.styleDef('bs-docs-container'),
     bsDocsNav: b.styleDef('bs-docs-nav'),
     bsDocsHeader: b.styleDef('bs-docs-header'),

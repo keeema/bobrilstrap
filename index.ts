@@ -34,6 +34,7 @@ export * from './components/inputGroupAddon';
 export * from './components/inputRadio';
 export * from './components/inputText';
 export * from './components/ins';
+export * from './components/kbd';
 export * from './components/label';
 export * from './components/li';
 export * from './components/ol';
@@ -47,6 +48,7 @@ export * from './components/row';
 export * from './components/select';
 export * from './components/size';
 export * from './components/span';
+export * from './components/samp';
 export * from './components/small';
 export * from './components/strong';
 export * from './components/strikethrough';
@@ -61,6 +63,7 @@ export * from './components/typography';
 export * from './components/ul';
 export * from './components/underlined';
 export * from './components/validations';
+export * from './components/variable';
 
 export function init(): void {
     b.asset('./bootstrap/css/bootstrap.css');

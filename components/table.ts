@@ -3,6 +3,7 @@ import { mergeToChildren } from './bobrilHelpers';
 import elem, { IBaseData } from './element';
 import thead, { ITHeadData } from './thead';
 import tbody, { ITBodyData } from './tbody';
+import caption from './caption';
 
 export const tableStyles = {
     table: b.styleDef('table'),
@@ -18,6 +19,8 @@ export interface ITableData extends IBaseData {
     bordered?: boolean;
     hover?: boolean;
     condensed?: boolean;
+
+    caption?: string;
 
     head?: ITHeadData;
     body?: ITBodyData;
@@ -37,6 +40,9 @@ export let table = b.createDerivedComponent<ITableData>(elem, {
         b.style(me, ctx.data.hover && tableStyles.tableHover);
         b.style(me, ctx.data.condensed && tableStyles.tableCondensed);
 
+        if (ctx.data.caption)
+            mergeToChildren(me, caption({}, ctx.data.caption));
+        
         if (ctx.data.head)
             mergeToChildren(me, thead(ctx.data.head));
 

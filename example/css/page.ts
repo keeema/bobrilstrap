@@ -5,11 +5,13 @@ import docsContainer from '../common/docsContainer';
 import overview from './overview';
 import grid from './grid';
 import typography from './typography';
+import code from './code';
+import tables from './tables';
 
 export default b.createVirtualComponent({
     id: 'bobrilstrap-css',
     init() {
-        document.title = 'Bobrilstrap - CSS';
+        document.title = 'CSS - Bobrilstrap';
     },
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
@@ -17,7 +19,9 @@ export default b.createVirtualComponent({
             docsContainer({}, [
                 overview(),
                 grid(),
-                typography()
+                typography(),
+                code(),
+                tables()
             ])
         ];
     }

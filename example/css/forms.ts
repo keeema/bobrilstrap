@@ -77,52 +77,6 @@ function basicExample(): b.IBobrilChildren {
                 button({ label: 'Submit', onClick: () => alert('Clicked!') })
             ])
         ]),
-        e({ styles: styles.bsExample }, [
-           
-                formGroup({}, [
-                    label({ for: 'exampleInputEmail1' }, 'Email address'),
-                    inputText({
-                        id: 'exampleInputEmail1',
-                        type: InputTextType.email,
-                        value: exampleInputEmail1,
-                        placeholder: 'Email',
-                        onChange: (val) => {
-                            exampleInputEmail1 = val;
-                            b.invalidate();
-                        }
-                    })
-                ]),
-                formGroup({}, [
-                    label({ for: 'exampleInputPassword1' }, 'Password'),
-                    inputText({
-                        id: 'exampleInputPassword1',
-                        type: InputTextType.password,
-                        value: exampleInputPassword1,
-                        placeholder: 'Password',
-                        onChange: (val) => {
-                            exampleInputPassword1 = val;
-                            b.invalidate();
-                        }
-                    })
-                ]),
-                formGroup({}, [
-                    label({ for: 'exampleInputFile' }, 'File input'),
-                    e({ tag: 'input', attrs: { type: 'file', id: 'exampleInputFile' } }),
-                    helpText({}, 'Example block-level help text here.')
-                ]),
-                checkbox({
-                    label: { title: 'Check me out' },
-                    inputCheckbox: {
-                        checked: checkboxChecked,
-                        onChange: (val) => {
-                            checkboxChecked = val;
-                            b.invalidate();
-                        }
-                    }
-                }),
-                button({ label: 'Submit', onClick: () => alert('Clicked!') })
-            
-        ]),
         figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
             `let exampleInputEmail1 = '';`, e({ tag: 'br' }),
             `let exampleInputPassword1 = '';`, e({ tag: 'br' }),

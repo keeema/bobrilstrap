@@ -3,9 +3,9 @@ import elem, { IBaseData } from './element';
 import label, { ILabeldData as ILabelData} from './label';
 import inputCheckbox, { IInputCheckBoxData as IInputCheckBoxData} from './inputCheckbox';
 
-export interface ICheckboxData extends IInputCheckBoxData {
-    label?: string;
-    labelData?: ILabelData;
+export interface ICheckboxData {
+    label: ILabelData;
+    inputCheckbox: IInputCheckBoxData;
     inline?: boolean;
 }
 
@@ -24,13 +24,13 @@ export let checkbox = b.createDerivedComponent<ICheckboxData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, checkboxStyles.checkbox);
 
-        let inputCheckboxNode = inputCheckbox(ctx.data);
-        let lbl = label(ctx.data.labelData || {}, [inputCheckboxNode, ctx.data.label]);
+        let inputCheckboxNode = inputCheckbox(ctx.data.inputCheckbox);
+        let lbl = label(ctx.data.label, inputCheckboxNode);
 
         if (ctx.data.inline) {
             me.tag = undefined;
             b.style(lbl, checkboxStyles.checkboxInline);
-        } else if (ctx.data.disabled) {
+        } else if (ctx.data.inputCheckbox && ctx.data.inputCheckbox.disabled) {
             b.style(me, checkboxStyles.disabled);
         }
 

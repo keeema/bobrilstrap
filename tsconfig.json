@@ -81,6 +81,7 @@
         "example/common/section.ts",
         "example/components/page.ts",
         "example/css/code.ts",
+        "example/css/forms.ts",
         "example/css/grid.ts",
         "example/css/overview.ts",
         "example/css/page.ts",

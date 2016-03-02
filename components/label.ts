@@ -1,10 +1,12 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
+import { mergeToChildren } from './bobrilHelpers';
 
 export interface ILabeldData extends IBaseData {
     for?: string;
     srOnly?: boolean;
     controlLabel?: boolean;
+    title?: string;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -26,6 +28,9 @@ export let label = b.createDerivedComponent<ILabeldData>(elem, {
 
         if (ctx.data.for)
             me.attrs['for'] = ctx.data.for;
+
+        if (ctx.data.title)
+            mergeToChildren(me, ctx.data.title);
     }
 });
 

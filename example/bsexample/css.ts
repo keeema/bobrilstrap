@@ -29,6 +29,6 @@ export const styles = {
 };
 
 export function init() {
-    b.asset('./bootstrap-theme.min.css');
+    //b.asset('./bootstrap-theme.min.css');
     b.asset('./docs.min.css');
 }

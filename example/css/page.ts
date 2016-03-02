@@ -7,6 +7,7 @@ import grid from './grid';
 import typography from './typography';
 import code from './code';
 import tables from './tables';
+import forms from './forms';
 
 export default b.createVirtualComponent({
     id: 'bobrilstrap-css',
@@ -21,7 +22,8 @@ export default b.createVirtualComponent({
                 grid(),
                 typography(),
                 code(),
-                tables()
+                tables(),
+                forms()
             ])
         ];
     }

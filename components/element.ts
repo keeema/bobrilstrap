@@ -2,6 +2,7 @@ import * as b from 'bobril';
 
 export interface IAria {
     label?: string;
+    labelledBy?: string;
     describedBy?: string;
     invalid?: boolean;
     hidden?: boolean;
@@ -14,6 +15,7 @@ export interface IBaseData {
     styles?: b.IBobrilStyles;
     aria?: IAria;
     attrs?: { [key: string]: any };
+    title?: string;
 
     onClick?: (event: b.IBobrilMouseEvent) => boolean | void;
     onChange?: (value) => void;
@@ -42,16 +44,22 @@ export let e = b.createVirtualComponent<IElementData>({
         if (ctx.data.key)
             b.withKey(me, ctx.data.key);
 
+        if (ctx.data.title)
+            me.attrs['title'] = ctx.data.title;
+
         if (ctx.data.aria) {
             if (ctx.data.aria.label)
                 me.attrs['aria-label'] = ctx.data.aria.label;
+
+            if (ctx.data.aria.labelledBy)
+                me.attrs['aria-labelledby '] = ctx.data.aria.labelledBy;
 
             if (ctx.data.aria.describedBy)
                 me.attrs['aria-describedby '] = ctx.data.aria.describedBy;
 
             if (ctx.data.aria.invalid !== undefined && ctx.data.aria.invalid !== null)
                 me.attrs['aria-invalid'] = ctx.data.aria.invalid.toString();
-                
+
             if (ctx.data.aria.hidden !== undefined && ctx.data.aria.hidden !== null)
                 me.attrs['aria-hidden'] = ctx.data.aria.hidden.toString();
         }

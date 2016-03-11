@@ -31,6 +31,8 @@ export let label = b.createDerivedComponent<ILabeldData>(elem, {
 
         if (ctx.data.title)
             mergeToChildren(me, ctx.data.title);
+            
+        delete me.attrs['title'];
     }
 });
 

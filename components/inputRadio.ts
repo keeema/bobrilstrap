@@ -15,14 +15,21 @@ export interface IInputRadioData extends IBaseData {
 
 interface ICtx extends b.IBobrilCtx {
     data: IInputRadioData;
+    checked: boolean;
 }
 
 export let inputRadio = b.createDerivedComponent<IInputRadioData>(elem, {
     id: 'bobrilstrap-input-radio',
     render(ctx: ICtx, me: b.IBobrilNode) {
+        if (ctx.data.value !== undefined && (ctx.data.checked !== undefined || ctx.data.checkedValue !== undefined)) {
+            ctx.checked = (!!ctx.data.value && ctx.data.value === ctx.data.checkedValue) || !!ctx.data.checked;
+        } else if (ctx.checked === undefined) {
+            ctx.checked = false;
+        }
+        
         me.tag = 'input';
         me.attrs['type'] = 'radio';
-        me.attrs.value = (!!ctx.data.value && ctx.data.value === ctx.data.checkedValue) || !!ctx.data.checked;
+        me.attrs.value = ctx.checked;
 
         me.attrs['name'] = ctx.data.name;
 
@@ -33,6 +40,7 @@ export let inputRadio = b.createDerivedComponent<IInputRadioData>(elem, {
             me.attrs['readonly'] = 'readonly';
     },
     onChange(ctx: ICtx, value: boolean): void {
+        ctx.checked = value;
         if (ctx.data.onChange)
             ctx.data.onChange(value);
 

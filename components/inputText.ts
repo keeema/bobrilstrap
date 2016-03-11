@@ -20,7 +20,7 @@ export class InputTextType {
 }
 
 export interface IInputTextData extends IBaseData {
-    value: string;
+    value?: string;
     placeholder?: string;
     size?: InputTextSize;
     type?: InputTextType;
@@ -31,6 +31,7 @@ export interface IInputTextData extends IBaseData {
 
 interface ICtx extends b.IBobrilCtx {
     data: IInputTextData;
+    value: string;
 }
 
 export const inputTextStyles = {
@@ -52,9 +53,13 @@ export const inputTextSizeStyles = {
 export let inputText = b.createDerivedComponent<IInputTextData>(elem, {
     id: 'bobrilstrap-input-text',
     render(ctx: ICtx, me: b.IBobrilNode) {
+        if (ctx.data.value !== undefined) {
+            ctx.value = ctx.data.value;
+        }
+
         me.tag = 'input';
         me.attrs['type'] = ctx.data.type || 'text';
-        me.attrs.value = ctx.data.value;
+        me.attrs.value = ctx.value;
         b.style(me, inputTextStyles.formControl);
         b.style(me, !!ctx.data.size && inputTextSizeStyles[ctx.data.size.toString()]);
 
@@ -66,6 +71,11 @@ export let inputText = b.createDerivedComponent<IInputTextData>(elem, {
 
         if (ctx.data.readonly)
             me.attrs['readonly'] = 'readonly';
+    },
+    onChange(ctx: ICtx, value: string): void {
+        ctx.value = value;
+        if (ctx.data.onChange)
+            !!ctx.data.onChange(value);
     }
 });
 

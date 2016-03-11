@@ -2,7 +2,9 @@
     "compilerOptions": {
         "target": "es6",
         "module": "commonjs",
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "jsx": "react",
+        "reactNamespace": "b"
     },
     "compileOnSave": false,
     "files": [
@@ -91,6 +93,7 @@
         "example/masterPage.ts",
         "example/prettify/pre.ts",
         "example/prettify/prettify.ts",
-        "index.ts"
+        "index.ts",
+        "node_modules/bobril/jsx.d.ts"
     ]
 }

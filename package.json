@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Bobril wrapper for bootstrap",
   "typescript": {
     "main": "index.ts"

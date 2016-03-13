@@ -15,7 +15,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const labelStyles = {
     srOnly: b.styleDef('sr-only'),
-    controlLabel: b.styleDef('controlLabel')
+    controlLabel: b.styleDef('control-label')
 };
 
 export let label = b.createDerivedComponent<ILabeldData>(elem, {

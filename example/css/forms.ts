@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { a, e, p, h2, h3, h4, code, figure, span, form, formGroup, inputText, label, InputTextType, helpText, checkbox,
-    button, ButtonOption, radio, strong, inputGroup, inputGroupAddon } from '../../index';
+    button, ButtonOption, radio, strong, inputGroup, inputGroupAddon, col, colStyles, Size } from '../../index';
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
@@ -14,7 +14,9 @@ export default b.createVirtualComponent({
             },
             [
                 basicExample(),
-                inlineForm()
+                inlineForm(),
+                horizontalForm(),
+                supportedControls()
             ]);
     }
 })
@@ -169,7 +171,7 @@ function inlineForm(): b.IBobrilChildren {
                         inputGroupAddon({}, '$'),
                         inputText({ id: 'exampleInputAmount', type: InputTextType.number, placeholder: 'Amount' }),
                         inputGroupAddon({}, '.00')
-                    ])                    
+                    ])
                 ]),
                 button({ label: 'Transfer cash', option: ButtonOption.primary, onClick: () => alert('Clicked!') })
             ])
@@ -187,5 +189,114 @@ function inlineForm(): b.IBobrilChildren {
             `    button({ label: 'Sign in', onClick: () => alert('Clicked!') })`, e({ tag: 'br' }),
             `])`
         ])))
+    ];
+}
+
+function horizontalForm(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'forms-horizontal' } }, 'Horizontal form'),
+        p({}, [
+            `Use Bobrilstrap's predefined grid styles and components to align labels and groups of form controls 
+            in a horizontal layout by adding `, code({}, 'horizontal'),
+            ` form input data property. Doing so changes `, code({}, 'formGroups({}, ...)'), `s to behave as grid rows, so no need for `,
+            code({}, 'row({}, ...)'), `.`
+
+        ]),
+        e({ styles: styles.bsExample }, [
+            form({ horizontal: true }, [
+                formGroup({}, [
+                    label({ controlLabel: true, for: 'inputEmail3', styles: colStyles[Size.sm][2] }, 'Email'),
+                    col({ size: Size.sm, count: 10 },
+                        inputText({ id: 'inputEmail3', type: InputTextType.email, placeholder: 'Email' }))
+                ]),
+                formGroup({}, [
+                    label({ controlLabel: true, for: 'inputPassword3', styles: colStyles[Size.sm][2] }, 'Password'),
+                    col({ size: Size.sm, count: 10 },
+                        inputText({ id: 'inputPassword3', type: InputTextType.email, placeholder: 'Password' }))
+                ]),
+                formGroup({}, [
+                    col({ size: Size.sm, count: 10, offsets: [{ size: Size.sm, count: 2 }] },
+                        checkbox({ label: { title: 'Remember me' } }))
+                ]),
+                formGroup({}, [
+                    col({ size: Size.sm, count: 10, offsets: [{ size: Size.sm, count: 2 }] },
+                        button({ label: 'Sign in', onClick: () => alert('Clicked!') })
+                    )
+                ])
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `form({ horizontal: true }, [`, e({ tag: 'br' }),
+            `    formGroup({}, [`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, for: 'inputEmail3', styles: colStyles[Size.sm][2] }, 'Email'),`, e({ tag: 'br' }),
+            `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
+            `            inputText({ id: 'inputEmail3', type: InputTextType.email, placeholder: 'Email' }))`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    formGroup({}, [`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, for: 'inputPassword3', styles: colStyles[Size.sm][2] }, 'Password'),`, e({ tag: 'br' }),
+            `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
+            `            inputText({ id: 'inputPassword3', type: InputTextType.email, placeholder: 'Password' }))`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    formGroup({}, [`, e({ tag: 'br' }),
+            `        col({ size: Size.sm, count: 10, offsets: [{ size: Size.sm, count: 2 }] },`, e({ tag: 'br' }),
+            `             checkbox({ label: { title: 'Remember me' } }))`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    formGroup({}, [`, e({ tag: 'br' }),
+            `        col({ size: Size.sm, count: 10, offsets: [{ size: Size.sm, count: 2 }] },`, e({ tag: 'br' }),
+            `            button({ label: 'Sign in', onClick: () => alert('Clicked!') })`, e({ tag: 'br' }),
+            `        )`, e({ tag: 'br' }),
+            `    ])`, e({ tag: 'br' }),
+            `])`
+        ]))),
+    ];
+}
+
+function supportedControls(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'forms-controls' } }, 'Supported controls'),
+        p({}, [
+            `Most common form control, text-based input fields (`,
+            code({}, 'inputText({}, ...)'),
+            ` component). Includes support for all HTML5 types: `,
+            code({}, 'text'), `, `,
+            code({}, 'password'), `, `,
+            code({}, 'datetime'), `, `,
+            code({}, 'datetime-local'), `, `,
+            code({}, 'date'), `, `,
+            code({}, 'month'), `, `,
+            code({}, 'time'), `, `,
+            code({}, 'week'), `, `,
+            code({}, 'number'), `, `,
+            code({}, 'email'), `, `,
+            code({}, 'url'), `, `,
+            code({}, 'search'), `, `,
+            code({}, 'tel'), ` and `,
+            code({}, 'color'), `.`
+
+        ]),
+        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-input-needs-type' } }, [
+            h4({}, `Type declaration required`),
+            p({}, [
+                `Inputs type should be defined by the `, code({}, 'type'), ` input data property or the `, code({}, 'InputTextType.text'),
+                ` will be used as the default one.`
+            ])
+        ]),
+        e({ styles: styles.bsExample }, [
+            form({}, [
+                formGroup({}, inputText({ placeholder: 'Text input' })),
+                formGroup({}, inputText({ type: InputTextType.number, placeholder: 'Number input' }))
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `inputText({ placeholder: 'Text input' })`, e({ tag: 'br' }),
+            `inputText({ type: InputTextType.number, placeholder: 'Nuber input' })`
+        ]))),
+        e({ styles: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-xref-input-group' } }, [
+            h4({}, `Input groups`),
+            p({}, [
+                `To add integrated text or buttons before and/or after any text-based `, code({}, '<input>'),
+                `, check out the input `, code({}, 'inputGroup({}, ...)'), `.`
+            ])
+        ])
     ];
 }

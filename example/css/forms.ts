@@ -16,7 +16,8 @@ export default b.createVirtualComponent({
                 basicExample(),
                 inlineForm(),
                 horizontalForm(),
-                supportedControls()
+                supportedControls(),
+                staticControl()
             ]);
     }
 })
@@ -458,5 +459,44 @@ function supportedControls(): b.IBobrilChildren {
             `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`, e({ tag: 'br' }),
             `})`
         ])))
+    ];
+}
+
+function staticControl(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'forms-controls-static' } }, 'Static control'),
+        p({}, [
+            `When you need to place plain text next to a form label within a form, use the `,
+            code({}, 'formControlStatic'), ` input data property of `, code({}, 'paragragph'), `.`
+        ]),
+        e({ styles: styles.bsExample }, [
+            form({ horizontal: true }, [
+                formGroup({}, [
+                    label({ controlLabel: true, styles: colStyles[Size.sm][2] }, 'Email'),
+                    col({ size: Size.sm, count: 10 },
+                        p({ formControlStatic: true }, 'email@example.com'))
+                ]),
+                formGroup({}, [
+                    label({ controlLabel: true, for: 'inputPassword', styles: colStyles[Size.sm][2] }, 'Password'),
+                    col({ size: Size.sm, count: 10 },
+                        inputText({ id: 'inputPassword', type: InputTextType.email, placeholder: 'Password' }))
+                ])
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `form({ horizontal: true }, [`, e({ tag: 'br' }),
+            `    formGroup({}, [`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, styles: colStyles[Size.sm][2] }, 'Email'),`, e({ tag: 'br' }),
+            `            p({ formControlStatic: true }, 'email@example.com')`, e({ tag: 'br' }),
+            `        )`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    formGroup({}, [`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, for: 'inputPassword', styles: colStyles[Size.sm][2] }, 'Password'),`, e({ tag: 'br' }),
+            `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
+            `            inputText({ id: 'inputPassword', type: InputTextType.email, placeholder: 'Password' })`, e({ tag: 'br' }),
+            `        )`, e({ tag: 'br' }),
+            `    ])`, e({ tag: 'br' }),
+            `])`
+        ]))),
     ];
 }

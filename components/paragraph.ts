@@ -4,20 +4,26 @@ import elem, { IBaseData } from './element';
 
 export interface IParagraphData extends IBaseData {
     lead?: boolean;
+    formControlStatic?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
     data: IParagraphData;
 }
 
-export let p = b.createDerivedComponent<IParagraphData>(elem, {
+export const paragraphStyles = {
+    formControlStatic: b.styleDef('form-control-static'); 
+};
+
+export const p = b.createDerivedComponent<IParagraphData>(elem, {
     id: 'bobrilstrap-paragraph',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'p';
         b.style(me, ctx.data.lead && typography.lead);
+        b.style(me, ctx.data.formControlStatic && paragraphStyles.formControlStatic);
     }
 });
 
-export let paragraph = p;
+export const paragraph = p;
 
 export default p;

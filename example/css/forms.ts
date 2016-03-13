@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { a, e, p, h2, h3, h4, code, figure, span, form, formGroup, inputText, label, InputTextType, helpText, checkbox,
-    button, ButtonOption, radio, strong, inputGroup, inputGroupAddon, col, colStyles, Size } from '../../index';
+    button, ButtonOption, radio, strong, inputGroup, inputGroupAddon, col, colStyles, Size, select, textarea } from '../../index';
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
@@ -297,6 +297,166 @@ function supportedControls(): b.IBobrilChildren {
                 `To add integrated text or buttons before and/or after any text-based `, code({}, '<input>'),
                 `, check out the input `, code({}, 'inputGroup({}, ...)'), `.`
             ])
-        ])
+        ]),
+        h3({ attrs: { id: 'textarea' } }, 'Textarea'),
+        p({}, [
+            `Form control which supports multiple lines of text. Change `, code({}, 'rows'), ` attribute as necessary.`
+        ]),
+        e({ styles: styles.bsExample }, [
+            formGroup({}, textarea({ rows: 3 }))
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `textarea({ rows: 3 })`
+        ]))),
+        h3({ attrs: { id: 'checkboxes-and-radios' } }, 'Checkboxes and radios'),
+        p({}, `Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.`),
+        h4({ attrs: { id: 'default-stacked' } }, 'Default (stacked)'),
+        e({ styles: styles.bsExample }, [
+            form({}, [
+                checkbox({
+                    label: { title: 'Option one is this and that—be sure to include why it\'s great' }
+                }),
+                checkbox({
+                    label: { title: 'Option two is disabled' },
+                    inputCheckbox: { disabled: true }
+                }),
+                e({ tag: 'br' }),
+                radio({
+                    label: { title: 'Option one is this and that—be sure to include why it\'s great' },
+                    inputRadio: { id: 'optionsRadios1', value: 'option1', name: 'optionsRadios' }
+                }),
+                radio({
+                    label: { title: 'Option two can be something else and selecting it will deselect option one' },
+                    inputRadio: { id: 'optionsRadios2', value: 'option2', name: 'optionsRadios' }
+                }),
+                radio({
+                    label: { title: 'Option three is disabled' },
+                    inputRadio: { id: 'optionsRadios3', value: 'option3', name: 'optionsRadios', disabled: true }
+                })
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `checkbox({`, e({ tag: 'br' }),
+            `    label: { title: 'Option one is this and that—be sure to include why it\\'s great' }`, e({ tag: 'br' }),
+            `}),`, e({ tag: 'br' }),
+            `checkbox({`, e({ tag: 'br' }),
+            `    label: { title: 'Option two is disabled' },`, e({ tag: 'br' }),
+            `    inputCheckbox: { disabled: true }`, e({ tag: 'br' }),
+            `}),`, e({ tag: 'br' }),
+            `radio({`, e({ tag: 'br' }),
+            `    label: { title: 'Option one is this and that—be sure to include why it\\'s great' },`, e({ tag: 'br' }),
+            `    inputRadio: { id: 'optionsRadios1', value: 'option1', name: 'optionsRadios' }`, e({ tag: 'br' }),
+            `}),`, e({ tag: 'br' }),
+            `radio({`, e({ tag: 'br' }),
+            `    label: { title: 'Option two can be something else and selecting it will deselect option one' },`, e({ tag: 'br' }),
+            `    inputRadio: { id: 'optionsRadios2', value: 'option2', name: 'optionsRadios' }`, e({ tag: 'br' }),
+            `}),`, e({ tag: 'br' }),
+            `radio({`, e({ tag: 'br' }),
+            `    label: { title: 'Option three is disabled' },`, e({ tag: 'br' }),
+            `    inputRadio: { id: 'optionsRadios3', value: 'option3', name: 'optionsRadios', disabled: true }`, e({ tag: 'br' }),
+            `})`
+        ]))),
+        h4({ attrs: { id: 'inline-checkboxes-and-radios' } }, 'Inline checkboxes and radios'),
+        p({}, [
+            `Use the `, code({}, 'inline'),
+            ` input data property on a series of checkboxes or radios for controls that appear on the same line.`
+        ]),
+        e({ styles: styles.bsExample }, [
+            form({}, [
+                checkbox({ inline: true, label: { title: '1' }, inputCheckbox: { id: 'inlineCheckbox1' } }),
+                checkbox({ inline: true, label: { title: '2' }, inputCheckbox: { id: 'inlineCheckbox2' } }),
+                checkbox({ inline: true, label: { title: '3' }, inputCheckbox: { id: 'inlineCheckbox3' } })
+            ]),
+            e({ tag: 'br' }),
+            form({}, [
+                radio({
+                    inline: true,
+                    label: { title: '1' },
+                    inputRadio: { id: 'inlineRadio1', value: 'option1', name: 'inlineRadioOptions' }
+                }),
+                radio({
+                    inline: true,
+                    label: { title: '2' },
+                    inputRadio: { id: 'inlineRadio2', value: 'option2', name: 'inlineRadioOptions' }
+                }),
+                radio({
+                    inline: true,
+                    label: { title: '3' },
+                    inputRadio: { id: 'inlineRadio3', value: 'option3', name: 'inlineRadioOptions' }
+                })
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `checkbox({ inline: true, label: { title: '1' }, inputCheckbox: { id: 'inlineCheckbox1' } }),`, e({ tag: 'br' }),
+            `checkbox({ inline: true, label: { title: '2' }, inputCheckbox: { id: 'inlineCheckbox2' } }),`, e({ tag: 'br' }),
+            `checkbox({ inline: true, label: { title: '3' }, inputCheckbox: { id: 'inlineCheckbox3' } }),`, e({ tag: 'br' }),
+            `radio({`, e({ tag: 'br' }),
+            `    inline: true,`, e({ tag: 'br' }),
+            `    label: { title: '1' },`, e({ tag: 'br' }),
+            `    inputRadio: { id: 'inlineRadio1', value: 'option1', name: 'inlineRadioOptions' }`, e({ tag: 'br' }),
+            `}),`, e({ tag: 'br' }),
+            `radio({`, e({ tag: 'br' }),
+            `    inline: true,`, e({ tag: 'br' }),
+            `    label: { title: '2' },`, e({ tag: 'br' }),
+            `    inputRadio: { id: 'inlineRadio2', value: 'option2', name: 'inlineRadioOptions' }`, e({ tag: 'br' }),
+            `}),`, e({ tag: 'br' }),
+            `radio({`, e({ tag: 'br' }),
+            `    inline: true,`, e({ tag: 'br' }),
+            `    label: { title: '3' },`, e({ tag: 'br' }),
+            `    inputRadio: { id: 'inlineRadio3', value: 'option3', name: 'inlineRadioOptions' }`, e({ tag: 'br' }),
+            `})`
+        ]))),
+        h4({ attrs: { id: 'checkboxes-and-radios-without-la' } }, 'Checkboxes and radios without label text'),
+        p({}, [
+            `Should you have no label definition, the input is positioned as you'd expect.`,
+            strong({}, `Currently only works on non-inline checkboxes and radios. `),
+            `Remember to still provide some form of label for assistive technologies (for instance, using `,
+            code({}, 'aria.label'), , `).`
+        ]),
+        e({ styles: styles.bsExample }, [
+            form({}, [
+                checkbox({ inputCheckbox: { id: 'blankCheckbox', aria: { label: '...' } } }),
+                radio({ inputRadio: { id: 'blankRadio1', value: 'option1', name: 'blankRadio', aria: { label: '...' } } })
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `checkbox({ inputCheckbox: { id: 'blankCheckbox', aria: { label: '...' } } }),`, e({ tag: 'br' }),
+            `radio({ inputRadio: { id: 'blankRadio1', value: 'option1', name: 'blankRadio', aria: { label: '...' } } })`
+        ]))),
+        h4({ attrs: { id: 'selects' } }, 'Selects'),
+        p({}, [
+            `Note that many native select menus—namely in Safari and Chrome—have rounded corners that cannot be modified via `,
+            code({}, 'border-radius'), ` properties.`
+        ]),
+        e({ styles: styles.bsExample }, [
+            form({}, [
+                select({
+                    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]
+                })
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `select({`, e({ tag: 'br' }),
+            `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`, e({ tag: 'br' }),
+            `})`
+        ]))),
+        p({}, [
+            `For `, code({}, 'select'), ` components with the `, code({}, 'multiple'), ` input data property set to `,
+            code({}, 'true'), `, multiple options are shown by default.`
+        ]),
+        e({ styles: styles.bsExample }, [
+            form({}, [
+                select({
+                    multiple: true,
+                    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]
+                })
+            ])
+        ]),
+        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+            `select({`, e({ tag: 'br' }),
+            `    multiple: true,`, e({ tag: 'br' }),
+            `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`, e({ tag: 'br' }),
+            `})`
+        ])))
     ];
 }

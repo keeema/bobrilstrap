@@ -4,7 +4,7 @@ import label, { ILabeldData as ILabelData} from './label';
 import inputRadio, { IInputRadioData as IInputRadioData} from './inputRadio';
 
 export interface IRadioData {
-    label: ILabelData;
+    label?: ILabelData;
     inputRadio?: IInputRadioData;
     inline?: boolean;
 }
@@ -25,7 +25,7 @@ export let radio = b.createDerivedComponent<IRadioData>(elem, {
         b.style(me, radioStyles.radio);
 
         let inputRadioNode = inputRadio(ctx.data.inputRadio);
-        let lbl = label(ctx.data.label, inputRadioNode);
+        let lbl = label(ctx.data.label || {}, inputRadioNode);
 
         if (ctx.data.inline) {
             me.tag = undefined;

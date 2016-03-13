@@ -18,7 +18,6 @@ export interface IBaseData {
     title?: string;
 
     onClick?: (event: b.IBobrilMouseEvent) => boolean | void;
-    onChange?: (value) => void;
 }
 
 export interface IElementData extends IBaseData {
@@ -69,10 +68,6 @@ export let e = b.createVirtualComponent<IElementData>({
             return false;
 
         return !!ctx.data.onClick(event);
-    },
-    onChange(ctx: ICtx, value: any): void {
-        if (ctx.data.onChange)
-            !!ctx.data.onChange(value);
     }
 });
 

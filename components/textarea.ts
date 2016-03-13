@@ -2,7 +2,7 @@ import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 
 export interface ITextareaData extends IBaseData {
-    value: string;
+    value?: string;
     placeholder?: string;
     rows?: number;
     fixedSize?: boolean;
@@ -13,6 +13,7 @@ export interface ITextareaData extends IBaseData {
 
 interface ICtx extends b.IBobrilCtx {
     data: ITextareaData;
+    value: string;
 }
 
 export const textareaStyles = {
@@ -24,7 +25,12 @@ export let textarea = b.createDerivedComponent<ITextareaData>(elem, {
     id: 'bobrilstrap-textare',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'textarea';
-        me.attrs.value = ctx.data.value;
+
+        if (ctx.data.value !== undefined) {
+            ctx.value = ctx.data.value;
+        }
+
+        me.attrs.value = ctx.value;
         b.style(me, textareaStyles.formControl);
 
         b.style(me, !!ctx.data.fixedSize && textareaStyles.fixedSize);
@@ -40,6 +46,11 @@ export let textarea = b.createDerivedComponent<ITextareaData>(elem, {
 
         if (ctx.data.readonly)
             me.attrs['readonly'] = 'readonly';
+    },
+    onChange(ctx: ICtx, value: string): void {
+        ctx.value = value;
+        if (ctx.data.onChange)
+            !!ctx.data.onChange(value);
     }
 });
 

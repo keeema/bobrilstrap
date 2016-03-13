@@ -289,7 +289,7 @@ function supportedControls(): b.IBobrilChildren {
         ]),
         figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
             `inputText({ placeholder: 'Text input' })`, e({ tag: 'br' }),
-            `inputText({ type: InputTextType.number, placeholder: 'Nuber input' })`
+            `inputText({ type: InputTextType.number, placeholder: 'Number input' })`
         ]))),
         e({ styles: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-xref-input-group' } }, [
             h4({}, `Input groups`),

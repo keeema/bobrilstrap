@@ -21,9 +21,11 @@ export const textareaStyles = {
     fixedSize: b.styleDef({ resize: 'none' })
 };
 
-export let textarea = b.createDerivedComponent<ITextareaData>(elem, {
+export let textarea = b.createOverridingComponent<ITextareaData>(elem, {
     id: 'bobrilstrap-textare',
     render(ctx: ICtx, me: b.IBobrilNode) {
+        ctx.me.component.super.render(ctx, me);
+        
         me.tag = 'textarea';
 
         if (ctx.data.value !== undefined) {
@@ -49,8 +51,7 @@ export let textarea = b.createDerivedComponent<ITextareaData>(elem, {
     },
     onChange(ctx: ICtx, value: string): void {
         ctx.value = value;
-        if (ctx.data.onChange)
-            !!ctx.data.onChange(value);
+        ctx.me.component.super.onChange(ctx, value);
     }
 });
 

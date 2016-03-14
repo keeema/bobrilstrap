@@ -490,7 +490,7 @@ function staticControl(): b.IBobrilChildren {
         h2({ attrs: { id: 'forms-controls-static' } }, 'Static control'),
         p({}, [
             `When you need to place plain text next to a form label within a form, use the `,
-            code({}, 'formControlStatic'), ` input data property of `, code({}, 'paragragph'), `.`
+            code({}, 'formControlStatic'), ` input data property of `, code({}, 'paragraph'), `.`
         ]),
         e({ styles: styles.bsExample }, [
             form({ horizontal: true }, [

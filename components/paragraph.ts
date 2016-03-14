@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export const paragraphStyles = {
-    formControlStatic: b.styleDef('form-control-static'); 
+    formControlStatic: b.styleDef('form-control-static') 
 };
 
 export const p = b.createDerivedComponent<IParagraphData>(elem, {

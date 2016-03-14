@@ -31,11 +31,13 @@ export const selectSizeStyles = {
     [SelectSize.sm]: b.styleDef('input-sm')
 };
 
-export let select = b.createDerivedComponent<ISelectData>(elem, {
+export let select = b.createOverridingComponent<ISelectData>(elem, {
     id: 'bobrilstrap-select',
     render(ctx: ICtx, me: b.IBobrilNode) {
+        ctx.me.component.super.render(ctx, me);
+        
         me.tag = 'select';
-
+        
         if (ctx.data.value !== undefined) {
             ctx.value = ctx.data.value;
         } else if (ctx.value === undefined && ctx.data.multiple) {
@@ -58,8 +60,7 @@ export let select = b.createDerivedComponent<ISelectData>(elem, {
     },
     onChange(ctx: ICtx, value: string | string[]): void {
         ctx.value = value;
-        if (ctx.data.onChange)
-            !!ctx.data.onChange(value);
+        ctx.me.component.super.onChange(ctx, value);
     }
 });
 

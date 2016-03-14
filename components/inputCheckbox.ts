@@ -13,9 +13,11 @@ interface ICtx extends b.IBobrilCtx {
     checked: boolean;
 }
 
-export let inputCheckbox = b.createDerivedComponent<IInputCheckBoxData>(elem, {
+export let inputCheckbox = b.createOverridingComponent<IInputCheckBoxData>(elem, {
     id: 'bobrilstrap-input-checkbox',
     render(ctx: ICtx, me: b.IBobrilNode) {
+        ctx.me.component.super.render(ctx, me);
+        
         if (ctx.data.checked !== undefined) {
             ctx.checked = !!ctx.data.checked;
         } else if (ctx.checked === undefined) {
@@ -34,8 +36,7 @@ export let inputCheckbox = b.createDerivedComponent<IInputCheckBoxData>(elem, {
     },
     onChange(ctx: ICtx, value: boolean): void {
         ctx.checked = value;
-        if (ctx.data.onChange)
-            !!ctx.data.onChange(value);
+        ctx.me.component.super.onChange(ctx, value);
     }
 });
 

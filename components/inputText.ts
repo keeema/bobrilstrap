@@ -50,9 +50,10 @@ export const inputTextSizeStyles = {
     [InputTextSize.sm]: b.styleDef('input-sm')
 };
 
-export let inputText = b.createDerivedComponent<IInputTextData>(elem, {
+export let inputText = b.createOverridingComponent<IInputTextData>(elem, {
     id: 'bobrilstrap-input-text',
     render(ctx: ICtx, me: b.IBobrilNode) {
+        ctx.me.component.super.render(ctx, me);
         if (ctx.data.value !== undefined) {
             ctx.value = ctx.data.value;
         }
@@ -74,8 +75,7 @@ export let inputText = b.createDerivedComponent<IInputTextData>(elem, {
     },
     onChange(ctx: ICtx, value: string): void {
         ctx.value = value;
-        if (ctx.data.onChange)
-            !!ctx.data.onChange(value);
+        ctx.me.component.super.onChange(ctx, value);
     }
 });
 

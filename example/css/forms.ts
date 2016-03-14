@@ -111,27 +111,35 @@ function inlineForm(): b.IBobrilChildren {
         e({ styles: styles.bsExample }, [
             form({ inline: true }, [
                 formGroup({}, [
-                    label({ for: 'exampleInputName2' }, 'Name'),
+                    label({ for: 'exampleInputName2' }, 'Name'), ' ',
                     inputText({ id: 'exampleInputName2', placeholder: 'Jane Doe' })
-                ]),
+                ]), ' ',
                 formGroup({}, [
-                    label({ for: 'exampleInputEmail2' }, 'Email'),
-                    inputText({ id: 'exampleInputEmail2', type: InputTextType.email, placeholder: 'jane.doe@example.com' })
-                ]),
+                    label({ for: 'exampleInputEmail2' }, 'Email'), ' ',
+                    inputText({
+                        id: 'exampleInputEmail2',
+                        type: InputTextType.email,
+                        placeholder: 'jane.doe@example.com'
+                    })
+                ]), ' ',
                 button({ label: 'Send invitation', onClick: () => alert('Clicked!') })
             ])
         ]),
         figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
             `form({ inline: true }, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ for: 'exampleInputName2' }, 'Name'),`, e({ tag: 'br' }),
+            `        label({ for: 'exampleInputName2' }, 'Name'), ' ',`, e({ tag: 'br' }),
             `        inputText({ id: 'exampleInputName2', placeholder: 'Jane Doe' })`, e({ tag: 'br' }),
-            `    ]),`, e({ tag: 'br' }),
+            `    ]), ' ',`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ for: 'exampleInputEmail2' }, 'Email'),`, e({ tag: 'br' }),
-            `        inputText({ id: 'exampleInputEmail2', type: InputTextType.email, placeholder: 'jane.doe@example.com' })`,
+            `        label({ for: 'exampleInputEmail2' }, 'Email'), ' ',`, e({ tag: 'br' }),
+            `        inputText({`, e({ tag: 'br' }),
+            `            id: 'exampleInputEmail2',`, e({ tag: 'br' }),
+            `            type: InputTextType.email,`, e({ tag: 'br' }),
+            `            placeholder: 'jane.doe@example.com'`, e({ tag: 'br' }),
+            `        })`,
             e({ tag: 'br' }),
-            `    ]),`, e({ tag: 'br' }),
+            `    ]), ' ',`, e({ tag: 'br' }),
             `    button({ label: 'Send invitation', onClick: () => alert('Clicked!') })`, e({ tag: 'br' }),
             `])`
         ]))),
@@ -139,13 +147,21 @@ function inlineForm(): b.IBobrilChildren {
             form({ inline: true }, [
                 formGroup({}, [
                     label({ for: 'exampleInputEmail3', srOnly: true }, 'Email address'),
-                    inputText({ id: 'exampleInputEmail3', type: InputTextType.email, placeholder: 'Email' })
-                ]),
+                    inputText({ 
+                        id: 'exampleInputEmail3', 
+                        type: InputTextType.email, 
+                        placeholder: 'Email' 
+                    })
+                ]), ' ',
                 formGroup({}, [
-                    label({ for: 'Email' }, 'Email'),
-                    inputText({ id: 'Email', type: InputTextType.password, placeholder: 'Password' })
-                ]),
-                checkbox({ label: { title: 'Remember me' }, inputCheckbox: {} }),
+                    label({ for: 'exampleInputPassword3', srOnly: true }, 'Password'),
+                    inputText({
+                        id: 'exampleInputPassword3',
+                        type: InputTextType.password,
+                        placeholder: 'Password'
+                    })
+                ]), ' ',
+                checkbox({ label: { title: 'Remember me' }, inputCheckbox: {} }), ' ',
                 button({ label: 'Sign in', onClick: () => alert('Clicked!') })
             ])
         ]),
@@ -153,14 +169,21 @@ function inlineForm(): b.IBobrilChildren {
             `form({ inline: true }, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
             `        label({ for: 'exampleInputEmail3', srOnly: true }, 'Email address'),`, e({ tag: 'br' }),
-            `        inputText({ id: 'exampleInputEmail3', type: InputTextType.email, placeholder: 'Email' })`, e({ tag: 'br' }),
-            `    ]),`, e({ tag: 'br' }),
+            `        inputText({`, e({ tag: 'br' }),
+            `            id: 'exampleInputEmail3',`, e({ tag: 'br' }),
+            `            type: InputTextType.email,`, e({ tag: 'br' }),
+            `            placeholder: 'Email'`, e({ tag: 'br' }),
+            `        })`, e({ tag: 'br' }),
+            `    ]), ' ',`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ for: 'Email' }, 'Email'),`, e({ tag: 'br' }),
-            `        inputText({ id: 'Email', type: InputTextType.password, placeholder: 'Password' })`,
-            e({ tag: 'br' }),
-            `        checkbox({ label: { title: 'Remember me' }, inputCheckbox: {} }),`, e({ tag: 'br' }),
-            `    ]),`, e({ tag: 'br' }),
+            `        label({ for: 'exampleInputPassword3', srOnly: true }, 'Password'),`, e({ tag: 'br' }),
+            `        inputText({`, e({ tag: 'br' }),
+            `            id: 'exampleInputPassword3',`, e({ tag: 'br' }),
+            `            type: InputTextType.password,`, e({ tag: 'br' }),
+            `            placeholder: 'Password'`, e({ tag: 'br' }),
+            `        })`, e({ tag: 'br' }),
+            `    ]), ' ',`, e({ tag: 'br' }),
+            `    checkbox({ label: { title: 'Remember me' }, inputCheckbox: {} }), ' ',`, e({ tag: 'br' }),
             `    button({ label: 'Sign in', onClick: () => alert('Clicked!') })`, e({ tag: 'br' }),
             `])`
         ]))),
@@ -173,7 +196,7 @@ function inlineForm(): b.IBobrilChildren {
                         inputText({ id: 'exampleInputAmount', type: InputTextType.number, placeholder: 'Amount' }),
                         inputGroupAddon({}, '.00')
                     ])
-                ]),
+                ]), ' ',
                 button({ label: 'Transfer cash', option: ButtonOption.primary, onClick: () => alert('Clicked!') })
             ])
         ]),
@@ -186,7 +209,7 @@ function inlineForm(): b.IBobrilChildren {
             `            inputText({ id: 'exampleInputAmount', type: InputTextType.number, placeholder: 'Amount' }),`, e({ tag: 'br' }),
             `            inputGroupAddon({}, '.00')`, e({ tag: 'br' }),
             `        ])     `, e({ tag: 'br' }),
-            `    ]),`, e({ tag: 'br' }),
+            `    ]), ' ',`, e({ tag: 'br' }),
             `    button({ label: 'Sign in', onClick: () => alert('Clicked!') })`, e({ tag: 'br' }),
             `])`
         ])))
@@ -199,7 +222,7 @@ function horizontalForm(): b.IBobrilChildren {
         p({}, [
             `Use Bobrilstrap's predefined grid styles and components to align labels and groups of form controls 
             in a horizontal layout by adding `, code({}, 'horizontal'),
-            ` form input data property. Doing so changes `, code({}, 'formGroups({}, ...)'), `s to behave as grid rows, so no need for `,
+            ` form input data property. Doing so changes `, code({}, 'formGroup({}, ...)'), `s to behave as grid rows, so no need for `,
             code({}, 'row({}, ...)'), `.`
 
         ]),

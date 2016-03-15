@@ -7,7 +7,7 @@ export default b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             container(
-                { styles: styles.bsDocsContainer },
+                { style: styles.bsDocsContainer },
                 row({},
                     col({ size: Size.md, count: 9, attrs: { role: 'main' } }, ctx.data.children)
                 )

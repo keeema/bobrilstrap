@@ -32,7 +32,7 @@ export default b.createVirtualComponent({
                         ' system, both as ', code({}, 'npm'), ' packages. The easiest way to start is to download ',
                         a({ href: 'https://github.com/Bobris/Bobril' }, 'predefined simpleApp bobril application skeleton'),
                         ' and run following commands in the root of downloaded folder:']),
-                    figure({ styles: styles.highlight }, pre({}, [
+                    figure({ style: styles.highlight }, pre({}, [
                         'npm i bobril-build -g', e({ tag: 'br' }),
                         'npm i', e({ tag: 'br' }),
                         'bb'

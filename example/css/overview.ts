@@ -65,7 +65,7 @@ function containers(): b.IBobrilChildren {
             'and more, neither container is nestable.'
         ]),
         p({}, ['Use ', code({}, 'container({}, ...)'), ' for a responsive fixed width container.']),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             'container({}, [', e({ tag: 'br' }),
             '   ...', e({ tag: 'br' }),
             '])'
@@ -75,7 +75,7 @@ function containers(): b.IBobrilChildren {
             code({}, 'container({ fluid: true }, ...)'),
             ' for a full width container, spanning the entire width of your viewport.'
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             'container({ fluid: true }, [', e({ tag: 'br' }),
             '   ...', e({ tag: 'br' }),
             '])', e({ tag: 'br' }),

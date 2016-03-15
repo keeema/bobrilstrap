@@ -25,8 +25,8 @@ function inline(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'code-inline' } }, 'Inline'),
         p({}, [`Wrap inline snippets of code with  `, code({}, 'code({}, ...)'), `.`]),
-        e({ styles: styles.bsExample }, ['For example, ', code({}, 'section'), ' should be wrapped as inline.']),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        e({ style: styles.bsExample }, ['For example, ', code({}, 'section'), ' should be wrapped as inline.']),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `['For example, ', code({}, 'section'), ' should be wrapped as inline.']`
 
         ])))
@@ -37,11 +37,11 @@ function userInput(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'code-user-input' } }, 'User input'),
         p({}, [`Use the  `, code({}, 'kbd({}, ...)'), ` to indicate input that is typically entered via keyboard.`]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             'To switch directories, type ', kbd({}, 'cd'), ' followed by the name of the directory.', e({ tag: 'br' }),
             'To edit settings, press ', kbd({}, 'ctrl + ,')
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `[`, e({ tag: 'br' }),
             `   'To switch directories, type ', kbd({}, 'cd'), ' followed by the name of the directory.',`,
             e({ tag: 'br' }),
@@ -60,8 +60,8 @@ function basicBlock(): b.IBobrilChildren {
             `Use `, code({}, 'pre({}, ...)'),
             ` for multiple lines of code. Be sure to escape any angle brackets in the code for proper rendering.`
         ]),
-        e({ styles: styles.bsExample }, preDefault({}, '<p>Sample text here...</p>')),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        e({ style: styles.bsExample }, preDefault({}, '<p>Sample text here...</p>')),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `pre({}, '<p>Sample text here...</p>')`
         ])))
     ];
@@ -71,8 +71,8 @@ function variables(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'code-variables' } }, 'Variables'),
         p({}, [`For indicating variables use the `, code({}, 'v({}, ...)'), ` or `, code({}, 'variable({}, ...)'), ` component.`]),
-        e({ styles: styles.bsExample }, [v({}, 'y'), ' = ', v({}, 'mx'), ' + ', v({}, 'b')]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        e({ style: styles.bsExample }, [v({}, 'y'), ' = ', v({}, 'mx'), ' + ', v({}, 'b')]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `[v({}, 'y'), ' = ', v({}, 'mx'), ' + ', v({}, 'b')]`
         ])))
     ];
@@ -82,8 +82,8 @@ function sampleOutput(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'code-sample-output' } }, 'Sample output'),
         p({}, [`For indicating blocks sample output from a program use the `, code({}, 'samp({}, ...)'), ` component.`]),
-        e({ styles: styles.bsExample }, samp({}, 'This text is meant to be treated as sample output from a computer program.')),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        e({ style: styles.bsExample }, samp({}, 'This text is meant to be treated as sample output from a computer program.')),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `samp({}, 'This text is meant to be treated as sample output from a computer program.')`
         ])))
     ];

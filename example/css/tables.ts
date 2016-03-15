@@ -34,7 +34,7 @@ function basicExample(): b.IBobrilChildren {
             code({}, 'string'), ` or `, code({}, 'ITdData'), ` and headers can be defined as array of `,
             code({}, 'string'), ` or `, code({}, 'IThData'), `.`
         ]),
-        e({ styles: styles.bsExample }, table({
+        e({ style: styles.bsExample }, table({
             caption: 'Optional table caption.',
             head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },
             body: {
@@ -45,7 +45,7 @@ function basicExample(): b.IBobrilChildren {
                 ]
             }
         })),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `table({`, e({ tag: 'br' }),
             `    caption: 'Optional table caption.',`, e({ tag: 'br' }),
             `    head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },`, e({ tag: 'br' }),
@@ -68,14 +68,14 @@ function stripedRows(): b.IBobrilChildren {
             `Set `, code({}, 'striped'), ` input data property to add zebra-striping to any table row within the `,
             code({}, '<tbody>'), `.`
         ]),
-        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-tables-striped-ie8' } }, [
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-tables-striped-ie8' } }, [
             h4({}, 'Cross-browser compatibility'),
             p({}, [
                 `Striped tables are styled via the `, code({}, ':nth-child'),
                 ` CSS selector, which is not available in Internet Explorer 8.`
             ])
         ]),
-        e({ styles: styles.bsExample }, table({
+        e({ style: styles.bsExample }, table({
             striped: true,
             head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },
             body: {
@@ -86,7 +86,7 @@ function stripedRows(): b.IBobrilChildren {
                 ]
             }
         })),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `table({`, e({ tag: 'br' }),
             `    caption: 'Optional table caption.',`, e({ tag: 'br' }),
             `    head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },`, e({ tag: 'br' }),
@@ -106,7 +106,7 @@ function borderedTable(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'tables-bordered' } }, 'Bordered table'),
         p({}, [`Set `, code({}, 'bordered'), ` for borders on all sides of the table and cells.`]),
-        e({ styles: styles.bsExample }, table({
+        e({ style: styles.bsExample }, table({
             bordered: true,
             head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },
             body: {
@@ -117,7 +117,7 @@ function borderedTable(): b.IBobrilChildren {
                 ]
             }
         })),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `table({`, e({ tag: 'br' }),
             `    striped: true,`, e({ tag: 'br' }),
             `    head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },`, e({ tag: 'br' }),
@@ -138,7 +138,7 @@ function hoverRows(): b.IBobrilChildren {
         h2({ attrs: { id: 'tables-hover-rows' } }, 'Hover rows'),
         p({}, [`Set `, code({}, 'hover'), ` input data property to enable a hover state on table rows within a `,
             code({}, '<tbody>'), `.`]),
-        e({ styles: styles.bsExample }, table({
+        e({ style: styles.bsExample }, table({
             hover: true,
             head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },
             body: {
@@ -149,7 +149,7 @@ function hoverRows(): b.IBobrilChildren {
                 ]
             }
         })),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `table({`, e({ tag: 'br' }),
             `    hover: true,`, e({ tag: 'br' }),
             `    head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },`, e({ tag: 'br' }),
@@ -169,7 +169,7 @@ function condensedTable(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'tables-condensed' } }, 'Condensed table'),
         p({}, [`Set `, code({}, 'condensed'), ` input data property to make tables more compact by cutting cell padding in half.`]),
-        e({ styles: styles.bsExample }, table({
+        e({ style: styles.bsExample }, table({
             condensed: true,
             head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },
             body: {
@@ -180,7 +180,7 @@ function condensedTable(): b.IBobrilChildren {
                 ]
             }
         })),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `table({`, e({ tag: 'br' }),
             `    condensed: true,`, e({ tag: 'br' }),
             `    head: { row: { headers: ['#', 'First Name', 'Last Name', 'Username'] } },`, e({ tag: 'br' }),
@@ -200,7 +200,7 @@ function contextualStyles(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'tables-contextual-styles' } }, 'Contextual styles'),
         p({}, [`Use `, code({}, 'Context'), ` styles to color table rows or individual cells.`]),
-        e({ styles: styles.bsExample }, table({
+        e({ style: styles.bsExample }, table({
             head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },
             body: {
                 rows: [
@@ -216,7 +216,7 @@ function contextualStyles(): b.IBobrilChildren {
                 ]
             }
         })),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `table({`, e({ tag: 'br' }),
             `    head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },`, e({ tag: 'br' }),
             `    body: {`, e({ tag: 'br' }),
@@ -234,7 +234,7 @@ function contextualStyles(): b.IBobrilChildren {
             `    }`, e({ tag: 'br' }),
             `})`
         ]))),
-        e({ styles: styles.bsExample }, table({
+        e({ style: styles.bsExample }, table({
             head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading', 'Column heading', 'Column heading'] } },
             body: {
                 rows: [
@@ -251,7 +251,7 @@ function contextualStyles(): b.IBobrilChildren {
                 ]
             }
         })),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `table({`, e({ tag: 'br' }),
             `    head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },`, e({ tag: 'br' }),
             `    body: {`, e({ tag: 'br' }),
@@ -270,7 +270,7 @@ function contextualStyles(): b.IBobrilChildren {
             `    }`, e({ tag: 'br' }),
             `})`
         ]))),
-        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-tables-context-accessibility' } }, [
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-tables-context-accessibility' } }, [
             h4({}, 'Conveying meaning to assistive technologies'),
             p({}, [
                 `Using color to add meaning to a table row or individual cell only provides a visual indication, which will not be 
@@ -290,7 +290,7 @@ function responsiveTables(): b.IBobrilChildren {
             ` component to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, 
             you will not see any difference in these tables.`
         ]),
-        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-tables-responsive-overflow' } }, [
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-tables-responsive-overflow' } }, [
             h4({}, 'Vertical clipping/truncation'),
             p({}, [
                 `Responsive tables make use of `, code({}, 'overflow-y: hidden'),
@@ -298,7 +298,7 @@ function responsiveTables(): b.IBobrilChildren {
                 this can clip off dropdown menus and other third-party widgets.`
             ])
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             responsiveTable({
                 table: {
                     head: {
@@ -337,7 +337,7 @@ function responsiveTables(): b.IBobrilChildren {
                 }
             })
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `responsiveTable({`, e({ tag: 'br' }),
             `    table: {`, e({ tag: 'br' }),
             `        bordered: true,`, e({ tag: 'br' }),

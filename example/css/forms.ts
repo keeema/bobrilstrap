@@ -31,7 +31,7 @@ function basicExample(): b.IBobrilChildren {
             ` are set to `, code({}, 'width: 100%;'), ` by default. Wrap labels and controls in `, code({}, 'formGroup({}, ...)'),
             ` for optimum spacing.`,
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({}, [
                 formGroup({}, [
                     label({ for: 'exampleInputEmail1' }, 'Email address'),
@@ -50,7 +50,7 @@ function basicExample(): b.IBobrilChildren {
                 button({ label: 'Submit', onClick: () => alert('Clicked!') })
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `form({}, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
             `        label({ for: 'exampleInputEmail1' }, 'Email address'),`, e({ tag: 'br' }),
@@ -69,7 +69,7 @@ function basicExample(): b.IBobrilChildren {
             `    button({ label: 'Submit', onClick: () => alert('Clicked!') })`, e({ tag: 'br' }),
             `])`, e({ tag: 'br' }),
         ]))),
-        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-formgroup-inputgroup' } }, [
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-formgroup-inputgroup' } }, [
             h4({}, `Don't mix form groups with input groups`),
             p({}, `Do not mix form groups directly with input groups. Instead, nest the input group inside of the form group.`)
         ]),
@@ -83,7 +83,7 @@ function inlineForm(): b.IBobrilChildren {
             `Set `, code({}, 'inline'), ` input data property to your form for left-aligned and inline-block controls.`,
             strong({}, `This only applies to forms within viewports that are at least 768px wide.`)
         ]),
-        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-inline-form-width' } }, [
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-inline-form-width' } }, [
             h4({}, `May require custom widths`),
             p({}, [
                 `Inputs and selects have `, code({}, 'width: 100%;'), ` applied by default in Bootstrap. Within inline forms, we reset
@@ -91,7 +91,7 @@ function inlineForm(): b.IBobrilChildren {
                 additional custom widths may be required.`
             ])
         ]),
-        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-inline-form-labels' } }, [
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-inline-form-labels' } }, [
             h4({}, `Always add labels`),
             p({}, [
                 `Screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, 
@@ -108,7 +108,7 @@ function inlineForm(): b.IBobrilChildren {
                 ` as a replacement for other labelling methods is not advised.`
             ])
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({ inline: true }, [
                 formGroup({}, [
                     label({ for: 'exampleInputName2' }, 'Name'), ' ',
@@ -125,7 +125,7 @@ function inlineForm(): b.IBobrilChildren {
                 button({ label: 'Send invitation', onClick: () => alert('Clicked!') })
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `form({ inline: true }, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
             `        label({ for: 'exampleInputName2' }, 'Name'), ' ',`, e({ tag: 'br' }),
@@ -143,7 +143,7 @@ function inlineForm(): b.IBobrilChildren {
             `    button({ label: 'Send invitation', onClick: () => alert('Clicked!') })`, e({ tag: 'br' }),
             `])`
         ]))),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({ inline: true }, [
                 formGroup({}, [
                     label({ for: 'exampleInputEmail3', srOnly: true }, 'Email address'),
@@ -165,7 +165,7 @@ function inlineForm(): b.IBobrilChildren {
                 button({ label: 'Sign in', onClick: () => alert('Clicked!') })
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `form({ inline: true }, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
             `        label({ for: 'exampleInputEmail3', srOnly: true }, 'Email address'),`, e({ tag: 'br' }),
@@ -187,7 +187,7 @@ function inlineForm(): b.IBobrilChildren {
             `    button({ label: 'Sign in', onClick: () => alert('Clicked!') })`, e({ tag: 'br' }),
             `])`
         ]))),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({ inline: true }, [
                 formGroup({}, [
                     label({ for: 'exampleInputAmount', srOnly: true }, 'Amount (in dollars)'),
@@ -200,7 +200,7 @@ function inlineForm(): b.IBobrilChildren {
                 button({ label: 'Transfer cash', option: ButtonOption.primary, onClick: () => alert('Clicked!') })
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `form({ inline: true }, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
             `        label({ for: 'exampleInputAmount', srOnly: true }, 'Amount (in dollars)'),`, e({ tag: 'br' }),
@@ -226,15 +226,15 @@ function horizontalForm(): b.IBobrilChildren {
             code({}, 'row({}, ...)'), `.`
 
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({ horizontal: true }, [
                 formGroup({}, [
-                    label({ controlLabel: true, for: 'inputEmail3', styles: colStyles[Size.sm][2] }, 'Email'),
+                    label({ controlLabel: true, for: 'inputEmail3', style: colStyles[Size.sm][2] }, 'Email'),
                     col({ size: Size.sm, count: 10 },
                         inputText({ id: 'inputEmail3', type: InputTextType.email, placeholder: 'Email' }))
                 ]),
                 formGroup({}, [
-                    label({ controlLabel: true, for: 'inputPassword3', styles: colStyles[Size.sm][2] }, 'Password'),
+                    label({ controlLabel: true, for: 'inputPassword3', style: colStyles[Size.sm][2] }, 'Password'),
                     col({ size: Size.sm, count: 10 },
                         inputText({ id: 'inputPassword3', type: InputTextType.email, placeholder: 'Password' }))
                 ]),
@@ -249,15 +249,15 @@ function horizontalForm(): b.IBobrilChildren {
                 ])
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `form({ horizontal: true }, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ controlLabel: true, for: 'inputEmail3', styles: colStyles[Size.sm][2] }, 'Email'),`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, for: 'inputEmail3', style: colStyles[Size.sm][2] }, 'Email'),`, e({ tag: 'br' }),
             `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
             `            inputText({ id: 'inputEmail3', type: InputTextType.email, placeholder: 'Email' }))`, e({ tag: 'br' }),
             `    ]),`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ controlLabel: true, for: 'inputPassword3', styles: colStyles[Size.sm][2] }, 'Password'),`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, for: 'inputPassword3', style: colStyles[Size.sm][2] }, 'Password'),`, e({ tag: 'br' }),
             `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
             `            inputText({ id: 'inputPassword3', type: InputTextType.email, placeholder: 'Password' }))`, e({ tag: 'br' }),
             `    ]),`, e({ tag: 'br' }),
@@ -298,24 +298,24 @@ function supportedControls(): b.IBobrilChildren {
             code({}, 'color'), `.`
 
         ]),
-        e({ styles: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-input-needs-type' } }, [
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-input-needs-type' } }, [
             h4({}, `Type declaration required`),
             p({}, [
                 `Inputs type should be defined by the `, code({}, 'type'), ` input data property or the `, code({}, 'InputTextType.text'),
                 ` will be used as the default one.`
             ])
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({}, [
                 formGroup({}, inputText({ placeholder: 'Text input' })),
                 formGroup({}, inputText({ type: InputTextType.number, placeholder: 'Number input' }))
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `inputText({ placeholder: 'Text input' })`, e({ tag: 'br' }),
             `inputText({ type: InputTextType.number, placeholder: 'Number input' })`
         ]))),
-        e({ styles: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-xref-input-group' } }, [
+        e({ style: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-xref-input-group' } }, [
             h4({}, `Input groups`),
             p({}, [
                 `To add integrated text or buttons before and/or after any text-based `, code({}, '<input>'),
@@ -326,16 +326,16 @@ function supportedControls(): b.IBobrilChildren {
         p({}, [
             `Form control which supports multiple lines of text. Change `, code({}, 'rows'), ` attribute as necessary.`
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             formGroup({}, textarea({ rows: 3 }))
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `textarea({ rows: 3 })`
         ]))),
         h3({ attrs: { id: 'checkboxes-and-radios' } }, 'Checkboxes and radios'),
         p({}, `Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.`),
         h4({ attrs: { id: 'default-stacked' } }, 'Default (stacked)'),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({}, [
                 checkbox({
                     label: { title: 'Option one is this and that—be sure to include why it\'s great' }
@@ -359,7 +359,7 @@ function supportedControls(): b.IBobrilChildren {
                 })
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `checkbox({`, e({ tag: 'br' }),
             `    label: { title: 'Option one is this and that—be sure to include why it\\'s great' }`, e({ tag: 'br' }),
             `}),`, e({ tag: 'br' }),
@@ -385,7 +385,7 @@ function supportedControls(): b.IBobrilChildren {
             `Use the `, code({}, 'inline'),
             ` input data property on a series of checkboxes or radios for controls that appear on the same line.`
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({}, [
                 checkbox({ inline: true, label: { title: '1' }, inputCheckbox: { id: 'inlineCheckbox1' } }),
                 checkbox({ inline: true, label: { title: '2' }, inputCheckbox: { id: 'inlineCheckbox2' } }),
@@ -410,7 +410,7 @@ function supportedControls(): b.IBobrilChildren {
                 })
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `checkbox({ inline: true, label: { title: '1' }, inputCheckbox: { id: 'inlineCheckbox1' } }),`, e({ tag: 'br' }),
             `checkbox({ inline: true, label: { title: '2' }, inputCheckbox: { id: 'inlineCheckbox2' } }),`, e({ tag: 'br' }),
             `checkbox({ inline: true, label: { title: '3' }, inputCheckbox: { id: 'inlineCheckbox3' } }),`, e({ tag: 'br' }),
@@ -437,13 +437,13 @@ function supportedControls(): b.IBobrilChildren {
             `Remember to still provide some form of label for assistive technologies (for instance, using `,
             code({}, 'aria.label'), , `).`
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({}, [
                 checkbox({ inputCheckbox: { id: 'blankCheckbox', aria: { label: '...' } } }),
                 radio({ inputRadio: { id: 'blankRadio1', value: 'option1', name: 'blankRadio', aria: { label: '...' } } })
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `checkbox({ inputCheckbox: { id: 'blankCheckbox', aria: { label: '...' } } }),`, e({ tag: 'br' }),
             `radio({ inputRadio: { id: 'blankRadio1', value: 'option1', name: 'blankRadio', aria: { label: '...' } } })`
         ]))),
@@ -452,14 +452,14 @@ function supportedControls(): b.IBobrilChildren {
             `Note that many native select menus—namely in Safari and Chrome—have rounded corners that cannot be modified via `,
             code({}, 'border-radius'), ` properties.`
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({}, [
                 select({
                     options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]
                 })
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `select({`, e({ tag: 'br' }),
             `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`, e({ tag: 'br' }),
             `})`
@@ -468,7 +468,7 @@ function supportedControls(): b.IBobrilChildren {
             `For `, code({}, 'select'), ` components with the `, code({}, 'multiple'), ` input data property set to `,
             code({}, 'true'), `, multiple options are shown by default.`
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({}, [
                 select({
                     multiple: true,
@@ -476,7 +476,7 @@ function supportedControls(): b.IBobrilChildren {
                 })
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `select({`, e({ tag: 'br' }),
             `    multiple: true,`, e({ tag: 'br' }),
             `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`, e({ tag: 'br' }),
@@ -492,29 +492,29 @@ function staticControl(): b.IBobrilChildren {
             `When you need to place plain text next to a form label within a form, use the `,
             code({}, 'formControlStatic'), ` input data property of `, code({}, 'paragraph'), `.`
         ]),
-        e({ styles: styles.bsExample }, [
+        e({ style: styles.bsExample }, [
             form({ horizontal: true }, [
                 formGroup({}, [
-                    label({ controlLabel: true, styles: colStyles[Size.sm][2] }, 'Email'),
+                    label({ controlLabel: true, style: colStyles[Size.sm][2] }, 'Email'),
                     col({ size: Size.sm, count: 10 },
                         p({ formControlStatic: true }, 'email@example.com'))
                 ]),
                 formGroup({}, [
-                    label({ controlLabel: true, for: 'inputPassword', styles: colStyles[Size.sm][2] }, 'Password'),
+                    label({ controlLabel: true, for: 'inputPassword', style: colStyles[Size.sm][2] }, 'Password'),
                     col({ size: Size.sm, count: 10 },
                         inputText({ id: 'inputPassword', type: InputTextType.email, placeholder: 'Password' }))
                 ])
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `form({ horizontal: true }, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ controlLabel: true, styles: colStyles[Size.sm][2] }, 'Email'),`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, style: colStyles[Size.sm][2] }, 'Email'),`, e({ tag: 'br' }),
             `            p({ formControlStatic: true }, 'email@example.com')`, e({ tag: 'br' }),
             `        )`, e({ tag: 'br' }),
             `    ]),`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ controlLabel: true, for: 'inputPassword', styles: colStyles[Size.sm][2] }, 'Password'),`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, for: 'inputPassword', style: colStyles[Size.sm][2] }, 'Password'),`, e({ tag: 'br' }),
             `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
             `            inputText({ id: 'inputPassword', type: InputTextType.email, placeholder: 'Password' })`, e({ tag: 'br' }),
             `        )`, e({ tag: 'br' }),

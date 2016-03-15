@@ -92,14 +92,14 @@ function gridOptions(): b.IBobrilChildren {
                 body: {
                     rows: [
                         {
-                            headers: [{ children: 'Grid behavior', styles: typography.textNowrap }],
+                            headers: [{ children: 'Grid behavior', style: typography.textNowrap }],
                             columns: [
                                 { children: 'Horizontal at all times' },
                                 { children: 'Collapsed to start, horizontal above breakpoints', colspan: 3 }
                             ]
                         },
                         {
-                            headers: [{ children: 'Container width', styles: typography.textNowrap }],
+                            headers: [{ children: 'Container width', style: typography.textNowrap }],
                             columns: [
                                 { children: 'None (auto)' },
                                 { children: '750px' },
@@ -108,22 +108,22 @@ function gridOptions(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: 'Component data', styles: typography.textNowrap }],
+                            headers: [{ children: 'Component data', style: typography.textNowrap }],
                             columns: [
-                                { children: code({}, '{ size: Size.xs ... }'), styles: typography.textNowrap },
-                                { children: code({}, '{ size: Size.sm ... }'), styles: typography.textNowrap },
-                                { children: code({}, '{ size: Size.md ... }'), styles: typography.textNowrap },
-                                { children: code({}, '{ size: Size.lg ... }'), styles: typography.textNowrap },
+                                { children: code({}, '{ size: Size.xs ... }'), style: typography.textNowrap },
+                                { children: code({}, '{ size: Size.sm ... }'), style: typography.textNowrap },
+                                { children: code({}, '{ size: Size.md ... }'), style: typography.textNowrap },
+                                { children: code({}, '{ size: Size.lg ... }'), style: typography.textNowrap },
                             ]
                         },
                         {
-                            headers: [{ children: '# of columns', styles: typography.textNowrap }],
+                            headers: [{ children: '# of columns', style: typography.textNowrap }],
                             columns: [
                                 { children: '12', colspan: 4 }
                             ]
                         },
                         {
-                            headers: [{ children: 'Column width', styles: typography.textNowrap }],
+                            headers: [{ children: 'Column width', style: typography.textNowrap }],
                             columns: [
                                 { children: 'Auto' },
                                 { children: '~62px' },
@@ -132,21 +132,21 @@ function gridOptions(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: 'Gutter width', styles: typography.textNowrap }],
+                            headers: [{ children: 'Gutter width', style: typography.textNowrap }],
                             columns: [
                                 { children: '30px (15px on each side of a column)', colspan: 4 }
                             ]
                         },
                         {
-                            headers: [{ children: 'Nestable', styles: typography.textNowrap }],
+                            headers: [{ children: 'Nestable', style: typography.textNowrap }],
                             columns: [{ children: 'Yes', colspan: 4 }]
                         },
                         {
-                            headers: [{ children: 'Offsets', styles: typography.textNowrap }],
+                            headers: [{ children: 'Offsets', style: typography.textNowrap }],
                             columns: [{ children: 'Yes', colspan: 4 }]
                         },
                         {
-                            headers: [{ children: 'Column ordering', styles: typography.textNowrap }],
+                            headers: [{ children: 'Column ordering', style: typography.textNowrap }],
                             columns: [{ children: 'Yes', colspan: 4 }]
                         }
                     ]
@@ -167,7 +167,7 @@ function exampleStackHorizontal(): b.IBobrilChildren {
             code({}, 'row({}, ...)'),
             '.'
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
             col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
             col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
@@ -181,20 +181,20 @@ function exampleStackHorizontal(): b.IBobrilChildren {
             col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),
             col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)')
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.md, count: 8 }, 'col({ size: Size.md, count: 8 }, ...)'),
             col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)')
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),
             col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),
             col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)')
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.md, count: 6 }, 'col({ size: Size.md, count: 6 }, ...)'),
             col({ size: Size.md, count: 6 }, 'col({ size: Size.md, count: 6 }, ...)')
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
             `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
             `    col({ size: Size.md, count: 1 }, 'col({ size: Size.md, count: 1 }, ...)'),`, e({ tag: 'br' }),
@@ -233,10 +233,10 @@ function exampleFluidContainer(): b.IBobrilChildren {
             `Turn any fixed-width grid layout into a full-width layout by changing your outermost `,
             code({}, 'container({}, ...)'),
             ` to `,
-            code({ styles: typography.textNowrap }, 'container({ fluid: true }, ...)'),
+            code({ style: typography.textNowrap }, 'container({ fluid: true }, ...)'),
             `.`
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             'container({ fluid: true }, [', e({ tag: 'br' }),
             '   row({}, [', e({ tag: 'br' }),
             '      ...', e({ tag: 'br' }),
@@ -255,7 +255,7 @@ function exampleMobileAndDesktop(): b.IBobrilChildren {
             code({}, 'col({ cols: [{ size: Size.xs, count: ... }, { size: Size.md, count: ... }] }, ...)'),
             ` for components. See the example below for a better idea of how it all works.`
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.md, count: 8 }] },
                 'col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.md, count: 8 }] }, ...)'
             ),
@@ -263,7 +263,7 @@ function exampleMobileAndDesktop(): b.IBobrilChildren {
                 'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'
             )
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] },
                 'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'
             ),
@@ -274,7 +274,7 @@ function exampleMobileAndDesktop(): b.IBobrilChildren {
                 'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'
             )
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ cols: [{ size: Size.xs, count: 6 }] },
                 'col({ cols: [{ size: Size.xs, count: 6 }] }, ...)'
             ),
@@ -282,7 +282,7 @@ function exampleMobileAndDesktop(): b.IBobrilChildren {
                 'col({ cols: [{ size: Size.xs, count: 6 }] }, ...)'
             )
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
             `    col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.md, count: 8 }] },`, e({ tag: 'br' }),
             `        'col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.md, count: 8 }] }, ...)'`, e({ tag: 'br' }),
@@ -322,7 +322,7 @@ function exampleMobileTabletAndDesktop(): b.IBobrilChildren {
             code({}, 'col({ size: Size.sm, count: ... }, ...)'),
             ` component input data.`
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.sm, count: 6 }, { size: Size.md, count: 8 }] },
                 'col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.sm, count: 6 }, { size: Size.md, count: 8 }, ...)'
             ),
@@ -330,7 +330,7 @@ function exampleMobileTabletAndDesktop(): b.IBobrilChildren {
                 'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.md, count: 4 }] }, ...)'
             )
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] },
                 'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] }, ...)'
             ),
@@ -341,7 +341,7 @@ function exampleMobileTabletAndDesktop(): b.IBobrilChildren {
                 'col({ cols: [{ size: Size.xs, count: 6 }, { size: Size.sm, count: 4 }] }, ...)'
             )
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
             `    col({ cols: [{ size: Size.xs, count: 12 }, { size: Size.sm, count: 6 }, { size: Size.md, count: 8 }] },`,
             e({ tag: 'br' }),
@@ -374,7 +374,7 @@ function exampleColumnWrapping(): b.IBobrilChildren {
             {},
             `If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.`
         ),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.xs, count: 9 }, 'col({ size: Size.xs, count: 9 }, ...)'),
             col({ size: Size.xs, count: 4 }, [
                 'col({ size: Size.xs, count: 4 }, ...)',
@@ -387,7 +387,7 @@ function exampleColumnWrapping(): b.IBobrilChildren {
                 'Subsequent columns continue along the new line.'
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
             `    col({ size: Size.xs, count: 9 }, 'col({ size: Size.xs, count: 9 }, ...)'),`, e({ tag: 'br' }),
             `    col({ size: Size.xs, count: 4 }, [`, e({ tag: 'br' }),
@@ -417,22 +417,22 @@ function offsettingColumns(): b.IBobrilChildren {
             code({}, 'col({ cols: ..., offsets: { size: Size.md, count:  }, ...)'),
             ` moves column over four columns.`
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),
             col({ size: Size.md, count: 4, offsets: { size: Size.md, count: 4 } },
                 'col({ size: Size.md, count: 4, offsets: { size: Size.md, count: 4 } }, ...)')
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } },
                 'col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } }, ...)'),
             col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } },
                 'col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } }, ...)')
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.md, count: 6, offsets: { size: Size.md, count: 3 } },
                 'col({ size: Size.md, count: 3, offsets: { size: Size.md, count: 3 } }, ...)')
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
             `    col({ size: Size.md, count: 4 }, 'col({ size: Size.md, count: 4 }, ...)'),`, e({ tag: 'br' }),
             `    col({ size: Size.md, count: 4, offsets: { size: Size.md, count: 4 } },`, e({ tag: 'br' }),
@@ -465,7 +465,7 @@ function nestingColumns(): b.IBobrilChildren {
             `column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 `,
             `available columns).`,
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.sm, count: 9 }, [
                 'Level 1: col({ size: Size.sm, count: 9 }, ...)',
                 row({}, [
@@ -478,7 +478,7 @@ function nestingColumns(): b.IBobrilChildren {
                 ])
             ])
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
             `    col({ size: Size.sm, count: 9 }, [`, e({ tag: 'br' }),
             `        'Level 1: col({ size: Size.sm, count: 9 }, ...)',`, e({ tag: 'br' }),
@@ -507,13 +507,13 @@ function columnOrdering(): b.IBobrilChildren {
             ` modifier properties on component input data.`,
             
         ]),
-        row({ styles: styles.showGrid }, [
+        row({ style: styles.showGrid }, [
             col({ size: Size.md, count: 9, pushes: { size: Size.md, count: 3 } }, 
                 ' col({ size: Size.md, count: 9, pushes: { size: Size.md, count: 3 } }, ...)'),
             col({ size: Size.md, count: 3, pulls: { size: Size.md, count: 9 } }, 
                 '{ size: Size.md, count: 3, pulls: { size: Size.md, count: 9 } , ...)')
         ]),
-        figure({ styles: styles.highlight }, pre({}, code({ styles: langJs }, [
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
             `    col({ size: Size.md, count: 9, pushes: { size: Size.md, count: 3 } }, `, e({ tag: 'br' }),
             `        ' col({ size: Size.md, count: 9, pushes: { size: Size.md, count: 3 } }, ...)'),`, e({ tag: 'br' }),

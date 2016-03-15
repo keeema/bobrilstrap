@@ -16,7 +16,7 @@ export default b.createVirtualComponent<IData>({
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.children = [            
             element(
-                { styles: styles.bsDocsHeader, attrs: { id: 'content', tabindex: -1 } },
+                { style: styles.bsDocsHeader, attrs: { id: 'content', tabindex: -1 } },
                 container({}, [
                     h1({}, ctx.data.header),
                     p({}, ctx.data.headerContent)

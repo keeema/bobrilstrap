@@ -12,7 +12,7 @@ export interface IBaseData {
     key?: string;
     id?: string;
     children?: b.IBobrilChildren;
-    styles?: b.IBobrilStyles;
+    style?: b.IBobrilStyles;
     aria?: IAria;
     attrs?: { [key: string]: any };
     title?: string;
@@ -36,7 +36,7 @@ export let e = b.createVirtualComponent<IElementData>({
         me.children = ctx.data.children;
         me.attrs = ctx.data.attrs || {};
 
-        b.style(me, ctx.data.styles);
+        b.style(me, ctx.data.style);
 
         if (ctx.data.id)
             me.attrs.id = ctx.data.id;

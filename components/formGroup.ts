@@ -20,11 +20,13 @@ export const formGroupStyles = {
 
 export class FormGroupSize {
     static lg: string = 'lg';
+    static default: string = 'default';
     static sm: string = 'sm';
 }
 
 export const formGroupSizeStyles = {
     [FormGroupSize.lg]: formGroupStyles.formGroupLg,
+    [FormGroupSize.default]: false,
     [FormGroupSize.sm]: formGroupStyles.formGroupSm
 };
 

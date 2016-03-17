@@ -23,11 +23,13 @@ export const selectStyles = {
 
 export class SelectSize {
     static lg: string = 'lg';
+    static default: string = 'default';
     static sm: string = 'sm';
 }
 
 export const selectSizeStyles = {
     [SelectSize.lg]: b.styleDef('input-lg'),
+    [SelectSize.default]: false,
     [SelectSize.sm]: b.styleDef('input-sm')
 };
 

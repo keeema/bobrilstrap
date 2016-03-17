@@ -52,10 +52,10 @@ export let e = b.createVirtualComponent<IElementData>({
                 me.attrs['aria-label'] = ctx.data.aria.label;
 
             if (ctx.data.aria.labelledBy)
-                me.attrs['aria-labelledby '] = ctx.data.aria.labelledBy;
+                me.attrs['aria-labelledby'] = ctx.data.aria.labelledBy;
 
             if (ctx.data.aria.describedBy)
-                me.attrs['aria-describedby '] = ctx.data.aria.describedBy;
+                me.attrs['aria-describedby'] = ctx.data.aria.describedBy;
 
             if (ctx.data.aria.invalid !== undefined && ctx.data.aria.invalid !== null)
                 me.attrs['aria-invalid'] = ctx.data.aria.invalid.toString();

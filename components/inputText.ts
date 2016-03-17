@@ -42,11 +42,13 @@ export const inputTextStyles = {
 
 export class InputTextSize {
     static lg: string = 'lg';
+    static default: string = 'default';
     static sm: string = 'sm';
 }
 
 export const inputTextSizeStyles = {
     [InputTextSize.lg]: b.styleDef('input-lg'),
+    [InputTextSize.default]: false,
     [InputTextSize.sm]: b.styleDef('input-sm')
 };
 

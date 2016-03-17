@@ -9,9 +9,11 @@ export const styles = {
     bsDocsHeader: b.styleDef('bs-docs-header'),
     bsDocsSection: b.styleDef('bs-docs-section'),
     bsExample: b.styleDef('bs-example'),
+    bsExampleControlSizing: b.styleDef('bs-example-control-sizing'),
     bsExampleType: b.styleDef('bs-example-type'),
     collapse: b.styleDef('collapse'),
     collapsed: b.styleDef('collapsed'),
+    controls: b.styleDef('controls'),
     highlight: b.styleDef('highlight'),
     lead: b.styleDef('lead'),
     nav: b.styleDef('nav'),
@@ -29,6 +31,5 @@ export const styles = {
 };
 
 export function init() {
-    //b.asset('./bootstrap-theme.min.css');
     b.asset('./docs.min.css');
 }

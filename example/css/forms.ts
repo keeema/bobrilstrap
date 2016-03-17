@@ -1,6 +1,8 @@
 import * as b from 'bobril';
 import { a, e, p, h2, h3, h4, code, figure, span, form, formGroup, inputText, label, InputTextType, helpText, checkbox,
-    button, ButtonOption, radio, strong, inputGroup, inputGroupAddon, col, colStyles, Size, select, textarea } from '../../index';
+    button, ButtonOption, radio, strong, inputGroup, inputGroupAddon, col, colStyles, Size, select, textarea, ValidationState,
+    validationStyles, InputTextSize, SelectSize, FormGroupSize, row
+} from '../../index';
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
@@ -17,7 +19,13 @@ export default b.createVirtualComponent({
                 inlineForm(),
                 horizontalForm(),
                 supportedControls(),
-                staticControl()
+                staticControl(),
+                formsControlFocus(),
+                formsControlDisabled(),
+                formsControlReadonly(),
+                formsHelpText(),
+                validationStates(),
+                controlSizing()
             ]);
     }
 })
@@ -147,10 +155,10 @@ function inlineForm(): b.IBobrilChildren {
             form({ inline: true }, [
                 formGroup({}, [
                     label({ for: 'exampleInputEmail3', srOnly: true }, 'Email address'),
-                    inputText({ 
-                        id: 'exampleInputEmail3', 
-                        type: InputTextType.email, 
-                        placeholder: 'Email' 
+                    inputText({
+                        id: 'exampleInputEmail3',
+                        type: InputTextType.email,
+                        placeholder: 'Email'
                     })
                 ]), ' ',
                 formGroup({}, [
@@ -520,6 +528,315 @@ function staticControl(): b.IBobrilChildren {
             `        )`, e({ tag: 'br' }),
             `    ])`, e({ tag: 'br' }),
             `])`
+        ])))
+    ];
+}
+
+function formsControlFocus(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'forms-control-focus' } }, 'Focus state'),
+        p({}, [
+            `Bootstrap removes the default `, code({}, 'outline'), ` styles on some form controls and apply a `,
+            code({}, 'box-shadow'), ` in its place for `, code({}, ':focus'), `.`
+        ]),
+        e({ style: styles.bsExample }, [
+            form({}, [
+                inputText({ id: 'focusedInput', placeholder: 'Demonstrative focus state' })
+            ])
+        ]),
+        e({ style: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-focus-demo' } }, [
+            h4({}, [`Demo `, code({}, ':focus'), `state`]),
+            p({}, [
+                `The above example input uses custom styles in our documentation to demonstrate the `, code({}, ':focus'),
+                ` state on a `, code({}, '.form-control'), `.`
+            ])
+        ])
+    ];
+}
+
+function formsControlDisabled(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'forms-control-disabled' } }, 'Disabled state'),
+        p({}, [
+            `Set the `, code({}, 'disabled'), ` input comonent data property to prevent user interactions. Disabled inputs appear lighter 
+            and add a `, code({}, 'not-allowed'), ` cursor.`
+        ]),
+        e({ style: styles.bsExample }, [
+            form({}, [
+                inputText({ id: 'disabledInput', placeholder: 'Disabled input here...', disabled: true })
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `form({}, [`, e({ tag: 'br' }),
+            `    inputText({ id: 'disabledInput', placeholder: 'Disabled input here...', disabled: true })`, e({ tag: 'br' }),
+            `])`
+        ])))
+    ];
+}
+
+function formsControlReadonly(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'forms-control-readonly' } }, 'Readonly state'),
+        p({}, [
+            `Set the `, code({}, 'readonly '), ` input comonent data property to prevent modification of the input's value. Read-only 
+            inputs appear lighter (just like disabled inputs), but retain the standard cursor.`
+        ]),
+        e({ style: styles.bsExample }, [
+            form({}, [
+                inputText({ placeholder: 'Readonly input here…', readonly: true })
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `form({}, [`, e({ tag: 'br' }),
+            `     inputText({ placeholder: 'Readonly input here…', readonly: true })`, e({ tag: 'br' }),
+            `])`
+        ])))
+    ];
+}
+
+function formsHelpText(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'forms-help-text' } }, 'Help text'),
+        p({}, `Block level help text for form controls..`),
+        e({ style: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-help-text-accessibility' } }, [
+            h4({}, `Associating help text with form controls`),
+            p({}, [
+                `Help text should be explicitly associated with the form control it relates to using the `,
+                code({}, 'aria.describedBy'), ` input data property. This will ensure that assistive technologies – such as screen readers 
+                – will announce this help text when the user focuses or enters the control.`
+            ])
+        ]),
+        e({ style: styles.bsExample }, [
+            form({}, [
+                formGroup({}, [
+                    label({ for: 'inputHelpBlock', title: 'Input with help text' }),
+                    inputText({ id: 'inputHelpBlock', aria: { describedBy: 'helpBlock' } })
+                ]),
+                helpText(
+                    { id: 'helpBlock' },
+                    'A block of help text that breaks onto a new line and may extend beyond one line.'
+                )
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `form({}, [`, e({ tag: 'br' }),
+            `     formGroup({}, [`, e({ tag: 'br' }),
+            `         label({ for: 'inputHelpBlock', title: 'Input with help text' }),`, e({ tag: 'br' }),
+            `         inputText({ id: 'inputHelpBlock', aria: { describedBy: 'helpBlock' } })`, e({ tag: 'br' }),
+            `     ]),`, e({ tag: 'br' }),
+            `     helpText(`, e({ tag: 'br' }),
+            `         { id: 'helpBlock' },`, e({ tag: 'br' }),
+            `         'A block of help text that breaks onto a new line and may extend beyond one line.'`, e({ tag: 'br' }),
+            `     )`, e({ tag: 'br' }),
+            `])`
+        ])))
+    ];
+}
+
+function validationStates(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'forms-control-validation' } }, 'Validation states'),
+        p({}, [
+            `Bootstrap includes validation styles for error, warning, and success states on form controls. To use, set `,
+            code({}, 'validationState'), ` input data property to the `, code({}, 'formGroup'), ` node. Any node with defined`,
+            code({}, 'controlLabel'), ` or `, code({}, 'formControl'), ` style (implicitly by the property or by the style) and `,
+            code({}, 'helpText'), `s within that `, code({}, 'formGroup'), ` will receive the validation styles.`
+        ]),
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-form-validation-state-accessibility' } }, [
+            h4({}, `Conveying validation state to assistive technologies and colorblind users`),
+            p({}, `Using these validation styles to denote the state of a form control only provides a visual, color-based indication, 
+            which will not be conveyed to users of assistive technologies - such as screen readers - or to colorblind users.`),
+            p({}, [
+                `Ensure that an alternative indication of state is also provided. For instance, you can include a hint about state in the 
+                form control's <label> text itself (as is the case in the following code example), include a Glyphicon (with appropriate 
+                alternative text using the `, code({}, 'srOnly'), ` input date property or style), or by providing an additional help text 
+                block. Specifically for assistive technologies, invalid form controls can also be assigned an `,
+                code({}, 'aria.invalid'), `input date property.`
+            ])
+        ]),
+        e({ style: styles.bsExample }, [
+            form({}, [
+                formGroup({ validationState: ValidationState.success }, [
+                    label({ for: 'inputSuccess1', title: 'Input with success', controlLabel: true }),
+                    inputText({ id: 'inputSuccess1', aria: { describedBy: 'helpBlock2' } }),
+                    helpText(
+                        { id: 'helpBlock2' },
+                        'A block of help text that breaks onto a new line and may extend beyond one line.'
+                    )
+                ]),
+                formGroup({ validationState: ValidationState.warning }, [
+                    label({ for: 'inputWarning1', title: 'Input with warning', controlLabel: true }),
+                    inputText({ id: 'inputWarning1' })
+                ]),
+                formGroup({ validationState: ValidationState.error }, [
+                    label({ for: 'inputError1', title: 'Input with error', controlLabel: true }),
+                    inputText({ id: 'inputError1' })
+                ]),
+                e({ style: validationStyles.hasSuccess }, [
+                    checkbox({
+                        label: { title: 'Checkbox with success' },
+                        inputCheckbox: { id: 'checkboxSuccess' }
+                    })
+                ]),
+                e({ style: validationStyles.hasWarning }, [
+                    checkbox({
+                        label: { title: 'Checkbox with warning' },
+                        inputCheckbox: { id: 'checkboxWarning' }
+                    })
+                ]),
+                e({ style: validationStyles.hasError }, [
+                    checkbox({
+                        label: { title: 'Checkbox with error' },
+                        inputCheckbox: { id: 'checkboxError' }
+                    })
+                ])
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `form({}, [`, e({ tag: 'br' }),
+            `    formGroup({ validationState: ValidationState.success }, [`, e({ tag: 'br' }),
+            `        label({ for: 'inputSuccess1', title: 'Input with success', controlLabel: true }),`, e({ tag: 'br' }),
+            `        inputText({ id: 'inputSuccess1', aria: { describedBy: 'helpBlock2' } }),`, e({ tag: 'br' }),
+            `        helpText(`, e({ tag: 'br' }),
+            `            { id: 'helpBlock2' },`, e({ tag: 'br' }),
+            `            'A block of help text that breaks onto a new line and may extend beyond one line.'`, e({ tag: 'br' }),
+            `        )`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    formGroup({ validationState: ValidationState.warning }, [`, e({ tag: 'br' }),
+            `        label({ for: 'inputWarning1', title: 'Input with warning', controlLabel: true }),`, e({ tag: 'br' }),
+            `        inputText({ id: 'inputWarning1' })`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    formGroup({ validationState: ValidationState.error }, [`, e({ tag: 'br' }),
+            `        label({ for: 'inputError1', title: 'Input with error', controlLabel: true }),`, e({ tag: 'br' }),
+            `        inputText({ id: 'inputError1' })`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    e({ style: validationStyles.hasSuccess }, [`, e({ tag: 'br' }),
+            `        checkbox({`, e({ tag: 'br' }),
+            `            label: { title: 'Checkbox with success' },`, e({ tag: 'br' }),
+            `            inputCheckbox: { id: 'checkboxSuccess' }`, e({ tag: 'br' }),
+            `        })`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    e({ style: validationStyles.hasWarning }, [`, e({ tag: 'br' }),
+            `        checkbox({`, e({ tag: 'br' }),
+            `            label: { title: 'Checkbox with warning' },`, e({ tag: 'br' }),
+            `            inputCheckbox: { id: 'checkboxWarning' }`, e({ tag: 'br' }),
+            `        })`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    e({ style: validationStyles.hasError }, [`, e({ tag: 'br' }),
+            `        checkbox({`, e({ tag: 'br' }),
+            `            label: { title: 'Checkbox with error' },`, e({ tag: 'br' }),
+            `            inputCheckbox: { id: 'checkboxError' }`, e({ tag: 'br' }),
+            `        })`, e({ tag: 'br' }),
+            `    ])`, e({ tag: 'br' }),
+            `])`
+        ])))
+    ];
+}
+
+function controlSizing(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'forms-control-sizes' } }, 'Control sizing'),
+        p({}, [
+            `Set heights using `, code({}, 'size'), ` input data property and set widths using grid column component `,
+            code({}, 'col'), ` or by `, code({}, 'colStyles'), `.`
+        ]),
+        h3({}, 'Height sizing'),
+        p({}, `Create taller or shorter form controls that match button sizes.`),
+        e({ style: [styles.bsExample, styles.bsExampleControlSizing] }, [
+            form({}, [
+                e({ style: styles.controls }, [
+                    inputText({ size: InputTextSize.lg, placeholder: 'InputTextSize.lg' }),
+                    inputText({ placeholder: 'default' }),
+                    inputText({ size: InputTextSize.sm, placeholder: 'InputTextSize.sm' }),
+                    select({ size: SelectSize.lg, options: [{ value: 'SelectSize.lg' }] }),
+                    select({ options: [{ value: 'default' }] }),
+                    select({ size: SelectSize.sm, options: [{ value: 'SelectSize.sm' }] })
+                ])
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `inputText({ size: InputTextSize.lg, placeholder: 'InputTextSize.lg' }),`, e({ tag: 'br' }),
+            `inputText({ placeholder: 'default' }),`, e({ tag: 'br' }),
+            `inputText({ size: InputTextSize.sm, placeholder: 'InputTextSize.sm' }),`, e({ tag: 'br' }), e({ tag: 'br' }),
+            `select({ size: SelectSize.lg, options: [{ value: 'SelectSize.lg' }] }),`, e({ tag: 'br' }),
+            `select({ options: [{ value: 'default' }] }),`, e({ tag: 'br' }),
+            `select({ size: SelectSize.sm, options: [{ value: 'SelectSize.sm' }] })`
         ]))),
+        h3({}, 'Horizontal form group sizes'),
+        p({}, [
+            `Quickly size labels and form controls within horizontal form by adding setting `,
+            code({}, 'size'), ` input data property.`
+        ]),
+        e({ style: styles.bsExample }, [
+            form({ horizontal: true }, [
+                formGroup({ size: FormGroupSize.lg }, [
+                    label({
+                        title: 'Large label',
+                        for: 'formGroupInputLarge',
+                        controlLabel: true,
+                        style: colStyles[Size.sm][2]
+                    }),
+                    col({ size: Size.sm, count: 10 },
+                        inputText({ id: 'formGroupInputLarge', placeholder: 'Large input' }))
+                ]),
+                formGroup({ size: FormGroupSize.sm }, [
+                    label({
+                        title: 'Small label', for: 'formGroupInputSmall', controlLabel: true, style: colStyles[Size.sm][2]
+                    }),
+                    col({ size: Size.sm, count: 10 },
+                        inputText({ id: 'formGroupInputSmall', placeholder: 'Small input' }))
+                ])
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `form({ horizontal: true }, [`, e({ tag: 'br' }),
+            `    formGroup({ size: FormGroupSize.lg }, [`, e({ tag: 'br' }),
+            `        label({`, e({ tag: 'br' }),
+            `            title: 'Large label',`, e({ tag: 'br' }),
+            `            for: 'formGroupInputLarge',`, e({ tag: 'br' }),
+            `            controlLabel: true,`, e({ tag: 'br' }),
+            `            style: colStyles[Size.sm][2]`, e({ tag: 'br' }),
+            `        }),`, e({ tag: 'br' }),
+            `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
+            `            inputText({ id: 'formGroupInputLarge', placeholder: 'Large input' }))`, e({ tag: 'br' }),
+            `    ]),`, e({ tag: 'br' }),
+            `    formGroup({ size: FormGroupSize.sm }, [`, e({ tag: 'br' }),
+            `        label({`, e({ tag: 'br' }),
+            `            title: 'Large label',`, e({ tag: 'br' }),
+            `            for: 'formGroupInputSmall',`, e({ tag: 'br' }),
+            `            controlLabel: true,`, e({ tag: 'br' }),
+            `            style: colStyles[Size.sm][2]`, e({ tag: 'br' }),
+            `        }),`, e({ tag: 'br' }),
+            `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
+            `            inputText({ id: 'formGroupInputSmall', placeholder: 'Small input' }))`, e({ tag: 'br' }),
+            `    ])`, e({ tag: 'br' }),
+            `])`
+        ]))),
+        h3({}, 'Column sizing'),
+        p({}, `Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.`),
+        e({ style: styles.bsExample }, [
+            form({}, [
+                row({}, [
+                    col({ size: Size.xs, count: 2 },
+                        inputText({ placeholder: 'Size.xs, 2' })),
+                    col({ size: Size.xs, count: 4 },
+                        inputText({ placeholder: 'Size.xs, 3' })),
+                    col({ size: Size.xs, count: 3 },
+                        inputText({ placeholder: 'Size.xs, 4' }))
+                ])
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `form({}, [`, e({ tag: 'br' }),
+            `    row({}, [`, e({ tag: 'br' }),
+            `        col({ size: Size.xs, count: 2 },`, e({ tag: 'br' }),
+            `            inputText({ placeholder: 'Size.xs, 2' })),`, e({ tag: 'br' }),
+            `        col({ size: Size.xs, count: 4 },`, e({ tag: 'br' }),
+            `            inputText({ placeholder: 'Size.xs, 3' })),`, e({ tag: 'br' }),
+            `        col({ size: Size.xs, count: 3 },`, e({ tag: 'br' }),
+            `            inputText({ placeholder: 'Size.xs, 4' }))`, e({ tag: 'br' }),
+            `    ])`, e({ tag: 'br' }),
+            `])`
+        ])))
     ];
 }

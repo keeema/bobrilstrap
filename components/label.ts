@@ -1,5 +1,6 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
+import helpers from './helpers';
 import { mergeToChildren } from './bobrilHelpers';
 
 export interface ILabeldData extends IBaseData {
@@ -14,7 +15,7 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export const labelStyles = {
-    srOnly: b.styleDef('sr-only'),
+    srOnly: helpers.srOnly,
     controlLabel: b.styleDef('control-label')
 };
 

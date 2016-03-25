@@ -11,6 +11,7 @@ export const styles = {
     bsExample: b.styleDef('bs-example'),
     bsExampleControlSizing: b.styleDef('bs-example-control-sizing'),
     bsExampleType: b.styleDef('bs-example-type'),
+    centerBlock: b.styleDef('center-block'),
     collapse: b.styleDef('collapse'),
     collapsed: b.styleDef('collapsed'),
     controls: b.styleDef('controls'),
@@ -27,7 +28,8 @@ export const styles = {
     navbarToggle: b.styleDef('navbar-toggle'),
     pageHeader: b.styleDef('page-header'),
     showGrid: b.styleDef('show-grid'),
-    typeInfo: b.styleDef('type-info')
+    typeInfo: b.styleDef('type-info'),
+    well: b.styleDef('well')
 };
 
 export function init() {

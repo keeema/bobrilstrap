@@ -1,6 +1,7 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
-import ValidationState, {validationStateStyle, validationStyles} from './validations';
+import ValidationState, {validationStateStyles, validationStyles} from './validations';
+import { createDictionary, toLowerWithDashes } from './bobrilHelpers';
 
 export interface IFormGroupData extends IBaseData {
     validationState?: ValidationState;
@@ -14,21 +15,20 @@ interface ICtx extends b.IBobrilCtx {
 
 export const formGroupStyles = {
     formGroup: b.styleDef('form-group'),
-    formGroupLg: b.styleDef('form-group-lg'),
-    formGroupSm: b.styleDef('form-group-sm')
+    lg: b.styleDef('form-group-lg'),
+    sm: b.styleDef('form-group-sm')
 };
 
-export class FormGroupSize {
-    static lg: string = 'lg';
-    static default: string = 'default';
-    static sm: string = 'sm';
+export enum FormGroupSize {
+    lg,
+    default,
+    sm
 }
 
-export const formGroupSizeStyles = {
-    [FormGroupSize.lg]: formGroupStyles.formGroupLg,
-    [FormGroupSize.default]: false,
-    [FormGroupSize.sm]: formGroupStyles.formGroupSm
-};
+export const formGroupSizeStyles = createDictionary<FormGroupSize, b.IBobrilStyle>();
+formGroupSizeStyles(FormGroupSize.lg, formGroupStyles.lg);
+formGroupSizeStyles(FormGroupSize.default, false);
+formGroupSizeStyles(FormGroupSize.sm, formGroupStyles.sm);
 
 export let formGroup = b.createDerivedComponent<IFormGroupData>(elem, {
     id: 'bobrilstrap-form-group',
@@ -36,8 +36,8 @@ export let formGroup = b.createDerivedComponent<IFormGroupData>(elem, {
         me.tag = 'div';
         b.style(me, formGroupStyles.formGroup);
         b.style(me, !!ctx.data.hasFeedbeck && validationStyles.hasFeedback);
-        b.style(me, !!ctx.data.validationState && validationStateStyle[ctx.data.validationState.toString()]);
-        b.style(me, !!ctx.data.size && formGroupSizeStyles[ctx.data.size.toString()]);
+        b.style(me, validationStateStyles(ctx.data.validationState));
+        b.style(me, formGroupSizeStyles(ctx.data.size));
     }
 });
 

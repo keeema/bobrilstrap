@@ -237,12 +237,12 @@ function horizontalForm(): b.IBobrilChildren {
         e({ style: styles.bsExample }, [
             form({ horizontal: true }, [
                 formGroup({}, [
-                    label({ controlLabel: true, for: 'inputEmail3', style: colStyles[Size.sm][2] }, 'Email'),
+                    label({ controlLabel: true, for: 'inputEmail3', style: colStyles(Size.sm)(2) }, 'Email'),
                     col({ size: Size.sm, count: 10 },
                         inputText({ id: 'inputEmail3', type: InputTextType.email, placeholder: 'Email' }))
                 ]),
                 formGroup({}, [
-                    label({ controlLabel: true, for: 'inputPassword3', style: colStyles[Size.sm][2] }, 'Password'),
+                    label({ controlLabel: true, for: 'inputPassword3', style: colStyles(Size.sm)(2) }, 'Password'),
                     col({ size: Size.sm, count: 10 },
                         inputText({ id: 'inputPassword3', type: InputTextType.email, placeholder: 'Password' }))
                 ]),
@@ -260,12 +260,12 @@ function horizontalForm(): b.IBobrilChildren {
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `form({ horizontal: true }, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ controlLabel: true, for: 'inputEmail3', style: colStyles[Size.sm][2] }, 'Email'),`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, for: 'inputEmail3', style: colStyles(Size.sm)(2) }, 'Email'),`, e({ tag: 'br' }),
             `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
             `            inputText({ id: 'inputEmail3', type: InputTextType.email, placeholder: 'Email' }))`, e({ tag: 'br' }),
             `    ]),`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ controlLabel: true, for: 'inputPassword3', style: colStyles[Size.sm][2] }, 'Password'),`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, for: 'inputPassword3', style: colStyles(Size.sm)(2) }, 'Password'),`, e({ tag: 'br' }),
             `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
             `            inputText({ id: 'inputPassword3', type: InputTextType.email, placeholder: 'Password' }))`, e({ tag: 'br' }),
             `    ]),`, e({ tag: 'br' }),
@@ -503,12 +503,12 @@ function staticControl(): b.IBobrilChildren {
         e({ style: styles.bsExample }, [
             form({ horizontal: true }, [
                 formGroup({}, [
-                    label({ controlLabel: true, style: colStyles[Size.sm][2] }, 'Email'),
+                    label({ controlLabel: true, style: colStyles(Size.sm)(2) }, 'Email'),
                     col({ size: Size.sm, count: 10 },
                         p({ formControlStatic: true }, 'email@example.com'))
                 ]),
                 formGroup({}, [
-                    label({ controlLabel: true, for: 'inputPassword', style: colStyles[Size.sm][2] }, 'Password'),
+                    label({ controlLabel: true, for: 'inputPassword', style: colStyles(Size.sm)(2) }, 'Password'),
                     col({ size: Size.sm, count: 10 },
                         inputText({ id: 'inputPassword', type: InputTextType.email, placeholder: 'Password' }))
                 ])
@@ -517,12 +517,12 @@ function staticControl(): b.IBobrilChildren {
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `form({ horizontal: true }, [`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ controlLabel: true, style: colStyles[Size.sm][2] }, 'Email'),`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, style: colStyles(Size.sm)(2) }, 'Email'),`, e({ tag: 'br' }),
             `            p({ formControlStatic: true }, 'email@example.com')`, e({ tag: 'br' }),
             `        )`, e({ tag: 'br' }),
             `    ]),`, e({ tag: 'br' }),
             `    formGroup({}, [`, e({ tag: 'br' }),
-            `        label({ controlLabel: true, for: 'inputPassword', style: colStyles[Size.sm][2] }, 'Password'),`, e({ tag: 'br' }),
+            `        label({ controlLabel: true, for: 'inputPassword', style: colStyles(Size.sm)(2) }, 'Password'),`, e({ tag: 'br' }),
             `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
             `            inputText({ id: 'inputPassword', type: InputTextType.email, placeholder: 'Password' })`, e({ tag: 'br' }),
             `        )`, e({ tag: 'br' }),
@@ -774,14 +774,14 @@ function controlSizing(): b.IBobrilChildren {
                         title: 'Large label',
                         for: 'formGroupInputLarge',
                         controlLabel: true,
-                        style: colStyles[Size.sm][2]
+                        style: colStyles(Size.sm)(2)
                     }),
                     col({ size: Size.sm, count: 10 },
                         inputText({ id: 'formGroupInputLarge', placeholder: 'Large input' }))
                 ]),
                 formGroup({ size: FormGroupSize.sm }, [
                     label({
-                        title: 'Small label', for: 'formGroupInputSmall', controlLabel: true, style: colStyles[Size.sm][2]
+                        title: 'Small label', for: 'formGroupInputSmall', controlLabel: true, style: colStyles(Size.sm)(2)
                     }),
                     col({ size: Size.sm, count: 10 },
                         inputText({ id: 'formGroupInputSmall', placeholder: 'Small input' }))
@@ -795,7 +795,7 @@ function controlSizing(): b.IBobrilChildren {
             `            title: 'Large label',`, e({ tag: 'br' }),
             `            for: 'formGroupInputLarge',`, e({ tag: 'br' }),
             `            controlLabel: true,`, e({ tag: 'br' }),
-            `            style: colStyles[Size.sm][2]`, e({ tag: 'br' }),
+            `            style: colStyles(Size.sm)(2)`, e({ tag: 'br' }),
             `        }),`, e({ tag: 'br' }),
             `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
             `            inputText({ id: 'formGroupInputLarge', placeholder: 'Large input' }))`, e({ tag: 'br' }),
@@ -805,7 +805,7 @@ function controlSizing(): b.IBobrilChildren {
             `            title: 'Large label',`, e({ tag: 'br' }),
             `            for: 'formGroupInputSmall',`, e({ tag: 'br' }),
             `            controlLabel: true,`, e({ tag: 'br' }),
-            `            style: colStyles[Size.sm][2]`, e({ tag: 'br' }),
+            `            style: colStyles(Size.sm)(2)`, e({ tag: 'br' }),
             `        }),`, e({ tag: 'br' }),
             `        col({ size: Size.sm, count: 10 },`, e({ tag: 'br' }),
             `            inputText({ id: 'formGroupInputSmall', placeholder: 'Small input' }))`, e({ tag: 'br' }),

@@ -1,6 +1,7 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 import option, { IOptionsData as IOptionData } from './option';
+import { createDictionary } from './bobrilHelpers';
 
 export interface ISelectData extends IBaseData {
     value?: string | string[];
@@ -18,20 +19,21 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export const selectStyles = {
-    formControl: b.styleDef('form-control')
+    formControl: b.styleDef('form-control'),
+    lg: b.styleDef('input-lg'),
+    sm: b.styleDef('input-sm')
 };
 
-export class SelectSize {
-    static lg: string = 'lg';
-    static default: string = 'default';
-    static sm: string = 'sm';
+export enum SelectSize {
+    lg,
+    default,
+    sm
 }
 
-export const selectSizeStyles = {
-    [SelectSize.lg]: b.styleDef('input-lg'),
-    [SelectSize.default]: false,
-    [SelectSize.sm]: b.styleDef('input-sm')
-};
+export const selectSizeStyles = createDictionary<SelectSize, b.IBobrilStyle>();
+selectSizeStyles(SelectSize.lg, selectStyles.lg);
+selectSizeStyles(SelectSize.default, false);
+selectSizeStyles(SelectSize.sm, selectStyles.sm);
 
 export let select = b.createOverridingComponent<ISelectData>(elem, {
     id: 'bobrilstrap-select',
@@ -48,7 +50,7 @@ export let select = b.createOverridingComponent<ISelectData>(elem, {
 
         me.attrs.value = ctx.value;
         b.style(me, selectStyles.formControl);
-        b.style(me, !!ctx.data.size && selectSizeStyles[ctx.data.size.toString()]);
+        b.style(me, selectSizeStyles(ctx.data.size));
         me.children = ctx.data.options.map(optionData => option(optionData));
 
         if (ctx.data.rows)

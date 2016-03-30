@@ -1,6 +1,7 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 import Size from './size';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 interface IColData extends IBaseData {
     size?: Size;
@@ -20,9 +21,7 @@ interface IColType {
     count: number;
 }
 
-interface IColStyles {
-    [key: string]: { [key: number]: b.IBobrilStyle };
-}
+type IColStyles = IDictionary<Size, IDictionary<number, b.IBobrilStyle>>;
 
 export const col = b.createDerivedComponent<IColData>(elem, {
     id: 'bobrilstrap-col',
@@ -43,12 +42,15 @@ export const colPushStyles = getStyles((size, i) => `col-${size}-push-${i}`);
 export const colPullStyles = getStyles((size, i) => `col-${size}-pull-${i}`);
 
 function getStyles(decorator: (size: Size, count: number) => string): IColStyles {
-    var result: IColStyles = {};
+    var result: IColStyles = createDictionary<Size, IDictionary<number, b.IBobrilStyle>>();
 
     Object.keys(Size).forEach(size => {
-        result[size] = {};
-        for (let i = 1; i <= 12; i++) {
-            result[size][i] = b.styleDef(decorator(size, i));
+        let castedValue = parseInt(size, 10);
+        if (!isNaN(castedValue)) {
+            result(castedValue, createDictionary());
+            for (let i = 1; i <= 12; i++) {
+                result(castedValue)(i, b.styleDef(decorator(Size[size], i)));
+            }
         }
     });
 
@@ -88,10 +90,10 @@ function getColTypeArray(colTypes: IColType | IColType[]): IColType[] {
 }
 
 function isStyleAvailable(stylesSource: IColStyles, colType: IColType | IColData): boolean {
-    return colType.size && colType.count
-        && !!stylesSource[colType.size.toString()] && !!stylesSource[colType.size.toString()][colType.count];
+    return colType.size !== undefined && colType.count
+        && !!stylesSource(colType.size) && !!stylesSource(colType.size)(colType.count);
 }
 
 function getStyle(stylesSource: IColStyles, colType: IColType | IColData) {
-    return stylesSource[colType.size.toString()][colType.count];
+    return stylesSource(colType.size)(colType.count);
 }

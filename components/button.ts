@@ -2,6 +2,7 @@ import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 import Size from './size';
 import { mergeToChildren } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export interface IButtonData extends IBaseData {
     active?: boolean;
@@ -19,25 +20,25 @@ interface ICtx extends b.IBobrilCtx {
     data: IButtonData;
 }
 
-export class ButtonType {
-    static button: string = 'button';
-    static submit: string = 'submit';
+export enum ButtonType {
+    button,
+    submit
 }
 
-export class ButtonTag {
-    static button: string = 'button';
-    static input: string = 'input';
-    static a: string = 'a';
+export enum ButtonTag {
+    button,
+    input,
+    a
 }
 
-export class ButtonOption {
-    static default: string = 'default';
-    static success: string = 'success';
-    static warning: string = 'warning';
-    static danger: string = 'danger';
-    static info: string = 'info';
-    static link: string = 'link';
-    static primary: string = 'primary';
+export enum ButtonOption {
+    default,
+    success,
+    warning,
+    danger,
+    info,
+    link,
+    primary
 }
 
 export const buttonStyles = {
@@ -47,23 +48,23 @@ export const buttonStyles = {
     btnBlock: b.styleDef('btn-block')
 };
 
-export const buttonSizeStyles = generateStyles(Size);
-export const buttonOptiontStyles = generateStyles(ButtonOption);
+export const buttonSizeStyles = generateStyles<Size>(Size);
+export const buttonOptiontStyles = generateStyles<ButtonOption>(ButtonOption);
 
 export let button = b.createDerivedComponent<IButtonData>(elem, {
     id: 'bobrilstrap-button',
     render(ctx: ICtx, me: b.IBobrilNode) {
-        me.tag = (ctx.data.tag || ButtonTag.button).toString();
+        me.tag = ButtonTag[ctx.data.tag || ButtonTag.button];
         me.attrs = ctx.data.attrs || {};
 
         b.style(me, buttonStyles.btn);
         b.style(me, ctx.data.active && buttonStyles.active);
         b.style(me, ctx.data.block && buttonStyles.btnBlock);
-        b.style(me, ctx.data.size && buttonSizeStyles[ctx.data.size.toString()]);
-        b.style(me, buttonOptiontStyles[(ctx.data.option || ButtonOption.default).toString()]);
+        b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));
+        b.style(me, buttonOptiontStyles(ctx.data.option || ButtonOption.default));
 
         let typeAttr = ctx.data.tag === ButtonTag.a ? 'role' : 'type';
-        me.attrs[typeAttr] = (ctx.data.type || me.attrs[typeAttr] || ButtonType.button).toString();
+        me.attrs[typeAttr] = (ButtonType[ctx.data.type] || me.attrs[typeAttr] || ButtonType[ButtonType.button]).toString();
 
         if (ctx.data.label) {
             if (ctx.data.tag === ButtonTag.input) {
@@ -72,9 +73,9 @@ export let button = b.createDerivedComponent<IButtonData>(elem, {
                 mergeToChildren(me, ctx.data.label);
             }
         }
-        
+
         if (ctx.data.tag === ButtonTag.a) {
-                me.attrs['href'] = ctx.data.href || '#';
+            me.attrs['href'] = ctx.data.href || '#';
         }
 
         if (ctx.data.disabled) {
@@ -90,11 +91,14 @@ export let button = b.createDerivedComponent<IButtonData>(elem, {
 
 export default button;
 
-function generateStyles(source: Object): { [key: string]: b.IBobrilStyle } {
-    let result: { [key: string]: b.IBobrilStyle } = {};
+function generateStyles<TKeyEnum extends number>(source: Object): IDictionary<TKeyEnum, b.IBobrilStyle> {
+    let result = createDictionary<TKeyEnum, b.IBobrilStyle>();
     Object.keys(source).forEach(key => {
-        result[key] = key === Size.md ? null : b.styleDef(`btn-${key}`);
+        let castedValue = <TKeyEnum>parseInt(key, 10);
+        if (!isNaN(castedValue)) {
+            result(castedValue, key === Size[Size.md] ? null : b.styleDef(`btn-${source[key]}`));
+        }
     });
 
     return result;
-} 
+}

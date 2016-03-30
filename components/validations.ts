@@ -1,22 +1,22 @@
 import * as b from 'bobril';
+import { createDictionary } from './bobrilHelpers';
 
 export const validationStyles = {
     hasSuccess: b.styleDef('has-success'),
-    hasWarning : b.styleDef('has-warning '),
+    hasWarning: b.styleDef('has-warning '),
     hasError: b.styleDef('has-error'),
     hasFeedback: b.styleDef('has-feedback')
 };
 
-export class ValidationState {
-    static success: string = 'success';
-    static warning: string = 'warning';
-    static error: string = 'error';
+export enum ValidationState {
+    success,
+    warning,
+    error
 }
 
-export const validationStateStyle = {
-    [ValidationState.success]: validationStyles.hasSuccess,
-    [ValidationState.warning]: validationStyles.hasWarning,
-    [ValidationState.error]: validationStyles.hasError
-};
+export const validationStateStyles = createDictionary<ValidationState, b.IBobrilStyle>();
+validationStateStyles(ValidationState.success, validationStyles.hasSuccess);
+validationStateStyles(ValidationState.warning, validationStyles.hasWarning);
+validationStateStyles(ValidationState.error, validationStyles.hasError);
 
 export default ValidationState;

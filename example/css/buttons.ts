@@ -30,7 +30,7 @@ function buttonsTags(): b.IBobrilChildren {
                 button({ label: 'Link', tag: ButtonTag.a, onClick: () => alert('Clicked <a> element!') }), ' ',
                 button({ label: 'Button (default)', onClick: () => alert('Clicked <button> element!') }), ' ',
                 button({ label: 'Input', tag: ButtonTag.input, onClick: () => alert('Clicked <input> element!') }), ' ',
-                button({ label: 'Input', tag: ButtonTag.input, type: ButtonType.submit, onClick: () => alert('Clicked submit!') })
+                button({ label: 'Submit', tag: ButtonTag.input, type: ButtonType.submit, onClick: () => alert('Clicked submit!') })
             ])
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [

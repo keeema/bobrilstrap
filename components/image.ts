@@ -1,5 +1,6 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
+import { createDictionary } from './bobrilHelpers';
 
 export interface IImageData extends IBaseData {
     src: string;
@@ -20,11 +21,16 @@ export const imageStyle = {
     imgThumbnail: b.styleDef('img-thumbnail')
 };
 
-export class ImageShape {
-    static rounded: b.IBobrilStyle = imageStyle.imgRounded;
-    static circle: b.IBobrilStyle = imageStyle.imgCircle;
-    static thumbnail: b.IBobrilStyle = imageStyle.imgThumbnail;
+export enum ImageShape {
+    rounded,
+    circle,
+    thumbnail
 }
+
+export const imageShapeStyles = createDictionary<ImageShape, b.IBobrilStyle>();
+imageShapeStyles(ImageShape.rounded, imageStyle.imgRounded);
+imageShapeStyles(ImageShape.circle, imageStyle.imgCircle);
+imageShapeStyles(ImageShape.thumbnail, imageStyle.imgThumbnail);
 
 export let image = b.createDerivedComponent<IImageData>(elem, {
     id: 'bobrilstrap-image',
@@ -32,7 +38,7 @@ export let image = b.createDerivedComponent<IImageData>(elem, {
         me.tag = 'img';
         me.attrs['src'] = ctx.data.src;
         me.attrs['alt'] = ctx.data.alt;
-        b.style(me, ctx.data.shape);
+        b.style(me, imageShapeStyles(ctx.data.shape));
 
     }
 });

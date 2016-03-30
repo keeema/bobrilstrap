@@ -1,6 +1,7 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
-import ValidationState, {validationStateStyle, validationStyles} from './validations';
+import ValidationState, {validationStateStyles, validationStyles} from './validations';
+import { createDictionary } from './bobrilHelpers';
 
 export interface IInputGroupData extends IBaseData {
     validationState?: ValidationState;
@@ -14,19 +15,18 @@ interface ICtx extends b.IBobrilCtx {
 
 export const inputGroupStyles = {
     inputGroup: b.styleDef('input-group'),
-    inputGroupLg: b.styleDef('input-group-lg'),
-    inputGroupSm: b.styleDef('input-group-sm')
+    lg: b.styleDef('input-group-lg'),
+    sm: b.styleDef('input-group-sm')
 };
 
-export class InputGroupSize {
-    static lg: string = 'lg';
-    static sm: string = 'sm';
+export enum InputGroupSize {
+    lg,
+    sm
 }
 
-export const inputGroupSizeStyles = {
-    [InputGroupSize.lg]: inputGroupStyles.inputGroupLg,
-    [InputGroupSize.sm]: inputGroupStyles.inputGroupSm
-};
+export const inputGroupSizeStyles = createDictionary<InputGroupSize, b.IBobrilStyle>();
+inputGroupSizeStyles(InputGroupSize.lg, inputGroupStyles.lg);
+inputGroupSizeStyles(InputGroupSize.sm, inputGroupStyles.sm);
 
 export let inputGroup = b.createDerivedComponent<IInputGroupData>(elem, {
     id: 'bobrilstrap-input-group',
@@ -34,8 +34,8 @@ export let inputGroup = b.createDerivedComponent<IInputGroupData>(elem, {
         me.tag = 'div';
         b.style(me, inputGroupStyles.inputGroup);
         b.style(me, !!ctx.data.hasFeedbeck && validationStyles.hasFeedback);
-        b.style(me, !!ctx.data.validationState && validationStateStyle[ctx.data.validationState.toString()]);
-        b.style(me, !!ctx.data.size && inputGroupSizeStyles[ctx.data.size.toString()]);
+        b.style(me, validationStateStyles(ctx.data.validationState));
+        b.style(me, inputGroupSizeStyles(ctx.data.size));
     }
 });
 

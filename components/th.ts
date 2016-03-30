@@ -1,6 +1,5 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
-import Context, { contextStyles } from './context';
 
 export interface IThData extends IBaseData { 
     colspan?: number;

@@ -104,8 +104,10 @@ const limitedWidthStyle = b.styleDef({ maxWidth: '400px' });
 
 function sizes(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'buttons-options' } }, 'Options'),
-        p({}, `Use any of the available button classes to quickly create a styled button.`),
+        h2({ attrs: { id: 'buttons-sizes' } }, 'Sizes'),
+        p({}, [
+            `Fancy larger or smaller buttons? Set the `, code({}, 'size'), ` input data property.`
+            ]),
         e({ style: styles.bsExample }, [
             p({}, [
                 button({ label: 'Large button', size: Size.lg }), ' ',

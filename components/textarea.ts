@@ -18,7 +18,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const textareaStyles = {
     formControl: b.styleDef('form-control'),
-    fixedSize: b.styleDef({ resize: 'none' })
+    fixedSize: b.styleDef({ resize: 'none' }, null, 'textarea-fixed-size')
 };
 
 export let textarea = b.createOverridingComponent<ITextareaData>(elem, {

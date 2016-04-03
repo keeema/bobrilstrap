@@ -11,6 +11,7 @@ export const styles = {
     bsExample: b.styleDef('bs-example'),
     bsExampleControlSizing: b.styleDef('bs-example-control-sizing'),
     bsExampleType: b.styleDef('bs-example-type'),
+    bsExampleImages: b.styleDef('bs-example-images'),
     centerBlock: b.styleDef('center-block'),
     collapse: b.styleDef('collapse'),
     collapsed: b.styleDef('collapsed'),

@@ -86,6 +86,7 @@
         "example/css/code.ts",
         "example/css/forms.ts",
         "example/css/grid.ts",
+        "example/css/images.ts",
         "example/css/overview.ts",
         "example/css/page.ts",
         "example/css/tables.ts",

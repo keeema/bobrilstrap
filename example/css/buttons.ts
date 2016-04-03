@@ -14,7 +14,9 @@ export default b.createVirtualComponent({
             [
                 buttonsTags(),
                 options(),
-                sizes()
+                sizes(),
+                activeState(),
+                disabledState()
             ]);
     }
 })
@@ -88,7 +90,7 @@ function options(): b.IBobrilChildren {
             `button({ label: 'Danger', option: ButtonOption.danger, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
             `button({ label: 'Link', option: ButtonOption.link, onClick: () => alert('Clicked!') })`
         ]))),
-        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'Conveying meaning to assistive technologies' } }, [
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-buttons-context-usage' } }, [
             h4({}, `Context-specific usage`),
             p({}, [
                 `Using color to add meaning to a button only provides a visual indication, which will not be conveyed to users of 
@@ -100,14 +102,14 @@ function options(): b.IBobrilChildren {
     ];
 }
 
-const limitedWidthStyle = b.styleDef({ maxWidth: '400px' });
+const limitedWidthStyle = b.styleDef({ maxWidth: '400px' }, null, 'buttons-limited-width-example');
 
 function sizes(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'buttons-sizes' } }, 'Sizes'),
         p({}, [
             `Fancy larger or smaller buttons? Set the `, code({}, 'size'), ` input data property.`
-            ]),
+        ]),
         e({ style: styles.bsExample }, [
             p({}, [
                 button({ label: 'Large button', size: Size.lg }), ' ',
@@ -160,3 +162,88 @@ function sizes(): b.IBobrilChildren {
         ])))
     ];
 }
+
+function activeState(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'buttons-active' } }, 'Active state'),
+        p({}, [
+            `Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. For <button> elements, 
+            this is done via :active. For <a> elements, it's done with .active. However, you may use `,
+            code({}, 'active'), ` input data property on `, code({}, 'button'), `(and set the `, code({}, 'aria.pressed'),
+            ` property) should you need to replicate the active state programmatically.`
+        ]),
+        e({ style: styles.bsExample }, [
+            button({ label: 'Primary link', option: ButtonOption.primary, size: Size.lg, active: true }), ' ',
+            button({ label: 'Link', size: Size.lg, active: true })
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `button({ label: 'Primary link', option: ButtonOption.primary, size: Size.lg, active: true }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Link', size: Size.lg, active: true })`
+        ])))
+    ];
+}
+
+function disabledState(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'buttons-disabled' } }, 'Disabled state'),
+        p({}, [
+            `Make buttons look unclickable by fading them back with `, code({}, 'opacity'),
+            `. You can do this by setting the input data property `, code({}, 'disabled'), `.`
+        ]),
+        e({ style: styles.bsExample }, [
+            button({
+                label: 'Primary button',
+                option: ButtonOption.primary,
+                size: Size.lg,
+                disabled: true,
+                onClick: () => alert('Clicked')
+            }), ' ',
+            button({ label: 'Button', size: Size.lg, disabled: true, onClick: () => alert('Clicked') }),
+            button({
+                label: 'Primary link',
+                option: ButtonOption.primary,
+                size: Size.lg,
+                disabled: true,
+                tag: ButtonTag.a,
+                onClick: () => alert('Clicked')
+            }), ' ',
+            button({ label: 'Link', size: Size.lg, disabled: true, tag: ButtonTag.a, onClick: () => alert('Clicked') })
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `button({`, e({ tag: 'br' }),
+            `    label: 'Primary button',`, e({ tag: 'br' }),
+            `    option: ButtonOption.primary,`, e({ tag: 'br' }),
+            `    size: Size.lg,`, e({ tag: 'br' }),
+            `    disabled: true,`, e({ tag: 'br' }),
+            `    onClick: () => alert('Clicked')`, e({ tag: 'br' }),
+            `}), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Button', size: Size.lg, disabled: true, onClick: () => alert('Clicked') }),`, e({ tag: 'br' }),
+            `button({`, e({ tag: 'br' }),
+            `    label: 'Primary link',`, e({ tag: 'br' }),
+            `    option: ButtonOption.primary,`, e({ tag: 'br' }),
+            `    size: Size.lg,`, e({ tag: 'br' }),
+            `    disabled: true,`, e({ tag: 'br' }),
+            `    tag: ButtonTag.a,`, e({ tag: 'br' }),
+            `    onClick: () => alert('Clicked')`, e({ tag: 'br' }),
+            `}), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Link', size: Size.lg, disabled: true, tag: ButtonTag.a, onClick: () => alert('Clicked') })`
+        ]))),
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-buttons-ie-disabled' } }, [
+            h4({}, `Cross-browser compatibility`),
+            p({}, [
+                `If you set the `, code({}, 'disabled'), ` property to a `, code({}, 'button'), ` Internet Explorer 9 and below will render 
+                text gray with a nasty text-shadow that we cannot fix.`
+            ])]),
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-buttons-disabled-anchor' } }, [
+            h4({}, `Link functionality caveat`),
+            p({}, [
+                `This class uses `, code({}, 'pointer-events: none'), ` to try to disable the link functionality of `, code({}, '<a>'),
+                `s, but that CSS property is not yet standardized and isn't fully supported in Opera 18 and below, or in Internet 
+                Explorer 11. In addition, even in browsers that do support `, code({}, 'pointer-events: none'), ` keyboard navigation 
+                remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to 
+                activate these links. So to be safe, use custom JavaScript to disable such links.`
+            ])
+        ])
+    ];
+}
+

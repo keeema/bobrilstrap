@@ -6,6 +6,7 @@ export interface IAria {
     describedBy?: string;
     invalid?: boolean;
     hidden?: boolean;
+    pressed?: boolean;
 }
 
 export interface IBaseData {
@@ -62,6 +63,9 @@ export let e = b.createVirtualComponent<IElementData>({
 
             if (ctx.data.aria.hidden !== undefined && ctx.data.aria.hidden !== null)
                 me.attrs['aria-hidden'] = ctx.data.aria.hidden.toString();
+
+            if (ctx.data.aria.pressed !== undefined && ctx.data.aria.pressed !== null)
+                me.attrs['aria-pressed'] = ctx.data.aria.pressed.toString();
         }
     },
     onClick(ctx: ICtx, event: b.IBobrilMouseEvent): boolean {

@@ -39,7 +39,7 @@ function responsiveImages(): b.IBobrilChildren {
             h4({}, `SVG images and IE 8-10`),
             p({}, [
                 `In Internet Explorer 8-10, SVG images with `, code({}, 'responsive'), ` are disproportionately sized. To fix this, 
-                add `, code({}, 'width: 100% \9;'), `by setting the `, code({}, 'ieSvgFix'), ` input data property where necessary. 
+                add `, code({}, 'width: 100% \\9;'), `by setting the `, code({}, 'ieSvgFix'), ` input data property where necessary. 
                 Bootstrap doesn't apply this automatically as it causes complications to other image formats.`
             ])
         ]),

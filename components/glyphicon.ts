@@ -302,7 +302,7 @@ function generateStyles(): IDictionary<GlyphIconType, b.IBobrilStyle> {
     Object.keys(GlyphIconType).forEach(key => {
         let castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
-            result(castedValue, b.styleDef(`glyphicon-${toLowerWithDashes(GlyphIconType[key])}`));
+            result(castedValue, b.styleDef(`glyphicon-${toLowerWithDashes(GlyphIconType[castedValue])}`));
         }
     });
 

@@ -10,10 +10,11 @@ import tables from './tables';
 import forms from './forms';
 import buttons from './buttons';
 import images from './images';
+import helpers from './helpers';
 
 export default b.createVirtualComponent({
     id: 'bobrilstrap-css',
-    init() {
+    init() {    
         document.title = 'CSS - Bobrilstrap';
     },
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
@@ -27,7 +28,8 @@ export default b.createVirtualComponent({
                 tables(),
                 forms(),
                 buttons(),
-                images()
+                images(),
+                helpers()
             ])
         ];
     }

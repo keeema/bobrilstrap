@@ -9,6 +9,7 @@ export const styles = {
     bsDocsHeader: b.styleDef('bs-docs-header'),
     bsDocsSection: b.styleDef('bs-docs-section'),
     bsExample: b.styleDef('bs-example'),
+    bsExampleBgClasses: b.styleDef('bs-example-bg-classes'),
     bsExampleControlSizing: b.styleDef('bs-example-control-sizing'),
     bsExampleType: b.styleDef('bs-example-type'),
     bsExampleImages: b.styleDef('bs-example-images'),

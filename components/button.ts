@@ -1,6 +1,7 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 import Size from './size';
+import helpers from './helpers';
 import { mergeToChildren } from './bobrilHelpers';
 import { createDictionary, IDictionary } from './bobrilHelpers';
 
@@ -38,7 +39,8 @@ export enum ButtonOption {
     danger,
     info,
     link,
-    primary
+    primary,
+    close
 }
 
 export const buttonStyles = {
@@ -48,8 +50,8 @@ export const buttonStyles = {
     btnBlock: b.styleDef('btn-block')
 };
 
-export const buttonSizeStyles = generateStyles<Size>(Size);
-export const buttonOptiontStyles = generateStyles<ButtonOption>(ButtonOption);
+export const buttonSizeStyles = generateSizeStyles();
+export const buttonOptiontStyles = generateOptionsStyles();
 
 export let button = b.createDerivedComponent<IButtonData>(elem, {
     id: 'bobrilstrap-button',
@@ -57,7 +59,7 @@ export let button = b.createDerivedComponent<IButtonData>(elem, {
         me.tag = ButtonTag[ctx.data.tag || ButtonTag.button];
         me.attrs = ctx.data.attrs || {};
 
-        b.style(me, buttonStyles.btn);
+        b.style(me, ctx.data.option !== ButtonOption.close && buttonStyles.btn);
         b.style(me, ctx.data.active && buttonStyles.active);
         b.style(me, ctx.data.block && buttonStyles.btnBlock);
         b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));
@@ -91,12 +93,24 @@ export let button = b.createDerivedComponent<IButtonData>(elem, {
 
 export default button;
 
-function generateStyles<TKeyEnum extends number>(source: Object): IDictionary<TKeyEnum, b.IBobrilStyle> {
-    let result = createDictionary<TKeyEnum, b.IBobrilStyle>();
-    Object.keys(source).forEach(key => {
-        let castedValue = <TKeyEnum>parseInt(key, 10);
+function generateOptionsStyles(): IDictionary<ButtonOption, b.IBobrilStyle> {
+    let result = createDictionary<ButtonOption, b.IBobrilStyle>();
+    Object.keys(ButtonOption).forEach(key => {
+        let castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
-            result(castedValue, key === Size[Size.md] ? null : b.styleDef(`btn-${source[key]}`));
+            result(castedValue, castedValue === ButtonOption.close ? helpers.close : b.styleDef(`btn-${ButtonOption[castedValue]}`));
+        }
+    });
+
+    return result;
+}
+
+function generateSizeStyles(): IDictionary<Size, b.IBobrilStyle> {
+    let result = createDictionary<Size, b.IBobrilStyle>();
+    Object.keys(Size).forEach(key => {
+        let castedValue = parseInt(key, 10);
+        if (!isNaN(castedValue)) {
+            result(castedValue, castedValue === Size.md ? null : b.styleDef(`btn-${Size[castedValue]}`));
         }
     });
 

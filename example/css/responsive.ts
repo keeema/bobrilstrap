@@ -198,8 +198,9 @@ function printStyles(): b.IBobrilChildren {
                         {
                             headers: [{ children: code({}, 'hiddenStyles(Device.Print)') }],
                             columns: [
-                                { children: 'Hidden', style: styles.isHidden },
-                                { children: 'Visibile', style: styles.isVisible }
+                                { children: 'Visibile', style: styles.isVisible },
+                                { children: 'Hidden', style: styles.isHidden }
+                                
                             ]
                         }
                     ]

@@ -1,0 +1,7 @@
+/**/node_modules
+dist
+.vscode
+example
+example.ts
+tsconfig.json
+tslint.json

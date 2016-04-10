@@ -44,5 +44,9 @@ export function createDictionary<TKey extends NumberOrString, TValue>(): IDictio
 }
 
 export function toLowerWithDashes(value: string): string {
-    return value ? value.replace(/[A-Z]/g, '-$&').toLowerCase() : value;
+    if (!value)
+        return value;
+
+    value = value.charAt(0).toLowerCase() + value.slice(1);
+    return value.replace(/[A-Z]/g, '-$&').toLowerCase();
 }

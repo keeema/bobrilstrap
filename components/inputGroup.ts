@@ -20,13 +20,13 @@ export const inputGroupStyles = {
 };
 
 export enum InputGroupSize {
-    lg,
-    sm
+    Lg,
+    Sm
 }
 
 export const inputGroupSizeStyles = createDictionary<InputGroupSize, b.IBobrilStyle>();
-inputGroupSizeStyles(InputGroupSize.lg, inputGroupStyles.lg);
-inputGroupSizeStyles(InputGroupSize.sm, inputGroupStyles.sm);
+inputGroupSizeStyles(InputGroupSize.Lg, inputGroupStyles.lg);
+inputGroupSizeStyles(InputGroupSize.Sm, inputGroupStyles.sm);
 
 export let inputGroup = b.createDerivedComponent<IInputGroupData>(elem, {
     id: 'bobrilstrap-input-group',

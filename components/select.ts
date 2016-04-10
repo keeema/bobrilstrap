@@ -25,15 +25,15 @@ export const selectStyles = {
 };
 
 export enum SelectSize {
-    lg,
-    default,
-    sm
+    Lg,
+    Default,
+    Sm
 }
 
 export const selectSizeStyles = createDictionary<SelectSize, b.IBobrilStyle>();
-selectSizeStyles(SelectSize.lg, selectStyles.lg);
-selectSizeStyles(SelectSize.default, false);
-selectSizeStyles(SelectSize.sm, selectStyles.sm);
+selectSizeStyles(SelectSize.Lg, selectStyles.lg);
+selectSizeStyles(SelectSize.Default, false);
+selectSizeStyles(SelectSize.Sm, selectStyles.sm);
 
 export let select = b.createOverridingComponent<ISelectData>(elem, {
     id: 'bobrilstrap-select',

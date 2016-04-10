@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 import ValidationState, {validationStateStyles, validationStyles} from './validations';
-import { createDictionary, toLowerWithDashes } from './bobrilHelpers';
+import { createDictionary } from './bobrilHelpers';
 
 export interface IFormGroupData extends IBaseData {
     validationState?: ValidationState;
@@ -20,15 +20,15 @@ export const formGroupStyles = {
 };
 
 export enum FormGroupSize {
-    lg,
-    default,
-    sm
+    Lg,
+    Default,
+    Sm
 }
 
 export const formGroupSizeStyles = createDictionary<FormGroupSize, b.IBobrilStyle>();
-formGroupSizeStyles(FormGroupSize.lg, formGroupStyles.lg);
-formGroupSizeStyles(FormGroupSize.default, false);
-formGroupSizeStyles(FormGroupSize.sm, formGroupStyles.sm);
+formGroupSizeStyles(FormGroupSize.Lg, formGroupStyles.lg);
+formGroupSizeStyles(FormGroupSize.Default, false);
+formGroupSizeStyles(FormGroupSize.Sm, formGroupStyles.sm);
 
 export let formGroup = b.createDerivedComponent<IFormGroupData>(elem, {
     id: 'bobrilstrap-form-group',

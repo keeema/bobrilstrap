@@ -30,7 +30,9 @@ export default b.createVirtualComponent({
                     p({}, [
                         code({}, 'Bobril'), ' is distributed with ', code({}, 'bobril-build'),
                         ' system, both as ', code({}, 'npm'), ' packages. The easiest way to start is to download ',
-                        a({ href: 'https://github.com/Bobris/Bobril' }, 'predefined simpleApp bobril application skeleton'),
+                        a(
+                            { href: 'https://github.com/Bobris/bobril-build/tree/master/examples/simpleApp' },
+                            'predefined simpleApp bobril application skeleton'),
                         ' and run following commands in the root of downloaded folder:']),
                     figure({ style: styles.highlight }, pre({}, [
                         'npm i bobril-build -g', e({ tag: 'br' }),
@@ -39,7 +41,7 @@ export default b.createVirtualComponent({
                     ])),
                     p({}, [
                         'Now is everything prepared for developing a new application based on bobril and you can see the result on ',
-                        a({ href: 'http://localhost:8080', target: Target.blank }, 'http://localhost:8080'), '.'
+                        a({ href: 'http://localhost:8080', target: Target.Blank }, 'http://localhost:8080'), '.'
                     ])
                 ])
         ];

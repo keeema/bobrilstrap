@@ -1,8 +1,8 @@
 export enum Size {
-    xs,
-    sm,
-    md,
-    lg
+    Xs,
+    Sm,
+    Md,
+    Lg
 }
 
 export default Size;

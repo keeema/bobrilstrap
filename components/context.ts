@@ -2,18 +2,18 @@ import * as b from 'bobril';
 import { createDictionary } from './bobrilHelpers';
 
 export enum Context {
-    active,
-    success,
-    warning,
-    danger,
-    info
+    Active,
+    Success,
+    Warning,
+    Danger,
+    Info
 }
 
 export const contextStyles = createDictionary<Context, b.IBobrilStyle>();
-contextStyles(Context.active, b.styleDef('active'));
-contextStyles(Context.success, b.styleDef('success'));
-contextStyles(Context.warning, b.styleDef('warning'));
-contextStyles(Context.danger, b.styleDef('danger'));
-contextStyles(Context.info, b.styleDef('info'));
+contextStyles(Context.Active, b.styleDef('active'));
+contextStyles(Context.Success, b.styleDef('success'));
+contextStyles(Context.Warning, b.styleDef('warning'));
+contextStyles(Context.Danger, b.styleDef('danger'));
+contextStyles(Context.Info, b.styleDef('info'));
 
 export default Context;

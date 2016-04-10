@@ -204,15 +204,15 @@ function contextualStyles(): b.IBobrilChildren {
             head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },
             body: {
                 rows: [
-                    { columns: ['1', 'Column content', 'Column content', '@	Column content'], context: Context.active },
+                    { columns: ['1', 'Column content', 'Column content', '@	Column content'], context: Context.Active },
                     { columns: ['2', 'Column content', 'Column content', '@	Column content'] },
-                    { columns: ['3', 'Column content', 'Column content', '@	Column content'], context: Context.success },
+                    { columns: ['3', 'Column content', 'Column content', '@	Column content'], context: Context.Success },
                     { columns: ['4', 'Column content', 'Column content', '@	Column content'] },
-                    { columns: ['5', 'Column content', 'Column content', '@	Column content'], context: Context.warning },
+                    { columns: ['5', 'Column content', 'Column content', '@	Column content'], context: Context.Warning },
                     { columns: ['6', 'Column content', 'Column content', '@	Column content'] },
-                    { columns: ['7', 'Column content', 'Column content', '@	Column content'], context: Context.danger },
+                    { columns: ['7', 'Column content', 'Column content', '@	Column content'], context: Context.Danger },
                     { columns: ['8', 'Column content', 'Column content', '@	Column content'] },
-                    { columns: ['9', 'Column content', 'Column content', '@	Column content'], context: Context.info },
+                    { columns: ['9', 'Column content', 'Column content', '@	Column content'], context: Context.Info },
                 ]
             }
         })),
@@ -221,15 +221,15 @@ function contextualStyles(): b.IBobrilChildren {
             `    head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },`, e({ tag: 'br' }),
             `    body: {`, e({ tag: 'br' }),
             `        rows: [`, e({ tag: 'br' }),
-            `            { columns: ['1', ... ], context: Context.active },`, e({ tag: 'br' }),
+            `            { columns: ['1', ... ], context: Context.Active },`, e({ tag: 'br' }),
             `            { columns: ['2', ... ] },`, e({ tag: 'br' }),
-            `            { columns: ['3', ... ], context: Context.success },`, e({ tag: 'br' }),
+            `            { columns: ['3', ... ], context: Context.Success },`, e({ tag: 'br' }),
             `            { columns: ['4', ... ] },`, e({ tag: 'br' }),
-            `            { columns: ['5', ... ], context: Context.warning },`, e({ tag: 'br' }),
+            `            { columns: ['5', ... ], context: Context.Warning },`, e({ tag: 'br' }),
             `            { columns: ['6', ... ] },`, e({ tag: 'br' }),
-            `            { columns: ['7', ... ], context: Context.danger },`, e({ tag: 'br' }),
+            `            { columns: ['7', ... ], context: Context.Danger },`, e({ tag: 'br' }),
             `            { columns: ['8', ... ] },`, e({ tag: 'br' }),
-            `            { columns: ['9', ... ], context: Context.info },`, e({ tag: 'br' }),
+            `            { columns: ['9', ... ], context: Context.Info },`, e({ tag: 'br' }),
             `        ]`, e({ tag: 'br' }),
             `    }`, e({ tag: 'br' }),
             `})`
@@ -241,11 +241,11 @@ function contextualStyles(): b.IBobrilChildren {
                     {
                         columns: [
                             '1',
-                            <ITdData>{ children: 'Column content', context: Context.active },
-                            <ITdData>{ children: 'Column content', context: Context.success },
-                            <ITdData>{ children: 'Column content', context: Context.warning },
-                            <ITdData>{ children: 'Column content', context: Context.danger },
-                            <ITdData>{ children: 'Column content', context: Context.info }
+                            <ITdData>{ children: 'Column content', context: Context.Active },
+                            <ITdData>{ children: 'Column content', context: Context.Success },
+                            <ITdData>{ children: 'Column content', context: Context.Warning },
+                            <ITdData>{ children: 'Column content', context: Context.Danger },
+                            <ITdData>{ children: 'Column content', context: Context.Info }
                         ]
                     },
                 ]
@@ -259,11 +259,11 @@ function contextualStyles(): b.IBobrilChildren {
             `            {`, e({ tag: 'br' }),
             `                columns: [`, e({ tag: 'br' }),
             `                    '1',`, e({ tag: 'br' }),
-            `                    <ITdData>{ children: 'Column content', context: Context.active },`, e({ tag: 'br' }),
-            `                    <ITdData>{ children: 'Column content', context: Context.success },`, e({ tag: 'br' }),
-            `                    <ITdData>{ children: 'Column content', context: Context.warning },`, e({ tag: 'br' }),
-            `                    <ITdData>{ children: 'Column content', context: Context.danger },`, e({ tag: 'br' }),
-            `                    <ITdData>{ children: 'Column content', context: Context.info }`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.Active },`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.Success },`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.Warning },`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.Danger },`, e({ tag: 'br' }),
+            `                    <ITdData>{ children: 'Column content', context: Context.Info }`, e({ tag: 'br' }),
             `                ]`, e({ tag: 'br' }),
             `            },`, e({ tag: 'br' }),
             `        ]`, e({ tag: 'br' }),

@@ -3,21 +3,21 @@ import elem, { IBaseData } from './element';
 import { createDictionary, toLowerWithDashes } from './bobrilHelpers';
 
 export enum InputTextType {
-    color,
-    date,
-    datetime,
-    datetimeLocal,
-    email,
-    month,
-    number,
-    password,
-    range,
-    search,
-    tel,
-    text,
-    time,
-    url,
-    week
+    Color,
+    Date,
+    Datetime,
+    DatetimeLocal,
+    Email,
+    Month,
+    Number,
+    Password,
+    Range,
+    Search,
+    Tel,
+    Text,
+    Time,
+    Url,
+    Week
 }
 
 export interface IInputTextData extends IBaseData {
@@ -42,15 +42,15 @@ export const inputTextStyles = {
 };
 
 export enum InputTextSize {
-    lg,
-    default,
-    sm
+    Lg,
+    Default,
+    Sm
 }
 
 export const inputTextSizeStyles = createDictionary<InputTextSize, b.IBobrilStyle>();
-inputTextSizeStyles(InputTextSize.lg, inputTextStyles.lg);
-inputTextSizeStyles(InputTextSize.default, false);
-inputTextSizeStyles(InputTextSize.sm, inputTextStyles.sm);
+inputTextSizeStyles(InputTextSize.Lg, inputTextStyles.lg);
+inputTextSizeStyles(InputTextSize.Default, false);
+inputTextSizeStyles(InputTextSize.Sm, inputTextStyles.sm);
 
 export let inputText = b.createOverridingComponent<IInputTextData>(elem, {
     id: 'bobrilstrap-input-text',
@@ -63,7 +63,7 @@ export let inputText = b.createOverridingComponent<IInputTextData>(elem, {
         me.tag = 'input';
         me.attrs['type'] = toLowerWithDashes(ctx.data.type !== undefined
             ? InputTextType[ctx.data.type]
-            : InputTextType[InputTextType.text]);
+            : InputTextType[InputTextType.Text]);
         me.attrs.value = ctx.value;
         b.style(me, inputTextStyles.formControl);
         b.style(me, inputTextSizeStyles(ctx.data.size));

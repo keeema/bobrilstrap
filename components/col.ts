@@ -49,7 +49,7 @@ function getStyles(decorator: (size: Size, count: number) => string): IColStyles
         if (!isNaN(castedValue)) {
             result(castedValue, createDictionary());
             for (let i = 1; i <= 12; i++) {
-                result(castedValue)(i, b.styleDef(decorator(Size[size], i)));
+                result(castedValue)(i, b.styleDef(decorator(Size[size].toLowerCase(), i)));
             }
         }
     });

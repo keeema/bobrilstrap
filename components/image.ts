@@ -26,15 +26,15 @@ export const imageStyles = {
 };
 
 export enum ImageShape {
-    rounded,
-    circle,
-    thumbnail
+    Rounded,
+    Circle,
+    Thumbnail
 }
 
 export const imageShapeStyles = createDictionary<ImageShape, b.IBobrilStyle>();
-imageShapeStyles(ImageShape.rounded, imageStyles.imgRounded);
-imageShapeStyles(ImageShape.circle, imageStyles.imgCircle);
-imageShapeStyles(ImageShape.thumbnail, imageStyles.imgThumbnail);
+imageShapeStyles(ImageShape.Rounded, imageStyles.imgRounded);
+imageShapeStyles(ImageShape.Circle, imageStyles.imgCircle);
+imageShapeStyles(ImageShape.Thumbnail, imageStyles.imgThumbnail);
 
 export let image = b.createDerivedComponent<IImageData>(elem, {
     id: 'bobrilstrap-image',

@@ -22,25 +22,25 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export enum ButtonType {
-    button,
-    submit
+    Button,
+    Submit
 }
 
 export enum ButtonTag {
-    button,
-    input,
-    a
+    Button,
+    Input,
+    Anchor
 }
 
 export enum ButtonOption {
-    default,
-    success,
-    warning,
-    danger,
-    info,
-    link,
-    primary,
-    close
+    Default,
+    Success,
+    Warning,
+    Danger,
+    Info,
+    Link,
+    Primary,
+    Close
 }
 
 export const buttonStyles = {
@@ -56,32 +56,32 @@ export const buttonOptiontStyles = generateOptionsStyles();
 export let button = b.createDerivedComponent<IButtonData>(elem, {
     id: 'bobrilstrap-button',
     render(ctx: ICtx, me: b.IBobrilNode) {
-        me.tag = ButtonTag[ctx.data.tag || ButtonTag.button];
+        me.tag = ButtonTag[ctx.data.tag || ButtonTag.Button];
         me.attrs = ctx.data.attrs || {};
 
-        b.style(me, ctx.data.option !== ButtonOption.close && buttonStyles.btn);
+        b.style(me, ctx.data.option !== ButtonOption.Close && buttonStyles.btn);
         b.style(me, ctx.data.active && buttonStyles.active);
         b.style(me, ctx.data.block && buttonStyles.btnBlock);
         b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));
-        b.style(me, buttonOptiontStyles(ctx.data.option || ButtonOption.default));
+        b.style(me, buttonOptiontStyles(ctx.data.option || ButtonOption.Default));
 
-        let typeAttr = ctx.data.tag === ButtonTag.a ? 'role' : 'type';
-        me.attrs[typeAttr] = (ButtonType[ctx.data.type] || me.attrs[typeAttr] || ButtonType[ButtonType.button]).toString();
+        let typeAttr = ctx.data.tag === ButtonTag.Anchor ? 'role' : 'type';
+        me.attrs[typeAttr] = (ButtonType[ctx.data.type] || me.attrs[typeAttr] || ButtonType[ButtonType.Button]).toString();
 
         if (ctx.data.label) {
-            if (ctx.data.tag === ButtonTag.input) {
+            if (ctx.data.tag === ButtonTag.Input) {
                 me.attrs['value'] = ctx.data.label;
             } else {
                 mergeToChildren(me, ctx.data.label);
             }
         }
 
-        if (ctx.data.tag === ButtonTag.a) {
+        if (ctx.data.tag === ButtonTag.Anchor) {
             me.attrs['href'] = ctx.data.href || '#';
         }
 
         if (ctx.data.disabled) {
-            if (ctx.data.tag === ButtonTag.a) {
+            if (ctx.data.tag === ButtonTag.Anchor) {
                 b.style(me, buttonStyles.disabled);
             } else {
                 me.attrs['disabled'] = 'disabled';
@@ -98,7 +98,9 @@ function generateOptionsStyles(): IDictionary<ButtonOption, b.IBobrilStyle> {
     Object.keys(ButtonOption).forEach(key => {
         let castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
-            result(castedValue, castedValue === ButtonOption.close ? helpers.close : b.styleDef(`btn-${ButtonOption[castedValue]}`));
+            result(castedValue, castedValue === ButtonOption.Close
+                ? helpers.close
+                : b.styleDef(`btn-${ButtonOption[castedValue].toLowerCase()}`));
         }
     });
 
@@ -110,7 +112,9 @@ function generateSizeStyles(): IDictionary<Size, b.IBobrilStyle> {
     Object.keys(Size).forEach(key => {
         let castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
-            result(castedValue, castedValue === Size.md ? null : b.styleDef(`btn-${Size[castedValue]}`));
+            result(castedValue, castedValue === Size.Md 
+                ? null 
+                : b.styleDef(`btn-${Size[castedValue].toLowerCase()}`));
         }
     });
 

@@ -9,14 +9,14 @@ export const validationStyles = {
 };
 
 export enum ValidationState {
-    success,
-    warning,
-    error
+    Success,
+    Warning,
+    Error
 }
 
 export const validationStateStyles = createDictionary<ValidationState, b.IBobrilStyle>();
-validationStateStyles(ValidationState.success, validationStyles.hasSuccess);
-validationStateStyles(ValidationState.warning, validationStyles.hasWarning);
-validationStateStyles(ValidationState.error, validationStyles.hasError);
+validationStateStyles(ValidationState.Success, validationStyles.hasSuccess);
+validationStateStyles(ValidationState.Warning, validationStyles.hasWarning);
+validationStateStyles(ValidationState.Error, validationStyles.hasError);
 
 export default ValidationState;

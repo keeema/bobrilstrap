@@ -57,14 +57,14 @@ function imageShapes(): b.IBobrilChildren {
             p({}, [`Keep in mind that Internet Explorer 8 lacks support for rounded corners.`])
         ]),
         e({ style: [styles.bsExample, styles.bsExampleImages] }, [
-            image({ src: imgHolderPath, alt: 'Rounded', shape: ImageShape.rounded }),
-            image({ src: imgHolderPath, alt: 'Circle', shape: ImageShape.circle }),
-            image({ src: imgHolderPath, alt: 'Thumbnail', shape: ImageShape.thumbnail })
+            image({ src: imgHolderPath, alt: 'Rounded', shape: ImageShape.Rounded }),
+            image({ src: imgHolderPath, alt: 'Circle', shape: ImageShape.Circle }),
+            image({ src: imgHolderPath, alt: 'Thumbnail', shape: ImageShape.Thumbnail })
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `image({ src: '...', alt: 'Rounded', shape: ImageShape.rounded }),`, e({ tag: 'br' }),
-            `image({ src: '...', alt: 'Circle', shape: ImageShape.circle }),`, e({ tag: 'br' }),
-            `image({ src: '...', alt: 'Thumbnail', shape: ImageShape.thumbnail })`
+            `image({ src: '...', alt: 'Rounded', shape: ImageShape.Rounded }),`, e({ tag: 'br' }),
+            `image({ src: '...', alt: 'Circle', shape: ImageShape.Circle }),`, e({ tag: 'br' }),
+            `image({ src: '...', alt: 'Thumbnail', shape: ImageShape.Thumbnail })`
         ])))
     ];
 }

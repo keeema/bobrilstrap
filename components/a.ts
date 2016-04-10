@@ -2,10 +2,10 @@ import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 
 export enum Target {
-    blank,
-    self,
-    parent,
-    top,
+    Blank,
+    Self,
+    Parent,
+    Top,
 }
 
 export interface IAData extends IBaseData {
@@ -24,7 +24,7 @@ export let a = b.createDerivedComponent<IAData>(elem, {
         if (ctx.data.href)
             me.attrs.href = ctx.data.href;
         if (ctx.data.target !== undefined)
-            me.attrs['target'] = `_${Target[ctx.data.target]}`;
+            me.attrs['target'] = `_${Target[ctx.data.target].toLowerCase()}`;
         if (ctx.data.name)
             me.attrs['name'] = ctx.data.name;
     }

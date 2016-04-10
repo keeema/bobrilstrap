@@ -29,18 +29,18 @@ function buttonsTags(): b.IBobrilChildren {
         ]),
         e({ style: styles.bsExample }, [
             form({}, [
-                button({ label: 'Link', tag: ButtonTag.a, onClick: () => alert('Clicked <a> element!') }), ' ',
+                button({ label: 'Link', tag: ButtonTag.Anchor, onClick: () => alert('Clicked <a> element!') }), ' ',
                 button({ label: 'Button (default)', onClick: () => alert('Clicked <button> element!') }), ' ',
-                button({ label: 'Input', tag: ButtonTag.input, onClick: () => alert('Clicked <input> element!') }), ' ',
-                button({ label: 'Submit', tag: ButtonTag.input, type: ButtonType.submit, onClick: () => alert('Clicked submit!') })
+                button({ label: 'Input', tag: ButtonTag.Input, onClick: () => alert('Clicked <input> element!') }), ' ',
+                button({ label: 'Submit', tag: ButtonTag.Input, type: ButtonType.Submit, onClick: () => alert('Clicked submit!') })
             ])
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `button({ label: 'Link', tag: ButtonTag.a, onClick: () => alert('Clicked <a> element!') }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Link', tag: ButtonTag.Anchor, onClick: () => alert('Clicked <a> element!') }), ' ',`, e({ tag: 'br' }),
             `button({ label: 'Button', onClick: () => alert('Clicked <button> element!') }), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Input', tag: ButtonTag.input, onClick: () => alert('Clicked <input> element!') }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Input', tag: ButtonTag.Input, onClick: () => alert('Clicked <input> element!') }), ' ',`, e({ tag: 'br' }),
             `button({ `, e({ tag: 'br' }),
-            `    label: 'Submit', tag: ButtonTag.input, type: ButtonType.submit, onClick: () => alert('Clicked submit!')`, e({ tag: 'br' }),
+            `    label: 'Submit', tag: ButtonTag.Input, type: ButtonType.Submit, onClick: () => alert('Clicked submit!')`, e({ tag: 'br' }),
             `})`
         ]))),
         e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-buttons-context-usage' } }, [
@@ -74,21 +74,21 @@ function options(): b.IBobrilChildren {
         p({}, `Use any of the available button classes to quickly create a styled button.`),
         e({ style: styles.bsExample }, [
             button({ label: 'Default', onClick: () => alert('Clicked!') }), ' ',
-            button({ label: 'Primary', option: ButtonOption.primary, onClick: () => alert('Clicked!') }), ' ',
-            button({ label: 'Success', option: ButtonOption.success, onClick: () => alert('Clicked!') }), ' ',
-            button({ label: 'Info', option: ButtonOption.info, onClick: () => alert('Clicked!') }), ' ',
-            button({ label: 'Warning', option: ButtonOption.warning, onClick: () => alert('Clicked!') }), ' ',
-            button({ label: 'Danger', option: ButtonOption.danger, onClick: () => alert('Clicked!') }), ' ',
-            button({ label: 'Link', option: ButtonOption.link, onClick: () => alert('Clicked!') })
+            button({ label: 'Primary', option: ButtonOption.Primary, onClick: () => alert('Clicked!') }), ' ',
+            button({ label: 'Success', option: ButtonOption.Success, onClick: () => alert('Clicked!') }), ' ',
+            button({ label: 'Info', option: ButtonOption.Info, onClick: () => alert('Clicked!') }), ' ',
+            button({ label: 'Warning', option: ButtonOption.Warning, onClick: () => alert('Clicked!') }), ' ',
+            button({ label: 'Danger', option: ButtonOption.Danger, onClick: () => alert('Clicked!') }), ' ',
+            button({ label: 'Link', option: ButtonOption.Link, onClick: () => alert('Clicked!') })
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `button({ label: 'Default', onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Primary', option: ButtonOption.primary, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Success', option: ButtonOption.success, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Info', option: ButtonOption.info, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Warning', option: ButtonOption.warning, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Danger', option: ButtonOption.danger, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Link', option: ButtonOption.link, onClick: () => alert('Clicked!') })`
+            `button({ label: 'Primary', option: ButtonOption.Primary, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Success', option: ButtonOption.Success, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Info', option: ButtonOption.Info, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Warning', option: ButtonOption.Warning, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Danger', option: ButtonOption.Danger, onClick: () => alert('Clicked!') }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Link', option: ButtonOption.Link, onClick: () => alert('Clicked!') })`
         ]))),
         e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-buttons-context-usage' } }, [
             h4({}, `Context-specific usage`),
@@ -112,38 +112,38 @@ function sizes(): b.IBobrilChildren {
         ]),
         e({ style: styles.bsExample }, [
             p({}, [
-                button({ label: 'Large button', size: Size.lg }), ' ',
-                button({ label: 'Large button', size: Size.lg, option: ButtonOption.primary })
+                button({ label: 'Large button', size: Size.Lg }), ' ',
+                button({ label: 'Large button', size: Size.Lg, option: ButtonOption.Primary })
             ]),
             p({}, [
-                button({ label: 'Default button', size: Size.md }), ' ',
-                button({ label: 'Default button', option: ButtonOption.primary })
+                button({ label: 'Default button', size: Size.Md }), ' ',
+                button({ label: 'Default button', option: ButtonOption.Primary })
             ]),
             p({}, [
-                button({ label: 'Small button', size: Size.sm }), ' ',
-                button({ label: 'Small button', size: Size.sm, option: ButtonOption.primary })
+                button({ label: 'Small button', size: Size.Sm }), ' ',
+                button({ label: 'Small button', size: Size.Sm, option: ButtonOption.Primary })
             ]),
             p({}, [
-                button({ label: 'Extra small button', size: Size.xs }), ' ',
-                button({ label: 'Extra small button', size: Size.xs, option: ButtonOption.primary })
+                button({ label: 'Extra small button', size: Size.Xs }), ' ',
+                button({ label: 'Extra small button', size: Size.Xs, option: ButtonOption.Primary })
             ])
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `p({}, [`, e({ tag: 'br' }),
-            `    button({ label: 'Large button', size: Size.lg }), ' ',`, e({ tag: 'br' }),
-            `    button({ label: 'Large button', size: Size.lg, option: ButtonOption.primary })`, e({ tag: 'br' }),
+            `    button({ label: 'Large button', size: Size.Lg }), ' ',`, e({ tag: 'br' }),
+            `    button({ label: 'Large button', size: Size.Lg, option: ButtonOption.Primary })`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `p({}, [`, e({ tag: 'br' }),
-            `    button({ label: 'Default button', size: Size.md }), ' ',`, e({ tag: 'br' }),
-            `    button({ label: 'Default button', option: ButtonOption.primary })`, e({ tag: 'br' }),
+            `    button({ label: 'Default button', size: Size.Md }), ' ',`, e({ tag: 'br' }),
+            `    button({ label: 'Default button', option: ButtonOption.Primary })`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `p({}, [`, e({ tag: 'br' }),
-            `    button({ label: 'Small button', size: Size.sm }), ' ',`, e({ tag: 'br' }),
-            `    button({ label: 'Small button', size: Size.sm, option: ButtonOption.primary })`, e({ tag: 'br' }),
+            `    button({ label: 'Small button', size: Size.Sm }), ' ',`, e({ tag: 'br' }),
+            `    button({ label: 'Small button', size: Size.Sm, option: ButtonOption.Primary })`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `p({}, [`, e({ tag: 'br' }),
-            `    button({ label: 'Extra small button', size: Size.xs }), ' ',`, e({ tag: 'br' }),
-            `    button({ label: 'Extra small button', size: Size.xs, option: ButtonOption.primary })`, e({ tag: 'br' }),
+            `    button({ label: 'Extra small button', size: Size.Xs }), ' ',`, e({ tag: 'br' }),
+            `    button({ label: 'Extra small button', size: Size.Xs, option: ButtonOption.Primary`, e({ tag: 'br' }),
             `])`
         ]))),
         p({}, [
@@ -153,12 +153,12 @@ function sizes(): b.IBobrilChildren {
         e({ style: styles.bsExample }, [
             e({ style: [styles.well, styles.centerBlock, limitedWidthStyle] }, [
                 button({ label: 'Block level button', block: true }),
-                button({ label: 'Block level button', block: true, option: ButtonOption.primary })
+                button({ label: 'Block level button', block: true, option: ButtonOption.Primary })
             ])
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `button({ label: 'Block level button', block: true }),`, e({ tag: 'br' }),
-            `button({ label: 'Block level button', block: true, option: ButtonOption.primary })`
+            `button({ label: 'Block level button', block: true, option: ButtonOption.Primary })`
         ])))
     ];
 }
@@ -173,12 +173,12 @@ function activeState(): b.IBobrilChildren {
             ` property) should you need to replicate the active state programmatically.`
         ]),
         e({ style: styles.bsExample }, [
-            button({ label: 'Primary link', option: ButtonOption.primary, size: Size.lg, active: true }), ' ',
-            button({ label: 'Link', size: Size.lg, active: true })
+            button({ label: 'Primary link', option: ButtonOption.Primary, size: Size.Lg, active: true }), ' ',
+            button({ label: 'Link', size: Size.Lg, active: true })
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `button({ label: 'Primary link', option: ButtonOption.primary, size: Size.lg, active: true }), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Link', size: Size.lg, active: true })`
+            `button({ label: 'Primary link', option: ButtonOption.Primary, size: Size.Lg, active: true }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Link', size: Size.Lg, active: true })`
         ])))
     ];
 }
@@ -193,40 +193,40 @@ function disabledState(): b.IBobrilChildren {
         e({ style: styles.bsExample }, [
             button({
                 label: 'Primary button',
-                option: ButtonOption.primary,
-                size: Size.lg,
+                option: ButtonOption.Primary,
+                size: Size.Lg,
                 disabled: true,
                 onClick: () => alert('Clicked')
             }), ' ',
-            button({ label: 'Button', size: Size.lg, disabled: true, onClick: () => alert('Clicked') }),
+            button({ label: 'Button', size: Size.Lg, disabled: true, onClick: () => alert('Clicked') }),
             button({
                 label: 'Primary link',
-                option: ButtonOption.primary,
-                size: Size.lg,
+                option: ButtonOption.Primary,
+                size: Size.Lg,
                 disabled: true,
-                tag: ButtonTag.a,
+                tag: ButtonTag.Anchor,
                 onClick: () => alert('Clicked')
             }), ' ',
-            button({ label: 'Link', size: Size.lg, disabled: true, tag: ButtonTag.a, onClick: () => alert('Clicked') })
+            button({ label: 'Link', size: Size.Lg, disabled: true, tag: ButtonTag.Anchor, onClick: () => alert('Clicked') })
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `button({`, e({ tag: 'br' }),
             `    label: 'Primary button',`, e({ tag: 'br' }),
-            `    option: ButtonOption.primary,`, e({ tag: 'br' }),
-            `    size: Size.lg,`, e({ tag: 'br' }),
+            `    option: ButtonOption.Primary,`, e({ tag: 'br' }),
+            `    size: Size.Lg,`, e({ tag: 'br' }),
             `    disabled: true,`, e({ tag: 'br' }),
             `    onClick: () => alert('Clicked')`, e({ tag: 'br' }),
             `}), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Button', size: Size.lg, disabled: true, onClick: () => alert('Clicked') }),`, e({ tag: 'br' }),
+            `button({ label: 'Button', size: Size.Lg, disabled: true, onClick: () => alert('Clicked') }),`, e({ tag: 'br' }),
             `button({`, e({ tag: 'br' }),
             `    label: 'Primary link',`, e({ tag: 'br' }),
-            `    option: ButtonOption.primary,`, e({ tag: 'br' }),
-            `    size: Size.lg,`, e({ tag: 'br' }),
+            `    option: ButtonOption.Primary,`, e({ tag: 'br' }),
+            `    size: Size.Lg,`, e({ tag: 'br' }),
             `    disabled: true,`, e({ tag: 'br' }),
-            `    tag: ButtonTag.a,`, e({ tag: 'br' }),
+            `    tag: ButtonTag.Anchor,`, e({ tag: 'br' }),
             `    onClick: () => alert('Clicked')`, e({ tag: 'br' }),
             `}), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Link', size: Size.lg, disabled: true, tag: ButtonTag.a, onClick: () => alert('Clicked') })`
+            `button({ label: 'Link', size: Lg, disabled: true, tag: ButtonTag.Anchor, onClick: () => alert('Clicked') })`
         ]))),
         e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-buttons-ie-disabled' } }, [
             h4({}, `Cross-browser compatibility`),

@@ -31,9 +31,9 @@ function getNavigation(): b.IBobrilNode {
 
                 ]),
                 element({ tag: 'ul', style: [styles.nav, styles.navbarNav, styles.navbarRight] }, [
-                    element({ tag: 'li' }, a({ href: texts.githubLink, target: Target.blank }, texts.gitHub)),
-                    element({ tag: 'li' }, a({ href: texts.bootsrapLink, target: Target.blank }, texts.bootstrap)),
-                    element({ tag: 'li' }, a({ href: texts.bobrilLink, target: Target.blank }, texts.bobril))
+                    element({ tag: 'li' }, a({ href: texts.githubLink, target: Target.Blank }, texts.gitHub)),
+                    element({ tag: 'li' }, a({ href: texts.bootsrapLink, target: Target.Blank }, texts.bootstrap)),
+                    element({ tag: 'li' }, a({ href: texts.bobrilLink, target: Target.Blank }, texts.bobril))
                 ])
             ])
         ])

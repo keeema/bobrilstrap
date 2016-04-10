@@ -9,7 +9,7 @@ export default b.createVirtualComponent({
             container(
                 { style: styles.bsDocsContainer },
                 row({},
-                    col({ size: Size.md, count: 9, attrs: { role: 'main' } }, ctx.data.children)
+                    col({ size: Size.Md, count: 9, attrs: { role: 'main' } }, ctx.data.children)
                 )
             )
         ];

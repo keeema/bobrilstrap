@@ -109,13 +109,13 @@ function closeIcon(): b.IBobrilChildren {
         h2({ attrs: { id: 'helper-styles-close' } }, 'Close icon'),
         p({}, [
             `Use the generic close icon for dismissing content like modals and alerts. You can use the predefined `, code({}, 'button'),
-            ` with `, code({}, 'ButtonOption.close'), `, or directly `, code({}, 'helpers.close'), ` style.`
+            ` with `, code({}, 'ButtonOption.Close'), `, or directly `, code({}, 'helpers.close'), ` style.`
         ]),
         e({ style: styles.bsExample }, [
-            p({}, button({ option: ButtonOption.close, aria: { label: 'Close' } }, span({ aria: { hidden: true } }, '×')))
+            p({}, button({ option: ButtonOption.Close, aria: { label: 'Close' } }, span({ aria: { hidden: true } }, '×')))
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `button({ option: ButtonOption.close, aria: { label: 'Close' } }, span({ aria: { hidden: true } }, '×'))`
+            `button({ option: ButtonOption.Close, aria: { label: 'Close' } }, span({ aria: { hidden: true } }, '×'))`
         ])))
     ];
 }

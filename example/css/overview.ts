@@ -46,11 +46,11 @@ function normalizeCss(): b.IBobrilChildren {
         h2({ attrs: { id: 'overview-normalize' } }, 'Normalize.css'),
         p({}, [
             'For improved cross-browser rendering, bootstrap uses ',
-            a({ href: 'http://necolas.github.io/normalize.css/', target: Target.blank } , 'Normalize.css'),
+            a({ href: 'http://necolas.github.io/normalize.css/', target: Target.Blank } , 'Normalize.css'),
             ', a project by ',
-            a({  href: 'https://twitter.com/necolas', target: Target.blank }, 'Nicolas Gallagher'),
+            a({  href: 'https://twitter.com/necolas', target: Target.Blank }, 'Nicolas Gallagher'),
             ' and ',
-            a({  href: 'https://twitter.com/jon_neal', target: Target.blank }, 'Jonathan Neal.')
+            a({  href: 'https://twitter.com/jon_neal', target: Target.Blank }, 'Jonathan Neal.')
         ])
     ];
 }

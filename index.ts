@@ -43,6 +43,7 @@ export * from './components/mark';
 export * from './components/paragraph';
 export * from './components/pre';
 export * from './components/radio';
+export * from './components/responsive';
 export * from './components/responsiveTable';
 export * from './components/row';
 export * from './components/select';

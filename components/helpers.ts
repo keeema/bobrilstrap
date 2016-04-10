@@ -20,9 +20,11 @@ export const helpers = {
         pullLeft: b.styleDef('pull-left'),
         pullRight: b.styleDef('pull-right')
     },
+    clearfix: b.styleDef('clearfix'),
     close: b.styleDef('close'),
     caret: b.styleDef('caret'),
     centerBlock: b.styleDef('center-block'),
+    invisible: b.styleDef('invisible'),
     show: b.styleDef('show'),
     hidden: b.styleDef('hidden'),
     srOnly: b.styleDef('sr-only'),

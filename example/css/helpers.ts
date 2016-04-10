@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { a, e, p, h2, h3, h4, code, figure, helpers, button, ButtonOption, span } from '../../index';
+import { a, e, p, h2, h3, h4, code, figure, helpers, button, ButtonOption, span, strong } from '../../index';
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
@@ -15,7 +15,13 @@ export default b.createVirtualComponent({
                 contextualColors(),
                 contextualBackgrounds(),
                 closeIcon(),
-                carets()
+                carets(),
+                quickFloats(),
+                centerContentBlocks(),
+                clearFix(),
+                showingAndHidingContent(),
+                screenReaders(),
+                imageReplacement()
             ]);
     }
 })
@@ -90,7 +96,7 @@ function contextualBackgrounds(): b.IBobrilChildren {
             h4({}, `Dealing with specificity`),
             p({}, [
                 `Sometimes contextual background styles cannot be applied due to the specificity of another selector. In some cases, 
-                a sufficient workaround is to wrap your element's content in a `, code({}, 'element({ tag: \'div\', style: ... }, ...)'),
+                a sufficient workaround is to wrap your element's content in a `, code({}, 'e({ tag: \'div\', style: ... }, ...)'),
                 ` with the style.`
             ])
         ]),
@@ -122,7 +128,7 @@ function closeIcon(): b.IBobrilChildren {
 
 function carets(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-carets' } }, 'Carets'),
+        h2({ attrs: { id: 'helper-styles-floats' } }, 'Carets'),
         p({}, [
             `Use carets to indicate dropdown functionality and direction. 
             Note that the default caret will reverse automatically in dropup menus.`
@@ -130,6 +136,97 @@ function carets(): b.IBobrilChildren {
         e({ style: styles.bsExample }, [p({}, span({ style: helpers.caret }))]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `span({ style: helpers.caret })`
+        ])))
+    ];
+}
+
+function quickFloats(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'helper-styles-floats' } }, 'Quick floats'),
+        p({}, [
+            `Float an element to the left or right with a style. `, code({}, '!important'), ` is included to avoid specificity issues. `
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `e({ style: helpers.float.pullLeft }, '...'),`, e({ tag: 'br' }),
+            `e({ style: helpers.float.pullRight }, '...')`
+        ]))),
+        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-helper-pull-navbar' } }, [
+            h4({}, `Not for use in navbars`),
+            p({}, [
+                `To align components in navbars with utility classes, use `, code({}, 'navbarStyles.left'), ` or `,
+                code({}, 'navbarStyles.right'), ` instead. See the navbar docs for details.`
+            ])
+        ])
+    ];
+}
+
+function centerContentBlocks(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'helper-styles-center' } }, 'Center content blocks'),
+        p({}, [
+            `Set an element to `, code({}, 'display: block'), ` and center via `, code({}, 'margin'), `. Available as a style.`
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `e({ style: helpers.centerBlock }, '...')`
+        ])))
+    ];
+}
+
+function clearFix(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'helper-styles-clearfix' } }, 'Clearfix'),
+        p({}, [
+            `Easily clear `, code({}, 'float'), `s by adding `, code({}, 'helpers.clearfix'), ` style to the parent element. Utilizes 
+            the `, a({ href: 'http://nicolasgallagher.com/micro-clearfix-hack/' }, `micro clearfix`), ` as popularized by Nicolas 
+            Gallagher.`
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `e({ style: helpers.clearfix }, '...')`
+        ])))
+    ];
+}
+
+function showingAndHidingContent(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'helper-styles-show-hide' } }, 'Showing and hiding content'),
+        p({}, [
+            `Force an element to be shown or hidden `, strong({}, `(including for screen readers)`), ` with the use of `,
+            code({}, 'helpers.show'), ` and `, code({}, 'helpers.hidden'), ` styles. These styles use `, code({}, '!important'),
+            ` to avoid specificity conflicts, just like the quick floats. They are only available for block level toggling.`
+        ]),
+        p({}, [
+            `Furthermore, `, code({}, 'helpers.invisible'), ` can be used to toggle only the visibility of an element, meaning its `,
+            code({}, 'display'), ` is not modified and the element can still affect the flow of the document.`
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `e({ style: helpers.show }, '...')`, e({ tag: 'br' }),
+            `e({ style: helpers.hidden }, '...')`
+        ])))
+    ];
+}
+
+function screenReaders(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'helper-styles-screen-readers' } }, 'Screen reader and keyboard navigation content'),
+        p({}, [
+            `Hide an element to all devices `, strong({}, `except screen readers`), ` with `, code({}, 'helpers.srOnly'),
+            `. Combine `, code({}, 'helpers.srOnly'), ` with `, code({}, 'helpers.srOnlyFocusable'), ` to show the element again when it's 
+            focused (e.g. by a keyboard-only user). Necessary for following accessibility best practices.`
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `a({ href: '...', style: [helpers.srOnly, helpers.srOnlyFocusable] }, 'Skip to main content')`
+        ])))
+    ];
+}
+
+function imageReplacement(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'helper-styles-image-replacement' } }, 'Image replacement'),
+        p({}, [
+            `Utilize the `, code({}, 'helpers.textHide'), ` style to help replace an element's text content with a background image.`
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `e({ style: helpers.textHide }, '...')`
         ])))
     ];
 }

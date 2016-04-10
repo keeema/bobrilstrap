@@ -11,6 +11,7 @@ import forms from './forms';
 import buttons from './buttons';
 import images from './images';
 import helpers from './helpers';
+import responsive from './responsive';
 
 export default b.createVirtualComponent({
     id: 'bobrilstrap-css',
@@ -29,7 +30,8 @@ export default b.createVirtualComponent({
                 forms(),
                 buttons(),
                 images(),
-                helpers()
+                helpers(),
+                responsive()
             ])
         ];
     }

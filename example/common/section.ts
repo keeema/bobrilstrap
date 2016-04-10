@@ -5,6 +5,7 @@ import { styles } from '../bsexample/css';
 export interface IData {
     header: string;
     lead?: b.IBobrilChildren;
+    description?: b.IBobrilChildren;
     id: string;
 }
 
@@ -20,6 +21,7 @@ export default b.createVirtualComponent<IData>({
         me.children = [
             h1({ attrs: { id: ctx.data.id }, style: styles.pageHeader }, ctx.data.header),
             !!ctx.data.lead && p({ lead: true }, ctx.data.lead),
+            !!ctx.data.description && p({}, ctx.data.description),
             ctx.data.children
         ];
     }

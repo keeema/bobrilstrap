@@ -3,8 +3,14 @@ import { a, e, p, h2, h3, h4, code, figure, form, image, ImageShape } from '../.
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
-
-const imgHolderPath = b.asset('./imgHolder.png');
+ 
+const imageData = `data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Im
+h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiP
+jwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihj
+KSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTQwNmF
+iODJhYSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3
+BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NDA2YWI4MmFhIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsb
+D0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ1LjUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=`;
 
 export default b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
@@ -57,9 +63,9 @@ function imageShapes(): b.IBobrilChildren {
             p({}, [`Keep in mind that Internet Explorer 8 lacks support for rounded corners.`])
         ]),
         e({ style: [styles.bsExample, styles.bsExampleImages] }, [
-            image({ src: imgHolderPath, alt: 'Rounded', shape: ImageShape.Rounded }),
-            image({ src: imgHolderPath, alt: 'Circle', shape: ImageShape.Circle }),
-            image({ src: imgHolderPath, alt: 'Thumbnail', shape: ImageShape.Thumbnail })
+            image({ src: imageData, alt: 'Rounded', shape: ImageShape.Rounded }),
+            image({ src: imageData, alt: 'Circle', shape: ImageShape.Circle }),
+            image({ src: imageData, alt: 'Thumbnail', shape: ImageShape.Thumbnail })
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `image({ src: '...', alt: 'Rounded', shape: ImageShape.Rounded }),`, e({ tag: 'br' }),

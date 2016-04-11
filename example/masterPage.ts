@@ -26,7 +26,7 @@ function getNavigation(): b.IBobrilNode {
             element({ tag: 'nav', style: [styles.collapse, styles.navbarCollapse], attrs: { id: 'bs-navbar' } }, [
                 element({ tag: 'ul', style: [styles.nav, styles.navbarNav] }, [
                     element({ tag: 'li' }, b.link(element({ tag: 'a' }, texts.css), 'css')),
-                    //element({ tag: 'li' }, b.link(element({ tag: 'a' }, texts.components), 'components')),
+                    element({ tag: 'li' }, b.link(element({ tag: 'a' }, texts.components), 'components')),
                     //element({ tag: 'li' }, b.link(element({ tag: 'a' }, texts.javaScript), 'javascript'))
 
                 ]),

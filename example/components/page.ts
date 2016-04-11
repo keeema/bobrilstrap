@@ -1,5 +1,7 @@
 import * as b from 'bobril';
 import header from '../common/docsHeader';
+import docsContainer from '../common/docsContainer';
+import glyphicons from './glyphicons';
 
 export default b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -8,7 +10,10 @@ export default b.createVirtualComponent({
     },
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
-            header(texts)
+            header(texts),
+            docsContainer({}, [
+                glyphicons()
+            ])
         ];
     }
 })

@@ -82,6 +82,7 @@
         "example/common/docsContainer.ts",
         "example/common/docsHeader.ts",
         "example/common/section.ts",
+        "example/components/glyphicons.ts",
         "example/components/page.ts",
         "example/css/buttons.ts",
         "example/css/code.ts",

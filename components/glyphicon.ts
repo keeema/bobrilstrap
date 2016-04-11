@@ -2,7 +2,7 @@ import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 import { createDictionary, IDictionary, toLowerWithDashes } from './bobrilHelpers';
 
-export enum GlyphIconType {
+export enum GlyphIcon {
     Asterisk,
     Plus,
     Euro,
@@ -276,7 +276,7 @@ export const glyphIconStyles = {
 export const glyphIconTypeStyles = generateStyles();
 
 export interface IGlyphiconData extends IBaseData {
-    icon: GlyphIconType;
+    icon: GlyphIcon;
     formControlFeedback?: boolean;
 }
 
@@ -297,12 +297,12 @@ export let glyphicon = b.createDerivedComponent<IGlyphiconData>(elem, {
 
 export default glyphicon;
 
-function generateStyles(): IDictionary<GlyphIconType, b.IBobrilStyle> {
-    let result = createDictionary<GlyphIconType, b.IBobrilStyle>();
-    Object.keys(GlyphIconType).forEach(key => {
+function generateStyles(): IDictionary<GlyphIcon, b.IBobrilStyle> {
+    let result = createDictionary<GlyphIcon, b.IBobrilStyle>();
+    Object.keys(GlyphIcon).forEach(key => {
         let castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
-            result(castedValue, b.styleDef(`glyphicon-${toLowerWithDashes(GlyphIconType[castedValue])}`));
+            result(castedValue, b.styleDef(`glyphicon-${toLowerWithDashes(GlyphIcon[castedValue])}`));
         }
     });
 

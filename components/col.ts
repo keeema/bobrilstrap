@@ -5,7 +5,7 @@ import { createDictionary, IDictionary } from './bobrilHelpers';
 
 interface IColData extends IBaseData {
     size?: Size;
-    count?: number;
+    span?: number;
     cols?: IColType | IColType[];
     offsets?: IColType | IColType[];
     pushes?: IColType | IColType[];
@@ -18,7 +18,7 @@ interface ICtx extends b.IBobrilCtx {
 
 interface IColType {
     size: Size;
-    count: number;
+    span: number;
 }
 
 type IColStyles = IDictionary<Size, IDictionary<number, b.IBobrilStyle>>;
@@ -41,7 +41,7 @@ export const colOffsetStyles = getStyles((size, i) => `col-${size}-offset-${i}`)
 export const colPushStyles = getStyles((size, i) => `col-${size}-push-${i}`);
 export const colPullStyles = getStyles((size, i) => `col-${size}-pull-${i}`);
 
-function getStyles(decorator: (size: Size, count: number) => string): IColStyles {
+function getStyles(decorator: (size: Size, span: number) => string): IColStyles {
     var result: IColStyles = createDictionary<Size, IDictionary<number, b.IBobrilStyle>>();
 
     Object.keys(Size).forEach(size => {
@@ -90,10 +90,10 @@ function getColTypeArray(colTypes: IColType | IColType[]): IColType[] {
 }
 
 function isStyleAvailable(stylesSource: IColStyles, colType: IColType | IColData): boolean {
-    return colType.size !== undefined && colType.count
-        && !!stylesSource(colType.size) && !!stylesSource(colType.size)(colType.count);
+    return colType.size !== undefined && colType.span
+        && !!stylesSource(colType.size) && !!stylesSource(colType.size)(colType.span);
 }
 
 function getStyle(stylesSource: IColStyles, colType: IColType | IColData) {
-    return stylesSource(colType.size)(colType.count);
+    return stylesSource(colType.size)(colType.span);
 }

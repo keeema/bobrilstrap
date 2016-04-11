@@ -42,7 +42,7 @@ function introduction(): b.IBobrilChildren {
             li({}, 'Use rows to create horizontal groups of columns.'),
             li({}, 'Content should be placed within columns, and only columns may be immediate children of rows.'),
             li({}, [
-                'Predefined grid components like ', code({}, 'row({}, ...)'), ' and ', code({}, 'col({ size: Size.Xs, count: 4 }, ...)'),
+                'Predefined grid components like ', code({}, 'row({}, ...)'), ' and ', code({}, 'col({ size: Size.Xs, span: 4 }, ...)'),
                 ' are available for quickly making grid layouts.'
             ]),
             li({}, [
@@ -54,16 +54,16 @@ function introduction(): b.IBobrilChildren {
             li({}, [
                 'Grid columns are created by specifying the number of twelve available columns you wish to span. ',
                 'For example, three equal columns would use three',
-                code({}, 'col({ size: Size.Xs, count: 4 }, ...)')
+                code({}, 'col({ size: Size.Xs, span: 4 }, ...)')
             ]),
             li({}, `If more than 12 columns are placed within a single row, 
             each group of extra columns will, as one unit, wrap onto a new line.`),
             li({}, [
                 'Grid components apply to devices with screen widths greater than or equal to the breakpoint sizes, ',
                 'and override grid classes targeted at smaller devices. Therefore, e.g. applying any ',
-                code({}, 'col({ size: Size.Md, count: ... }, ...)'),
+                code({}, 'col({ size: Size.Md, span: ... }, ...)'),
                 'component will not only affect its styling on medium devices but also on large devices if it is not defined as ',
-                code({}, 'col({ cols: [{ size: Size.Md, count: ... }, { size: Size.Lg, count: ... }] }, ...)'), '.',
+                code({}, 'col({ cols: [{ size: Size.Md, span: ... }, { size: Size.Lg, span: ... }] }, ...)'), '.',
             ])
         ]),
         p({}, 'Look to the examples for applying these principles to your code.')
@@ -161,66 +161,66 @@ function exampleStackHorizontal(): b.IBobrilChildren {
         h2({ attrs: { id: 'grid-example-fluid' } }, 'Example: Fluid container'),
         p({}, [
             `Using a single set of `,
-            code({}, 'col({ size: ..., count: ... }, ...)'),
+            code({}, 'col({ size: ..., span: ... }, ...)'),
             ` grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices 
             (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any `,
             code({}, 'row({}, ...)'),
             '.'
         ]),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),
-            col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)')
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),
+            col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)')
         ]),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Md, count: 8 }, 'col({ size: Size.Md, count: 8 }, ...)'),
-            col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)')
+            col({ size: Size.Md, span: 8 }, 'col({ size: Size.Md, span: 8 }, ...)'),
+            col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)')
         ]),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)'),
-            col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)'),
-            col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)')
+            col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)'),
+            col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)'),
+            col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)')
         ]),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Md, count: 6 }, 'col({ size: Size.Md, count: 6 }, ...)'),
-            col({ size: Size.Md, count: 6 }, 'col({ size: Size.Md, count: 6 }, ...)')
+            col({ size: Size.Md, span: 6 }, 'col({ size: Size.Md, span: 6 }, ...)'),
+            col({ size: Size.Md, span: 6 }, 'col({ size: Size.Md, span: 6 }, ...)')
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 1 }, 'col({ size: Size.Md, count: 1 }, ...)')`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 1 }, 'col({ size: Size.Md, span: 1 }, ...)')`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 8 }, 'col({ size: Size.Md, count: 8 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)')`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 8 }, 'col({ size: Size.Md, span: 8 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)')`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)')`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)')`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 6 }, 'col({ size: Size.Md, count: 6 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 6 }, 'col({ size: Size.Md, count: 6 }, ...)')`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 6 }, 'col({ size: Size.Md, span: 6 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 6 }, 'col({ size: Size.Md, span: 6 }, ...)')`, e({ tag: 'br' }),
             `])`, e({ tag: 'br' })
         ]))),
     ];
@@ -252,62 +252,62 @@ function exampleMobileAndDesktop(): b.IBobrilChildren {
         p({}, [
             `Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid layout at once
              by adding complex input data `,
-            code({}, 'col({ cols: [{ size: Size.Xs, count: ... }, { size: Size.Md, count: ... }] }, ...)'),
+            code({}, 'col({ cols: [{ size: Size.Xs, span: ... }, { size: Size.Md, span: ... }] }, ...)'),
             ` for components. See the example below for a better idea of how it all works.`
         ]),
         row({ style: styles.showGrid }, [
-            col({ cols: [{ size: Size.Xs, count: 12 }, { size: Size.Md, count: 8 }] },
-                'col({ cols: [{ size: Size.Xs, count: 12 }, { size: Size.Md, count: 8 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 12 }, { size: Size.Md, span: 8 }] },
+                'col({ cols: [{ size: Size.Xs, span: 12 }, { size: Size.Md, span: 8 }] }, ...)'
             ),
-            col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)'
             )
         ]),
         row({ style: styles.showGrid }, [
-            col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)'
             ),
-            col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)'
             ),
-            col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)'
             )
         ]),
         row({ style: styles.showGrid }, [
-            col({ cols: [{ size: Size.Xs, count: 6 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }] }, ...)'
             ),
-            col({ cols: [{ size: Size.Xs, count: 6 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }] }, ...)'
             )
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 12 }, { size: Size.Md, count: 8 }] },`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 12 }, { size: Size.Md, count: 8 }] }, ...)'`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 12 }, { size: Size.Md, span: 8 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 12 }, { size: Size.Md, span: 8 }] }, ...)'`, e({ tag: 'br' }),
             `    ),`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)`, e({ tag: 'br' }),
             `    )'`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)'`, e({ tag: 'br' }),
             `    ),`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)'`, e({ tag: 'br' }),
             `    ),`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },,`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },,`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)'`, e({ tag: 'br' }),
             `    )'`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }] },`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }] }, ...)'`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }] }, ...)'`, e({ tag: 'br' }),
             `    ),`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }] },`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }] }, ...)'`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }] }, ...)'`, e({ tag: 'br' }),
             `    )`, e({ tag: 'br' }),
             `])`
         ]))),
@@ -319,48 +319,48 @@ function exampleMobileTabletAndDesktop(): b.IBobrilChildren {
         h2({ attrs: { id: 'grid-example-mixed-complete' } }, 'Example: Mobile, tablet and desktop'),
         p({}, [
             `Build on the previous example by creating even more dynamic and powerful layouts with tablet `,
-            code({}, 'col({ size: Size.Sm, count: ... }, ...)'),
+            code({}, 'col({ size: Size.Sm, span: ... }, ...)'),
             ` component input data.`
         ]),
         row({ style: styles.showGrid }, [
-            col({ cols: [{ size: Size.Xs, count: 12 }, { size: Size.Sm, count: 6 }, { size: Size.Md, count: 8 }] },
-                'col({ cols: [{ size: Size.Xs, count: 12 }, { size: Size.Sm, count: 6 }, { size: Size.Md, count: 8 }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 12 }, { size: Size.Sm, span: 6 }, { size: Size.Md, span: 8 }] },
+                'col({ cols: [{ size: Size.Xs, span: 12 }, { size: Size.Sm, span: 6 }, { size: Size.Md, span: 8 }, ...)'
             ),
-            col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)'
             )
         ]),
         row({ style: styles.showGrid }, [
-            col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] }, ...)'
             ),
-            col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] }, ...)'
             ),
-            col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] },
-                'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] }, ...)'
+            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] },
+                'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] }, ...)'
             )
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 12 }, { size: Size.Sm, count: 6 }, { size: Size.Md, count: 8 }] },`,
+            `    col({ cols: [{ size: Size.Xs, span: 12 }, { size: Size.Sm, span: 6 }, { size: Size.Md, span: 8 }] },`,
             e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 12 }, { size: Size.Sm, count: 6 }, { size: Size.Md, count: 8 }, ...)'`,
+            `        'col({ cols: [{ size: Size.Xs, span: 12 }, { size: Size.Sm, span: 6 }, { size: Size.Md, span: 8 }, ...)'`,
             e({ tag: 'br' }),
             `    ),`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] },`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Md, count: 4 }] }, ...)`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Md, span: 4 }] }, ...)`, e({ tag: 'br' }),
             `    )'`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] },`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] }, ...)'`, e({ tag: 'br' }),
             `    ),`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] },`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] },`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] }, ...)'`, e({ tag: 'br' }),
             `    ),`, e({ tag: 'br' }),
-            `    col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] },,`, e({ tag: 'br' }),
-            `        'col({ cols: [{ size: Size.Xs, count: 6 }, { size: Size.Sm, count: 4 }] }, ...)'`, e({ tag: 'br' }),
+            `    col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] },,`, e({ tag: 'br' }),
+            `        'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] }, ...)'`, e({ tag: 'br' }),
             `    )'`, e({ tag: 'br' }),
             `])`
         ]))),
@@ -375,29 +375,29 @@ function exampleColumnWrapping(): b.IBobrilChildren {
             `If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.`
         ),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Xs, count: 9 }, 'col({ size: Size.Xs, count: 9 }, ...)'),
-            col({ size: Size.Xs, count: 4 }, [
-                'col({ size: Size.Xs, count: 4 }, ...)',
+            col({ size: Size.Xs, span: 9 }, 'col({ size: Size.Xs, span: 9 }, ...)'),
+            col({ size: Size.Xs, span: 4 }, [
+                'col({ size: Size.Xs, span: 4 }, ...)',
                 e({ tag: 'br' }),
                 'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'
             ]),
-            col({ size: Size.Xs, count: 6 }, [
-                'col({ size: Size.Xs, count: 6 }, ...)',
+            col({ size: Size.Xs, span: 6 }, [
+                'col({ size: Size.Xs, span: 6 }, ...)',
                 e({ tag: 'br' }),
                 'Subsequent columns continue along the new line.'
             ])
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Xs, count: 9 }, 'col({ size: Size.Xs, count: 9 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Xs, count: 4 }, [`, e({ tag: 'br' }),
-            `        'col({ size: Size.Xs, count: 4 }, ...)',`, e({ tag: 'br' }),
+            `    col({ size: Size.Xs, span: 9 }, 'col({ size: Size.Xs, span: 9 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Xs, span: 4 }, [`, e({ tag: 'br' }),
+            `        'col({ size: Size.Xs, span: 4 }, ...)',`, e({ tag: 'br' }),
             `        e({ tag: 'br' }),`, e({ tag: 'br' }),
             `        'Since 9 + 4 = 13 > 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.'`,
             e({ tag: 'br' }),
             `    ]),`, e({ tag: 'br' }),
-            `    col({ size: Size.Xs, count: 6 }, [`, e({ tag: 'br' }),
-            `        'col({ size: Size.Xs, count: 6 }, ...)',`, e({ tag: 'br' }),
+            `    col({ size: Size.Xs, span: 6 }, [`, e({ tag: 'br' }),
+            `        'col({ size: Size.Xs, span: 6 }, ...)',`, e({ tag: 'br' }),
             `        e({ tag: 'br' }),`, e({ tag: 'br' }),
             `        'Subsequent columns continue along the new line.'`, e({ tag: 'br' }),
             `    ])`, e({ tag: 'br' }),
@@ -414,39 +414,39 @@ function offsettingColumns(): b.IBobrilChildren {
             code({}, 'offsets'),
             ` input data property. These classes increase the left margin of a column by * columns. `,
             `For example, `,
-            code({}, 'col({ cols: ..., offsets: { size: Size.Md, count:  }, ...)'),
+            code({}, 'col({ cols: ..., offsets: { size: Size.Md, span:  }, ...)'),
             ` moves column over four columns.`
         ]),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)'),
-            col({ size: Size.Md, count: 4, offsets: { size: Size.Md, count: 4 } },
-                'col({ size: Size.Md, count: 4, offsets: { size: Size.Md, count: 4 } }, ...)')
+            col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)'),
+            col({ size: Size.Md, span: 4, offsets: { size: Size.Md, span: 4 } },
+                'col({ size: Size.Md, span: 4, offsets: { size: Size.Md, span: 4 } }, ...)')
         ]),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } },
-                'col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } }, ...)'),
-            col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } },
-                'col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } }, ...)')
+            col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } },
+                'col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } }, ...)'),
+            col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } },
+                'col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } }, ...)')
         ]),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Md, count: 6, offsets: { size: Size.Md, count: 3 } },
-                'col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } }, ...)')
+            col({ size: Size.Md, span: 6, offsets: { size: Size.Md, span: 3 } },
+                'col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } }, ...)')
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 4 }, 'col({ size: Size.Md, count: 4 }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 4, offsets: { size: Size.Md, count: 4 } },`, e({ tag: 'br' }),
-            `        'col({ size: Size.Md, count: 4, offsets: { size: Size.Md, count: 4 } }, ...)')`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 4 }, 'col({ size: Size.Md, span: 4 }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 4, offsets: { size: Size.Md, span: 4 } },`, e({ tag: 'br' }),
+            `        'col({ size: Size.Md, span: 4, offsets: { size: Size.Md, span: 4 } }, ...)')`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } },`, e({ tag: 'br' }),
-            `        'col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } },`, e({ tag: 'br' }),
-            `        'col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } }, ...)')`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } },`, e({ tag: 'br' }),
+            `        'col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } },`, e({ tag: 'br' }),
+            `        'col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } }, ...)')`, e({ tag: 'br' }),
             `]),`, e({ tag: 'br' }),
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 6, offsets: { size: Size.Md, count: 3 } },`, e({ tag: 'br' }),
-            `        'col({ size: Size.Md, count: 3, offsets: { size: Size.Md, count: 3 } }, ...)')`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 6, offsets: { size: Size.Md, span: 3 } },`, e({ tag: 'br' }),
+            `        'col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } }, ...)')`, e({ tag: 'br' }),
             `])`
         ]))),
     ];
@@ -466,28 +466,28 @@ function nestingColumns(): b.IBobrilChildren {
             `available columns).`,
         ]),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Sm, count: 9 }, [
-                'Level 1: col({ size: Size.Sm, count: 9 }, ...)',
+            col({ size: Size.Sm, span: 9 }, [
+                'Level 1: col({ size: Size.Sm, span: 9 }, ...)',
                 row({}, [
-                    col({ cols: [{ size: Size.Xs, count: 8 }, { size: Size.Sm, count: 6 }] }, [
-                        'Level 2:  col({ cols: [{ size: Size.Xs, count: 8 }, { size: Size.Sm, count: 6 }] }, ...)'
+                    col({ cols: [{ size: Size.Xs, span: 8 }, { size: Size.Sm, span: 6 }] }, [
+                        'Level 2:  col({ cols: [{ size: Size.Xs, span: 8 }, { size: Size.Sm, span: 6 }] }, ...)'
                     ]),
-                    col({ cols: [{ size: Size.Xs, count: 8 }, { size: Size.Sm, count: 6 }] }, [
-                        'Level 2:  col({ cols: [{ size: Size.Xs, count: 8 }, { size: Size.Sm, count: 6 }] }, ...)'
+                    col({ cols: [{ size: Size.Xs, span: 8 }, { size: Size.Sm, span: 6 }] }, [
+                        'Level 2:  col({ cols: [{ size: Size.Xs, span: 8 }, { size: Size.Sm, span: 6 }] }, ...)'
                     ])
                 ])
             ])
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Sm, count: 9 }, [`, e({ tag: 'br' }),
-            `        'Level 1: col({ size: Size.Sm, count: 9 }, ...)',`, e({ tag: 'br' }),
+            `    col({ size: Size.Sm, span: 9 }, [`, e({ tag: 'br' }),
+            `        'Level 1: col({ size: Size.Sm, span: 9 }, ...)',`, e({ tag: 'br' }),
             `        row({}, [`, e({ tag: 'br' }),
-            `            col({ cols: [{ size: Size.Xs, count: 8 }, { size: Size.Sm, count: 6 }] }, [`, e({ tag: 'br' }),
-            `                'Level 2:  col({ cols: [{ size: Size.Xs, count: 8 }, { size: Size.Sm, count: 6 }] }, ...)'`, e({ tag: 'br' }),
+            `            col({ cols: [{ size: Size.Xs, span: 8 }, { size: Size.Sm, span: 6 }] }, [`, e({ tag: 'br' }),
+            `                'Level 2:  col({ cols: [{ size: Size.Xs, span: 8 }, { size: Size.Sm, span: 6 }] }, ...)'`, e({ tag: 'br' }),
             `            ]),`, e({ tag: 'br' }),
-            `            col({ cols: [{ size: Size.Xs, count: 8 }, { size: Size.Sm, count: 6 }] }, [`, e({ tag: 'br' }),
-            `                'Level 2:  col({ cols: [{ size: Size.Xs, count: 8 }, { size: Size.Sm, count: 6 }] }, ...)'`, e({ tag: 'br' }),
+            `            col({ cols: [{ size: Size.Xs, span: 8 }, { size: Size.Sm, span: 6 }] }, [`, e({ tag: 'br' }),
+            `                'Level 2:  col({ cols: [{ size: Size.Xs, span: 8 }, { size: Size.Sm, span: 6 }] }, ...)'`, e({ tag: 'br' }),
             `            ]),`, e({ tag: 'br' }),
             `        ])`, e({ tag: 'br' }),
             `    ])`, e({ tag: 'br' }),
@@ -508,17 +508,17 @@ function columnOrdering(): b.IBobrilChildren {
             
         ]),
         row({ style: styles.showGrid }, [
-            col({ size: Size.Md, count: 9, pushes: { size: Size.Md, count: 3 } }, 
-                ' col({ size: Size.Md, count: 9, pushes: { size: Size.Md, count: 3 } }, ...)'),
-            col({ size: Size.Md, count: 3, pulls: { size: Size.Md, count: 9 } }, 
-                '{ size: Size.Md, count: 3, pulls: { size: Size.Md, count: 9 } , ...)')
+            col({ size: Size.Md, span: 9, pushes: { size: Size.Md, span: 3 } }, 
+                ' col({ size: Size.Md, span: 9, pushes: { size: Size.Md, span: 3 } }, ...)'),
+            col({ size: Size.Md, span: 3, pulls: { size: Size.Md, span: 9 } }, 
+                '{ size: Size.Md, span: 3, pulls: { size: Size.Md, span: 9 } , ...)')
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `row({}, [`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 9, pushes: { size: Size.Md, count: 3 } }, `, e({ tag: 'br' }),
-            `        ' col({ size: Size.Md, count: 9, pushes: { size: Size.Md, count: 3 } }, ...)'),`, e({ tag: 'br' }),
-            `    col({ size: Size.Md, count: 3, pulls: { size: Size.Md, count: 9 } }, `, e({ tag: 'br' }),
-            `        '{ size: Size.Md, count: 3, pulls: { size: Size.Md, count: 9 } , ...)')`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 9, pushes: { size: Size.Md, span: 3 } }, `, e({ tag: 'br' }),
+            `        ' col({ size: Size.Md, span: 9, pushes: { size: Size.Md, span: 3 } }, ...)'),`, e({ tag: 'br' }),
+            `    col({ size: Size.Md, span: 3, pulls: { size: Size.Md, span: 9 } }, `, e({ tag: 'br' }),
+            `        '{ size: Size.Md, span: 3, pulls: { size: Size.Md, span: 9 } , ...)')`, e({ tag: 'br' }),
             `])`
         ]))),
     ];

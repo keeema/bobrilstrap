@@ -57,8 +57,7 @@ export let button = b.createDerivedComponent<IButtonData>(elem, {
     id: 'bobrilstrap-button',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = ButtonTag[ctx.data.tag || ButtonTag.Button];
-        me.attrs = ctx.data.attrs || {};
-
+        
         b.style(me, ctx.data.option !== ButtonOption.Close && buttonStyles.btn);
         b.style(me, ctx.data.active && buttonStyles.active);
         b.style(me, ctx.data.block && buttonStyles.btnBlock);

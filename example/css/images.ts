@@ -48,7 +48,7 @@ function responsiveImages(): b.IBobrilChildren {
                 add `, code({}, 'width: 100% \\9;'), `by setting the `, code({}, 'ieSvgFix'), ` input data property where necessary. 
                 Bootstrap doesn't apply this automatically as it causes complications to other image formats.`
             ])
-        ]),
+        ])
     ];
 }
 

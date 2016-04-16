@@ -64,7 +64,7 @@ function contextualColors(): b.IBobrilChildren {
                 assistive technologies – such as screen readers. Ensure that information denoted by the color is either 
                 obvious from the content itself (the contextual colors are only used to reinforce meaning that is already 
                 present in the text/markup), or is included through alternative means, such as additional text hidden with 
-                the `, code({}, 'srOnly'), ` style.`
+                the `, code({}, 'helpers.srOnly'), ` style.`
             ])
         ])
     ];

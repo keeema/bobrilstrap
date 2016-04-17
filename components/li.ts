@@ -1,9 +1,15 @@
 import * as b from 'bobril';
 import elem, { IBaseData } from './element';
 
-export let li = b.createDerivedComponent<IBaseData>(elem, {
+export interface ILiData extends IBaseData { }
+
+interface ICtx extends b.IBobrilCtx {
+    data: ILiData;
+}
+
+export let li = b.createDerivedComponent<ILiData>(elem, {
     id: 'bobrilstrap-li',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'li';
     }
 });

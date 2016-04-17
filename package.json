@@ -1,17 +1,19 @@
 {
   "name": "bobrilstrap",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Bobril wrapper for bootstrap",
   "typescript": {
     "main": "index.ts"
   },
   "bobril": {
     "example": "example.ts",
-    "title" : "Bobrilstrap"
+    "title": "Bobrilstrap"
   },
   "author": "Tomáš Růt",
   "license": "MIT",
   "dependencies": {
-    "bobril": "*"
+    "bobril": "*",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3"
   }
 }

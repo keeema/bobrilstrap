@@ -8,16 +8,17 @@ export enum Target {
     Top,
 }
 
-export interface IAData extends IBaseData {
+export interface IAnchorData extends IBaseData {
     href?: string;
     name?: string;
     target?: Target;
 }
 
 interface ICtx extends b.IBobrilCtx {
-    data: IAData;
+    data: IAnchorData;
 }
-export let a = b.createDerivedComponent<IAData>(elem, {
+
+export const anchor = b.createDerivedComponent<IAnchorData>(elem, {
     id: 'bobrilstrap-a',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'a';
@@ -30,4 +31,5 @@ export let a = b.createDerivedComponent<IAData>(elem, {
     }
 });
 
-export default a;
+export default anchor;
+export const a = anchor;

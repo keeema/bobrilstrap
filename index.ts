@@ -18,6 +18,9 @@ export * from './components/context';
 export * from './components/dd';
 export * from './components/del';
 export * from './components/dl';
+export * from './components/dropdown';
+export * from './components/dropdownItem';
+export * from './components/dropdownMenu';
 export * from './components/dt';
 export * from './components/element';
 export * from './components/italics';
@@ -70,7 +73,9 @@ export * from './components/validations';
 export * from './components/variable';
 
 export function init(): void {
-    b.asset('./bootstrap/css/bootstrap.css');
+    b.asset('node_modules/jquery/dist/jquery.min.js');
+    b.asset('node_modules/bootstrap/dist/css/bootstrap.min.css');
+    b.asset('node_modules/bootstrap/dist/js/bootstrap.min.js');
 }
 
 export default init;

@@ -29,14 +29,14 @@ function buttonsTags(): b.IBobrilChildren {
         ]),
         e({ style: styles.bsExample }, [
             form({}, [
-                button({ label: 'Link', tag: ButtonTag.Anchor, onClick: () => alert('Clicked <a> element!') }), ' ',
+                button({ label: 'Link', tag: ButtonTag.A, onClick: () => alert('Clicked <a> element!') }), ' ',
                 button({ label: 'Button (default)', onClick: () => alert('Clicked <button> element!') }), ' ',
                 button({ label: 'Input', tag: ButtonTag.Input, onClick: () => alert('Clicked <input> element!') }), ' ',
                 button({ label: 'Submit', tag: ButtonTag.Input, type: ButtonType.Submit, onClick: () => alert('Clicked submit!') })
             ])
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `button({ label: 'Link', tag: ButtonTag.Anchor, onClick: () => alert('Clicked <a> element!') }), ' ',`, e({ tag: 'br' }),
+            `button({ label: 'Link', tag: ButtonTag.A, onClick: () => alert('Clicked <a> element!') }), ' ',`, e({ tag: 'br' }),
             `button({ label: 'Button', onClick: () => alert('Clicked <button> element!') }), ' ',`, e({ tag: 'br' }),
             `button({ label: 'Input', tag: ButtonTag.Input, onClick: () => alert('Clicked <input> element!') }), ' ',`, e({ tag: 'br' }),
             `button({ `, e({ tag: 'br' }),
@@ -46,7 +46,7 @@ function buttonsTags(): b.IBobrilChildren {
         e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-buttons-context-usage' } }, [
             h4({}, `Context-specific usage`),
             p({}, [
-                `While `, code({}, 'button({}, ...)'), ` can be used with `, code({}, 'a'), ` and `, code({}, 'button'),
+                `While `, code({}, 'button'), ` can be used with `, code({}, 'a'), ` and `, code({}, 'button'),
                 ` `, code({}, 'tag'), ` input data property, only `, code({}, 'button'),
                 `s are supported within our nav and navbar components.`
             ])
@@ -204,10 +204,10 @@ function disabledState(): b.IBobrilChildren {
                 option: ButtonOption.Primary,
                 size: Size.Lg,
                 disabled: true,
-                tag: ButtonTag.Anchor,
+                tag: ButtonTag.A,
                 onClick: () => alert('Clicked')
             }), ' ',
-            button({ label: 'Link', size: Size.Lg, disabled: true, tag: ButtonTag.Anchor, onClick: () => alert('Clicked') })
+            button({ label: 'Link', size: Size.Lg, disabled: true, tag: ButtonTag.A, onClick: () => alert('Clicked') })
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `button({`, e({ tag: 'br' }),
@@ -223,10 +223,10 @@ function disabledState(): b.IBobrilChildren {
             `    option: ButtonOption.Primary,`, e({ tag: 'br' }),
             `    size: Size.Lg,`, e({ tag: 'br' }),
             `    disabled: true,`, e({ tag: 'br' }),
-            `    tag: ButtonTag.Anchor,`, e({ tag: 'br' }),
+            `    tag: ButtonTag.A,`, e({ tag: 'br' }),
             `    onClick: () => alert('Clicked')`, e({ tag: 'br' }),
             `}), ' ',`, e({ tag: 'br' }),
-            `button({ label: 'Link', size: Lg, disabled: true, tag: ButtonTag.Anchor, onClick: () => alert('Clicked') })`
+            `button({ label: 'Link', size: Lg, disabled: true, tag: ButtonTag.A, onClick: () => alert('Clicked') })`
         ]))),
         e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-buttons-ie-disabled' } }, [
             h4({}, `Cross-browser compatibility`),

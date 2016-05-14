@@ -43,10 +43,10 @@ export let e = b.createVirtualComponent<IElementData>({
         me.tag = ctx.data.tag || 'div';
         me.children = ctx.data.children;
         me.attrs = ctx.data.attrs || {};
-
+    },
+    postRender(ctx: b.IBobrilCtx, me: b.IBobrilNode, oldMe?: b.IBobrilCacheNode): void {
+        let aria = ctx.data.aria || {};
         let dataAttrs = ctx.data.data || {};
-
-        b.style(me, ctx.data.style);
 
         if (ctx.data.id)
             me.attrs.id = ctx.data.id;
@@ -57,36 +57,35 @@ export let e = b.createVirtualComponent<IElementData>({
         if (ctx.data.title)
             me.attrs['title'] = ctx.data.title;
 
-        if (ctx.data.aria) {
-            if (ctx.data.aria.label)
-                me.attrs['aria-label'] = ctx.data.aria.label;
 
-            if (ctx.data.aria.labelledBy)
-                me.attrs['aria-labelledby'] = ctx.data.aria.labelledBy;
+        if (aria.label)
+            me.attrs['aria-label'] = aria.label;
 
-            if (ctx.data.aria.describedBy)
-                me.attrs['aria-describedby'] = ctx.data.aria.describedBy;
+        if (aria.labelledBy)
+            me.attrs['aria-labelledby'] = aria.labelledBy;
 
-            if (ctx.data.aria.expanded !== undefined && ctx.data.aria.expanded !== null)
-                me.attrs['aria-expanded'] = ctx.data.aria.expanded.toString();
+        if (aria.describedBy)
+            me.attrs['aria-describedby'] = aria.describedBy;
 
-            if (ctx.data.aria.invalid !== undefined && ctx.data.aria.invalid !== null)
-                me.attrs['aria-invalid'] = ctx.data.aria.invalid.toString();
+        if (aria.expanded !== undefined && aria.expanded !== null)
+            me.attrs['aria-expanded'] = aria.expanded.toString();
 
-            if (ctx.data.aria.hasPopup !== undefined && ctx.data.aria.hasPopup !== null)
-                me.attrs['aria-haspopup'] = ctx.data.aria.hasPopup.toString();
+        if (aria.invalid !== undefined && aria.invalid !== null)
+            me.attrs['aria-invalid'] = aria.invalid.toString();
 
-            if (ctx.data.aria.hidden !== undefined && ctx.data.aria.hidden !== null)
-                me.attrs['aria-hidden'] = ctx.data.aria.hidden.toString();
+        if (aria.hasPopup !== undefined && aria.hasPopup !== null)
+            me.attrs['aria-haspopup'] = aria.hasPopup.toString();
 
-            if (ctx.data.aria.pressed !== undefined && ctx.data.aria.pressed !== null)
-                me.attrs['aria-pressed'] = ctx.data.aria.pressed.toString();
-        }
+        if (aria.hidden !== undefined && aria.hidden !== null)
+            me.attrs['aria-hidden'] = aria.hidden.toString();
 
-        if (ctx.data.data) {
-            if (ctx.data.data.toggle)
-                me.attrs['data-toggle'] = ctx.data.data.toggle;
-        }
+        if (aria.pressed !== undefined && aria.pressed !== null)
+            me.attrs['aria-pressed'] = aria.pressed.toString();
+
+        if (dataAttrs.toggle)
+            me.attrs['data-toggle'] = ctx.data.data.toggle;
+
+        b.style(me, ctx.data.style);
     },
     onClick(ctx: ICtx, event: b.IBobrilMouseEvent): boolean {
         if (!ctx.data.onClick)

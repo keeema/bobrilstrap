@@ -32,17 +32,12 @@ export default dropdown;
 
 function updateButtonDataForDropdown(ctx: ICtx): IButtonData {
     let buttonData = b.assign({}, ctx.data.button);
-    let buttonLabel = buttonData.label;
-    buttonData.label = undefined;
-    buttonData.data = buttonData || {};
-    buttonData.data.toggle = 'dropdown';
+    buttonData.dropdown = true;
     return buttonData;
 }
 
 function addButton(ctx: ICtx, me: b.IBobrilNode) {
-    let caret = span({ style: helpers.caret });
-    let buttonLabel = ctx.data.button.label;
-    let dropdownButton = button(updateButtonDataForDropdown(ctx), [buttonLabel, ' ', caret]);
+    let dropdownButton = button(updateButtonDataForDropdown(ctx));
 
     mergeToChildren(me, dropdownButton, true);
     b.style(dropdownButton, dropdownStyles.dropdownToggle);

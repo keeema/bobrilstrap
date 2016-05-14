@@ -3,6 +3,7 @@ import header from '../common/docsHeader';
 import docsContainer from '../common/docsContainer';
 import glyphicons from './glyphicons';
 import dropdowns from './dropdowns';
+import buttonGroups from './buttonGroups';
 
 export default b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -14,7 +15,8 @@ export default b.createVirtualComponent({
             header(texts),
             docsContainer({}, [
                 glyphicons(),
-                dropdowns()
+                dropdowns(),
+                buttonGroups()
             ])
         ];
     }

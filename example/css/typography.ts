@@ -31,7 +31,7 @@ function headings(): b.IBobrilChildren {
         h2({ attrs: { id: 'type-headings' } }, 'Headings'),
         p({}, [`All HTML headings, `, code({}, '<h1>'), ` through `, code({}, '<h6>'),
             ` are available.`,
-            code({}, 'h1({}, ...)'), ` through `, code({}, 'h6({}, ...)'),
+            code({}, 'h1'), ` through `, code({}, 'h6'),
             ` components are also available, for when you want to match the font styling of a heading but still want 
             your text to be displayed inline.`
         ]),
@@ -81,7 +81,7 @@ function headings(): b.IBobrilChildren {
         ]))),
         p({}, [
             'Create lighter, secondary text in any heading with ',
-            code({}, 'small({}, ...)'), ' component or ',
+            code({}, 'small'), ' component or ',
             code({}, 'typography.small'),
             ' bobril style definition.'
         ]),
@@ -145,7 +145,7 @@ function inlineTextElements(): b.IBobrilChildren {
         h3({ attrs: { id: 'marked-text' } }, 'Marked text'),
         p({}, [
             `For highlighting a run of text due to its relevance in another context, use the `,
-            code({}, 'mark({}, ...)'), ` component.`
+            code({}, 'mark'), ` component.`
         ]),
         e({ style: styles.bsExample }, p({}, ['You can use the mark tag to ', mark({}, 'highlight'), ' text.'])),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
@@ -154,7 +154,7 @@ function inlineTextElements(): b.IBobrilChildren {
         h3({ attrs: { id: 'deleted-text' } }, 'Deleted text'),
         p({}, [
             `For indicating blocks of text that have been deleted use the `,
-            code({}, 'del({}, ...)'), ` tag.`
+            code({}, 'del'), ` tag.`
         ]),
         e({ style: styles.bsExample }, p({}, del({}, 'This line of text is meant to be treated as deleted text.'))),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
@@ -172,7 +172,7 @@ function inlineTextElements(): b.IBobrilChildren {
         h3({ attrs: { id: 'inserted-text' } }, 'Inserted text'),
         p({}, [
             `For indicating additions to the document use the `,
-            code({}, 'ins({}, ...)'), ` component.`
+            code({}, 'ins'), ` component.`
         ]),
         e({ style: styles.bsExample }, p({}, ins({}, 'This line of text is meant to be treated as an addition to the document.'))),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
@@ -181,7 +181,7 @@ function inlineTextElements(): b.IBobrilChildren {
         h3({ attrs: { id: 'underlined-text' } }, 'Underlined text'),
         p({}, [
             `To underline text use the `,
-            code({}, 'u({}, ...)'), ` or `, code({}, 'underlined({}, ...)'), ` component.`
+            code({}, 'u'), ` or `, code({}, 'underlined'), ` component.`
         ]),
         e({ style: styles.bsExample }, p({}, u({}, 'This line of text will render as underlined.'))),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
@@ -189,13 +189,13 @@ function inlineTextElements(): b.IBobrilChildren {
         ]))),
         h3({ attrs: { id: 'small-text' } }, 'Small text'),
         p({}, [
-            `For de-emphasizing inline or blocks of text, use the `, code({}, 'small({}, ...)'),
+            `For de-emphasizing inline or blocks of text, use the `, code({}, 'small'),
             ` component to set text at 85% the size of the parent. Heading elements receive their own `, code({}, 'font-size'),
-            ` for nested `, code({}, 'small({}, ...)'), ` components.`
+            ` for nested `, code({}, 'small'), ` components.`
         ]),
         p({}, [
             `You may alternatively use an inline element with `, code({}, 'typography.small'),
-            ` style in place of any `, code({}, 'small({}, ...)'),
+            ` style in place of any `, code({}, 'small'),
             ` component.`
         ]),
         e({ style: styles.bsExample }, p({}, small({}, 'This line of text is meant to be treated as fine print.'))),
@@ -205,7 +205,7 @@ function inlineTextElements(): b.IBobrilChildren {
         h3({ attrs: { id: 'inserted-text' } }, 'Inserted text'),
         p({}, [
             `For indicating additions to the document use the `,
-            code({}, 'ins({}, ...)'), ` component.`
+            code({}, 'ins'), ` component.`
         ]),
         e({ style: styles.bsExample }, p({}, ins({}, 'This line of text is meant to be treated as an addition to the document.'))),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
@@ -346,8 +346,8 @@ function blockquotes(): b.IBobrilChildren {
         p({}, `For quoting blocks of content from another source within your document.`),
         h3({ attrs: { id: 'default-blockquotes' } }, 'Default blockquote'),
         p({}, [
-            `Wrap `, code({}, 'blockquote({}, ...)'), `around any HTML as the quote. For straight quotes, we recommend a `,
-            code({}, 'p({}, ...)'), '.'
+            `Wrap `, code({}, 'blockquote'), `around any HTML as the quote. For straight quotes, we recommend a `,
+            code({}, 'p'), '.'
         ]),
         e({ style: styles.bsExample }, [
             blockquote({}, p({}, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.'))
@@ -356,12 +356,12 @@ function blockquotes(): b.IBobrilChildren {
             `blockquote({}, p({}, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.'))`
         ]))),
         h3({ attrs: { id: 'blockquote-options' } }, 'Blockquote options'),
-        p({}, ['Style and content changes for simple variations on a standard ', code({}, 'blockquote({}, ...)'), '.']),
+        p({}, ['Style and content changes for simple variations on a standard ', code({}, 'blockquote'), '.']),
         h4({ attrs: { id: 'naming-a-source' } }, 'Naming a source'),
         p({}, [
-            `Add a `, code({}, 'footer({}, ...)'),
+            `Add a `, code({}, 'footer'),
             `for identifying the source. Wrap the name of the source work in `,
-            code({}, 'cite({}, ...)'), `.`
+            code({}, 'cite'), `.`
         ]),
         e({ style: styles.bsExample }, [
             blockquote({}, [

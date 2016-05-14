@@ -113,16 +113,16 @@ function examples(): b.IBobrilChildren {
         ]), 
         e({ style: styles.bsExample }, [
             alert({ context: AlertContext.Danger }, [
-                glyphicon({ icon: GlyphIcon.ExclamationSign}), ' ',
+                glyphicon({ icon: GlyphIcon.ExclamationSign}),
                 span({ style: helpers.srOnly }, 'Error:'),
-                'Enter a valid email address'
+                ' Enter a valid email address'
             ])
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `alert({ context: AlertContext.Danger }, [`, e({ tag: 'br' }),
-            `    glyphicon({ icon: GlyphIcon.ExclamationSign}), ' ',`, e({ tag: 'br' }),
+            `    glyphicon({ icon: GlyphIcon.ExclamationSign}),`, e({ tag: 'br' }),
             `    span({ style: helpers.srOnly }, 'Error:'),`, e({ tag: 'br' }),
-            `    'Enter a valid email address'`, e({ tag: 'br' }),
+            `    ' Enter a valid email address'`, e({ tag: 'br' }),
             `])`
         ]))),
     ];

@@ -42,12 +42,12 @@ function introduction(): b.IBobrilChildren {
             li({}, 'Use rows to create horizontal groups of columns.'),
             li({}, 'Content should be placed within columns, and only columns may be immediate children of rows.'),
             li({}, [
-                'Predefined grid components like ', code({}, 'row({}, ...)'), ' and ', code({}, 'col({ size: Size.Xs, span: 4 }, ...)'),
+                'Predefined grid components like ', code({}, 'row'), ' and ', code({}, 'col({ size: Size.Xs, span: 4 }, ...)'),
                 ' are available for quickly making grid layouts.'
             ]),
             li({}, [
                 'Columns create gutters (gaps between column content) via ', code({}, 'padding'),
-                '. That padding is offset in rows for the first and last column via negative margin on ', code({}, 'row({}, ...)')
+                '. That padding is offset in rows for the first and last column via negative margin on ', code({}, 'row')
             ]),
             li({}, `The negative margin is why the examples below are outdented. It's so that content within grid columns is lined 
             up with non-grid content.`),
@@ -164,7 +164,7 @@ function exampleStackHorizontal(): b.IBobrilChildren {
             code({}, 'col({ size: ..., span: ... }, ...)'),
             ` grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices 
             (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any `,
-            code({}, 'row({}, ...)'),
+            code({}, 'row'),
             '.'
         ]),
         row({ style: styles.showGrid }, [
@@ -457,7 +457,7 @@ function nestingColumns(): b.IBobrilChildren {
         h2({ attrs: { id: 'grid-nesting' } }, 'Nesting columns'),
         p({}, [
             `To nest your content with the default grid, add a new `,
-            code({}, 'row({}, ...)'),
+            code({}, 'row'),
             ` and set of `,
             code({}, 'col({ ... }, ...)'),
             ` columns within an existing `,

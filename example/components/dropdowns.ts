@@ -27,7 +27,7 @@ function example(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'dropdowns-example' } }, 'Example'),
         p({}, [
-            `Wrap the dropdown's trigger and the dropdown menu within`, code({}, 'dropdown({}, ...)'),
+            `Wrap the dropdown's trigger and the dropdown menu within`, code({}, 'dropdown'),
             `, or another element that declares `, code({}, 'position: relative;'), `. Then add the menu.`
         ]),
         e({ style: styles.bsExample }, [
@@ -37,11 +37,11 @@ function example(): b.IBobrilChildren {
                     style: helpers.clearfix
                 },
                 dropdownMenu({ aria: { labelledBy: 'dropdownMenu1' } }, [
-                    dropdownItem({}, a({ href: '#' }, 'Action')),
-                    dropdownItem({}, a({ href: '#' }, 'Another action')),
-                    dropdownItem({}, a({ href: '#' }, 'Something else here')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
                     dropdownItem({ separator: true }),
-                    dropdownItem({}, a({ href: '#' }, 'Separated link')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link')),
                 ])
             )
         ]),
@@ -49,11 +49,11 @@ function example(): b.IBobrilChildren {
             `dropdown(`, e({ tag: 'br' }),
             `    { button: { label: 'Dropdown', id: 'dropdownMenu1', aria: { hasPopup: true } } },`, e({ tag: 'br' }),
             `    dropdownMenu({ aria: { labelledBy: 'dropdownMenu1'}}, [`, e({ tag: 'br' }),
-            `        dropdownItem({}, a({ href: '#' }, 'Action')),`, e({ tag: 'br' }),
-            `        dropdownItem({}, a({ href: '#' }, 'Another action')),`, e({ tag: 'br' }),
-            `        dropdownItem({}, a({ href: '#' }, 'Something else here')),`, e({ tag: 'br' }),
+            `        dropdownItem({}, a({ href: '...' }, 'Action')),`, e({ tag: 'br' }),
+            `        dropdownItem({}, a({ href: '...' }, 'Another action')),`, e({ tag: 'br' }),
+            `        dropdownItem({}, a({ href: '...' }, 'Something else here')),`, e({ tag: 'br' }),
             `        dropdownItem({ separator: true}),`, e({ tag: 'br' }),
-            `        dropdownItem({}, a({ href: '#' }, 'Separated link')),`, e({ tag: 'br' }),
+            `        dropdownItem({}, a({ href: '...' }, 'Separated link')),`, e({ tag: 'br' }),
             `    ])`, e({ tag: 'br' }),
             `)`
         ]))),
@@ -69,11 +69,11 @@ function example(): b.IBobrilChildren {
                     style: helpers.clearfix
                 },
                 dropdownMenu({ aria: { labelledBy: 'dropdownMenu1' } }, [
-                    dropdownItem({}, a({ href: '#' }, 'Action')),
-                    dropdownItem({}, a({ href: '#' }, 'Another action')),
-                    dropdownItem({}, a({ href: '#' }, 'Something else here')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
                     dropdownItem({ separator: true }),
-                    dropdownItem({}, a({ href: '#' }, 'Separated link')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link')),
                 ])
             )
         ]),
@@ -84,11 +84,11 @@ function example(): b.IBobrilChildren {
             `        up: true,`, e({ tag: 'br' }),
             `    },`, e({ tag: 'br' }),
             `    dropdownMenu({ aria: { labelledBy: 'dropdownMenu1'}}, [`, e({ tag: 'br' }),
-            `        dropdownItem({}, a({ href: '#' }, 'Action')),`, e({ tag: 'br' }),
-            `        dropdownItem({}, a({ href: '#' }, 'Another action')),`, e({ tag: 'br' }),
-            `        dropdownItem({}, a({ href: '#' }, 'Something else here')),`, e({ tag: 'br' }),
+            `        dropdownItem({}, a({ href: '...' }, 'Action')),`, e({ tag: 'br' }),
+            `        dropdownItem({}, a({ href: '...' }, 'Another action')),`, e({ tag: 'br' }),
+            `        dropdownItem({}, a({ href: '...' }, 'Something else here')),`, e({ tag: 'br' }),
             `        dropdownItem({ separator: true}),`, e({ tag: 'br' }),
-            `        dropdownItem({}, a({ href: '#' }, 'Separated link')),`, e({ tag: 'br' }),
+            `        dropdownItem({}, a({ href: '...' }, 'Separated link')),`, e({ tag: 'br' }),
             `    ])`, e({ tag: 'br' }),
             `)`
         ])))
@@ -130,11 +130,11 @@ function headers(): b.IBobrilChildren {
                 },
                 dropdownMenu({ aria: { labelledBy: 'dropdownMenu3' } }, [
                     dropdownItem({ header: true }, 'Dropdown header'),
-                    dropdownItem({}, a({ href: '#' }, 'Action')),
-                    dropdownItem({}, a({ href: '#' }, 'Another action')),
-                    dropdownItem({}, a({ href: '#' }, 'Something else here')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
                     dropdownItem({ header: true }, 'Dropdown header'),
-                    dropdownItem({}, a({ href: '#' }, 'Separated link')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link')),
                 ])
             )
         ]),
@@ -159,11 +159,11 @@ function divider(): b.IBobrilChildren {
                     style: helpers.clearfix
                 },
                 dropdownMenu({ aria: { labelledBy: 'dropdownMenuDivider' } }, [
-                    dropdownItem({}, a({ href: '#' }, 'Action')),
-                    dropdownItem({}, a({ href: '#' }, 'Another action')),
-                    dropdownItem({}, a({ href: '#' }, 'Something else here')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
                     dropdownItem({ separator: true }),
-                    dropdownItem({}, a({ href: '#' }, 'Separated link')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link')),
                 ])
             )
         ]),
@@ -189,17 +189,17 @@ function disabled(): b.IBobrilChildren {
                     style: helpers.clearfix
                 },
                 dropdownMenu({ aria: { labelledBy: 'dropdownMenu4' } }, [
-                    dropdownItem({}, a({ href: '#' }, 'Regular link')),
-                    dropdownItem({ disabled: true }, a({ href: '#' }, 'Disabled link')),
-                    dropdownItem({}, a({ href: '#' }, 'Another link'))
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Regular link')),
+                    dropdownItem({ disabled: true }, a({ href: 'javascript:void(0)' }, 'Disabled link')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another link'))
                 ])
             )
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `dropdownMenu({ aria: { labelledBy: 'dropdownMenu4' }}, [`, e({ tag: 'br' }),
-            `    dropdownItem({}, a({ href: '#' }, 'Regular link')),`, e({ tag: 'br' }),
-            `    dropdownItem({ disabled: true }, a({ href: '#' }, 'Disabled link')),`, e({ tag: 'br' }),
-            `    dropdownItem({}, a({ href: '#' }, 'Another link'))`, e({ tag: 'br' }),
+            `    dropdownItem({}, a({ href: '...' }, 'Regular link')),`, e({ tag: 'br' }),
+            `    dropdownItem({ disabled: true }, a({ href: '...' }, 'Disabled link')),`, e({ tag: 'br' }),
+            `    dropdownItem({}, a({ href: '...' }, 'Another link'))`, e({ tag: 'br' }),
             `])`
         ]))),
     ];

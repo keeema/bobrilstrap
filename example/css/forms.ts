@@ -36,7 +36,7 @@ function basicExample(): b.IBobrilChildren {
         p({}, [
             `Individual form controls automatically receive some global styling. All textual `,
             code({}, '<input>'), `, `, code({}, '<textarea>'), `, and `, code({}, '<select>'), ` elements with `, code({}, 'formControl'),
-            ` are set to `, code({}, 'width: 100%;'), ` by default. Wrap labels and controls in `, code({}, 'formGroup({}, ...)'),
+            ` are set to `, code({}, 'width: 100%;'), ` by default. Wrap labels and controls in `, code({}, 'formGroup'),
             ` for optimum spacing.`,
         ]),
         e({ style: styles.bsExample }, [
@@ -230,8 +230,8 @@ function horizontalForm(): b.IBobrilChildren {
         p({}, [
             `Use Bobrilstrap's predefined grid styles and components to align labels and groups of form controls 
             in a horizontal layout by adding `, code({}, 'horizontal'),
-            ` form input data property. Doing so changes `, code({}, 'formGroup({}, ...)'), `s to behave as grid rows, so no need for `,
-            code({}, 'row({}, ...)'), `.`
+            ` form input data property. Doing so changes `, code({}, 'formGroup'), `s to behave as grid rows, so no need for `,
+            code({}, 'row'), `.`
 
         ]),
         e({ style: styles.bsExample }, [
@@ -288,7 +288,7 @@ function supportedControls(): b.IBobrilChildren {
         h2({ attrs: { id: 'forms-controls' } }, 'Supported controls'),
         p({}, [
             `Most common form control, text-based input fields (`,
-            code({}, 'inputText({}, ...)'),
+            code({}, 'inputText'),
             ` component). Includes support for all HTML5 types: `,
             code({}, 'text'), `, `,
             code({}, 'password'), `, `,
@@ -327,7 +327,7 @@ function supportedControls(): b.IBobrilChildren {
             h4({}, `Input groups`),
             p({}, [
                 `To add integrated text or buttons before and/or after any text-based `, code({}, '<input>'),
-                `, check out the input `, code({}, 'inputGroup({}, ...)'), `.`
+                `, check out the input `, code({}, 'inputGroup'), `.`
             ])
         ]),
         h3({ attrs: { id: 'textarea' } }, 'Textarea'),

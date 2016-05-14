@@ -89,7 +89,6 @@
         "example/common/docsHeader.ts",
         "example/common/section.ts",
         "example/components/buttonGroups.ts",
-        "example/components/buttongroups.ts",
         "example/components/dropdowns.ts",
         "example/components/glyphicons.ts",
         "example/components/page.ts",

@@ -34,7 +34,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IButtonGroupData;
 }
 
-export let buttonGroup = b.createDerivedComponent<IButtonGroupData>(elem, {
+export const buttonGroup = b.createDerivedComponent<IButtonGroupData>(elem, {
     id: 'bobrilstrap-button-group',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, buttonGroupStyles.btnGroup);

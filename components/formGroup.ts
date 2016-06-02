@@ -30,7 +30,7 @@ formGroupSizeStyles(FormGroupSize.Lg, formGroupStyles.lg);
 formGroupSizeStyles(FormGroupSize.Default, false);
 formGroupSizeStyles(FormGroupSize.Sm, formGroupStyles.sm);
 
-export let formGroup = b.createDerivedComponent<IFormGroupData>(elem, {
+export const formGroup = b.createDerivedComponent<IFormGroupData>(elem, {
     id: 'bobrilstrap-form-group',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'div';

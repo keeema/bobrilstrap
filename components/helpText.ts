@@ -3,7 +3,7 @@ import elem, { IBaseData } from './element';
 
 export const helpTextStyle = b.styleDef('help-block');
 
-export let helpText = b.createDerivedComponent<IBaseData>(elem, {
+export const helpText = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-help-text',
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = 'span';

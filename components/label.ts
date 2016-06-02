@@ -19,7 +19,7 @@ export const labelStyles = {
     controlLabel: b.styleDef('control-label')
 };
 
-export let label = b.createDerivedComponent<ILabeldData>(elem, {
+export const label = b.createDerivedComponent<ILabeldData>(elem, {
     id: 'bobrilstrap-label',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'label';

@@ -11,7 +11,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const inputGroupAddonStyle = b.styleDef('input-group-addon');
 
-export let inputGroupAddon = b.createDerivedComponent<IInputGroupAddonData>(elem, {
+export const inputGroupAddon = b.createDerivedComponent<IInputGroupAddonData>(elem, {
     id: 'bobrilstrap-input-group-addon',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'span';

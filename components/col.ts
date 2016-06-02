@@ -42,7 +42,7 @@ export const colPushStyles = getStyles((size, i) => `col-${size}-push-${i}`);
 export const colPullStyles = getStyles((size, i) => `col-${size}-pull-${i}`);
 
 function getStyles(decorator: (size: Size, span: number) => string): IColStyles {
-    var result: IColStyles = createDictionary<Size, IDictionary<number, b.IBobrilStyle>>();
+    const result: IColStyles = createDictionary<Size, IDictionary<number, b.IBobrilStyle>>();
 
     Object.keys(Size).forEach(size => {
         let castedValue = parseInt(size, 10);

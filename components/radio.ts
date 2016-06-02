@@ -3,7 +3,7 @@ import elem, { IBaseData } from './element';
 import label, { ILabeldData as ILabelData} from './label';
 import inputRadio, { IInputRadioData as IInputRadioData} from './inputRadio';
 
-export interface IRadioData {
+export interface IRadioData extends IBaseData {
     label?: ILabelData;
     inputRadio?: IInputRadioData;
     inline?: boolean;
@@ -13,13 +13,13 @@ interface ICtx extends b.IBobrilCtx {
     data: IRadioData;
 }
 
-export let radioStyles = {
+export const radioStyles = {
     radio: b.styleDef('radio'),
     radioInline: b.styleDef('radio-inline'),
     disabled: b.styleDef('disabled')
 };
 
-export let radio = b.createDerivedComponent<IRadioData>(elem, {
+export const radio = b.createDerivedComponent<IRadioData>(elem, {
     id: 'bobrilstrap-radio',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, radioStyles.radio);

@@ -35,7 +35,7 @@ selectSizeStyles(SelectSize.Lg, selectStyles.lg);
 selectSizeStyles(SelectSize.Default, false);
 selectSizeStyles(SelectSize.Sm, selectStyles.sm);
 
-export let select = b.createOverridingComponent<ISelectData>(elem, {
+export const select = b.createOverridingComponent<ISelectData>(elem, {
     id: 'bobrilstrap-select',
     render(ctx: ICtx, me: b.IBobrilNode) {
         ctx.me.component.super.render(ctx, me);

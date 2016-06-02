@@ -21,12 +21,12 @@ export interface IBaseData {
     children?: b.IBobrilChildren;
     style?: b.IBobrilStyles;
     aria?: IAria;
-    attrs?: { [key: string]: any };
+    attrs?: { [key: string]: string | number | boolean };
     title?: string;
     data?: IData;
 
     onClick?: (event: b.IBobrilMouseEvent) => boolean | void;
-    onChange?: (value: any) => void;
+    onChange?: (value) => void;
 }
 
 export interface IElementData extends IBaseData {
@@ -37,7 +37,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IElementData;
 }
 
-export let e = b.createVirtualComponent<IElementData>({
+export const e = b.createVirtualComponent<IElementData>({
     id: 'bobrilstrap-element',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = ctx.data.tag || 'div';
@@ -56,7 +56,6 @@ export let e = b.createVirtualComponent<IElementData>({
 
         if (ctx.data.title)
             me.attrs['title'] = ctx.data.title;
-
 
         if (aria.label)
             me.attrs['aria-label'] = aria.label;
@@ -99,6 +98,6 @@ export let e = b.createVirtualComponent<IElementData>({
     }
 });
 
-export let element = e;
+export const element = e;
 
 export default e;

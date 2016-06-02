@@ -15,7 +15,7 @@ export const formStyles = {
     formInline: b.styleDef('form-inline')
 };
 
-export let form = b.createDerivedComponent<IFormData>(elem, {
+export const form = b.createDerivedComponent<IFormData>(elem, {
     id: 'bobrilstrap-form',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'form';

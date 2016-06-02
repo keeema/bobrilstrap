@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
 export const containerStyle = b.styleDef('container');
 export const containerFluidStyle = b.styleDef('container-fluid');
 
-export let container = b.createDerivedComponent<IContainerData>(elem, {
+export const container = b.createDerivedComponent<IContainerData>(elem, {
     id: 'bobrilstrap-container',
     render(ctx: ICtx, me: b.IBobrilNode) {               
         b.style(me, ctx.data.fluid ? containerFluidStyle : containerStyle);

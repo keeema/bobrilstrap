@@ -2,8 +2,6 @@ import * as b from 'bobril';
 import { mergeToChildren } from './bobrilHelpers';
 import elem, { IBaseData } from './element';
 import button, { IButtonData } from './button';
-import span from './span';
-import helpers from './helpers';
 
 export const dropdownStyles = {
     dropdown: b.styleDef('dropdown'),
@@ -20,7 +18,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IDropdownData;
 }
 
-export let dropdown = b.createDerivedComponent<IDropdownData>(elem, {
+export const dropdown = b.createDerivedComponent<IDropdownData>(elem, {
     id: 'bobrilstrap-dropdown',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, ctx.data.up ? dropdownStyles.dropup : dropdownStyles.dropdown);

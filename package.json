@@ -12,7 +12,7 @@
   "author": "Tomáš Růt",
   "license": "MIT",
   "dependencies": {
-    "bobril": "*",
+    "bobril": "4.*",
     "bootstrap": "^3.3.6",
     "jquery": "^2.2.3"
   }

@@ -10,7 +10,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IBlockquoteData;
 }
 
-export let blockquote = b.createDerivedComponent<IBlockquoteData>(elem, {
+export const blockquote = b.createDerivedComponent<IBlockquoteData>(elem, {
     id: 'bobrilstrap-blockquote',
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = 'blockquote';

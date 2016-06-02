@@ -3,7 +3,7 @@ import elem, { IBaseData } from './element';
 import label, { ILabeldData as ILabelData} from './label';
 import inputCheckbox, { IInputCheckBoxData as IInputCheckBoxData} from './inputCheckbox';
 
-export interface ICheckboxData {
+export interface ICheckboxData extends IBaseData {
     label?: ILabelData;
     inputCheckbox?: IInputCheckBoxData;
     inline?: boolean;
@@ -19,7 +19,7 @@ export const checkboxStyles = {
     disabled: b.styleDef('disabled')
 };
 
-export let checkbox = b.createDerivedComponent<ICheckboxData>(elem, {
+export const checkbox = b.createDerivedComponent<ICheckboxData>(elem, {
     id: 'bobrilstrap-checkbox',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, checkboxStyles.checkbox);

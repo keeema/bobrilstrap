@@ -22,8 +22,10 @@ export function mergeToChildren(node: IWithChildren, item: b.IBobrilChildren, un
     return node.children = children;
 }
 
-export let bobrilHelpers = {
-    mergeToChildren
+export const bobrilHelpers = {
+    mergeToChildren,
+    toLowerWithDashes,
+    createDictionary
 };
 
 export default bobrilHelpers;

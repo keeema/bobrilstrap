@@ -13,7 +13,7 @@ interface ICtx extends b.IBobrilCtx {
     checked: boolean;
 }
 
-export let inputCheckbox = b.createOverridingComponent<IInputCheckBoxData>(elem, {
+export const inputCheckbox = b.createOverridingComponent<IInputCheckBoxData>(elem, {
     id: 'bobrilstrap-input-checkbox',
     render(ctx: ICtx, me: b.IBobrilNode) {
         ctx.me.component.super.render(ctx, me);

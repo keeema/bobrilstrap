@@ -11,7 +11,7 @@ interface ICtx extends b.IBobrilCtx {
     data: ITdData;
 }
 
-export let td = b.createDerivedComponent<ITdData>(elem, {
+export const td = b.createDerivedComponent<ITdData>(elem, {
     id: 'bobrilstrap-td',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'td';

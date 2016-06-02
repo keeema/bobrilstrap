@@ -17,7 +17,7 @@ export interface ITrData extends IBaseData {
 interface ICtx extends b.IBobrilCtx {
     data: ITrData;
 }
-export let tr = b.createDerivedComponent<ITrData>(elem, {
+export const tr = b.createDerivedComponent<ITrData>(elem, {
     id: 'bobrilstrap-tr',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'tr';

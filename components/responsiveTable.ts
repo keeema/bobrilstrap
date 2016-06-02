@@ -11,7 +11,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IResponsiveTableData;
 }
 
-export let responsiveTable = b.createDerivedComponent<IResponsiveTableData>(elem, {
+export const responsiveTable = b.createDerivedComponent<IResponsiveTableData>(elem, {
     id: 'bobrilstrap-responsive-table',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, tableStyles.responsive);

@@ -28,7 +28,7 @@ export const inputGroupSizeStyles = createDictionary<InputGroupSize, b.IBobrilSt
 inputGroupSizeStyles(InputGroupSize.Lg, inputGroupStyles.lg);
 inputGroupSizeStyles(InputGroupSize.Sm, inputGroupStyles.sm);
 
-export let inputGroup = b.createDerivedComponent<IInputGroupData>(elem, {
+export const inputGroup = b.createDerivedComponent<IInputGroupData>(elem, {
     id: 'bobrilstrap-input-group',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'div';

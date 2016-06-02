@@ -15,7 +15,7 @@ export interface IButtonData extends IBaseData {
     option?: ButtonOption;
     type?: ButtonType;
     tag?: ButtonTag;
-    href?: any;
+    href?: string;
     label?: string;
     dropdown?: boolean;
 }

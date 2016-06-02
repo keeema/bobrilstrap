@@ -11,7 +11,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IOptionsData;
 }
 
-export let option = b.createDerivedComponent<IOptionsData>(elem, {
+export const option = b.createDerivedComponent<IOptionsData>(elem, {
     id: 'bobrilstrap-option',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'option';

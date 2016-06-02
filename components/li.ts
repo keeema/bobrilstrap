@@ -7,7 +7,7 @@ interface ICtx extends b.IBobrilCtx {
     data: ILiData;
 }
 
-export let li = b.createDerivedComponent<ILiData>(elem, {
+export const li = b.createDerivedComponent<ILiData>(elem, {
     id: 'bobrilstrap-li',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'li';

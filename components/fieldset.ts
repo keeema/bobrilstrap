@@ -9,7 +9,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IFieldSetData;
 }
 
-export let fieldset = b.createDerivedComponent<IFieldSetData>(elem, {
+export const fieldset = b.createDerivedComponent<IFieldSetData>(elem, {
     id: 'bobrilstrap-fieldset',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'fieldset';

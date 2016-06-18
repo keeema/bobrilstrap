@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { a, e, p, h2, h3, code, figure, span, kbd, pre as preDefault, v, samp } from '../../index';
+import { e, p, h2, code, figure, kbd, pre as preDefault, v, samp } from '../../index';
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';

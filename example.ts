@@ -1,12 +1,11 @@
 import * as b from 'bobril';
-import * as bs from './index';
 import bobrilstrapInit from './index';
-import { init as bsExampleInit } from './example/bsExample/css';
 import masterPage from './example/masterPage';
 import bobrilstrapPage from './example/bobrilstrap/page';
 import cssPage from './example/css/page';
 import componentsPage from './example/components/page';
 import javaScriptPage from './example/javascript/page';
+import { init as bsExampleInit } from './example/bsExample/css';
 
 bobrilstrapInit();
 bsExampleInit();

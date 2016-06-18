@@ -67,7 +67,7 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
         b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));
         b.style(me, buttonOptiontStyles(ctx.data.option || ButtonOption.Default));
 
-        let typeAttr = ctx.data.tag === ButtonTag.A ? 'role' : 'type';
+        const typeAttr = ctx.data.tag === ButtonTag.A ? 'role' : 'type';
         me.attrs[typeAttr] = (ButtonType[ctx.data.type] || me.attrs[typeAttr] || ButtonType[ButtonType.Button]).toString().toLowerCase();
 
         if (ctx.data.label) {
@@ -93,6 +93,9 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
         if (ctx.data.dropdown) {
             ctx.data = b.assign({}, ctx.data);
             ctx.data.data = b.assign({}, ctx.data.data);
+            ctx.data.aria = b.assign({}, ctx.data.aria);
+
+            ctx.data.aria.hasPopup = true;
             ctx.data.data.toggle = 'dropdown';
             b.style(me, dropdownStyles.dropdownToggle);
 
@@ -108,9 +111,9 @@ export const btn = button;
 export default button;
 
 function generateOptionsStyles(): IDictionary<ButtonOption, b.IBobrilStyle> {
-    let result = createDictionary<ButtonOption, b.IBobrilStyle>();
+    const result = createDictionary<ButtonOption, b.IBobrilStyle>();
     Object.keys(ButtonOption).forEach(key => {
-        let castedValue = parseInt(key, 10);
+        const castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
             result(castedValue, castedValue === ButtonOption.Close
                 ? helpers.close
@@ -122,7 +125,7 @@ function generateOptionsStyles(): IDictionary<ButtonOption, b.IBobrilStyle> {
 }
 
 function generateSizeStyles(): IDictionary<Size, b.IBobrilStyle> {
-    let result = createDictionary<Size, b.IBobrilStyle>();
+    const result = createDictionary<Size, b.IBobrilStyle>();
     Object.keys(Size).forEach(key => {
         let castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {

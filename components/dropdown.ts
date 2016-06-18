@@ -31,6 +31,8 @@ export default dropdown;
 function updateButtonDataForDropdown(ctx: ICtx): IButtonData {
     let buttonData = b.assign({}, ctx.data.button);
     buttonData.dropdown = true;
+    buttonData.aria = b.assign({}, buttonData.aria);
+    buttonData.aria.hasPopup = true;
     return buttonData;
 }
 

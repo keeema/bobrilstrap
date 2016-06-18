@@ -1,8 +1,7 @@
 import * as b from 'bobril';
-import { a, e, p, h2, h3, code, responsiveTable, small, Device, Display, visibleStyles, hiddenStyles, strong, row, col,
+import { e, p, h2, h3, code, responsiveTable, small, Device, Display, visibleStyles, hiddenStyles, strong, row, col,
     Size, span, helpers } from '../../index';
 import { styles } from '../bsexample/css';
-import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
 
 export default b.createVirtualComponent({

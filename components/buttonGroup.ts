@@ -37,10 +37,9 @@ interface ICtx extends b.IBobrilCtx {
 export const buttonGroup = b.createDerivedComponent<IButtonGroupData>(elem, {
     id: 'bobrilstrap-button-group',
     render(ctx: ICtx, me: b.IBobrilNode) {
-        b.style(me, buttonGroupStyles.btnGroup);
+        b.style(me, ctx.data.vertical ? buttonGroupStyles.vertical : buttonGroupStyles.btnGroup);
         b.style(me, buttonGroupSizeStyles(ctx.data.size));
         b.style(me, ctx.data.justified && buttonGroupStyles.justified);
-        b.style(me, ctx.data.vertical && buttonGroupStyles.vertical);
         me.attrs['role'] = 'group';
     }
 });

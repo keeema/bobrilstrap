@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { a, e, p, h2, h3, h4, code, figure, span, form, formGroup, inputText, label, InputTextType, helpText, checkbox,
+import { e, p, h2, h3, h4, code, figure, form, formGroup, inputText, label, InputTextType, helpText, checkbox,
     button, ButtonOption, radio, strong, inputGroup, inputGroupAddon, col, colStyles, Size, select, textarea, ValidationState,
     validationStyles, InputTextSize, SelectSize, FormGroupSize, row
 } from '../../index';

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { element, p, h1 } from '../../index';
+import { p, h1 } from '../../index';
 import { styles } from '../bsexample/css';
 
 export interface IData {

@@ -1,6 +1,6 @@
 import prettify from './prettify/prettify';
 import * as b from 'bobril';
-import { container, element, row, col, Size, a, Target } from '../index';
+import { container, element, a, Target } from '../index';
 import { styles } from './bsexample/css';
 
 export default b.createVirtualComponent({

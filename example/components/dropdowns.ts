@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { a, e, p, h2, h3, h4, code, figure, dropdownItem, dropdown, dropdownMenu, helpers } from '../../index';
+import { a, e, p, h2, h4, code, figure, dropdownItem, dropdown, dropdownMenu, helpers } from '../../index';
 import { styles } from '../bsexample/css';
 import pre, { langJs } from '../prettify/pre';
 import section from '../common/section';
@@ -22,7 +22,6 @@ export default b.createVirtualComponent({
     }
 })
 
-
 function example(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'dropdowns-example' } }, 'Example'),
@@ -33,7 +32,7 @@ function example(): b.IBobrilChildren {
         e({ style: styles.bsExample }, [
             dropdown(
                 {
-                    button: { label: 'Dropdown', id: 'dropdownMenu1', aria: { hasPopup: true } },
+                    button: { label: 'Dropdown', id: 'dropdownMenu1' },
                     style: helpers.clearfix
                 },
                 dropdownMenu({ aria: { labelledBy: 'dropdownMenu1' } }, [
@@ -47,7 +46,7 @@ function example(): b.IBobrilChildren {
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `dropdown(`, e({ tag: 'br' }),
-            `    { button: { label: 'Dropdown', id: 'dropdownMenu1', aria: { hasPopup: true } } },`, e({ tag: 'br' }),
+            `    { button: { label: 'Dropdown', id: 'dropdownMenu1' } },`, e({ tag: 'br' }),
             `    dropdownMenu({ aria: { labelledBy: 'dropdownMenu1'}}, [`, e({ tag: 'br' }),
             `        dropdownItem({}, a({ href: '...' }, 'Action')),`, e({ tag: 'br' }),
             `        dropdownItem({}, a({ href: '...' }, 'Another action')),`, e({ tag: 'br' }),
@@ -65,7 +64,7 @@ function example(): b.IBobrilChildren {
             dropdown(
                 {
                     up: true,
-                    button: { label: 'Dropup', id: 'dropdownMenu1', aria: { hasPopup: true } },
+                    button: { label: 'Dropup', id: 'dropdownMenu1' },
                     style: helpers.clearfix
                 },
                 dropdownMenu({ aria: { labelledBy: 'dropdownMenu1' } }, [
@@ -80,7 +79,7 @@ function example(): b.IBobrilChildren {
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `dropdown(`, e({ tag: 'br' }),
             `    {`, e({ tag: 'br' }),
-            `        button: { label: 'Dropup', id: 'dropdownMenu1', aria: { hasPopup: true } },`, e({ tag: 'br' }),
+            `        button: { label: 'Dropup', id: 'dropdownMenu1' },`, e({ tag: 'br' }),
             `        up: true,`, e({ tag: 'br' }),
             `    },`, e({ tag: 'br' }),
             `    dropdownMenu({ aria: { labelledBy: 'dropdownMenu1'}}, [`, e({ tag: 'br' }),
@@ -185,7 +184,7 @@ function disabled(): b.IBobrilChildren {
         e({ style: styles.bsExample }, [
             dropdown(
                 {
-                    button: { label: 'Dropdown', id: 'dropdownMenu4', aria: { hasPopup: true } },
+                    button: { label: 'Dropdown', id: 'dropdownMenu4' },
                     style: helpers.clearfix
                 },
                 dropdownMenu({ aria: { labelledBy: 'dropdownMenu4' } }, [

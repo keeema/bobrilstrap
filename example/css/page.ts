@@ -1,5 +1,4 @@
 import * as b from 'bobril';
-import { styles } from '../bsexample/css';
 import header from '../common/docsHeader';
 import docsContainer from '../common/docsContainer';
 import overview from './overview';

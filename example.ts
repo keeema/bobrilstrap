@@ -4,8 +4,8 @@ import masterPage from './example/masterPage';
 import bobrilstrapPage from './example/bobrilstrap/page';
 import cssPage from './example/css/page';
 import componentsPage from './example/components/page';
-import javaScriptPage from './example/javascript/page';
-import { init as bsExampleInit } from './example/bsExample/css';
+import javaScriptPage from './example/javaScript/page';
+import { init as bsExampleInit } from './example/bsexample/css';
 
 bobrilstrapInit();
 bsExampleInit();

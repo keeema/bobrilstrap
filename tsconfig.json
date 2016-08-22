@@ -85,6 +85,7 @@
         "example/common/docsContainer.ts",
         "example/common/docsHeader.ts",
         "example/common/section.ts",
+        "example/components/buttonDropdowns.ts",
         "example/components/buttonGroups.ts",
         "example/components/dropdowns.ts",
         "example/components/glyphicons.ts",

@@ -1,7 +1,7 @@
 import * as b from 'bobril';
-import header from '../common/docsHeader';
+import { header } from '../common/docsHeader';
 
-export default b.createVirtualComponent({
+export const javaScript = b.createVirtualComponent({
     id: 'bobrilstrap-javasctipt',
     init() {
         document.title = 'Bobrilstrap - Javascript';

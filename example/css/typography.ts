@@ -2,10 +2,10 @@ import * as b from 'bobril';
 import { a, e, p, ul, li, ol, code, figure, table, small, typography, h1, h2, h3, h4, h5, h6, strong, mark, del, s, 
     ins, u, em, abbr, address, blockquote, cite, footer, dl, dt, dd } from '../../index';
 import { styles } from '../bsexample/css';
-import pre, { langJs } from '../prettify/pre';
-import section from '../common/section';
+import { pre, langJs } from '../prettify/pre';
+import { section } from '../common/section';
 
-export default b.createVirtualComponent({
+export const typographyPage = b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {

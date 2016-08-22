@@ -1,18 +1,18 @@
 import * as b from 'bobril';
-import header from '../common/docsHeader';
-import docsContainer from '../common/docsContainer';
-import overview from './overview';
-import grid from './grid';
-import typography from './typography';
-import code from './code';
-import tables from './tables';
-import forms from './forms';
-import buttons from './buttons';
-import images from './images';
-import helpers from './helpers';
-import responsive from './responsive';
+import { header } from '../common/docsHeader';
+import { docsContainer } from '../common/docsContainer';
+import { overview } from './overview';
+import { grids } from './grids';
+import { typographyPage } from './typography';
+import { codes } from './codes';
+import { tables } from './tables';
+import { forms } from './forms';
+import { buttons } from './buttons';
+import { images } from './images';
+import { helpersPage } from './helpers';
+import { responsive } from './responsive';
 
-export default b.createVirtualComponent({
+export const css = b.createVirtualComponent({
     id: 'bobrilstrap-css',
     init() {    
         document.title = 'CSS - Bobrilstrap';
@@ -22,14 +22,14 @@ export default b.createVirtualComponent({
             header(texts),
             docsContainer({}, [
                 overview(),
-                grid(),
-                typography(),
-                code(),
+                grids(),
+                typographyPage(),
+                codes(),
                 tables(),
                 forms(),
                 buttons(),
                 images(),
-                helpers(),
+                helpersPage(),
                 responsive()
             ])
         ];

@@ -1,9 +1,9 @@
-import prettify from './prettify/prettify';
 import * as b from 'bobril';
 import { container, element, a, Target } from '../index';
 import { styles } from './bsexample/css';
+import { prettify } from './prettify/prettify';
 
-export default b.createVirtualComponent({
+export const masterPage = b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             getNavigation(),

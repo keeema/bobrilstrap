@@ -1,10 +1,10 @@
 import * as b from 'bobril';
 import { e, p, ul, li, code, figure, a, Target, h2 } from '../../index';
-import pre, { langJs } from '../prettify/pre';
+import { pre,  langJs } from '../prettify/pre';
 import { styles } from '../bsexample/css';
-import section from '../common/section';
+import { section } from '../common/section';
 
-export default b.createVirtualComponent({
+export const overview = b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {

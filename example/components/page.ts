@@ -1,11 +1,11 @@
 import * as b from 'bobril';
-import header from '../common/docsHeader';
-import docsContainer from '../common/docsContainer';
-import glyphicons from './glyphicons';
-import dropdowns from './dropdowns';
-import buttonGroups from './buttonGroups';
+import { header } from '../common/docsHeader';
+import { docsContainer } from '../common/docsContainer';
+import { glyphicons } from './glyphicons';
+import { dropdowns } from './dropdowns';
+import { buttonGroups } from './buttonGroups';
 
-export default b.createVirtualComponent({
+export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
     init() {
         document.title = 'Bobrilstrap - Components';

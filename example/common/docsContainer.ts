@@ -2,7 +2,7 @@ import * as b from 'bobril';
 import { container, row, col, Size } from '../../index';
 import { styles } from '../bsexample/css';
 
-export default b.createVirtualComponent({
+export const docsContainer =  b.createVirtualComponent({
     id: 'example-docs-container',
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [

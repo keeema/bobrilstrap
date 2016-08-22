@@ -1,10 +1,10 @@
 import * as b from 'bobril';
 import { e, p, h2, h4, code, figure, form, button, ButtonOption, ButtonType, ButtonTag, Size, strong } from '../../index';
 import { styles } from '../bsexample/css';
-import pre, { langJs } from '../prettify/pre';
-import section from '../common/section';
+import { pre,  langJs } from '../prettify/pre';
+import { section } from '../common/section';
 
-export default b.createVirtualComponent({
+export const buttons = b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {

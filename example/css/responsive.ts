@@ -2,9 +2,9 @@ import * as b from 'bobril';
 import { e, p, h2, h3, code, responsiveTable, small, Device, Display, visibleStyles, hiddenStyles, strong, row, col,
     Size, span, helpers } from '../../index';
 import { styles } from '../bsexample/css';
-import section from '../common/section';
+import { section } from '../common/section';
 
-export default b.createVirtualComponent({
+export const responsive = b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {

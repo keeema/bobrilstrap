@@ -1,9 +1,9 @@
 import * as b from 'bobril';
 import { e, p, code, figure, a, Target, pre } from '../../index';
 import { styles } from '../bsexample/css';
-import section from '../common/section';
+import { section } from '../common/section';
 
-export default b.createVirtualComponent({
+export const bobrilDesc = b.createVirtualComponent({
     init() {
         document.title = 'Bobrilstrap';
     },

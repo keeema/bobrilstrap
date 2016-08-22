@@ -13,7 +13,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IData;
 }
 
-export default b.createVirtualComponent<IData>({
+export const section = b.createVirtualComponent<IData>({
     id: 'bs-docs-section',
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = 'div';

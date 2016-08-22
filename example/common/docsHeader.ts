@@ -11,7 +11,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IData;
 }
 
-export default b.createVirtualComponent<IData>({
+export const header = b.createVirtualComponent<IData>({
     id: 'example-header',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.children = [            

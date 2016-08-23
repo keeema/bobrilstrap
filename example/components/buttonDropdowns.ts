@@ -13,7 +13,8 @@ export const buttonDropdowns = b.createVirtualComponent({
                 id: 'btn-dropdowns',
                 lead: [
                     ` Use a `, code({}, 'buttonGroup'), ` input data property of `, code({}, 'dropdown'), ` to wrap button in `,
-                    code({}, 'buttonGroup'), ` component.`
+                    code({}, 'buttonGroup'), ` component. It accepts simple `, code({}, 'boolean'),
+                    ` or complex `, code({}, 'IButtonGroup'), `.`
                 ]
             },
             [
@@ -57,7 +58,7 @@ function singleButtonDropdowns(): b.IBobrilChildren {
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `dropdown(`, e({ tag: 'br' }),
             `    { `, e({ tag: 'br' }),
-            `        buttonGroup: {},`, e({ tag: 'br' }),
+            `        buttonGroup: true,`, e({ tag: 'br' }),
             `        button: { label: 'Default', option: ButtonOption.Default }`, e({ tag: 'br' }),
             `    },`, e({ tag: 'br' }),
             `    dropdownMenu({ }, [`, e({ tag: 'br' }),
@@ -75,7 +76,7 @@ function singleButtonDropdowns(): b.IBobrilChildren {
 function getSingleButtonDropdown(label: string, option: ButtonOption, size: Size = Size.Md, up: boolean = false): b.IBobrilChildren {
     return dropdown(
         {
-            buttonGroup: {},
+            buttonGroup: true,
             button: { label, option, size },
             up
         },
@@ -107,7 +108,7 @@ function splitButtonDropdowns(): b.IBobrilChildren {
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `dropdown(`, e({ tag: 'br' }),
             `    { `, e({ tag: 'br' }),
-            `        buttonGroup: {},`, e({ tag: 'br' }),
+            `        buttonGroup: true,`, e({ tag: 'br' }),
             `        button: { label: 'Default', option: ButtonOption.Default, onClick: () => alert('Clicked!') },`, e({ tag: 'br' }),
             `        splitted: true,`, e({ tag: 'br' }),
             `        splittedSrOnlyText: 'Toggle Dropdown' `, e({ tag: 'br' }),
@@ -127,7 +128,7 @@ function splitButtonDropdowns(): b.IBobrilChildren {
 function getSplitButtonDropdown(label: string, option: ButtonOption = ButtonOption.Default): b.IBobrilChildren {
     return dropdown(
         {
-            buttonGroup: {},
+            buttonGroup: true,
             button: { label, option, onClick: () => alert('Clicked!') },
             splitted: true,
             splittedSrOnlyText: 'Toggle Dropdown'
@@ -155,7 +156,7 @@ function sizing(): b.IBobrilChildren {
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `dropdown(`, e({ tag: 'br' }),
             `    { `, e({ tag: 'br' }),
-            `        buttonGroup: {},`, e({ tag: 'br' }),
+            `        buttonGroup: true,`, e({ tag: 'br' }),
             `        button: { label: 'Default', option: ButtonOption.Default, size: Size.Lg }`, e({ tag: 'br' }),
             `    },`, e({ tag: 'br' }),
             `    dropdownMenu({ }, [`, e({ tag: 'br' }),
@@ -181,7 +182,7 @@ function dropupVariations(): b.IBobrilChildren {
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `dropdown(`, e({ tag: 'br' }),
             `    { `, e({ tag: 'br' }),
-            `        buttonGroup: {},`, e({ tag: 'br' }),
+            `        buttonGroup: true,`, e({ tag: 'br' }),
             `        button: { label: 'Default', option: ButtonOption.Default },`, e({ tag: 'br' }),
             `        up: true`, e({ tag: 'br' }),
             `    },`, e({ tag: 'br' }),

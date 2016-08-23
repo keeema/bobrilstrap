@@ -151,7 +151,7 @@ function nesting(): b.IBobrilChildren {
             buttonGroup({}, [
                 button({ label: '1' }),
                 button({ label: '2' }),
-                dropdown({ buttonGroup: {}, button: { label: 'Dropdown'} }, [
+                dropdown({ buttonGroup: true, button: { label: 'Dropdown'} }, [
                     dropdownMenu({}, [
                         dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Dropdown link')),
                         dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Dropdown link'))
@@ -163,7 +163,7 @@ function nesting(): b.IBobrilChildren {
             `buttonGroup({}, [`, e({ tag: 'br' }),
             `    button({ label: '1' }),`, e({ tag: 'br' }),
             `    button({ label: '2' }),`, e({ tag: 'br' }),
-            `    dropdown({ buttonGroup: {}, button: { label: 'Dropdown' } }, [`, e({ tag: 'br' }),
+            `    dropdown({ buttonGroup: true, button: { label: 'Dropdown' } }, [`, e({ tag: 'br' }),
             `        dropdownMenu({}, [`, e({ tag: 'br' }),
             `            dropdownItem({}, a({ href: '...' }, 'Dropdown link')),`, e({ tag: 'br' }),
             `            dropdownItem({}, a({ href: '...' }, 'Dropdown link')),`, e({ tag: 'br' }),

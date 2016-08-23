@@ -12,7 +12,7 @@ export const dropdownStyles = {
 
 export interface IDropdownData extends IBaseData {
     button: IButtonData;
-    buttonGroup?: IButtonGroupData;
+    buttonGroup?: IButtonGroupData | boolean;
     up?: boolean;
     splitted?: boolean;
     splittedSrOnlyText?: string;
@@ -29,7 +29,7 @@ export const dropdown = b.createDerivedComponent<IDropdownData>(elem, {
 
         if (ctx.data.buttonGroup) {
             me.tag = undefined;
-            let buttonGroupNode = buttonGroup(ctx.data.buttonGroup, me.children);
+            let buttonGroupNode = buttonGroup(typeof ctx.data.buttonGroup === 'boolean' ? {} : ctx.data.buttonGroup, me.children);
             b.style(buttonGroupNode, ctx.data.up && dropdownStyles.dropup);
             me.children = buttonGroupNode;
         } else {

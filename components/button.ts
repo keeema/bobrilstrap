@@ -18,6 +18,7 @@ export interface IButtonData extends IBaseData {
     href?: string;
     label?: string;
     dropdown?: boolean;
+    dropdownSplittedSrOnly?: string;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -103,6 +104,7 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
                 mergeToChildren(me, ' ');
 
             mergeToChildren(me, span({ style: helpers.caret }));
+            mergeToChildren(me, ctx.data.dropdownSplittedSrOnly && span({ style: helpers.srOnly }, ctx.data.dropdownSplittedSrOnly));
         }
     }
 });

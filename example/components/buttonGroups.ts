@@ -1,8 +1,8 @@
 import * as b from 'bobril';
 import { a, e, p, h2, h4, code, figure, button, buttonGroup, ButtonGroupSize, helpers, buttonToolbar, dropdownMenu,
-    dropdownItem, strong, ButtonTag } from '../../index';
+    dropdownItem, dropdown, strong, ButtonTag } from '../../index';
 import { styles } from '../bsexample/css';
-import { pre,  langJs } from '../prettify/pre';
+import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
 
 export const buttonGroups = b.createVirtualComponent({
@@ -136,6 +136,34 @@ function nesting(): b.IBobrilChildren {
             `    button({ label: '2' }),`, e({ tag: 'br' }),
             `    buttonGroup({}, [`, e({ tag: 'br' }),
             `        button({ label: 'Dropdown', dropdown: true }),`, e({ tag: 'br' }),
+            `        dropdownMenu({}, [`, e({ tag: 'br' }),
+            `            dropdownItem({}, a({ href: '...' }, 'Dropdown link')),`, e({ tag: 'br' }),
+            `            dropdownItem({}, a({ href: '...' }, 'Dropdown link')),`, e({ tag: 'br' }),
+            `        ])`, e({ tag: 'br' }),
+            `    ])`, e({ tag: 'br' }),
+            `])`
+        ]))),
+        p({}, [
+            `You can use a simplified `, code({}, 'dropdown'), ` component with defined`, code({}, 'buttonGroup'),
+            ` property directly as well.`
+        ]),
+        e({ style: styles.bsExample }, [
+            buttonGroup({}, [
+                button({ label: '1' }),
+                button({ label: '2' }),
+                dropdown({ buttonGroup: {}, button: { label: 'Dropdown'} }, [
+                    dropdownMenu({}, [
+                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Dropdown link')),
+                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Dropdown link'))
+                    ])
+                ])
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `buttonGroup({}, [`, e({ tag: 'br' }),
+            `    button({ label: '1' }),`, e({ tag: 'br' }),
+            `    button({ label: '2' }),`, e({ tag: 'br' }),
+            `    dropdown({ buttonGroup: {}, button: { label: 'Dropdown' } }, [`, e({ tag: 'br' }),
             `        dropdownMenu({}, [`, e({ tag: 'br' }),
             `            dropdownItem({}, a({ href: '...' }, 'Dropdown link')),`, e({ tag: 'br' }),
             `            dropdownItem({}, a({ href: '...' }, 'Dropdown link')),`, e({ tag: 'br' }),

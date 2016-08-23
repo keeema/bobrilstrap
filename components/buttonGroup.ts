@@ -28,6 +28,7 @@ export interface IButtonGroupData extends IBaseData {
     size?: ButtonGroupSize;
     justified?: boolean;
     vertical?: boolean;
+    up?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -40,6 +41,7 @@ export const buttonGroup = b.createDerivedComponent<IButtonGroupData>(elem, {
         b.style(me, ctx.data.vertical ? buttonGroupStyles.vertical : buttonGroupStyles.btnGroup);
         b.style(me, buttonGroupSizeStyles(ctx.data.size));
         b.style(me, ctx.data.justified && buttonGroupStyles.justified);
+
         me.attrs['role'] = 'group';
     }
 });

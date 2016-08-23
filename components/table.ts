@@ -1,9 +1,9 @@
 import * as b from 'bobril';
 import { mergeToChildren } from './bobrilHelpers';
-import elem, { IBaseData } from './element';
-import thead, { ITHeadData } from './thead';
-import tbody, { ITBodyData } from './tbody';
-import caption from './caption';
+import { elem, IBaseData } from './element';
+import { thead, ITHeadData } from './thead';
+import { tbody, ITBodyData } from './tbody';
+import { caption } from './caption';
 
 export const tableStyles = {
     table: b.styleDef('table'),
@@ -42,7 +42,7 @@ export const table = b.createDerivedComponent<ITableData>(elem, {
 
         if (ctx.data.caption)
             mergeToChildren(me, caption({}, ctx.data.caption));
-        
+
         if (ctx.data.head)
             mergeToChildren(me, thead(ctx.data.head));
 

@@ -1,7 +1,7 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import label, { ILabeldData as ILabelData} from './label';
-import inputRadio, { IInputRadioData as IInputRadioData} from './inputRadio';
+import { elem, IBaseData } from './element';
+import { label, ILabeldData as ILabelData} from './label';
+import { inputRadio, IInputRadioData as IInputRadioData} from './inputRadio';
 
 export interface IRadioData extends IBaseData {
     label?: ILabelData;

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
+import { elem, IBaseData } from './element';
 import { createDictionary } from './bobrilHelpers';
 
 export const buttonGroupStyles = {

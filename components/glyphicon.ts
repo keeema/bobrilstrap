@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
+import { elem, IBaseData } from './element';
 import { createDictionary, IDictionary, toLowerWithDashes } from './bobrilHelpers';
 
 export enum GlyphIcon {

@@ -24,7 +24,7 @@ export const typographyPage = b.createVirtualComponent({
                 lists()
             ]);
     }
-})
+});
 
 function headings(): b.IBobrilChildren {
     return [
@@ -77,7 +77,7 @@ function headings(): b.IBobrilChildren {
             `h3({}, 'h3({}, ...) Bootstrap heading')`, e({ tag: 'br' }),
             `h4({}, 'h4({}, ...) Bootstrap heading')`, e({ tag: 'br' }),
             `h5({}, 'h5({}, ...) Bootstrap heading')`, e({ tag: 'br' }),
-            `h6({}, 'h6({}, ...) Bootstrap heading')`, e({ tag: 'br' }),
+            `h6({}, 'h6({}, ...) Bootstrap heading')`, e({ tag: 'br' })
         ]))),
         p({}, [
             'Create lighter, secondary text in any heading with ',
@@ -103,7 +103,7 @@ function headings(): b.IBobrilChildren {
             `h3({}, ['h3({}, ...) Bootstrap heading', small({}, 'Secondary text')])`, e({ tag: 'br' }),
             `h4({}, ['h4({}, ...) Bootstrap heading', small({}, 'Secondary text')])`, e({ tag: 'br' }),
             `h5({}, ['h5({}, ...) Bootstrap heading', small({}, 'Secondary text')])`, e({ tag: 'br' }),
-            `h6({}, ['h6({}, ...) Bootstrap heading', small({}, 'Secondary text')])`, e({ tag: 'br' }),
+            `h6({}, ['h6({}, ...) Bootstrap heading', small({}, 'Secondary text')])`, e({ tag: 'br' })
         ])))
     ];
 }
@@ -161,10 +161,7 @@ function inlineTextElements(): b.IBobrilChildren {
             `del({}, 'This line of text is meant to be treated as deleted text.')`
         ]))),
         h3({ attrs: { id: 'strikethrough-text' } }, 'Strikethrough text'),
-        p({}, [
-            `For indicating blocks of text that are no longer relevant use the `,
-
-        ]),
+        p({}, `For indicating blocks of text that are no longer relevant use the `),
         e({ style: styles.bsExample }, p({}, s({}, 'This line of text is meant to be treated as no longer accurate.'))),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `s({}, 'This line of text is meant to be treated as no longer accurate.')`
@@ -413,7 +410,7 @@ function lists(): b.IBobrilChildren {
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `ul({}, [`, e({ tag: 'br' }),
             `    li({}, ...)`, e({ tag: 'br' }),
-            `])`, e({ tag: 'br' }),
+            `])`, e({ tag: 'br' })
         ]))),
         h3({ attrs: { id: 'ordered' } }, 'Ordered'),
         p({}, `A list of items in which the order does explicitly matter.`),

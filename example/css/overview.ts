@@ -19,7 +19,7 @@ export const overview = b.createVirtualComponent({
                 containers()
             ]);
     }
-})
+});
 
 function typographyAndLinks(): b.IBobrilChildren {
     return [
@@ -37,7 +37,7 @@ function typographyAndLinks(): b.IBobrilChildren {
                 ' attributes as our typographic base'
             ]),
             li({}, ['Set the global link color via ', code({}, '@link-color'), ' and apply link underlines only on ', code({}, ':hover')])
-        ]),
+        ])
     ];
 }
 
@@ -78,7 +78,7 @@ function containers(): b.IBobrilChildren {
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             'container({ fluid: true }, [', e({ tag: 'br' }),
             '   ...', e({ tag: 'br' }),
-            '])', e({ tag: 'br' }),
+            '])', e({ tag: 'br' })
         ])))
     ];
 }

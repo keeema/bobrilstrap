@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import { mergeToChildren } from './bobrilHelpers';
-import elem, { IBaseData } from './element';
-import table, { ITableData as ITableData, tableStyles } from './table';
+import { elem, IBaseData } from './element';
+import { table, ITableData as ITableData, tableStyles } from './table';
 
 export interface IResponsiveTableData extends IBaseData {
     table: ITableData;

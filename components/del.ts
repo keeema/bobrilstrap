@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
+import { elem, IBaseData } from './element';
 
 export const del = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-del',

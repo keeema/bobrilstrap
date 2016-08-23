@@ -1,8 +1,8 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import Size from './size';
-import helpers from './helpers';
-import span from './span';
+import { elem, IBaseData } from './element';
+import { Size } from './size';
+import { helpers } from './helpers';
+import { span } from './span';
 import { mergeToChildren } from './bobrilHelpers';
 import { createDictionary, IDictionary } from './bobrilHelpers';
 import { dropdownStyles } from './dropdown';

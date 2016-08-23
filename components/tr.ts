@@ -1,9 +1,9 @@
 import * as b from 'bobril';
 import { mergeToChildren } from './bobrilHelpers';
-import elem, { IBaseData } from './element';
-import Context, { contextStyles } from './context';
-import th, { IThData } from './th';
-import td, { ITdData } from './td';
+import { elem, IBaseData } from './element';
+import { Context, contextStyles } from './context';
+import { th, IThData } from './th';
+import { td, ITdData } from './td';
 
 export type IThDataOrString = string | IThData;
 export type ITdDataOrString = string | ITdData;

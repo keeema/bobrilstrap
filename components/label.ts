@@ -1,6 +1,6 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import helpers from './helpers';
+import { elem, IBaseData } from './element';
+import { helpers } from './helpers';
 import { mergeToChildren } from './bobrilHelpers';
 
 export interface ILabeldData extends IBaseData {
@@ -32,7 +32,7 @@ export const label = b.createDerivedComponent<ILabeldData>(elem, {
 
         if (ctx.data.title)
             mergeToChildren(me, ctx.data.title);
-            
+
         delete me.attrs['title'];
     }
 });

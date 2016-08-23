@@ -14,7 +14,7 @@ export const bobrilstrapPage = b.createVirtualComponent({
             ])
         ];
     }
-})
+});
 
 const texts = {
     header: 'Bobrilstrap',

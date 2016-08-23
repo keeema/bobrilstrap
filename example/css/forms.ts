@@ -28,7 +28,7 @@ export const forms = b.createVirtualComponent({
                 controlSizing()
             ]);
     }
-})
+});
 
 function basicExample(): b.IBobrilChildren {
     return [
@@ -37,7 +37,7 @@ function basicExample(): b.IBobrilChildren {
             `Individual form controls automatically receive some global styling. All textual `,
             code({}, '<input>'), `, `, code({}, '<textarea>'), `, and `, code({}, '<select>'), ` elements with `, code({}, 'formControl'),
             ` are set to `, code({}, 'width: 100%;'), ` by default. Wrap labels and controls in `, code({}, 'formGroup'),
-            ` for optimum spacing.`,
+            ` for optimum spacing.`
         ]),
         e({ style: styles.bsExample }, [
             form({}, [
@@ -75,12 +75,12 @@ function basicExample(): b.IBobrilChildren {
             `    ]),`, e({ tag: 'br' }),
             `    checkbox({ label: { title: 'Check me out' }, inputCheckbox: {} }),`, e({ tag: 'br' }),
             `    button({ label: 'Submit', onClick: () => alert('Clicked!') })`, e({ tag: 'br' }),
-            `])`, e({ tag: 'br' }),
+            `])`, e({ tag: 'br' })
         ]))),
         e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-formgroup-inputgroup' } }, [
             h4({}, `Don't mix form groups with input groups`),
             p({}, `Do not mix form groups directly with input groups. Instead, nest the input group inside of the form group.`)
-        ]),
+        ])
     ];
 }
 
@@ -279,7 +279,7 @@ function horizontalForm(): b.IBobrilChildren {
             `        )`, e({ tag: 'br' }),
             `    ])`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }
 

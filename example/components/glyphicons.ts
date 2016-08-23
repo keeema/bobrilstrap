@@ -18,7 +18,7 @@ export const glyphicons = b.createVirtualComponent({
                 examples()
             ]);
     }
-})
+});
 
 function availableGlyphs(): b.IBobrilChildren {
     return [
@@ -81,7 +81,7 @@ function howToUse(): b.IBobrilChildren {
         ]),
         figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
             `glyphicon({ icon: GlyphIcon.Search })`
-        ]))),
+        ])))
     ];
 }
 
@@ -124,6 +124,6 @@ function examples(): b.IBobrilChildren {
             `    span({ style: helpers.srOnly }, 'Error:'),`, e({ tag: 'br' }),
             `    ' Enter a valid email address'`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }

@@ -1,7 +1,7 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
+import { elem, IBaseData } from './element';
 import { createDictionary } from './bobrilHelpers';
-import helpers from './helpers';
+import { helpers } from './helpers';
 
 export interface IImageData extends IBaseData {
     src: string;

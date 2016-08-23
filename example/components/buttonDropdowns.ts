@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { a, e, p, h2, h4, code, figure, button, buttonGroup, dropdownMenu,
+import { a, e, p, h2, code, figure, buttonGroup, dropdownMenu,
     dropdownItem, ButtonOption, dropdown } from '../../index';
 import { styles } from '../bsexample/css';
 import { pre, langJs } from '../prettify/pre';
@@ -21,7 +21,7 @@ export const buttonDropdowns = b.createVirtualComponent({
                 singleButtonDropdowns()
             ]);
     }
-})
+});
 
 function singleButtonDropdowns(): b.IBobrilChildren {
     return [
@@ -54,15 +54,17 @@ function singleButtonDropdowns(): b.IBobrilChildren {
 }
 
 function getSingleButtonDropdown(label: string, option: ButtonOption = ButtonOption.Default): b.IBobrilChildren {
-    return buttonGroup({}, dropdown(
-        { button: { label, option } },
-        dropdownMenu({}, [
-            dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
-            dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
-            dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
-            dropdownItem({ separator: true }),
-            dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
-        ])
-    )
+    return buttonGroup(
+        {},
+        dropdown(
+            { button: { label, option } },
+            dropdownMenu({}, [
+                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
+                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
+                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
+                dropdownItem({ separator: true }),
+                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
+            ])
+        )
     );
 }

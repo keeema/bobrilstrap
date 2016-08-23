@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
+import { elem, IBaseData } from './element';
 
 export interface IOptionsData extends IBaseData {
     value: string;
@@ -20,7 +20,7 @@ export const option = b.createDerivedComponent<IOptionsData>(elem, {
 
         if (ctx.data.disabled)
             me.attrs['disabled'] = 'disabled';
-    } 
+    }
 });
 
 export default option;

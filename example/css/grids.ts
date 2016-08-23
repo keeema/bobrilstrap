@@ -27,7 +27,7 @@ export const grids = b.createVirtualComponent({
                 columnOrdering()
             ]);
     }
-})
+});
 
 function introduction(): b.IBobrilChildren {
     return [
@@ -63,7 +63,7 @@ function introduction(): b.IBobrilChildren {
                 'and override grid classes targeted at smaller devices. Therefore, e.g. applying any ',
                 code({}, 'col({ size: Size.Md, span: ... }, ...)'),
                 'component will not only affect its styling on medium devices but also on large devices if it is not defined as ',
-                code({}, 'col({ cols: [{ size: Size.Md, span: ... }, { size: Size.Lg, span: ... }] }, ...)'), '.',
+                code({}, 'col({ cols: [{ size: Size.Md, span: ... }, { size: Size.Lg, span: ... }] }, ...)'), '.'
             ])
         ]),
         p({}, 'Look to the examples for applying these principles to your code.')
@@ -104,7 +104,7 @@ function gridOptions(): b.IBobrilChildren {
                                 { children: 'None (auto)' },
                                 { children: '750px' },
                                 { children: '970px' },
-                                { children: '1170px' },
+                                { children: '1170px' }
                             ]
                         },
                         {
@@ -113,7 +113,7 @@ function gridOptions(): b.IBobrilChildren {
                                 { children: code({}, '{ size: Size.Xs ... }'), style: typography.textNowrap },
                                 { children: code({}, '{ size: Size.Sm ... }'), style: typography.textNowrap },
                                 { children: code({}, '{ size: Size.Md ... }'), style: typography.textNowrap },
-                                { children: code({}, '{ size: Size.Lg ... }'), style: typography.textNowrap },
+                                { children: code({}, '{ size: Size.Lg ... }'), style: typography.textNowrap }
                             ]
                         },
                         {
@@ -128,7 +128,7 @@ function gridOptions(): b.IBobrilChildren {
                                 { children: 'Auto' },
                                 { children: '~62px' },
                                 { children: '~81px' },
-                                { children: '~97px' },
+                                { children: '~97px' }
                             ]
                         },
                         {
@@ -222,7 +222,7 @@ function exampleStackHorizontal(): b.IBobrilChildren {
             `    col({ size: Size.Md, span: 6 }, 'col({ size: Size.Md, span: 6 }, ...)'),`, e({ tag: 'br' }),
             `    col({ size: Size.Md, span: 6 }, 'col({ size: Size.Md, span: 6 }, ...)')`, e({ tag: 'br' }),
             `])`, e({ tag: 'br' })
-        ]))),
+        ])))
     ];
 }
 
@@ -241,7 +241,7 @@ function exampleFluidContainer(): b.IBobrilChildren {
             '   row({}, [', e({ tag: 'br' }),
             '      ...', e({ tag: 'br' }),
             '   ])', e({ tag: 'br' }),
-            '])', e({ tag: 'br' }),
+            '])', e({ tag: 'br' })
         ])))
     ];
 }
@@ -310,7 +310,7 @@ function exampleMobileAndDesktop(): b.IBobrilChildren {
             `        'col({ cols: [{ size: Size.Xs, span: 6 }] }, ...)'`, e({ tag: 'br' }),
             `    )`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }
 
@@ -363,7 +363,7 @@ function exampleMobileTabletAndDesktop(): b.IBobrilChildren {
             `        'col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 4 }] }, ...)'`, e({ tag: 'br' }),
             `    )'`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }
 
@@ -448,7 +448,7 @@ function offsettingColumns(): b.IBobrilChildren {
             `    col({ size: Size.Md, span: 6, offsets: { size: Size.Md, span: 3 } },`, e({ tag: 'br' }),
             `        'col({ size: Size.Md, span: 3, offsets: { size: Size.Md, span: 3 } }, ...)')`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }
 
@@ -463,7 +463,7 @@ function nestingColumns(): b.IBobrilChildren {
             ` columns within an existing `,
             code({}, 'col({ ... }, ...)'),
             `column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 `,
-            `available columns).`,
+            `available columns).`
         ]),
         row({ style: styles.showGrid }, [
             col({ size: Size.Sm, span: 9 }, [
@@ -492,7 +492,7 @@ function nestingColumns(): b.IBobrilChildren {
             `        ])`, e({ tag: 'br' }),
             `    ])`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }
 
@@ -504,7 +504,7 @@ function columnOrdering(): b.IBobrilChildren {
             code({}, 'pushes'),
             ` and `,
             code({}, 'pulls'),
-            ` modifier properties on component input data.`,
+            ` modifier properties on component input data.`
             
         ]),
         row({ style: styles.showGrid }, [
@@ -520,6 +520,6 @@ function columnOrdering(): b.IBobrilChildren {
             `    col({ size: Size.Md, span: 3, pulls: { size: Size.Md, span: 9 } }, `, e({ tag: 'br' }),
             `        '{ size: Size.Md, span: 3, pulls: { size: Size.Md, span: 9 } , ...)')`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }

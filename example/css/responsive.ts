@@ -21,7 +21,7 @@ export const responsive = b.createVirtualComponent({
                 testCases()
             ]);
     }
-})
+});
 
 function availableStyles(): b.IBobrilChildren {
     return [

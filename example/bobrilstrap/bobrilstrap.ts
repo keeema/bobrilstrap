@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { e, p, code, figure, } from '../../index';
+import { e, p, code, figure } from '../../index';
 import { pre, langJs } from '../prettify/pre';
 import { styles } from '../bsexample/css';
 import { section } from '../common/section';
@@ -26,8 +26,8 @@ export const bobrilstrap = b.createVirtualComponent({
                         `import * as bs from 'bobrilstrap';`, e({ tag: 'br' }),
                         'bs.init();', e({ tag: 'br' })
                     ]))),
-                    p({}, ['Now you can use the bobrilstrap components provided by the ', code({}, 'bobrilstrap'), ' package.']),
+                    p({}, ['Now you can use the bobrilstrap components provided by the ', code({}, 'bobrilstrap'), ' package.'])
                 ])
         ];
     }
-})
+});

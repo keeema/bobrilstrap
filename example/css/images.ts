@@ -24,7 +24,7 @@ export const images = b.createVirtualComponent({
                 imageShapes()
             ]);
     }
-})
+});
 
 function responsiveImages(): b.IBobrilChildren {
     return [

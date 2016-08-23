@@ -99,5 +99,5 @@ export const e = b.createVirtualComponent<IElementData>({
 });
 
 export const element = e;
-
+export const elem = e;
 export default e;

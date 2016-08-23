@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
+import { elem, IBaseData } from './element';
 
 export interface IInputCheckBoxData extends IBaseData {
     checked?: boolean;
@@ -17,7 +17,7 @@ export const inputCheckbox = b.createOverridingComponent<IInputCheckBoxData>(ele
     id: 'bobrilstrap-input-checkbox',
     render(ctx: ICtx, me: b.IBobrilNode) {
         ctx.me.component.super.render(ctx, me);
-        
+
         if (ctx.data.checked !== undefined) {
             ctx.checked = !!ctx.data.checked;
         } else if (ctx.checked === undefined) {

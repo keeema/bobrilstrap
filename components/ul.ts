@@ -1,6 +1,6 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import typography from './typography';
+import { elem, IBaseData } from './element';
+import { typography } from './typography';
 
 export interface IUlData extends IBaseData {
     unstyled?: boolean;

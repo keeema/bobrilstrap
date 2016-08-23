@@ -21,7 +21,7 @@ export const tables = b.createVirtualComponent({
                 responsiveTables()
             ]);
     }
-})
+});
 
 function basicExample(): b.IBobrilChildren {
     return [
@@ -212,7 +212,7 @@ function contextualStyles(): b.IBobrilChildren {
                     { columns: ['6', 'Column content', 'Column content', '@	Column content'] },
                     { columns: ['7', 'Column content', 'Column content', '@	Column content'], context: Context.Danger },
                     { columns: ['8', 'Column content', 'Column content', '@	Column content'] },
-                    { columns: ['9', 'Column content', 'Column content', '@	Column content'], context: Context.Info },
+                    { columns: ['9', 'Column content', 'Column content', '@	Column content'], context: Context.Info }
                 ]
             }
         })),
@@ -247,7 +247,7 @@ function contextualStyles(): b.IBobrilChildren {
                             <ITdData>{ children: 'Column content', context: Context.Danger },
                             <ITdData>{ children: 'Column content', context: Context.Info }
                         ]
-                    },
+                    }
                 ]
             }
         })),
@@ -278,7 +278,7 @@ function contextualStyles(): b.IBobrilChildren {
                 is either obvious from the content itself (the visible text in the relevant table row/cell), or is included through 
                 alternative means, such as additional text hidden with the `, code({}, 'srOnly'), ` style from `, code({}, 'helpers'), `.`
             ])
-        ]),
+        ])
     ];
 }
 

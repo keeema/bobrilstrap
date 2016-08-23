@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
+import { elem, IBaseData } from './element';
 
 export const h1 = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-h1',
@@ -42,4 +42,3 @@ export const h6 = b.createDerivedComponent<IBaseData>(elem, {
         me.tag = 'h6';
     }
 });
-

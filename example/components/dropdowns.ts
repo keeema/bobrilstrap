@@ -20,7 +20,7 @@ export const dropdowns = b.createVirtualComponent({
                 disabled()
             ]);
     }
-})
+});
 
 function example(): b.IBobrilChildren {
     return [
@@ -40,7 +40,7 @@ function example(): b.IBobrilChildren {
                     dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
                     dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
                     dropdownItem({ separator: true }),
-                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
                 ])
             )
         ]),
@@ -72,7 +72,7 @@ function example(): b.IBobrilChildren {
                     dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
                     dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
                     dropdownItem({ separator: true }),
-                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
                 ])
             )
         ]),
@@ -113,7 +113,7 @@ function alignment(): b.IBobrilChildren {
             `dropdownMenu({ right: true, aria: { labelledBy: 'dLabel' } }, [`, e({ tag: 'br' }),
             `    ...`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }
 
@@ -133,7 +133,7 @@ function headers(): b.IBobrilChildren {
                     dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
                     dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
                     dropdownItem({ header: true }, 'Dropdown header'),
-                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
                 ])
             )
         ]),
@@ -143,7 +143,7 @@ function headers(): b.IBobrilChildren {
             `    dropdownItem({ header: true }, 'Dropdown header'),`, e({ tag: 'br' }),
             `    ...`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }
 
@@ -162,7 +162,7 @@ function divider(): b.IBobrilChildren {
                     dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
                     dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
                     dropdownItem({ separator: true }),
-                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link')),
+                    dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
                 ])
             )
         ]),
@@ -172,7 +172,7 @@ function divider(): b.IBobrilChildren {
             `    dropdownItem({ separator: true }),`, e({ tag: 'br' }),
             `    ...`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }
 
@@ -200,6 +200,6 @@ function disabled(): b.IBobrilChildren {
             `    dropdownItem({ disabled: true }, a({ href: '...' }, 'Disabled link')),`, e({ tag: 'br' }),
             `    dropdownItem({}, a({ href: '...' }, 'Another link'))`, e({ tag: 'br' }),
             `])`
-        ]))),
+        ])))
     ];
 }  

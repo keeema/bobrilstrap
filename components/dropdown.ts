@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import { mergeToChildren } from './bobrilHelpers';
-import elem, { IBaseData } from './element';
-import button, { IButtonData } from './button';
+import { elem, IBaseData } from './element';
+import { button, IButtonData } from './button';
 
 export const dropdownStyles = {
     dropdown: b.styleDef('dropdown'),

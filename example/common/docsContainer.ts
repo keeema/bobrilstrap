@@ -14,4 +14,4 @@ export const docsContainer =  b.createVirtualComponent({
             )
         ];
     }
-})
+});

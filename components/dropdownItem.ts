@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import li, { ILiData } from './li';
+import { li, ILiData } from './li';
 
 export const dropdownItemStyles = {
     divider: b.styleDef('divider'),

@@ -1,6 +1,6 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import option, { IOptionsData as IOptionData } from './option';
+import { elem, IBaseData } from './element';
+import { option, IOptionsData as IOptionData } from './option';
 import { createDictionary } from './bobrilHelpers';
 
 export interface ISelectData extends IBaseData {
@@ -39,9 +39,9 @@ export const select = b.createOverridingComponent<ISelectData>(elem, {
     id: 'bobrilstrap-select',
     render(ctx: ICtx, me: b.IBobrilNode) {
         ctx.me.component.super.render(ctx, me);
-        
+
         me.tag = 'select';
-        
+
         if (ctx.data.value !== undefined) {
             ctx.value = ctx.data.value;
         } else if (ctx.value === undefined && ctx.data.multiple) {

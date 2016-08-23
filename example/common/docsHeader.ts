@@ -24,4 +24,4 @@ export const header = b.createVirtualComponent<IData>({
             )
         ];
     }
-})
+});

@@ -23,7 +23,7 @@ export const buttonGroups = b.createVirtualComponent({
                 justified()
             ]);
     }
-})
+});
 
 function labeling(): b.IBobrilChildren {
     return [
@@ -245,7 +245,7 @@ function justified(): b.IBobrilChildren {
                         dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
                         dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
                         dropdownItem({ header: true }, 'Dropdown header'),
-                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link')),
+                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
                     ])
                 ])
             ])

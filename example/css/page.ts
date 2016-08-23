@@ -34,7 +34,7 @@ export const css = b.createVirtualComponent({
             ])
         ];
     }
-})
+});
 
 const texts = {
     header: 'CSS',

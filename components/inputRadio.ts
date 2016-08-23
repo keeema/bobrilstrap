@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
+import { elem, IBaseData } from './element';
 
 export interface IInputRadioData extends IBaseData {
     value: string;
@@ -22,13 +22,13 @@ export const inputRadio = b.createOverridingComponent<IInputRadioData>(elem, {
     id: 'bobrilstrap-input-radio',
     render(ctx: ICtx, me: b.IBobrilNode) {
         ctx.me.component.super.render(ctx, me);
-        
+
         if (ctx.data.value !== undefined && (ctx.data.checked !== undefined || ctx.data.checkedValue !== undefined)) {
             ctx.checked = (!!ctx.data.value && ctx.data.value === ctx.data.checkedValue) || !!ctx.data.checked;
         } else if (ctx.checked === undefined) {
             ctx.checked = false;
         }
-        
+
         me.tag = 'input';
         me.attrs['type'] = 'radio';
         me.attrs.value = ctx.checked;

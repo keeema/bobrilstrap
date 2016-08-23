@@ -1,6 +1,6 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import Size from './size';
+import { elem, IBaseData } from './element';
+import { Size } from './size';
 import { createDictionary, IDictionary } from './bobrilHelpers';
 
 interface IColData extends IBaseData {

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
+import { elem, IBaseData } from './element';
 
 export const ol = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-ol',

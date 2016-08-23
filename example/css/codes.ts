@@ -19,7 +19,7 @@ export const codes = b.createVirtualComponent({
                 sampleOutput()
             ]);
     }
-})
+});
 
 function inline(): b.IBobrilChildren {
     return [

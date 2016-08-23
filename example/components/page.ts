@@ -22,7 +22,7 @@ export const components = b.createVirtualComponent({
             ])
         ];
     }
-})
+});
 
 const texts = {
     header: 'Components',

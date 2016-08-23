@@ -11,6 +11,6 @@ export const pre = b.createDerivedComponent<IBaseData>(basePre, {
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         b.style(me, prettyPrint);
     }
-})
+});
 
 export const langJs = b.styleDef('lang-js');

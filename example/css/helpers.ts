@@ -24,7 +24,7 @@ export const helpersPage = b.createVirtualComponent({
                 imageReplacement()
             ]);
     }
-})
+});
 
 function contextualColors(): b.IBobrilChildren {
     return [

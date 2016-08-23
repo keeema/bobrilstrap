@@ -1,6 +1,6 @@
 import * as b from 'bobril';
-import typography from './typography';
-import elem, { IBaseData } from './element';
+import { typography }  from './typography';
+import { elem, IBaseData } from './element';
 
 export interface IParagraphData extends IBaseData {
     lead?: boolean;
@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export const paragraphStyles = {
-    formControlStatic: b.styleDef('form-control-static') 
+    formControlStatic: b.styleDef('form-control-static')
 };
 
 export const p = b.createDerivedComponent<IParagraphData>(elem, {

@@ -1,6 +1,6 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import Context, { contextStyles } from './context';
+import { elem, IBaseData } from './element';
+import { Context, contextStyles } from './context';
 
 export interface ITdData extends IBaseData {
     context?: Context;

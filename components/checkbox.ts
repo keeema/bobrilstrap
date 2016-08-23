@@ -1,7 +1,7 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import label, { ILabeldData as ILabelData} from './label';
-import inputCheckbox, { IInputCheckBoxData as IInputCheckBoxData} from './inputCheckbox';
+import { elem, IBaseData } from './element';
+import { label, ILabeldData as ILabelData} from './label';
+import { inputCheckbox, IInputCheckBoxData as IInputCheckBoxData} from './inputCheckbox';
 
 export interface ICheckboxData extends IBaseData {
     label?: ILabelData;

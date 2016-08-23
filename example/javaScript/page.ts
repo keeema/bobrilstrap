@@ -11,7 +11,7 @@ export const javaScript = b.createVirtualComponent({
             header(texts)
         ];
     }
-})
+});
 
 const texts = {
     header: 'JavaScript',

@@ -1,6 +1,6 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import typography from './typography';
+import { elem, IBaseData } from './element';
+import { typography } from './typography';
 
 export interface IBlockquoteData extends IBaseData {
     reverse?: boolean;

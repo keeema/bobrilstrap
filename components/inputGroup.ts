@@ -1,6 +1,6 @@
 import * as b from 'bobril';
-import elem, { IBaseData } from './element';
-import ValidationState, {validationStateStyles, validationStyles} from './validations';
+import { elem, IBaseData } from './element';
+import { ValidationState, validationStateStyles, validationStyles} from './validations';
 import { createDictionary } from './bobrilHelpers';
 
 export interface IInputGroupData extends IBaseData {

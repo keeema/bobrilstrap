@@ -19,13 +19,13 @@ export const buttons = b.createVirtualComponent({
                 disabledState()
             ]);
     }
-})
+});
 
 function buttonsTags(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'buttons-tags' } }, 'Button tags'),
         p({}, [
-            `Use the button `, code({}, 'tag'), ` input data property to decide for an <a>, <button>, or <input> element`,
+            `Use the button `, code({}, 'tag'), ` input data property to decide for an <a>, <button>, or <input> element`
         ]),
         e({ style: styles.bsExample }, [
             form({}, [
@@ -246,4 +246,3 @@ function disabledState(): b.IBobrilChildren {
         ])
     ];
 }
-

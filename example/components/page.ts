@@ -5,6 +5,7 @@ import { glyphicons } from './glyphicons';
 import { dropdowns } from './dropdowns';
 import { buttonGroups } from './buttonGroups';
 import { buttonDropdowns } from './buttonDropdowns';
+import { inputGroups } from './inputGroups';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -18,7 +19,8 @@ export const components = b.createVirtualComponent({
                 glyphicons(),
                 dropdowns(),
                 buttonGroups(),
-                buttonDropdowns()
+                buttonDropdowns(),
+                inputGroups()
             ])
         ];
     }

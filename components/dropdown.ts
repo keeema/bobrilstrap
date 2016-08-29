@@ -3,6 +3,7 @@ import { mergeToChildren } from './bobrilHelpers';
 import { elem, IBaseData } from './element';
 import { button, IButtonData } from './button';
 import { buttonGroup, IButtonGroupData } from './buttonGroup';
+import { inputGroupBtn, IInputGroupBtnData } from './inputGroupBtn';
 
 export const dropdownStyles = {
     dropdown: b.styleDef('dropdown'),
@@ -13,6 +14,7 @@ export const dropdownStyles = {
 export interface IDropdownData extends IBaseData {
     button: IButtonData;
     buttonGroup?: IButtonGroupData | boolean;
+    inputGroupBtn?: IInputGroupBtnData | boolean;
     up?: boolean;
     splitted?: boolean;
     splittedSrOnlyText?: string;
@@ -27,11 +29,13 @@ export const dropdown = b.createDerivedComponent<IDropdownData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         addButton(ctx, me);
 
-        if (ctx.data.buttonGroup) {
+        if (ctx.data.buttonGroup || ctx.data.inputGroupBtn) {
             me.tag = undefined;
-            let buttonGroupNode = buttonGroup(typeof ctx.data.buttonGroup === 'boolean' ? {} : ctx.data.buttonGroup, me.children);
-            b.style(buttonGroupNode, ctx.data.up && dropdownStyles.dropup);
-            me.children = buttonGroupNode;
+            let groupNode = ctx.data.buttonGroup 
+                ? buttonGroup(typeof ctx.data.buttonGroup === 'boolean' ? {} : ctx.data.buttonGroup, me.children)
+                : inputGroupBtn(typeof ctx.data.inputGroupBtn === 'boolean' ? {} : ctx.data.inputGroupBtn, me.children);
+            b.style(groupNode, ctx.data.up && dropdownStyles.dropup);
+            me.children = groupNode;
         } else {
             b.style(me, ctx.data.up ? dropdownStyles.dropup : dropdownStyles.dropdown);
         }

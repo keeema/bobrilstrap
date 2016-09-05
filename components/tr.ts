@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import { mergeToChildren } from './bobrilHelpers';
 import { elem, IBaseData } from './element';
-import { Context, contextStyles } from './context';
+import { TableContext, tableContextStyles } from './table';
 import { th, IThData } from './th';
 import { td, ITdData } from './td';
 
@@ -9,7 +9,7 @@ export type IThDataOrString = string | IThData;
 export type ITdDataOrString = string | ITdData;
 
 export interface ITrData extends IBaseData {
-    context?: Context;
+    context?: TableContext;
     columns?: IThDataOrString[];
     headers?: ITdDataOrString[];
 }
@@ -21,7 +21,7 @@ export const tr = b.createDerivedComponent<ITrData>(elem, {
     id: 'bobrilstrap-tr',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'tr';
-        b.style(me, contextStyles(ctx.data.context));
+        b.style(me, tableContextStyles(ctx.data.context));
 
         if (ctx.data.headers)
             me.children = mergeToChildren(me, ctx.data.headers.map(header => th(getColumnData(header))));

@@ -1,9 +1,17 @@
 import * as b from 'bobril';
 import { elem, IBaseData } from './element';
 
-export const ol = b.createDerivedComponent<IBaseData>(elem, {
+export interface IOlData extends IBaseData {
+
+}
+
+interface IOlCtx extends b.IBobrilCtx {
+    data: IOlData;
+}
+
+export const ol = b.createDerivedComponent<IOlData>(elem, {
     id: 'bobrilstrap-ol',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(ctx: IOlCtx, me: b.IBobrilNode) {
         me.tag = 'ol';
     }
 });

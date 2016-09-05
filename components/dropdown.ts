@@ -15,6 +15,7 @@ export interface IDropdownData extends IBaseData {
     button: IButtonData;
     buttonGroup?: IButtonGroupData | boolean;
     inputGroupBtn?: IInputGroupBtnData | boolean;
+    navbar?: boolean;
     up?: boolean;
     splitted?: boolean;
     splittedSrOnlyText?: string;
@@ -31,12 +32,16 @@ export const dropdown = b.createDerivedComponent<IDropdownData>(elem, {
 
         if (ctx.data.buttonGroup || ctx.data.inputGroupBtn) {
             me.tag = undefined;
-            let groupNode = ctx.data.buttonGroup 
+            let groupNode = ctx.data.buttonGroup
                 ? buttonGroup(typeof ctx.data.buttonGroup === 'boolean' ? {} : ctx.data.buttonGroup, me.children)
                 : inputGroupBtn(typeof ctx.data.inputGroupBtn === 'boolean' ? {} : ctx.data.inputGroupBtn, me.children);
             b.style(groupNode, ctx.data.up && dropdownStyles.dropup);
             me.children = groupNode;
         } else {
+            if (ctx.data.navbar) {
+                me.tag = 'li';
+            }
+
             b.style(me, ctx.data.up ? dropdownStyles.dropup : dropdownStyles.dropdown);
         }
     }

@@ -6,6 +6,7 @@ import { span } from './span';
 import { mergeToChildren } from './bobrilHelpers';
 import { createDictionary, IDictionary } from './bobrilHelpers';
 import { dropdownStyles } from './dropdown';
+import { navStyles } from './nav';
 
 export interface IButtonData extends IBaseData {
     active?: boolean;
@@ -19,6 +20,7 @@ export interface IButtonData extends IBaseData {
     label?: string;
     dropdown?: boolean;
     dropdownSplittedSrOnly?: string;
+    navbar?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -104,6 +106,15 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
                 mergeToChildren(me, ' ');
 
             mergeToChildren(me, span({ style: helpers.caret }));
+            mergeToChildren(me, ctx.data.dropdownSplittedSrOnly && span({ style: helpers.srOnly }, ctx.data.dropdownSplittedSrOnly));
+        }
+
+        if (ctx.data.navbar) {
+            ctx.data = b.assign({}, ctx.data);
+            ctx.data.data = b.assign({}, ctx.data.data);
+            ctx.data.data.toggle = 'collapse';
+            b.style(me, navStyles.navbarToggle);
+
             mergeToChildren(me, ctx.data.dropdownSplittedSrOnly && span({ style: helpers.srOnly }, ctx.data.dropdownSplittedSrOnly));
         }
     }

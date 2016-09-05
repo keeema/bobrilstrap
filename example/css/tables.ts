@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { e, p, h2, h4, code, figure, table, Context, ITdData, responsiveTable } from '../../index';
+import { e, p, h2, h4, code, figure, table, TableContext, ITdData, responsiveTable } from '../../index';
 import { styles } from '../bsexample/css';
 import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
@@ -204,15 +204,15 @@ function contextualStyles(): b.IBobrilChildren {
             head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },
             body: {
                 rows: [
-                    { columns: ['1', 'Column content', 'Column content', '@	Column content'], context: Context.Active },
+                    { columns: ['1', 'Column content', 'Column content', '@	Column content'], context: TableContext.Active },
                     { columns: ['2', 'Column content', 'Column content', '@	Column content'] },
-                    { columns: ['3', 'Column content', 'Column content', '@	Column content'], context: Context.Success },
+                    { columns: ['3', 'Column content', 'Column content', '@	Column content'], context: TableContext.Success },
                     { columns: ['4', 'Column content', 'Column content', '@	Column content'] },
-                    { columns: ['5', 'Column content', 'Column content', '@	Column content'], context: Context.Warning },
+                    { columns: ['5', 'Column content', 'Column content', '@	Column content'], context: TableContext.Warning },
                     { columns: ['6', 'Column content', 'Column content', '@	Column content'] },
-                    { columns: ['7', 'Column content', 'Column content', '@	Column content'], context: Context.Danger },
+                    { columns: ['7', 'Column content', 'Column content', '@	Column content'], context: TableContext.Danger },
                     { columns: ['8', 'Column content', 'Column content', '@	Column content'] },
-                    { columns: ['9', 'Column content', 'Column content', '@	Column content'], context: Context.Info }
+                    { columns: ['9', 'Column content', 'Column content', '@	Column content'], context: TableContext.Info }
                 ]
             }
         })),
@@ -241,11 +241,11 @@ function contextualStyles(): b.IBobrilChildren {
                     {
                         columns: [
                             '1',
-                            <ITdData>{ children: 'Column content', context: Context.Active },
-                            <ITdData>{ children: 'Column content', context: Context.Success },
-                            <ITdData>{ children: 'Column content', context: Context.Warning },
-                            <ITdData>{ children: 'Column content', context: Context.Danger },
-                            <ITdData>{ children: 'Column content', context: Context.Info }
+                            <ITdData>{ children: 'Column content', context: TableContext.Active },
+                            <ITdData>{ children: 'Column content', context: TableContext.Success },
+                            <ITdData>{ children: 'Column content', context: TableContext.Warning },
+                            <ITdData>{ children: 'Column content', context: TableContext.Danger },
+                            <ITdData>{ children: 'Column content', context: TableContext.Info }
                         ]
                     }
                 ]

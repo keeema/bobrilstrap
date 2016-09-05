@@ -4,6 +4,22 @@ import { elem, IBaseData } from './element';
 import { thead, ITHeadData } from './thead';
 import { tbody, ITBodyData } from './tbody';
 import { caption } from './caption';
+import { createDictionary } from './bobrilHelpers';
+
+export enum TableContext {
+    Active,
+    Success,
+    Warning,
+    Danger,
+    Info
+}
+
+export const tableContextStyles = createDictionary<TableContext, b.IBobrilStyle>();
+tableContextStyles(TableContext.Active, b.styleDef('active'));
+tableContextStyles(TableContext.Success, b.styleDef('success'));
+tableContextStyles(TableContext.Warning, b.styleDef('warning'));
+tableContextStyles(TableContext.Danger, b.styleDef('danger'));
+tableContextStyles(TableContext.Info, b.styleDef('info'));
 
 export const tableStyles = {
     table: b.styleDef('table'),

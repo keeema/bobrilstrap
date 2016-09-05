@@ -5,7 +5,7 @@ import { navStyles, NavbarAlignment } from './nav';
 export interface IPillsData extends IUlData {
     justified?: boolean;
     alignment?: NavbarAlignment;
-    stacked?:boolean;
+    stacked?: boolean;
 }
 
 interface IPillsCtx extends b.IBobrilCtx {

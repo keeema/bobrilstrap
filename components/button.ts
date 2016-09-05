@@ -21,6 +21,7 @@ export interface IButtonData extends IBaseData {
     dropdown?: boolean;
     dropdownSplittedSrOnly?: string;
     navbar?: boolean;
+    navbarCollapse?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -62,12 +63,9 @@ export const buttonOptiontStyles = generateOptionsStyles();
 export const button = b.createDerivedComponent<IButtonData>(elem, {
     id: 'bobrilstrap-button',
     render(ctx: ICtx, me: b.IBobrilNode) {
-        me.tag = resolveTag(ctx.data);
+        me.tag = resolveTag(ctx);
 
-        b.style(
-            me, 
-            ctx.data.option !== ButtonOption.Close 
-            && (!ctx.data.navbar || (ctx.data.tag !== undefined && ctx.data.tag !== ButtonTag.A)) && buttonStyles.btn);
+        b.style(me, ctx.data.option !== ButtonOption.Close && (!ctx.data.navbar || ctx.data.tag !== ButtonTag.A) && buttonStyles.btn);
         b.style(me, ctx.data.active && buttonStyles.active);
         b.style(me, ctx.data.block && buttonStyles.btnBlock);
         b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));
@@ -110,13 +108,12 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
 
             mergeToChildren(me, span({ style: helpers.caret }));
             mergeToChildren(me, ctx.data.dropdownSplittedSrOnly && span({ style: helpers.srOnly }, ctx.data.dropdownSplittedSrOnly));
-        }
-
-        if (ctx.data.navbar) {
+        } else if (ctx.data.navbarCollapse) {
             ctx.data = b.assign({}, ctx.data);
             ctx.data.data = b.assign({}, ctx.data.data);
             ctx.data.data.toggle = 'collapse';
             b.style(me, navStyles.navbarToggle);
+            b.style(me, navStyles.collapsed);
 
             mergeToChildren(me, ctx.data.dropdownSplittedSrOnly && span({ style: helpers.srOnly }, ctx.data.dropdownSplittedSrOnly));
         }
@@ -154,12 +151,12 @@ function generateSizeStyles(): IDictionary<Size, b.IBobrilStyle> {
     return result;
 }
 
-function resolveTag(data: IButtonData): string {
-    let tag = data.tag;
-    if (tag === undefined && data.navbar)
-        tag = ButtonTag.A;
+function resolveTag(ctx: ICtx): string {
+    if (ctx.data.tag === undefined) {
+        ctx.data = b.assign({ tag: ctx.data.navbar ? ButtonTag.A : ButtonTag.Button }, ctx.data);
+    }
 
-    switch (tag) {
+    switch (ctx.data.tag) {
         case ButtonTag.A:
             return 'a';
         case ButtonTag.Input:

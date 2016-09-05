@@ -27,7 +27,8 @@ export const navStyles = {
     navPills: b.styleDef('nav-pills'),
     dropdown: b.styleDef('dropdown'),
     disabled: b.styleDef('disabled'),
-    collapse: b.styleDef('collapse')
+    collapse: b.styleDef('collapse'),
+    collapsed: b.styleDef('collapsed')
 };
 
 export enum NavbarStatic { Top = 0 };

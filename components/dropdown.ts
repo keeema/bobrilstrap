@@ -73,7 +73,6 @@ function addButton(ctx: ICtx, me: b.IBobrilNode) {
         dropdownButton = button(ctx.data.button);
     } else {
         dropdownButton = button(updateButtonDataForDropdown(ctx.data.button, ctx.data.navbar));
-        b.style(dropdownButton, dropdownStyles.dropdownToggle);
     }
 
     mergeToChildren(me, caretButton, true);

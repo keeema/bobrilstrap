@@ -49,9 +49,10 @@ export const dropdown = b.createDerivedComponent<IDropdownData>(elem, {
 
 export default dropdown;
 
-function updateButtonDataForDropdown(originalButtonData: IButtonData): IButtonData {
+function updateButtonDataForDropdown(originalButtonData: IButtonData, navbar: boolean): IButtonData {
     let buttonData = b.assign({}, originalButtonData);
     buttonData.dropdown = true;
+    buttonData.navbar = originalButtonData.navbar || navbar;
     buttonData.aria = b.assign({}, buttonData.aria);
     buttonData.aria.hasPopup = true;
     return buttonData;
@@ -62,14 +63,16 @@ function addButton(ctx: ICtx, me: b.IBobrilNode) {
         caretButton: b.IBobrilNode;
 
     if (ctx.data.splitted) {
-        caretButton = button(updateButtonDataForDropdown({
-            option: ctx.data.button.option,
-            size: ctx.data.button.size,
-            dropdownSplittedSrOnly: ctx.data.splittedSrOnlyText
-        }));
+        caretButton = button(updateButtonDataForDropdown(
+            {
+                option: ctx.data.button.option,
+                size: ctx.data.button.size,
+                dropdownSplittedSrOnly: ctx.data.splittedSrOnlyText
+            },
+            ctx.data.navbar));
         dropdownButton = button(ctx.data.button);
     } else {
-        dropdownButton = button(updateButtonDataForDropdown(ctx.data.button));
+        dropdownButton = button(updateButtonDataForDropdown(ctx.data.button, ctx.data.navbar));
         b.style(dropdownButton, dropdownStyles.dropdownToggle);
     }
 

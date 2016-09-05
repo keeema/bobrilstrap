@@ -62,13 +62,16 @@ export const buttonOptiontStyles = generateOptionsStyles();
 export const button = b.createDerivedComponent<IButtonData>(elem, {
     id: 'bobrilstrap-button',
     render(ctx: ICtx, me: b.IBobrilNode) {
-        me.tag = resolveTag(ctx.data.tag);
+        me.tag = resolveTag(ctx.data);
 
-        b.style(me, ctx.data.option !== ButtonOption.Close && buttonStyles.btn);
+        b.style(
+            me, 
+            ctx.data.option !== ButtonOption.Close 
+            && (!ctx.data.navbar || (ctx.data.tag !== undefined && ctx.data.tag !== ButtonTag.A)) && buttonStyles.btn);
         b.style(me, ctx.data.active && buttonStyles.active);
         b.style(me, ctx.data.block && buttonStyles.btnBlock);
         b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));
-        b.style(me, buttonOptiontStyles(ctx.data.option || ButtonOption.Default));
+        b.style(me, !ctx.data.navbar && buttonOptiontStyles(ctx.data.option || ButtonOption.Default));
 
         const typeAttr = ctx.data.tag === ButtonTag.A ? 'role' : 'type';
         me.attrs[typeAttr] = (ButtonType[ctx.data.type] || me.attrs[typeAttr] || ButtonType[ButtonType.Button]).toString().toLowerCase();
@@ -151,7 +154,11 @@ function generateSizeStyles(): IDictionary<Size, b.IBobrilStyle> {
     return result;
 }
 
-function resolveTag(tag: ButtonTag): string {
+function resolveTag(data: IButtonData): string {
+    let tag = data.tag;
+    if (tag === undefined && data.navbar)
+        tag = ButtonTag.A;
+
     switch (tag) {
         case ButtonTag.A:
             return 'a';

@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { a, e, p, h2, h4, code, figure, inputGroup, helpers, inputGroupAddon, inputGroupBtn, dropdownMenu,
-    dropdownItem, dropdown, strong, inputText, label } from '../../index';
+    dropdownItem, dropdown, strong, inputText, label, InputGroupSize } from '../../index';
 import { styles } from '../bsexample/css';
 import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
@@ -19,7 +19,8 @@ export const inputGroups = b.createVirtualComponent({
             },
             [
                 info(),
-                basicExample()
+                basicExample(),
+                sizing()
             ]);
     }
 });
@@ -106,6 +107,48 @@ function basicExample(): b.IBobrilChildren {
             `    inputGroupAddon({ id: 'basic-addon3' }, 'https://example.com/users/'),`, e({ tag: 'br' }),
             `    inputText({ id: 'basic-url', aria: { describedBy: 'basic-addon3' } })`, e({ tag: 'br' }),
             `])`
+        ])))
+    ];
+}
+
+function sizing(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'input-groups-sizing' } }, 'Sizing'),
+        p({}, [
+            `Set the relative form sizing by the `, code({}, 'size'), ` property of the `, code({}, 'inputGroup'), 
+            ` component itself and contents within will automatically resize—no need for repeating the form control
+             size classes on each element.`
+        ]),
+        e({ style: styles.bsExample }, [
+            inputGroup({ size: InputGroupSize.Lg}, [
+                inputGroupAddon({ id: 'sizing-addon1' }, '@'),
+                inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon1' } })
+            ]),
+            e({ tag: 'br' }),
+            
+            inputGroup({}, [
+                inputGroupAddon({ id: 'sizing-addon2' }, '@'),
+                inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon2' } })
+            ]),
+            e({ tag: 'br' }),            
+            inputGroup({ size: InputGroupSize.Sm}, [
+                inputGroupAddon({ id: 'sizing-addon3' }, '@'),
+                inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon3' } })
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `inputGroup({ size: InputGroupSize.Lg }, [`, e({ tag: 'br' }),
+            `    inputGroupAddon({ id: 'sizing-addon1' }, '@'),`, e({ tag: 'br' }),
+            `    inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon1' } })`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `inputGroup({}, [`, e({ tag: 'br' }),
+            `    inputGroupAddon({ id: 'sizing-addon2' }, '@'),`, e({ tag: 'br' }),
+            `    inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon2' } })`, e({ tag: 'br' }),
+            `]),`, e({ tag: 'br' }),
+            `inputGroup({ size: InputGroupSize.Sm }, [`, e({ tag: 'br' }),
+            `    inputGroupAddon({ id: 'sizing-addon3' }, '@'),`, e({ tag: 'br' }),
+            `    inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon3' } })`, e({ tag: 'br' }),
+            `])`, e({ tag: 'br' })
         ])))
     ];
 }

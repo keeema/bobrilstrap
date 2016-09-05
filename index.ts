@@ -56,6 +56,8 @@ export * from './components/row';
 export * from './components/select';
 export * from './components/size';
 export * from './components/span';
+export * from './components/sub';
+export * from './components/sup';
 export * from './components/samp';
 export * from './components/small';
 export * from './components/strong';

@@ -108,6 +108,7 @@
         "example/bsexample/css.ts",
         "example/common/docsContainer.ts",
         "example/common/docsHeader.ts",
+        "example/common/persistentScrollContainer.ts",
         "example/common/section.ts",
         "example/components/buttonDropdowns.ts",
         "example/components/buttonGroups.ts",

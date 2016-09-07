@@ -1,13 +1,26 @@
 import * as b from 'bobril';
-import { container, row, col, Size } from '../../index';
+import { row, col, Size } from '../../index';
 import { styles } from '../bsexample/css';
+import { persistentScrollContainer } from './persistentScrollContainer';
 
-export const docsContainer =  b.createVirtualComponent({
+export interface IDocsContainerData {
+    children?: b.IBobrilChildren;
+    id: string;
+}
+
+interface ICtx extends b.IBobrilCtx {
+    data: IDocsContainerData;
+}
+
+export const docsContainer = b.createVirtualComponent<IDocsContainerData>({
     id: 'example-docs-container',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: b.IBobrilNode) {
         me.children = [
-            container(
-                { style: styles.bsDocsContainer },
+            persistentScrollContainer(
+                {
+                    id: ctx.data.id,
+                    style: styles.bsDocsContainer
+                },
                 row({},
                     col({ size: Size.Md, span: 9, attrs: { role: 'main' } }, ctx.data.children)
                 )

@@ -20,7 +20,7 @@ export const css = b.createVirtualComponent({
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             header(texts),
-            docsContainer({}, [
+            docsContainer({ id: 'css' }, [
                 overview(),
                 grids(),
                 typographyPage(),

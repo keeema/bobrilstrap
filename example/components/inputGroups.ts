@@ -1,6 +1,6 @@
 import * as b from 'bobril';
-import { a, e, p, h2, h4, code, figure, inputGroup, helpers, inputGroupAddon, inputGroupBtn, dropdownMenu,
-    dropdownItem, dropdown, strong, inputText, label, InputGroupSize } from '../../index';
+import { a, e, p, h2, h4, code, figure, inputGroup, helpers, inputGroupAddon, inputGroupBtn, button, dropdownMenu,
+    dropdownItem, dropdown, strong, inputText, label, InputGroupSize, row, col, Size, inputCheckbox, inputRadio } from '../../index';
 import { styles } from '../bsexample/css';
 import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
@@ -20,7 +20,10 @@ export const inputGroups = b.createVirtualComponent({
             [
                 info(),
                 basicExample(),
-                sizing()
+                sizing(),
+                checkboxesRadioboxes(),
+                buttonAddons(),
+                buttonWithDropdowns()
             ]);
     }
 });
@@ -115,23 +118,23 @@ function sizing(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'input-groups-sizing' } }, 'Sizing'),
         p({}, [
-            `Set the relative form sizing by the `, code({}, 'size'), ` property of the `, code({}, 'inputGroup'), 
+            `Set the relative form sizing by the `, code({}, 'size'), ` property of the `, code({}, 'inputGroup'),
             ` component itself and contents within will automatically resize—no need for repeating the form control
              size classes on each element.`
         ]),
         e({ style: styles.bsExample }, [
-            inputGroup({ size: InputGroupSize.Lg}, [
+            inputGroup({ size: InputGroupSize.Lg }, [
                 inputGroupAddon({ id: 'sizing-addon1' }, '@'),
                 inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon1' } })
             ]),
             e({ tag: 'br' }),
-            
+
             inputGroup({}, [
                 inputGroupAddon({ id: 'sizing-addon2' }, '@'),
                 inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon2' } })
             ]),
-            e({ tag: 'br' }),            
-            inputGroup({ size: InputGroupSize.Sm}, [
+            e({ tag: 'br' }),
+            inputGroup({ size: InputGroupSize.Sm }, [
                 inputGroupAddon({ id: 'sizing-addon3' }, '@'),
                 inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon3' } })
             ])
@@ -149,6 +152,163 @@ function sizing(): b.IBobrilChildren {
             `    inputGroupAddon({ id: 'sizing-addon3' }, '@'),`, e({ tag: 'br' }),
             `    inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon3' } })`, e({ tag: 'br' }),
             `])`, e({ tag: 'br' })
+        ])))
+    ];
+}
+
+function checkboxesRadioboxes(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'input-groups-checkboxes-radios' } }, 'Checkboxes and radio addons'),
+        p({}, `Place any checkbox or radio option within an input group's addon instead of text.`),
+        e({ style: styles.bsExample }, [
+            row({}, [
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        inputGroupAddon({}, inputCheckbox({ aria: { label: '...' } })),
+                        inputText({ aria: { label: '...' } })
+                    ])
+                ),
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        inputGroupAddon({}, inputRadio({ name: 'radio1', value: 'value1', aria: { label: '...' } })),
+                        inputText({ aria: { label: '...' } })
+                    ])
+                )
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `        inputGroup({}, [`, e({ tag: 'br' }),
+            `            inputGroupAddon({}, inputCheckbox({ aria: { label: '...' } })),`, e({ tag: 'br' }),
+            `            inputText({ aria: { label: '...' } })`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `        inputGroup({}, [`, e({ tag: 'br' }),
+            `            inputGroupAddon({}, inputRadio({ name: 'radio1', value: 'value1', aria: { label: '...' } })),`, e({ tag: 'br' }),
+            `            inputText({ aria: { label: '...' } })`, e({ tag: 'br' }),
+            `        ])`, e({ tag: 'br' }),
+            `    )`, e({ tag: 'br' }),
+            `])`
+        ])))
+    ];
+}
+
+function buttonAddons(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'input-groups-buttons' } }, 'Button addons'),
+        p({}, [
+            `Buttons in input groups are a bit different and require one extra level of nesting. Instead of `,
+            code({}, 'inputGroupAddon'), `, you'll need to use `, code({}, ' inputGroupBtn'),
+            ` to wrap the buttons. This is required due to default browser styles that cannot be overridden.`
+        ]),
+        e({ style: styles.bsExample }, [
+            row({}, [
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        inputGroupBtn({}, button({ label: 'Go!' })),
+                        inputText({ placeholder: 'Search for...', aria: { label: '...' } })
+                    ])
+                ),
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        inputText({ placeholder: 'Search for...', aria: { label: '...' } }),
+                        inputGroupBtn({}, button({ label: 'Go!' }))
+                    ])
+                )
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `        inputGroup({}, [`, e({ tag: 'br' }),
+            `            inputGroupBtn({}, button({ label: 'Go!' })),`, e({ tag: 'br' }),
+            `            inputText({ placeholder: 'Search for...', aria: { label: '...' } })`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `        inputGroup({}, [`, e({ tag: 'br' }),
+            `            inputText({ placeholder: 'Search for...', aria: { label: '...' } }),`, e({ tag: 'br' }),
+            `            inputGroupBtn({}, button({ label: 'Go!' })),`, e({ tag: 'br' }),
+            `        ])`, e({ tag: 'br' }),
+            `    )`, e({ tag: 'br' }),
+            `])`
+        ])))
+    ];
+}
+
+function buttonWithDropdowns(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'input-groups-buttons-dropdowns' } }, 'Buttons with dropdowns'),
+        p({}, [
+            `As in previous cases - you can use the prepared helper `, code({}, 'dropdown'), 
+            ` or compose from specific input components.`
+        ]),
+        e({ style: styles.bsExample }, [
+            row({}, [
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        dropdown(
+                            { inputGroupBtn: true, button: { label: 'Action' } },
+                            dropdownMenu({}, [
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
+                                dropdownItem({ separator: true }),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
+                            ])
+                        ),
+                        inputText({})
+                    ])
+                ),
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        inputText({}),
+                        dropdown(
+                            { inputGroupBtn: true, button: { label: 'Action' } },
+                            dropdownMenu({}, [
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
+                                dropdownItem({ separator: true }),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
+                            ])
+                        )
+                    ])
+                )
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `   col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `       inputGroup({}, [`, e({ tag: 'br' }),
+            `           dropdown(`, e({ tag: 'br' }),
+            `                { inputGroupBtn: true, button: { label: 'Action' } },`, e({ tag: 'br' }),
+            `                dropdownMenu({}, [`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Action')),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Another action')),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Something else here')),`, e({ tag: 'br' }),
+            `                    dropdownItem({ separator: true }),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Separated link'))`, e({ tag: 'br' }),
+            `                ])`, e({ tag: 'br' }),
+            `            ),`, e({ tag: 'br' }),
+            `            inputText({})`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `       inputGroup({}, [`, e({ tag: 'br' }),
+            `           inputText({}),`, e({ tag: 'br' }),
+            `           dropdown(`, e({ tag: 'br' }),
+            `                { inputGroupBtn: true, button: { label: 'Action' } },`, e({ tag: 'br' }),
+            `                dropdownMenu({}, [`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Action')),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Another action')),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Something else here')),`, e({ tag: 'br' }),
+            `                    dropdownItem({ separator: true }),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Separated link'))`, e({ tag: 'br' }),
+            `                ])`, e({ tag: 'br' }),
+            `            ),`, e({ tag: 'br' }),
+            `        ])`, e({ tag: 'br' }),
+            `    )`, e({ tag: 'br' }),
+            `])`
         ])))
     ];
 }

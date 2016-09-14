@@ -1,6 +1,7 @@
 import * as b from 'bobril';
 import { a, e, p, h2, h4, code, figure, inputGroup, helpers, inputGroupAddon, inputGroupBtn, button, dropdownMenu,
-    dropdownItem, dropdown, strong, inputText, label, InputGroupSize, row, col, Size, inputCheckbox, inputRadio } from '../../index';
+    dropdownItem, dropdown, strong, inputText, label, InputGroupSize, row, col, Size, inputCheckbox, inputRadio,
+    glyphicon, GlyphIcon } from '../../index';
 import { styles } from '../bsexample/css';
 import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
@@ -23,7 +24,9 @@ export const inputGroups = b.createVirtualComponent({
                 sizing(),
                 checkboxesRadioboxes(),
                 buttonAddons(),
-                buttonWithDropdowns()
+                buttonWithDropdowns(),
+                segmentedButtons(),
+                multipleButtons()
             ]);
     }
 });
@@ -224,6 +227,7 @@ function buttonAddons(): b.IBobrilChildren {
             `        inputGroup({}, [`, e({ tag: 'br' }),
             `            inputGroupBtn({}, button({ label: 'Go!' })),`, e({ tag: 'br' }),
             `            inputText({ placeholder: 'Search for...', aria: { label: '...' } })`, e({ tag: 'br' }),
+            `        ])`, e({ tag: 'br' }),
             `    ),`, e({ tag: 'br' }),
             `    col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
             `        inputGroup({}, [`, e({ tag: 'br' }),
@@ -240,7 +244,7 @@ function buttonWithDropdowns(): b.IBobrilChildren {
     return [
         h2({ attrs: { id: 'input-groups-buttons-dropdowns' } }, 'Buttons with dropdowns'),
         p({}, [
-            `As in previous cases - you can use the prepared helper `, code({}, 'dropdown'), 
+            `As in previous cases - you can use the prepared helper `, code({}, 'dropdown'),
             ` or compose from specific input components.`
         ]),
         e({ style: styles.bsExample }, [
@@ -305,7 +309,145 @@ function buttonWithDropdowns(): b.IBobrilChildren {
             `                    dropdownItem({ separator: true }),`, e({ tag: 'br' }),
             `                    dropdownItem({}, a({ href: '...' }, 'Separated link'))`, e({ tag: 'br' }),
             `                ])`, e({ tag: 'br' }),
+            `            )`, e({ tag: 'br' }),
+            `        ])`, e({ tag: 'br' }),
+            `    )`, e({ tag: 'br' }),
+            `])`
+        ])))
+    ];
+}
+
+function segmentedButtons(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'input-groups-buttons-segmented' } }, 'Segmented buttons'),
+        p({}, [
+            `As in previous cases - you can use the prepared helper `, code({}, 'dropdown'),
+            ` or compose from specific input components.`
+        ]),
+        e({ style: styles.bsExample }, [
+            row({}, [
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        dropdown(
+                            { button: { label: 'Action' }, inputGroupBtn: true, splitted: true },
+                            dropdownMenu({}, [
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
+                                dropdownItem({ separator: true }),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
+                            ])
+                        ),
+                        inputText({})
+                    ])
+                ),
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        inputText({}),
+                        dropdown(
+                            { button: { label: 'Action' }, inputGroupBtn: true, splitted: true },
+                            dropdownMenu({}, [
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
+                                dropdownItem({ separator: true }),
+                                dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
+                            ])
+                        )
+                    ])
+                )
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `   col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `       inputGroup({}, [`, e({ tag: 'br' }),
+            `           dropdown(`, e({ tag: 'br' }),
+            `                {`, e({ tag: 'br' }),
+            `                    button: { label: 'Action' },`, e({ tag: 'br' }),
+            `                    inputGroupBtn: true,`, e({ tag: 'br' }),
+            `                    splitted: true,`, e({ tag: 'br' }),
+            `                },`, e({ tag: 'br' }),
+            `                dropdownMenu({}, [`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Action')),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Another action')),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Something else here')),`, e({ tag: 'br' }),
+            `                    dropdownItem({ separator: true }),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Separated link'))`, e({ tag: 'br' }),
+            `                ])`, e({ tag: 'br' }),
             `            ),`, e({ tag: 'br' }),
+            `            inputText({})`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `       inputGroup({}, [`, e({ tag: 'br' }),
+            `           inputText({}),`, e({ tag: 'br' }),
+            `           dropdown(`, e({ tag: 'br' }),
+            `                {`, e({ tag: 'br' }),
+            `                    button: { label: 'Action' },`, e({ tag: 'br' }),
+            `                    inputGroupBtn: true,`, e({ tag: 'br' }),
+            `                    splitted: true,`, e({ tag: 'br' }),
+            `                },`, e({ tag: 'br' }),
+            `                dropdownMenu({}, [`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Action')),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Another action')),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Something else here')),`, e({ tag: 'br' }),
+            `                    dropdownItem({ separator: true }),`, e({ tag: 'br' }),
+            `                    dropdownItem({}, a({ href: '...' }, 'Separated link'))`, e({ tag: 'br' }),
+            `                ])`, e({ tag: 'br' }),
+            `            )`, e({ tag: 'br' }),
+            `        ])`, e({ tag: 'br' }),
+            `    )`, e({ tag: 'br' }),
+            `])`
+        ])))
+    ];
+}
+
+function multipleButtons(): b.IBobrilChildren {
+    return [
+        h2({ attrs: { id: 'input-groups-buttons-multiple' } }, 'Multiple buttons'),
+        p({}, [
+            `While you can only have one add-on per side, you can have multiple buttons inside a single `, code({}, 'inputGroupBtn'), `.`
+        ]),
+        e({ style: styles.bsExample }, [
+            row({}, [
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        inputGroupBtn({}, [
+                            button({ aria: { label: 'Bold' } }, glyphicon({ icon: GlyphIcon.Bold })),
+                            button({ aria: { label: 'Italic' } }, glyphicon({ icon: GlyphIcon.Italic }))
+                        ]),
+                        inputText({ placeholder: 'Search for...', aria: { label: '...' } })
+                    ])
+                ),
+                col({ size: Size.Lg, span: 6 },
+                    inputGroup({}, [
+                        inputText({ placeholder: 'Search for...', aria: { label: '...' } }),
+                        inputGroupBtn({}, [
+                            button({ aria: { label: 'Bold' } }, glyphicon({ icon: GlyphIcon.Bold })),
+                            button({ aria: { label: 'Italic' } }, glyphicon({ icon: GlyphIcon.Italic }))
+                        ])
+                    ])
+                )
+            ])
+        ]),
+        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
+            `row({}, [`, e({ tag: 'br' }),
+            `    col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `        inputGroup({}, [`, e({ tag: 'br' }),
+            `            inputGroupBtn({}, [`, e({ tag: 'br' }),
+            `                button({ aria: { label: 'Bold' } }, glyphicon({ icon: GlyphIcon.Bold }))`, e({ tag: 'br' }),
+            `                button({ aria: { label: 'Italic' } }, glyphicon({ icon: GlyphIcon.Italic }))`, e({ tag: 'br' }),
+            `            ]),`, e({ tag: 'br' }),
+            `            inputText({ placeholder: 'Search for...', aria: { label: '...' } })`, e({ tag: 'br' }),
+            `        ])`, e({ tag: 'br' }),
+            `    ),`, e({ tag: 'br' }),
+            `    col({ size: Size.Lg, span: 6 },`, e({ tag: 'br' }),
+            `        inputGroup({}, [`, e({ tag: 'br' }),
+            `            inputText({ placeholder: 'Search for...', aria: { label: '...' } }),`, e({ tag: 'br' }),
+            `            inputGroupBtn({}, [`, e({ tag: 'br' }),
+            `                button({ aria: { label: 'Bold' } }, glyphicon({ icon: GlyphIcon.Bold }))`, e({ tag: 'br' }),
+            `                button({ aria: { label: 'Italic' } }, glyphicon({ icon: GlyphIcon.Italic }))`, e({ tag: 'br' }),
+            `            ])`, e({ tag: 'br' }),
             `        ])`, e({ tag: 'br' }),
             `    )`, e({ tag: 'br' }),
             `])`

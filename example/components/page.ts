@@ -6,6 +6,7 @@ import { dropdowns } from './dropdowns';
 import { buttonGroups } from './buttonGroups';
 import { buttonDropdowns } from './buttonDropdowns';
 import { inputGroups } from './inputGroups';
+import { navs } from './navs';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -20,7 +21,8 @@ export const components = b.createVirtualComponent({
                 dropdowns(),
                 buttonGroups(),
                 buttonDropdowns(),
-                inputGroups()
+                inputGroups(),
+                navs()
             ])
         ];
     }

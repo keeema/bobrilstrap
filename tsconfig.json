@@ -115,6 +115,7 @@
         "example/components/dropdowns.ts",
         "example/components/glyphicons.ts",
         "example/components/inputGroups.ts",
+        "example/components/navs.ts",
         "example/components/page.ts",
         "example/css/buttons.ts",
         "example/css/codes.ts",

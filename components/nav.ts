@@ -22,7 +22,6 @@ export const navStyles = {
     navbarInverse: b.styleDef('navbar-inverse'),
     navbTabs: b.styleDef('nav-tabs'),
     navStacked: b.styleDef('nav-stacked'),
-    active: b.styleDef('active'),
     navJustified: b.styleDef('nav-justified'),
     navPills: b.styleDef('nav-pills'),
     dropdown: b.styleDef('dropdown'),

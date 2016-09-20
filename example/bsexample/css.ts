@@ -8,6 +8,8 @@ export const styles = {
     bsDocsNav: b.styleDef('bs-docs-nav'),
     bsDocsHeader: b.styleDef('bs-docs-header'),
     bsDocsSection: b.styleDef('bs-docs-section'),
+    bsDocsSidebar: b.styleDef('bs-docs-sidebar'),
+    bsDocsSidenav: b.styleDef('bs-docs-sidenav'),
     bsExample: b.styleDef('bs-example'),
     bsExampleBgClasses: b.styleDef('bs-example-bg-classes'),
     bsExampleControlSizing: b.styleDef('bs-example-control-sizing'),

@@ -64,7 +64,7 @@ function info(): b.IBobrilChildren {
 
 function basicExample(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'input-groups-basic' } }, 'Basic example'),
+        b.anchor(h2({ attrs: { id: 'input-groups-basic' } }, 'Basic example')),
         p({}, [`Place one add-on or button on either side of an input. You may also place one on both sides of an input.`]),
         p({}, strong({ style: helpers.text.danger }, [
             `Bootstrap does not support multiple add-ons (`, code({}, 'inputGroupAddon'), ` or `, code({}, 'inputGroupBtn'),
@@ -119,7 +119,7 @@ function basicExample(): b.IBobrilChildren {
 
 function sizing(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'input-groups-sizing' } }, 'Sizing'),
+        b.anchor(h2({ attrs: { id: 'input-groups-sizing' } }, 'Sizing')),
         p({}, [
             `Set the relative form sizing by the `, code({}, 'size'), ` property of the `, code({}, 'inputGroup'),
             ` component itself and contents within will automatically resize—no need for repeating the form control
@@ -161,7 +161,7 @@ function sizing(): b.IBobrilChildren {
 
 function checkboxesRadioboxes(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'input-groups-checkboxes-radios' } }, 'Checkboxes and radio addons'),
+        b.anchor(h2({ attrs: { id: 'input-groups-checkboxes-radios' } }, 'Checkboxes and radio addons')),
         p({}, `Place any checkbox or radio option within an input group's addon instead of text.`),
         e({ style: styles.bsExample }, [
             row({}, [
@@ -199,7 +199,7 @@ function checkboxesRadioboxes(): b.IBobrilChildren {
 
 function buttonAddons(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'input-groups-buttons' } }, 'Button addons'),
+        b.anchor(h2({ attrs: { id: 'input-groups-buttons' } }, 'Button addons')),
         p({}, [
             `Buttons in input groups are a bit different and require one extra level of nesting. Instead of `,
             code({}, 'inputGroupAddon'), `, you'll need to use `, code({}, ' inputGroupBtn'),
@@ -242,7 +242,7 @@ function buttonAddons(): b.IBobrilChildren {
 
 function buttonWithDropdowns(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'input-groups-buttons-dropdowns' } }, 'Buttons with dropdowns'),
+        b.anchor(h2({ attrs: { id: 'input-groups-buttons-dropdowns' } }, 'Buttons with dropdowns')),
         p({}, [
             `As in previous cases - you can use the prepared helper `, code({}, 'dropdown'),
             ` or compose from specific input components.`
@@ -319,7 +319,7 @@ function buttonWithDropdowns(): b.IBobrilChildren {
 
 function segmentedButtons(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'input-groups-buttons-segmented' } }, 'Segmented buttons'),
+        b.anchor(h2({ attrs: { id: 'input-groups-buttons-segmented' } }, 'Segmented buttons')),
         p({}, [
             `As in previous cases - you can use the prepared helper `, code({}, 'dropdown'),
             ` or compose from specific input components.`
@@ -404,7 +404,7 @@ function segmentedButtons(): b.IBobrilChildren {
 
 function multipleButtons(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'input-groups-buttons-multiple' } }, 'Multiple buttons'),
+        b.anchor(h2({ attrs: { id: 'input-groups-buttons-multiple' } }, 'Multiple buttons')),
         p({}, [
             `While you can only have one add-on per side, you can have multiple buttons inside a single `, code({}, 'inputGroupBtn'), `.`
         ]),

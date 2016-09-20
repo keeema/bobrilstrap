@@ -41,7 +41,7 @@ function handlingSpecificStructure(): b.IBobrilChildren {
 
 function singleButtonDropdowns(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-dropdowns-single' } }, 'Single button dropdowns'),
+        b.anchor(h2({ attrs: { id: 'btn-dropdowns-single' } }, 'Single button dropdowns')),
         p({}, [
             `Turn a button into a dropdown toggle with some basic markup changes. Use a `,
             code({}, 'buttonGroup'), ` data property to wrap button in `, code({}, 'buttonGroup'),
@@ -92,7 +92,7 @@ function getSingleButtonDropdown(label: string, option: ButtonOption, size: Size
 
 function splitButtonDropdowns(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-dropdowns-split' } }, 'Split button dropdowns'),
+        b.anchor(h2({ attrs: { id: 'btn-dropdowns-split' } }, 'Split button dropdowns')),
         p({}, [
             `Similarly, create split button dropdowns with the same markup changes, only with `,
             code({}, 'splitted'), ` property set to `, code({}, 'true'), `.`
@@ -145,7 +145,7 @@ function getSplitButtonDropdown(label: string, option: ButtonOption = ButtonOpti
 
 function sizing(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-dropdowns-sizing' } }, 'Sizing'),
+        b.anchor(h2({ attrs: { id: 'btn-dropdowns-sizing' } }, 'Sizing')),
         p({}, `Button dropdowns work with buttons of all sizes.`),
         e({ style: styles.bsExample }, [
             getSingleButtonDropdown('Large', ButtonOption.Default, Size.Lg), ' ',
@@ -173,7 +173,7 @@ function sizing(): b.IBobrilChildren {
 
 function dropupVariations(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-dropdowns-dropup' } }, 'Dropup variation'),
+        b.anchor(h2({ attrs: { id: 'btn-dropdowns-dropup' } }, 'Dropup variation')),
         p({}, [`Trigger dropdown menus above elements by setting `, code({}, 'up'), ` property.`]),
         e({ style: styles.bsExample }, [
             getSingleButtonDropdown('Dropup', ButtonOption.Default, Size.Md, true), ' ',

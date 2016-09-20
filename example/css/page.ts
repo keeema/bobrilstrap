@@ -14,24 +14,29 @@ import { responsive } from './responsive';
 
 export const css = b.createVirtualComponent({
     id: 'bobrilstrap-css',
-    init() {    
+    init() {
         document.title = 'CSS - Bobrilstrap';
     },
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             header(texts),
-            docsContainer({ id: 'css' }, [
-                overview(),
-                grids(),
-                typographyPage(),
-                codes(),
-                tables(),
-                forms(),
-                buttons(),
-                images(),
-                helpersPage(),
-                responsive()
-            ])
+            docsContainer(
+                {
+                    id: 'css',
+                    sidebar: { items: [] }
+                },
+                [
+                    overview(),
+                    grids(),
+                    typographyPage(),
+                    codes(),
+                    tables(),
+                    forms(),
+                    buttons(),
+                    images(),
+                    helpersPage(),
+                    responsive()
+                ])
         ];
     }
 });

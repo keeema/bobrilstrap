@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import { a, e, p, h2, h4, code, figure, dropdownItem, dropdown, dropdownMenu, helpers } from '../../index';
 import { styles } from '../bsexample/css';
-import { pre,  langJs } from '../prettify/pre';
+import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
 
 export const dropdowns = b.createVirtualComponent({
@@ -24,7 +24,7 @@ export const dropdowns = b.createVirtualComponent({
 
 function example(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'dropdowns-example' } }, 'Example'),
+        b.anchor(h2({ attrs: { id: 'dropdowns-example' } }, 'Example')),
         p({}, [
             `Wrap the dropdown's trigger and the dropdown menu within`, code({}, 'dropdown'),
             `, or another element that declares `, code({}, 'position: relative;'), `. Then add the menu.`
@@ -96,7 +96,7 @@ function example(): b.IBobrilChildren {
 
 function alignment(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'dropdowns-alignment' } }, 'Alignment'),
+        b.anchor(h2({ attrs: { id: 'dropdowns-alignment' } }, 'Alignment')),
         p({}, [
             `By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Set the`,
             code({}, 'right'), ` dropdown menu component input data property to right align the dropdown menu.`
@@ -119,7 +119,7 @@ function alignment(): b.IBobrilChildren {
 
 function headers(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'dropdowns-headers' } }, 'Headers'),
+        b.anchor(h2({ attrs: { id: 'dropdowns-headers' } }, 'Headers')),
         p({}, [`Add a header to label sections of actions in any dropdown menu.`]),
         e({ style: styles.bsExample }, [
             dropdown(
@@ -149,7 +149,7 @@ function headers(): b.IBobrilChildren {
 
 function divider(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'dropdowns-divider' } }, 'Divider'),
+        b.anchor(h2({ attrs: { id: 'dropdowns-divider' } }, 'Divider')),
         p({}, [`Add a divider to separate series of links in a dropdown menu.`]),
         e({ style: styles.bsExample }, [
             dropdown(
@@ -178,7 +178,7 @@ function divider(): b.IBobrilChildren {
 
 function disabled(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'dropdowns-disabled' } }, 'Disabled menu items'),
+        b.anchor(h2({ attrs: { id: 'dropdowns-disabled' } }, 'Disabled menu items')),
         p({}, [`Set a `, code({}, 'disabled'), ` input data property on a `, code({}, 'dropdownItem'),
             ` component in the dropdown to disable the link.`]),
         e({ style: styles.bsExample }, [

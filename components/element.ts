@@ -12,6 +12,7 @@ export interface IAria {
 }
 
 export interface IData {
+    [key: string]: string | number | boolean;
     toggle?: string;
 }
 
@@ -81,8 +82,9 @@ export const e = b.createVirtualComponent<IElementData>({
         if (aria.pressed !== undefined && aria.pressed !== null)
             me.attrs['aria-pressed'] = aria.pressed.toString();
 
-        if (dataAttrs.toggle)
-            me.attrs['data-toggle'] = ctx.data.data.toggle;
+        Object.keys(dataAttrs).forEach(key => {
+            me.attrs[`data-${key}`] = dataAttrs[key];
+        });        
 
         b.style(me, ctx.data.style);
     },

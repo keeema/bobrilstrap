@@ -2,10 +2,12 @@ import * as b from 'bobril';
 import { row, col, Size } from '../../index';
 import { styles } from '../bsexample/css';
 import { persistentScrollContainer } from './persistentScrollContainer';
+import { docsSidebar, IDocsSidebarData } from './docsSidebar';
 
 export interface IDocsContainerData {
     children?: b.IBobrilChildren;
     id: string;
+    sidebar?: IDocsSidebarData;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -21,9 +23,10 @@ export const docsContainer = b.createVirtualComponent<IDocsContainerData>({
                     id: ctx.data.id,
                     style: styles.bsDocsContainer
                 },
-                row({},
-                    col({ size: Size.Md, span: 9, attrs: { role: 'main' } }, ctx.data.children)
-                )
+                row({}, [
+                    col({ size: Size.Md, span: 9, attrs: { role: 'main' } }, ctx.data.children),
+                    !!ctx.data.sidebar && col({ size: Size.Md, span: 3, attrs: { role: 'complementary' } }, docsSidebar(ctx.data.sidebar))
+                ])
             )
         ];
     }

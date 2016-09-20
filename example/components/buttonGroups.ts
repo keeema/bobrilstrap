@@ -40,7 +40,7 @@ function labeling(): b.IBobrilChildren {
 
 function example(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-groups-single' } }, 'Basic example'),
+        b.anchor(h2({ attrs: { id: 'btn-groups-single' } }, 'Basic example')),
         p({}, [
             `Wrap a series of `, code({}, 'button'), `s in `, code({}, 'buttonGroup'), `.`
         ]),
@@ -63,7 +63,7 @@ function example(): b.IBobrilChildren {
 
 function toolbar(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-groups-toolbar' } }, 'Button toolbar'),
+        b.anchor(h2({ attrs: { id: 'btn-groups-toolbar' } }, 'Button toolbar')),
         p({}, [
             `Combine sets of `, code({}, 'buttonGroup'), ` into a `, code({}, 'buttonToolbar'), ` for more complex components..`
         ]),
@@ -86,7 +86,7 @@ function toolbar(): b.IBobrilChildren {
 
 function sizing(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-groups-sizing' } }, 'Sizing'),
+        b.anchor(h2({ attrs: { id: 'btn-groups-sizing' } }, 'Sizing')),
         p({}, [
             `Instead of applying button sizing classes to every `, code({}, 'button'), ` in a group, just set `,
             code({}, 'size'), ` input data property on each `, code({}, 'buttonGroup'),
@@ -112,7 +112,7 @@ function sizing(): b.IBobrilChildren {
 
 function nesting(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-groups-nested' } }, 'Nesting'),
+        b.anchor(h2({ attrs: { id: 'btn-groups-nested' } }, 'Nesting')),
         p({}, [
             `Place a `, code({}, 'buttonGroup'), ` within another `, code({}, 'buttonGroup'),
             ` when you want dropdown menus mixed with a series of buttons.`
@@ -176,7 +176,7 @@ function nesting(): b.IBobrilChildren {
 
 function vertical(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-groups-vertical' } }, 'Vertical variation'),
+        b.anchor(h2({ attrs: { id: 'btn-groups-vertical' } }, 'Vertical variation')),
         p({}, [
             `Make a set of buttons appear vertically stacked rather than horizontally. `,
             strong({ style: helpers.text.danger }, `Split button dropdowns are not supported here.`)
@@ -228,7 +228,7 @@ function vertical(): b.IBobrilChildren {
 
 function justified(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'btn-groups-justified' } }, 'Justified button groups'),
+        b.anchor(h2({ attrs: { id: 'btn-groups-justified' } }, 'Justified button groups')),
         p({}, [
             `Make a group of buttons stretch at equal sizes to span the entire width of its parent. 
             Also works with button dropdowns within the button group.`

@@ -40,7 +40,7 @@ function info(): b.IBobrilChildren {
 
 function tabsExample(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'nav-tabs' } }, 'Tabs'),
+        b.anchor(h2({ attrs: { id: 'nav-tabs' } }, 'Tabs')),
         e({ style: styles.bsExample }, [
             tabs({}, [
                 tab({ active: true }, a({ href: 'javascript:void(0)' }, 'Home')),
@@ -62,7 +62,7 @@ const navPillsStackedExample = b.styleDef('nav-pills-stacked-example');
 
 function pillsExample(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'nav-pills' } }, 'Pills'),
+        b.anchor(h2({ attrs: { id: 'nav-pills' } }, 'Pills')),
         e({ style: styles.bsExample }, [
             pills({}, [
                 pill({ active: true }, a({ href: 'javascript:void(0)' }, 'Home')),
@@ -99,7 +99,7 @@ function pillsExample(): b.IBobrilChildren {
 
 function justified(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'nav-justified' } }, 'Justified'),
+        b.anchor(h2({ attrs: { id: 'nav-justified' } }, 'Justified')),
         p({}, [
             `Easily make tabs or pills equal widths of their parent at screens wider than 768px with `,
             code({}, 'justified: true'), `. On smaller screens, the nav links are stacked.`
@@ -139,7 +139,7 @@ function justified(): b.IBobrilChildren {
 
 function disabled(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'nav-disabled-links' } }, 'Disabled links'),
+        b.anchor(h2({ attrs: { id: 'nav-disabled-links' } }, 'Disabled links')),
         p({}, [
             `For any nav component (tab or pill), set `, code({}, 'disabled: true'), ` for gray links and no hover effects.`
         ]),
@@ -169,7 +169,7 @@ function disabled(): b.IBobrilChildren {
 
 function dropdowns(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'nav-dropdowns' } }, 'Using dropdowns'),
+        b.anchor(h2({ attrs: { id: 'nav-dropdowns' } }, 'Using dropdowns')),
         p({}, [
             `As in previous cases - you can use the prepared helper `, code({}, 'dropdown'),
             ` or compose from specific components.`

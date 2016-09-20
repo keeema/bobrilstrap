@@ -2,7 +2,7 @@ import * as b from 'bobril';
 import { a, e, p, h2, h4, code, figure, GlyphIcon, glyphicon, ul, li, span, button, buttonGroup, buttonToolbar,
     Size, alert, AlertContext, helpers } from '../../index';
 import { styles } from '../bsexample/css';
-import { pre,  langJs } from '../prettify/pre';
+import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
 
 export const glyphicons = b.createVirtualComponent({
@@ -22,7 +22,7 @@ export const glyphicons = b.createVirtualComponent({
 
 function availableGlyphs(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'glyphicons-glyphs' } }, 'Available glyphs'),
+        b.anchor(h2({ attrs: { id: 'glyphicons-glyphs' } }, 'Available glyphs')),
         p({}, [
             `Includes over 250 glyphs in font format from the Glyphicon Halflings set. `,
             a({ href: 'http://glyphicons.com/' }, 'Glyphicons'), ` Halflings are normally not available for free, 
@@ -42,7 +42,7 @@ function availableGlyphs(): b.IBobrilChildren {
 
 function howToUse(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'glyphicons-how-to-use' } }, 'How to use'),
+        b.anchor(h2({ attrs: { id: 'glyphicons-how-to-use' } }, 'How to use')),
         p({}, [
             `Includes over 250 glyphs in font format from the Glyphicon Halflings set. `,
             a({ href: 'http://glyphicons.com/' }, 'Glyphicons'), ` Halflings are normally not available for free, 
@@ -87,7 +87,7 @@ function howToUse(): b.IBobrilChildren {
 
 function examples(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'glyphicons-examples' } }, 'Examples'),
+        b.anchor(h2({ attrs: { id: 'glyphicons-examples' } }, 'Examples')),
         p({}, `Use them in buttons, button groups for a toolbar, navigation, or prepended form inputs.`),
         e({ style: styles.bsExample }, [
             buttonToolbar({}, buttonGroup({}, [
@@ -110,10 +110,10 @@ function examples(): b.IBobrilChildren {
         p({}, [
             `An icon used in an alert to convey that it's an error message, with additional `, code({}, 'helpers.srOnly'),
             ` text to convey this hint to users of assistive technologies.`
-        ]), 
+        ]),
         e({ style: styles.bsExample }, [
             alert({ context: AlertContext.Danger }, [
-                glyphicon({ icon: GlyphIcon.ExclamationSign}),
+                glyphicon({ icon: GlyphIcon.ExclamationSign }),
                 span({ style: helpers.srOnly }, 'Error:'),
                 ' Enter a valid email address'
             ])

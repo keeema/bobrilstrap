@@ -3,6 +3,7 @@ import * as b from 'bobril';
 export * from './components/a';
 export * from './components/abbreviation';
 export * from './components/address';
+export * from './components/affix';
 export * from './components/alert';
 export * from './components/blockquote';
 export * from './components/bobrilHelpers';

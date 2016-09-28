@@ -5,7 +5,7 @@ export interface IWithChildren  {
 }
 
 export function mergeToChildren(node: IWithChildren, item: b.IBobrilChildren, unshift?: boolean): b.IBobrilChildren {
-    let children = node.children
+    let children : b.IBobrilChildren = node.children
         ? node.children instanceof Array
             ? <b.IBobrilNode[]>node.children
             : [node.children]

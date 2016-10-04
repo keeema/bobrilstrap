@@ -16,7 +16,7 @@ export const tabs = b.createDerivedComponent<ITabsData>(ul, {
     render(ctx: ITabsCtx, me: b.IBobrilNode) {
         b.style(me, navStyles.nav);
         b.style(me, navStyles.navbTabs);
-        b.style(me, ctx.data.justified && navStyles.navJustified);
+        b.style(me, !!ctx.data.justified && navStyles.navJustified);
         b.style(me, ctx.data.alignment === NavbarAlignment.Right && navStyles.navbarRight);
         b.style(me, ctx.data.alignment === NavbarAlignment.Left && navStyles.navbarLeft);
     }

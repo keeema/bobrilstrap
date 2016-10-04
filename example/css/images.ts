@@ -13,7 +13,7 @@ BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NDA2YW
 D0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ1LjUiIHk9Ijc0LjUiPjE0MHgxNDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=`;
 
 export const images = b.createVirtualComponent({
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {
                 header: 'Images',

@@ -14,7 +14,7 @@ export const abbreviation = b.createDerivedComponent<IAbbreviationData>(elem, {
     id: 'bobrilstrap-abbreviation',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'abbr';
-        b.style(me, ctx.data.initialism && typography.initialism);
+        b.style(me, !!ctx.data.initialism && typography.initialism);
     }
 });
 

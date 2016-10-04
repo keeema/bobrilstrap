@@ -5,7 +5,7 @@ export const rowStyle = b.styleDef('row');
 
 export const row = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-row',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         b.style(me, rowStyle);
     }
 });

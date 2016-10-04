@@ -6,6 +6,7 @@ export interface IData {
     header: string;
     lead?: b.IBobrilChildren;
     description?: b.IBobrilChildren;
+    children?: b.IBobrilChildren;
     id: string;
 }
 
@@ -15,7 +16,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const section = b.createVirtualComponent<IData>({
     id: 'bs-docs-section',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'div';
         b.style(me, styles.bsDocsSection);
         me.children = [

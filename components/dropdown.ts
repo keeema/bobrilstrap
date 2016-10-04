@@ -35,7 +35,7 @@ export const dropdown = b.createDerivedComponent<IDropdownData>(elem, {
             let groupNode = ctx.data.buttonGroup
                 ? buttonGroup(typeof ctx.data.buttonGroup === 'boolean' ? {} : ctx.data.buttonGroup, me.children)
                 : inputGroupBtn(typeof ctx.data.inputGroupBtn === 'boolean' ? {} : ctx.data.inputGroupBtn, me.children);
-            b.style(groupNode, ctx.data.up && dropdownStyles.dropup);
+            b.style(groupNode, !!ctx.data.up && dropdownStyles.dropup);
             me.children = groupNode;
         } else {
             if (ctx.data.navbar) {
@@ -69,12 +69,12 @@ function addButton(ctx: ICtx, me: b.IBobrilNode) {
                 size: ctx.data.button.size,
                 dropdownSplittedSrOnly: ctx.data.splittedSrOnlyText
             },
-            ctx.data.navbar));
+            !!ctx.data.navbar));
         dropdownButton = button(ctx.data.button);
+        mergeToChildren(me, caretButton, true);
     } else {
-        dropdownButton = button(updateButtonDataForDropdown(ctx.data.button, ctx.data.navbar));
+        dropdownButton = button(updateButtonDataForDropdown(ctx.data.button, !!ctx.data.navbar));
     }
 
-    mergeToChildren(me, caretButton, true);
     mergeToChildren(me, dropdownButton, true);
 }

@@ -13,7 +13,7 @@ interface IBreadcrumbItemCtx extends b.IBobrilCtx {
 export const breadcrumbItem = b.createDerivedComponent<IBreadcrumbItemData>(li, {
     id: 'bobrilstrap-breadcrumb-item',
     render(ctx: IBreadcrumbItemCtx, me: b.IBobrilNode) {
-        b.style(me, ctx.data.active && breadcrumbStyles.active);
+        b.style(me, !!ctx.data.active && breadcrumbStyles.active);
     }
 });
 

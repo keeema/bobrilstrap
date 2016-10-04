@@ -4,7 +4,7 @@ import { styles } from '../bsexample/css';
 import { sideBarItem, IItemData } from './sidebarItem';
 
 export interface IItemsData {
-    items?: IItemData[];
+    items: IItemData[];
     nextId?: string;
     isTop?: boolean;
 }

@@ -5,7 +5,7 @@ import { bobrilstrap } from './bobrilstrap';
 import { docsContainer } from '../common/docsContainer';
 
 export const bobrilstrapPage = b.createVirtualComponent({
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             header(texts),
             docsContainer({ id: 'bobrilstrap' }, [

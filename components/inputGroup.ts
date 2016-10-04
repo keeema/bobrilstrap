@@ -34,8 +34,8 @@ export const inputGroup = b.createDerivedComponent<IInputGroupData>(elem, {
         me.tag = 'div';
         b.style(me, inputGroupStyles.inputGroup);
         b.style(me, !!ctx.data.hasFeedbeck && validationStyles.hasFeedback);
-        b.style(me, validationStateStyles(ctx.data.validationState));
-        b.style(me, inputGroupSizeStyles(ctx.data.size));
+        b.style(me, ctx.data.validationState !== undefined && validationStateStyles(ctx.data.validationState));
+        b.style(me, ctx.data.size !== undefined && inputGroupSizeStyles(ctx.data.size));
     }
 });
 

@@ -20,11 +20,11 @@ interface ICtx extends b.IBobrilCtx {
 export const dropdownItem = b.createDerivedComponent<IDropdownItemData>(li, {
     id: 'bobrilstrap-dropdown-item',
     render(ctx: ICtx, me: b.IBobrilNode) {
-        b.style(me, ctx.data.separator && dropdownItemStyles.divider);
-        b.style(me, ctx.data.header && dropdownItemStyles.dropdownHeader);
-        b.style(me, ctx.data.disabled && dropdownItemStyles.disabled);
+        b.style(me, !!ctx.data.separator && dropdownItemStyles.divider);
+        b.style(me, !!ctx.data.header && dropdownItemStyles.dropdownHeader);
+        b.style(me, !!ctx.data.disabled && dropdownItemStyles.disabled);
         if (ctx.data.separator) {
-            me.attrs['role'] = 'separator';
+            me.attrs!['role'] = 'separator';
         }
     }
 });

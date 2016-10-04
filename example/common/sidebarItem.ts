@@ -2,7 +2,6 @@ import * as b from 'bobril';
 import { li, a } from '../../index';
 import { sideBarItems } from './sidebarItems';
 
-
 export interface IItemData {
     targetId: string;
     nextId?: string;
@@ -46,10 +45,6 @@ export interface IItemsData {
     isTop?: boolean;
 }
 
-interface IItemsCtx extends b.IBobrilCtx {
-    data: IItemsData;
-}
-
 function getScrollListener(ctx: ICtx): (scrollInfo: b.IBobrilScroll) => void {
     return (scrollInfo: b.IBobrilScroll) => {
         if (!scrollInfo || scrollInfo.node)
@@ -61,11 +56,13 @@ function getScrollListener(ctx: ICtx): (scrollInfo: b.IBobrilScroll) => void {
 
 function handlePosition(ctx: ICtx) {
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    const top = document.getElementById(ctx.data.targetId).offsetTop;
+    const topElement = document.getElementById(ctx.data.targetId);
+    const top = topElement ? topElement.offsetTop : 0;
     let bottom = 0;
     if (ctx.data.nextId) {
         const nextElement = document.getElementById(ctx.data.nextId);
-        bottom = nextElement.offsetTop + nextElement.clientHeight;
+        const nextOffsetTop = nextElement ? nextElement.offsetTop + nextElement.clientHeight : document.body.scrollHeight;
+        bottom = nextOffsetTop;
     } else {
         bottom = document.body.scrollHeight;
     }

@@ -12,9 +12,9 @@ interface ICtx extends b.IBobrilCtx {
 
 export const dl = b.createDerivedComponent<IDlData>(elem, {
     id: 'bobrilstrap-dl',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'dl';
-        b.style(me, ctx.data.horizontal && typography.dlHorizontal);
+        b.style(me, !!ctx.data.horizontal && typography.dlHorizontal);
     }
 });
 

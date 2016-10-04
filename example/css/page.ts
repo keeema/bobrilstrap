@@ -17,7 +17,7 @@ export const css = b.createVirtualComponent({
     init() {
         document.title = 'CSS - Bobrilstrap';
     },
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             header(texts),
             docsContainer(

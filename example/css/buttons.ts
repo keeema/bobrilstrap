@@ -5,7 +5,7 @@ import { pre,  langJs } from '../prettify/pre';
 import { section } from '../common/section';
 
 export const buttons = b.createVirtualComponent({
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {
                 header: 'Buttons',
@@ -102,7 +102,7 @@ function options(): b.IBobrilChildren {
     ];
 }
 
-const limitedWidthStyle = b.styleDef({ maxWidth: '400px' }, null, 'buttons-limited-width-example');
+const limitedWidthStyle = b.styleDef({ maxWidth: '400px' }, undefined, 'buttons-limited-width-example');
 
 function sizes(): b.IBobrilChildren {
     return [

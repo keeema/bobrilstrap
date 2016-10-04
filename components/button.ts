@@ -66,31 +66,31 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
         me.tag = resolveTag(ctx);
 
         b.style(me, ctx.data.option !== ButtonOption.Close && (!ctx.data.navbar || ctx.data.tag !== ButtonTag.A) && buttonStyles.btn);
-        b.style(me, ctx.data.active && buttonStyles.active);
-        b.style(me, ctx.data.block && buttonStyles.btnBlock);
+        b.style(me, !!ctx.data.active && buttonStyles.active);
+        b.style(me, !!ctx.data.block && buttonStyles.btnBlock);
         b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));
         b.style(me, !ctx.data.navbar && buttonOptiontStyles(ctx.data.option || ButtonOption.Default));
 
         const typeAttr = ctx.data.tag === ButtonTag.A ? 'role' : 'type';
-        me.attrs[typeAttr] = (ButtonType[ctx.data.type] || me.attrs[typeAttr] || ButtonType[ButtonType.Button]).toString().toLowerCase();
+        me.attrs![typeAttr] = (ButtonType[ctx.data.type!] || me.attrs![typeAttr] || ButtonType[ButtonType.Button]).toString().toLowerCase();
 
         if (ctx.data.label) {
             if (ctx.data.tag === ButtonTag.Input) {
-                me.attrs['value'] = ctx.data.label;
+                me.attrs!['value'] = ctx.data.label;
             } else {
                 mergeToChildren(me, ctx.data.label);
             }
         }
 
         if (ctx.data.tag === ButtonTag.A) {
-            me.attrs['href'] = ctx.data.href || 'javascript:void(0)';
+            me.attrs!['href'] = ctx.data.href || 'javascript:void(0)';
         }
 
         if (ctx.data.disabled) {
             if (ctx.data.tag === ButtonTag.A) {
                 b.style(me, buttonStyles.disabled);
             } else {
-                me.attrs['disabled'] = 'disabled';
+                me.attrs!['disabled'] = 'disabled';
             }
         }
 
@@ -143,7 +143,7 @@ function generateSizeStyles(): IDictionary<Size, b.IBobrilStyle> {
         let castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
             result(castedValue, castedValue === Size.Md
-                ? null
+                ? undefined
                 : b.styleDef(`btn-${Size[castedValue].toLowerCase()}`));
         }
     });

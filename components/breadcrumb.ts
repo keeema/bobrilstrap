@@ -15,7 +15,7 @@ export const breadcrumbStyles = {
 
 export const breadcrumb = b.createDerivedComponent<IBreadcrumbData>(ol, {
     id: 'bobrilstrap-breadcrumb',
-    render(ctx: IBreadcrumbCtx, me: b.IBobrilNode) {
+    render(_ctx: IBreadcrumbCtx, me: b.IBobrilNode) {
         b.style(me, breadcrumbStyles.breadcrumb);
     }
 });

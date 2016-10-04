@@ -39,10 +39,10 @@ export const buttonGroup = b.createDerivedComponent<IButtonGroupData>(elem, {
     id: 'bobrilstrap-button-group',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, ctx.data.vertical ? buttonGroupStyles.vertical : buttonGroupStyles.btnGroup);
-        b.style(me, buttonGroupSizeStyles(ctx.data.size));
-        b.style(me, ctx.data.justified && buttonGroupStyles.justified);
+        b.style(me, ctx.data.size !== undefined && buttonGroupSizeStyles(ctx.data.size));
+        b.style(me, !!ctx.data.justified && buttonGroupStyles.justified);
 
-        me.attrs['role'] = 'group';
+        me.attrs!['role'] = 'group';
     }
 });
 

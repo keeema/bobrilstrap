@@ -52,7 +52,7 @@ export const panel = b.createDerivedComponent<IPanelData>(elem, {
     id: 'bobrilstrap-panel',
     render(ctx: IPanelCtx, me: b.IBobrilNode) {
         b.style(me, panelStyles.panel);
-        b.style(me, panelContextStyles(ctx.data.context) || panelStyles.panelDefault);
+        b.style(me, (ctx.data.context !== undefined && panelContextStyles(ctx.data.context)) || panelStyles.panelDefault);
 
         if (ctx.data.body)
             mergeToChildren(me, panelBody({}, ctx.data.body), true);

@@ -5,7 +5,7 @@ import { styles } from '../bsexample/css';
 import { section } from '../common/section';
 
 export const responsive = b.createVirtualComponent({
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {
                 header: 'Responsive utilities',

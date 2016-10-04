@@ -1,11 +1,11 @@
 import * as b from 'bobril';
 
-export interface IWithChildren  {
+export interface IWithChildren {
     children?: b.IBobrilChildren;
 }
 
-export function mergeToChildren(node: IWithChildren, item: b.IBobrilChildren, unshift?: boolean): b.IBobrilChildren {
-    let children : b.IBobrilChildren = node.children
+export function mergeToChildren(node: IWithChildren, item: b.IBobrilChildren | undefined, unshift?: boolean): b.IBobrilChildren {
+    let children: b.IBobrilChildren = node.children
         ? node.children instanceof Array
             ? <b.IBobrilNode[]>node.children
             : [node.children]
@@ -37,7 +37,7 @@ interface INumberData<TValue> {
 }
 
 interface IStringData<TValue> {
-    [key: number]: TValue;
+    [key: string]: TValue;
 }
 
 export interface IDictionary<TKey extends NumberOrString, TValue> {
@@ -48,10 +48,24 @@ export function createDictionary<TKey extends NumberOrString, TValue>(): IDictio
     let data: INumberData<TValue> | IStringData<TValue> = {};
     return (key: TKey, value?: TValue, setEvenUndefined?: boolean) => {
         if (value !== undefined || setEvenUndefined)
-            data[<NumberOrString>key] = value;
+            dataValue(data, key, value);
 
-        return data[<NumberOrString>key];
+        return dataValue(data, key);
     };
+}
+
+function dataValue<TValue>(data: INumberData<TValue> | IStringData<TValue>, key: number | string, value?: TValue): TValue {
+    if (typeof key === 'string') {
+        const innerData = <IStringData<TValue>>data;
+        if (value !== undefined)
+            innerData[key] = value;
+        return innerData[key];
+    } else {
+        const innerData = <INumberData<TValue>>data;
+        if (value !== undefined)
+            innerData[key] = value;
+        return innerData[key];
+    }
 }
 
 export function toLowerWithDashes(value: string): string {

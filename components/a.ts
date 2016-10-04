@@ -22,12 +22,13 @@ export const anchor = b.createDerivedComponent<IAnchorData>(elem, {
     id: 'bobrilstrap-a',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'a';
+        
         if (ctx.data.href)
-            me.attrs.href = ctx.data.href;
+            me.attrs!.href = ctx.data.href;
         if (ctx.data.target !== undefined)
-            me.attrs['target'] = `_${Target[ctx.data.target].toLowerCase()}`;
+            me.attrs!['target'] = `_${Target[ctx.data.target].toLowerCase()}`;
         if (ctx.data.name)
-            me.attrs['name'] = ctx.data.name;
+            me.attrs!['name'] = ctx.data.name;
     }
 });
 

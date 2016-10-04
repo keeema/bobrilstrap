@@ -28,12 +28,12 @@ export const label = b.createDerivedComponent<ILabeldData>(elem, {
         b.style(me, !!ctx.data.controlLabel && labelStyles.controlLabel);
 
         if (ctx.data.for)
-            me.attrs['for'] = ctx.data.for;
+            me.attrs!['for'] = ctx.data.for;
 
         if (ctx.data.title)
             mergeToChildren(me, ctx.data.title);
 
-        delete me.attrs['title'];
+        delete me.attrs!['title'];
     }
 });
 

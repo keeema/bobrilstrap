@@ -12,9 +12,9 @@ interface ICtx extends b.IBobrilCtx {
 
 export const blockquote = b.createDerivedComponent<IBlockquoteData>(elem, {
     id: 'bobrilstrap-blockquote',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'blockquote';
-        b.style(me, ctx.data.reverse && typography.blockquoteReverse);
+        b.style(me, !!ctx.data.reverse && typography.blockquoteReverse);
     }
 });
 

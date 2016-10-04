@@ -11,7 +11,7 @@ interface IOlCtx extends b.IBobrilCtx {
 
 export const ol = b.createDerivedComponent<IOlData>(elem, {
     id: 'bobrilstrap-ol',
-    render(ctx: IOlCtx, me: b.IBobrilNode) {
+    render(_ctx: IOlCtx, me: b.IBobrilNode) {
         me.tag = 'ol';
     }
 });

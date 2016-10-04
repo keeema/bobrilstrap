@@ -15,9 +15,9 @@ export const td = b.createDerivedComponent<ITdData>(elem, {
     id: 'bobrilstrap-td',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'td';
-        b.style(me, tableContextStyles(ctx.data.context));
+        b.style(me, ctx.data.context !== undefined && tableContextStyles(ctx.data.context));
         if (ctx.data.colspan)
-            me.attrs['colspan'] = ctx.data.colspan.toString();
+            me.attrs!['colspan'] = ctx.data.colspan.toString();
     }
 });
 

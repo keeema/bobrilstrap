@@ -17,7 +17,7 @@ export const li = b.createDerivedComponent<ILiData>(elem, {
     id: 'bobrilstrap-li',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'li';
-        b.style(me, ctx.data.active && liStyles.active);
+        b.style(me, !!ctx.data.active && liStyles.active);
     }
 });
 

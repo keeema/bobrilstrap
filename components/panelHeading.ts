@@ -12,7 +12,7 @@ interface IPanelHeadingCtx extends b.IBobrilCtx {
 
 export const panelHeading = b.createDerivedComponent<IPanelHeadingData>(elem, {
     id: 'bobrilstrap-panel-heading',
-    render(ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
+    render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
         b.style(me, panelStyles.panelHeading);
     }
 });

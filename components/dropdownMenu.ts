@@ -18,8 +18,8 @@ export const dropdownMenu = b.createDerivedComponent<IDropDownMenuData>(ul, {
     id: 'bobrilstrap-dropdown-menu',
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, dropdownMenuStyles.dropdownMenu);
-        b.style(me, ctx.data.right && dropdownMenuStyles.dropdownMenuRight);
-        me.attrs['role'] = 'menu';
+        b.style(me, !!ctx.data.right && dropdownMenuStyles.dropdownMenuRight);
+        me.attrs!['role'] = 'menu';
     }
 });
 

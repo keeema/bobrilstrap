@@ -22,7 +22,7 @@ export const imageStyles = {
     imgRounded: b.styleDef('img-rounded'),
     imgCircle: b.styleDef('img-circle'),
     imgThumbnail: b.styleDef('img-thumbnail'),
-    ieSvgFix: b.styleDef({ width: '100% \\9' }, null, 'ie-svg-fix')
+    ieSvgFix: b.styleDef({ width: '100% \\9' }, undefined, 'ie-svg-fix')
 };
 
 export enum ImageShape {
@@ -40,12 +40,12 @@ export const image = b.createDerivedComponent<IImageData>(elem, {
     id: 'bobrilstrap-image',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'img';
-        me.attrs['src'] = ctx.data.src;
-        me.attrs['alt'] = ctx.data.alt;
-        b.style(me, imageShapeStyles(ctx.data.shape));
-        b.style(me, ctx.data.responsive && imageStyles.imgResponsive);
-        b.style(me, ctx.data.centerBlock && imageStyles.centerBlock);
-        b.style(me, ctx.data.ieSvgFix && imageStyles.ieSvgFix);
+        me.attrs!['src'] = ctx.data.src;
+        me.attrs!['alt'] = ctx.data.alt;
+        b.style(me, ctx.data.shape !== undefined && imageShapeStyles(ctx.data.shape));
+        b.style(me, !!ctx.data.responsive && imageStyles.imgResponsive);
+        b.style(me, !!ctx.data.centerBlock && imageStyles.centerBlock);
+        b.style(me, !!ctx.data.ieSvgFix && imageStyles.ieSvgFix);
     }
 });
 

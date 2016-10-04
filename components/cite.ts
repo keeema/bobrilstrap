@@ -3,7 +3,7 @@ import { elem, IBaseData } from './element';
 
 export const cite = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-cite',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = 'cite';
     }
 });

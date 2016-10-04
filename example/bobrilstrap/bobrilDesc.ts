@@ -7,7 +7,7 @@ export const bobrilDesc = b.createVirtualComponent({
     init() {
         document.title = 'Bobrilstrap';
     },
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             section(
                 {
@@ -34,7 +34,6 @@ export const bobrilDesc = b.createVirtualComponent({
                         ' and run following commands in the root of downloaded folder:']),
                     figure({ style: styles.highlight }, pre({}, [
                         'npm i bobril-build -g', e({ tag: 'br' }),
-                        'npm i', e({ tag: 'br' }),
                         'bb'
                     ])),
                     p({}, [

@@ -11,7 +11,7 @@ interface IPanelTitleCtx extends b.IBobrilCtx {
 
 export const panelTitle = b.createDerivedComponent<IPanelTitleData>(elem, {
     id: 'bobrilstrap-panel-title',
-    render(ctx: IPanelTitleCtx, me: b.IBobrilNode) {
+    render(_ctx: IPanelTitleCtx, me: b.IBobrilNode) {
         b.style(me, panelStyles.panelTitle);
     }
 });

@@ -7,7 +7,7 @@ import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
 
 export const inputGroups = b.createVirtualComponent({
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {
                 header: 'Input groups',

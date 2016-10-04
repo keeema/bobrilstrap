@@ -38,7 +38,7 @@ selectSizeStyles(SelectSize.Sm, selectStyles.sm);
 export const select = b.createOverridingComponent<ISelectData>(elem, {
     id: 'bobrilstrap-select',
     render(ctx: ICtx, me: b.IBobrilNode) {
-        ctx.me.component.super.render(ctx, me);
+        ctx.me.component!.super!.render!(ctx, me);
 
         me.tag = 'select';
 
@@ -48,23 +48,23 @@ export const select = b.createOverridingComponent<ISelectData>(elem, {
             ctx.value = [];
         }
 
-        me.attrs.value = ctx.value;
+        me.attrs!.value = ctx.value;
         b.style(me, selectStyles.formControl);
-        b.style(me, selectSizeStyles(ctx.data.size));
+        b.style(me, ctx.data.size !== undefined && selectSizeStyles(ctx.data.size));
         me.children = ctx.data.options.map(optionData => option(optionData));
 
         if (ctx.data.rows)
-            me.attrs['size'] = ctx.data.rows.toString();
+            me.attrs!['size'] = ctx.data.rows.toString();
 
         if (ctx.data.disabled)
-            me.attrs['disabled'] = 'disabled';
+            me.attrs!['disabled'] = 'disabled';
 
         if (ctx.data.multiple)
-            me.attrs['multiple'] = 'multiple';
+            me.attrs!['multiple'] = 'multiple';
     },
     onChange(ctx: ICtx, value: string | string[]): void {
         ctx.value = value;
-        ctx.me.component.super.onChange(ctx, value);
+        ctx.me.component!.super!.onChange!(ctx, value);
     }
 });
 

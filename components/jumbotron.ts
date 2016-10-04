@@ -13,7 +13,7 @@ export const jumbotronStyle = b.styleDef('jumbotron');
 
 export const jumbotron = b.createDerivedComponent<IJumbotronData>(elem, {
     id: 'bobrilstrap-jumbotron',
-    render(ctx: IJumbotronCtx, me: b.IBobrilNode) {
+    render(_ctx: IJumbotronCtx, me: b.IBobrilNode) {
         b.style(me, jumbotronStyle);
     }
 });

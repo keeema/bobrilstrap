@@ -51,10 +51,10 @@ export const table = b.createDerivedComponent<ITableData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'table';
         b.style(me, tableStyles.table);
-        b.style(me, ctx.data.striped && tableStyles.tableStriped);
-        b.style(me, ctx.data.bordered && tableStyles.tableBordered);
-        b.style(me, ctx.data.hover && tableStyles.tableHover);
-        b.style(me, ctx.data.condensed && tableStyles.tableCondensed);
+        b.style(me, !!ctx.data.striped && tableStyles.tableStriped);
+        b.style(me, !!ctx.data.bordered && tableStyles.tableBordered);
+        b.style(me, !!ctx.data.hover && tableStyles.tableHover);
+        b.style(me, !!ctx.data.condensed && tableStyles.tableCondensed);
 
         if (ctx.data.caption)
             mergeToChildren(me, caption({}, ctx.data.caption));

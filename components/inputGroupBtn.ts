@@ -15,7 +15,7 @@ export const inputGroupBtnStyles = {
 
 export const inputGroupBtn = b.createDerivedComponent(elem, {
     id: 'bobrilstrap-input-group-button',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(_ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, inputGroupBtnStyles.inputGroupBtn);
     }
 });

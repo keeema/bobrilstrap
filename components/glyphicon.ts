@@ -288,7 +288,7 @@ export const glyphicon = b.createDerivedComponent<IGlyphiconData>(elem, {
     id: 'bobrilstrap-glyphicon',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'span';
-        me.attrs['aria-hidden'] = true;
+        me.attrs!['aria-hidden'] = true;
         b.style(me, glyphIconStyles.glyphicon);
         b.style(me, glyphIconTypeStyles(ctx.data.icon));
         b.style(me, !!ctx.data.formControlFeedback && glyphIconStyles.formControlFeedback);

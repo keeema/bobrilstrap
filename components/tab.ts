@@ -14,9 +14,9 @@ interface ITabCtx extends b.IBobrilCtx {
 export const tab = b.createDerivedComponent<ITabData>(li, {
     id: 'bobrilstrap-tab',
     render(ctx: ITabCtx, me: b.IBobrilNode) {
-        b.style(me, ctx.data.disabled && navStyles.disabled);
-        b.style(me, ctx.data.dropdown && navStyles.dropdown);
-        me.attrs['role'] = 'presentation';
+        b.style(me, !!ctx.data.disabled && navStyles.disabled);
+        b.style(me, !!ctx.data.dropdown && navStyles.dropdown);
+        me.attrs!['role'] = 'presentation';
     }
 });
 

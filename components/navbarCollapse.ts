@@ -11,7 +11,7 @@ interface INavbarCollapseCtx extends b.IBobrilCtx {
 
 export const navbarCollapse = b.createDerivedComponent<INavbarCollapseData>(elem, {
     id: 'bobrilstrap-navbar-collapse',
-    render(ctx: INavbarCollapseCtx, me: b.IBobrilNode) {
+    render(_ctx: INavbarCollapseCtx, me: b.IBobrilNode) {
         b.style(me, navStyles.navbarCollapse);
         b.style(me, navStyles.collapse);
     }

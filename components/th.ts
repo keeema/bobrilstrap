@@ -14,7 +14,7 @@ export const th = b.createDerivedComponent<IThData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'th';
         if (ctx.data.colspan)
-            me.attrs['colspan'] = ctx.data.colspan.toString();
+            me.attrs!['colspan'] = ctx.data.colspan.toString();
     }
 });
 

@@ -7,9 +7,9 @@ export const buttonToolbarStyles = {
 
 export const buttonToolbar = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-button-toolbar',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         b.style(me, buttonToolbarStyles.btnGroup);
-        me.attrs['role'] = 'toolbar';
+        me.attrs!['role'] = 'toolbar';
     }
 });
 

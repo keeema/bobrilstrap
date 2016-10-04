@@ -19,8 +19,8 @@ export const p = b.createDerivedComponent<IParagraphData>(elem, {
     id: 'bobrilstrap-paragraph',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'p';
-        b.style(me, ctx.data.lead && typography.lead);
-        b.style(me, ctx.data.formControlStatic && paragraphStyles.formControlStatic);
+        b.style(me, !!ctx.data.lead && typography.lead);
+        b.style(me, !!ctx.data.formControlStatic && paragraphStyles.formControlStatic);
     }
 });
 

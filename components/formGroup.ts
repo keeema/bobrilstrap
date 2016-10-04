@@ -36,8 +36,8 @@ export const formGroup = b.createDerivedComponent<IFormGroupData>(elem, {
         me.tag = 'div';
         b.style(me, formGroupStyles.formGroup);
         b.style(me, !!ctx.data.hasFeedbeck && validationStyles.hasFeedback);
-        b.style(me, validationStateStyles(ctx.data.validationState));
-        b.style(me, formGroupSizeStyles(ctx.data.size));
+        b.style(me, ctx.data.validationState !== undefined && validationStateStyles(ctx.data.validationState));
+        b.style(me, ctx.data.size !== undefined && formGroupSizeStyles(ctx.data.size));
     }
 });
 

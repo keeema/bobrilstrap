@@ -3,7 +3,7 @@ import { elem, IBaseData } from './element';
 
 export const code = b.createDerivedComponent<IBaseData>(elem, {
     id: 'bobrilstrap-code',
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = 'code';
     }
 });

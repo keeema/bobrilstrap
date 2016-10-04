@@ -15,8 +15,8 @@ export const ul = b.createDerivedComponent<IUlData>(elem, {
     id: 'bobrilstrap-ul',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'ul';
-        b.style(me, ctx.data.unstyled && typography.listUnstyled);
-        b.style(me, ctx.data.inline && typography.listInline);
+        b.style(me, !!ctx.data.unstyled && typography.listUnstyled);
+        b.style(me, !!ctx.data.inline && typography.listInline);
     }
 });
 

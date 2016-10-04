@@ -5,7 +5,7 @@ import { styles } from '../bsexample/css';
 import { section } from '../common/section';
 
 export const overview = b.createVirtualComponent({
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {
                 header: 'Overview',

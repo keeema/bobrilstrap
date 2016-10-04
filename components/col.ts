@@ -36,10 +36,10 @@ export const col = b.createDerivedComponent<IColData>(elem, {
 
 export default col;
 
-export const colStyles = getStyles((size, i) => `col-${size}-${i}`);
-export const colOffsetStyles = getStyles((size, i) => `col-${size}-offset-${i}`);
-export const colPushStyles = getStyles((size, i) => `col-${size}-push-${i}`);
-export const colPullStyles = getStyles((size, i) => `col-${size}-pull-${i}`);
+export const colStyles = getStyles((size, i) => `col-${Size[size].toLowerCase()}-${i}`);
+export const colOffsetStyles = getStyles((size, i) => `col-${Size[size].toLowerCase()}-offset-${i}`);
+export const colPushStyles = getStyles((size, i) => `col-${Size[size].toLowerCase()}-push-${i}`);
+export const colPullStyles = getStyles((size, i) => `col-${Size[size].toLowerCase()}-pull-${i}`);
 
 function getStyles(decorator: (size: Size, span: number) => string): IColStyles {
     const result: IColStyles = createDictionary<Size, IDictionary<number, b.IBobrilStyle>>();
@@ -49,7 +49,7 @@ function getStyles(decorator: (size: Size, span: number) => string): IColStyles 
         if (!isNaN(castedValue)) {
             result(castedValue, createDictionary());
             for (let i = 1; i <= 12; i++) {
-                result(castedValue)(i, b.styleDef(decorator(Size[size].toLowerCase(), i)));
+                result(castedValue)(i, b.styleDef(decorator(castedValue, i)));
             }
         }
     });
@@ -57,7 +57,10 @@ function getStyles(decorator: (size: Size, span: number) => string): IColStyles 
     return result;
 }
 
-function applyCmpSyles(me: b.IBobrilNode, colTypes: IColType | IColType[], stylesSource: IColStyles) {
+function applyCmpSyles(me: b.IBobrilNode, colTypes: IColType | IColType[] | undefined, stylesSource: IColStyles) {
+    if (colTypes === undefined)
+        return;
+
     let styles = getCmpStyles(colTypes, stylesSource);
     if (styles.length === 0)
         return;
@@ -71,7 +74,7 @@ function applySimplyDefinedStyle(me: b.IBobrilNode, data: IColData) {
     }
 }
 
-function getCmpStyles(colTypes: IColType | IColType[], stylesSource: IColStyles): b.IBobrilStyle[] {
+function getCmpStyles(colTypes: IColType | IColType[], stylesSource: IColStyles): b.IBobrilStyle[] {    
     let cols: IColType[] = getColTypeArray(colTypes);
 
     let styles: b.IBobrilStyle[] = cols
@@ -90,10 +93,10 @@ function getColTypeArray(colTypes: IColType | IColType[]): IColType[] {
 }
 
 function isStyleAvailable(stylesSource: IColStyles, colType: IColType | IColData): boolean {
-    return colType.size !== undefined && colType.span
+    return colType.size !== undefined && !!colType.span
         && !!stylesSource(colType.size) && !!stylesSource(colType.size)(colType.span);
 }
 
 function getStyle(stylesSource: IColStyles, colType: IColType | IColData) {
-    return stylesSource(colType.size)(colType.span);
+    return stylesSource(colType.size!)(colType.span!);
 }

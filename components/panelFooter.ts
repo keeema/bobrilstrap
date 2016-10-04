@@ -12,7 +12,7 @@ interface IPanelFooterCtx extends b.IBobrilCtx {
 
 export const panelFooter = b.createDerivedComponent<IPanelFooterData>(elem, {
     id: 'bobrilstrap-panel-footer',
-    render(ctx: IPanelFooterCtx, me: b.IBobrilNode) {
+    render(_ctx: IPanelFooterCtx, me: b.IBobrilNode) {
         b.style(me, panelStyles.panelFooter);
     }
 });

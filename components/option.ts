@@ -15,11 +15,11 @@ export const option = b.createDerivedComponent<IOptionsData>(elem, {
     id: 'bobrilstrap-option',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'option';
-        me.attrs.value = ctx.data.value;
+        me.attrs!.value = ctx.data.value;
         me.children = ctx.data.label || ctx.data.value;
 
         if (ctx.data.disabled)
-            me.attrs['disabled'] = 'disabled';
+            me.attrs!['disabled'] = 'disabled';
     }
 });
 

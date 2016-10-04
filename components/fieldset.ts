@@ -14,7 +14,7 @@ export const fieldset = b.createDerivedComponent<IFieldSetData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'fieldset';
         if (ctx.data.disabled)
-            me.attrs['disabled'] = 'disabled';
+            me.attrs!['disabled'] = 'disabled';
     }
 });
 

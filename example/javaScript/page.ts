@@ -6,7 +6,7 @@ export const javaScript = b.createVirtualComponent({
     init() {
         document.title = 'Bobrilstrap - Javascript';
     },
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             header(texts)
         ];

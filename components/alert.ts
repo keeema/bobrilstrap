@@ -36,7 +36,7 @@ export const alert = b.createDerivedComponent<IAlertData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, alertStyles.alert);
         b.style(me, alertContextStyles(ctx.data.context));
-        me.attrs['role'] = 'alert';
+        me.attrs!['role'] = 'alert';
     }
 });
 

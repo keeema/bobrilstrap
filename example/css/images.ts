@@ -28,7 +28,7 @@ export const images = b.createVirtualComponent({
 
 function responsiveImages(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'images-responsive' } }, 'Responsive images'),
+        b.anchor(h2({ attrs: { id: 'images-responsive' } }, 'Responsive images')),
         p({}, [
             `Images in Bootstrap 3 can be made responsive-friendly via the addition of the `, code({}, 'responsive'), `input dat property.
              This applies `, code({}, 'max-width: 100%; height: auto; display: block;'), ` to the image so that it scales nicely to the 
@@ -54,7 +54,7 @@ function responsiveImages(): b.IBobrilChildren {
 
 function imageShapes(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'images-shapes' } }, 'Image shapes'),
+        b.anchor(h2({ attrs: { id: 'images-shapes' } }, 'Image shapes')),
         p({}, [
             `Set `, code({}, 'shape'), ` input data property to easily style images in any project.`
         ]),

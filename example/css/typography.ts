@@ -1,6 +1,8 @@
 import * as b from 'bobril';
-import { a, e, p, ul, li, ol, code, figure, table, small, typography, h1, h2, h3, h4, h5, h6, strong, mark, del, s, 
-    ins, u, em, abbr, address, blockquote, cite, footer, dl, dt, dd } from '../../index';
+import {
+    a, e, p, ul, li, ol, code, figure, table, small, typography, h1, h2, h3, h4, h5, h6, strong, mark, del, s,
+    ins, u, em, abbr, address, blockquote, cite, footer, dl, dt, dd
+} from '../../index';
 import { styles } from '../bsexample/css';
 import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
@@ -28,7 +30,7 @@ export const typographyPage = b.createVirtualComponent({
 
 function headings(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'type-headings' } }, 'Headings'),
+        b.anchor(h2({ attrs: { id: 'type-headings' } }, 'Headings')),
         p({}, [`All HTML headings, `, code({}, '<h1>'), ` through `, code({}, '<h6>'),
             ` are available.`,
             code({}, 'h1'), ` through `, code({}, 'h6'),
@@ -45,7 +47,9 @@ function headings(): b.IBobrilChildren {
                     },
                     {
                         columns: [
-                            { children: h2({}, 'h2({}, ...) Bootstrap heading') }, { children: 'Semibold 30px', style: styles.typeInfo }
+                            { children: h2({}, 'h2({}, ...) Bootstrap heading') }, {
+                                children: 'Semibold 30px', style: styles.typeInfo
+                            }
                         ]
                     },
                     {
@@ -110,7 +114,7 @@ function headings(): b.IBobrilChildren {
 
 function bodyCopy(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'type-body-copy' } }, 'Body copy'),
+        b.anchor(h2({ attrs: { id: 'type-body-copy' } }, 'Body copy')),
         p({}, [
             `Bootstrap's global default `, code({}, 'font-size'), ` is `, strong({}, '14px'), ', with a ',
             ' of ', strong({}, '1.428'), '. This is applied to the ', code({}, '<body>'),
@@ -141,7 +145,7 @@ function bodyCopy(): b.IBobrilChildren {
 
 function inlineTextElements(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'type-inline-text' } }, 'Inline text elements'),
+        b.anchor(h2({ attrs: { id: 'type-inline-text' } }, 'Inline text elements')),
         h3({ attrs: { id: 'marked-text' } }, 'Marked text'),
         p({}, [
             `For highlighting a run of text due to its relevance in another context, use the `,
@@ -225,7 +229,7 @@ function inlineTextElements(): b.IBobrilChildren {
 
 function alignmentStyles(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'type-alignment' } }, 'Alignment styles'),
+        b.anchor(h2({ attrs: { id: 'type-alignment' } }, 'Alignment styles')),
         p({}, [
             `Easily realign text to components with text alignment classes.`
         ]),
@@ -250,7 +254,7 @@ function alignmentStyles(): b.IBobrilChildren {
 
 function transformatiomStyles(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'type-transformation' } }, 'Transformation styles'),
+        b.anchor(h2({ attrs: { id: 'type-transformation' } }, 'Transformation styles')),
         p({}, [
             `Easily realign text to components with text alignment classes.`
         ]),
@@ -271,7 +275,7 @@ function transformatiomStyles(): b.IBobrilChildren {
 
 function abbreviations(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'type-abbreviations' } }, 'Abbreviations'),
+        b.anchor(h2({ attrs: { id: 'type-abbreviations' } }, 'Abbreviations')),
         p({}, [
             `Stylized implementation of HTML's `, code({}, '<abbr>'),
             ` element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a `,
@@ -303,7 +307,7 @@ function abbreviations(): b.IBobrilChildren {
 
 function addresses(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'type-addresses' } }, 'Addresses'),
+        b.anchor(h2({ attrs: { id: 'type-addresses' } }, 'Addresses')),
         p({}, [
             `Present contact information for the nearest ancestor or the entire body of work. 
             Preserve formatting by ending all lines with `, code({}, `e({ tag: 'br' })`)
@@ -339,7 +343,7 @@ function addresses(): b.IBobrilChildren {
 
 function blockquotes(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'type-blockquotes' } }, 'Blockquotes'),
+        b.anchor(h2({ attrs: { id: 'type-blockquotes' } }, 'Blockquotes')),
         p({}, `For quoting blocks of content from another source within your document.`),
         h3({ attrs: { id: 'default-blockquotes' } }, 'Default blockquote'),
         p({}, [
@@ -388,7 +392,7 @@ function blockquotes(): b.IBobrilChildren {
 
 function lists(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'type-lists' } }, 'Lists'),
+        b.anchor(h2({ attrs: { id: 'type-lists' } }, 'Lists')),
         h3({ attrs: { id: 'unordered' } }, 'Unordered'),
         p({}, `A list of items in which the order does not explicitly matter.`),
         e({ style: styles.bsExample }, ul({}, [
@@ -482,7 +486,7 @@ function lists(): b.IBobrilChildren {
             `    dd({}, ...)`, e({ tag: 'br' }),
             `])`
         ]))),
-        h2({ attrs: { id: 'horizontal-description' } }, 'Horizontal description'),
+        h3({ attrs: { id: 'horizontal-description' } }, 'Horizontal description'),
         p({}, [`Make terms and descriptions in `, code({}, `<dl>`), ` line up side-by-side. Starts off stacked like default `,
             code({}, `<dl>`), `s, but when the navbar expands, so do these.`]),
         e({ style: styles.bsExample }, dl({ horizontal: true }, [

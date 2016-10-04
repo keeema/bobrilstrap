@@ -28,7 +28,7 @@ export const helpersPage = b.createVirtualComponent({
 
 function contextualColors(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-colors' } }, 'Contextual colors'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-colors' } }, 'Contextual colors')),
         p({}, [
             `Convey meaning through color with a handful of emphasis utility styles. These may also be applied to links and 
             will darken on hover just like our default link styles.`
@@ -72,7 +72,7 @@ function contextualColors(): b.IBobrilChildren {
 
 function contextualBackgrounds(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-backgrounds' } }, 'Contextual backgrounds'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-backgrounds' } }, 'Contextual backgrounds')),
         p({}, [
             `Similar to the contextual text color styles, easily set the background of an element to any contextual class. 
             Anchor components will darken on hover, just like the text styles.`
@@ -112,7 +112,7 @@ function contextualBackgrounds(): b.IBobrilChildren {
 
 function closeIcon(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-close' } }, 'Close icon'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-close' } }, 'Close icon')),
         p({}, [
             `Use the generic close icon for dismissing content like modals and alerts. You can use the predefined `, code({}, 'button'),
             ` with `, code({}, 'ButtonOption.Close'), `, or directly `, code({}, 'helpers.close'), ` style.`
@@ -128,7 +128,7 @@ function closeIcon(): b.IBobrilChildren {
 
 function carets(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-floats' } }, 'Carets'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-carets' } }, 'Carets')),
         p({}, [
             `Use carets to indicate dropdown functionality and direction. 
             Note that the default caret will reverse automatically in dropup menus.`
@@ -142,7 +142,7 @@ function carets(): b.IBobrilChildren {
 
 function quickFloats(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-floats' } }, 'Quick floats'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-floats' } }, 'Quick floats')),
         p({}, [
             `Float an element to the left or right with a style. `, code({}, '!important'), ` is included to avoid specificity issues. `
         ]),
@@ -162,7 +162,7 @@ function quickFloats(): b.IBobrilChildren {
 
 function centerContentBlocks(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-center' } }, 'Center content blocks'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-center' } }, 'Center content blocks')),
         p({}, [
             `Set an element to `, code({}, 'display: block'), ` and center via `, code({}, 'margin'), `. Available as a style.`
         ]),
@@ -174,7 +174,7 @@ function centerContentBlocks(): b.IBobrilChildren {
 
 function clearFix(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-clearfix' } }, 'Clearfix'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-clearfix' } }, 'Clearfix')),
         p({}, [
             `Easily clear `, code({}, 'float'), `s by adding `, code({}, 'helpers.clearfix'), ` style to the parent element. Utilizes 
             the `, a({ href: 'http://nicolasgallagher.com/micro-clearfix-hack/' }, `micro clearfix`), ` as popularized by Nicolas 
@@ -188,7 +188,7 @@ function clearFix(): b.IBobrilChildren {
 
 function showingAndHidingContent(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-show-hide' } }, 'Showing and hiding content'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-show-hide' } }, 'Showing and hiding content')),
         p({}, [
             `Force an element to be shown or hidden `, strong({}, `(including for screen readers)`), ` with the use of `,
             code({}, 'helpers.show'), ` and `, code({}, 'helpers.hidden'), ` styles. These styles use `, code({}, '!important'),
@@ -207,7 +207,7 @@ function showingAndHidingContent(): b.IBobrilChildren {
 
 function screenReaders(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-screen-readers' } }, 'Screen reader and keyboard navigation content'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-screen-readers' } }, 'Screen reader and keyboard navigation content')),
         p({}, [
             `Hide an element to all devices `, strong({}, `except screen readers`), ` with `, code({}, 'helpers.srOnly'),
             `. Combine `, code({}, 'helpers.srOnly'), ` with `, code({}, 'helpers.srOnlyFocusable'), ` to show the element again when it's 
@@ -221,7 +221,7 @@ function screenReaders(): b.IBobrilChildren {
 
 function imageReplacement(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'helper-styles-image-replacement' } }, 'Image replacement'),
+        b.anchor(h2({ attrs: { id: 'helper-styles-image-replacement' } }, 'Image replacement')),
         p({}, [
             `Utilize the `, code({}, 'helpers.textHide'), ` style to help replace an element's text content with a background image.`
         ]),

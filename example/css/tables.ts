@@ -25,7 +25,7 @@ export const tables = b.createVirtualComponent({
 
 function basicExample(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'tables-example' } }, 'Basic example'),
+        b.anchor(h2({ attrs: { id: 'tables-example' } }, 'Basic example')),
         p({}, [
             `For basic styling—light padding and only horizontal dividers use the `,
             code({}, 'table({ ... })'),
@@ -63,7 +63,7 @@ function basicExample(): b.IBobrilChildren {
 
 function stripedRows(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'tables-striped' } }, 'Striped rows'),
+        b.anchor(h2({ attrs: { id: 'tables-striped' } }, 'Striped rows')),
         p({}, [
             `Set `, code({}, 'striped'), ` input data property to add zebra-striping to any table row within the `,
             code({}, '<tbody>'), `.`
@@ -104,7 +104,7 @@ function stripedRows(): b.IBobrilChildren {
 
 function borderedTable(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'tables-bordered' } }, 'Bordered table'),
+        b.anchor(h2({ attrs: { id: 'tables-bordered' } }, 'Bordered table')),
         p({}, [`Set `, code({}, 'bordered'), ` for borders on all sides of the table and cells.`]),
         e({ style: styles.bsExample }, table({
             bordered: true,
@@ -135,7 +135,7 @@ function borderedTable(): b.IBobrilChildren {
 
 function hoverRows(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'tables-hover-rows' } }, 'Hover rows'),
+        b.anchor(h2({ attrs: { id: 'tables-hover-rows' } }, 'Hover rows')),
         p({}, [`Set `, code({}, 'hover'), ` input data property to enable a hover state on table rows within a `,
             code({}, '<tbody>'), `.`]),
         e({ style: styles.bsExample }, table({
@@ -167,7 +167,7 @@ function hoverRows(): b.IBobrilChildren {
 
 function condensedTable(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'tables-condensed' } }, 'Condensed table'),
+        b.anchor(h2({ attrs: { id: 'tables-condensed' } }, 'Condensed table')),
         p({}, [`Set `, code({}, 'condensed'), ` input data property to make tables more compact by cutting cell padding in half.`]),
         e({ style: styles.bsExample }, table({
             condensed: true,
@@ -198,7 +198,7 @@ function condensedTable(): b.IBobrilChildren {
 
 function contextualStyles(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'tables-contextual-styles' } }, 'Contextual styles'),
+        b.anchor(h2({ attrs: { id: 'tables-contextual-styles' } }, 'Contextual styles')),
         p({}, [`Use `, code({}, 'Context'), ` styles to color table rows or individual cells.`]),
         e({ style: styles.bsExample }, table({
             head: { row: { headers: ['#', 'Column heading', 'Column heading', 'Column heading'] } },
@@ -284,7 +284,7 @@ function contextualStyles(): b.IBobrilChildren {
 
 function responsiveTables(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'tables-responsive' } }, 'Responsive tables'),
+        b.anchor(h2({ attrs: { id: 'tables-responsive' } }, 'Responsive tables')),
         p({}, [
             `Create responsive tables by `, code({}, 'responsiveTable({ table: ... })'),
             ` component to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, 

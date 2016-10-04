@@ -25,7 +25,7 @@ export const responsive = b.createVirtualComponent({
 
 function availableStyles(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'responsive-utilities-styles' } }, 'Available styles'),
+        b.anchor(h2({ attrs: { id: 'responsive-utilities-styles' } }, 'Available styles')),
         p({}, [
             `Use a single or combination of the available styles for toggling content across viewport breakpoints.`
         ]),
@@ -165,7 +165,7 @@ function availableStyles(): b.IBobrilChildren {
 
 function printStyles(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'responsive-utilities-print' } }, 'Print styles'),
+        b.anchor(h2({ attrs: { id: 'responsive-utilities-print' } }, 'Print styles')),
         p({}, [
             `Similar to the regular responsive styles, use these for toggling content for print.`
         ]),
@@ -212,7 +212,7 @@ function printStyles(): b.IBobrilChildren {
 
 function testCases(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'responsive-utilities-tests' } }, 'Test cases'),
+        b.anchor(h2({ attrs: { id: 'responsive-utilities-tests' } }, 'Test cases')),
         p({}, [
             `Resize your browser or load on different devices to test the responsive utility styles.`
         ]),

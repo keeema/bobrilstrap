@@ -23,7 +23,7 @@ export const buttons = b.createVirtualComponent({
 
 function buttonsTags(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'buttons-tags' } }, 'Button tags'),
+        b.anchor(h2({ attrs: { id: 'buttons-tags' } }, 'Button tags')),
         p({}, [
             `Use the button `, code({}, 'tag'), ` input data property to decide for an <a>, <button>, or <input> element`
         ]),
@@ -70,7 +70,7 @@ function buttonsTags(): b.IBobrilChildren {
 
 function options(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'buttons-options' } }, 'Options'),
+        b.anchor(h2({ attrs: { id: 'buttons-options' } }, 'Options')),
         p({}, `Use any of the available button classes to quickly create a styled button.`),
         e({ style: styles.bsExample }, [
             button({ label: 'Default', onClick: () => alert('Clicked!') }), ' ',
@@ -106,7 +106,7 @@ const limitedWidthStyle = b.styleDef({ maxWidth: '400px' }, undefined, 'buttons-
 
 function sizes(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'buttons-sizes' } }, 'Sizes'),
+        b.anchor(h2({ attrs: { id: 'buttons-sizes' } }, 'Sizes')),
         p({}, [
             `Fancy larger or smaller buttons? Set the `, code({}, 'size'), ` input data property.`
         ]),
@@ -165,7 +165,7 @@ function sizes(): b.IBobrilChildren {
 
 function activeState(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'buttons-active' } }, 'Active state'),
+        b.anchor(h2({ attrs: { id: 'buttons-active' } }, 'Active state')),
         p({}, [
             `Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. For <button> elements, 
             this is done via :active. For <a> elements, it's done with .active. However, you may use `,
@@ -185,7 +185,7 @@ function activeState(): b.IBobrilChildren {
 
 function disabledState(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'buttons-disabled' } }, 'Disabled state'),
+        b.anchor(h2({ attrs: { id: 'buttons-disabled' } }, 'Disabled state')),
         p({}, [
             `Make buttons look unclickable by fading them back with `, code({}, 'opacity'),
             `. You can do this by setting the input data property `, code({}, 'disabled'), `.`

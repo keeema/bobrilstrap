@@ -32,7 +32,7 @@ export const forms = b.createVirtualComponent({
 
 function basicExample(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'basic-forms' } }, 'Basic example'),
+        b.anchor(h2({ attrs: { id: 'basic-forms' } }, 'Basic example')),
         p({}, [
             `Individual form controls automatically receive some global styling. All textual `,
             code({}, '<input>'), `, `, code({}, '<textarea>'), `, and `, code({}, '<select>'), ` elements with `, code({}, 'formControl'),
@@ -86,7 +86,7 @@ function basicExample(): b.IBobrilChildren {
 
 function inlineForm(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-inline' } }, 'Inline form'),
+        b.anchor(h2({ attrs: { id: 'forms-inline' } }, 'Inline form')),
         p({}, [
             `Set `, code({}, 'inline'), ` input data property to your form for left-aligned and inline-block controls.`,
             strong({}, `This only applies to forms within viewports that are at least 768px wide.`)
@@ -226,7 +226,7 @@ function inlineForm(): b.IBobrilChildren {
 
 function horizontalForm(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-horizontal' } }, 'Horizontal form'),
+        b.anchor(h2({ attrs: { id: 'forms-horizontal' } }, 'Horizontal form')),
         p({}, [
             `Use Bobrilstrap's predefined grid styles and components to align labels and groups of form controls 
             in a horizontal layout by adding `, code({}, 'horizontal'),
@@ -285,7 +285,7 @@ function horizontalForm(): b.IBobrilChildren {
 
 function supportedControls(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-controls' } }, 'Supported controls'),
+        b.anchor(h2({ attrs: { id: 'forms-controls' } }, 'Supported controls')),
         p({}, [
             `Most common form control, text-based input fields (`,
             code({}, 'inputText'),
@@ -495,7 +495,7 @@ function supportedControls(): b.IBobrilChildren {
 
 function staticControl(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-controls-static' } }, 'Static control'),
+        b.anchor(h2({ attrs: { id: 'forms-controls-static' } }, 'Static control')),
         p({}, [
             `When you need to place plain text next to a form label within a form, use the `,
             code({}, 'formControlStatic'), ` input data property of `, code({}, 'paragraph'), `.`
@@ -533,7 +533,7 @@ function staticControl(): b.IBobrilChildren {
 
 function formsControlFocus(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-control-focus' } }, 'Focus state'),
+        b.anchor(h2({ attrs: { id: 'forms-control-focus' } }, 'Focus state')),
         p({}, [
             `Bootstrap removes the default `, code({}, 'outline'), ` styles on some form controls and apply a `,
             code({}, 'box-shadow'), ` in its place for `, code({}, ':focus'), `.`
@@ -555,7 +555,7 @@ function formsControlFocus(): b.IBobrilChildren {
 
 function formsControlDisabled(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-control-disabled' } }, 'Disabled state'),
+        b.anchor(h2({ attrs: { id: 'forms-control-disabled' } }, 'Disabled state')),
         p({}, [
             `Set the `, code({}, 'disabled'), ` input comonent data property to prevent user interactions. Disabled inputs appear lighter 
             and add a `, code({}, 'not-allowed'), ` cursor.`
@@ -575,7 +575,7 @@ function formsControlDisabled(): b.IBobrilChildren {
 
 function formsControlReadonly(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-control-readonly' } }, 'Readonly state'),
+        b.anchor(h2({ attrs: { id: 'forms-control-readonly' } }, 'Readonly state')),
         p({}, [
             `Set the `, code({}, 'readonly '), ` input comonent data property to prevent modification of the input's value. Read-only 
             inputs appear lighter (just like disabled inputs), but retain the standard cursor.`
@@ -595,7 +595,7 @@ function formsControlReadonly(): b.IBobrilChildren {
 
 function formsHelpText(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-help-text' } }, 'Help text'),
+        b.anchor(h2({ attrs: { id: 'forms-help-text' } }, 'Help text')),
         p({}, `Block level help text for form controls..`),
         e({ style: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-help-text-accessibility' } }, [
             h4({}, `Associating help text with form controls`),
@@ -634,7 +634,7 @@ function formsHelpText(): b.IBobrilChildren {
 
 function validationStates(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-control-validation' } }, 'Validation states'),
+        b.anchor(h2({ attrs: { id: 'forms-control-validation' } }, 'Validation states')),
         p({}, [
             `Bootstrap includes validation styles for error, warning, and success states on form controls. To use, set `,
             code({}, 'validationState'), ` input data property to the `, code({}, 'formGroup'), ` node. Any node with defined`,
@@ -734,7 +734,7 @@ function validationStates(): b.IBobrilChildren {
 
 function controlSizing(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'forms-control-sizes' } }, 'Control sizing'),
+        b.anchor(h2({ attrs: { id: 'forms-control-sizes' } }, 'Control sizing')),
         p({}, [
             `Set heights using `, code({}, 'size'), ` input data property and set widths using grid column component `,
             code({}, 'col'), ` or by `, code({}, 'colStyles'), `.`

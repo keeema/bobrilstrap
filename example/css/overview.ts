@@ -23,7 +23,7 @@ export const overview = b.createVirtualComponent({
 
 function typographyAndLinks(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'overview-type-links' } }, 'Typography and links'),
+        b.anchor(h2({ attrs: { id: 'overview-type-links' } }, 'Typography and links')),
         p({}, `Bootstrap sets basic global display, typography, and link styles. Specifically, we:`),
         ul({}, [
             li({}, ['Set ', code({}, 'background-color: #fff;'), ' on the ', code({}, 'body')]),
@@ -43,7 +43,7 @@ function typographyAndLinks(): b.IBobrilChildren {
 
 function normalizeCss(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'overview-normalize' } }, 'Normalize.css'),
+        b.anchor(h2({ attrs: { id: 'overview-normalize' } }, 'Normalize.css')),
         p({}, [
             'For improved cross-browser rendering, bootstrap uses ',
             a({ href: 'http://necolas.github.io/normalize.css/', target: Target.Blank } , 'Normalize.css'),
@@ -57,7 +57,7 @@ function normalizeCss(): b.IBobrilChildren {
 
 function containers(): b.IBobrilChildren {
     return [
-        h2({ attrs: { id: 'overview-containers' } }, 'Containers'),
+        b.anchor(h2({ attrs: { id: 'overview-containers' } }, 'Containers')),
         p({}, [
             `Bootstrap requires a containing element to wrap site contents and house our grid system. You may choose one of two 
             containers to use in your projects. Note that, due to `,

@@ -57,8 +57,8 @@ function getStyles(decorator: (size: Size, span: number) => string): IColStyles 
     return result;
 }
 
-function applyCmpSyles(me: b.IBobrilNode, colTypes: IColType | IColType[] | undefined, stylesSource: IColStyles) {
-    if (colTypes === undefined)
+function applyCmpSyles(me: b.IBobrilNode, colTypes?: IColType | IColType[], stylesSource?: IColStyles) {
+    if (colTypes === undefined || stylesSource === undefined)
         return;
 
     let styles = getCmpStyles(colTypes, stylesSource);
@@ -74,7 +74,7 @@ function applySimplyDefinedStyle(me: b.IBobrilNode, data: IColData) {
     }
 }
 
-function getCmpStyles(colTypes: IColType | IColType[], stylesSource: IColStyles): b.IBobrilStyle[] {    
+function getCmpStyles(colTypes: IColType | IColType[], stylesSource: IColStyles): b.IBobrilStyle[] {
     let cols: IColType[] = getColTypeArray(colTypes);
 
     let styles: b.IBobrilStyle[] = cols
@@ -97,6 +97,6 @@ function isStyleAvailable(stylesSource: IColStyles, colType: IColType | IColData
         && !!stylesSource(colType.size) && !!stylesSource(colType.size)(colType.span);
 }
 
-function getStyle(stylesSource: IColStyles, colType: IColType | IColData) {
-    return stylesSource(colType.size!)(colType.span!);
+function getStyle(stylesSource: IColStyles, colType: IColType | IColData): b.IBobrilStyle {
+    return stylesSource(colType.size || 1)(colType.span || 1);
 }

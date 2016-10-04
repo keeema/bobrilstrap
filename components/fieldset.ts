@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode } from './element';
 
 export interface IFieldSetData extends IBaseData {
     disabled?: boolean;
@@ -11,10 +11,10 @@ interface ICtx extends b.IBobrilCtx {
 
 export const fieldset = b.createDerivedComponent<IFieldSetData>(elem, {
     id: 'bobrilstrap-fieldset',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = 'fieldset';
         if (ctx.data.disabled)
-            me.attrs!['disabled'] = 'disabled';
+            me.attrs['disabled'] = 'disabled';
     }
 });
 

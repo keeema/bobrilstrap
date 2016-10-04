@@ -52,6 +52,7 @@ b.routes(b.route({ handler: masterPage }, [
         b.route({ url: 'tables-contextual-styles', name: 'tables-contextual-styles', handler: false }),
         b.route({ url: 'tables-responsive', name: 'tables-responsive', handler: false }),
         b.route({ url: 'forms', name: 'forms', handler: false }),
+        b.route({ url: 'basic-forms', name: 'basic-forms', handler: false }),
         b.route({ url: 'forms-inline', name: 'forms-inline', handler: false }),
         b.route({ url: 'forms-horizontal', name: 'forms-horizontal', handler: false }),
         b.route({ url: 'forms-controls', name: 'forms-controls', handler: false }),

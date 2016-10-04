@@ -4,8 +4,8 @@ export interface IWithChildren {
     children?: b.IBobrilChildren;
 }
 
-export function mergeToChildren(node: IWithChildren, item: b.IBobrilChildren | undefined, unshift?: boolean): b.IBobrilChildren {
-    let children: b.IBobrilChildren = node.children
+export function mergeToChildren(node: IWithChildren, item?: b.IBobrilChildren, unshift?: boolean): b.IBobrilChildren {
+    let children: b.IBobrilChildren[] = node.children
         ? node.children instanceof Array
             ? <b.IBobrilNode[]>node.children
             : [node.children]

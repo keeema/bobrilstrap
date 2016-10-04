@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode } from './element';
 import { createDictionary } from './bobrilHelpers';
 import { helpers } from './helpers';
 
@@ -38,10 +38,10 @@ imageShapeStyles(ImageShape.Thumbnail, imageStyles.imgThumbnail);
 
 export const image = b.createDerivedComponent<IImageData>(elem, {
     id: 'bobrilstrap-image',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = 'img';
-        me.attrs!['src'] = ctx.data.src;
-        me.attrs!['alt'] = ctx.data.alt;
+        me.attrs['src'] = ctx.data.src;
+        me.attrs['alt'] = ctx.data.alt;
         b.style(me, ctx.data.shape !== undefined && imageShapeStyles(ctx.data.shape));
         b.style(me, !!ctx.data.responsive && imageStyles.imgResponsive);
         b.style(me, !!ctx.data.centerBlock && imageStyles.centerBlock);

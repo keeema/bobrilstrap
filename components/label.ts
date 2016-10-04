@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode } from './element';
 import { helpers } from './helpers';
 import { mergeToChildren } from './bobrilHelpers';
 
@@ -21,19 +21,19 @@ export const labelStyles = {
 
 export const label = b.createDerivedComponent<ILabeldData>(elem, {
     id: 'bobrilstrap-label',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = 'label';
 
         b.style(me, !!ctx.data.srOnly && labelStyles.srOnly);
         b.style(me, !!ctx.data.controlLabel && labelStyles.controlLabel);
 
         if (ctx.data.for)
-            me.attrs!['for'] = ctx.data.for;
+            me.attrs['for'] = ctx.data.for;
 
         if (ctx.data.title)
             mergeToChildren(me, ctx.data.title);
 
-        delete me.attrs!['title'];
+        delete me.attrs['title'];
     }
 });
 

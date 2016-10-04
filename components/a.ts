@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode } from './element';
 
 export enum Target {
     Blank,
@@ -20,15 +20,15 @@ interface ICtx extends b.IBobrilCtx {
 
 export const anchor = b.createDerivedComponent<IAnchorData>(elem, {
     id: 'bobrilstrap-a',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = 'a';
         
         if (ctx.data.href)
-            me.attrs!.href = ctx.data.href;
+            me.attrs.href = ctx.data.href;
         if (ctx.data.target !== undefined)
-            me.attrs!['target'] = `_${Target[ctx.data.target].toLowerCase()}`;
+            me.attrs['target'] = `_${Target[ctx.data.target].toLowerCase()}`;
         if (ctx.data.name)
-            me.attrs!['name'] = ctx.data.name;
+            me.attrs['name'] = ctx.data.name;
     }
 });
 

@@ -87,8 +87,9 @@ export const css = b.createVirtualComponent({
                                 ]
                             },
                             {
-                                targetId: 'forms', title: 'Basic example',
+                                targetId: 'forms', title: 'Forms',
                                 subs: [
+                                    { targetId: 'basic-forms', title: 'Basic example' },
                                     { targetId: 'forms-inline', title: 'Inline form' },
                                     { targetId: 'forms-horizontal', title: 'Horizontal form' },
                                     { targetId: 'forms-controls', title: 'Supported controls' },

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode, IElementBobrilCacheNode } from './element';
 
 export interface ITextareaData extends IBaseData {
     value?: string;
@@ -14,6 +14,7 @@ export interface ITextareaData extends IBaseData {
 interface ICtx extends b.IBobrilCtx {
     data: ITextareaData;
     value: string;
+    me: IElementBobrilCacheNode;
 }
 
 export const textareaStyles = {
@@ -23,8 +24,8 @@ export const textareaStyles = {
 
 export const textarea = b.createOverridingComponent<ITextareaData>(elem, {
     id: 'bobrilstrap-textare',
-    render(ctx: ICtx, me: b.IBobrilNode) {
-        ctx.me.component!.super!.render!(ctx, me);
+    render(ctx: ICtx, me: IElementBobrilNode) {
+        me.component.super.render(ctx, me);
         
         me.tag = 'textarea';
 
@@ -32,26 +33,26 @@ export const textarea = b.createOverridingComponent<ITextareaData>(elem, {
             ctx.value = ctx.data.value;
         }
 
-        me.attrs!.value = ctx.value;
+        me.attrs.value = ctx.value;
         b.style(me, textareaStyles.formControl);
 
         b.style(me, !!ctx.data.fixedSize && textareaStyles.fixedSize);
 
         if (ctx.data.rows)
-            me.attrs!['rows'] = ctx.data.rows.toString();
+            me.attrs['rows'] = ctx.data.rows.toString();
 
         if (ctx.data.placeholder)
-            me.attrs!['placeholder'] = ctx.data.placeholder.toString();
+            me.attrs['placeholder'] = ctx.data.placeholder.toString();
 
         if (ctx.data.disabled)
-            me.attrs!['disabled'] = 'disabled';
+            me.attrs['disabled'] = 'disabled';
 
         if (ctx.data.readonly)
-            me.attrs!['readonly'] = 'readonly';
+            me.attrs['readonly'] = 'readonly';
     },
     onChange(ctx: ICtx, value: string): void {
         ctx.value = value;
-        ctx.me.component!.super!.onChange!(ctx, value);
+        ctx.me.component.super.onChange(ctx, value);
     }
 });
 

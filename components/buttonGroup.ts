@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode } from './element';
 import { createDictionary } from './bobrilHelpers';
 
 export const buttonGroupStyles = {
@@ -37,12 +37,12 @@ interface ICtx extends b.IBobrilCtx {
 
 export const buttonGroup = b.createDerivedComponent<IButtonGroupData>(elem, {
     id: 'bobrilstrap-button-group',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: IElementBobrilNode) {
         b.style(me, ctx.data.vertical ? buttonGroupStyles.vertical : buttonGroupStyles.btnGroup);
         b.style(me, ctx.data.size !== undefined && buttonGroupSizeStyles(ctx.data.size));
         b.style(me, !!ctx.data.justified && buttonGroupStyles.justified);
 
-        me.attrs!['role'] = 'group';
+        me.attrs['role'] = 'group';
     }
 });
 

@@ -1,6 +1,7 @@
 import * as b from 'bobril';
 import { li, ILiData } from './li';
 import { navStyles } from './nav';
+import { IElementBobrilNode } from './element';
 
 export interface ITabData extends ILiData {
     disabled?: boolean;
@@ -13,10 +14,10 @@ interface ITabCtx extends b.IBobrilCtx {
 
 export const tab = b.createDerivedComponent<ITabData>(li, {
     id: 'bobrilstrap-tab',
-    render(ctx: ITabCtx, me: b.IBobrilNode) {
+    render(ctx: ITabCtx, me: IElementBobrilNode) {
         b.style(me, !!ctx.data.disabled && navStyles.disabled);
         b.style(me, !!ctx.data.dropdown && navStyles.dropdown);
-        me.attrs!['role'] = 'presentation';
+        me.attrs['role'] = 'presentation';
     }
 });
 

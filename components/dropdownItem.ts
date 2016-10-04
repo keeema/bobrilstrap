@@ -1,5 +1,6 @@
 import * as b from 'bobril';
 import { li, ILiData } from './li';
+import { IElementBobrilNode } from './element';
 
 export const dropdownItemStyles = {
     divider: b.styleDef('divider'),
@@ -19,12 +20,12 @@ interface ICtx extends b.IBobrilCtx {
 
 export const dropdownItem = b.createDerivedComponent<IDropdownItemData>(li, {
     id: 'bobrilstrap-dropdown-item',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: IElementBobrilNode) {
         b.style(me, !!ctx.data.separator && dropdownItemStyles.divider);
         b.style(me, !!ctx.data.header && dropdownItemStyles.dropdownHeader);
         b.style(me, !!ctx.data.disabled && dropdownItemStyles.disabled);
         if (ctx.data.separator) {
-            me.attrs!['role'] = 'separator';
+            me.attrs['role'] = 'separator';
         }
     }
 });

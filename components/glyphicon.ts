@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode } from './element';
 import { createDictionary, IDictionary, toLowerWithDashes } from './bobrilHelpers';
 
 export enum GlyphIcon {
@@ -286,9 +286,9 @@ interface ICtx extends b.IBobrilCtx {
 
 export const glyphicon = b.createDerivedComponent<IGlyphiconData>(elem, {
     id: 'bobrilstrap-glyphicon',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = 'span';
-        me.attrs!['aria-hidden'] = true;
+        me.attrs['aria-hidden'] = true;
         b.style(me, glyphIconStyles.glyphicon);
         b.style(me, glyphIconTypeStyles(ctx.data.icon));
         b.style(me, !!ctx.data.formControlFeedback && glyphIconStyles.formControlFeedback);

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode, IElementBobrilCacheNode } from './element';
 import { createDictionary, toLowerWithDashes } from './bobrilHelpers';
 
 export enum InputTextType {
@@ -33,6 +33,7 @@ export interface IInputTextData extends IBaseData {
 interface ICtx extends b.IBobrilCtx {
     data: IInputTextData;
     value: string;
+    me: IElementBobrilCacheNode;
 }
 
 export const inputTextStyles = {
@@ -54,32 +55,32 @@ inputTextSizeStyles(InputTextSize.Sm, inputTextStyles.sm);
 
 export const inputText = b.createOverridingComponent<IInputTextData>(elem, {
     id: 'bobrilstrap-input-text',
-    render(ctx: ICtx, me: b.IBobrilNode) {
-        ctx.me.component!.super!.render!(ctx, me);
+    render(ctx: ICtx, me: IElementBobrilNode) {
+        me.component.super.render(ctx, me);
         if (ctx.data.value !== undefined) {
             ctx.value = ctx.data.value;
         }
 
         me.tag = 'input';
-        me.attrs!['type'] = toLowerWithDashes(ctx.data.type !== undefined
+        me.attrs['type'] = toLowerWithDashes(ctx.data.type !== undefined
             ? InputTextType[ctx.data.type]
             : InputTextType[InputTextType.Text]);
-        me.attrs!.value = ctx.value;
+        me.attrs.value = ctx.value;
         b.style(me, inputTextStyles.formControl);
         b.style(me, ctx.data.size !== undefined && inputTextSizeStyles(ctx.data.size));
 
         if (ctx.data.placeholder)
-            me.attrs!['placeholder'] = ctx.data.placeholder;
+            me.attrs['placeholder'] = ctx.data.placeholder;
 
         if (ctx.data.disabled)
-            me.attrs!['disabled'] = 'disabled';
+            me.attrs['disabled'] = 'disabled';
 
         if (ctx.data.readonly)
-            me.attrs!['readonly'] = 'readonly';
+            me.attrs['readonly'] = 'readonly';
     },
     onChange(ctx: ICtx, value: string): void {
         ctx.value = value;
-        ctx.me.component!.super!.onChange!(ctx, value);
+        ctx.me.component.super.onChange(ctx, value);
     }
 });
 

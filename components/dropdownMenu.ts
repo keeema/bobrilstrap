@@ -1,5 +1,6 @@
 import * as b from 'bobril';
 import { ul, IUlData } from './ul';
+import { IElementBobrilNode } from './element';
 
 export const dropdownMenuStyles = {
     dropdownMenu: b.styleDef('dropdown-menu'),
@@ -16,10 +17,10 @@ interface ICtx extends b.IBobrilCtx {
 
 export const dropdownMenu = b.createDerivedComponent<IDropDownMenuData>(ul, {
     id: 'bobrilstrap-dropdown-menu',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: IElementBobrilNode) {
         b.style(me, dropdownMenuStyles.dropdownMenu);
         b.style(me, !!ctx.data.right && dropdownMenuStyles.dropdownMenuRight);
-        me.attrs!['role'] = 'menu';
+        me.attrs['role'] = 'menu';
     }
 });
 

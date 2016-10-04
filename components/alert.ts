@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode } from './element';
 import { createDictionary } from './bobrilHelpers';
 
 export interface IAlertData extends IBaseData {
@@ -33,10 +33,10 @@ alertContextStyles(AlertContext.Warning, alertStyles.alertWarning);
 
 export const alert = b.createDerivedComponent<IAlertData>(elem, {
     id: 'bobrilstrap-alert',
-    render(ctx: ICtx, me: b.IBobrilNode) {
+    render(ctx: ICtx, me: IElementBobrilNode) {
         b.style(me, alertStyles.alert);
         b.style(me, alertContextStyles(ctx.data.context));
-        me.attrs!['role'] = 'alert';
+        me.attrs['role'] = 'alert';
     }
 });
 

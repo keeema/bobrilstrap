@@ -62,7 +62,6 @@
         "trailing-comma": [
             true,
             {
-                "multiline": "never",
                 "singleline": "never"
             }
         ],
@@ -101,7 +100,7 @@
         "use-strict": [
             false
         ],
-        "variable-name": true,
+        "variable-name": [true, "allow-leading-underscore"],
         "whitespace": [
             true,
             "check-branch",

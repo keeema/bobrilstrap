@@ -40,6 +40,7 @@ export interface INavbarData extends IBaseData {
     static?: NavbarStatic;
     fixed?: NavbarFixed;
     alignment?: NavbarAlignment;
+    header?: boolean;
 }
 
 interface INavbarCtx extends b.IBobrilCtx {
@@ -49,7 +50,7 @@ interface INavbarCtx extends b.IBobrilCtx {
 export const nav = b.createDerivedComponent<INavbarData>(elem, {
     id: 'bobrilstrap-navbar',
     render(ctx: INavbarCtx, me: b.IBobrilNode) {
-        me.tag = 'nav';
+        me.tag = ctx.data.header ? 'header' : 'nav';
         b.style(me, navStyles.navbar);
         b.style(me, ctx.data.inverse ? navStyles.navbarInverse : navStyles.navbarDefault);
         b.style(me, ctx.data.static === NavbarStatic.Top && navStyles.navbarStaticTop);

@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "Bobril wrapper for bootstrap",
   "typescript": {
     "main": "index.ts"
@@ -8,6 +8,7 @@
   "bobril": {
     "example": "example.ts",
     "title": "Bobrilstrap",
+    "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
     "compilerOptions": {
       "noImplicitAny": true,
       "noImplicitThis": true,

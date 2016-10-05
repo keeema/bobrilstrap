@@ -1,8 +1,16 @@
 import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IElementBobrilNode } from './element';
+
+export enum OlType {
+    num,
+    a,
+    A,
+    i,
+    I
+}
 
 export interface IOlData extends IBaseData {
-
+    type?: OlType;
 }
 
 interface IOlCtx extends b.IBobrilCtx {
@@ -11,8 +19,11 @@ interface IOlCtx extends b.IBobrilCtx {
 
 export const ol = b.createDerivedComponent<IOlData>(elem, {
     id: 'bobrilstrap-ol',
-    render(_ctx: IOlCtx, me: b.IBobrilNode) {
+    render(ctx: IOlCtx, me: IElementBobrilNode) {
         me.tag = 'ol';
+        if (ctx.data.type !== undefined) {
+            me.attrs['type'] = ctx.data.type === OlType.num ? '1' : OlType[ctx.data.type];
+        }
     }
 });
 

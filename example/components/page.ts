@@ -7,6 +7,7 @@ import { buttonGroups } from './buttonGroups';
 import { buttonDropdowns } from './buttonDropdowns';
 import { inputGroups } from './inputGroups';
 import { navs } from './navs';
+import { navbarPage } from './navbar';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -80,6 +81,12 @@ export const components = b.createVirtualComponent({
                                     { targetId: 'nav-disabled-links', title: 'Disabled links' },
                                     { targetId: 'nav-dropdowns', title: 'Using dropdowns' }
                                 ]
+                            },
+                            {
+                                targetId: 'navbar', title: 'Navbar',
+                                subs: [
+                                    { targetId: 'navbar-default', title: 'Default navbar' }
+                                ]
                             }
                         ]
                     }
@@ -90,7 +97,8 @@ export const components = b.createVirtualComponent({
                     buttonGroups(),
                     buttonDropdowns(),
                     inputGroups(),
-                    navs()
+                    navs(),
+                    navbarPage()
                 ])
         ];
     }

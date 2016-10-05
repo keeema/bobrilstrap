@@ -8,6 +8,10 @@ import { createDictionary, IDictionary } from './bobrilHelpers';
 import { dropdownStyles } from './dropdown';
 import { navStyles } from './nav';
 
+export interface IButtonNavbarCollapse {
+    target: string;
+}
+
 export interface IButtonData extends IBaseData {
     active?: boolean;
     block?: boolean;
@@ -21,7 +25,7 @@ export interface IButtonData extends IBaseData {
     dropdown?: boolean;
     dropdownSplittedSrOnly?: string;
     navbar?: boolean;
-    navbarCollapse?: boolean;
+    navbarCollapse?: IButtonNavbarCollapse;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -115,7 +119,8 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
             ctx.data.data.toggle = 'collapse';
             b.style(me, navStyles.navbarToggle);
             b.style(me, navStyles.collapsed);
-
+            if (ctx.data.navbarCollapse !== undefined)
+                ctx.data.data.target = ctx.data.navbarCollapse.target;
             mergeToChildren(me, ctx.data.dropdownSplittedSrOnly && span({ style: helpers.srOnly }, ctx.data.dropdownSplittedSrOnly));
         }
     }

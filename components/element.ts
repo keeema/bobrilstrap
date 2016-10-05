@@ -13,6 +13,7 @@ export interface IAria {
 
 export interface IData {
     toggle?: string;
+    target?: string;
 }
 
 export interface IBaseData {

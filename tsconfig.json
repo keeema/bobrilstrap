@@ -3,8 +3,6 @@
         "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
-        "jsx": "react",
-        "reactNamespace": "b",
         "declaration": false,
         "lib": [
             "es5",
@@ -21,13 +19,15 @@
         "noUnusedParameters": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "jsx": "react",
+        "reactNamespace": "b"
     },
+    "include": [
+        "**/*"
+    ],
     "compileOnSave": false,
     "files": [
         "node_modules/bobril/jsx.d.ts"
-    ],
-    "include": [
-        "**/*"
     ]
 }

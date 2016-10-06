@@ -85,7 +85,17 @@ export const components = b.createVirtualComponent({
                             {
                                 targetId: 'navbar', title: 'Navbar',
                                 subs: [
-                                    { targetId: 'navbar-default', title: 'Default navbar' }
+                                    { targetId: 'navbar-default', title: 'Default navbar' },
+                                    { targetId: 'navbar-brand-image', title: 'Brand image' },
+                                    { targetId: 'navbar-forms', title: 'Forms' },
+                                    { targetId: 'navbar-buttons', title: 'Buttons' },
+                                    { targetId: 'navbar-text', title: 'Text' },
+                                    { targetId: 'navbar-links', title: 'Links' },
+                                    { targetId: 'navbar-component-alignment', title: 'Component alignment' },
+                                    { targetId: 'navbar-fixed-top', title: 'Fixed to top' },
+                                    { targetId: 'navbar-fixed-bottom', title: 'Fixed to bottom' },
+                                    { targetId: 'navbar-static-top', title: 'Static top' },
+                                    { targetId: 'navbar-inverted', title: 'Inverted navbar' }
                                 ]
                             }
                         ]

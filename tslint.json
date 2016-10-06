@@ -100,7 +100,10 @@
         "use-strict": [
             false
         ],
-        "variable-name": [true, "allow-leading-underscore"],
+        "variable-name": [
+            true,
+            "allow-leading-underscore"
+        ],
         "whitespace": [
             true,
             "check-branch",

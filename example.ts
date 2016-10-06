@@ -128,7 +128,17 @@ b.routes(
             b.route({ url: 'nav-disabled-links', name: 'nav-disabled-links', handler: false }),
             b.route({ url: 'nav-dropdowns', name: 'nav-dropdowns', handler: false }),
             b.route({ url: 'navbar', name: 'navbar', handler: false }),
-            b.route({ url: 'navbar-default', name: 'navbar-default', handler: false })
+            b.route({ url: 'navbar-default', name: 'navbar-default', handler: false }),
+            b.route({ url: 'navbar-brand-image', name: 'navbar-brand-image', handler: false }),
+            b.route({ url: 'navbar-forms', name: 'navbar-forms', handler: false }),
+            b.route({ url: 'navbar-buttons', name: 'navbar-buttons', handler: false }),
+            b.route({ url: 'navbar-text', name: 'navbar-text', handler: false }),
+            b.route({ url: 'navbar-links', name: 'navbar-links', handler: false }),
+            b.route({ url: 'navbar-component-alignment', name: 'navbar-component-alignment', handler: false }),
+            b.route({ url: 'navbar-fixed-top', name: 'navbar-fixed-top', handler: false }),
+            b.route({ url: 'navbar-fixed-bottom', name: 'navbar-fixed-bottom', handler: false }),
+            b.route({ url: 'navbar-static-top', name: 'navbar-static-top', handler: false }),
+            b.route({ url: 'navbar-inverted', name: 'navbar-inverted', handler: false })
         ]),
         b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

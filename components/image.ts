@@ -10,6 +10,8 @@ export interface IImageData extends IBaseData {
     responsive?: boolean;
     centerBlock?: boolean;
     ieSvgFix?: boolean;
+    width?: number;
+    height?: number;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -42,6 +44,11 @@ export const image = b.createDerivedComponent<IImageData>(elem, {
         me.tag = 'img';
         me.attrs['src'] = ctx.data.src;
         me.attrs['alt'] = ctx.data.alt;
+        if (ctx.data.height !== undefined)
+            me.attrs['height'] = ctx.data.height;
+        if (ctx.data.width !== undefined)
+            me.attrs['width'] = ctx.data.width;
+
         b.style(me, ctx.data.shape !== undefined && imageShapeStyles(ctx.data.shape));
         b.style(me, !!ctx.data.responsive && imageStyles.imgResponsive);
         b.style(me, !!ctx.data.centerBlock && imageStyles.centerBlock);

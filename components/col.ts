@@ -98,5 +98,5 @@ function isStyleAvailable(stylesSource: IColStyles, colType: IColType | IColData
 }
 
 function getStyle(stylesSource: IColStyles, colType: IColType | IColData): b.IBobrilStyle {
-    return stylesSource(colType.size || 1)(colType.span || 1);
+    return stylesSource(colType.size === undefined ? 1 : colType.size)(colType.span === undefined ? 1 : colType.span);
 }

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { p, h1 } from '../../index';
+import * as bs from '../../index';
 import { styles } from '../bsexample/css';
 
 export interface IData {
@@ -20,9 +20,9 @@ export const section = b.createVirtualComponent<IData>({
         me.tag = 'div';
         b.style(me, styles.bsDocsSection);
         me.children = [
-            b.anchor(h1({ attrs: { id: ctx.data.id }, style: styles.pageHeader }, ctx.data.header)),
-            !!ctx.data.lead && p({ lead: true }, ctx.data.lead),
-            !!ctx.data.description && p({}, ctx.data.description),
+            b.anchor(bs.h1({ attrs: { id: ctx.data.id }, style: styles.pageHeader }, ctx.data.header)),
+            !!ctx.data.lead && bs.p({ lead: true }, ctx.data.lead),
+            !!ctx.data.description && bs.p({}, ctx.data.description),
             ctx.data.children
         ];
     }

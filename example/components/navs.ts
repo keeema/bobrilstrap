@@ -1,6 +1,5 @@
 import * as b from 'bobril';
-import { a, e, p, h2, h3, h4, code, figure, helpers, strong, tab, tabs, pill, pills,
-    dropdown, dropdownMenu, dropdownItem } from '../../index';
+import * as bs from '../../index';
 import { styles } from '../bsexample/css';
 import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
@@ -26,13 +25,13 @@ export const navs = b.createVirtualComponent({
 
 function info(): b.IBobrilChildren {
     return [
-        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-navs-accessibility' } }, [
-            h4({}, [`Make navs used as navigation accessible`]),
-            p({}, [
-                `If you are using navs to provide a navigation bar, be sure to add a `, code({}, `attrs: { role: 'navigation' }`),
-                ` to the most logical parent container of the `, code({}, 'ul'), ` (or `, code({}, 'tab'),
-                ` etc.) or wrap a `, code({}, 'nav'), ` component around the whole navigation. Do not add the role to the `,
-                code({}, 'ul'), ` itself, as this would prevent it from being announced as an actual list by assistive technologies.`
+        bs.e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-navs-accessibility' } }, [
+            bs.h4({}, [`Make navs used as navigation accessible`]),
+            bs.p({}, [
+                `If you are using navs to provide a navigation bar, be sure to add a `, bs.code({}, `attrs: { role: 'navigation' }`),
+                ` to the most logical parent container of the `, bs.code({}, 'bs.ul'), ` (or `, bs.code({}, 'bs.tab'),
+                ` etc.) or wrap a `, bs.code({}, 'bs.nav'), ` component around the whole navigation. Do not add the role to the `,
+                bs.code({}, 'bs.ul'), ` itself, as this would prevent it from being announced as an actual list by assistive technologies.`
             ])
         ])
     ];
@@ -40,19 +39,19 @@ function info(): b.IBobrilChildren {
 
 function tabsExample(): b.IBobrilChildren {
     return [
-        b.anchor(h2({ attrs: { id: 'nav-tabs' } }, 'Tabs')),
-        e({ style: styles.bsExample }, [
-            tabs({}, [
-                tab({ active: true }, a({ href: 'javascript:void(0)' }, 'Home')),
-                tab({}, a({ href: 'javascript:void(0)' }, 'Profile')),
-                tab({}, a({ href: 'javascript:void(0)' }, 'Messages'))
+        b.anchor(bs.h2({ attrs: { id: 'nav-tabs' } }, 'Tabs')),
+        bs.e({ style: styles.bsExample }, [
+            bs.tabs({}, [
+                bs.tab({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Home')),
+                bs.tab({}, bs.a({ href: 'javascript:void(0)' }, 'Profile')),
+                bs.tab({}, bs.a({ href: 'javascript:void(0)' }, 'Messages'))
             ])
         ]),
-        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `tabs({}, [`, e({ tag: 'br' }),
-            `    tab({ active: true }, a({ href: '...' }, 'Home')),`, e({ tag: 'br' }),
-            `    tab({}, a({ href: '...' }, 'Profile')),`, e({ tag: 'br' }),
-            `    tab({}, a({ href: '...' }, 'Messages'))`, e({ tag: 'br' }),
+        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+            `bs.tabs({}, [`, bs.e({ tag: 'br' }),
+            `    bs.tab({ active: true }, bs.a({ href: '...' }, 'Home')),`, bs.e({ tag: 'br' }),
+            `    bs.tab({}, bs.a({ href: '...' }, 'Profile')),`, bs.e({ tag: 'br' }),
+            `    bs.tab({}, bs.a({ href: '...' }, 'Messages'))`, bs.e({ tag: 'br' }),
             `])`
         ])))
     ];
@@ -62,36 +61,36 @@ const navPillsStackedExample = b.styleDef('nav-pills-stacked-example');
 
 function pillsExample(): b.IBobrilChildren {
     return [
-        b.anchor(h2({ attrs: { id: 'nav-pills' } }, 'Pills')),
-        e({ style: styles.bsExample }, [
-            pills({}, [
-                pill({ active: true }, a({ href: 'javascript:void(0)' }, 'Home')),
-                pill({}, a({ href: 'javascript:void(0)' }, 'Profile')),
-                pill({}, a({ href: 'javascript:void(0)' }, 'Messages'))
+        b.anchor(bs.h2({ attrs: { id: 'nav-pills' } }, 'Pills')),
+        bs.e({ style: styles.bsExample }, [
+            bs.pills({}, [
+                bs.pill({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Home')),
+                bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Profile')),
+                bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Messages'))
             ])
         ]),
-        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `pills({}, [`, e({ tag: 'br' }),
-            `    pill({ active: true }, a({ href: '...' }, 'Home')),`, e({ tag: 'br' }),
-            `    pill({}, a({ href: '...' }, 'Profile')),`, e({ tag: 'br' }),
-            `    pill({}, a({ href: '...' }, 'Messages'))`, e({ tag: 'br' }),
+        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+            `bs.pills({}, [`, bs.e({ tag: 'br' }),
+            `    bs.pill({ active: true }, bs.a({ href: '...' }, 'Home')),`, bs.e({ tag: 'br' }),
+            `    bs.pill({}, bs.a({ href: '...' }, 'Profile')),`, bs.e({ tag: 'br' }),
+            `    bs.pill({}, bs.a({ href: '...' }, 'Messages'))`, bs.e({ tag: 'br' }),
             `])`
         ]))),
-        p({}, [
-            `Pills are also vertically stackable. Just set `, code({}, 'stacked: true'), `.`
+        bs.p({}, [
+            `Pills are also vertically stackable. Just set `, bs.code({}, 'stacked: true'), `.`
         ]),
-        e({ style: styles.bsExample }, [
-            pills({ stacked: true, style: navPillsStackedExample }, [
-                pill({ active: true }, a({ href: 'javascript:void(0)' }, 'Home')),
-                pill({}, a({ href: 'javascript:void(0)' }, 'Profile')),
-                pill({}, a({ href: 'javascript:void(0)' }, 'Messages'))
+        bs.e({ style: styles.bsExample }, [
+            bs.pills({ stacked: true, style: navPillsStackedExample }, [
+                bs.pill({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Home')),
+                bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Profile')),
+                bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Messages'))
             ])
         ]),
-        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `pills({ stacked: true }, [`, e({ tag: 'br' }),
-            `    pill({ active: true }, a({ href: '...' }, 'Home')),`, e({ tag: 'br' }),
-            `    pill({}, a({ href: '...' }, 'Profile')),`, e({ tag: 'br' }),
-            `    pill({}, a({ href: '...' }, 'Messages'))`, e({ tag: 'br' }),
+        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+            `bs.pills({ stacked: true }, [`, bs.e({ tag: 'br' }),
+            `    bs.pill({ active: true }, bs.a({ href: '...' }, 'Home')),`, bs.e({ tag: 'br' }),
+            `    bs.pill({}, bs.a({ href: '...' }, 'Profile')),`, bs.e({ tag: 'br' }),
+            `    bs.pill({}, bs.a({ href: '...' }, 'Messages'))`, bs.e({ tag: 'br' }),
             `])`
         ])))
     ];
@@ -99,39 +98,39 @@ function pillsExample(): b.IBobrilChildren {
 
 function justified(): b.IBobrilChildren {
     return [
-        b.anchor(h2({ attrs: { id: 'nav-justified' } }, 'Justified')),
-        p({}, [
+        b.anchor(bs.h2({ attrs: { id: 'nav-justified' } }, 'Justified')),
+        bs.p({}, [
             `Easily make tabs or pills equal widths of their parent at screens wider than 768px with `,
-            code({}, 'justified: true'), `. On smaller screens, the nav links are stacked.`
+            bs.code({}, 'justified: true'), `. On smaller screens, the nav links are stacked.`
         ]),
-        p({}, strong({ style: helpers.text.danger }, 'Justified navbar nav links are currently not supported.')),
-        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-navs-justified-safari' } }, [
-            h4({}, [`Make navs used as navigation accessible`]),
-            p({}, [
+        bs.p({}, bs.strong({ style: bs.helpers.text.danger }, 'Justified navbar nav links are currently not supported.')),
+        bs.e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-navs-justified-safari' } }, [
+            bs.h4({}, [`Make navs used as navigation accessible`]),
+            bs.p({}, [
                 `As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering 
                 errors in the justified nav that are cleared upon refreshing. `
             ])
         ]),
-        e({ style: styles.bsExample }, [
-            tabs({ justified: true }, [
-                tab({ active: true }, a({ href: 'javascript:void(0)' }, 'Home')),
-                tab({}, a({ href: 'javascript:void(0)' }, 'Profile')),
-                tab({}, a({ href: 'javascript:void(0)' }, 'Messages'))
+        bs.e({ style: styles.bsExample }, [
+            bs.tabs({ justified: true }, [
+                bs.tab({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Home')),
+                bs.tab({}, bs.a({ href: 'javascript:void(0)' }, 'Profile')),
+                bs.tab({}, bs.a({ href: 'javascript:void(0)' }, 'Messages'))
             ]),
-            e({ tag: 'br' }),
-            pills({ justified: true }, [
-                pill({ active: true }, a({ href: 'javascript:void(0)' }, 'Home')),
-                pill({}, a({ href: 'javascript:void(0)' }, 'Profile')),
-                pill({}, a({ href: 'javascript:void(0)' }, 'Messages'))
+            bs.e({ tag: 'br' }),
+            bs.pills({ justified: true }, [
+                bs.pill({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Home')),
+                bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Profile')),
+                bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Messages'))
             ])
         ]),
-        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `tabs({ justified: true }, [`, e({ tag: 'br' }),
-            `    ...`, e({ tag: 'br' }),
-            `])`, e({ tag: 'br' }),
-            ``, e({ tag: 'br' }),
-            `pills({ justified: true }, [`, e({ tag: 'br' }),
-            `    ...`, e({ tag: 'br' }),
+        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+            `bs.tabs({ justified: true }, [`, bs.e({ tag: 'br' }),
+            `    ...`, bs.e({ tag: 'br' }),
+            `])`, bs.e({ tag: 'br' }),
+            ``, bs.e({ tag: 'br' }),
+            `bs.pills({ justified: true }, [`, bs.e({ tag: 'br' }),
+            `    ...`, bs.e({ tag: 'br' }),
             `])`
         ])))
     ];
@@ -139,29 +138,29 @@ function justified(): b.IBobrilChildren {
 
 function disabled(): b.IBobrilChildren {
     return [
-        b.anchor(h2({ attrs: { id: 'nav-disabled-links' } }, 'Disabled links')),
-        p({}, [
-            `For any nav component (tab or pill), set `, code({}, 'disabled: true'), ` for gray links and no hover effects.`
+        b.anchor(bs.h2({ attrs: { id: 'nav-disabled-links' } }, 'Disabled links')),
+        bs.p({}, [
+            `For any nav component (tab or pill), set `, bs.code({}, 'disabled: true'), ` for gray links and no hover effects.`
         ]),
-        e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-navs-anchor-disabled' } }, [
-            h4({}, [`Link functionality not impacted`]),
-            p({}, [
-                `This class will only change the `, code({}, '<a>'),
+        bs.e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-navs-anchor-disabled' } }, [
+            bs.h4({}, [`Link functionality not impacted`]),
+            bs.p({}, [
+                `This class will only change the `, bs.code({}, '<a>'),
                 `'s appearance, not its functionality. Use custom JavaScript to disable links here.`
             ])
         ]),
-        e({ style: styles.bsExample }, [
-            pills({}, [
-                pill({}, a({ href: 'javascript:void(0)' }, 'Clickable link')),
-                pill({}, a({ href: 'javascript:void(0)' }, 'Clickable link')),
-                pill({ disabled: true }, a({ href: 'javascript:void(0)' }, 'Disabled link'))
+        bs.e({ style: styles.bsExample }, [
+            bs.pills({}, [
+                bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Clickable link')),
+                bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Clickable link')),
+                bs.pill({ disabled: true }, bs.a({ href: 'javascript:void(0)' }, 'Disabled link'))
             ])
         ]),
-        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `pills({}, [`, e({ tag: 'br' }),
-            `    ...`, e({ tag: 'br' }),
-            `    pill({ disabled: true }, a({ href: '...' }, 'Disabled link')),`, e({ tag: 'br' }),
-            `    ...`, e({ tag: 'br' }),
+        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+            `bs.pills({}, [`, bs.e({ tag: 'br' }),
+            `    ...`, bs.e({ tag: 'br' }),
+            `    bs.pill({ disabled: true }, bs.a({ href: '...' }, 'Disabled link')),`, bs.e({ tag: 'br' }),
+            `    ...`, bs.e({ tag: 'br' }),
             `])`
         ])))
     ];
@@ -169,75 +168,75 @@ function disabled(): b.IBobrilChildren {
 
 function dropdowns(): b.IBobrilChildren {
     return [
-        b.anchor(h2({ attrs: { id: 'nav-dropdowns' } }, 'Using dropdowns')),
-        p({}, [
-            `As in previous cases - you can use the prepared helper `, code({}, 'dropdown'),
+        b.anchor(bs.h2({ attrs: { id: 'nav-dropdowns' } }, 'Using dropdowns')),
+        bs.p({}, [
+            `As in previous cases - you can use the prepared helper `, bs.code({}, 'bs.dropdown'),
             ` or compose from specific components.`
         ]),
-        h3({ attrs: { id: 'tabs-with-dropdowns' } }, 'Tabs with dropdowns'),
-        e({ style: styles.bsExample }, [
-            tabs({}, [
-                tab({ active: true }, a({ href: 'javascript:void(0)' }, 'Home')),
-                tab({}, a({ href: 'javascript:void(0)' }, 'Help')),
-                dropdown(
+        bs.h3({ attrs: { id: 'tabs-with-dropdowns' } }, 'Tabs with dropdowns'),
+        bs.e({ style: styles.bsExample }, [
+            bs.tabs({}, [
+                bs.tab({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Home')),
+                bs.tab({}, bs.a({ href: 'javascript:void(0)' }, 'Help')),
+                bs.dropdown(
                     { navbar: true, button: { label: 'Dropdown' } },
-                    dropdownMenu({}, [
-                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
-                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
-                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
-                        dropdownItem({ separator: true }),
-                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
+                    bs.dropdownMenu({}, [
+                        bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
+                        bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
+                        bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Something else here')),
+                        bs.dropdownItem({ separator: true }),
+                        bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Separated link'))
                     ])
                 )
             ])
         ]),
-        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `tabs({}, [`, e({ tag: 'br' }),
-            `    tab({ active: true }, a({ href: '...' }, 'Home'))`, e({ tag: 'br' }),
-            `    tab({}, a({ href: '...' }, 'Help'))`, e({ tag: 'br' }),
-            `    dropdown(`, e({ tag: 'br' }),
-            `        { navbar: true, button: { label: 'Dropdown' } },`, e({ tag: 'br' }),
-            `        dropdownMenu({}, [`, e({ tag: 'br' }),
-            `            dropdownItem({}, a({ href: '...' }, 'Action')),`, e({ tag: 'br' }),
-            `            dropdownItem({}, a({ href: '...' }, 'Another action')),`, e({ tag: 'br' }),
-            `            dropdownItem({}, a({ href: '...' }, 'Something else here')),`, e({ tag: 'br' }),
-            `            dropdownItem({ separator: true }),`, e({ tag: 'br' }),
-            `            dropdownItem({}, a({ href: '...' }, 'Separated link'))`, e({ tag: 'br' }),
-            `        ])`, e({ tag: 'br' }),
-            `    )`, e({ tag: 'br' }),
+        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+            `bs.tabs({}, [`, bs.e({ tag: 'br' }),
+            `    bs.tab({ active: true }, bs.a({ href: '...' }, 'Home'))`, bs.e({ tag: 'br' }),
+            `    bs.tab({}, bs.a({ href: '...' }, 'Help'))`, bs.e({ tag: 'br' }),
+            `    bs.dropdown(`, bs.e({ tag: 'br' }),
+            `        { navbar: true, button: { label: 'Dropdown' } },`, bs.e({ tag: 'br' }),
+            `        bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Something else here')),`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({ separator: true }),`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Separated link'))`, bs.e({ tag: 'br' }),
+            `        ])`, bs.e({ tag: 'br' }),
+            `    )`, bs.e({ tag: 'br' }),
             `])`
         ]))),
-        h3({ attrs: { id: 'pills-with-dropdowns' } }, 'Pills with dropdowns'),
-        e({ style: styles.bsExample }, [
-            pills({}, [
-                pill({ active: true }, a({ href: 'javascript:void(0)' }, 'Home')),
-                pill({}, a({ href: 'javascript:void(0)' }, 'Help')),
-                dropdown(
+        bs.h3({ attrs: { id: 'pills-with-dropdowns' } }, 'Pills with dropdowns'),
+        bs.e({ style: styles.bsExample }, [
+            bs.pills({}, [
+                bs.pill({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Home')),
+                bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Help')),
+                bs.dropdown(
                     { navbar: true, button: { label: 'Dropdown' } },
-                    dropdownMenu({}, [
-                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Action')),
-                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Another action')),
-                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Something else here')),
-                        dropdownItem({ separator: true }),
-                        dropdownItem({}, a({ href: 'javascript:void(0)' }, 'Separated link'))
+                    bs.dropdownMenu({}, [
+                        bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
+                        bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
+                        bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Something else here')),
+                        bs.dropdownItem({ separator: true }),
+                        bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Separated link'))
                     ])
                 )
             ])
         ]),
-        figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-            `pills({}, [`, e({ tag: 'br' }),
-            `    pill({active: true }, a({ href: '...' }, 'Home'))`, e({ tag: 'br' }),
-            `    pill({}, a({ href: '...' }, 'Help'))`, e({ tag: 'br' }),
-            `    dropdown(`, e({ tag: 'br' }),
-            `        { navbar: true, button: { label: 'Dropdown' } },`, e({ tag: 'br' }),
-            `        dropdownMenu({}, [`, e({ tag: 'br' }),
-            `            dropdownItem({}, a({ href: '...' }, 'Action')),`, e({ tag: 'br' }),
-            `            dropdownItem({}, a({ href: '...' }, 'Another action')),`, e({ tag: 'br' }),
-            `            dropdownItem({}, a({ href: '...' }, 'Something else here')),`, e({ tag: 'br' }),
-            `            dropdownItem({ separator: true }),`, e({ tag: 'br' }),
-            `            dropdownItem({}, a({ href: '...' }, 'Separated link'))`, e({ tag: 'br' }),
-            `        ])`, e({ tag: 'br' }),
-            `    )`, e({ tag: 'br' }),
+        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+            `bs.pills({}, [`, bs.e({ tag: 'br' }),
+            `    bs.pill({active: true }, bs.a({ href: '...' }, 'Home'))`, bs.e({ tag: 'br' }),
+            `    bs.pill({}, bs.a({ href: '...' }, 'Help'))`, bs.e({ tag: 'br' }),
+            `    bs.dropdown(`, bs.e({ tag: 'br' }),
+            `        { navbar: true, button: { label: 'Dropdown' } },`, bs.e({ tag: 'br' }),
+            `        bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Something else here')),`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({ separator: true }),`, bs.e({ tag: 'br' }),
+            `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Separated link'))`, bs.e({ tag: 'br' }),
+            `        ])`, bs.e({ tag: 'br' }),
+            `    )`, bs.e({ tag: 'br' }),
             `])`
         ])))
     ];

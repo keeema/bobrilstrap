@@ -1,5 +1,6 @@
 import * as b from 'bobril';
-import { e, hiddenStyles, Device, affixStyles } from '../../index';
+import { affixStyles } from '../../index';
+import * as bs from '../../index';
 import { styles } from '../bsexample/css';
 import { sideBarItems } from './sidebarItems';
 
@@ -27,15 +28,15 @@ export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
     },
     render(ctx: ICtx, me: b.IBobrilNode) {
         const scrollTop  = document.documentElement.scrollTop || document.body.scrollTop;
-        me.children = e(
+        me.children = bs.e(
             {
                 tag: 'nav',
                 style: [
-                    styles.bsDocsSidebar, hiddenStyles(Device.Print), hiddenStyles(Device.Sm), hiddenStyles(Device.Xs),
+                    styles.bsDocsSidebar, bs.hiddenStyles(bs.Device.Print), bs.hiddenStyles(bs.Device.Sm), bs.hiddenStyles(bs.Device.Xs),
                     scrollTop < 300 ? affixStyles.affixTop : affixStyles.affix
                 ]
             },
-            sideBarItems({ items: ctx.data.items, isTop:true}));
+            sideBarItems({ items: ctx.data.items, isTop: true}));
     }
 });
 

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { e, p, code, figure } from '../../index';
+import * as bs from '../../index';
 import { pre, langJs } from '../prettify/pre';
 import { styles } from '../bsexample/css';
 import { section } from '../common/section';
@@ -13,20 +13,20 @@ export const bobrilstrap = b.createVirtualComponent({
                     header: 'Bobrilstrap installation'
                 },
                 [
-                    p({}, `To install bobrilstrap to your bobril application stop the running bobril-build and run following commands:`),
-                    figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-                        'npm i bobrilstrap --save', e({ tag: 'br' }),
+                    bs.p({}, `To install bobrilstrap to your bobril application stop the running bobril-build and run following commands:`),
+                    bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+                        'npm i bobrilstrap --save', bs.e({ tag: 'br' }),
                         'bb'
                     ]))),
-                    p({}, [
+                    bs.p({}, [
                         'To initialize the bobrilstrap framework add following lines to the ',
-                        code({}, 'simpleApp/src/app.ts'), ' file:'
+                        bs.code({}, 'simpleApp/src/app.ts'), ' file:'
                     ]),
-                    figure({ style: styles.highlight }, pre({}, code({ style: langJs }, [
-                        `import * as bs from 'bobrilstrap';`, e({ tag: 'br' }),
-                        'bs.init();', e({ tag: 'br' })
+                    bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+                        `import * as bs from 'bobrilstrap';`, bs.e({ tag: 'br' }),
+                        'bs.init();', bs.e({ tag: 'br' })
                     ]))),
-                    p({}, ['Now you can use the bobrilstrap components provided by the ', code({}, 'bobrilstrap'), ' package.'])
+                    bs.p({}, ['Now you can use the bobrilstrap components provided by the ', bs.code({}, 'bobrilstrap'), ' package.'])
                 ])
         ];
     }

@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { li, a } from '../../index';
+import * as bs from '../../index';
 import { sideBarItems } from './sidebarItems';
 
 export interface IItemData {
@@ -24,12 +24,12 @@ export const sideBarItem = b.createVirtualComponent<IItemData>({
         b.addDisposable(ctx, () => b.removeOnScroll(onScrollListener));
     },
     render(ctx: ICtx, me: b.IBobrilNode) {
-        me.children = li(
+        me.children = bs.li(
             {
                 active: ctx.active
             },
             [
-                b.link(a({}, ctx.data.title), ctx.data.targetId),
+                b.link(bs.a({}, ctx.data.title), ctx.data.targetId),
                 !!ctx.data.subs && sideBarItems({ items: ctx.data.subs, nextId: ctx.data.nextId })
             ]
         );

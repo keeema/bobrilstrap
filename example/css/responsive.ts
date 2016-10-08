@@ -1,6 +1,5 @@
 import * as b from 'bobril';
-import { e, p, h2, h3, code, responsiveTable, small, Device, Display, visibleStyles, hiddenStyles, strong, row, col,
-    Size, span, helpers } from '../../index';
+import * as bs from '../../index';
 import { styles } from '../bsexample/css';
 import { section } from '../common/section';
 
@@ -25,11 +24,11 @@ export const responsive = b.createVirtualComponent({
 
 function availableStyles(): b.IBobrilChildren {
     return [
-        b.anchor(h2({ attrs: { id: 'responsive-utilities-styles' } }, 'Available styles')),
-        p({}, [
+        b.anchor(bs.h2({ attrs: { id: 'responsive-utilities-styles' } }, 'Available styles')),
+        bs.p({}, [
             `Use a single or combination of the available styles for toggling content across viewport breakpoints.`
         ]),
-        responsiveTable({
+        bs.responsiveTable({
             table: {
                 bordered: true,
                 striped: true,
@@ -38,17 +37,17 @@ function availableStyles(): b.IBobrilChildren {
                     row: {
                         headers: [
                             {},
-                            { children: [' Extra small devices ', small({}, 'Phones (<768px)')] },
-                            { children: [' Small devices ', small({}, 'Tablets (≥768px)')] },
-                            { children: [' Medium devices ', small({}, 'Desktops (≥992px)')] },
-                            { children: [' Large devices ', small({}, 'Desktops (≥1200px)')] }
+                            { children: [' Extra small devices ', bs.small({}, 'Phones (<768px)')] },
+                            { children: [' Small devices ', bs.small({}, 'Tablets (≥768px)')] },
+                            { children: [' Medium devices ', bs.small({}, 'Desktops (≥992px)')] },
+                            { children: [' Large devices ', bs.small({}, 'Desktops (≥1200px)')] }
                         ]
                     }
                 },
                 body: {
                     rows: [
                         {
-                            headers: [{ children: code({}, 'visibleStyles(Device.Xs)(...)') }],
+                            headers: [{ children: bs.code({}, 'bs.visibleStyles(bs.Device.Xs)(...)') }],
                             columns: [
                                 { children: 'Visibile', style: styles.isVisible },
                                 { children: 'Hidden', style: styles.isHidden },
@@ -57,7 +56,7 @@ function availableStyles(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: code({}, 'visibleStyles(Device.Sm)(...)') }],
+                            headers: [{ children: bs.code({}, 'bs.visibleStyles(bs.Device.Sm)(...)') }],
                             columns: [
                                 { children: 'Hidden', style: styles.isHidden },
                                 { children: 'Visibile', style: styles.isVisible },
@@ -66,7 +65,7 @@ function availableStyles(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: code({}, 'visibleStyles(Device.Md)(...)') }],
+                            headers: [{ children: bs.code({}, 'bs.visibleStyles(bs.Device.Md)(...)') }],
                             columns: [
                                 { children: 'Hidden', style: styles.isHidden },
                                 { children: 'Hidden', style: styles.isHidden },
@@ -75,7 +74,7 @@ function availableStyles(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: code({}, 'visibleStyles(Device.Lg)(...)') }],
+                            headers: [{ children: bs.code({}, 'bs.visibleStyles(bs.Device.Lg)(...)') }],
                             columns: [
                                 { children: 'Hidden', style: styles.isHidden },
                                 { children: 'Hidden', style: styles.isHidden },
@@ -84,7 +83,7 @@ function availableStyles(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: code({}, 'hiddenStyles(Device.Xs)') }],
+                            headers: [{ children: bs.code({}, 'bs.hiddenStyles(bs.Device.Xs)') }],
                             columns: [
                                 { children: 'Hidden', style: styles.isHidden },
                                 { children: 'Visibile', style: styles.isVisible },
@@ -93,7 +92,7 @@ function availableStyles(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: code({}, 'hiddenStyles(Device.Sm)') }],
+                            headers: [{ children: bs.code({}, 'bs.hiddenStyles(bs.Device.Sm)') }],
                             columns: [
                                 { children: 'Visibile', style: styles.isVisible },
                                 { children: 'Hidden', style: styles.isHidden },
@@ -102,7 +101,7 @@ function availableStyles(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: code({}, 'hiddenStyles(Device.Md)') }],
+                            headers: [{ children: bs.code({}, 'bs.hiddenStyles(bs.Device.Md)') }],
                             columns: [
                                 { children: 'Visibile', style: styles.isVisible },
                                 { children: 'Visibile', style: styles.isVisible },
@@ -111,7 +110,7 @@ function availableStyles(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: code({}, 'hiddenStyles(Device.Lg)') }],
+                            headers: [{ children: bs.code({}, 'bs.hiddenStyles(bs.Device.Lg)') }],
                             columns: [
                                 { children: 'Visibile', style: styles.isVisible },
                                 { children: 'Visibile', style: styles.isVisible },
@@ -124,7 +123,7 @@ function availableStyles(): b.IBobrilChildren {
 
             }
         }),
-        responsiveTable({
+        bs.responsiveTable({
             table: {
                 bordered: true,
                 striped: true,
@@ -132,32 +131,33 @@ function availableStyles(): b.IBobrilChildren {
                     row: {
                         headers: [
                             'Group of classes',
-                            { children: ['CSS ', code({}, 'display')] }
+                            { children: ['CSS ', bs.code({}, 'display')] }
                         ]
                     }
                 },
                 body: {
                     rows: [
                         {
-                            headers: [{ children: code({}, 'visibleStyles(...)(Display.Block)') }],
-                            columns: [{ children: code({}, 'display: block;') }]
+                            headers: [{ children: bs.code({}, 'bs.visibleStyles(...)(bs.Display.Block)') }],
+                            columns: [{ children: bs.code({}, 'display: block;') }]
                         },
                         {
-                            headers: [{ children: code({}, 'visibleStyles(...)(Display.Inline)') }],
-                            columns: [{ children: code({}, 'display: block;') }]
+                            headers: [{ children: bs.code({}, 'bs.visibleStyles(...)(bs.Display.Inline)') }],
+                            columns: [{ children: bs.code({}, 'display: block;') }]
                         },
                         {
-                            headers: [{ children: code({}, 'visibleStyles(...)(Display.InlineBlock)') }],
-                            columns: [{ children: code({}, 'display: inline-block;') }]
+                            headers: [{ children: bs.code({}, 'bs.visibleStyles(...)(bs.Display.InlineBlock)') }],
+                            columns: [{ children: bs.code({}, 'display: inline-block;') }]
                         }
                     ]
                 }
             }
         }),
-        p({}, [
-            `So, for extra small (xs) screens for example, the available `, code({}, 'visibleStyles(...)(...)'), ` styles are: `,
-            code({}, 'visibleStyles(Device.Xs)(Display.Block)'), `, `, code({}, 'visibleStyles(Device.Xs)(Display.Inline)'), ` and `,
-            code({}, 'visibleStyles(Device.Xs)(Display.InlineBlock)'), `.`
+        bs.p({}, [
+            `So, for extra small (xs) screens for example, the available `, bs.code({}, 'bs.visibleStyles(...)(...)'), ` styles are: `,
+            bs.code({}, 'bs.visibleStyles(bs.Device.Xs)(bs.Display.Block)'), `, `, 
+            bs.code({}, 'bs.visibleStyles(bs.Device.Xs)(bs.Display.Inline)'), ` and `,
+            bs.code({}, 'bs.visibleStyles(bs.Device.Xs)(bs.Display.InlineBlock)'), `.`
         ])
 
     ];
@@ -165,11 +165,11 @@ function availableStyles(): b.IBobrilChildren {
 
 function printStyles(): b.IBobrilChildren {
     return [
-        b.anchor(h2({ attrs: { id: 'responsive-utilities-print' } }, 'Print styles')),
-        p({}, [
+        b.anchor(bs.h2({ attrs: { id: 'responsive-utilities-print' } }, 'Print styles')),
+        bs.p({}, [
             `Similar to the regular responsive styles, use these for toggling content for print.`
         ]),
-        responsiveTable({
+        bs.responsiveTable({
             table: {
                 bordered: true,
                 striped: true,
@@ -184,9 +184,9 @@ function printStyles(): b.IBobrilChildren {
                         {
                             headers: [{
                                 children: [
-                                    code({}, 'visibleStyles(Device.Print)(Display.Block)'), e({ tag: 'br' }),
-                                    code({}, 'visibleStyles(Device.Print)(Display.Inline)'), e({ tag: 'br' }),
-                                    code({}, 'visibleStyles(Device.Print)(Display.InlineBlock)')
+                                    bs.code({}, 'bs.visibleStyles(bs.Device.Print)(bs.Display.Block)'), bs.e({ tag: 'br' }),
+                                    bs.code({}, 'bs.visibleStyles(bs.Device.Print)(bs.Display.Inline)'), bs.e({ tag: 'br' }),
+                                    bs.code({}, 'bs.visibleStyles(bs.Device.Print)(bs.Display.InlineBlock)')
                                 ]
                             }],
                             columns: [
@@ -195,7 +195,7 @@ function printStyles(): b.IBobrilChildren {
                             ]
                         },
                         {
-                            headers: [{ children: code({}, 'hiddenStyles(Device.Print)') }],
+                            headers: [{ children: bs.code({}, 'bs.hiddenStyles(bs.Device.Print)') }],
                             columns: [
                                 { children: 'Visibile', style: styles.isVisible },
                                 { children: 'Hidden', style: styles.isHidden }
@@ -212,140 +212,140 @@ function printStyles(): b.IBobrilChildren {
 
 function testCases(): b.IBobrilChildren {
     return [
-        b.anchor(h2({ attrs: { id: 'responsive-utilities-tests' } }, 'Test cases')),
-        p({}, [
+        b.anchor(bs.h2({ attrs: { id: 'responsive-utilities-tests' } }, 'Test cases')),
+        bs.p({}, [
             `Resize your browser or load on different devices to test the responsive utility styles.`
         ]),
-        h3({ attrs: { id: 'visible-on' } }, 'Visible on...'),
-        p({}, [`Green checkmarks indicate the element `, strong({}, 'is visible'), ` in your current viewport.`]),
-        row({ style: [styles.responsiveUtilitiesTest, styles.visibleOn] }, [
-            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 3 }] }, [
-                span({ style: hiddenStyles(Device.Xs) }, 'Extra small'),
-                span({ style: visibleStyles(Device.Xs)(Display.Block) }, '✔ Visible on x-small')
+        bs.h3({ attrs: { id: 'visible-on' } }, 'Visible on...'),
+        bs.p({}, [`Green checkmarks indicate the element `, bs.strong({}, 'is visible'), ` in your current viewport.`]),
+        bs.row({ style: [styles.responsiveUtilitiesTest, styles.visibleOn] }, [
+            bs.col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Sm, span: 3 }] }, [
+                bs.span({ style: bs.hiddenStyles(bs.Device.Xs) }, 'Extra small'),
+                bs.span({ style: bs.visibleStyles(bs.Device.Xs)(bs.Display.Block) }, '✔ Visible on x-small')
             ]),
-            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 3 }] }, [
-                span({ style: hiddenStyles(Device.Sm) }, 'Small'),
-                span({ style: visibleStyles(Device.Sm)(Display.Block) }, '✔ Visible on small')
+            bs.col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Sm, span: 3 }] }, [
+                bs.span({ style: bs.hiddenStyles(bs.Device.Sm) }, 'Small'),
+                bs.span({ style: bs.visibleStyles(bs.Device.Sm)(bs.Display.Block) }, '✔ Visible on small')
             ]),
-            e({ style: [helpers.clearfix, visibleStyles(Device.Xs)(Display.Block)] }),
-            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 3 }] }, [
-                span({ style: hiddenStyles(Device.Md) }, 'Medium'),
-                span({ style: visibleStyles(Device.Md)(Display.Block) }, '✔ Visible on medium')
+            bs.e({ style: [bs.helpers.clearfix, bs.visibleStyles(bs.Device.Xs)(bs.Display.Block)] }),
+            bs.col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Sm, span: 3 }] }, [
+                bs.span({ style: bs.hiddenStyles(bs.Device.Md) }, 'Medium'),
+                bs.span({ style: bs.visibleStyles(bs.Device.Md)(bs.Display.Block) }, '✔ Visible on medium')
             ]),
-            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 3 }] }, [
-                span({ style: hiddenStyles(Device.Lg) }, 'Large'),
-                span({ style: visibleStyles(Device.Lg)(Display.Block) }, '✔ Visible on large')
+            bs.col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Sm, span: 3 }] }, [
+                bs.span({ style: bs.hiddenStyles(bs.Device.Lg) }, 'Large'),
+                bs.span({ style: bs.visibleStyles(bs.Device.Lg)(bs.Display.Block) }, '✔ Visible on large')
             ])
         ]),
-        row({ style: [styles.responsiveUtilitiesTest, styles.visibleOn] }, [
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Xs), hiddenStyles(Device.Sm)] }, 'Extra small and small'),
-                span(
-                    { style: [visibleStyles(Device.Xs)(Display.Block), visibleStyles(Device.Sm)(Display.Block)] },
+        bs.row({ style: [styles.responsiveUtilitiesTest, styles.visibleOn] }, [
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Xs), bs.hiddenStyles(bs.Device.Sm)] }, 'Extra small and small'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Xs)(bs.Display.Block), bs.visibleStyles(bs.Device.Sm)(bs.Display.Block)] },
                     '✔ Visible on x-small and small'
                 )
             ]),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Md), hiddenStyles(Device.Lg)] }, 'Medium and large'),
-                span(
-                    { style: [visibleStyles(Device.Md)(Display.Block), visibleStyles(Device.Lg)(Display.Block)] },
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Md), bs.hiddenStyles(bs.Device.Lg)] }, 'Medium and large'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Md)(bs.Display.Block), bs.visibleStyles(bs.Device.Lg)(bs.Display.Block)] },
                     '✔ Visible on medium and large'
                 )
             ]),
-            e({ style: [helpers.clearfix, visibleStyles(Device.Xs)(Display.Block)] }),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Xs), hiddenStyles(Device.Md)] }, 'Extra small and medium'),
-                span(
-                    { style: [visibleStyles(Device.Xs)(Display.Block), visibleStyles(Device.Md)(Display.Block)] },
+            bs.e({ style: [bs.helpers.clearfix, bs.visibleStyles(bs.Device.Xs)(bs.Display.Block)] }),
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Xs), bs.hiddenStyles(bs.Device.Md)] }, 'Extra small and medium'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Xs)(bs.Display.Block), bs.visibleStyles(bs.Device.Md)(bs.Display.Block)] },
                     '✔ Visible on x-small and medium'
                 )
             ]),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Sm), hiddenStyles(Device.Lg)] }, 'Small and large'),
-                span(
-                    { style: [visibleStyles(Device.Sm)(Display.Block), visibleStyles(Device.Lg)(Display.Block)] },
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Sm), bs.hiddenStyles(bs.Device.Lg)] }, 'Small and large'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Sm)(bs.Display.Block), bs.visibleStyles(bs.Device.Lg)(bs.Display.Block)] },
                     '✔ Visible on small and large'
                 )
             ]),
-            e({ style: [helpers.clearfix, visibleStyles(Device.Xs)(Display.Block)] }),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Xs), hiddenStyles(Device.Lg)] }, 'Extra small and large'),
-                span(
-                    { style: [visibleStyles(Device.Xs)(Display.Block), visibleStyles(Device.Lg)(Display.Block)] },
+            bs.e({ style: [bs.helpers.clearfix, bs.visibleStyles(bs.Device.Xs)(bs.Display.Block)] }),
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Xs), bs.hiddenStyles(bs.Device.Lg)] }, 'Extra small and large'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Xs)(bs.Display.Block), bs.visibleStyles(bs.Device.Lg)(bs.Display.Block)] },
                     '✔ Visible on x-small and large'
                 )
             ]),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Sm), hiddenStyles(Device.Md)] }, 'Small and medium'),
-                span(
-                    { style: [visibleStyles(Device.Sm)(Display.Block), visibleStyles(Device.Md)(Display.Block)] },
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Sm), bs.hiddenStyles(bs.Device.Md)] }, 'Small and medium'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Sm)(bs.Display.Block), bs.visibleStyles(bs.Device.Md)(bs.Display.Block)] },
                     '✔ Visible on small and medium'
                 )
             ])
         ]),
-        h3({ attrs: { id: 'hidden-on' } }, 'Hidden on...'),
-        p({}, [`Here, green checkmarks also indicate the element `, strong({}, 'is hidden '), ` in your current viewport.`]),
-        row({ style: [styles.responsiveUtilitiesTest, styles.visibleOn] }, [
-            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 3 }] }, [
-                span({ style: hiddenStyles(Device.Xs) }, 'Extra small'),
-                span({ style: visibleStyles(Device.Xs)(Display.Block) }, '✔ Hidden on x-small')
+        bs.h3({ attrs: { id: 'hidden-on' } }, 'Hidden on...'),
+        bs.p({}, [`Here, green checkmarks also indicate the element `, bs.strong({}, 'is hidden '), ` in your current viewport.`]),
+        bs.row({ style: [styles.responsiveUtilitiesTest, styles.visibleOn] }, [
+            bs.col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Sm, span: 3 }] }, [
+                bs.span({ style: bs.hiddenStyles(bs.Device.Xs) }, 'Extra small'),
+                bs.span({ style: bs.visibleStyles(bs.Device.Xs)(bs.Display.Block) }, '✔ Hidden on x-small')
             ]),
-            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 3 }] }, [
-                span({ style: hiddenStyles(Device.Sm) }, 'Small'),
-                span({ style: visibleStyles(Device.Sm)(Display.Block) }, '✔ Hidden on small')
+            bs.col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Sm, span: 3 }] }, [
+                bs.span({ style: bs.hiddenStyles(bs.Device.Sm) }, 'Small'),
+                bs.span({ style: bs.visibleStyles(bs.Device.Sm)(bs.Display.Block) }, '✔ Hidden on small')
             ]),
-            e({ style: [helpers.clearfix, visibleStyles(Device.Xs)(Display.Block)] }),
-            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 3 }] }, [
-                span({ style: hiddenStyles(Device.Md) }, 'Medium'),
-                span({ style: visibleStyles(Device.Md)(Display.Block) }, '✔ Hidden on medium')
+            bs.e({ style: [bs.helpers.clearfix, bs.visibleStyles(bs.Device.Xs)(bs.Display.Block)] }),
+            bs.col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Sm, span: 3 }] }, [
+                bs.span({ style: bs.hiddenStyles(bs.Device.Md) }, 'Medium'),
+                bs.span({ style: bs.visibleStyles(bs.Device.Md)(bs.Display.Block) }, '✔ Hidden on medium')
             ]),
-            col({ cols: [{ size: Size.Xs, span: 6 }, { size: Size.Sm, span: 3 }] }, [
-                span({ style: hiddenStyles(Device.Lg) }, 'Large'),
-                span({ style: visibleStyles(Device.Lg)(Display.Block) }, '✔ Hidden on large')
+            bs.col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Sm, span: 3 }] }, [
+                bs.span({ style: bs.hiddenStyles(bs.Device.Lg) }, 'Large'),
+                bs.span({ style: bs.visibleStyles(bs.Device.Lg)(bs.Display.Block) }, '✔ Hidden on large')
             ])
         ]),
-        row({ style: [styles.responsiveUtilitiesTest, styles.visibleOn] }, [
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Xs), hiddenStyles(Device.Sm)] }, 'Extra small and small'),
-                span(
-                    { style: [visibleStyles(Device.Xs)(Display.Block), visibleStyles(Device.Sm)(Display.Block)] },
+        bs.row({ style: [styles.responsiveUtilitiesTest, styles.visibleOn] }, [
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Xs), bs.hiddenStyles(bs.Device.Sm)] }, 'Extra small and small'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Xs)(bs.Display.Block), bs.visibleStyles(bs.Device.Sm)(bs.Display.Block)] },
                     '✔ Hidden on x-small and small'
                 )
             ]),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Md), hiddenStyles(Device.Lg)] }, 'Medium and large'),
-                span(
-                    { style: [visibleStyles(Device.Md)(Display.Block), visibleStyles(Device.Lg)(Display.Block)] },
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Md), bs.hiddenStyles(bs.Device.Lg)] }, 'Medium and large'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Md)(bs.Display.Block), bs.visibleStyles(bs.Device.Lg)(bs.Display.Block)] },
                     '✔ Hidden on medium and large'
                 )
             ]),
-            e({ style: [helpers.clearfix, visibleStyles(Device.Xs)(Display.Block)] }),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Xs), hiddenStyles(Device.Md)] }, 'Extra small and medium'),
-                span(
-                    { style: [visibleStyles(Device.Xs)(Display.Block), visibleStyles(Device.Md)(Display.Block)] },
+            bs.e({ style: [bs.helpers.clearfix, bs.visibleStyles(bs.Device.Xs)(bs.Display.Block)] }),
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Xs), bs.hiddenStyles(bs.Device.Md)] }, 'Extra small and medium'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Xs)(bs.Display.Block), bs.visibleStyles(bs.Device.Md)(bs.Display.Block)] },
                     '✔ Hidden on x-small and medium'
                 )
             ]),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Sm), hiddenStyles(Device.Lg)] }, 'Small and large'),
-                span(
-                    { style: [visibleStyles(Device.Sm)(Display.Block), visibleStyles(Device.Lg)(Display.Block)] },
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Sm), bs.hiddenStyles(bs.Device.Lg)] }, 'Small and large'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Sm)(bs.Display.Block), bs.visibleStyles(bs.Device.Lg)(bs.Display.Block)] },
                     '✔ Hidden on small and large'
                 )
             ]),
-            e({ style: [helpers.clearfix, visibleStyles(Device.Xs)(Display.Block)] }),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Xs), hiddenStyles(Device.Lg)] }, 'Extra small and large'),
-                span(
-                    { style: [visibleStyles(Device.Xs)(Display.Block), visibleStyles(Device.Lg)(Display.Block)] },
+            bs.e({ style: [bs.helpers.clearfix, bs.visibleStyles(bs.Device.Xs)(bs.Display.Block)] }),
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Xs), bs.hiddenStyles(bs.Device.Lg)] }, 'Extra small and large'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Xs)(bs.Display.Block), bs.visibleStyles(bs.Device.Lg)(bs.Display.Block)] },
                     '✔ Hidden on x-small and large'
                 )
             ]),
-            col({ size: Size.Xs, span: 6 }, [
-                span({ style: [hiddenStyles(Device.Sm), hiddenStyles(Device.Md)] }, 'Small and medium'),
-                span(
-                    { style: [visibleStyles(Device.Sm)(Display.Block), visibleStyles(Device.Md)(Display.Block)] },
+            bs.col({ size: bs.Size.Xs, span: 6 }, [
+                bs.span({ style: [bs.hiddenStyles(bs.Device.Sm), bs.hiddenStyles(bs.Device.Md)] }, 'Small and medium'),
+                bs.span(
+                    { style: [bs.visibleStyles(bs.Device.Sm)(bs.Display.Block), bs.visibleStyles(bs.Device.Md)(bs.Display.Block)] },
                     '✔ Hidden on small and medium'
                 )
             ])

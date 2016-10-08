@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { container, element, p, h1 } from '../../index';
+import * as bs from '../../index';
 import { styles } from '../bsexample/css';
 
 interface IData {
@@ -15,11 +15,11 @@ export const header = b.createVirtualComponent<IData>({
     id: 'example-header',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.children = [            
-            element(
+            bs.element(
                 { style: styles.bsDocsHeader, attrs: { id: 'content', tabindex: -1 } },
-                container({}, [
-                    h1({}, ctx.data.header),
-                    p({}, ctx.data.headerContent)
+                bs.container({}, [
+                    bs.h1({}, ctx.data.header),
+                    bs.p({}, ctx.data.headerContent)
                 ])
             )
         ];

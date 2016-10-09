@@ -138,7 +138,8 @@ b.routes(
             b.route({ url: 'navbar-fixed-top', name: 'navbar-fixed-top', handler: false }),
             b.route({ url: 'navbar-fixed-bottom', name: 'navbar-fixed-bottom', handler: false }),
             b.route({ url: 'navbar-static-top', name: 'navbar-static-top', handler: false }),
-            b.route({ url: 'navbar-inverted', name: 'navbar-inverted', handler: false })
+            b.route({ url: 'navbar-inverted', name: 'navbar-inverted', handler: false }),
+            b.route({ url: 'breadcrumbs', name: 'breadcrumbs', handler: false })
         ]),
         b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

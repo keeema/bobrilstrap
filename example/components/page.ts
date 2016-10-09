@@ -8,6 +8,7 @@ import { buttonDropdowns } from './buttonDropdowns';
 import { inputGroups } from './inputGroups';
 import { navs } from './navs';
 import { navbarPage } from './navbar';
+import { breadcrumbs } from './breadcrumbs';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -97,6 +98,10 @@ export const components = b.createVirtualComponent({
                                     { targetId: 'navbar-static-top', title: 'Static top' },
                                     { targetId: 'navbar-inverted', title: 'Inverted navbar' }
                                 ]
+                            },
+                            {
+                                targetId: 'breadcrumbs', title: 'Breadcrumbs',
+                                subs: []
                             }
                         ]
                     }
@@ -108,7 +113,8 @@ export const components = b.createVirtualComponent({
                     buttonDropdowns(),
                     inputGroups(),
                     navs(),
-                    navbarPage()
+                    navbarPage(),
+                    breadcrumbs()
                 ])
         ];
     }

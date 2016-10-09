@@ -3,7 +3,6 @@ import { li, ILiData } from './li';
 import { breadcrumbStyles } from './breadcrumb';
 
 export interface IBreadcrumbItemData extends ILiData {
-    active?: boolean;
 }
 
 interface IBreadcrumbItemCtx extends b.IBobrilCtx {

@@ -9,6 +9,7 @@ import { inputGroups } from './inputGroups';
 import { navs } from './navs';
 import { navbarPage } from './navbar';
 import { breadcrumbs } from './breadcrumbs';
+import { pagination } from './pagination';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -102,6 +103,13 @@ export const components = b.createVirtualComponent({
                             {
                                 targetId: 'breadcrumbs', title: 'Breadcrumbs',
                                 subs: []
+                            },
+                            {
+                                targetId: 'pagination', title: 'Pagination',
+                                subs: [
+                                    { targetId: 'pagination-default', title: 'Default pagination' },
+                                    { targetId: 'pagination-pager', title: 'Pager' }
+                                ]
                             }
                         ]
                     }
@@ -114,7 +122,8 @@ export const components = b.createVirtualComponent({
                     inputGroups(),
                     navs(),
                     navbarPage(),
-                    breadcrumbs()
+                    breadcrumbs(),
+                    pagination()
                 ])
         ];
     }

@@ -3,6 +3,7 @@ import { elem, IBaseData } from './element';
 
 export interface ILiData extends IBaseData { 
     active?: boolean;
+    disabled?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -10,7 +11,8 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export const liStyles = {
-    active: b.styleDef('active')
+    active: b.styleDef('active'),
+    disabled: b.styleDef('disabled')
 };
 
 export const li = b.createDerivedComponent<ILiData>(elem, {
@@ -18,6 +20,7 @@ export const li = b.createDerivedComponent<ILiData>(elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = 'li';
         b.style(me, !!ctx.data.active && liStyles.active);
+        b.style(me, !!ctx.data.disabled && liStyles.disabled);
     }
 });
 

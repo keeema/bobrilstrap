@@ -1,10 +1,48 @@
 import * as b from 'bobril';
 import { elem, IBaseData } from './element';
+import { createDictionary } from './bobrilHelpers';
 
-export const span = b.createDerivedComponent<IBaseData>(elem, {
+export enum SpanLabelContext {
+    Default,
+    Primary,
+    Success,
+    Info,
+    Warning,
+    Danger
+}
+
+export const spanStyles = {
+    label: b.styleDef('label'),
+    labelDefault: b.styleDef('label-default'),
+    labelPrimary: b.styleDef('label-primary'),
+    labelSuccess: b.styleDef('label-success'),
+    labelInfo: b.styleDef('label-info'),
+    labelWarning: b.styleDef('label-warning'),
+    labelDanger: b.styleDef('label-danger')
+};
+
+export const spanLabelContextStyles = createDictionary<SpanLabelContext, b.IBobrilStyle>();
+spanLabelContextStyles(SpanLabelContext.Default, spanStyles.labelDefault);
+spanLabelContextStyles(SpanLabelContext.Primary, spanStyles.labelPrimary);
+spanLabelContextStyles(SpanLabelContext.Success, spanStyles.labelSuccess);
+spanLabelContextStyles(SpanLabelContext.Info, spanStyles.labelInfo);
+spanLabelContextStyles(SpanLabelContext.Warning, spanStyles.labelWarning);
+spanLabelContextStyles(SpanLabelContext.Danger, spanStyles.labelDanger);
+
+export interface ISpanData extends IBaseData {
+    labelContext?: SpanLabelContext;
+}
+
+interface ISpanCtx extends b.IBobrilCtx {
+    data: ISpanData;
+}
+
+export const span = b.createDerivedComponent<ISpanData>(elem, {
     id: 'bobrilstrap-span',
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    render(ctx: ISpanCtx, me: b.IBobrilNode) {
         me.tag = 'span';
+        b.style(me, ctx.data.labelContext !== undefined && spanStyles.label);
+        b.style(me, ctx.data.labelContext !== undefined && spanLabelContextStyles(ctx.data.labelContext));
     }
 });
 

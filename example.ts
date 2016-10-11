@@ -142,7 +142,8 @@ b.routes(
             b.route({ url: 'breadcrumbs', name: 'breadcrumbs', handler: false }),
             b.route({ url: 'pagination', name: 'pagination', handler: false }),
             b.route({ url: 'pagination-default', name: 'pagination-default', handler: false }),
-            b.route({ url: 'pagination-pager', name: 'pagination-pager', handler: false })
+            b.route({ url: 'pagination-pager', name: 'pagination-pager', handler: false }),
+            b.route({ url: 'labels', name: 'labels', handler: false })
         ]),
         b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

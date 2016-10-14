@@ -11,6 +11,9 @@ import { navbarPage } from './navbar';
 import { breadcrumbs } from './breadcrumbs';
 import { pagination } from './pagination';
 import { labels } from './labels';
+import { badges } from './badges';
+import { jumbotron } from './jumbotron';
+import { pageHeader } from './pageHeader';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -115,6 +118,18 @@ export const components = b.createVirtualComponent({
                             {
                                 targetId: 'labels', title: 'Labels',
                                 subs: []
+                            },
+                            {
+                                targetId: 'badges', title: 'Badges',
+                                subs: []
+                            },
+                            {
+                                targetId: 'jumbotron', title: 'Jumbotron',
+                                subs: []
+                            },
+                            {
+                                targetId: 'page-header', title: 'Page header',
+                                subs: []
                             }
                         ]
                     }
@@ -129,7 +144,10 @@ export const components = b.createVirtualComponent({
                     navbarPage(),
                     breadcrumbs(),
                     pagination(),
-                    labels()
+                    labels(),
+                    badges(),
+                    jumbotron(),
+                    pageHeader()
                 ])
         ];
     }

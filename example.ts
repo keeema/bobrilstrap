@@ -143,7 +143,10 @@ b.routes(
             b.route({ url: 'pagination', name: 'pagination', handler: false }),
             b.route({ url: 'pagination-default', name: 'pagination-default', handler: false }),
             b.route({ url: 'pagination-pager', name: 'pagination-pager', handler: false }),
-            b.route({ url: 'labels', name: 'labels', handler: false })
+            b.route({ url: 'labels', name: 'labels', handler: false }),
+            b.route({ url: 'badges', name: 'badges', handler: false }),
+            b.route({ url: 'jumbotron', name: 'jumbotron', handler: false }),
+            b.route({ url: 'page-header', name: 'page-header', handler: false })
         ]),
         b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

@@ -5,6 +5,7 @@ export * from './components/abbreviation';
 export * from './components/address';
 export * from './components/affix';
 export * from './components/alert';
+export * from './components/badge';
 export * from './components/blockquote';
 export * from './components/bobrilHelpers';
 export * from './components/breadcrumb';

@@ -151,6 +151,6 @@ b.routes(
             b.route({ url: 'thumbnails-default', name: 'thumbnails-default', handler: false }),
             b.route({ url: 'thumbnails-custom-content', name: 'thumbnails-custom-content', handler: false })
         ]),
-        b.route({ url: 'thumbnails-default', name: 'thumbnails-default', handler: javaScript }),
+        b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })
     ]));

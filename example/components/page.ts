@@ -14,6 +14,7 @@ import { labels } from './labels';
 import { badges } from './badges';
 import { jumbotron } from './jumbotron';
 import { pageHeader } from './pageHeader';
+import { thumbnails } from './thumbnails';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -130,6 +131,13 @@ export const components = b.createVirtualComponent({
                             {
                                 targetId: 'page-header', title: 'Page header',
                                 subs: []
+                            },
+                            {
+                                targetId: 'thumbnails', title: 'Thumbnails',
+                                subs: [
+                                    { targetId: 'thumbnails-default', title: 'Default example' },
+                                    { targetId: 'thumbnails-custom-content', title: 'Custom content' }
+                                ]
                             }
                         ]
                     }
@@ -147,7 +155,8 @@ export const components = b.createVirtualComponent({
                     labels(),
                     badges(),
                     jumbotron(),
-                    pageHeader()
+                    pageHeader(),
+                    thumbnails()
                 ])
         ];
     }

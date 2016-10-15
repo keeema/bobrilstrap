@@ -29,7 +29,9 @@ export const helpers = {
     hidden: b.styleDef('hidden'),
     srOnly: b.styleDef('sr-only'),
     srOnlyFocusable: b.styleDef('sr-only-focusable'),
-    textHide: b.styleDef('text-hide')
+    textHide: b.styleDef('text-hide'),
+    caption: b.styleDef('caption'),
+    thumbnail: b.styleDef('thumbnail')
 };
 
 export default helpers;

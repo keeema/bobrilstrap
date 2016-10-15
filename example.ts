@@ -146,8 +146,11 @@ b.routes(
             b.route({ url: 'labels', name: 'labels', handler: false }),
             b.route({ url: 'badges', name: 'badges', handler: false }),
             b.route({ url: 'jumbotron', name: 'jumbotron', handler: false }),
-            b.route({ url: 'page-header', name: 'page-header', handler: false })
+            b.route({ url: 'page-header', name: 'page-header', handler: false }),
+            b.route({ url: 'thumbnails', name: 'thumbnails', handler: false }),
+            b.route({ url: 'thumbnails-default', name: 'thumbnails-default', handler: false }),
+            b.route({ url: 'thumbnails-custom-content', name: 'thumbnails-custom-content', handler: false })
         ]),
-        b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
+        b.route({ url: 'thumbnails-default', name: 'thumbnails-default', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })
     ]));

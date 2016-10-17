@@ -27,7 +27,7 @@ function example(): b.IBobrilChildren {
             bs.button({ option: bs.ButtonOption.Primary }, ['Messages', ' ', bs.badge({}, '4')])
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.a({ href: 'javascript: void(0)' }, ['Inbox', ' ', bs.badge({}, '42')])`, bs.e({ tag: 'br' }),
+            `bs.a({ href: '...' }, ['Inbox', ' ', bs.badge({}, '42')])`, bs.e({ tag: 'br' }),
             bs.e({ tag: 'br' }),
             `bs.button({ option: bs.ButtonOption.Primary }, ['Messages', ' ', bs.badge({}, '4')])`
         ]))),
@@ -47,9 +47,9 @@ function example(): b.IBobrilChildren {
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
             `bs.pills({}, [`, bs.e({ tag: 'br' }),
-            `    bs.pill({ active: true }, bs.a({ href: 'javascript: void(0)' }, ['Home', ' ', bs.badge({}, '42')])),`, bs.e({ tag: 'br' }),
-            `    bs.pill({}, bs.a({ href: 'javascript: void(0)' }, 'Profile')),`, bs.e({ tag: 'br' }),
-            `    bs.pill({}, bs.a({ href: 'javascript: void(0)' }, ['Messages ', ' ', bs.badge({}, '3')]))`, bs.e({ tag: 'br' }),
+            `    bs.pill({ active: true }, bs.a({ href: '...' }, ['Home', ' ', bs.badge({}, '42')])),`, bs.e({ tag: 'br' }),
+            `    bs.pill({}, bs.a({ href: '...' }, 'Profile')),`, bs.e({ tag: 'br' }),
+            `    bs.pill({}, bs.a({ href: '...' }, ['Messages ', ' ', bs.badge({}, '3')]))`, bs.e({ tag: 'br' }),
             `])`
         ]))),
     ];

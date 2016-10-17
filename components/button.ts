@@ -69,7 +69,12 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
     render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = resolveTag(ctx);
 
-        b.style(me, ctx.data.option !== ButtonOption.Close && (!ctx.data.navbar || ctx.data.tag !== ButtonTag.A) && buttonStyles.btn);
+        b.style(
+            me,
+            ctx.data.option !== ButtonOption.Close
+            && (!ctx.data.navbar || ctx.data.tag !== ButtonTag.A)
+            && buttonStyles.btn
+        );
         b.style(me, !!ctx.data.active && buttonStyles.active);
         b.style(me, !!ctx.data.block && buttonStyles.btnBlock);
         b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));

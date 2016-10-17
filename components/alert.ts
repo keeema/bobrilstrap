@@ -1,9 +1,13 @@
 import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode } from './element';
-import { createDictionary } from './bobrilHelpers';
+import { button, IButtonData, ButtonOption } from './button';
+import { span } from './span';
+import { createDictionary, mergeToChildren } from './bobrilHelpers';
 
 export interface IAlertData extends IBaseData {
     context: AlertContext;
+    dismissButton?: IButtonData;
+    nativeDismiss?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -22,7 +26,9 @@ export const alertStyles = {
     alertSuccess: b.styleDef('alert-success'),
     alertInfo: b.styleDef('alert-info'),
     alertDanger: b.styleDef('alert-danger'),
-    alertWarning: b.styleDef('alert-warning')
+    alertWarning: b.styleDef('alert-warning'),
+    alertDismissable: b.styleDef('alert-dismissible'),
+    alertLink: b.styleDef('alert-link')
 };
 
 export const alertContextStyles = createDictionary<AlertContext, b.IBobrilStyle>();
@@ -37,6 +43,25 @@ export const alert = b.createDerivedComponent<IAlertData>(elem, {
         b.style(me, alertStyles.alert);
         b.style(me, alertContextStyles(ctx.data.context));
         me.attrs['role'] = 'alert';
+
+        if (ctx.data.dismissButton) {
+            b.style(me, alertStyles.alertDismissable);
+
+            const buttonData = b.assign({}, ctx.data.dismissButton, <IButtonData>{
+                alert: true,
+                data: ctx.data.nativeDismiss
+                    ? b.assign({}, ctx.data.dismissButton.data, { dismiss: 'alert' })
+                    : ctx.data.dismissButton.data,
+                option: ButtonOption.Close
+            });
+
+            if (!buttonData.children) {
+                mergeToChildren(buttonData, span({ aria: { hidden: true } }, '×'), true);
+            }
+
+            const dismissButton = button(buttonData);
+            mergeToChildren(me, dismissButton, true);
+        }
     }
 });
 

@@ -14,6 +14,7 @@ export interface IAria {
 export interface IData {
     toggle?: string;
     target?: string;
+    dismiss?: string;
 }
 
 export interface IBaseData {
@@ -41,8 +42,8 @@ interface IElementBobrilComponent extends b.IBobrilComponent {
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode, oldMe?: b.IBobrilCacheNode): void;
 }
 
-export type IElementBobrilNode =  IElementBobrilNodeCommon & b.IBobrilNode;
-export type IElementBobrilCacheNode =  IElementBobrilNodeCommon & b.IBobrilCacheNode;
+export type IElementBobrilNode = IElementBobrilNodeCommon & b.IBobrilNode;
+export type IElementBobrilCacheNode = IElementBobrilNodeCommon & b.IBobrilCacheNode;
 
 export interface IElementData extends IBaseData {
     tag?: string;
@@ -98,7 +99,7 @@ export const e = b.createVirtualComponent<IElementData>({
 
         Object.keys(dataAttrs).forEach(key => {
             me.attrs[`data-${key}`] = dataAttrs[key];
-        });        
+        });
 
         b.style(me, ctx.data.style);
     },

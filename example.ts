@@ -149,7 +149,11 @@ b.routes(
             b.route({ url: 'page-header', name: 'page-header', handler: false }),
             b.route({ url: 'thumbnails', name: 'thumbnails', handler: false }),
             b.route({ url: 'thumbnails-default', name: 'thumbnails-default', handler: false }),
-            b.route({ url: 'thumbnails-custom-content', name: 'thumbnails-custom-content', handler: false })
+            b.route({ url: 'thumbnails-custom-content', name: 'thumbnails-custom-content', handler: false }),
+            b.route({ url: 'alerts', name: 'alerts', handler: false }),
+            b.route({ url: 'alerts-examples', name: 'alerts-examples', handler: false }),
+            b.route({ url: 'alerts-dismissible', name: 'alerts-dismissible', handler: false }),
+            b.route({ url: 'alerts-links', name: 'alerts-links', handler: false })
         ]),
         b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

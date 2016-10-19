@@ -13,6 +13,7 @@ export interface IItem {
 export interface IDocsSidebarData {
     children?: b.IBobrilChildren;
     items: IItem[];
+    main?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -27,16 +28,17 @@ export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
         b.addDisposable(ctx, () => b.removeOnScroll(onScrollListener));
     },
     render(ctx: ICtx, me: b.IBobrilNode) {
-        const scrollTop  = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const limit = ctx.data.main ? 610 : 300;
         me.children = bs.e(
             {
                 tag: 'nav',
                 style: [
                     styles.bsDocsSidebar, bs.hiddenStyles(bs.Device.Print), bs.hiddenStyles(bs.Device.Sm), bs.hiddenStyles(bs.Device.Xs),
-                    scrollTop < 300 ? affixStyles.affixTop : affixStyles.affix
+                    scrollTop < limit ? affixStyles.affixTop : affixStyles.affix
                 ]
             },
-            sideBarItems({ items: ctx.data.items, isTop: true}));
+            sideBarItems({ items: ctx.data.items, isTop: true }));
     }
 });
 

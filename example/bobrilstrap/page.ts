@@ -8,10 +8,28 @@ export const bobrilstrapPage = b.createVirtualComponent({
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = [
             header(texts),
-            docsContainer({ id: 'bobrilstrap' }, [
-                bobrilDesc(),
-                bobrilstrap()
-            ])
+            docsContainer(
+                {
+                    id: 'bobrilstrap',
+                    sidebar: {
+                        main: true,
+                        items: [
+                            {
+                                targetId: 'bobril', title: 'Bobril',
+                                subs: []
+                            },
+                            {
+                                targetId: 'bobrilstrap-installation', title: 'Bobrilstrap installation',
+                                subs: [
+                                ]
+                            }
+                        ]
+                    }
+                },
+                [
+                    bobrilDesc(),
+                    bobrilstrap()
+                ])
         ];
     }
 });
@@ -19,5 +37,6 @@ export const bobrilstrapPage = b.createVirtualComponent({
 const texts = {
     header: 'Bobrilstrap',
     headerContent: `Bobril wrapper of the most popular HTML, CSS, and JS framework for developing responsive,
-     mobile first projects on the web - Bootstrap.`
+     mobile first projects on the web - Bootstrap.`,
+    iconText: 'BS'
 };

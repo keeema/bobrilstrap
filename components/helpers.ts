@@ -24,13 +24,12 @@ export const helpers = {
     close: b.styleDef('close'),
     caret: b.styleDef('caret'),
     centerBlock: b.styleDef('center-block'),
+    hidden: b.styleDef('hidden'),
     invisible: b.styleDef('invisible'),
     show: b.styleDef('show'),
-    hidden: b.styleDef('hidden'),
     srOnly: b.styleDef('sr-only'),
     srOnlyFocusable: b.styleDef('sr-only-focusable'),
     textHide: b.styleDef('text-hide'),
-    caption: b.styleDef('caption'),
     thumbnail: b.styleDef('thumbnail')
 };
 

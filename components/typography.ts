@@ -1,6 +1,7 @@
 import * as b from 'bobril';
 
 export const typography = {
+    caption: b.styleDef('caption'),
     lead: b.styleDef('lead'),
     textLeft: b.styleDef('text-left'),
     textCenter: b.styleDef('text-center'),

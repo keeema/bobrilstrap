@@ -89,7 +89,10 @@ b.routes(
             b.route({ url: 'responsive-utilities-print', name: 'responsive-utilities-print', handler: false }),
             b.route({ url: 'responsive-utilities-tests', name: 'responsive-utilities-tests', handler: false })
         ]),
-        b.route({ url: 'bobrilstrap', name: 'bobrilstrap', handler: bobrilstrapPage }),
+        b.route({ url: 'bobrilstrap', name: 'bobrilstrap', handler: bobrilstrapPage }, [
+            b.route({ url: 'bobril', name: 'bobril', handler: false }),
+            b.route({ url: 'bobrilstrap-installation', name: 'bobrilstrap-installation', handler: false })
+        ]),
         b.route({ url: 'components', name: 'components', handler: components }, [
             b.route({ url: 'glyphicons', name: 'glyphicons', handler: false }),
             b.route({ url: 'glyphicons-glyphs', name: 'glyphicons-glyphs', handler: false }),

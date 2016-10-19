@@ -73,7 +73,7 @@ function example(): b.IBobrilChildren {
                 bs.col({ cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }] }, [
                     bs.e({ tag: 'div', style: bs.helpers.thumbnail }, [
                         bs.image({ src: imageData2 }),
-                        bs.e({ tag: 'div', style: bs.helpers.caption }, [
+                        bs.e({ tag: 'div', style: bs.typography.caption }, [
                             bs.h3({}, 'Thumbnail label'),
                             bs.p({}, 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at '
                                 + 'eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
@@ -87,7 +87,7 @@ function example(): b.IBobrilChildren {
                 bs.col({ cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }] }, [
                     bs.e({ tag: 'div', style: bs.helpers.thumbnail }, [
                         bs.image({ src: imageData2 }),
-                        bs.e({ tag: 'div', style: bs.helpers.caption }, [
+                        bs.e({ tag: 'div', style: bs.typography.caption }, [
                             bs.h3({}, 'Thumbnail label'),
                             bs.p({}, 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at '
                                 + 'eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
@@ -101,7 +101,7 @@ function example(): b.IBobrilChildren {
                 bs.col({ cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }] }, [
                     bs.e({ tag: 'div', style: bs.helpers.thumbnail }, [
                         bs.image({ src: imageData2 }),
-                        bs.e({ tag: 'div', style: bs.helpers.caption }, [
+                        bs.e({ tag: 'div', style: bs.typography.caption }, [
                             bs.h3({}, 'Thumbnail label'),
                             bs.p({}, 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at '
                                 + 'eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.'),
@@ -119,7 +119,7 @@ function example(): b.IBobrilChildren {
             `    bs.col({ cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }] }, [`, bs.e({ tag: 'br' }),
             `        bs.e({ tag: 'div', style: bs.helpers.thumbnail }, [`, bs.e({ tag: 'br' }),
             `            bs.image({ src: imageData2 }),`, bs.e({ tag: 'br' }),
-            `            bs.e({ tag: 'div', style: bs.helpers.caption }, [`, bs.e({ tag: 'br' }),
+            `            bs.e({ tag: 'div', style: bs.typography.caption }, [`, bs.e({ tag: 'br' }),
             `                bs.h3({}, 'Thumbnail label'),`, bs.e({ tag: 'br' }),
             `                bs.p({}, '...')`, bs.e({ tag: 'br' }),
             `                bs.p({}, [`, bs.e({ tag: 'br' }),

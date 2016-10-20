@@ -5,6 +5,7 @@ export const styles = {
     bsCalloutInfo: b.styleDef('bs-callout-info'),
     bsCalloutDanger: b.styleDef('bs-callout-danger'),
     bsCalloutWarning: b.styleDef('bs-callout-warning'),
+    bsDocsActivateAnimatedProgressbar: b.styleDef('bs-docs-activate-animated-progressbar'),
     bsDocsContainer: b.styleDef('bs-docs-container'),
     bsDocsBooticon: b.styleDef('bs-docs-booticon'),
     bsDocsBooticonLg: b.styleDef('bs-docs-booticon-lg'),

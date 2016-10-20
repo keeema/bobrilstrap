@@ -109,7 +109,7 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
             ctx.data.data = b.assign({}, ctx.data.data);
             ctx.data.aria = b.assign({}, ctx.data.aria);
 
-            ctx.data.aria.hasPopup = true;
+            ctx.data.aria.haspopup = true;
             ctx.data.data.toggle = 'dropdown';
             b.style(me, dropdownStyles.dropdownToggle);
 

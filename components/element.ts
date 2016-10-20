@@ -1,14 +1,18 @@
 import * as b from 'bobril';
+import { toLowerWithDashes } from './bobrilHelpers';
 
 export interface IAria {
     label?: string;
-    labelledBy?: string;
-    describedBy?: string;
+    labelledby?: string;
+    describedby?: string;
     expanded?: boolean;
     invalid?: boolean;
-    hasPopup?: boolean;
+    haspopup?: boolean;
     hidden?: boolean;
     pressed?: boolean;
+    valuenow?: number;
+    valuemin?: number;
+    valuemax?: number;
 }
 
 export interface IData {
@@ -70,35 +74,16 @@ export const e = b.createVirtualComponent<IElementData>({
         if (ctx.data.key)
             b.withKey(me, ctx.data.key);
 
+
         if (ctx.data.title)
             me.attrs['title'] = ctx.data.title;
 
-        if (aria.label)
-            me.attrs['aria-label'] = aria.label;
-
-        if (aria.labelledBy)
-            me.attrs['aria-labelledby'] = aria.labelledBy;
-
-        if (aria.describedBy)
-            me.attrs['aria-describedby'] = aria.describedBy;
-
-        if (aria.expanded !== undefined && aria.expanded !== null)
-            me.attrs['aria-expanded'] = aria.expanded.toString();
-
-        if (aria.invalid !== undefined && aria.invalid !== null)
-            me.attrs['aria-invalid'] = aria.invalid.toString();
-
-        if (aria.hasPopup !== undefined && aria.hasPopup !== null)
-            me.attrs['aria-haspopup'] = aria.hasPopup.toString();
-
-        if (aria.hidden !== undefined && aria.hidden !== null)
-            me.attrs['aria-hidden'] = aria.hidden.toString();
-
-        if (aria.pressed !== undefined && aria.pressed !== null)
-            me.attrs['aria-pressed'] = aria.pressed.toString();
+        Object.keys(aria).forEach(key => {
+            me.attrs[`aria-${toLowerWithDashes(key)}`] = aria[key];
+        });
 
         Object.keys(dataAttrs).forEach(key => {
-            me.attrs[`data-${key}`] = dataAttrs[key];
+            me.attrs[`data-${toLowerWithDashes(key)}`] = dataAttrs[key];
         });
 
         b.style(me, ctx.data.style);

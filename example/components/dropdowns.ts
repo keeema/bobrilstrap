@@ -35,7 +35,7 @@ function example(): b.IBobrilChildren {
                     button: { label: 'Dropdown', id: 'dropdownMenu1' },
                     style: bs.helpers.clearfix
                 },
-                bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenu1' } }, [
+                bs.dropdownMenu({ aria: { labelledby: 'dropdownMenu1' } }, [
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Something else here')),
@@ -47,7 +47,7 @@ function example(): b.IBobrilChildren {
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
             `bs.dropdown(`, bs.e({ tag: 'br' }),
             `    { button: { label: 'Dropdown', id: 'dropdownMenu1' } },`, bs.e({ tag: 'br' }),
-            `    bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenu1'}}, [`, bs.e({ tag: 'br' }),
+            `    bs.dropdownMenu({ aria: { labelledby: 'dropdownMenu1'}}, [`, bs.e({ tag: 'br' }),
             `        bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
             `        bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),
             `        bs.dropdownItem({}, bs.a({ href: '...' }, 'Something else here')),`, bs.e({ tag: 'br' }),
@@ -58,7 +58,7 @@ function example(): b.IBobrilChildren {
         ]))),
         bs.p({}, [
             `Dropdown menus can be changed to expand upwards (instead of downwards) by setting `, bs.code({}, 'up'),
-            ` input data property or by using `, bs.code({}, 'dropdownStyles.dropup'), ` instead of `, 
+            ` input data property or by using `, bs.code({}, 'dropdownStyles.dropup'), ` instead of `,
             bs.code({}, 'dropdownStyles.dropdown'), `.`
         ]),
         bs.e({ style: styles.bsExample }, [
@@ -68,7 +68,7 @@ function example(): b.IBobrilChildren {
                     button: { label: 'Dropup', id: 'dropdownMenu1' },
                     style: bs.helpers.clearfix
                 },
-                bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenu1' } }, [
+                bs.dropdownMenu({ aria: { labelledby: 'dropdownMenu1' } }, [
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Something else here')),
@@ -83,7 +83,7 @@ function example(): b.IBobrilChildren {
             `        button: { label: 'Dropup', id: 'dropdownMenu1' },`, bs.e({ tag: 'br' }),
             `        up: true,`, bs.e({ tag: 'br' }),
             `    },`, bs.e({ tag: 'br' }),
-            `    bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenu1'}}, [`, bs.e({ tag: 'br' }),
+            `    bs.dropdownMenu({ aria: { labelledby: 'dropdownMenu1'}}, [`, bs.e({ tag: 'br' }),
             `        bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
             `        bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),
             `        bs.dropdownItem({}, bs.a({ href: '...' }, 'Something else here')),`, bs.e({ tag: 'br' }),
@@ -106,12 +106,12 @@ function alignment(): b.IBobrilChildren {
             bs.h4({}, `May require additional positioning`),
             bs.p({}, [
                 `Dropdowns are automatically positioned via CSS within the normal flow of the document. This means dropdowns may be cropped 
-                by parents with certain `, bs.code({}, 'overflow'), 
+                by parents with certain `, bs.code({}, 'overflow'),
                 ` properties or appear out of bounds of the viewport. Address these issues on your own as they arise.`
             ])
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.dropdownMenu({ right: true, aria: { labelledBy: 'dLabel' } }, [`, bs.e({ tag: 'br' }),
+            `bs.dropdownMenu({ right: true, aria: { labelledby: 'dLabel' } }, [`, bs.e({ tag: 'br' }),
             `    ...`, bs.e({ tag: 'br' }),
             `])`
         ])))
@@ -128,7 +128,7 @@ function headers(): b.IBobrilChildren {
                     button: { label: 'Dropdown', id: 'dropdownMenu3' },
                     style: bs.helpers.clearfix
                 },
-                bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenu3' } }, [
+                bs.dropdownMenu({ aria: { labelledby: 'dropdownMenu3' } }, [
                     bs.dropdownItem({ header: true }, 'Dropdown header'),
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
@@ -139,7 +139,7 @@ function headers(): b.IBobrilChildren {
             )
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenu3' }}, [`, bs.e({ tag: 'br' }),
+            `bs.dropdownMenu({ aria: { labelledby: 'dropdownMenu3' }}, [`, bs.e({ tag: 'br' }),
             `    ...`, bs.e({ tag: 'br' }),
             `    bs.dropdownItem({ header: true }, 'Dropdown header'),`, bs.e({ tag: 'br' }),
             `    ...`, bs.e({ tag: 'br' }),
@@ -158,7 +158,7 @@ function divider(): b.IBobrilChildren {
                     button: { label: 'Dropdown', id: 'dropdownMenuDivider' },
                     style: bs.helpers.clearfix
                 },
-                bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenuDivider' } }, [
+                bs.dropdownMenu({ aria: { labelledby: 'dropdownMenuDivider' } }, [
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Something else here')),
@@ -168,7 +168,7 @@ function divider(): b.IBobrilChildren {
             )
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenuDivider' }}, [`, bs.e({ tag: 'br' }),
+            `bs.dropdownMenu({ aria: { labelledby: 'dropdownMenuDivider' }}, [`, bs.e({ tag: 'br' }),
             `    ...`, bs.e({ tag: 'br' }),
             `    bs.dropdownItem({ separator: true }),`, bs.e({ tag: 'br' }),
             `    ...`, bs.e({ tag: 'br' }),
@@ -188,7 +188,7 @@ function disabled(): b.IBobrilChildren {
                     button: { label: 'Dropdown', id: 'dropdownMenu4' },
                     style: bs.helpers.clearfix
                 },
-                bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenu4' } }, [
+                bs.dropdownMenu({ aria: { labelledby: 'dropdownMenu4' } }, [
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Regular link')),
                     bs.dropdownItem({ disabled: true }, bs.a({ href: 'javascript:void(0)' }, 'Disabled link')),
                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another link'))
@@ -196,7 +196,7 @@ function disabled(): b.IBobrilChildren {
             )
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.dropdownMenu({ aria: { labelledBy: 'dropdownMenu4' }}, [`, bs.e({ tag: 'br' }),
+            `bs.dropdownMenu({ aria: { labelledby: 'dropdownMenu4' }}, [`, bs.e({ tag: 'br' }),
             `    bs.dropdownItem({}, bs.a({ href: '...' }, 'Regular link')),`, bs.e({ tag: 'br' }),
             `    bs.dropdownItem({ disabled: true }, bs.a({ href: '...' }, 'Disabled link')),`, bs.e({ tag: 'br' }),
             `    bs.dropdownItem({}, bs.a({ href: '...' }, 'Another link'))`, bs.e({ tag: 'br' }),

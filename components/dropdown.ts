@@ -54,7 +54,7 @@ function updateButtonDataForDropdown(originalButtonData: IButtonData, navbar: bo
     buttonData.dropdown = true;
     buttonData.navbar = originalButtonData.navbar || navbar;
     buttonData.aria = b.assign({}, buttonData.aria);
-    buttonData.aria.hasPopup = true;
+    buttonData.aria.haspopup = true;
     return buttonData;
 }
 

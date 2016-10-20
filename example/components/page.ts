@@ -16,6 +16,7 @@ import { jumbotron } from './jumbotron';
 import { pageHeader } from './pageHeader';
 import { thumbnails } from './thumbnails';
 import { alerts } from './alerts';
+import { progress } from './progress';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -147,6 +148,17 @@ export const components = b.createVirtualComponent({
                                     { targetId: 'alerts-dismissible', title: 'Dismissible alerts' },
                                     { targetId: 'alerts-links', title: 'Links in alerts' }
                                 ]
+                            },
+                            {
+                                targetId: 'progress', title: 'Progress bars',
+                                subs: [
+                                    { targetId: 'progress-basic', title: 'Basic example' },
+                                    { targetId: 'progress-label', title: 'With label' },
+                                    { targetId: 'progress-alternatives', title: 'Contextual alternatives' },
+                                    { targetId: 'progress-striped', title: 'Striped' },
+                                    { targetId: 'progress-animated', title: 'Animated' },
+                                    { targetId: 'progress-stacked', title: 'Stacked' }
+                                ]
                             }
                         ]
                     }
@@ -166,7 +178,8 @@ export const components = b.createVirtualComponent({
                     jumbotron(),
                     pageHeader(),
                     thumbnails(),
-                    alerts()
+                    alerts(),
+                    progress()
                 ])
         ];
     }

@@ -156,7 +156,14 @@ b.routes(
             b.route({ url: 'alerts', name: 'alerts', handler: false }),
             b.route({ url: 'alerts-examples', name: 'alerts-examples', handler: false }),
             b.route({ url: 'alerts-dismissible', name: 'alerts-dismissible', handler: false }),
-            b.route({ url: 'alerts-links', name: 'alerts-links', handler: false })
+            b.route({ url: 'alerts-links', name: 'alerts-links', handler: false }),
+            b.route({ url: 'progress', name: 'progress', handler: false }),
+            b.route({ url: 'progress-basic', name: 'progress-basic', handler: false }),
+            b.route({ url: 'progress-label', name: 'progress-label', handler: false }),
+            b.route({ url: 'progress-alternatives', name: 'progress-alternatives', handler: false }),
+            b.route({ url: 'progress-striped', name: 'progress-striped', handler: false }),
+            b.route({ url: 'progress-animated', name: 'progress-animated', handler: false }),
+            b.route({ url: 'progress-stacked', name: 'progress-stacked', handler: false })
         ]),
         b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

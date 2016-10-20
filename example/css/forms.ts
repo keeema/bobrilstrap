@@ -107,7 +107,7 @@ function inlineForm(): b.IBobrilChildren {
                 ` label input data property. There are further alternative methods of providing a label for assistive technologies, 
                 such as the `,
                 bs.code({}, 'aria.label'), `, `,
-                bs.code({}, 'aria.labelledBy'), ` or `,
+                bs.code({}, 'aria.labelledby'), ` or `,
                 bs.code({}, 'title'),
                 ` input data property.  If none of these is set, screen readers may resort to using the `,
                 bs.code({}, 'placeholder'), ` attribute defined by `, bs.code({}, 'placeholder'),
@@ -614,7 +614,7 @@ function formsHelpText(): b.IBobrilChildren {
             bs.h4({}, `Associating help text with form controls`),
             bs.p({}, [
                 `Help text should be explicitly associated with the form control it relates to using the `,
-                bs.code({}, 'aria.describedBy'),
+                bs.code({}, 'aria.describedby'),
                 ` input data property. This will ensure that assistive technologies – such as screen readers 
                 – will announce this help text when the user focuses or enters the control.`
             ])
@@ -623,7 +623,7 @@ function formsHelpText(): b.IBobrilChildren {
             bs.form({}, [
                 bs.formGroup({}, [
                     bs.label({ for: 'inputHelpBlock', title: 'Input with help text' }),
-                    bs.inputText({ id: 'inputHelpBlock', aria: { describedBy: 'helpBlock' } })
+                    bs.inputText({ id: 'inputHelpBlock', aria: { describedby: 'helpBlock' } })
                 ]),
                 bs.helpText(
                     { id: 'helpBlock' },
@@ -635,7 +635,7 @@ function formsHelpText(): b.IBobrilChildren {
             `bs.form({}, [`, bs.e({ tag: 'br' }),
             `     bs.formGroup({}, [`, bs.e({ tag: 'br' }),
             `         bs.label({ for: 'inputHelpBlock', title: 'Input with help text' }),`, bs.e({ tag: 'br' }),
-            `         bs.inputText({ id: 'inputHelpBlock', aria: { describedBy: 'helpBlock' } })`, bs.e({ tag: 'br' }),
+            `         bs.inputText({ id: 'inputHelpBlock', aria: { describedby: 'helpBlock' } })`, bs.e({ tag: 'br' }),
             `     ]),`, bs.e({ tag: 'br' }),
             `     bs.helpText(`, bs.e({ tag: 'br' }),
             `         { id: 'helpBlock' },`, bs.e({ tag: 'br' }),
@@ -672,7 +672,7 @@ function validationStates(): b.IBobrilChildren {
             bs.form({}, [
                 bs.formGroup({ validationState: bs.ValidationState.Success }, [
                     bs.label({ for: 'inputSuccess1', title: 'Input with success', controlLabel: true }),
-                    bs.inputText({ id: 'inputSuccess1', aria: { describedBy: 'helpBlock2' } }),
+                    bs.inputText({ id: 'inputSuccess1', aria: { describedby: 'helpBlock2' } }),
                     bs.helpText(
                         { id: 'helpBlock2' },
                         'A block of help text that breaks onto a new line and may extend beyond one line.'
@@ -710,7 +710,7 @@ function validationStates(): b.IBobrilChildren {
             `bs.form({}, [`, bs.e({ tag: 'br' }),
             `    bs.formGroup({ validationState: bs.ValidationState.Success }, [`, bs.e({ tag: 'br' }),
             `        bs.label({ for: 'inputSuccess1', title: 'Input with success', controlLabel: true }),`, bs.e({ tag: 'br' }),
-            `        bs.inputText({ id: 'inputSuccess1', aria: { describedBy: 'helpBlock2' } }),`, bs.e({ tag: 'br' }),
+            `        bs.inputText({ id: 'inputSuccess1', aria: { describedby: 'helpBlock2' } }),`, bs.e({ tag: 'br' }),
             `        bs.helpText(`, bs.e({ tag: 'br' }),
             `            { id: 'helpBlock2' },`, bs.e({ tag: 'br' }),
             `            'A block of help text that breaks onto a new line and may extend beyond one line.'`, bs.e({ tag: 'br' }),

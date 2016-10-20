@@ -68,6 +68,8 @@ export * from './components/panelFooter';
 export * from './components/panelHeading';
 export * from './components/panelTitle';
 export * from './components/paragraph';
+export * from './components/progress';
+export * from './components/progressBar';
 export * from './components/pill';
 export * from './components/pills';
 export * from './components/pre';

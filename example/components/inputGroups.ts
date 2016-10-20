@@ -51,7 +51,7 @@ function info(): b.IBobrilChildren {
             bs.p({}, [
                 `The exact technique to be used (visible `, bs.code({}, ' label'), ` node, `, bs.code({}, ' label'),
                 ` nodes hidden using the `, bs.code({}, 'srOnly'), ` property, or use of the `, bs.code({}, ' aria.label'),
-                `, `, bs.code({}, 'aria.labelledBy'), `, `, bs.code({}, 'aria.describedBy'), `, `, bs.code({}, 'title'), ` or `,
+                `, `, bs.code({}, 'aria.labelledby'), `, `, bs.code({}, 'aria.describedby'), `, `, bs.code({}, 'title'), ` or `,
                 bs.code({}, 'placeholder'), ` attribute) and what additional information will need to be conveyed will vary 
                 depending on the exact type of interface widget you're implementing. The examples in this section provide 
                 a few suggested, case-specific approaches.`
@@ -72,11 +72,11 @@ function basicExample(): b.IBobrilChildren {
         bs.e({ style: styles.bsExample }, [
             bs.inputGroup({}, [
                 bs.inputGroupAddon({ id: 'basic-addon1' }, '@'),
-                bs.inputText({ placeholder: 'Username', aria: { describedBy: 'basic-addon1' } })
+                bs.inputText({ placeholder: 'Username', aria: { describedby: 'basic-addon1' } })
             ]),
             bs.e({ tag: 'br' }),
             bs.inputGroup({}, [
-                bs.inputText({ placeholder: `Recipient's username`, aria: { describedBy: 'basic-addon2' } }),
+                bs.inputText({ placeholder: `Recipient's username`, aria: { describedby: 'basic-addon2' } }),
                 bs.inputGroupAddon({ id: 'basic-addon2' }, '@example.com')
             ]),
             bs.e({ tag: 'br' }),
@@ -89,16 +89,16 @@ function basicExample(): b.IBobrilChildren {
             bs.label({}, 'Your vanity URL'),
             bs.inputGroup({}, [
                 bs.inputGroupAddon({ id: 'basic-addon3' }, 'https://example.com/users/'),
-                bs.inputText({ id: 'basic-url', aria: { describedBy: 'basic-addon3' } })
+                bs.inputText({ id: 'basic-url', aria: { describedby: 'basic-addon3' } })
             ])
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
             `bs.inputGroup({}, [`, bs.e({ tag: 'br' }),
             `    bs.inputGroupAddon({ id: 'basic-addon1' }, '@'),`, bs.e({ tag: 'br' }),
-            `    bs.inputText({ placeholder: 'Username', aria: { describedBy: 'basic-addon1' } })`, bs.e({ tag: 'br' }),
+            `    bs.inputText({ placeholder: 'Username', aria: { describedby: 'basic-addon1' } })`, bs.e({ tag: 'br' }),
             `]),`, bs.e({ tag: 'br' }),
             `bs.inputGroup({}, [`, bs.e({ tag: 'br' }),
-            `    bs.inputText({ placeholder: 'Recipient\\'s username', aria: { describedBy: 'basic-addon2' } }),`, bs.e({ tag: 'br' }),
+            `    bs.inputText({ placeholder: 'Recipient\\'s username', aria: { describedby: 'basic-addon2' } }),`, bs.e({ tag: 'br' }),
             `    bs.inputGroupAddon({ id: 'basic-addon2' }, '@example.com')`, bs.e({ tag: 'br' }),
             `]),`, bs.e({ tag: 'br' }),
             `bs.inputGroup({}, [`, bs.e({ tag: 'br' }),
@@ -109,7 +109,7 @@ function basicExample(): b.IBobrilChildren {
             `bs.label({}, 'Your vanity URL'),`, bs.e({ tag: 'br' }),
             `bs.inputGroup({}, [`, bs.e({ tag: 'br' }),
             `    bs.inputGroupAddon({ id: 'basic-addon3' }, 'https://example.com/users/'),`, bs.e({ tag: 'br' }),
-            `    bs.inputText({ id: 'basic-url', aria: { describedBy: 'basic-addon3' } })`, bs.e({ tag: 'br' }),
+            `    bs.inputText({ id: 'basic-url', aria: { describedby: 'basic-addon3' } })`, bs.e({ tag: 'br' }),
             `])`
         ])))
     ];
@@ -126,32 +126,32 @@ function sizing(): b.IBobrilChildren {
         bs.e({ style: styles.bsExample }, [
             bs.inputGroup({ size: bs.InputGroupSize.Lg }, [
                 bs.inputGroupAddon({ id: 'sizing-addon1' }, '@'),
-                bs.inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon1' } })
+                bs.inputText({ placeholder: 'Username', aria: { describedby: 'sizing-addon1' } })
             ]),
             bs.e({ tag: 'br' }),
 
             bs.inputGroup({}, [
                 bs.inputGroupAddon({ id: 'sizing-addon2' }, '@'),
-                bs.inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon2' } })
+                bs.inputText({ placeholder: 'Username', aria: { describedby: 'sizing-addon2' } })
             ]),
             bs.e({ tag: 'br' }),
             bs.inputGroup({ size: bs.InputGroupSize.Sm }, [
                 bs.inputGroupAddon({ id: 'sizing-addon3' }, '@'),
-                bs.inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon3' } })
+                bs.inputText({ placeholder: 'Username', aria: { describedby: 'sizing-addon3' } })
             ])
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
             `bs.inputGroup({ size: bs.InputGroupSize.Lg }, [`, bs.e({ tag: 'br' }),
             `    bs.inputGroupAddon({ id: 'sizing-addon1' }, '@'),`, bs.e({ tag: 'br' }),
-            `    bs.inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon1' } })`, bs.e({ tag: 'br' }),
+            `    bs.inputText({ placeholder: 'Username', aria: { describedby: 'sizing-addon1' } })`, bs.e({ tag: 'br' }),
             `]),`, bs.e({ tag: 'br' }),
             `bs.inputGroup({}, [`, bs.e({ tag: 'br' }),
             `    bs.inputGroupAddon({ id: 'sizing-addon2' }, '@'),`, bs.e({ tag: 'br' }),
-            `    bs.inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon2' } })`, bs.e({ tag: 'br' }),
+            `    bs.inputText({ placeholder: 'Username', aria: { describedby: 'sizing-addon2' } })`, bs.e({ tag: 'br' }),
             `]),`, bs.e({ tag: 'br' }),
             `bs.inputGroup({ size: bs.InputGroupSize.Sm }, [`, bs.e({ tag: 'br' }),
             `    bs.inputGroupAddon({ id: 'sizing-addon3' }, '@'),`, bs.e({ tag: 'br' }),
-            `    bs.inputText({ placeholder: 'Username', aria: { describedBy: 'sizing-addon3' } })`, bs.e({ tag: 'br' }),
+            `    bs.inputText({ placeholder: 'Username', aria: { describedby: 'sizing-addon3' } })`, bs.e({ tag: 'br' }),
             `])`, bs.e({ tag: 'br' })
         ])))
     ];

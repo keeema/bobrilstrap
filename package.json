@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "description": "Bobril wrapper for bootstrap",
   "typescript": {
     "main": "index.ts"
@@ -8,7 +8,8 @@
   "bobril": {
     "example": "example.ts",
     "title": "Bobrilstrap",
-    "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+    "additionalResourcesDirectory": "example/assets",
+    "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
     "compilerOptions": {
       "noImplicitAny": true,
       "noImplicitThis": true,

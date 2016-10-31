@@ -29,7 +29,7 @@ export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
     },
     render(ctx: ICtx, me: b.IBobrilNode) {
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const limit = ctx.data.main ? 610 : 300;
+        const limit = ctx.data.main ? 610 : 325;
         me.children = bs.e(
             {
                 tag: 'nav',

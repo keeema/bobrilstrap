@@ -60,7 +60,7 @@ function example(): b.IBobrilChildren {
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
             `bs.row({}, [`, bs.e({ tag: 'br' }),
             `    bs.col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Md, span: 3 }] }, [`, bs.e({ tag: 'br' }),
-            `        bs.a({ href: '...', style: bs.helpers.thumbnail }, bs.image({ src: imageData }))`, bs.e({ tag: 'br' }),
+            `        bs.a({ href: '...', style: bs.helpers.thumbnail }, bs.image({ src: '...' }))`, bs.e({ tag: 'br' }),
             `    ])`, bs.e({ tag: 'br' }),
             `])`
         ]))),
@@ -118,7 +118,7 @@ function example(): b.IBobrilChildren {
             `bs.row({}, [`, bs.e({ tag: 'br' }),
             `    bs.col({ cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }] }, [`, bs.e({ tag: 'br' }),
             `        bs.e({ tag: 'div', style: bs.helpers.thumbnail }, [`, bs.e({ tag: 'br' }),
-            `            bs.image({ src: imageData2 }),`, bs.e({ tag: 'br' }),
+            `            bs.image({ src: '...' }),`, bs.e({ tag: 'br' }),
             `            bs.e({ tag: 'div', style: bs.typography.caption }, [`, bs.e({ tag: 'br' }),
             `                bs.h3({}, 'Thumbnail label'),`, bs.e({ tag: 'br' }),
             `                bs.p({}, '...')`, bs.e({ tag: 'br' }),

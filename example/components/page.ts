@@ -17,6 +17,7 @@ import { pageHeader } from './pageHeader';
 import { thumbnails } from './thumbnails';
 import { alerts } from './alerts';
 import { progress } from './progress';
+import { media } from './media';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -159,6 +160,13 @@ export const components = b.createVirtualComponent({
                                     { targetId: 'progress-animated', title: 'Animated' },
                                     { targetId: 'progress-stacked', title: 'Stacked' }
                                 ]
+                            },
+                            {
+                                targetId: 'media', title: 'Media object',
+                                subs: [
+                                    { targetId: 'media-default', title: 'Default media' },
+                                    { targetId: 'media-list', title: 'Media list' }
+                                ]
                             }
                         ]
                     }
@@ -179,7 +187,8 @@ export const components = b.createVirtualComponent({
                     pageHeader(),
                     thumbnails(),
                     alerts(),
-                    progress()
+                    progress(),
+                    media()
                 ])
         ];
     }

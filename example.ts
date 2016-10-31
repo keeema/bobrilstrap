@@ -163,7 +163,10 @@ b.routes(
             b.route({ url: 'progress-alternatives', name: 'progress-alternatives', handler: false }),
             b.route({ url: 'progress-striped', name: 'progress-striped', handler: false }),
             b.route({ url: 'progress-animated', name: 'progress-animated', handler: false }),
-            b.route({ url: 'progress-stacked', name: 'progress-stacked', handler: false })
+            b.route({ url: 'progress-stacked', name: 'progress-stacked', handler: false }),
+            b.route({ url: 'media', name: 'media', handler: false }),
+            b.route({ url: 'media-default', name: 'media-default', handler: false }),
+            b.route({ url: 'media-list', name: 'media-list', handler: false })
         ]),
         b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

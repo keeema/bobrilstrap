@@ -200,7 +200,7 @@ function brandImage(): b.IBobrilChildren {
             `bs.navbar({}, [`, bs.e({ tag: 'br' }),
             `    bs.container({ fluid: true }, [`, bs.e({ tag: 'br' }),
             `        bs.navbarHeader({}, [`, bs.e({ tag: 'br' }),
-            `            bs.navbarBrand({ href: '...' }, bs.image({ src: imageData, width: 20, height: 20 }))`,
+            `            bs.navbarBrand({ href: '...' }, bs.image({ src: '...', width: 20, height: 20 }))`,
             bs.e({ tag: 'br' }),
             `        ]),`, bs.e({ tag: 'br' }),
             `    ])`, bs.e({ tag: 'br' }),

@@ -7,6 +7,7 @@ import { mergeToChildren } from './bobrilHelpers';
 import { createDictionary, IDictionary } from './bobrilHelpers';
 import { dropdownStyles } from './dropdown';
 import { navStyles } from './nav';
+import { listGroupStyles } from './listGroup';
 
 export interface IButtonNavbarCollapse {
     target: string;
@@ -22,10 +23,13 @@ export interface IButtonData extends IBaseData {
     tag?: ButtonTag;
     href?: string;
     label?: string;
+
+    // helper properties
     dropdown?: boolean;
     dropdownSplittedSrOnly?: string;
     navbar?: boolean;
     navbarCollapse?: IButtonNavbarCollapse;
+    listGroupItem?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -72,13 +76,15 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
         b.style(
             me,
             ctx.data.option !== ButtonOption.Close
+            && !ctx.data.listGroupItem
             && (!ctx.data.navbar || ctx.data.tag !== ButtonTag.A)
             && buttonStyles.btn
         );
         b.style(me, !!ctx.data.active && buttonStyles.active);
         b.style(me, !!ctx.data.block && buttonStyles.btnBlock);
         b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));
-        b.style(me, !ctx.data.navbar && buttonOptiontStyles(ctx.data.option || ButtonOption.Default));
+        b.style(me, !ctx.data.navbar && !ctx.data.listGroupItem && buttonOptiontStyles(ctx.data.option || ButtonOption.Default));
+        b.style(me, !!ctx.data.listGroupItem && listGroupStyles.listGroupItem);
 
         const typeAttr = ctx.data.tag === ButtonTag.A ? 'role' : 'type';
         me.attrs[typeAttr] = ((ctx.data.type && ButtonType[ctx.data.type])

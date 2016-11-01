@@ -18,8 +18,9 @@ import { thumbnails } from './thumbnails';
 import { alerts } from './alerts';
 import { progress } from './progress';
 import { media } from './media';
-import { wells } from './wells';
+import { listGroup } from './listGroup';
 import { responsiveEmbed } from './responsiveEmbed';
+import { wells } from './wells';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -171,6 +172,18 @@ export const components = b.createVirtualComponent({
                                 ]
                             },
                             {
+                                targetId: 'list-group', title: 'List group',
+                                subs: [
+                                    { targetId: 'list-group-basic', title: 'Basic example' },
+                                    { targetId: 'list-group-badges', title: 'Badges' },
+                                    { targetId: 'list-group-linked', title: 'Linked items' },
+                                    { targetId: 'list-group-buttons', title: 'Button items' },
+                                    { targetId: 'list-group-disabled', title: 'Disabled items' },
+                                    { targetId: 'list-group-contextual-classes', title: 'Contextual classes' },
+                                    { targetId: 'list-group-custom-content', title: 'Custom content' }
+                                ]
+                            },
+                            {
                                 targetId: 'responsive-embed', title: 'Responsive embed',
                                 subs: []
                             },
@@ -199,6 +212,7 @@ export const components = b.createVirtualComponent({
                     alerts(),
                     progress(),
                     media(),
+                    listGroup(),
                     responsiveEmbed(),
                     wells()
                 ])

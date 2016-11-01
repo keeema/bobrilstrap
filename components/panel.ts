@@ -7,7 +7,7 @@ import { panelFooter } from './panelFooter';
 import { mergeToChildren } from './bobrilHelpers';
 
 export const panelStyles = {
-    panel: b.styleDef('panel '),
+    panel: b.styleDef('panel'),
     panelDefault: b.styleDef('panel-default'),
     panelPrimary: b.styleDef('panel-primary'),
     panelSuccess: b.styleDef('panel-success'),

@@ -175,6 +175,13 @@ b.routes(
             b.route({ url: 'list-group-disabled', name: 'list-group-disabled', handler: false }),
             b.route({ url: 'list-group-contextual-classes', name: 'list-group-contextual-classes', handler: false }),
             b.route({ url: 'list-group-custom-content', name: 'list-group-custom-content', handler: false }),
+            b.route({ url: 'panels', name: 'panels', handler: false }),
+            b.route({ url: 'panels-basic', name: 'panels-basic', handler: false }),
+            b.route({ url: 'panels-heading', name: 'panels-heading', handler: false }),
+            b.route({ url: 'panels-footer', name: 'panels-footer', handler: false }),
+            b.route({ url: 'panels-alternatives', name: 'panels-alternatives', handler: false }),
+            b.route({ url: 'panels-tables', name: 'panels-tables', handler: false }),
+            b.route({ url: 'panels-list-group', name: 'panels-list-group', handler: false }),
             b.route({ url: 'responsive-embed', name: 'responsive-embed', handler: false }),
             b.route({ url: 'wells', name: 'wells', handler: false })
         ]),

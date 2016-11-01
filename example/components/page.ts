@@ -19,6 +19,7 @@ import { alerts } from './alerts';
 import { progress } from './progress';
 import { media } from './media';
 import { listGroup } from './listGroup';
+import { panels } from './panels';
 import { responsiveEmbed } from './responsiveEmbed';
 import { wells } from './wells';
 
@@ -184,6 +185,17 @@ export const components = b.createVirtualComponent({
                                 ]
                             },
                             {
+                                targetId: 'panels', title: 'Panels',
+                                subs: [
+                                    { targetId: 'panels-basic', title: 'Basic example' },
+                                    { targetId: 'panels-heading', title: 'Panel with heading' },
+                                    { targetId: 'panels-footer', title: 'Panel with footer' },
+                                    { targetId: 'panels-alternatives', title: 'Contextual alternatives' },
+                                    { targetId: 'panels-tables', title: 'With tables' },
+                                    { targetId: 'panels-list-group', title: 'With list groups' }
+                                ]
+                            },
+                            {
                                 targetId: 'responsive-embed', title: 'Responsive embed',
                                 subs: []
                             },
@@ -213,6 +225,7 @@ export const components = b.createVirtualComponent({
                     progress(),
                     media(),
                     listGroup(),
+                    panels(),
                     responsiveEmbed(),
                     wells()
                 ])

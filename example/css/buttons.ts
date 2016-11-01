@@ -153,7 +153,7 @@ function sizes(): b.IBobrilChildren {
             ` input data property.`
         ]),
         bs.e({ style: styles.bsExample }, [
-            bs.e({ style: [styles.well, styles.centerBlock, limitedWidthStyle] }, [
+            bs.well({ style: [styles.centerBlock, limitedWidthStyle] }, [
                 bs.button({ label: 'Block level button', block: true }),
                 bs.button({ label: 'Block level button', block: true, option: bs.ButtonOption.Primary })
             ])

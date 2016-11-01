@@ -166,7 +166,9 @@ b.routes(
             b.route({ url: 'progress-stacked', name: 'progress-stacked', handler: false }),
             b.route({ url: 'media', name: 'media', handler: false }),
             b.route({ url: 'media-default', name: 'media-default', handler: false }),
-            b.route({ url: 'media-list', name: 'media-list', handler: false })
+            b.route({ url: 'media-list', name: 'media-list', handler: false }),
+            b.route({ url: 'responsive-embed', name: 'responsive-embed', handler: false }),
+            b.route({ url: 'wells', name: 'wells', handler: false })
         ]),
         b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

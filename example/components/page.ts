@@ -18,6 +18,8 @@ import { thumbnails } from './thumbnails';
 import { alerts } from './alerts';
 import { progress } from './progress';
 import { media } from './media';
+import { wells } from './wells';
+import { responsiveEmbed } from './responsiveEmbed';
 
 export const components = b.createVirtualComponent({
     id: 'bobrilstrap-components',
@@ -167,6 +169,14 @@ export const components = b.createVirtualComponent({
                                     { targetId: 'media-default', title: 'Default media' },
                                     { targetId: 'media-list', title: 'Media list' }
                                 ]
+                            },
+                            {
+                                targetId: 'responsive-embed', title: 'Responsive embed',
+                                subs: []
+                            },
+                            {
+                                targetId: 'wells', title: 'Wells',
+                                subs: []
                             }
                         ]
                     }
@@ -188,7 +198,9 @@ export const components = b.createVirtualComponent({
                     thumbnails(),
                     alerts(),
                     progress(),
-                    media()
+                    media(),
+                    responsiveEmbed(),
+                    wells()
                 ])
         ];
     }

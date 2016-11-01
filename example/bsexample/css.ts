@@ -37,8 +37,7 @@ export const styles = {
     visibleOn: b.styleDef('visible-on'),
     hiddenOn: b.styleDef('hidden-on'),
     showGrid: b.styleDef('show-grid'),
-    typeInfo: b.styleDef('type-info'),
-    well: b.styleDef('well')
+    typeInfo: b.styleDef('type-info')
 };
 
 export function init() {

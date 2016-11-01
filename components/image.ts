@@ -44,6 +44,7 @@ export const image = b.createDerivedComponent<IImageData>(elem, {
         me.tag = 'img';
         me.attrs['src'] = ctx.data.src;
         me.attrs['alt'] = ctx.data.alt;
+
         if (ctx.data.height !== undefined)
             me.attrs['height'] = ctx.data.height;
         if (ctx.data.width !== undefined)

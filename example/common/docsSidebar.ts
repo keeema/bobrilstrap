@@ -29,8 +29,9 @@ export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
         b.addDisposable(ctx, () => b.removeOnScroll(onScrollListener));
     },
     render(ctx: ICtx, me: b.IBobrilNode) {
-        me.children = bs.affix({
-            node: bs.e(
+        me.children = bs.affix(
+            { top: ctx.data.main ? 610 : 325, bottom: 260 },
+            bs.e(
                 {
                     tag: 'nav',
                     style: [
@@ -41,10 +42,8 @@ export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
                     ]
                 },
                 sideBarItems({ items: ctx.data.items, isTop: true })
-            ),
-            top: ctx.data.main ? 610 : 325,
-            bottom: 260,
-        });
+            )
+        );
     }
 });
 

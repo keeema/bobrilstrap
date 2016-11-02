@@ -7,7 +7,7 @@ export const affixStyles = {
 };
 
 export interface IAffixData {
-    node: b.IBobrilNode;
+    children?: b.IBobrilNode;
     top?: number | (() => number);
     bottom?: number | (() => number);
     postponeInit?: number;
@@ -21,7 +21,7 @@ interface IAffixCtx extends b.IBobrilCtx {
 export const affix = b.createVirtualComponent<IAffixData>({
     id: 'bobrilstrap-affix',
     render(ctx: IAffixCtx, me: b.IBobrilNode) {
-        me.children = ctx.data.node;
+        me.children = ctx.data.children;
     },
     postInitDom(ctx: IAffixCtx) {
         registerNewAffix(ctx);

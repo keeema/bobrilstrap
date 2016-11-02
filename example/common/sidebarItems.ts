@@ -13,12 +13,13 @@ interface IItemsCtx extends b.IBobrilCtx {
     data: IItemsData;
 }
 
-export const sideBarItems = b.createVirtualComponent<IItemsData>({
+export const sideBarItems = b.createDerivedComponent<IItemsData>(bs.ul, {
     id: 'bs-example-sidebar-items',
     render(ctx: IItemsCtx, me: b.IBobrilNode) {
-        me.children = bs.ul({ style: [bs.navStyles.nav, ctx.data.isTop && styles.bsDocsSidenav] }, ctx.data.items.map(((item, i) => {
+        b.style(me, [bs.navStyles.nav, ctx.data.isTop && styles.bsDocsSidenav]);
+        me.children = ctx.data.items.map(((item, i) => {
             const data = b.assign({ nextId: i < ctx.data.items.length - 1 ? ctx.data.items[i + 1].targetId : ctx.data.nextId }, item);
             return sideBarItem(data);
-        })));
+        }));
     }
 });

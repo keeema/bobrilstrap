@@ -1,5 +1,4 @@
 import * as b from 'bobril';
-import { affixStyles } from '../../index';
 import * as bs from '../../index';
 import { styles } from '../bsexample/css';
 import { sideBarItems } from './sidebarItems';
@@ -18,27 +17,34 @@ export interface IDocsSidebarData {
 
 interface ICtx extends b.IBobrilCtx {
     data: IDocsSidebarData;
+    sideBarSize: number;
 }
 
 export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
     id: 'example-docs-sidebar',
     init(ctx: ICtx) {
+        ctx.sideBarSize = 0;
         const onScrollListener = getScrollListener(ctx);
         b.addOnScroll(onScrollListener);
         b.addDisposable(ctx, () => b.removeOnScroll(onScrollListener));
     },
     render(ctx: ICtx, me: b.IBobrilNode) {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const limit = ctx.data.main ? 610 : 325;
-        me.children = bs.e(
-            {
-                tag: 'nav',
-                style: [
-                    styles.bsDocsSidebar, bs.hiddenStyles(bs.Device.Print), bs.hiddenStyles(bs.Device.Sm), bs.hiddenStyles(bs.Device.Xs),
-                    scrollTop < limit ? affixStyles.affixTop : affixStyles.affix
-                ]
-            },
-            sideBarItems({ items: ctx.data.items, isTop: true }));
+        me.children = bs.affix({
+            node: bs.e(
+                {
+                    tag: 'nav',
+                    style: [
+                        styles.bsDocsSidebar,
+                        bs.hiddenStyles(bs.Device.Print),
+                        bs.hiddenStyles(bs.Device.Sm),
+                        bs.hiddenStyles(bs.Device.Xs)
+                    ]
+                },
+                sideBarItems({ items: ctx.data.items, isTop: true })
+            ),
+            top: ctx.data.main ? 610 : 325,
+            bottom: 260,
+        });
     }
 });
 

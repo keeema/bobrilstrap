@@ -1,3 +1,4 @@
+/// <reference path="./typed/bootstrap/bootstrap.d.ts" />
 import * as b from 'bobril';
 
 export * from './components/a';

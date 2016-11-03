@@ -75,3 +75,7 @@ export function toLowerWithDashes(value: string): string {
     value = value.charAt(0).toLowerCase() + value.slice(1);
     return value.replace(/[A-Z]/g, '-$&').toLowerCase();
 }
+
+export function equals<T>(objA: T, objB: T) {
+    return JSON.stringify(objA) === JSON.stringify(objB);
+}

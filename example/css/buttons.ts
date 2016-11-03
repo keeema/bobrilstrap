@@ -31,19 +31,34 @@ function buttonsTags(): b.IBobrilChildren {
             bs.form({}, [
                 bs.button({ label: 'Link', tag: bs.ButtonTag.A, onClick: () => alert('Clicked <a> element!') }), ' ',
                 bs.button({ label: 'Button (default)', onClick: () => alert('Clicked <button> element!') }), ' ',
-                bs.button({ label: 'Input', tag: bs.ButtonTag.Input, onClick: () => alert('Clicked <input> element!') }), ' ',
-                bs.button({ label: 'Submit', tag: bs.ButtonTag.Input, type: bs.ButtonType.Submit, onClick: () => alert('Clicked submit!') })
+                bs.button({
+                    label: 'Input',
+                    tag: bs.ButtonTag.Input,
+                    onClick: () => alert('Clicked <input> element!')
+                }), ' ',
+                bs.button({
+                    label: 'Submit',
+                    tag: bs.ButtonTag.Input, type:
+                    bs.ButtonType.Submit,
+                    onClick: () => alert('Clicked submit!')
+                })
             ])
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
             `bs.button({ label: 'Link', tag: bs.ButtonTag.A, onClick: () => alert('Clicked <a> element!') }), ' ',`, bs.e({ tag: 'br' }),
             `bs.button({ label: 'Button', onClick: () => alert('Clicked <button> element!') }), ' ',`, bs.e({ tag: 'br' }),
-            `bs.button({ label: 'Input', tag: bs.ButtonTag.Input, onClick: () => alert('Clicked <input> element!') }), ' ',`,
-            bs.e({ tag: 'br' }),
             `bs.button({ `, bs.e({ tag: 'br' }),
-            `    label: 'Submit', tag: bs.ButtonTag.Input, type: bs.ButtonType.Submit, onClick: () => alert('Clicked submit!')`,
-            bs.e({ tag: 'br' }),
+            `    label: 'Input', `, bs.e({ tag: 'br' }),
+            `    tag: bs.ButtonTag.Input, `, bs.e({ tag: 'br' }),
+            `    onClick: () => alert('Clicked <input> element!') `, bs.e({ tag: 'br' }),
+            `}), ' ',`, bs.e({ tag: 'br' }),
+            `bs.button({`, bs.e({ tag: 'br' }),
+            `    label: 'Submit',`, bs.e({ tag: 'br' }),
+            `    tag: bs.ButtonTag.Input, type:`, bs.e({ tag: 'br' }),
+            `    bs.ButtonType.Submit,`, bs.e({ tag: 'br' }),
+            `    onClick: () => alert('Clicked submit!')`, bs.e({ tag: 'br' }),
             `})`
+
         ]))),
         bs.e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-buttons-context-usage' } }, [
             bs.h4({}, `Context-specific usage`),

@@ -107,6 +107,7 @@ export * from './components/td';
 export * from './components/textarea';
 export * from './components/th';
 export * from './components/thead';
+export * from './components/tooltip';
 export * from './components/tr';
 export * from './components/typography';
 export * from './components/ul';

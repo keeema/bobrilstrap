@@ -17,6 +17,9 @@ export interface IModalData extends IBaseData {
     footer?: b.IBobrilChildren;
     backdrop?: boolean;
     animation?: boolean;
+    onHide?: () => boolean;
+    onHidden?: (ev: JQueryEventObject) => void;
+    onShown?: (ev: JQueryEventObject) => void;
 }
 
 interface IModalCtx extends b.IBobrilCtx {
@@ -68,10 +71,26 @@ export const modal = b.createDerivedComponent<IModalData>(elem, {
     },
     postInitDom(ctx: IModalCtx, _me: b.IBobrilCacheNode, element: HTMLElement) {
         const backdrop = ctx.data.backdrop !== undefined ? ctx.data.backdrop : 'static';
-        $(element).modal({ keyboard: ctx.data.keyboard, show: !!ctx.data.visible, backdrop });
+        const modalElement = $(element);
+        modalElement.modal({
+            keyboard: ctx.data.keyboard,
+            show: !!ctx.data.visible,
+            backdrop
+        });
+
+        if (ctx.data.onHidden) {
+            modalElement.on('hidden.bs.modal', ctx.data.onHidden);
+        }
+
+        if (ctx.data.onShown) {
+            modalElement.on('hidden.bs.shown', ctx.data.onShown);
+        }
     },
     postUpdateDom(ctx: IModalCtx, _me: b.IBobrilCacheNode, element: HTMLElement) {
         if (!!ctx.data.visible !== !!ctx.visible) {
+            if (ctx.visible && ctx.data.onHide && !ctx.data.onHide())
+                return;
+
             ctx.visible = ctx.data.visible;
             $(element).modal(ctx.visible ? 'show' : 'hide');
         }

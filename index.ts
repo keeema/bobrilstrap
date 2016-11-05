@@ -64,6 +64,8 @@ export * from './components/mark';
 export * from './components/media';
 export * from './components/mediaContent';
 export * from './components/mediaHeading';
+export * from './components/modal';
+export * from './components/modalTitle';
 export * from './components/nav';
 export * from './components/navbarBrand';
 export * from './components/navbarCollapse';

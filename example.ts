@@ -5,7 +5,7 @@ import { masterPage } from './example/masterPage';
 import { bobrilstrapPage } from './example/bobrilstrap/page';
 import { css } from './example/css/page';
 import { components } from './example/components/page';
-import { javaScript } from './example/javaScript/page';
+import { liveComponents } from './example/liveComponents/page';
 
 bs.init();
 bse.init();
@@ -185,6 +185,9 @@ b.routes(
             b.route({ url: 'responsive-embed', name: 'responsive-embed', handler: false }),
             b.route({ url: 'wells', name: 'wells', handler: false })
         ]),
-        b.route({ url: 'javascript', name: 'javascript', handler: javaScript }),
+        b.route({ url: 'liveComponents', name: 'liveComponents', handler: liveComponents }, [
+            b.route({ url: 'modals', name: 'modals', handler: false }),
+            b.route({ url: 'live-demo', name: 'live-demo', handler: false })
+        ]),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })
     ]));

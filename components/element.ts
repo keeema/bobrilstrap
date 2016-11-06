@@ -2,17 +2,42 @@ import * as b from 'bobril';
 import { toLowerWithDashes } from './bobrilHelpers';
 
 export interface IAria {
-    label?: string;
-    labelledby?: string;
+    activedescendant?: string;
+    atomic?: boolean;
+    autocomplete?: string;
+    busy?: boolean | string;
+    checked?: boolean | string;
+    controls?: string;
     describedby?: string;
+    disabled?: boolean;
+    dropeffect?: string;
     expanded?: boolean;
-    invalid?: boolean;
+    flowto?: string;
+    grabbed?: boolean;
     haspopup?: boolean;
     hidden?: boolean;
-    pressed?: boolean;
-    valuenow?: number;
-    valuemin?: number;
-    valuemax?: number;
+    invalid?: boolean;
+    label?: string;
+    labelledby?: string;
+    level?: number;
+    live?: string;
+    multiline?: boolean;
+    multiselectable?: boolean;
+    orientation?: string;
+    owns?: string;
+    posinset?: number;
+    pressed?: boolean | string;
+    readonly?: boolean;
+    relevant?: string;
+    required?: boolean;
+    selected?: boolean;
+    setsize?: number;
+    sort?: string;
+    valuemax?: number | string;
+    valuemin?: number | string;
+    valuenow?: number | string;
+    valuetext?: string;
+    xMsAriaFlowfrom?: string;
 }
 
 export interface IData {
@@ -73,7 +98,6 @@ export const e = b.createVirtualComponent<IElementData>({
 
         if (ctx.data.key)
             b.withKey(me, ctx.data.key);
-
 
         if (ctx.data.title)
             me.attrs['title'] = ctx.data.title;

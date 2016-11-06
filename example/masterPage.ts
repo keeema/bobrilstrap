@@ -43,8 +43,8 @@ function getNavigation(): b.IBobrilNode {
                         { active: b.isActive('components') },
                         b.link(bs.a({ href: 'javascript:void(0)' }, 'Components'), 'components')),
                     bs.navbarNavItem(
-                        { active: b.isActive('liveComponents') },
-                        b.link(bs.a({ href: 'javascript:void(0)' }, 'Live components'), 'liveComponents')),
+                        { active: b.isActive('live-components') },
+                        b.link(bs.a({ href: 'javascript:void(0)' }, 'Live components'), 'live-components')),
                 ]),
                 bs.navbarNav({ style: bs.navStyles.navbarRight }, [
                     bs.navbarNavItem({}, bs.a({ href: texts.githubLink, target: bs.Target.Blank }, texts.gitHub)),

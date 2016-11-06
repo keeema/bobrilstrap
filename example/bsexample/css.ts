@@ -21,6 +21,7 @@ export const styles = {
     bsExampleBgClasses: b.styleDef('bs-example-bg-classes'),
     bsExampleControlSizing: b.styleDef('bs-example-control-sizing'),
     bsExampleType: b.styleDef('bs-example-type'),
+    bsExampleTooltips: b.styleDef('bs-example-tooltips'),
     bsExampleImages: b.styleDef('bs-example-images'),
     bsDocsMastHead: b.styleDef('bs-docs-masthead'),
     bsNavbarTopExample: b.styleDef('bs-navbar-top-example'),
@@ -38,6 +39,7 @@ export const styles = {
     visibleOn: b.styleDef('visible-on'),
     hiddenOn: b.styleDef('hidden-on'),
     showGrid: b.styleDef('show-grid'),
+    tooltipDemo: b.styleDef('tooltip-demo'),
     typeInfo: b.styleDef('type-info')
 };
 

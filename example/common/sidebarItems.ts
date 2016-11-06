@@ -6,7 +6,7 @@ import { sideBarItem, IItemData } from './sidebarItem';
 export interface IItemsData {
     items: IItemData[];
     nextId?: string;
-    isTop?: boolean;
+    topTargetId?: string;
 }
 
 interface IItemsCtx extends b.IBobrilCtx {
@@ -16,10 +16,13 @@ interface IItemsCtx extends b.IBobrilCtx {
 export const sideBarItems = b.createDerivedComponent<IItemsData>(bs.ul, {
     id: 'bs-example-sidebar-items',
     render(ctx: IItemsCtx, me: b.IBobrilNode) {
-        b.style(me, [bs.navStyles.nav, ctx.data.isTop && styles.bsDocsSidenav]);
-        me.children = ctx.data.items.map(((item, i) => {
-            const data = b.assign({ nextId: i < ctx.data.items.length - 1 ? ctx.data.items[i + 1].targetId : ctx.data.nextId }, item);
-            return sideBarItem(data);
-        }));
+        b.style(me, [bs.navStyles.nav, ctx.data.topTargetId && styles.bsDocsSidenav]);
+        me.children = [
+            ...ctx.data.items.map(((item, i) => {
+                const data = b.assign({ nextId: i < ctx.data.items.length - 1 ? ctx.data.items[i + 1].targetId : ctx.data.nextId }, item);
+                return sideBarItem(data);
+            })),
+            ctx.data.topTargetId && sideBarItem({ targetId: ctx.data.topTargetId, title: 'Back to top' })
+        ];
     }
 });

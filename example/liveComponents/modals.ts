@@ -21,7 +21,12 @@ export const modals = b.createVirtualComponent({
 let liveDemoVisible = false;
 function liveDemo(): b.IBobrilChildren {
     return [
-        b.anchor(bs.h2({ attrs: { id: 'live-demo' } }, 'Live demo')),
+        bs.p({}, [
+            `Use `, bs.code({}, 'bs.modal'), ` to show content in modal window. It is separated to three parts - `,
+            bs.code({}, 'header'), `, `, bs.code({}, 'body'), ` and `, bs.code({}, 'footer'), `. It has also usefull 
+            input data properties for defining the look like `, bs.code({}, 'size'), ` etc. or callbacks like `,
+            bs.code({}, 'onHide'), ` to handle the close.`
+        ]),
         bs.e({ style: styles.bsExample }, [
             bs.button({ label: ' Launch demo modal ', onClick: () => { liveDemoVisible = true; b.invalidate(); } }),
             bs.modal({

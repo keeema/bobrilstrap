@@ -2,6 +2,8 @@ import * as b from 'bobril';
 import { header } from '../common/docsHeader';
 import { docsContainer } from '../common/docsContainer';
 import { modals } from './modals';
+import { tooltips } from './tooltips';
+import { affix } from './affix';
 
 export const liveComponents = b.createVirtualComponent({
     id: 'bobrilstrap-javasctipt',
@@ -13,20 +15,29 @@ export const liveComponents = b.createVirtualComponent({
             header(texts),
             docsContainer(
                 {
-                    id: 'liveComponents',
+                    id: 'live-components',
                     sidebar: {
+                        topTargetId: 'live-components-top',
                         items: [
                             {
                                 targetId: 'modals', title: 'Modals',
-                                subs: [
-                                    { targetId: 'live-demo', title: 'Live demo' }
-                                ]
+                                subs: []
+                            },
+                            {
+                                targetId: 'tooltips', title: 'Tooltips',
+                                subs: []
+                            },
+                            {
+                                targetId: 'affix', title: 'Affix',
+                                subs: []
                             },
                         ]
                     }
                 },
                 [
                     modals(),
+                    tooltips(),
+                    affix()
                 ])
         ];
     }

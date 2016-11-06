@@ -1,5 +1,4 @@
 import * as b from 'bobril';
-import { equals } from './bobrilHelpers';
 
 export enum TooltipPlacement {
     Left,
@@ -8,21 +7,29 @@ export enum TooltipPlacement {
     Right
 }
 
+export enum TooltipTrigger {
+    Click,
+    Hover,
+    Focus,
+    Manual
+}
+
 export interface ITooltipOptions {
     title: string;
     placement?: TooltipPlacement;
     animation?: boolean;
+    trigger?: TooltipTrigger[];
 }
 
-export interface ITooltipData {
+export interface ITooltipData extends ITooltipOptions {
     children?: b.IBobrilNode;
-    options: ITooltipOptions;
 }
 
 interface ITooltipCtx extends b.IBobrilCtx {
     data: ITooltipData;
     options: ITooltipOptions;
-    tooltipedElement: HTMLElement;
+    tooltipedElement: HTMLElement | undefined;
+    visible: boolean;
 }
 
 export const tooltip = b.createVirtualComponent<ITooltipData>({
@@ -37,32 +44,49 @@ export const tooltip = b.createVirtualComponent<ITooltipData>({
         registerNewTooltip(ctx);
     },
     destroy(ctx: ITooltipCtx) {
-        unregister(ctx.tooltipedElement);
+        unregister(ctx);
     }
 });
 
 function registerNewTooltip(ctx: ITooltipCtx) {
     const element = <HTMLElement>b.getDomNode(ctx.me);
-    if (!element)
+    if (!element) {
+        ctx.tooltipedElement = undefined;
         return;
-
-    if (ctx.tooltipedElement !== element || !equals(ctx.options, ctx.data.options)) {
-        unregister(ctx.tooltipedElement);
     }
 
-    ctx.tooltipedElement = element;
-    ctx.options = ctx.data.options;
-    $(element).tooltip({
-        title: ctx.data.options.title,
-        animation: ctx.data.options.animation,
-        placement: ctx.data.options.placement !== undefined ? TooltipPlacement[ctx.data.options.placement].toLowerCase() : undefined
+    const jQueryElement = $(element);
 
-    });
+    if (!ctx.tooltipedElement) {
+        jQueryElement.tooltip({
+            title: ctx.data.title,
+            animation: ctx.data.animation,
+            placement: ctx.data.placement !== undefined ? TooltipPlacement[ctx.data.placement].toLowerCase() : undefined,
+            trigger: ctx.data.trigger ? ctx.data.trigger.map(value => TooltipTrigger[value].toLowerCase()).join(' ') : undefined
+        });
+        jQueryElement.on('shown.bs.tooltip', () => ctx.visible = true);
+        jQueryElement.on('hidden.bs.tooltip', () => ctx.visible = false);
+        ctx.tooltipedElement = element;
+    } else if (ctx.options.title !== ctx.data.title) {
+        jQueryElement.attr('title', ctx.data.title).tooltip('fixTitle');
+
+        if (ctx.visible)
+            jQueryElement.tooltip('show');
+    }
+
+    ctx.options = {
+        title: ctx.data.title,
+        placement: ctx.data.placement,
+        animation: ctx.data.animation,
+        trigger: ctx.data.trigger
+    };
 }
 
-function unregister(element: HTMLElement) {
-    if (element)
-        $(element).tooltip('destroy');
+function unregister(ctx: ITooltipCtx) {
+    if (ctx.tooltipedElement) {
+        $(ctx.tooltipedElement).tooltip('destroy');
+        ctx.tooltipedElement = undefined;
+    }
 }
 
 export default tooltip;

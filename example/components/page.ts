@@ -35,6 +35,7 @@ export const components = b.createVirtualComponent({
                 {
                     id: 'components',
                     sidebar: {
+                        topTargetId: 'components-top',
                         items: [
                             {
                                 targetId: 'glyphicons', title: 'Glyphicons',

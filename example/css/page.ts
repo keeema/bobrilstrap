@@ -24,6 +24,7 @@ export const css = b.createVirtualComponent({
                 {
                     id: 'css',
                     sidebar: {
+                        topTargetId: 'css-top',
                         items: [
                             {
                                 targetId: 'overview', title: 'Overview',

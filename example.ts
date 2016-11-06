@@ -13,6 +13,7 @@ bse.init();
 b.routes(
     b.route({ handler: masterPage }, [
         b.route({ url: 'css', name: 'css', handler: css }, [
+            b.route({ url: 'css-top', name: 'css-top', handler: false }),
             b.route({ url: 'overview', name: 'overview', handler: false }),
             b.route({ url: 'overview-type-links', name: 'overview-type-links', handler: false }),
             b.route({ url: 'overview-normalize', name: 'overview-normalize', handler: false }),
@@ -90,10 +91,12 @@ b.routes(
             b.route({ url: 'responsive-utilities-tests', name: 'responsive-utilities-tests', handler: false })
         ]),
         b.route({ url: 'bobrilstrap', name: 'bobrilstrap', handler: bobrilstrapPage }, [
+            b.route({ url: 'bobrilstrap-top', name: 'bobrilstrap-top', handler: false }),
             b.route({ url: 'bobril', name: 'bobril', handler: false }),
             b.route({ url: 'bobrilstrap-installation', name: 'bobrilstrap-installation', handler: false })
         ]),
         b.route({ url: 'components', name: 'components', handler: components }, [
+            b.route({ url: 'components-top', name: 'components-top', handler: false }),
             b.route({ url: 'glyphicons', name: 'glyphicons', handler: false }),
             b.route({ url: 'glyphicons-glyphs', name: 'glyphicons-glyphs', handler: false }),
             b.route({ url: 'glyphicons-how-to-use', name: 'glyphicons-how-to-use', handler: false }),
@@ -185,9 +188,11 @@ b.routes(
             b.route({ url: 'responsive-embed', name: 'responsive-embed', handler: false }),
             b.route({ url: 'wells', name: 'wells', handler: false })
         ]),
-        b.route({ url: 'liveComponents', name: 'liveComponents', handler: liveComponents }, [
+        b.route({ url: 'live-components', name: 'live-components', handler: liveComponents }, [
+            b.route({ url: 'live-components-top', name: 'live-components-top', handler: false }),
             b.route({ url: 'modals', name: 'modals', handler: false }),
-            b.route({ url: 'live-demo', name: 'live-demo', handler: false })
+            b.route({ url: 'tooltips', name: 'tooltips', handler: false }),
+            b.route({ url: 'affix', name: 'affix', handler: false })
         ]),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })
     ]));

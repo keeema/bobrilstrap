@@ -26,10 +26,13 @@ export const sideBarItem = b.createVirtualComponent<IItemData>({
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.children = bs.li(
             {
-                active: ctx.active
+                active: !ctx.data.targetId.endsWith('-top') && ctx.active
             },
             [
-                b.link(bs.a({}, ctx.data.title), ctx.data.targetId),
+                b.link(
+                    bs.a({ onClick: () => { if (ctx.data.targetId.endsWith('-top')) document.body.scrollTop = 0; } }, ctx.data.title),
+                    ctx.data.targetId
+                ),
                 !!ctx.data.subs && sideBarItems({ items: ctx.data.subs, nextId: ctx.data.nextId })
             ]
         );

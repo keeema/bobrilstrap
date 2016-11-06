@@ -12,6 +12,7 @@ export const bobrilstrapPage = b.createVirtualComponent({
                 {
                     id: 'bobrilstrap',
                     sidebar: {
+                        topTargetId: 'bobrilstrap-top',
                         main: true,
                         items: [
                             {

@@ -13,6 +13,7 @@ export interface IDocsSidebarData {
     children?: b.IBobrilChildren;
     items: IItem[];
     main?: boolean;
+    topTargetId: string;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -41,7 +42,7 @@ export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
                         bs.hiddenStyles(bs.Device.Xs)
                     ]
                 },
-                sideBarItems({ items: ctx.data.items, isTop: true })
+                sideBarItems({ items: ctx.data.items, topTargetId: ctx.data.topTargetId })
             )
         );
     }

@@ -4,7 +4,8 @@ export enum TooltipPlacement {
     Left,
     Top,
     Bottom,
-    Right
+    Right,
+    Auto
 }
 
 export enum TooltipTrigger {
@@ -15,7 +16,7 @@ export enum TooltipTrigger {
 }
 
 export interface ITooltipOptions {
-    title: string;
+    title: string | (() => string);
     placement?: TooltipPlacement;
     animation?: boolean;
     trigger?: TooltipTrigger[];
@@ -27,9 +28,9 @@ export interface ITooltipData extends ITooltipOptions {
 
 interface ITooltipCtx extends b.IBobrilCtx {
     data: ITooltipData;
-    options: ITooltipOptions;
     tooltipedElement: HTMLElement | undefined;
     visible: boolean;
+    lastTitle: string;
 }
 
 export const tooltip = b.createVirtualComponent<ITooltipData>({
@@ -67,19 +68,19 @@ function registerNewTooltip(ctx: ITooltipCtx) {
         jQueryElement.on('shown.bs.tooltip', () => ctx.visible = true);
         jQueryElement.on('hidden.bs.tooltip', () => ctx.visible = false);
         ctx.tooltipedElement = element;
-    } else if (ctx.options.title !== ctx.data.title) {
-        jQueryElement.attr('title', ctx.data.title).tooltip('fixTitle');
-
-        if (ctx.visible)
-            jQueryElement.tooltip('show');
     }
 
-    ctx.options = {
-        title: ctx.data.title,
-        placement: ctx.data.placement,
-        animation: ctx.data.animation,
-        trigger: ctx.data.trigger
-    };
+    if (ctx.lastTitle !== undefined) {
+        const newTitle = typeof ctx.data.title === 'function' ? ctx.data.title() : ctx.data.title;
+        if (ctx.lastTitle !== newTitle) {
+            jQueryElement.attr('title', newTitle).tooltip('fixTitle');
+
+            if (ctx.visible)
+                jQueryElement.tooltip('show');
+        }
+    }
+
+    ctx.lastTitle = typeof ctx.data.title === 'function' ? ctx.data.title() : ctx.data.title;
 }
 
 function unregister(ctx: ITooltipCtx) {

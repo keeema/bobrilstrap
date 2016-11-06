@@ -191,7 +191,8 @@ b.routes(
         b.route({ url: 'live-components', name: 'live-components', handler: liveComponents }, [
             b.route({ url: 'live-components-top', name: 'live-components-top', handler: false }),
             b.route({ url: 'modals', name: 'modals', handler: false }),
-            b.route({ url: 'tooltips', name: 'tooltips', handler: false }),
+            b.route({ url: 'tooltip', name: 'tooltip', handler: false }),
+            b.route({ url: 'popover', name: 'popover', handler: false }),
             b.route({ url: 'affix', name: 'affix', handler: false })
         ]),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

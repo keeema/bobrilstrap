@@ -8,8 +8,8 @@ export const tooltips = b.createVirtualComponent({
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.children = section(
             {
-                header: 'Tooltips',
-                id: 'tooltips',
+                header: 'Tooltip',
+                id: 'tooltip',
                 lead: []
             },
             [
@@ -23,7 +23,8 @@ function example(): b.IBobrilChildren {
         bs.p({}, [
             `Wrap nodes into `, bs.code({}, 'bs.tooltip'), ` to get additional information in tooltip. 
             You can define the `, bs.code({}, 'title'), `, `, bs.code({}, 'placement'), `, `, bs.code({}, 'trigger'),
-            ` or turn `, bs.code({}, 'animation'), ` on/off by input data properties.`
+            ` or turn `, bs.code({}, 'animation'), ` on/off by input data properties. If the title is 
+            not static, it should be defined as a function.`
         ]),
         bs.e({ style: [styles.bsExample, styles.tooltipDemo] }, [
             b.styledDiv(

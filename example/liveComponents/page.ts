@@ -3,6 +3,7 @@ import { header } from '../common/docsHeader';
 import { docsContainer } from '../common/docsContainer';
 import { modals } from './modals';
 import { tooltips } from './tooltips';
+import { popovers } from './popovers';
 import { affix } from './affix';
 
 export const liveComponents = b.createVirtualComponent({
@@ -24,7 +25,11 @@ export const liveComponents = b.createVirtualComponent({
                                 subs: []
                             },
                             {
-                                targetId: 'tooltips', title: 'Tooltips',
+                                targetId: 'tooltip', title: 'Tooltip',
+                                subs: []
+                            },
+                            {
+                                targetId: 'popover', title: 'Popover',
                                 subs: []
                             },
                             {
@@ -37,6 +42,7 @@ export const liveComponents = b.createVirtualComponent({
                 [
                     modals(),
                     tooltips(),
+                    popovers(),
                     affix()
                 ])
         ];

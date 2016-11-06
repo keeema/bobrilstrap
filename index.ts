@@ -87,6 +87,7 @@ export * from './components/progress';
 export * from './components/progressBar';
 export * from './components/pill';
 export * from './components/pills';
+export * from './components/popover';
 export * from './components/pre';
 export * from './components/radio';
 export * from './components/responsive';

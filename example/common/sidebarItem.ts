@@ -24,6 +24,8 @@ export const sideBarItem = b.createVirtualComponent<IItemData>({
         b.addDisposable(ctx, () => b.removeOnScroll(onScrollListener));
     },
     render(ctx: ICtx, me: b.IBobrilNode) {
+        if (ctx.data.targetId === 'tooltip')
+            console.log(ctx.active);
         me.children = bs.li(
             {
                 active: !ctx.data.targetId.endsWith('-top') && ctx.active

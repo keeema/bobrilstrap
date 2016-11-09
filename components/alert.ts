@@ -10,10 +10,13 @@ export interface IAlertData extends IBaseData {
     nativeDismiss?: boolean;
     animation?: boolean;
     onClosed?: () => void;
+    timeout?: number;
 }
 
 interface IAlertCtx extends b.IBobrilCtx {
     data: IAlertData;
+    timeoutId?: number;
+    visible: boolean;
 }
 
 export enum AlertContext {
@@ -43,6 +46,9 @@ alertContextStyles(AlertContext.Warning, alertStyles.alertWarning);
 
 export const alert = b.createDerivedComponent<IAlertData>(elem, {
     id: 'bobrilstrap-alert',
+    init(ctx: IAlertCtx) {
+        ctx.visible = true;
+    },
     render(ctx: IAlertCtx, me: IElementBobrilNode) {
         b.style(me, alertStyles.alert);
         b.style(me, alertContextStyles(ctx.data.context));
@@ -76,8 +82,31 @@ export const alert = b.createDerivedComponent<IAlertData>(elem, {
         }
     },
     postInitDom(ctx: IAlertCtx, _me: b.IBobrilNode, element: HTMLElement) {
-        $(element).on('closed.bs.alert', () => { if (ctx.data.onClosed) ctx.data.onClosed(); });
+        $(element).on('closed.bs.alert', () => {
+            ctx.visible = false;
+            if (ctx.data.onClosed)
+                ctx.data.onClosed();
+        });
+
+        if (ctx.data.timeout) {
+            ctx.timeoutId = setTimeout(
+                () => dismissOnTimeout(ctx, element),
+                ctx.data.timeout
+            );
+        }
+    },
+    destroy(ctx: IAlertCtx, _me: b.IBobrilNode, element: HTMLElement) {
+        dismissOnTimeout(ctx, element);
     }
 });
 
 export default alert;
+
+function dismissOnTimeout(ctx: IAlertCtx, element: HTMLElement) {
+    if (ctx.timeoutId) {
+        clearTimeout(ctx.timeoutId);
+    }
+    if (ctx.visible)
+        $(element).alert('close');
+
+}

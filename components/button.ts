@@ -129,7 +129,6 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
             ctx.data.data = b.assign({}, ctx.data.data);
             ctx.data.data.toggle = 'collapse';
             b.style(me, navStyles.navbarToggle);
-            b.style(me, navStyles.collapsed);
             if (ctx.data.navbarCollapse !== undefined)
                 ctx.data.data.target = ctx.data.navbarCollapse.target;
             mergeToChildren(me, ctx.data.dropdownSplittedSrOnly && span({ style: helpers.srOnly }, ctx.data.dropdownSplittedSrOnly));

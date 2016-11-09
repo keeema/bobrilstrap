@@ -27,7 +27,6 @@ export const navStyles = {
     dropdown: b.styleDef('dropdown'),
     disabled: b.styleDef('disabled'),
     collapse: b.styleDef('collapse'),
-    collapsed: b.styleDef('collapsed'),
     iconBar: b.styleDef('icon-bar')
 };
 

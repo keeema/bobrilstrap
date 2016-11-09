@@ -4,6 +4,7 @@ import { docsContainer } from '../common/docsContainer';
 import { modals } from './modals';
 import { tooltips } from './tooltips';
 import { popovers } from './popovers';
+import { collapse } from './collapse';
 import { affix } from './affix';
 
 export const liveComponents = b.createVirtualComponent({
@@ -43,6 +44,7 @@ export const liveComponents = b.createVirtualComponent({
                     modals(),
                     tooltips(),
                     popovers(),
+                    collapse(),
                     affix()
                 ])
         ];

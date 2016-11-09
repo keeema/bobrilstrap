@@ -8,6 +8,7 @@ import { mergeToChildren } from './bobrilHelpers';
 
 export const panelStyles = {
     panel: b.styleDef('panel'),
+    panelGroup: b.styleDef('panel-group'),
     panelDefault: b.styleDef('panel-default'),
     panelPrimary: b.styleDef('panel-primary'),
     panelSuccess: b.styleDef('panel-success'),
@@ -17,7 +18,8 @@ export const panelStyles = {
     panelHeading: b.styleDef('panel-heading'),
     panelBody: b.styleDef('panel-body'),
     panelFooter: b.styleDef('panel-footer'),
-    panelTitle: b.styleDef('panel-title')
+    panelTitle: b.styleDef('panel-title'),
+    panelCollapse: b.styleDef('panel-collapse'),
 };
 
 export enum PanelContext {

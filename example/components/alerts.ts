@@ -68,12 +68,24 @@ function dismissableAlerts(): b.IBobrilChildren {
             ` property. You can overrider the default cross with own `, bs.code({}, 'children'), ` of `, bs.code({}, 'dismissButton'), `.`
         ]),
         bs.e({ style: styles.bsExample }, [
-            bs.alert({ context: bs.AlertContext.Warning, dismissButton: { aria: { label: 'Close' } } }, [
-                bs.strong({}, 'Warning!'), ' ', 'Better check yourself, you\'re not looking too good.'
-            ]),
+            bs.alert(
+                {
+                    context: bs.AlertContext.Warning,
+                    dismissButton: { aria: { label: 'Close' } },
+                    onClosed: () => alert('Closed')
+                },
+                [bs.strong({}, 'Warning!'), ' ', 'Better check yourself, you\'re not looking too good.']
+            ),
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.alert({ context: bs.AlertContext.Success, dismissButton: { aria: { label: 'Close' } } }, ...)`
+            `bs.alert(`, bs.e({ tag: 'br' }),
+            `    {`, bs.e({ tag: 'br' }),
+            `        context: bs.AlertContext.Warning,`, bs.e({ tag: 'br' }),
+            `        dismissButton: { aria: { label: 'Close' } },`, bs.e({ tag: 'br' }),
+            `        onClosed: () => alert('Closed')`, bs.e({ tag: 'br' }),
+            `    },`, bs.e({ tag: 'br' }),
+            `    ...`, bs.e({ tag: 'br' }),
+            `)`
         ])))
     ];
 }

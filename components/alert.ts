@@ -95,8 +95,9 @@ export const alert = b.createDerivedComponent<IAlertData>(elem, {
             );
         }
     },
-    destroy(ctx: IAlertCtx, _me: b.IBobrilNode, element: HTMLElement) {
-        dismissOnTimeout(ctx, element);
+    destroy(ctx: IAlertCtx) {
+        if (ctx.timeoutId)
+            clearTimeout(ctx.timeoutId);
     }
 });
 
@@ -105,6 +106,7 @@ export default alert;
 function dismissOnTimeout(ctx: IAlertCtx, element: HTMLElement) {
     if (ctx.timeoutId) {
         clearTimeout(ctx.timeoutId);
+        ctx.timeoutId = 0;
     }
     if (ctx.visible)
         $(element).alert('close');

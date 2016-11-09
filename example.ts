@@ -193,6 +193,7 @@ b.routes(
             b.route({ url: 'modals', name: 'modals', handler: false }),
             b.route({ url: 'tooltip', name: 'tooltip', handler: false }),
             b.route({ url: 'popover', name: 'popover', handler: false }),
+            b.route({ url: 'collapse', name: 'collapse', handler: false }),
             b.route({ url: 'affix', name: 'affix', handler: false })
         ]),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })

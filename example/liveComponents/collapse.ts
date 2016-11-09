@@ -105,21 +105,24 @@ function example(): b.IBobrilChildren {
             bs.e({ tag: 'br' }),
 
             `// On some rendered place`, bs.e({ tag: 'br' }),
+            `bs.panelGroup({}, [`, bs.e({ tag: 'br' }),
             `    bs.panel({}, [`, bs.e({ tag: 'br' }),
             `        bs.panelHeading({}, [`, bs.e({ tag: 'br' }),
             `            bs.panelTitle4({}, [`, bs.e({ tag: 'br' }),
             `                bs.a(`, bs.e({ tag: 'br' }),
-            `                    { href: 'javascript:void(0)', onClick: () => toggleExpandItem(1) }`, bs.e({ tag: 'br' }),
+            `                    { href: 'javascript:void(0)', onClick: () => toggleExpandItem(1) },`, bs.e({ tag: 'br' }),
             `                    'Collapsible Group Item #1'`, bs.e({ tag: 'br' }),
             `                )`, bs.e({ tag: 'br' }),
             `            ])`, bs.e({ tag: 'br' }),
             `        ]),`, bs.e({ tag: 'br' }),
-            `        bs.collapse({ collapsed }, [`, bs.e({ tag: 'br' }),
+            `        bs.collapse({ collapsed: expanded !== 1 }, [`, bs.e({ tag: 'br' }),
             `            bs.panelCollapse({}, [`, bs.e({ tag: 'br' }),
-            `                bs.panelBody({}, ...)`, bs.e({ tag: 'br' }),
+            `                bs.panelBody({}, '...')`, bs.e({ tag: 'br' }),
             `            ])`, bs.e({ tag: 'br' }),
             `        ])`, bs.e({ tag: 'br' }),
-            `    ])`, bs.e({ tag: 'br' }),
+            `    ]),`, bs.e({ tag: 'br' }),
+            `    ...`, bs.e({ tag: 'br' }),
+            `])`
         ])))
     ];
 }

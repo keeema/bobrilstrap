@@ -34,6 +34,10 @@ export const liveComponents = b.createVirtualComponent({
                                 subs: []
                             },
                             {
+                                targetId: 'collapse', title: 'Collapse',
+                                subs: []
+                            },
+                            {
                                 targetId: 'affix', title: 'Affix',
                                 subs: []
                             },

@@ -106,20 +106,20 @@ function buttons(): b.IBobrilChildren {
         bs.p({}, `List group items may be buttons instead of list items.`),
         bs.e({ style: styles.bsExample }, [
             bs.listGroup({}, [
-                bs.button({ listGroupItem: true, label: 'Cras justo odio' }),
-                bs.button({ listGroupItem: true, label: 'Dapibus ac facilisis in' }),
-                bs.button({ listGroupItem: true, label: 'Morbi leo risus' }),
-                bs.button({ listGroupItem: true, label: 'Porta ac consectetur ac' }),
-                bs.button({ listGroupItem: true, label: 'Vestibulum at eros' })
+                bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Cras justo odio' }),
+                bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Dapibus ac facilisis in' }),
+                bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Morbi leo risus' }),
+                bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Porta ac consectetur ac' }),
+                bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Vestibulum at eros' })
             ])
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
             `bs.listGroup({}, [`, bs.e({ tag: 'br' }),
-            `    bs.button({ listGroupItem: true, label: 'Cras justo odio' }),`, bs.e({ tag: 'br' }),
-            `    bs.button({ listGroupItem: true, label: 'Dapibus ac facilisis in' }),`, bs.e({ tag: 'br' }),
-            `    bs.button({ listGroupItem: true, label: 'Morbi leo risus' }),`, bs.e({ tag: 'br' }),
-            `    bs.button({ listGroupItem: true, label: 'Porta ac consectetur ac' })`, bs.e({ tag: 'br' }),
-            `    bs.button({ listGroupItem: true, label: 'Vestibulum at eros' })`, bs.e({ tag: 'br' }),
+            `    bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Cras justo odio' }),`, bs.e({ tag: 'br' }),
+            `    bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Dapibus ac facilisis in' }),`, bs.e({ tag: 'br' }),
+            `    bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Morbi leo risus' }),`, bs.e({ tag: 'br' }),
+            `    bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Porta ac consectetur ac' })`, bs.e({ tag: 'br' }),
+            `    bs.button({ variant: bs.ButtonVariant.ListGroup, label: 'Vestibulum at eros' })`, bs.e({ tag: 'br' }),
             `])`
         ]))),
     ];

@@ -13,6 +13,14 @@ export interface IButtonNavbarCollapse {
     target: string;
 }
 
+export enum ButtonVariant {
+    Dropdown,
+    DropdownNav,
+    Navbar,
+    NavbarToggle,
+    ListGroup
+}
+
 export interface IButtonData extends IBaseData {
     active?: boolean;
     block?: boolean;
@@ -23,13 +31,8 @@ export interface IButtonData extends IBaseData {
     tag?: ButtonTag;
     href?: string;
     label?: string;
-
-    // helper properties
-    dropdown?: boolean;
-    dropdownSplittedSrOnly?: string;
-    navbar?: boolean;
-    navbarCollapse?: IButtonNavbarCollapse;
-    listGroupItem?: boolean;
+    variant?: ButtonVariant;
+    srOnly?: string;
 }
 
 interface ICtx extends b.IBobrilCtx {
@@ -76,15 +79,28 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
         b.style(
             me,
             ctx.data.option !== ButtonOption.Close
-            && !ctx.data.listGroupItem
-            && (!ctx.data.navbar || ctx.data.tag !== ButtonTag.A)
+            && ctx.data.variant !== ButtonVariant.ListGroup
+            && (
+                (
+                    ctx.data.variant !== ButtonVariant.Navbar
+                    && ctx.data.variant !== ButtonVariant.DropdownNav
+                    && ctx.data.variant !== ButtonVariant.NavbarToggle
+                )
+                || ctx.data.tag !== ButtonTag.A
+            )
             && buttonStyles.btn
         );
         b.style(me, !!ctx.data.active && buttonStyles.active);
         b.style(me, !!ctx.data.block && buttonStyles.btnBlock);
         b.style(me, ctx.data.size !== undefined && buttonSizeStyles(ctx.data.size));
-        b.style(me, !ctx.data.navbar && !ctx.data.listGroupItem && buttonOptiontStyles(ctx.data.option || ButtonOption.Default));
-        b.style(me, !!ctx.data.listGroupItem && listGroupStyles.listGroupItem);
+        b.style(
+            me,
+            ctx.data.variant !== ButtonVariant.Navbar
+            && ctx.data.variant !== ButtonVariant.DropdownNav
+            && ctx.data.variant !== ButtonVariant.ListGroup
+            && buttonOptiontStyles(ctx.data.option || ButtonOption.Default));
+
+        b.style(me, ctx.data.variant === ButtonVariant.ListGroup && listGroupStyles.listGroupItem);
 
         const typeAttr = ctx.data.tag === ButtonTag.A ? 'role' : 'type';
         me.attrs[typeAttr] = ((ctx.data.type && ButtonType[ctx.data.type])
@@ -110,7 +126,7 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
             }
         }
 
-        if (ctx.data.dropdown) {
+        if (ctx.data.variant === ButtonVariant.Dropdown || ctx.data.variant === ButtonVariant.DropdownNav) {
             ctx.data = b.assign({}, ctx.data);
             ctx.data.data = b.assign({}, ctx.data.data);
             ctx.data.aria = b.assign({}, ctx.data.aria);
@@ -123,16 +139,13 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
                 mergeToChildren(me, ' ');
 
             mergeToChildren(me, span({ style: helpers.caret }));
-            mergeToChildren(me, ctx.data.dropdownSplittedSrOnly && span({ style: helpers.srOnly }, ctx.data.dropdownSplittedSrOnly));
-        } else if (ctx.data.navbarCollapse) {
+        } else if (ctx.data.variant === ButtonVariant.NavbarToggle) {
             ctx.data = b.assign({}, ctx.data);
             ctx.data.data = b.assign({}, ctx.data.data);
-            ctx.data.data.toggle = 'collapse';
             b.style(me, navStyles.navbarToggle);
-            if (ctx.data.navbarCollapse !== undefined)
-                ctx.data.data.target = ctx.data.navbarCollapse.target;
-            mergeToChildren(me, ctx.data.dropdownSplittedSrOnly && span({ style: helpers.srOnly }, ctx.data.dropdownSplittedSrOnly));
         }
+
+        mergeToChildren(me, ctx.data.srOnly && span({ style: helpers.srOnly }, ctx.data.srOnly));
     }
 });
 
@@ -169,7 +182,14 @@ function generateSizeStyles(): IDictionary<Size, b.IBobrilStyle> {
 
 function resolveTag(ctx: ICtx): string {
     if (ctx.data.tag === undefined) {
-        ctx.data = b.assign({ tag: ctx.data.navbar ? ButtonTag.A : ButtonTag.Button }, ctx.data);
+        ctx.data = b.assign(
+            {
+                tag: (ctx.data.variant === ButtonVariant.Navbar || ctx.data.variant === ButtonVariant.DropdownNav)
+                    ? ButtonTag.A
+                    : ButtonTag.Button
+            },
+            ctx.data
+        );
     }
 
     switch (ctx.data.tag) {

@@ -126,7 +126,7 @@ function nesting(): b.IBobrilChildren {
                 bs.button({ label: '1' }),
                 bs.button({ label: '2' }),
                 bs.buttonGroup({}, [
-                    bs.button({ label: 'Dropdown', dropdown: true }),
+                    bs.button({ label: 'Dropdown', variant: bs.ButtonVariant.Dropdown }),
                     bs.dropdownMenu({}, [
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link')),
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link'))
@@ -139,7 +139,7 @@ function nesting(): b.IBobrilChildren {
             `    bs.button({ label: '1' }),`, bs.e({ tag: 'br' }),
             `    bs.button({ label: '2' }),`, bs.e({ tag: 'br' }),
             `    bs.buttonGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.button({ label: 'Dropdown', dropdown: true }),`, bs.e({ tag: 'br' }),
+            `        bs.button({ label: 'Dropdown', variant: bs.ButtonVariant.Dropdown }),`, bs.e({ tag: 'br' }),
             `        bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
             `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Dropdown link')),`, bs.e({ tag: 'br' }),
             `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Dropdown link')),`, bs.e({ tag: 'br' }),
@@ -190,7 +190,7 @@ function vertical(): b.IBobrilChildren {
                 bs.button({ label: 'Button' }),
                 bs.button({ label: 'Button' }),
                 bs.buttonGroup({}, [
-                    bs.button({ label: 'Dropdown', dropdown: true }),
+                    bs.button({ label: 'Dropdown', variant: bs.ButtonVariant.Dropdown }),
                     bs.dropdownMenu({}, [
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link')),
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link'))
@@ -199,7 +199,7 @@ function vertical(): b.IBobrilChildren {
                 bs.button({ label: 'Button' }),
                 bs.button({ label: 'Button' }), ,
                 bs.buttonGroup({}, [
-                    bs.button({ label: 'Dropdown', dropdown: true }),
+                    bs.button({ label: 'Dropdown', variant: bs.ButtonVariant.Dropdown }),
                     bs.dropdownMenu({}, [
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link')),
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link'))
@@ -207,14 +207,14 @@ function vertical(): b.IBobrilChildren {
                 ]),
                 ,
                 bs.buttonGroup({}, [
-                    bs.button({ label: 'Dropdown', dropdown: true }),
+                    bs.button({ label: 'Dropdown', variant: bs.ButtonVariant.Dropdown }),
                     bs.dropdownMenu({}, [
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link')),
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link'))
                     ])
                 ]),
                 bs.buttonGroup({}, [
-                    bs.button({ label: 'Dropdown', dropdown: true }),
+                    bs.button({ label: 'Dropdown', variant: bs.ButtonVariant.Dropdown }),
                     bs.dropdownMenu({}, [
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link')),
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Dropdown link'))
@@ -272,7 +272,7 @@ function justified(): b.IBobrilChildren {
                 bs.button({ tag: bs.ButtonTag.A, label: 'Left' }),
                 bs.button({ tag: bs.ButtonTag.A, label: 'Middle' }),
                 bs.buttonGroup({}, [
-                    bs.button({ tag: bs.ButtonTag.A, label: 'Dropdown', dropdown: true }),
+                    bs.button({ tag: bs.ButtonTag.A, label: 'Dropdown', variant: bs.ButtonVariant.Dropdown }),
                     bs.dropdownMenu({}, [
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),

@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import { mergeToChildren } from './bobrilHelpers';
 import { elem, IBaseData } from './element';
-import { button, IButtonData } from './button';
+import { button, IButtonData, ButtonVariant } from './button';
 import { buttonGroup, IButtonGroupData } from './buttonGroup';
 import { inputGroupBtn, IInputGroupBtnData } from './inputGroupBtn';
 
@@ -15,7 +15,6 @@ export interface IDropdownData extends IBaseData {
     button: IButtonData;
     buttonGroup?: IButtonGroupData | boolean;
     inputGroupBtn?: IInputGroupBtnData | boolean;
-    navbar?: boolean;
     up?: boolean;
     splitted?: boolean;
     splittedSrOnlyText?: string;
@@ -32,13 +31,13 @@ export const dropdown = b.createDerivedComponent<IDropdownData>(elem, {
 
         if (ctx.data.buttonGroup || ctx.data.inputGroupBtn) {
             me.tag = undefined;
-            let groupNode = ctx.data.buttonGroup
+            const groupNode = ctx.data.buttonGroup
                 ? buttonGroup(typeof ctx.data.buttonGroup === 'boolean' ? {} : ctx.data.buttonGroup, me.children)
                 : inputGroupBtn(typeof ctx.data.inputGroupBtn === 'boolean' ? {} : ctx.data.inputGroupBtn, me.children);
             b.style(groupNode, !!ctx.data.up && dropdownStyles.dropup);
             me.children = groupNode;
         } else {
-            if (ctx.data.navbar) {
+            if (ctx.data.button.variant === ButtonVariant.DropdownNav) {
                 me.tag = 'li';
             }
 
@@ -49,10 +48,11 @@ export const dropdown = b.createDerivedComponent<IDropdownData>(elem, {
 
 export default dropdown;
 
-function updateButtonDataForDropdown(originalButtonData: IButtonData, navbar: boolean): IButtonData {
+function updateButtonDataForDropdown(originalButtonData: IButtonData): IButtonData {
     let buttonData = b.assign({}, originalButtonData);
-    buttonData.dropdown = true;
-    buttonData.navbar = originalButtonData.navbar || navbar;
+    buttonData.variant = originalButtonData.variant !== undefined
+        ? originalButtonData.variant
+        : ButtonVariant.Dropdown;
     buttonData.aria = b.assign({}, buttonData.aria);
     buttonData.aria.haspopup = true;
     return buttonData;
@@ -67,13 +67,12 @@ function addButton(ctx: ICtx, me: b.IBobrilNode) {
             {
                 option: ctx.data.button.option,
                 size: ctx.data.button.size,
-                dropdownSplittedSrOnly: ctx.data.splittedSrOnlyText
-            },
-            !!ctx.data.navbar));
+                srOnly: ctx.data.splittedSrOnlyText
+            }));
         dropdownButton = button(ctx.data.button);
         mergeToChildren(me, caretButton, true);
     } else {
-        dropdownButton = button(updateButtonDataForDropdown(ctx.data.button, !!ctx.data.navbar));
+        dropdownButton = button(updateButtonDataForDropdown(ctx.data.button));
     }
 
     mergeToChildren(me, dropdownButton, true);

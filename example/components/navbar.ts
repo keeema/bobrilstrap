@@ -67,8 +67,8 @@ function defaultNavbar(): b.IBobrilChildren {
                     bs.navbarHeader({}, [
                         bs.button(
                             {
-                                navbar: true,
-                                navbarCollapse: { target: '#bs-example-navbar-collapse-1' }
+                                variant: bs.ButtonVariant.NavbarToggle,
+                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-1' }
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
@@ -84,7 +84,7 @@ function defaultNavbar(): b.IBobrilChildren {
                             bs.navbarNavItem({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Link')),
                             bs.navbarNavItem({}, bs.a({ href: 'javascript:void(0)' }, 'Link')),
                             bs.dropdown(
-                                { navbar: true, button: { label: 'Dropdown' } },
+                                { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },
                                 bs.dropdownMenu({}, [
                                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
                                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
@@ -103,7 +103,7 @@ function defaultNavbar(): b.IBobrilChildren {
                         bs.navbarNav({ style: bs.navStyles.navbarRight }, [
                             bs.navbarNavItem({}, bs.a({ href: 'javascript:void(0)' }, 'Link')),
                             bs.dropdown(
-                                { navbar: true, button: { label: 'Dropdown' } },
+                                { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },
                                 bs.dropdownMenu({}, [
                                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
                                     bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
@@ -123,8 +123,8 @@ function defaultNavbar(): b.IBobrilChildren {
             `        bs.navbarHeader({}, [`, bs.e({ tag: 'br' }),
             `            bs.button(`, bs.e({ tag: 'br' }),
             `                { `, bs.e({ tag: 'br' }),
-            `                    navbar: true,`, bs.e({ tag: 'br' }),
-            `                    navbarCollapse: { target: '#bs-example-navbar-collapse-1' }`, bs.e({ tag: 'br' }),
+            `                    variant: bs.ButtonVariant.NavbarToggle,`, bs.e({ tag: 'br' }),
+            `                    data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-1' }`, bs.e({ tag: 'br' }),
             `                },`, bs.e({ tag: 'br' }),
             `                [`, bs.e({ tag: 'br' }),
             `                    bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),`, bs.e({ tag: 'br' }),
@@ -140,7 +140,7 @@ function defaultNavbar(): b.IBobrilChildren {
             `                bs.navbarNavItem({ active: true }, bs.a({ href: '...' }, 'Link')),`, bs.e({ tag: 'br' }),
             `                bs.navbarNavItem({}, bs.a({ href: '...' }, 'Link')),`, bs.e({ tag: 'br' }),
             `                bs.dropdown(`, bs.e({ tag: 'br' }),
-            `                    { navbar: true, button: { label: 'Dropdown' } },`, bs.e({ tag: 'br' }),
+            `                    { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },`, bs.e({ tag: 'br' }),
             `                    bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
             `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
             `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),
@@ -161,7 +161,7 @@ function defaultNavbar(): b.IBobrilChildren {
             `            bs.navbarNav({ style: bs.navStyles.navbarRight }, [`, bs.e({ tag: 'br' }),
             `                bs.navbarNavItem({}, bs.a({ href: '...' }, 'Link')),`, bs.e({ tag: 'br' }),
             `                bs.dropdown(`, bs.e({ tag: 'br' }),
-            `                    { navbar: true, button: { label: 'Dropdown' } },`, bs.e({ tag: 'br' }),
+            `                    { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },`, bs.e({ tag: 'br' }),
             `                    bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
             `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
             `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),
@@ -228,8 +228,8 @@ function forms(): b.IBobrilChildren {
                     bs.navbarHeader({}, [
                         bs.button(
                             {
-                                navbar: true,
-                                navbarCollapse: { target: '#bs-example-navbar-collapse-2' }
+                                variant: bs.ButtonVariant.NavbarToggle,
+                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-2' }
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
@@ -271,8 +271,8 @@ function buttons(): b.IBobrilChildren {
                     bs.navbarHeader({}, [
                         bs.button(
                             {
-                                navbar: true,
-                                navbarCollapse: { target: '#bs-example-navbar-collapse-3' }
+                                variant: bs.ButtonVariant.NavbarToggle,
+                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-3' }
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
@@ -317,8 +317,8 @@ function text(): b.IBobrilChildren {
                     bs.navbarHeader({}, [
                         bs.button(
                             {
-                                navbar: true,
-                                navbarCollapse: { target: '#bs-example-navbar-collapse-4' }
+                                variant: bs.ButtonVariant.NavbarToggle,
+                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-4' }
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
@@ -354,8 +354,8 @@ function links(): b.IBobrilChildren {
                     bs.navbarHeader({}, [
                         bs.button(
                             {
-                                navbar: true,
-                                navbarCollapse: { target: '#bs-example-navbar-collapse-5' }
+                                variant: bs.ButtonVariant.NavbarToggle,
+                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-5' }
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
@@ -422,8 +422,8 @@ function fixedTop(): b.IBobrilChildren {
                     bs.navbarHeader({}, [
                         bs.button(
                             {
-                                navbar: true,
-                                navbarCollapse: { target: '#bs-example-navbar-collapse-6' }
+                                variant: bs.ButtonVariant.NavbarToggle,
+                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-6' }
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
@@ -476,8 +476,8 @@ function fixedBottom(): b.IBobrilChildren {
                     bs.navbarHeader({}, [
                         bs.button(
                             {
-                                navbar: true,
-                                navbarCollapse: { target: '#bs-example-navbar-collapse-7' }
+                                variant: bs.ButtonVariant.NavbarToggle,
+                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-7' }
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
@@ -531,8 +531,8 @@ function staticTop(): b.IBobrilChildren {
                     bs.navbarHeader({}, [
                         bs.button(
                             {
-                                navbar: true,
-                                navbarCollapse: { target: '#bs-example-navbar-collapse-8' }
+                                variant: bs.ButtonVariant.NavbarToggle,
+                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-8' }
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
@@ -576,8 +576,8 @@ function inverted(): b.IBobrilChildren {
                     bs.navbarHeader({}, [
                         bs.button(
                             {
-                                navbar: true,
-                                navbarCollapse: { target: '#bs-example-navbar-collapse-9' }
+                                variant: bs.ButtonVariant.NavbarToggle,
+                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-9' }
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),

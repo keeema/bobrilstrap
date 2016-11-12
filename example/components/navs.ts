@@ -179,7 +179,7 @@ function dropdowns(): b.IBobrilChildren {
                 bs.tab({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Home')),
                 bs.tab({}, bs.a({ href: 'javascript:void(0)' }, 'Help')),
                 bs.dropdown(
-                    { navbar: true, button: { label: 'Dropdown' } },
+                    { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },
                     bs.dropdownMenu({}, [
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
@@ -195,7 +195,7 @@ function dropdowns(): b.IBobrilChildren {
             `    bs.tab({ active: true }, bs.a({ href: '...' }, 'Home'))`, bs.e({ tag: 'br' }),
             `    bs.tab({}, bs.a({ href: '...' }, 'Help'))`, bs.e({ tag: 'br' }),
             `    bs.dropdown(`, bs.e({ tag: 'br' }),
-            `        { navbar: true, button: { label: 'Dropdown' } },`, bs.e({ tag: 'br' }),
+            `        { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },`, bs.e({ tag: 'br' }),
             `        bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
             `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
             `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),
@@ -212,7 +212,7 @@ function dropdowns(): b.IBobrilChildren {
                 bs.pill({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Home')),
                 bs.pill({}, bs.a({ href: 'javascript:void(0)' }, 'Help')),
                 bs.dropdown(
-                    { navbar: true, button: { label: 'Dropdown' } },
+                    { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },
                     bs.dropdownMenu({}, [
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
                         bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
@@ -228,7 +228,7 @@ function dropdowns(): b.IBobrilChildren {
             `    bs.pill({active: true }, bs.a({ href: '...' }, 'Home'))`, bs.e({ tag: 'br' }),
             `    bs.pill({}, bs.a({ href: '...' }, 'Help'))`, bs.e({ tag: 'br' }),
             `    bs.dropdown(`, bs.e({ tag: 'br' }),
-            `        { navbar: true, button: { label: 'Dropdown' } },`, bs.e({ tag: 'br' }),
+            `        { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },`, bs.e({ tag: 'br' }),
             `        bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
             `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
             `            bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),

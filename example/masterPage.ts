@@ -22,8 +22,8 @@ function getNavigation(): b.IBobrilNode {
             bs.navbarHeader({}, [
                 bs.button(
                     {
-                        navbar: true,
-                        navbarCollapse: { target: '#bs-navbar' }
+                        variant: bs.ButtonVariant.NavbarToggle,
+                        data: { toggle: 'collapse', target: '#bs-navbar' }
                     },
                     [
                         bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),

@@ -78,13 +78,18 @@ export const modal = b.createDerivedComponent<IModalData>(elem, {
             backdrop
         });
 
-        if (ctx.data.onHidden) {
-            modalElement.on('hidden.bs.modal', ctx.data.onHidden);
-        }
+        modalElement.on('hidden.bs.modal', (ev) => {
+            if (ctx.data.onHidden) {
+                ctx.data.onHidden(ev);
+            }
+        });
 
-        if (ctx.data.onShown) {
-            modalElement.on('hidden.bs.shown', ctx.data.onShown);
-        }
+        modalElement.on('shown.bs.modal', (ev) => {
+            if (ctx.data.onShown) {
+                ctx.data.onShown(ev);
+            }
+        });
+
     },
     postUpdateDom(ctx: IModalCtx, _me: b.IBobrilCacheNode, element: HTMLElement) {
         if (!!ctx.data.visible !== !!ctx.visible) {

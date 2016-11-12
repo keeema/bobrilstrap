@@ -9,6 +9,8 @@ export const collapseStyles = {
 export interface ICollapseData {
     children?: b.IBobrilNode;
     collapsed: boolean;
+    onCollapsed?: () => void;
+    onExpanded?: () => void;
 }
 
 interface ICollapseCtx extends b.IBobrilCtx {
@@ -39,6 +41,14 @@ function registerNewCollapse(ctx: ICollapseCtx) {
     ctx.collapsedElement = element;
     $(element).collapse({ toggle: !ctx.data.collapsed });
     ctx.collapsed = ctx.data.collapsed;
+    $(element).on('hidden.bs.collapse', () => {
+        if (ctx.data.onCollapsed)
+            ctx.data.onCollapsed();
+    });
+    $(element).on('shown.bs.collapse', () => {
+        if (ctx.data.onExpanded)
+            ctx.data.onExpanded();
+    });
 }
 
 function handleToggle(ctx: ICollapseCtx) {

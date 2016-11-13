@@ -93,7 +93,8 @@ b.routes(
         b.route({ url: 'bobrilstrap', name: 'bobrilstrap', handler: bobrilstrapPage }, [
             b.route({ url: 'bobrilstrap-top', name: 'bobrilstrap-top', handler: false }),
             b.route({ url: 'bobril', name: 'bobril', handler: false }),
-            b.route({ url: 'bobrilstrap-installation', name: 'bobrilstrap-installation', handler: false })
+            b.route({ url: 'bobrilstrap-installation', name: 'bobrilstrap-installation', handler: false }),
+            b.route({ url: 'bobrilstrap-themes', name: 'bobrilstrap-themes', handler: false })
         ]),
         b.route({ url: 'components', name: 'components', handler: components }, [
             b.route({ url: 'components-top', name: 'components-top', handler: false }),

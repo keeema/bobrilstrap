@@ -23,6 +23,11 @@ export const bobrilstrapPage = b.createVirtualComponent({
                                 targetId: 'bobrilstrap-installation', title: 'Bobrilstrap installation',
                                 subs: [
                                 ]
+                            },
+                            {
+                                targetId: 'bobrilstrap-themes', title: 'Themes',
+                                subs: [
+                                ]
                             }
                         ]
                     }

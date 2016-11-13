@@ -122,6 +122,16 @@ export const carousel = b.createDerivedComponent<ICarouselData>(elem, {
     },
     postUpdateDom(ctx: ICarouselCtx, _me: b.IBobrilNode, element: HTMLElement) {
         handleSlideTo(ctx, $(element));
+    },
+    onSwipeLeft(ctx: ICarouselCtx) {
+        const element = <HTMLElement>b.getDomNode(ctx.me);
+        $(element).carousel('next');
+        return true;
+    },
+    onSwipeRight(ctx: ICarouselCtx) {
+        const element = <HTMLElement>b.getDomNode(ctx.me);
+        $(element).carousel('prev');
+        return true;
     }
 });
 

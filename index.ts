@@ -1,5 +1,6 @@
 /// <reference path="./typed/bootstrap/bootstrap.d.ts" />
 import * as b from 'bobril';
+import * as bobrilSwipeExtension from './components/bobrilSwipeExtension';
 
 export * from './components/a';
 export * from './components/abbreviation';
@@ -128,6 +129,7 @@ export function init(): void {
     b.asset('node_modules/jquery/dist/jquery.min.js');
     b.asset('node_modules/bootstrap/dist/css/bootstrap.min.css');
     b.asset('node_modules/bootstrap/dist/js/bootstrap.min.js');
+    bobrilSwipeExtension.init();
 }
 
 export default init;

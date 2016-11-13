@@ -40,6 +40,7 @@ interface ICarouselCtx extends b.IBobrilCtx {
 export const carouselStyles = {
     active: b.styleDef('active'),
     carousel: b.styleDef('carousel'),
+    carouselCaption: b.styleDef('carousel-caption'),
     carouselIndicators: b.styleDef('carousel-indicators'),
     carouselInner: b.styleDef('carousel-inner'),
     carouselControl: b.styleDef('carousel-control'),
@@ -74,7 +75,7 @@ export const carousel = b.createDerivedComponent<ICarouselData>(elem, {
                 { style: carouselStyles.carouselInner, attrs: { role: 'listbox' } },
                 ctx.data.items.map((item, idx) => elem(
                     { style: [carouselStyles.item, !ctx.initialSlideChanged && idx === initialSlide && carouselStyles.active] },
-                    [item.image, item.captionContent])
+                    [item.image, !!item.captionContent && elem({ style: carouselStyles.carouselCaption }, item.captionContent)])
                 )
             ),
             a(

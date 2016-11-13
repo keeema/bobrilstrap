@@ -31,7 +31,7 @@ export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
     },
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.children = bs.affix(
-            { top: ctx.data.main ? 610 : 325, bottom: 260 },
+            { top: ctx.data.main ? 628 : 325, bottom: 260 },
             bs.e(
                 {
                     tag: 'nav',

@@ -25,7 +25,10 @@ export const header = b.createVirtualComponent<IData>({
                 ctx.data.iconText
             ),
             bs.h1({}, ctx.data.header),
-            bs.p({ lead: !!ctx.data.iconText }, ctx.data.headerContent)
+            bs.p({ lead: !!ctx.data.iconText }, ctx.data.headerContent),
+            !!ctx.data.iconText && bs.a({ href: 'https://badge.fury.io/js/bobrilstrap' }, [
+                bs.image({ src: 'https://badge.fury.io/js/bobrilstrap.svg', alt: 'npm version', height: 18 })
+            ])
         ]);
     }
 });

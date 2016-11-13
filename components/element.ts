@@ -44,6 +44,9 @@ export interface IData {
     toggle?: string;
     target?: string;
     dismiss?: string;
+    ride?: string;
+    slide?: string;
+    slideTo?: number;
 }
 
 export interface IBaseData {

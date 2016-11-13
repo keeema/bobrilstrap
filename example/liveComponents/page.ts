@@ -5,6 +5,7 @@ import { modals } from './modals';
 import { tooltips } from './tooltips';
 import { popovers } from './popovers';
 import { collapse } from './collapse';
+import { carousel } from './carousel';
 import { affix } from './affix';
 
 export const liveComponents = b.createVirtualComponent({
@@ -38,6 +39,10 @@ export const liveComponents = b.createVirtualComponent({
                                 subs: []
                             },
                             {
+                                targetId: 'carousel', title: 'Carousel',
+                                subs: []
+                            },
+                            {
                                 targetId: 'affix', title: 'Affix',
                                 subs: []
                             },
@@ -49,6 +54,7 @@ export const liveComponents = b.createVirtualComponent({
                     tooltips(),
                     popovers(),
                     collapse(),
+                    carousel(),
                     affix()
                 ])
         ];

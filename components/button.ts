@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { elem, IBaseData, IElementBobrilNode } from './element';
+import { elem, IBaseData, IElementBobrilNode, IAria, IData } from './element';
 import { Size } from './size';
 import { helpers } from './helpers';
 import { span } from './span';
@@ -128,8 +128,8 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
 
         if (ctx.data.variant === ButtonVariant.Dropdown || ctx.data.variant === ButtonVariant.DropdownNav) {
             ctx.data = b.assign({}, ctx.data);
-            ctx.data.data = b.assign({}, ctx.data.data);
-            ctx.data.aria = b.assign({}, ctx.data.aria);
+            ctx.data.data = <IData>b.assign({}, ctx.data.data);
+            ctx.data.aria = <IAria>b.assign({}, ctx.data.aria);
 
             ctx.data.aria.haspopup = true;
             ctx.data.data.toggle = 'dropdown';

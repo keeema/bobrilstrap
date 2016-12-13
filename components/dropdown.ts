@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { mergeToChildren } from './bobrilHelpers';
-import { elem, IBaseData } from './element';
+import { elem, IBaseData, IAria } from './element';
 import { button, IButtonData, ButtonVariant } from './button';
 import { buttonGroup, IButtonGroupData } from './buttonGroup';
 import { inputGroupBtn, IInputGroupBtnData } from './inputGroupBtn';
@@ -53,7 +53,7 @@ function updateButtonDataForDropdown(originalButtonData: IButtonData): IButtonDa
     buttonData.variant = originalButtonData.variant !== undefined
         ? originalButtonData.variant
         : ButtonVariant.Dropdown;
-    buttonData.aria = b.assign({}, buttonData.aria);
+    buttonData.aria = <IAria>b.assign({}, buttonData.aria);
     buttonData.aria.haspopup = true;
     return buttonData;
 }

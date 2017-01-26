@@ -36,6 +36,12 @@ export const navbarPage = b.createVirtualComponent({
     }
 });
 
+const collapsedMenu = b.propim(true, undefined, () => { console.log(collapsedMenu()); });
+function handleMenuItemClick() {
+    collapsedMenu(true);
+    return false;
+}
+
 function defaultNavbar(): b.IBobrilChildren {
     return [
         b.anchor(bs.h2({ attrs: { id: 'navbar-default' } }, 'Default navbar')),
@@ -43,7 +49,6 @@ function defaultNavbar(): b.IBobrilChildren {
             `Navbars are responsive meta components that serve as navigation headers for your application or site. 
             They begin collapsed (and are toggleable) in mobile views and become horizontal as the available viewport width increases.`
         ]),
-
         bs.p({}, bs.strong({ style: bs.helpers.text.danger }, 'Justified navbar nav links are currently not supported.')),
         bs.e({ style: [styles.bsCallout, styles.bsCalloutWarning], attrs: { id: 'callout-navbar-overflow' } }, [
             bs.h4({}, [`Overflowing content`]),
@@ -68,7 +73,7 @@ function defaultNavbar(): b.IBobrilChildren {
                         bs.button(
                             {
                                 variant: bs.ButtonVariant.NavbarToggle,
-                                data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-1' }
+                                onClick: () => collapsedMenu(!collapsedMenu())
                             },
                             [
                                 bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
@@ -79,52 +84,77 @@ function defaultNavbar(): b.IBobrilChildren {
                         ),
                         bs.navbarBrand({ href: 'javascript:void(0)' }, 'Brand')
                     ]),
-                    bs.navbarCollapse({ id: 'bs-example-navbar-collapse-1' }, [
-                        bs.navbarNav({}, [
-                            bs.navbarNavItem({ active: true }, bs.a({ href: 'javascript:void(0)' }, 'Link')),
-                            bs.navbarNavItem({}, bs.a({ href: 'javascript:void(0)' }, 'Link')),
-                            bs.dropdown(
-                                { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },
-                                bs.dropdownMenu({}, [
-                                    bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
-                                    bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
-                                    bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Something else here')),
-                                    bs.dropdownItem({ separator: true }),
-                                    bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Separated link')),
-                                    bs.dropdownItem({ separator: true }),
-                                    bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'One more separated link')),
-                                ])
-                            )
-                        ]),
-                        bs.form({ style: [bs.navStyles.navbarForm, bs.navStyles.navbarLeft] }, [
-                            bs.formGroup({}, bs.inputText({ placeholder: 'Search' })), ' ',
-                            bs.button({ label: 'Submit' })
-                        ]),
-                        bs.navbarNav({ style: bs.navStyles.navbarRight }, [
-                            bs.navbarNavItem({}, bs.a({ href: 'javascript:void(0)' }, 'Link')),
-                            bs.dropdown(
-                                { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },
-                                bs.dropdownMenu({}, [
-                                    bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Action')),
-                                    bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Another action')),
-                                    bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Something else here')),
-                                    bs.dropdownItem({ separator: true }),
-                                    bs.dropdownItem({}, bs.a({ href: 'javascript:void(0)' }, 'Separated link'))
-                                ])
-                            )
+                    bs.collapse(
+                        { collapsed: collapsedMenu() },
+                        bs.navbarCollapse({}, [
+                            bs.navbarNav({}, [
+                                bs.navbarNavItem(
+                                    { active: true },
+                                    bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Link')),
+                                bs.navbarNavItem({}, bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Link')),
+                                bs.dropdown(
+                                    { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },
+                                    bs.dropdownMenu({}, [
+                                        bs.dropdownItem(
+                                            {},
+                                            bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Action')),
+                                        bs.dropdownItem(
+                                            {},
+                                            bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Another action')),
+                                        bs.dropdownItem(
+                                            {},
+                                            bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Something else here')),
+                                        bs.dropdownItem({ separator: true }),
+                                        bs.dropdownItem(
+                                            {},
+                                            bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Separated link'))
+                                    ])
+                                )
+                            ]),
+                            bs.form({ style: [bs.navStyles.navbarForm, bs.navStyles.navbarLeft] }, [
+                                bs.formGroup({}, bs.inputText({ placeholder: 'Search' })), ' ',
+                                bs.button({ label: 'Submit', onClick: handleMenuItemClick })
+                            ]),
+                            bs.navbarNav({ style: bs.navStyles.navbarRight }, [
+                                bs.navbarNavItem({}, bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Link')),
+                                bs.dropdown(
+                                    { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },
+                                    bs.dropdownMenu({}, [
+                                        bs.dropdownItem(
+                                            {},
+                                            bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Action')),
+                                        bs.dropdownItem(
+                                            {},
+                                            bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Another action')),
+                                        bs.dropdownItem(
+                                            {},
+                                            bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Something else here')),
+                                        bs.dropdownItem({ separator: true }),
+                                        bs.dropdownItem(
+                                            {},
+                                            bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Separated link'))
+                                    ])
+                                )
+                            ])
                         ])
-                    ])
+                    )
                 ])
             ])
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+            `const collapsedMenu = b.propim(true, undefined, () => { console.log(collapsedMenu()); });`, bs.e({ tag: 'br' }),
+            `function handleMenuItemClick() {`, bs.e({ tag: 'br' }),
+            `    collapsedMenu(true);`, bs.e({ tag: 'br' }),
+            `    return false;`, bs.e({ tag: 'br' }),
+            `}`, bs.e({ tag: 'br' }),
+            ``, bs.e({ tag: 'br' }),
             `bs.navbar({}, [`, bs.e({ tag: 'br' }),
             `    bs.container({ fluid: true }, [`, bs.e({ tag: 'br' }),
             `        bs.navbarHeader({}, [`, bs.e({ tag: 'br' }),
             `            bs.button(`, bs.e({ tag: 'br' }),
-            `                { `, bs.e({ tag: 'br' }),
+            `                {`, bs.e({ tag: 'br' }),
             `                    variant: bs.ButtonVariant.NavbarToggle,`, bs.e({ tag: 'br' }),
-            `                    data: { toggle: 'collapse', target: '#bs-example-navbar-collapse-1' }`, bs.e({ tag: 'br' }),
+            `                    onClick: () => collapsedMenu(!collapsedMenu())`, bs.e({ tag: 'br' }),
             `                },`, bs.e({ tag: 'br' }),
             `                [`, bs.e({ tag: 'br' }),
             `                    bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),`, bs.e({ tag: 'br' }),
@@ -135,44 +165,62 @@ function defaultNavbar(): b.IBobrilChildren {
             `            ),`, bs.e({ tag: 'br' }),
             `            bs.navbarBrand({ href: '...' }, 'Brand')`, bs.e({ tag: 'br' }),
             `        ]),`, bs.e({ tag: 'br' }),
-            `        bs.navbarCollapse({ id: 'bs-example-navbar-collapse-1' }, [`, bs.e({ tag: 'br' }),
-            `            bs.navbarNav({}, [`, bs.e({ tag: 'br' }),
-            `                bs.navbarNavItem({ active: true }, bs.a({ href: '...' }, 'Link')),`, bs.e({ tag: 'br' }),
-            `                bs.navbarNavItem({}, bs.a({ href: '...' }, 'Link')),`, bs.e({ tag: 'br' }),
-            `                bs.dropdown(`, bs.e({ tag: 'br' }),
-            `                    { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },`, bs.e({ tag: 'br' }),
-            `                    bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Something else here')),`,
+            `        bs.collapse(`, bs.e({ tag: 'br' }),
+            `            { collapsed: collapsedMenu() },`, bs.e({ tag: 'br' }),
+            `            bs.navbarCollapse({}, [`, bs.e({ tag: 'br' }),
+            `                bs.navbarNav({}, [`, bs.e({ tag: 'br' }),
+            `                    bs.navbarNavItem(`, bs.e({ tag: 'br' }),
+            `                        { active: true },`, bs.e({ tag: 'br' }),
+            `                        bs.a({ href: '...', onClick: handleMenuItemClick }, 'Link')),`, bs.e({ tag: 'br' }),
+            `                    bs.navbarNavItem({}, bs.a({ href: '...', onClick: handleMenuItemClick }, 'Link')),`, bs.e({ tag: 'br' }),
+            `                    bs.dropdown(`, bs.e({ tag: 'br' }),
+            `                        { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },`, bs.e({ tag: 'br' }),
+            `                        bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
+            `                            bs.dropdownItem(`, bs.e({ tag: 'br' }),
+            `                                {},`, bs.e({ tag: 'br' }),
+            `                                bs.a({ href: '...', onClick: handleMenuItemClick }, 'Action')),`, bs.e({ tag: 'br' }),
+            `                            bs.dropdownItem(`, bs.e({ tag: 'br' }),
+            `                                {},`, bs.e({ tag: 'br' }),
+            `                                bs.a({ href: '...', onClick: handleMenuItemClick }, 'Another action')),`, bs.e({ tag: 'br' }),
+            `                            bs.dropdownItem(`, bs.e({ tag: 'br' }),
+            `                                {},`, bs.e({ tag: 'br' }),
+            `                                bs.a({ href: '...', onClick: handleMenuItemClick }, 'Something else here')),`,
             bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({ separator: true }),`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Separated link')),`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({ separator: true }),`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem(`, bs.e({ tag: 'br' }),
-            `                            {}, bs.a({ href: '...' }, 'One more separated link')),`, bs.e({ tag: 'br' }),
-            `                    ])`, bs.e({ tag: 'br' }),
-            `               )`, bs.e({ tag: 'br' }),
-            `            ]),`, bs.e({ tag: 'br' }),
-            `            bs.form({ style: [bs.navStyles.navbarForm, bs.navStyles.navbarLeft] }, [`, bs.e({ tag: 'br' }),
-            `                bs.formGroup({}, bs.inputText({ placeholder: 'Search' })), ' ',`, bs.e({ tag: 'br' }),
-            `                bs.button({ label: 'Submit' })`, bs.e({ tag: 'br' }),
-            `            ]),`, bs.e({ tag: 'br' }),
-            `            bs.navbarNav({ style: bs.navStyles.navbarRight }, [`, bs.e({ tag: 'br' }),
-            `                bs.navbarNavItem({}, bs.a({ href: '...' }, 'Link')),`, bs.e({ tag: 'br' }),
-            `                bs.dropdown(`, bs.e({ tag: 'br' }),
-            `                    { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },`, bs.e({ tag: 'br' }),
-            `                    bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Action')),`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Another action')),`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Something else here')),`,
+            `                            bs.dropdownItem({ separator: true }),`, bs.e({ tag: 'br' }),
+            `                            bs.dropdownItem(`, bs.e({ tag: 'br' }),
+            `                                {},`, bs.e({ tag: 'br' }),
+            `                                bs.a({ href: '...', onClick: handleMenuItemClick }, 'Separated link'))`, bs.e({ tag: 'br' }),
+            `                        ])`, bs.e({ tag: 'br' }),
+            `                    )`, bs.e({ tag: 'br' }),
+            `                ]),`, bs.e({ tag: 'br' }),
+            `                bs.form({ style: [bs.navStyles.navbarForm, bs.navStyles.navbarLeft] }, [`, bs.e({ tag: 'br' }),
+            `                    bs.formGroup({}, bs.inputText({ placeholder: 'Search' })), ' ',`, bs.e({ tag: 'br' }),
+            `                    bs.button({ label: 'Submit', onClick: handleMenuItemClick })`, bs.e({ tag: 'br' }),
+            `                ]),`, bs.e({ tag: 'br' }),
+            `                bs.navbarNav({ style: bs.navStyles.navbarRight }, [`, bs.e({ tag: 'br' }),
+            `                    bs.navbarNavItem({}, bs.a({ href: '...', onClick: handleMenuItemClick }, 'Link')),`, bs.e({ tag: 'br' }),
+            `                    bs.dropdown(`, bs.e({ tag: 'br' }),
+            `                        { button: { label: 'Dropdown', variant: bs.ButtonVariant.DropdownNav } },`, bs.e({ tag: 'br' }),
+            `                        bs.dropdownMenu({}, [`, bs.e({ tag: 'br' }),
+            `                            bs.dropdownItem(`, bs.e({ tag: 'br' }),
+            `                                {},`, bs.e({ tag: 'br' }),
+            `                                bs.a({ href: '...', onClick: handleMenuItemClick }, 'Action')),`, bs.e({ tag: 'br' }),
+            `                            bs.dropdownItem(`, bs.e({ tag: 'br' }),
+            `                                {},`, bs.e({ tag: 'br' }),
+            `                                bs.a({ href: '...', onClick: handleMenuItemClick }, 'Another action')),`, bs.e({ tag: 'br' }),
+            `                            bs.dropdownItem(`, bs.e({ tag: 'br' }),
+            `                                {},`, bs.e({ tag: 'br' }),
+            `                                bs.a({ href: '...', onClick: handleMenuItemClick }, 'Something else here')),`,
             bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({ separator: true }),`, bs.e({ tag: 'br' }),
-            `                        bs.dropdownItem({}, bs.a({ href: '...' }, 'Separated link'))`, bs.e({ tag: 'br' }),
-            `                    ])`, bs.e({ tag: 'br' }),
-            `                )`, bs.e({ tag: 'br' }),
+            `                            bs.dropdownItem({ separator: true }),`, bs.e({ tag: 'br' }),
+            `                            bs.dropdownItem(`, bs.e({ tag: 'br' }),
+            `                                {},`, bs.e({ tag: 'br' }),
+            `                                bs.a({ href: '...', onClick: handleMenuItemClick }, 'Separated link'))`, bs.e({ tag: 'br' }),
+            `                        ])`, bs.e({ tag: 'br' }),
+            `                    )`, bs.e({ tag: 'br' }),
+            `                ])`, bs.e({ tag: 'br' }),
             `            ])`, bs.e({ tag: 'br' }),
-            `        ])`, bs.e({ tag: 'br' }),
+            `        )`, bs.e({ tag: 'br' }),
             `    ])`, bs.e({ tag: 'br' }),
             `])`
         ])))

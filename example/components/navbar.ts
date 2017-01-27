@@ -36,7 +36,7 @@ export const navbarPage = b.createVirtualComponent({
     }
 });
 
-const collapsedMenu = b.propim(true, undefined, () => { console.log(collapsedMenu()); });
+const collapsedMenu = b.propim(true);
 function handleMenuItemClick() {
     collapsedMenu(true);
     return false;
@@ -142,7 +142,7 @@ function defaultNavbar(): b.IBobrilChildren {
             ])
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `const collapsedMenu = b.propim(true, undefined, () => { console.log(collapsedMenu()); });`, bs.e({ tag: 'br' }),
+            `const collapsedMenu = b.propim(true);`, bs.e({ tag: 'br' }),
             `function handleMenuItemClick() {`, bs.e({ tag: 'br' }),
             `    collapsedMenu(true);`, bs.e({ tag: 'br' }),
             `    return false;`, bs.e({ tag: 'br' }),

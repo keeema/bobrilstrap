@@ -16,7 +16,7 @@ export const masterPage = b.createVirtualComponent({
     }
 });
 
-const collapsedMenu = b.propim(true, undefined, () => { console.log(collapsedMenu()); });
+const collapsedMenu = b.propim(true);
 function handleMenuItemClick() {
     collapsedMenu(true);
     return false;

@@ -2,6 +2,19 @@
   "name": "bobrilstrap",
   "version": "1.1.7",
   "description": "Bobril wrapper for bootstrap",
+  "author": "Tomáš Růt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keeema/bobrilstrap/issues"
+  },
+  "homepage": "http://keeema.github.io/bobrilstrap",
+  "repository": "https://github.com/keeema/bobrilstrap.git",
+  "keywords": [
+    "bootstrap",
+    "bobril",
+    "virtual-dom",
+    "components"
+  ],
   "typescript": {
     "main": "index.ts"
   },
@@ -20,8 +33,6 @@
       "strictNullChecks": true
     }
   },
-  "author": "Tomáš Růt",
-  "license": "MIT",
   "dependencies": {
     "bobril": "^5.2.0",
     "bootstrap": "^3.3.6",

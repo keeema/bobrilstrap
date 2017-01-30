@@ -121,7 +121,7 @@ function example(): b.IBobrilChildren {
             `            bs.image({ src: '...' }),`, bs.e({ tag: 'br' }),
             `            bs.e({ tag: 'div', style: bs.typography.caption }, [`, bs.e({ tag: 'br' }),
             `                bs.h3({}, 'Thumbnail label'),`, bs.e({ tag: 'br' }),
-            `                bs.p({}, '...')`, bs.e({ tag: 'br' }),
+            `                bs.p({}, '...'),`, bs.e({ tag: 'br' }),
             `                bs.p({}, [`, bs.e({ tag: 'br' }),
             `                   bs.button({ tag: bs.ButtonTag.A, option: bs.ButtonOption.Primary, label: 'Button' }),`, bs.e({ tag: 'br' }),
             `                   ' ',`, bs.e({ tag: 'br' }),

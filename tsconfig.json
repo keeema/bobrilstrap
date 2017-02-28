@@ -21,7 +21,8 @@
         "noFallthroughCasesInSwitch": true,
         "strictNullChecks": true,
         "jsx": "react",
-        "reactNamespace": "b"
+        "reactNamespace": "b",
+        "experimentalDecorators": true
     },
     "include": [
         "**/*"

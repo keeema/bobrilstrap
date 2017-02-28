@@ -2,25 +2,9 @@
 # yarn lockfile v1
 
 
-"@types/bootstrap@^3.3.32":
-  version "3.3.32"
-  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-3.3.32.tgz#abaf4b364d086de0cb7791db0cfd55703b591fad"
-  dependencies:
-    "@types/jquery" "*"
-
-"@types/jquery@*", "@types/jquery@^2.0.40":
-  version "2.0.40"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.40.tgz#acdd69e29b74cdec15dc3c074bcb064bc1b87213"
-
-"@types/typeahead@^0.11.27":
-  version "0.11.27"
-  resolved "https://registry.yarnpkg.com/@types/typeahead/-/typeahead-0.11.27.tgz#38276f9b3d3f0ad75c02e00daa18dce5bd85c714"
-  dependencies:
-    "@types/jquery" "*"
-
 bobril@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/bobril/-/bobril-5.2.0.tgz#348e970b4a23a7c7d2954fde0a0fbe1f10716713"
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/bobril/-/bobril-5.5.0.tgz#366cd6baf2c2b9d342bc738b4e7e5f6b50d8138e"
 
 bootstrap-3-typeahead@^4.0.2:
   version "4.0.2"

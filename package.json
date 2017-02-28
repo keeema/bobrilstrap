@@ -34,6 +34,8 @@
     }
   },
   "dependencies": {
+    "@types/bootstrap": "^3.3.32",
+    "@types/jquery": "^2.0.40",
     "bobril": "^5.2.0",
     "bootstrap": "^3.3.6",
     "jquery": "^2.2.3"

@@ -1,4 +1,4 @@
-/// <reference path="./typed/bootstrap/bootstrap.d.ts" />
+/// <reference path="./node_modules/@types/bootstrap/index.d.ts" />
 import * as b from 'bobril';
 import * as bobrilSwipeExtension from './components/bobrilSwipeExtension';
 

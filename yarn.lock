@@ -2,6 +2,16 @@
 # yarn lockfile v1
 
 
+"@types/bootstrap@^3.3.32":
+  version "3.3.32"
+  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-3.3.32.tgz#abaf4b364d086de0cb7791db0cfd55703b591fad"
+  dependencies:
+    "@types/jquery" "*"
+
+"@types/jquery@*", "@types/jquery@^2.0.40":
+  version "2.0.40"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.40.tgz#acdd69e29b74cdec15dc3c074bcb064bc1b87213"
+
 bobril@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/bobril/-/bobril-5.2.0.tgz#348e970b4a23a7c7d2954fde0a0fbe1f10716713"

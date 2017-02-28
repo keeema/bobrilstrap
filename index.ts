@@ -129,6 +129,7 @@ export function init(): void {
     b.asset('node_modules/jquery/dist/jquery.min.js');
     b.asset('node_modules/bootstrap/dist/css/bootstrap.min.css');
     b.asset('node_modules/bootstrap/dist/js/bootstrap.min.js');
+    b.asset('node_modules/bootstrap-3-typeahead/bootstrap3-typeahead.min.js');
     bobrilSwipeExtension.init();
 }
 

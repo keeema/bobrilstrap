@@ -27,6 +27,8 @@ export const forms = b.createVirtualComponent({
     }
 });
 
+const items = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
+
 function basicExample(): b.IBobrilChildren {
     return [
         b.anchor(bs.h2({ attrs: { id: 'basic-forms' } }, 'Basic example')),
@@ -48,6 +50,15 @@ function basicExample(): b.IBobrilChildren {
                     bs.inputText({ id: 'exampleInputPassword1', type: bs.InputTextType.Password, placeholder: 'Password' })
                 ]),
                 bs.formGroup({}, [
+                    bs.label({ for: 'exampleInputTypeahead1' }, 'Typeahead'),
+                    bs.inputText({
+                        id: 'exampleInputTypeahead1',
+                        type: bs.InputTextType.Text,
+                        placeholder: 'Write to search',
+                        typeaheadOptions: { source: items }
+                    })
+                ]),
+                bs.formGroup({}, [
                     bs.label({ for: 'exampleInputFile' }, 'File input'),
                     bs.e({ tag: 'input', attrs: { type: 'file', id: 'exampleInputFile' } }),
                     bs.helpText({}, 'Example block-level help text here.')
@@ -57,6 +68,11 @@ function basicExample(): b.IBobrilChildren {
             ])
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
+            `// At not-rendered place`, bs.e({ tag: 'br' }),
+            `const items = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 
+            'Porsche', 'Rolls-Royce', 'Volkswagen'];`, bs.e({ tag: 'br' }),
+            ``, bs.e({ tag: 'br' }),
+            `// At rendered place`, bs.e({ tag: 'br' }),
             `bs.form({}, [`, bs.e({ tag: 'br' }),
             `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
             `        bs.label({ for: 'exampleInputEmail1' }, 'Email address'),`, bs.e({ tag: 'br' }),
@@ -66,6 +82,15 @@ function basicExample(): b.IBobrilChildren {
             `        bs.label({ for: 'exampleInputPassword1' }, 'Password'),`, bs.e({ tag: 'br' }),
             `        bs.inputText({ id: 'exampleInputPassword1', type: bs.InputTextType.Password, placeholder: 'Password' })`,
             bs.e({ tag: 'br' }),
+            `    ]),`, bs.e({ tag: 'br' }),
+            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
+            `        bs.label({ for: 'exampleInputTypeahead1' }, 'Typeahead'),`, bs.e({ tag: 'br' }),
+            `        bs.inputText({`, bs.e({ tag: 'br' }),
+            `            id: 'exampleInputTypeahead1',`, bs.e({ tag: 'br' }),
+            `            type: bs.InputTextType.Text,`, bs.e({ tag: 'br' }),
+            `            placeholder: 'Write to search',`, bs.e({ tag: 'br' }),
+            `            typeaheadOptions: { source: items }`, bs.e({ tag: 'br' }),
+            `        })`, bs.e({ tag: 'br' }),
             `    ]),`, bs.e({ tag: 'br' }),
             `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
             `        bs.label({ for: 'exampleInputFile' }, 'File input'),`, bs.e({ tag: 'br' }),

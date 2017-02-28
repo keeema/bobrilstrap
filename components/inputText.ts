@@ -20,7 +20,7 @@ export enum InputTextType {
     Week
 }
 
-export interface IInputTextData extends IBaseData {
+export interface IInputTextData<TValue> extends IBaseData {
     value?: string;
     placeholder?: string;
     size?: InputTextSize;
@@ -28,12 +28,33 @@ export interface IInputTextData extends IBaseData {
     disabled?: boolean;
     readonly?: boolean;
     onChange?: (value: string) => void;
+    typeaheadOptions?: ITypeaheadOptions<TValue>;
+
 }
 
-interface ICtx extends b.IBobrilCtx {
-    data: IInputTextData;
+export interface ITypeaheadProcess<TValue> {
+    (items: TValue[]): void;
+}
+
+export interface ITypeaheadSourceCallback<TValue> {
+    (query: TValue, process: ITypeaheadProcess<TValue>): TValue[] | void;
+}
+
+export interface ITypeaheadOptions<TValue> {
+    source: TValue[] | ITypeaheadSourceCallback<TValue>;
+    items?: number;
+    minLength?: number;
+    matcher?: (item: TValue) => boolean;
+    sorter?: (items: TValue[]) => TValue[];
+    updater?: (item: TValue) => TValue;
+    highlighter?: (item: TValue) => string;
+}
+
+interface ICtx<TValue> extends b.IBobrilCtx {
+    data: IInputTextData<TValue>;
     value: string;
     me: IElementBobrilCacheNode;
+    jQueryElement: JQuery | undefined;
 }
 
 export const inputTextStyles = {
@@ -53,35 +74,68 @@ inputTextSizeStyles(InputTextSize.Lg, inputTextStyles.lg);
 inputTextSizeStyles(InputTextSize.Default, false);
 inputTextSizeStyles(InputTextSize.Sm, inputTextStyles.sm);
 
-export const inputText = b.createOverridingComponent<IInputTextData>(elem, {
-    id: 'bobrilstrap-input-text',
-    render(ctx: ICtx, me: IElementBobrilNode) {
-        me.component.super.render(ctx, me);
-        if (ctx.data.value !== undefined) {
-            ctx.value = ctx.data.value;
+export const inputText = function create<TValue>() {
+    return b.createOverridingComponent<IInputTextData<TValue>>(elem, {
+        id: 'bobrilstrap-input-text',
+        render(ctx: ICtx<TValue>, me: IElementBobrilNode) {
+            me.component.super.render(ctx, me);
+            if (ctx.data.value !== undefined) {
+                ctx.value = ctx.data.value;
+            }
+
+            me.tag = 'input';
+            me.attrs['type'] = toLowerWithDashes(ctx.data.type !== undefined
+                ? InputTextType[ctx.data.type]
+                : InputTextType[InputTextType.Text]);
+            me.attrs.value = ctx.value;
+            b.style(me, inputTextStyles.formControl);
+            b.style(me, ctx.data.size !== undefined && inputTextSizeStyles(ctx.data.size));
+
+            if (ctx.data.placeholder)
+                me.attrs['placeholder'] = ctx.data.placeholder;
+
+            if (ctx.data.disabled)
+                me.attrs['disabled'] = 'disabled';
+
+            if (ctx.data.readonly)
+                me.attrs['readonly'] = 'readonly';
+        },
+        onChange(ctx: ICtx<TValue>, value: string): void {
+            ctx.value = value;
+            ctx.me.component.super.onChange(ctx, value);
+        },
+        postInitDom(ctx: ICtx<TValue>) {
+            if (ctx.data.typeaheadOptions)
+                registerNewTypeahead(ctx);
+        },
+        postUpdateDom(ctx: ICtx<TValue>) {
+            if (ctx.data.typeaheadOptions)
+                registerNewTypeahead(ctx);
+        }, destroy(ctx: ICtx<TValue>) {
+            unregister(ctx);
         }
 
-        me.tag = 'input';
-        me.attrs['type'] = toLowerWithDashes(ctx.data.type !== undefined
-            ? InputTextType[ctx.data.type]
-            : InputTextType[InputTextType.Text]);
-        me.attrs.value = ctx.value;
-        b.style(me, inputTextStyles.formControl);
-        b.style(me, ctx.data.size !== undefined && inputTextSizeStyles(ctx.data.size));
+    });
+}();
 
-        if (ctx.data.placeholder)
-            me.attrs['placeholder'] = ctx.data.placeholder;
-
-        if (ctx.data.disabled)
-            me.attrs['disabled'] = 'disabled';
-
-        if (ctx.data.readonly)
-            me.attrs['readonly'] = 'readonly';
-    },
-    onChange(ctx: ICtx, value: string): void {
-        ctx.value = value;
-        ctx.me.component.super.onChange(ctx, value);
+function registerNewTypeahead<TValue>(ctx: ICtx<TValue>) {
+    const element = <HTMLElement>b.getDomNode(ctx.me);
+    if (!element) {
+        ctx.jQueryElement = undefined;
+        return;
     }
-});
+
+    if (!ctx.jQueryElement) {
+        ctx.jQueryElement = $(element);
+        ctx.jQueryElement.typeahead(ctx.data.typeaheadOptions);
+    }
+}
+
+function unregister<TValue>(ctx: ICtx<TValue>) {
+    if (ctx.jQueryElement) {
+        $(ctx.jQueryElement).typeahead('destroy');
+        ctx.jQueryElement = undefined;
+    }
+}
 
 export default inputText;

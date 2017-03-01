@@ -47,7 +47,9 @@
             "timeEnd",
             "trace"
         ],
-        "no-consecutive-blank-lines": true,
+        "no-consecutive-blank-lines": [
+            true
+        ],
         "no-construct": true,
         "no-constructor-vars": true,
         "no-debugger": true,
@@ -100,7 +102,6 @@
         "use-strict": [
             false
         ],
-        
         "variable-name": [
             true,
             "allow-leading-underscore"

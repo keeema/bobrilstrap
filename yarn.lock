@@ -9,12 +9,12 @@
     "@types/jquery" "*"
 
 "@types/jquery@*", "@types/jquery@^2.0.40":
-  version "2.0.40"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.40.tgz#acdd69e29b74cdec15dc3c074bcb064bc1b87213"
+  version "2.0.41"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.41.tgz#b87ba051011f99edbe586d8f97282e7786e01a6d"
 
-bobril@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/bobril/-/bobril-6.0.1.tgz#30bfbd780ce841e323dc44bf2bfba180dad84b12"
+bobril@^6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/bobril/-/bobril-6.2.1.tgz#c1927646e01c7b5101346e1ee6497a0c62b80db4"
 
 bootstrap-3-typeahead@^4.0.2:
   version "4.0.2"

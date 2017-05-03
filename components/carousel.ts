@@ -27,7 +27,7 @@ export interface ICarouselData extends IBaseData {
     interval?: number;
     pauseOn?: CarouselPauseOn;
     wrap?: boolean;
-    keybord?: boolean;
+    keyboard?: boolean;
     onSlide?: () => void;
 }
 
@@ -110,7 +110,7 @@ export const carousel = b.createDerivedComponent<ICarouselData>(elem, {
             interval: ctx.data.interval,
             pause: ctx.data.pauseOn !== undefined ? CarouselPauseOn[ctx.data.pauseOn].toLowerCase() : undefined,
             wrap: ctx.data.wrap,
-            keybord: ctx.data.keybord,
+            keyboard: ctx.data.keyboard,
         });
         jqueryElement.on('slide.bs.carousel', () => {
             ctx.initialSlideChanged = true;

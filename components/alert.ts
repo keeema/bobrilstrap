@@ -65,13 +65,13 @@ export const alert = b.createDerivedComponent<IAlertData>(elem, {
                 !!animation && alertStyles.in,
             );
 
-            const buttonData = b.assign({}, ctx.data.dismissButton, <IButtonData>{
+            const buttonData = b.assign({}, ctx.data.dismissButton, {
                 alert: true,
                 data: nativeDismiss
                     ? b.assign({}, ctx.data.dismissButton.data, { dismiss: 'alert' })
                     : ctx.data.dismissButton.data,
                 option: ButtonOption.Close
-            });
+            } as IButtonData);
 
             if (!buttonData.children) {
                 mergeToChildren(buttonData, span({ aria: { hidden: true } }, '×'), true);

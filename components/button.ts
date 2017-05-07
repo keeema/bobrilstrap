@@ -128,8 +128,8 @@ export const button = b.createDerivedComponent<IButtonData>(elem, {
 
         if (ctx.data.variant === ButtonVariant.Dropdown || ctx.data.variant === ButtonVariant.DropdownNav) {
             ctx.data = b.assign({}, ctx.data);
-            ctx.data.data = <IData>b.assign({}, ctx.data.data);
-            ctx.data.aria = <IAria>b.assign({}, ctx.data.aria);
+            ctx.data.data = b.assign({}, ctx.data.data) as IData;
+            ctx.data.aria = b.assign({}, ctx.data.aria) as IAria;
 
             ctx.data.aria.haspopup = true;
             ctx.data.data.toggle = 'dropdown';

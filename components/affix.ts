@@ -32,7 +32,7 @@ export const affix = b.createVirtualComponent<IAffixData>({
 });
 
 function registerNewAffix(ctx: IAffixCtx) {
-    const element = <HTMLElement>b.getDomNode(ctx.me);
+    const element = b.getDomNode(ctx.me) as HTMLElement;
     if (!element || ctx.data.postponeInit || ctx.affixedElement === element)
         return;
 

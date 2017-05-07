@@ -52,7 +52,7 @@ export const popover = b.createVirtualComponent<IPopoverData>({
 });
 
 function registerNewPopover(ctx: IPopoverCtx) {
-    const element = <HTMLElement>b.getDomNode(ctx.me);
+    const element = b.getDomNode(ctx.me) as HTMLElement;
     if (!element) {
         ctx.popoveredElement = undefined;
         return;

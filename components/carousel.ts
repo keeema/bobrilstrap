@@ -111,7 +111,7 @@ export const carousel = b.createDerivedComponent<ICarouselData>(elem, {
             pause: ctx.data.pauseOn !== undefined ? CarouselPauseOn[ctx.data.pauseOn].toLowerCase() : undefined,
             wrap: ctx.data.wrap,
             keyboard: ctx.data.keyboard,
-        });
+        } as CarouselOptions);
         jqueryElement.on('slide.bs.carousel', () => {
             ctx.initialSlideChanged = true;
             if (ctx.data.onSlide)
@@ -124,12 +124,12 @@ export const carousel = b.createDerivedComponent<ICarouselData>(elem, {
         handleSlideTo(ctx, $(element));
     },
     onSwipeLeft(ctx: ICarouselCtx) {
-        const element = <HTMLElement>b.getDomNode(ctx.me);
+        const element = b.getDomNode(ctx.me) as HTMLElement;
         $(element).carousel('next');
         return true;
     },
     onSwipeRight(ctx: ICarouselCtx) {
-        const element = <HTMLElement>b.getDomNode(ctx.me);
+        const element = b.getDomNode(ctx.me) as HTMLElement;
         $(element).carousel('prev');
         return true;
     }

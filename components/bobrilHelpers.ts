@@ -7,7 +7,7 @@ export interface IWithChildren {
 export function mergeToChildren(node: IWithChildren, item?: b.IBobrilChildren, unshift?: boolean): b.IBobrilChildren {
     let children: b.IBobrilChildren[] = node.children
         ? node.children instanceof Array
-            ? <b.IBobrilNode[]>node.children
+            ? node.children as b.IBobrilNode[]
             : [node.children]
         : [];
 
@@ -56,12 +56,12 @@ export function createDictionary<TKey extends NumberOrString, TValue>(): IDictio
 
 function dataValue<TValue>(data: INumberData<TValue> | IStringData<TValue>, key: number | string, value?: TValue): TValue {
     if (typeof key === 'string') {
-        const innerData = <IStringData<TValue>>data;
+        const innerData = data as IStringData<TValue>;
         if (value !== undefined)
             innerData[key] = value;
         return innerData[key];
     } else {
-        const innerData = <INumberData<TValue>>data;
+        const innerData = data as INumberData<TValue>;
         if (value !== undefined)
             innerData[key] = value;
         return innerData[key];

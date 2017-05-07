@@ -53,8 +53,9 @@ function updateButtonDataForDropdown(originalButtonData: IButtonData): IButtonDa
     buttonData.variant = originalButtonData.variant !== undefined
         ? originalButtonData.variant
         : ButtonVariant.Dropdown;
-    buttonData.aria = <IAria>b.assign({}, buttonData.aria);
-    buttonData.aria.haspopup = true;
+    buttonData.aria = b.assign({}, buttonData.aria) as IAria;
+    if (buttonData.aria !== undefined)
+        buttonData.aria.haspopup = true;
     return buttonData;
 }
 

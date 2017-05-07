@@ -17,7 +17,7 @@ export const persistentScrollContainer = b.createDerivedComponent<IPersistentScr
         }
 
         window.onscroll = (event) => {
-            const body = (<{ body?: HTMLElement }>event.target).body;
+            const body = (event.target as { body?: HTMLElement }).body;
             if (body)
                 localStorage.setItem(getScrollStorageName(ctx.data.id), body.scrollTop.toString());
         };

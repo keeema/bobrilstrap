@@ -88,7 +88,7 @@ function getColTypeArray(colTypes: IColType | IColType[]): IColType[] {
     return colTypes
         ? colTypes instanceof Array
             ? colTypes
-            : <IColType[]>[colTypes]
+            : [colTypes] as IColType[]
         : [];
 }
 

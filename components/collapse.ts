@@ -34,7 +34,7 @@ export const collapse = b.createVirtualComponent<ICollapseData>({
 });
 
 function registerNewCollapse(ctx: ICollapseCtx) {
-    const element = <HTMLElement>b.getDomNode(ctx.me);
+    const element = b.getDomNode(ctx.me) as HTMLElement;
     if (!element || ctx.collapsedElement === element)
         return;
 
@@ -52,7 +52,7 @@ function registerNewCollapse(ctx: ICollapseCtx) {
 }
 
 function handleToggle(ctx: ICollapseCtx) {
-    const element = <HTMLElement>b.getDomNode(ctx.me);
+    const element = b.getDomNode(ctx.me) as HTMLElement;
     if (!!ctx.collapsed !== !!ctx.data.collapsed) {
         ctx.collapsed = !!ctx.data.collapsed;
         $(element).collapse(ctx.collapsed ? 'hide' : 'show');

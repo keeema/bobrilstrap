@@ -50,7 +50,7 @@ export const tooltip = b.createVirtualComponent<ITooltipData>({
 });
 
 function registerNewTooltip(ctx: ITooltipCtx) {
-    const element = <HTMLElement>b.getDomNode(ctx.me);
+    const element = b.getDomNode(ctx.me) as HTMLElement;
     if (!element) {
         ctx.tooltipedElement = undefined;
         return;

@@ -119,7 +119,7 @@ export const inputText = function create<TValue>() {
 }();
 
 function registerNewTypeahead<TValue>(ctx: ICtx<TValue>) {
-    const element = <HTMLElement>b.getDomNode(ctx.me);
+    const element = b.getDomNode(ctx.me) as HTMLElement;
     if (!element) {
         ctx.jQueryElement = undefined;
         return;

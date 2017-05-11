@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Bobril wrapper for bootstrap",
   "author": "Tomáš Růt",
   "license": "MIT",
@@ -34,11 +34,11 @@
     }
   },
   "dependencies": {
-    "@types/bootstrap": "^3.3.32",
-    "@types/jquery": "^2.0.40",
-    "bobril": "^6.2.1",
-    "bootstrap": "^3.3.6",
+    "@types/bootstrap": "^3.3.33",
+    "@types/jquery": "^2.0.43",
+    "bobril": "^7.1.2",
+    "bootstrap": "^3.3.7",
     "bootstrap-3-typeahead": "^4.0.2",
-    "jquery": "^2.2.3"
+    "jquery": "^2.2.4"
   }
 }

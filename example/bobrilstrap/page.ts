@@ -25,6 +25,11 @@ export const bobrilstrapPage = b.createVirtualComponent({
                                 ]
                             },
                             {
+                                targetId: 'bobrilstrap-tsx', title: 'Using TSX',
+                                subs: [
+                                ]
+                            },
+                            {
                                 targetId: 'bobrilstrap-themes', title: 'Themes',
                                 subs: [
                                 ]

@@ -2,19 +2,19 @@
 # yarn lockfile v1
 
 
-"@types/bootstrap@^3.3.33":
-  version "3.3.33"
-  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-3.3.33.tgz#448220edb42add0a0b702f71225d35905f0cb948"
+"@types/bootstrap@^3.3.35":
+  version "3.3.35"
+  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-3.3.35.tgz#cfb98db36b5995824799ce6eb761dc48d808c096"
   dependencies:
     "@types/jquery" "*"
 
 "@types/jquery@*", "@types/jquery@^2.0.43":
-  version "2.0.43"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.43.tgz#e30d971d56dce22bf0d62e02bd4b28a7ffdba076"
+  version "2.0.48"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.48.tgz#3e90d8cde2d29015e5583017f7830cb3975b2eef"
 
-bobril@^7.1.2:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/bobril/-/bobril-7.1.2.tgz#f354d19b0be4a65fdd024f3b04657a2b0b05208d"
+bobril@^7.3.2:
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/bobril/-/bobril-7.3.2.tgz#9d0723be5fe69b68e2ec7fad45c64ddbae58dbb5"
 
 bootstrap-3-typeahead@^4.0.2:
   version "4.0.2"

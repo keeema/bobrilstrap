@@ -1,3 +1,5 @@
+/// <reference path="./typeahead.extend.d.ts" />
+
 import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode, IElementBobrilCacheNode } from './element';
 import { createDictionary, toLowerWithDashes } from './bobrilHelpers';
@@ -111,7 +113,8 @@ export const inputText = function create<TValue>() {
         postUpdateDom(ctx: ICtx<TValue>) {
             if (ctx.data.typeaheadOptions)
                 registerNewTypeahead(ctx);
-        }, destroy(ctx: ICtx<TValue>) {
+        },
+        destroy(ctx: ICtx<TValue>) {
             unregister(ctx);
         }
 

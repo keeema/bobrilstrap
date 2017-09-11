@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { elem, IBaseData } from './element';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export const wellStyles = {
     well: b.styleDef('well'),
@@ -13,7 +13,7 @@ export enum WellSize {
     Sm
 }
 
-export const wellSizeStyles = createDictionary<WellSize, b.IBobrilStyle>();
+export const wellSizeStyles: IDictionary<WellSize, b.IBobrilStyle> = createDictionary<WellSize, b.IBobrilStyle>();
 wellSizeStyles(WellSize.Lg, wellStyles.lg);
 wellSizeStyles(WellSize.Sm, wellStyles.sm);
 

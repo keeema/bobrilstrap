@@ -63,12 +63,12 @@ export interface IBaseData {
     onChange?: (value?: number | string | boolean | Object) => void;
 }
 
-interface IElementBobrilNodeCommon extends b.IBobrilNodeCommon {
+export interface IElementBobrilNodeCommon extends b.IBobrilNodeCommon {
     attrs: b.IBobrilAttributes;
     component: IElementBobrilComponent;
 }
 
-interface IElementBobrilComponent extends b.IBobrilComponent {
+export interface IElementBobrilComponent extends b.IBobrilComponent {
     super: IElementBobrilComponent;
     onChange: (ctx: ICtx, value: string | string[] | boolean) => void;
     render(ctx: b.IBobrilCtx, me: b.IBobrilNode, oldMe?: b.IBobrilCacheNode): void;
@@ -81,7 +81,7 @@ export interface IElementData extends IBaseData {
     tag?: string;
 }
 
-interface ICtx extends b.IBobrilCtx {
+export interface ICtx extends b.IBobrilCtx {
     data: IElementData;
 }
 

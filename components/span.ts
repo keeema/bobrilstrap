@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { elem, IBaseData } from './element';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export enum SpanLabelContext {
     Default,
@@ -21,7 +21,7 @@ export const spanStyles = {
     labelDanger: b.styleDef('label-danger')
 };
 
-export const spanLabelContextStyles = createDictionary<SpanLabelContext, b.IBobrilStyle>();
+export const spanLabelContextStyles: IDictionary<SpanLabelContext, b.IBobrilStyle> = createDictionary<SpanLabelContext, b.IBobrilStyle>();
 spanLabelContextStyles(SpanLabelContext.Default, spanStyles.labelDefault);
 spanLabelContextStyles(SpanLabelContext.Primary, spanStyles.labelPrimary);
 spanLabelContextStyles(SpanLabelContext.Success, spanStyles.labelSuccess);

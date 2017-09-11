@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode } from './element';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 import { helpers } from './helpers';
 
 export interface IImageData extends IBaseData {
@@ -33,7 +33,7 @@ export enum ImageShape {
     Thumbnail
 }
 
-export const imageShapeStyles = createDictionary<ImageShape, b.IBobrilStyle>();
+export const imageShapeStyles: IDictionary<ImageShape, b.IBobrilStyle> = createDictionary<ImageShape, b.IBobrilStyle>();
 imageShapeStyles(ImageShape.Rounded, imageStyles.imgRounded);
 imageShapeStyles(ImageShape.Circle, imageStyles.imgCircle);
 imageShapeStyles(ImageShape.Thumbnail, imageStyles.imgThumbnail);

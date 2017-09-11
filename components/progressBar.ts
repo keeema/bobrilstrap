@@ -2,7 +2,7 @@ import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode } from './element';
 import { span } from './span';
 import { helpers } from './helpers';
-import { createDictionary, mergeToChildren } from './bobrilHelpers';
+import { createDictionary, mergeToChildren, IDictionary } from './bobrilHelpers';
 
 export enum ProgressBarContext {
     Success,
@@ -34,7 +34,8 @@ export const progressBarStyles = {
     active: b.styleDef('active'),
 };
 
-export const progressBarContextStyles = createDictionary<ProgressBarContext, b.IBobrilStyle>();
+export const progressBarContextStyles: IDictionary<ProgressBarContext, b.IBobrilStyle>
+    = createDictionary<ProgressBarContext, b.IBobrilStyle>();
 progressBarContextStyles(ProgressBarContext.Success, progressBarStyles.progressBarSuccess);
 progressBarContextStyles(ProgressBarContext.Info, progressBarStyles.progressBarInfo);
 progressBarContextStyles(ProgressBarContext.Warning, progressBarStyles.progressBarWarning);

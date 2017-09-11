@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import { span, ISpanData } from './span';
 
-export interface IBadgeData extends ISpanData { };
+export interface IBadgeData extends ISpanData { }
 
 const badgeStyle = b.styleDef('badge');
 

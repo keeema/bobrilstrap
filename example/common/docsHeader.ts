@@ -2,7 +2,7 @@ import * as b from 'bobril';
 import * as bs from '../../index';
 import { styles } from '../bsexample/css';
 
-interface IData {
+export interface IData {
     header: string;
     headerContent: string;
     iconText?: string;
@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
     data: IData;
 }
 
-export const header = b.createVirtualComponent<IData>({
+export const header: b.IComponentFactory<IData> = b.createVirtualComponent<IData>({
     id: 'example-header',
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = ctx.data.iconText ? 'main' : 'div';

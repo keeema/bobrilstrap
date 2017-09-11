@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { li, ILiData } from './li';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export interface IPagerItemData extends ILiData {
     alignment?: PagerItemAlignment;
@@ -21,7 +21,8 @@ interface IPagerItemCtx extends b.IBobrilCtx {
     data: IPagerItemData;
 }
 
-export const pagerItemAlignmentStyles = createDictionary<PagerItemAlignment, b.IBobrilStyle>();
+export const pagerItemAlignmentStyles: IDictionary<PagerItemAlignment, b.IBobrilStyle>
+    = createDictionary<PagerItemAlignment, b.IBobrilStyle>();
 pagerItemAlignmentStyles(PagerItemAlignment.Previous, pagerItemStyles.previous);
 pagerItemAlignmentStyles(PagerItemAlignment.Next, pagerItemStyles.next);
 

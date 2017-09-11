@@ -3,7 +3,7 @@ import { elem, IBaseData } from './element';
 import { Size } from './size';
 import { createDictionary, IDictionary } from './bobrilHelpers';
 
-interface IColData extends IBaseData {
+export interface IColData extends IBaseData {
     size?: Size;
     span?: number;
     cols?: IColType | IColType[];
@@ -16,14 +16,14 @@ interface ICtx extends b.IBobrilCtx {
     data: IColData;
 }
 
-interface IColType {
+export interface IColType {
     size: Size;
     span: number;
 }
 
 type IColStyles = IDictionary<Size, IDictionary<number, b.IBobrilStyle>>;
 
-export const col = b.createDerivedComponent<IColData>(elem, {
+export const col: b.IComponentFactory<IColData> = b.createDerivedComponent<IColData>(elem, {
     id: 'bobrilstrap-col',
     render(ctx: ICtx, me: b.IBobrilNode) {
         applySimplyDefinedStyle(me, ctx.data);

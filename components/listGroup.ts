@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { ul, IUlData } from './ul';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export interface IListGroupData extends IUlData {
     linkified?: boolean;
@@ -30,7 +30,8 @@ export const listGroupStyles = {
     listGroupItemDanger: b.styleDef('list-group-item-danger'),
 };
 
-export const listGroupItemContextStyles = createDictionary<ListGroupItemContext, b.IBobrilStyle>();
+export const listGroupItemContextStyles: IDictionary<ListGroupItemContext, b.IBobrilStyle>
+    = createDictionary<ListGroupItemContext, b.IBobrilStyle>();
 listGroupItemContextStyles(ListGroupItemContext.Success, listGroupStyles.listGroupItemSuccess);
 listGroupItemContextStyles(ListGroupItemContext.Info, listGroupStyles.listGroupItemInfo);
 listGroupItemContextStyles(ListGroupItemContext.Warning, listGroupStyles.listGroupItemWarning);

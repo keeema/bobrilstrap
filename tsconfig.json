@@ -3,7 +3,7 @@
         "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
-        "declaration": false,
+        "declaration": true,
         "lib": [
             "es5",
             "dom",
@@ -22,7 +22,8 @@
         "strictNullChecks": true,
         "jsx": "react",
         "reactNamespace": "b",
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "types": []
     },
     "include": [
         "**/*"

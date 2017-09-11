@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import { elem, IBaseData } from './element';
-import { ValidationState, validationStateStyles, validationStyles} from './validations';
-import { createDictionary } from './bobrilHelpers';
+import { ValidationState, validationStateStyles, validationStyles } from './validations';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export interface IFormGroupData extends IBaseData {
     validationState?: ValidationState;
@@ -25,7 +25,7 @@ export enum FormGroupSize {
     Sm
 }
 
-export const formGroupSizeStyles = createDictionary<FormGroupSize, b.IBobrilStyle>();
+export const formGroupSizeStyles: IDictionary<FormGroupSize, b.IBobrilStyle> = createDictionary<FormGroupSize, b.IBobrilStyle>();
 formGroupSizeStyles(FormGroupSize.Lg, formGroupStyles.lg);
 formGroupSizeStyles(FormGroupSize.Default, false);
 formGroupSizeStyles(FormGroupSize.Sm, formGroupStyles.sm);

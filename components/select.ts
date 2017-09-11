@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode, IElementBobrilCacheNode } from './element';
 import { option, IOptionsData as IOptionData } from './option';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export interface ISelectData extends IBaseData {
     value?: string | string[];
@@ -31,7 +31,7 @@ export enum SelectSize {
     Sm
 }
 
-export const selectSizeStyles = createDictionary<SelectSize, b.IBobrilStyle>();
+export const selectSizeStyles: IDictionary<SelectSize, b.IBobrilStyle> = createDictionary<SelectSize, b.IBobrilStyle>();
 selectSizeStyles(SelectSize.Lg, selectStyles.lg);
 selectSizeStyles(SelectSize.Default, false);
 selectSizeStyles(SelectSize.Sm, selectStyles.sm);

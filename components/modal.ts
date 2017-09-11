@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode } from './element';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export enum ModalSize {
     Lg,
@@ -40,7 +40,7 @@ export const modalStyles = {
     sm: b.styleDef('modal-sm')
 };
 
-export const modalSizeStyles = createDictionary<ModalSize, b.IBobrilStyle>();
+export const modalSizeStyles: IDictionary<ModalSize, b.IBobrilStyle> = createDictionary<ModalSize, b.IBobrilStyle>();
 modalSizeStyles(ModalSize.Lg, modalStyles.lg);
 modalSizeStyles(ModalSize.Md, false);
 modalSizeStyles(ModalSize.Sm, modalStyles.sm);

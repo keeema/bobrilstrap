@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode } from './element';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export const buttonGroupStyles = {
     btnGroup: b.styleDef('btn-group'),
@@ -18,7 +18,7 @@ export enum ButtonGroupSize {
     Xs
 }
 
-export const buttonGroupSizeStyles = createDictionary<ButtonGroupSize, b.IBobrilStyle>();
+export const buttonGroupSizeStyles: IDictionary<ButtonGroupSize, b.IBobrilStyle> = createDictionary<ButtonGroupSize, b.IBobrilStyle>();
 buttonGroupSizeStyles(ButtonGroupSize.Lg, buttonGroupStyles.lg);
 buttonGroupSizeStyles(ButtonGroupSize.Default, false);
 buttonGroupSizeStyles(ButtonGroupSize.Sm, buttonGroupStyles.sm);

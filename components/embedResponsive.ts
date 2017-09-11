@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode } from './element';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export interface IEmbedResponsiveData extends IBaseData {
     aspectRatio?: EmbedAspectRatio;
@@ -18,7 +18,8 @@ export const embedResponsiveStyles = {
     embedResponsive4by3: b.styleDef('embed-responsive-4by3')
 };
 
-export const embedResponsiveAsoectRatioStyles = createDictionary<EmbedAspectRatio, b.IBobrilStyle>();
+export const embedResponsiveAsoectRatioStyles: IDictionary<EmbedAspectRatio, b.IBobrilStyle>
+    = createDictionary<EmbedAspectRatio, b.IBobrilStyle>();
 embedResponsiveAsoectRatioStyles(EmbedAspectRatio.SixteenByNine, embedResponsiveStyles.embedResponsive16by9);
 embedResponsiveAsoectRatioStyles(EmbedAspectRatio.FourByThree, embedResponsiveStyles.embedResponsive4by3);
 

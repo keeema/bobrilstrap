@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export const validationStyles = {
     hasSuccess: b.styleDef('has-success'),
@@ -14,7 +14,7 @@ export enum ValidationState {
     Error
 }
 
-export const validationStateStyles = createDictionary<ValidationState, b.IBobrilStyle>();
+export const validationStateStyles: IDictionary<ValidationState, b.IBobrilStyle> = createDictionary<ValidationState, b.IBobrilStyle>();
 validationStateStyles(ValidationState.Success, validationStyles.hasSuccess);
 validationStateStyles(ValidationState.Warning, validationStyles.hasWarning);
 validationStateStyles(ValidationState.Error, validationStyles.hasError);

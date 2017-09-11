@@ -3,7 +3,7 @@ import * as bs from '../../index';
 import { styles } from '../bsexample/css';
 import { pre, langJs } from '../prettify/pre';
 import { section } from '../common/section';
- 
+
 const imageData = `data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Im
 h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiP
 jwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihj
@@ -30,12 +30,14 @@ function responsiveImages(): b.IBobrilChildren {
     return [
         b.anchor(bs.h2({ attrs: { id: 'images-responsive' } }, 'Responsive images')),
         bs.p({}, [
-            `Images in Bootstrap 3 can be made responsive-friendly via the addition of the `, bs.code({}, 'responsive'), `input dat property.
-             This applies `, bs.code({}, 'max-width: 100%; height: auto; display: block;'), ` to the image so that it scales nicely to the 
-             parent element.`
+            `Images in Bootstrap 3 can be made responsive-friendly via the addition of the `,
+            bs.code({}, 'responsive'), `input dat property. This applies `,
+            bs.code({}, 'max-width: 100%; height: auto; display: block;'),
+            ` to the image so that it scales nicely to the parent element.`
         ]),
         bs.p({}, [
-            `To center images which use the `, bs.code({}, 'responsive'), ` property, use `, bs.code({}, 'centerBlock'), ` input data property. 
+            `To center images which use the `, bs.code({}, 'responsive'),
+            ` property, use `, bs.code({}, 'centerBlock'), ` input data property. 
             See the helper styles section for more details about `, bs.code({}, 'centerBlock'), ` style usage.`
         ]),
         bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [

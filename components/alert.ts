@@ -2,7 +2,7 @@ import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode } from './element';
 import { button, IButtonData, ButtonOption } from './button';
 import { span } from './span';
-import { createDictionary, mergeToChildren } from './bobrilHelpers';
+import { createDictionary, mergeToChildren, IDictionary } from './bobrilHelpers';
 
 export interface IAlertData extends IBaseData {
     context: AlertContext;
@@ -38,7 +38,7 @@ export const alertStyles = {
     in: b.styleDef('in')
 };
 
-export const alertContextStyles = createDictionary<AlertContext, b.IBobrilStyle>();
+export const alertContextStyles: IDictionary<AlertContext, b.IBobrilStyle> = createDictionary<AlertContext, b.IBobrilStyle>();
 alertContextStyles(AlertContext.Success, alertStyles.alertSuccess);
 alertContextStyles(AlertContext.Info, alertStyles.alertInfo);
 alertContextStyles(AlertContext.Danger, alertStyles.alertDanger);

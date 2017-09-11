@@ -2,7 +2,7 @@
 
 import * as b from 'bobril';
 import { elem, IBaseData, IElementBobrilNode, IElementBobrilCacheNode } from './element';
-import { createDictionary, toLowerWithDashes } from './bobrilHelpers';
+import { createDictionary, toLowerWithDashes, IDictionary } from './bobrilHelpers';
 
 export enum InputTextType {
     Color,
@@ -71,7 +71,8 @@ export enum InputTextSize {
     Sm
 }
 
-export const inputTextSizeStyles = createDictionary<InputTextSize, b.IBobrilStyle>();
+export const inputTextSizeStyles: IDictionary<InputTextSize, b.IBobrilStyle>
+    = createDictionary<InputTextSize, b.IBobrilStyle>();
 inputTextSizeStyles(InputTextSize.Lg, inputTextStyles.lg);
 inputTextSizeStyles(InputTextSize.Default, false);
 inputTextSizeStyles(InputTextSize.Sm, inputTextStyles.sm);

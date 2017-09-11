@@ -1,7 +1,7 @@
 import * as b from 'bobril';
 import { elem, IBaseData } from './element';
 import { ul, IUlData } from './ul';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export interface IPaginationData extends IBaseData {
     ul?: IUlData;
@@ -24,7 +24,7 @@ export enum PaginationSize {
     Sm
 }
 
-export const paginationSizeStyles = createDictionary<PaginationSize, b.IBobrilStyle>();
+export const paginationSizeStyles: IDictionary<PaginationSize, b.IBobrilStyle> = createDictionary<PaginationSize, b.IBobrilStyle>();
 paginationSizeStyles(PaginationSize.Lg, paginationStyles.lg);
 paginationSizeStyles(PaginationSize.Sm, paginationStyles.sm);
 

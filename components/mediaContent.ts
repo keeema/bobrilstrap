@@ -1,6 +1,6 @@
 import * as b from 'bobril';
 import { elem, IBaseData } from './element';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export enum MediaContentAlignment {
     Left = 0,
@@ -28,7 +28,8 @@ export const mediaContentStyles = {
     mediaBottom: b.styleDef('media-bottom')
 };
 
-export const medialContentAlignmentStyles = createDictionary<MediaContentAlignment, b.IBobrilStyle>();
+export const medialContentAlignmentStyles: IDictionary<MediaContentAlignment, b.IBobrilStyle>
+    = createDictionary<MediaContentAlignment, b.IBobrilStyle>();
 medialContentAlignmentStyles(MediaContentAlignment.Left, mediaContentStyles.mediaLeft);
 medialContentAlignmentStyles(MediaContentAlignment.Body, mediaContentStyles.mediaBody);
 medialContentAlignmentStyles(MediaContentAlignment.Right, mediaContentStyles.mediaRight);

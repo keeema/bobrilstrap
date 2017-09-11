@@ -30,9 +30,9 @@ export const navStyles = {
     iconBar: b.styleDef('icon-bar')
 };
 
-export enum NavbarStatic { Top = 0 };
-export enum NavbarFixed { Top = 0, Bottom = 1 };
-export enum NavbarAlignment { Left = 0, Right = 1 };
+export enum NavbarStatic { Top = 0 }
+export enum NavbarFixed { Top = 0, Bottom = 1 }
+export enum NavbarAlignment { Left = 0, Right = 1 }
 
 export interface INavbarData extends IBaseData {
     inverse?: boolean;

@@ -4,7 +4,7 @@ import { elem, IBaseData } from './element';
 import { thead, ITHeadData } from './thead';
 import { tbody, ITBodyData } from './tbody';
 import { caption } from './caption';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary } from './bobrilHelpers';
 
 export enum TableContext {
     Active,
@@ -14,7 +14,7 @@ export enum TableContext {
     Info
 }
 
-export const tableContextStyles = createDictionary<TableContext, b.IBobrilStyle>();
+export const tableContextStyles: IDictionary<TableContext, b.IBobrilStyle> = createDictionary<TableContext, b.IBobrilStyle>();
 tableContextStyles(TableContext.Active, b.styleDef('active'));
 tableContextStyles(TableContext.Success, b.styleDef('success'));
 tableContextStyles(TableContext.Warning, b.styleDef('warning'));

@@ -1,10 +1,9 @@
 import * as b from 'bobril';
 import { elem, IBaseData } from './element';
-import { createDictionary } from './bobrilHelpers';
+import { createDictionary, IDictionary, mergeToChildren } from './bobrilHelpers';
 import { panelHeading } from './panelHeading';
 import { panelBody } from './panelBody';
 import { panelFooter } from './panelFooter';
-import { mergeToChildren } from './bobrilHelpers';
 
 export const panelStyles = {
     panel: b.styleDef('panel'),
@@ -31,7 +30,7 @@ export enum PanelContext {
     Info
 }
 
-export const panelContextStyles = createDictionary<PanelContext, b.IBobrilStyle>();
+export const panelContextStyles: IDictionary<PanelContext, b.IBobrilStyle> = createDictionary<PanelContext, b.IBobrilStyle>();
 panelContextStyles(PanelContext.Default, panelStyles.panelDefault);
 panelContextStyles(PanelContext.Primary, panelStyles.panelPrimary);
 panelContextStyles(PanelContext.Success, panelStyles.panelSuccess);

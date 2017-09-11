@@ -30,7 +30,7 @@ export const bobrilHelpers = {
 
 export default bobrilHelpers;
 
-type NumberOrString = number | string;
+export type NumberOrString = number | string;
 
 interface INumberData<TValue> {
     [key: number]: TValue;

@@ -65,7 +65,10 @@ function getNavigation(): b.IBobrilNode {
                             bs.a({ href: texts.bobrilLink, target: bs.Target.Blank, onClick: handleMenuItemClick }, texts.bobril)),
                         bs.navbarNavItem(
                             {},
-                            bs.a({ href: texts.bootsrapLink, target: bs.Target.Blank, onClick: handleMenuItemClick }, texts.bootstrap))
+                            bs.a({ href: texts.bootsrapLink, target: bs.Target.Blank, onClick: handleMenuItemClick }, texts.bootstrap)),
+                        bs.navbarNavItem(
+                            { active: b.isActive('donate') },
+                            b.link(bs.a({ onClick: handleMenuItemClick }, texts.donate), 'donate'))
                     ])
                 ])
             )
@@ -80,7 +83,8 @@ function getFooter(): b.IBobrilChildren {
                 bs.ul({ style: styles.bsDocsFooterLinks }, [
                     bs.li({}, bs.a({ href: texts.githubLink, target: bs.Target.Blank }, texts.gitHub)),
                     bs.li({}, bs.a({ href: texts.bobrilLink, target: bs.Target.Blank }, texts.bobril)),
-                    bs.li({}, bs.a({ href: texts.bootsrapLink, target: bs.Target.Blank }, texts.bootstrap))
+                    bs.li({}, bs.a({ href: texts.bootsrapLink, target: bs.Target.Blank }, texts.bootstrap)),
+                    bs.li({ active: b.isActive('donate') }, b.link(bs.a({ onClick: handleMenuItemClick }, texts.donate), 'donate'))
                 ]),
                 bs.p({}, [
                     `Written by `, bs.a({ href: texts.twitterLink, target: bs.Target.Blank }, texts.twitter), ` .
@@ -94,9 +98,9 @@ function getFooter(): b.IBobrilChildren {
 const texts = {
     bobrilstrap: 'Bobrilstrap',
     bootstrap: 'Bootstrap',
-    bootsrapLink: 'http://getbootstrap.com/',
+    bootsrapLink: 'https://getbootstrap.com/docs/3.3/',
     bobril: 'Bobril',
-    bobrilLink: 'https://github.com/Bobris/Bobril',
+    bobrilLink: 'http://bobril.com',
     css: 'CSS',
     components: 'Components',
     javaScript: 'JavaScript',
@@ -105,5 +109,6 @@ const texts = {
     twitter: 'keeema_',
     twitterLink: 'https://twitter.com/keeema_',
     mit: 'MIT',
-    mitLink: 'https://github.com/keeema/bobrilstrap/blob/master/LICENSE'
+    mitLink: 'https://github.com/keeema/bobrilstrap/blob/master/LICENSE',
+    donate: 'Donate'
 };

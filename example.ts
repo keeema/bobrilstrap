@@ -6,6 +6,7 @@ import { bobrilstrapPage } from './example/bobrilstrap/page';
 import { css } from './example/css/page';
 import { components } from './example/components/page';
 import { liveComponents } from './example/liveComponents/page';
+import { donate } from './example/donate/page';
 
 bs.init();
 bse.init();
@@ -199,5 +200,6 @@ b.routes(
             b.route({ url: 'carousel', name: 'carousel' }),
             b.route({ url: 'affix', name: 'affix' })
         ]),
+        b.route({ url: 'donate', name: 'donate', handler: donate }),
         b.routeDefault({ name: 'bobrilstrap', handler: bobrilstrapPage })
     ]));

@@ -61,6 +61,7 @@ export interface IBaseData {
 
     onClick?: (event: b.IBobrilMouseEvent) => boolean | void;
     onChange?: (value?: number | string | boolean | Object) => void;
+    onKeyPress?: (event: b.IKeyPressEvent) => boolean;
 }
 
 export interface IElementBobrilNodeCommon extends b.IBobrilNodeCommon {
@@ -124,6 +125,13 @@ export const e = b.createVirtualComponent<IElementData>({
     onChange(ctx: ICtx, value: string): void {
         if (ctx.data.onChange)
             ctx.data.onChange(value);
+    },
+    onKeyPress(ctx: ICtx, event: b.IKeyPressEvent): boolean {
+        if (ctx.data.onKeyPress) {
+            return ctx.data.onKeyPress(event);
+        }
+
+        return false;
     }
 });
 

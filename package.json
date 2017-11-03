@@ -9,7 +9,12 @@
   },
   "homepage": "http://keeema.github.io/bobrilstrap",
   "repository": "https://github.com/keeema/bobrilstrap.git",
-  "keywords": ["bootstrap", "bobril", "virtual-dom", "components"],
+  "keywords": [
+    "bootstrap",
+    "bobril",
+    "virtual-dom",
+    "components"
+  ],
   "typescript": {
     "main": "index.ts"
   },
@@ -17,8 +22,7 @@
     "example": "example.ts",
     "title": "Bobrilstrap",
     "additionalResourcesDirectory": "example/assets",
-    "head":
-      "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
+    "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
     "compilerOptions": {
       "declaration": true,
       "noImplicitAny": true,
@@ -33,9 +37,12 @@
   "dependencies": {
     "@types/bootstrap": "^3.3.35",
     "@types/jquery": "^2.0.43",
-    "bobril": "^7.3.2",
+    "bobril": "^7.7.0||^8.0.1",
     "bootstrap": "^3.3.7",
     "bootstrap-3-typeahead": "^4.0.2",
     "jquery": "^2.2.4"
+  },
+  "resolutions": {
+    "@types/jquery": "2.0.48"
   }
 }

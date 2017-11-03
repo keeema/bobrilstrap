@@ -1,11 +1,10 @@
-import * as b from 'bobril';
-import { tab, ITabData } from './tab';
+import * as b from "bobril";
+import { Tab, ITabData } from "./tab";
 
-export interface IPillData extends ITabData {
-}
+export interface IPillData extends ITabData {}
 
-export const pill = b.createDerivedComponent<IPillData>(tab, {
-    id: 'bobrilstrap-pill'
+export const Pill = b.createDerivedComponent<IPillData>(Tab, {
+  id: "bobrilstrap-pill"
 });
 
-export default pill;
+export default Pill;

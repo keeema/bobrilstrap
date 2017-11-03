@@ -1,4 +1,6 @@
-import * as b from 'bobril';
+import * as b from "bobril";
 
-b.asset('./prettify.js');
-export const prettify = { prettyPrint: <Function>(window as { prettyPrint?: Function }).prettyPrint };
+b.asset("./prettify.js");
+export const prettify = {
+  prettyPrint: <Function>(window as { prettyPrint?: Function }).prettyPrint
+};

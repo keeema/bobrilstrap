@@ -1,23 +1,23 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
-import { typography } from './typography';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
+import { typography } from "./typography";
 
 export interface IAbbreviationData extends IBaseData {
-    initialism?: boolean;
+  initialism?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
-    data: IAbbreviationData;
+  data: IAbbreviationData;
 }
 
-export const abbreviation = b.createDerivedComponent<IAbbreviationData>(elem, {
-    id: 'bobrilstrap-abbreviation',
-    render(ctx: ICtx, me: b.IBobrilNode) {
-        me.tag = 'abbr';
-        b.style(me, !!ctx.data.initialism && typography.initialism);
-    }
+export const Abbreviation = b.createDerivedComponent<IAbbreviationData>(Elem, {
+  id: "bobrilstrap-abbreviation",
+  render(ctx: ICtx, me: b.IBobrilNode) {
+    me.tag = "abbr";
+    b.style(me, !!ctx.data.initialism && typography.initialism);
+  }
 });
 
-export const abbr = abbreviation;
+export const Abbr = Abbreviation;
 
-export default abbreviation;
+export default Abbreviation;

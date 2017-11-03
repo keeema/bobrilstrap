@@ -1,80 +1,105 @@
-import * as b from 'bobril';
-import * as bs from '../../index';
-import { sideBarItems } from './sidebarItems';
+import * as b from "bobril";
+import * as bs from "../../index";
+import { sideBarItems } from "./sidebarItems";
 
 export interface IItemData {
-    targetId: string;
-    nextId?: string;
-    title: string;
-    subs?: IItemData[];
+  targetId: string;
+  nextId?: string;
+  title: string;
+  subs?: IItemData[];
 }
 
 interface ICtx extends b.IBobrilCtx {
-    data: IItemData;
-    top: number;
-    bottom: number;
-    active: boolean;
+  data: IItemData;
+  top: number;
+  bottom: number;
+  active: boolean;
 }
 
 export const sideBarItem = b.createVirtualComponent<IItemData>({
-    id: 'bs-example-sidebar-item',
-    init(ctx: ICtx) {
-        const onScrollListener = getScrollListener(ctx);
-        b.addOnScroll(onScrollListener);
-        b.addDisposable(ctx, () => b.removeOnScroll(onScrollListener));
-    },
-    render(ctx: ICtx, me: b.IBobrilNode) {
-        me.children = bs.li(
+  id: "bs-example-sidebar-item",
+  init(ctx: ICtx) {
+    const onScrollListener = getScrollListener(ctx);
+    b.addOnScroll(onScrollListener);
+    b.addDisposable(ctx, () => b.removeOnScroll(onScrollListener));
+  },
+  render(ctx: ICtx, me: b.IBobrilNode) {
+    me.children = bs.Li(
+      {
+        active: !endSwith(ctx.data.targetId, "-top") && ctx.active
+      },
+      [
+        b.link(
+          bs.A(
             {
-                active: !ctx.data.targetId.endsWith('-top') && ctx.active
+              onClick: () => {
+                if (endSwith(ctx.data.targetId, "-top")) window.scrollTo(0, 0);
+              }
             },
-            [
-                b.link(
-                    bs.a({ onClick: () => { if (ctx.data.targetId.endsWith('-top')) document.body.scrollTop = 0; } }, ctx.data.title),
-                    ctx.data.targetId
-                ),
-                !!ctx.data.subs && sideBarItems({ items: ctx.data.subs, nextId: ctx.data.nextId })
-            ]
-        );
-    },
-    postInitDom(ctx: ICtx) {
-        handlePosition(ctx);
-    }
+            ctx.data.title
+          ),
+          ctx.data.targetId
+        ),
+        !!ctx.data.subs &&
+          sideBarItems({ items: ctx.data.subs, nextId: ctx.data.nextId })
+      ]
+    );
+  },
+  postInitDom(ctx: ICtx) {
+    handlePosition(ctx);
+  }
 });
 
 export interface IItemsData {
-    items?: IItemData[];
-    nextId?: string;
-    isTop?: boolean;
+  items?: IItemData[];
+  nextId?: string;
+  isTop?: boolean;
 }
 
 function getScrollListener(ctx: ICtx): (scrollInfo: b.IBobrilScroll) => void {
-    return (scrollInfo: b.IBobrilScroll) => {
-        if (!scrollInfo || scrollInfo.node)
-            return;
+  return (scrollInfo: b.IBobrilScroll) => {
+    if (!scrollInfo || scrollInfo.node) return;
 
-        handlePosition(ctx);
-    };
+    handlePosition(ctx);
+  };
 }
 
 function handlePosition(ctx: ICtx) {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    const topElement = document.getElementById(ctx.data.targetId);
-    const top = topElement ? topElement.offsetTop : 0;
-    let bottom = 0;
-    if (ctx.data.nextId) {
-        const nextElement = document.getElementById(ctx.data.nextId);
-        const nextOffsetTop = nextElement ? nextElement.offsetTop + nextElement.clientHeight : document.body.scrollHeight;
-        bottom = nextOffsetTop;
-    } else {
-        bottom = document.body.scrollHeight;
-    }
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
+  const topElement = document.getElementById(ctx.data.targetId);
+  const top = topElement ? topElement.offsetTop : 0;
+  let bottom = 0;
+  if (ctx.data.nextId) {
+    const nextElement = document.getElementById(ctx.data.nextId);
+    const nextOffsetTop = nextElement
+      ? nextElement.offsetTop + nextElement.clientHeight
+      : document.body.scrollHeight;
+    bottom = nextOffsetTop;
+  } else {
+    bottom = document.body.scrollHeight;
+  }
 
-    const active = scrollTop >= top && scrollTop < bottom;
-    const changeState = active !== ctx.active;
-    ctx.active = active;
+  const active = scrollTop >= top && scrollTop < bottom;
+  const changeState = active !== ctx.active;
+  ctx.active = active;
 
-    if (changeState) {
-        b.invalidate(ctx);
-    }
+  if (changeState) {
+    b.invalidate(ctx);
+  }
+}
+
+function endSwith(value: string, searchString: string, position?: number) {
+  var subjectString = value.toString();
+  if (
+    typeof position !== "number" ||
+    !isFinite(position) ||
+    Math.floor(position) !== position ||
+    position > subjectString.length
+  ) {
+    position = subjectString.length;
+  }
+  position -= searchString.length;
+  const lastIndex = subjectString.indexOf(searchString, position);
+  return lastIndex !== -1 && lastIndex === position;
 }

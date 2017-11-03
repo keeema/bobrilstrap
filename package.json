@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap",
-  "version": "1.2.8",
+  "version": "2.0.0",
   "description": "Bobril wrapper for bootstrap",
   "author": "Tomáš Růt",
   "license": "MIT",
@@ -9,12 +9,7 @@
   },
   "homepage": "http://keeema.github.io/bobrilstrap",
   "repository": "https://github.com/keeema/bobrilstrap.git",
-  "keywords": [
-    "bootstrap",
-    "bobril",
-    "virtual-dom",
-    "components"
-  ],
+  "keywords": ["bootstrap", "bobril", "virtual-dom", "components"],
   "typescript": {
     "main": "index.ts"
   },
@@ -22,7 +17,8 @@
     "example": "example.ts",
     "title": "Bobrilstrap",
     "additionalResourcesDirectory": "example/assets",
-    "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
+    "head":
+      "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
     "compilerOptions": {
       "declaration": true,
       "noImplicitAny": true,

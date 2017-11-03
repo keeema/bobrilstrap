@@ -1,23 +1,22 @@
-import * as b from 'bobril';
-import { ol, IOlData } from './ol';
+import * as b from "bobril";
+import { Ol, IOlData } from "./ol";
 
-export interface IBreadcrumbData extends IOlData {
-}
+export interface IBreadcrumbData extends IOlData {}
 
 interface IBreadcrumbCtx extends b.IBobrilCtx {
-    data: IBreadcrumbData;
+  data: IBreadcrumbData;
 }
 
 export const breadcrumbStyles = {
-    breadcrumb: b.styleDef('breadcrumb'),
-    active: b.styleDef('active')
+  breadcrumb: b.styleDef("breadcrumb"),
+  active: b.styleDef("active")
 };
 
-export const breadcrumb = b.createDerivedComponent<IBreadcrumbData>(ol, {
-    id: 'bobrilstrap-breadcrumb',
-    render(_ctx: IBreadcrumbCtx, me: b.IBobrilNode) {
-        b.style(me, breadcrumbStyles.breadcrumb);
-    }
+export const Breadcrumb = b.createDerivedComponent<IBreadcrumbData>(Ol, {
+  id: "bobrilstrap-breadcrumb",
+  render(_ctx: IBreadcrumbCtx, me: b.IBobrilNode) {
+    b.style(me, breadcrumbStyles.breadcrumb);
+  }
 });
 
-export default breadcrumb;
+export default Breadcrumb;

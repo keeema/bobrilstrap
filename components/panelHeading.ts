@@ -1,20 +1,18 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
-import { panelStyles } from './panel';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
+import { panelStyles } from "./panel";
 
-export interface IPanelHeadingData extends IBaseData {
-
-}
+export interface IPanelHeadingData extends IBaseData {}
 
 interface IPanelHeadingCtx extends b.IBobrilCtx {
-    data: IPanelHeadingData;
+  data: IPanelHeadingData;
 }
 
-export const panelHeading = b.createDerivedComponent<IPanelHeadingData>(elem, {
-    id: 'bobrilstrap-panel-heading',
-    render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
-        b.style(me, panelStyles.panelHeading);
-    }
+export const PanelHeading = b.createDerivedComponent<IPanelHeadingData>(Elem, {
+  id: "bobrilstrap-panel-heading",
+  render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
+    b.style(me, panelStyles.panelHeading);
+  }
 });
 
-export default panelHeading;
+export default PanelHeading;

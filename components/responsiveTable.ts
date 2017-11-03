@@ -1,22 +1,24 @@
-import * as b from 'bobril';
-import { mergeToChildren } from './bobrilHelpers';
-import { elem, IBaseData } from './element';
-import { table, ITableData as ITableData, tableStyles } from './table';
+import * as b from "bobril";
+import { mergeToChildren } from "./bobrilHelpers";
+import { Elem, IBaseData } from "./element";
+import { Table, ITableData, tableStyles } from "./table";
 
 export interface IResponsiveTableData extends IBaseData {
-    table: ITableData;
+  table: ITableData;
 }
 
 interface ICtx extends b.IBobrilCtx {
-    data: IResponsiveTableData;
+  data: IResponsiveTableData;
 }
 
-export const responsiveTable = b.createDerivedComponent<IResponsiveTableData>(elem, {
-    id: 'bobrilstrap-responsive-table',
-    render(ctx: ICtx, me: b.IBobrilNode) {
-        b.style(me, tableStyles.responsive);
-        mergeToChildren(me, table(ctx.data.table));
-    }
+export const ResponsiveTable = b.createDerivedComponent<
+  IResponsiveTableData
+>(Elem, {
+  id: "bobrilstrap-responsive-table",
+  render(ctx: ICtx, me: b.IBobrilNode) {
+    b.style(me, tableStyles.responsive);
+    mergeToChildren(me, Table(ctx.data.table));
+  }
 });
 
-export default responsiveTable;
+export default ResponsiveTable;

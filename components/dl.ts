@@ -1,21 +1,21 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
-import { typography }  from './typography';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
+import { typography } from "./typography";
 
 export interface IDlData extends IBaseData {
-    horizontal?: boolean;
+  horizontal?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
-    data: IDlData;
+  data: IDlData;
 }
 
-export const dl = b.createDerivedComponent<IDlData>(elem, {
-    id: 'bobrilstrap-dl',
-    render(ctx: ICtx, me: b.IBobrilNode) {
-        me.tag = 'dl';
-        b.style(me, !!ctx.data.horizontal && typography.dlHorizontal);
-    }
+export const Dl = b.createDerivedComponent<IDlData>(Elem, {
+  id: "bobrilstrap-dl",
+  render(ctx: ICtx, me: b.IBobrilNode) {
+    me.tag = "dl";
+    b.style(me, !!ctx.data.horizontal && typography.dlHorizontal);
+  }
 });
 
-export default dl;
+export default Dl;

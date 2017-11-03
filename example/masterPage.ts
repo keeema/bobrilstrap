@@ -1,114 +1,203 @@
-import * as b from 'bobril';
-import * as bs from '../index';
-import { styles } from './bsexample/css';
-import { prettify } from './prettify/prettify';
+import * as b from "bobril";
+import * as bs from "../index";
+import { styles } from "./bsexample/css";
+import { prettify } from "./prettify/prettify";
 
 export const masterPage = b.createVirtualComponent({
-    render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.children = [
-            getNavigation(),
-            ctx.data.activeRouteHandler(),
-            getFooter()
-        ];
-    },
-    postUpdateDom() {
-        prettify.prettyPrint();
-    }
+  render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.children = [getNavigation(), ctx.data.activeRouteHandler(), getFooter()];
+  },
+  postUpdateDom() {
+    prettify.prettyPrint();
+  }
 });
 
 const collapsedMenu = b.propim(true);
 function handleMenuItemClick() {
-    collapsedMenu(true);
-    return false;
+  collapsedMenu(true);
+  return false;
 }
 
 function getNavigation(): b.IBobrilNode {
-    return bs.navbar({ static: bs.NavbarStatic.Top, header: true, style: styles.bsDocsNav }, [
-        bs.container({}, [
-            bs.navbarHeader({}, [
-                bs.button(
+  return bs.Navbar(
+    { static: bs.NavbarStatic.Top, header: true, style: styles.bsDocsNav },
+    [
+      bs.Container({}, [
+        bs.NavbarHeader({}, [
+          bs.Button(
+            {
+              variant: bs.ButtonVariant.NavbarToggle,
+              onClick: () => collapsedMenu(!collapsedMenu())
+            },
+            [
+              bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
+              bs.Span({ style: bs.navStyles.iconBar }),
+              bs.Span({ style: bs.navStyles.iconBar }),
+              bs.Span({ style: bs.navStyles.iconBar })
+            ]
+          ),
+          b.link(
+            bs.NavbarBrand({ href: "javascript:void(0)" }, "Bobrilstrap"),
+            "bobrilstrap"
+          )
+        ]),
+        bs.Collapse(
+          { collapsed: collapsedMenu() },
+          bs.NavbarCollapse({ id: "bs-navbar" }, [
+            bs.NavbarNav({}, [
+              bs.NavbarNavItem(
+                { active: b.isActive("css") },
+                b.link(
+                  bs.A(
                     {
-                        variant: bs.ButtonVariant.NavbarToggle,
-                        onClick: () => collapsedMenu(!collapsedMenu())
+                      href: "javascript:void(0)",
+                      onClick: handleMenuItemClick
                     },
-                    [
-                        bs.span({ style: bs.helpers.srOnly }, 'Toggle navigation'),
-                        bs.span({ style: bs.navStyles.iconBar }),
-                        bs.span({ style: bs.navStyles.iconBar }),
-                        bs.span({ style: bs.navStyles.iconBar })
-                    ]
-                ),
-                b.link(bs.navbarBrand({ href: 'javascript:void(0)' }, 'Bobrilstrap'), 'bobrilstrap')
+                    "CSS"
+                  ),
+                  "css"
+                )
+              ),
+              bs.NavbarNavItem(
+                { active: b.isActive("components") },
+                b.link(
+                  bs.A(
+                    {
+                      href: "javascript:void(0)",
+                      onClick: handleMenuItemClick
+                    },
+                    "Components"
+                  ),
+                  "components"
+                )
+              ),
+              bs.NavbarNavItem(
+                { active: b.isActive("live-components") },
+                b.link(
+                  bs.A(
+                    {
+                      href: "javascript:void(0)",
+                      onClick: handleMenuItemClick
+                    },
+                    "Live components"
+                  ),
+                  "live-components"
+                )
+              )
             ]),
-            bs.collapse(
-                { collapsed: collapsedMenu() },
-                bs.navbarCollapse({ id: 'bs-navbar' }, [
-                    bs.navbarNav({}, [
-                        bs.navbarNavItem(
-                            { active: b.isActive('css') },
-                            b.link(bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'CSS'), 'css')),
-                        bs.navbarNavItem(
-                            { active: b.isActive('components') },
-                            b.link(bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Components'), 'components')),
-                        bs.navbarNavItem(
-                            { active: b.isActive('live-components') },
-                            b.link(
-                                bs.a({ href: 'javascript:void(0)', onClick: handleMenuItemClick }, 'Live components'), 'live-components')
-                        ),
-                    ]),
-                    bs.navbarNav({ style: bs.navStyles.navbarRight }, [
-                        bs.navbarNavItem(
-                            {},
-                            bs.a({ href: texts.githubLink, target: bs.Target.Blank, onClick: handleMenuItemClick }, texts.gitHub)),
-                        bs.navbarNavItem(
-                            {},
-                            bs.a({ href: texts.bobrilLink, target: bs.Target.Blank, onClick: handleMenuItemClick }, texts.bobril)),
-                        bs.navbarNavItem(
-                            {},
-                            bs.a({ href: texts.bootsrapLink, target: bs.Target.Blank, onClick: handleMenuItemClick }, texts.bootstrap)),
-                        bs.navbarNavItem(
-                            { active: b.isActive('donate') },
-                            b.link(bs.a({ onClick: handleMenuItemClick }, texts.donate), 'donate'))
-                    ])
-                ])
-            )
-        ])
-    ]);
+            bs.NavbarNav({ style: bs.navStyles.navbarRight }, [
+              bs.NavbarNavItem(
+                {},
+                bs.A(
+                  {
+                    href: texts.githubLink,
+                    target: bs.Target.Blank,
+                    onClick: handleMenuItemClick
+                  },
+                  texts.gitHub
+                )
+              ),
+              bs.NavbarNavItem(
+                {},
+                bs.A(
+                  {
+                    href: texts.bobrilLink,
+                    target: bs.Target.Blank,
+                    onClick: handleMenuItemClick
+                  },
+                  texts.bobril
+                )
+              ),
+              bs.NavbarNavItem(
+                {},
+                bs.A(
+                  {
+                    href: texts.bootsrapLink,
+                    target: bs.Target.Blank,
+                    onClick: handleMenuItemClick
+                  },
+                  texts.bootstrap
+                )
+              ),
+              bs.NavbarNavItem(
+                { active: b.isActive("donate") },
+                b.link(
+                  bs.A({ onClick: handleMenuItemClick }, texts.donate),
+                  "donate"
+                )
+              )
+            ])
+          ])
+        )
+      ])
+    ]
+  );
 }
 
 function getFooter(): b.IBobrilChildren {
-    return [
-        bs.e({ tag: 'footer', style: styles.bsDocsFooter }, [
-            bs.container({}, [
-                bs.ul({ style: styles.bsDocsFooterLinks }, [
-                    bs.li({}, bs.a({ href: texts.githubLink, target: bs.Target.Blank }, texts.gitHub)),
-                    bs.li({}, bs.a({ href: texts.bobrilLink, target: bs.Target.Blank }, texts.bobril)),
-                    bs.li({}, bs.a({ href: texts.bootsrapLink, target: bs.Target.Blank }, texts.bootstrap)),
-                    bs.li({ active: b.isActive('donate') }, b.link(bs.a({ onClick: handleMenuItemClick }, texts.donate), 'donate'))
-                ]),
-                bs.p({}, [
-                    `Written by `, bs.a({ href: texts.twitterLink, target: bs.Target.Blank }, texts.twitter), ` .
-                    Code licensed `, bs.a({ href: texts.mitLink, target: bs.Target.Blank }, texts.mit), `.`
-                ])
-            ])
+  return [
+    bs.E({ tag: "footer", style: styles.bsDocsFooter }, [
+      bs.Container({}, [
+        bs.Ul({ style: styles.bsDocsFooterLinks }, [
+          bs.Li(
+            {},
+            bs.A(
+              { href: texts.githubLink, target: bs.Target.Blank },
+              texts.gitHub
+            )
+          ),
+          bs.Li(
+            {},
+            bs.A(
+              { href: texts.bobrilLink, target: bs.Target.Blank },
+              texts.bobril
+            )
+          ),
+          bs.Li(
+            {},
+            bs.A(
+              { href: texts.bootsrapLink, target: bs.Target.Blank },
+              texts.bootstrap
+            )
+          ),
+          bs.Li(
+            { active: b.isActive("donate") },
+            b.link(
+              bs.A({ onClick: handleMenuItemClick }, texts.donate),
+              "donate"
+            )
+          )
+        ]),
+        bs.P({}, [
+          `Written by `,
+          bs.A(
+            { href: texts.twitterLink, target: bs.Target.Blank },
+            texts.twitter
+          ),
+          ` .
+                    Code licensed `,
+          bs.A({ href: texts.mitLink, target: bs.Target.Blank }, texts.mit),
+          `.`
         ])
-    ];
+      ])
+    ])
+  ];
 }
 
 const texts = {
-    bobrilstrap: 'Bobrilstrap',
-    bootstrap: 'Bootstrap',
-    bootsrapLink: 'https://getbootstrap.com/docs/3.3/',
-    bobril: 'Bobril',
-    bobrilLink: 'http://bobril.com',
-    css: 'CSS',
-    components: 'Components',
-    javaScript: 'JavaScript',
-    gitHub: 'GitHub',
-    githubLink: 'https://github.com/keeema/bobrilstrap',
-    twitter: 'keeema_',
-    twitterLink: 'https://twitter.com/keeema_',
-    mit: 'MIT',
-    mitLink: 'https://github.com/keeema/bobrilstrap/blob/master/LICENSE',
-    donate: 'Donate'
+  bobrilstrap: "Bobrilstrap",
+  bootstrap: "Bootstrap",
+  bootsrapLink: "https://getbootstrap.com/docs/3.3/",
+  bobril: "Bobril",
+  bobrilLink: "http://bobril.com",
+  css: "CSS",
+  components: "Components",
+  javaScript: "JavaScript",
+  gitHub: "GitHub",
+  githubLink: "https://github.com/keeema/bobrilstrap",
+  twitter: "keeema_",
+  twitterLink: "https://twitter.com/keeema_",
+  mit: "MIT",
+  mitLink: "https://github.com/keeema/bobrilstrap/blob/master/LICENSE",
+  donate: "Donate"
 };

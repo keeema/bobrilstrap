@@ -1,886 +1,1611 @@
-import * as b from 'bobril';
-import * as bs from '../../index';
-import { styles } from '../bsexample/css';
-import { pre, langJs } from '../prettify/pre';
-import { section } from '../common/section';
+import * as b from "bobril";
+import * as bs from "../../index";
+import { styles } from "../bsexample/css";
+import { pre, langJs } from "../prettify/pre";
+import { section } from "../common/section";
 
 export const forms = b.createVirtualComponent({
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.children = section(
-            {
-                header: 'Forms',
-                id: 'forms'
-            },
-            [
-                basicExample(),
-                inlineForm(),
-                horizontalForm(),
-                supportedControls(),
-                staticControl(),
-                formsControlFocus(),
-                formsControlDisabled(),
-                formsControlReadonly(),
-                formsHelpText(),
-                validationStates(),
-                controlSizing()
-            ]);
-    }
+  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.children = section(
+      {
+        header: "Forms",
+        id: "forms"
+      },
+      [
+        basicExample(),
+        inlineForm(),
+        horizontalForm(),
+        supportedControls(),
+        staticControl(),
+        formsControlFocus(),
+        formsControlDisabled(),
+        formsControlReadonly(),
+        formsHelpText(),
+        validationStates(),
+        controlSizing()
+      ]
+    );
+  }
 });
 
-const items = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
+const items = [
+  "Audi",
+  "BMW",
+  "Bugatti",
+  "Ferrari",
+  "Ford",
+  "Lamborghini",
+  "Mercedes Benz",
+  "Porsche",
+  "Rolls-Royce",
+  "Volkswagen"
+];
 
 function basicExample(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'basic-forms' } }, 'Basic example')),
-        bs.p({}, [
-            `Individual form controls automatically receive some global styling. All textual `,
-            bs.code({}, '<input>'), `, `, bs.code({}, '<textarea>'), `, and `, bs.code({}, '<select>'), ` elements with `,
-            bs.code({}, 'formControl'),
-            ` are set to `, bs.code({}, 'width: 100%;'), ` by default. Wrap labels and controls in `, bs.code({}, 'bs.formGroup'),
-            ` for optimum spacing.`
+  return [
+    b.anchor(bs.H2({ attrs: { id: "basic-forms" } }, "Basic example")),
+    bs.P({}, [
+      `Individual form controls automatically receive some global styling. All textual `,
+      bs.Code({}, "<input>"),
+      `, `,
+      bs.Code({}, "<textarea>"),
+      `, and `,
+      bs.Code({}, "<select>"),
+      ` elements with `,
+      bs.Code({}, "formControl"),
+      ` are set to `,
+      bs.Code({}, "width: 100%;"),
+      ` by default. Wrap labels and controls in `,
+      bs.Code({}, "bs.FormGroup"),
+      ` for optimum spacing.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.FormGroup({}, [
+          bs.Label({ for: "exampleInputEmail1" }, "Email address"),
+          bs.InputText({
+            id: "exampleInputEmail1",
+            type: bs.InputTextType.Email,
+            placeholder: "Email"
+          })
         ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.formGroup({}, [
-                    bs.label({ for: 'exampleInputEmail1' }, 'Email address'),
-                    bs.inputText({ id: 'exampleInputEmail1', type: bs.InputTextType.Email, placeholder: 'Email' })
-                ]),
-                bs.formGroup({}, [
-                    bs.label({ for: 'exampleInputPassword1' }, 'Password'),
-                    bs.inputText({ id: 'exampleInputPassword1', type: bs.InputTextType.Password, placeholder: 'Password' })
-                ]),
-                bs.formGroup({}, [
-                    bs.label({ for: 'exampleInputTypeahead1' }, 'Typeahead'),
-                    bs.inputText({
-                        id: 'exampleInputTypeahead1',
-                        type: bs.InputTextType.Text,
-                        placeholder: 'Write to search',
-                        typeaheadOptions: { source: items }
-                    })
-                ]),
-                bs.formGroup({}, [
-                    bs.label({ for: 'exampleInputFile' }, 'File input'),
-                    bs.e({ tag: 'input', attrs: { type: 'file', id: 'exampleInputFile' } }),
-                    bs.helpText({}, 'Example block-level help text here.')
-                ]),
-                bs.checkbox({ label: { title: 'Check me out' }, inputCheckbox: {} }),
-                bs.button({ label: 'Submit', onClick: () => alert('Clicked!') })
-            ])
+        bs.FormGroup({}, [
+          bs.Label({ for: "exampleInputPassword1" }, "Password"),
+          bs.InputText({
+            id: "exampleInputPassword1",
+            type: bs.InputTextType.Password,
+            placeholder: "Password"
+          })
         ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `// At not-rendered place`, bs.e({ tag: 'br' }),
-            `const items = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 
-            'Porsche', 'Rolls-Royce', 'Volkswagen'];`, bs.e({ tag: 'br' }),
-            ``, bs.e({ tag: 'br' }),
-            `// At rendered place`, bs.e({ tag: 'br' }),
-            `bs.form({}, [`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'exampleInputEmail1' }, 'Email address'),`, bs.e({ tag: 'br' }),
-            `        bs.inputText({ id: 'exampleInputEmail1', type: bs.InputTextType.Email, placeholder: 'Email' })`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'exampleInputPassword1' }, 'Password'),`, bs.e({ tag: 'br' }),
-            `        bs.inputText({ id: 'exampleInputPassword1', type: bs.InputTextType.Password, placeholder: 'Password' })`,
-            bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'exampleInputTypeahead1' }, 'Typeahead'),`, bs.e({ tag: 'br' }),
-            `        bs.inputText({`, bs.e({ tag: 'br' }),
-            `            id: 'exampleInputTypeahead1',`, bs.e({ tag: 'br' }),
-            `            type: bs.InputTextType.Text,`, bs.e({ tag: 'br' }),
-            `            placeholder: 'Write to search',`, bs.e({ tag: 'br' }),
-            `            typeaheadOptions: { source: items }`, bs.e({ tag: 'br' }),
-            `        })`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'exampleInputFile' }, 'File input'),`, bs.e({ tag: 'br' }),
-            `        bs.e({ tag: 'input', attrs: { type: 'file', id: 'exampleInputFile' } }),`, bs.e({ tag: 'br' }),
-            `        bs.helpText({}, 'Example block-level help text here.')`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.checkbox({ label: { title: 'Check me out' }, inputCheckbox: {} }),`, bs.e({ tag: 'br' }),
-            `    bs.button({ label: 'Submit', onClick: () => alert('Clicked!') })`, bs.e({ tag: 'br' }),
-            `])`, bs.e({ tag: 'br' })
-        ]))),
-        bs.e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-formgroup-inputgroup' } }, [
-            bs.h4({}, `Don't mix form groups with input groups`),
-            bs.p({}, `Do not mix form groups directly with input groups. Instead, nest the input group inside of the form group.`)
+        bs.FormGroup({}, [
+          bs.Label({ for: "exampleInputTypeahead1" }, "Typeahead"),
+          bs.InputText({
+            id: "exampleInputTypeahead1",
+            type: bs.InputTextType.Text,
+            placeholder: "Write to search",
+            typeaheadOptions: { source: items }
+          })
+        ]),
+        bs.FormGroup({}, [
+          bs.Label({ for: "exampleInputFile" }, "File input"),
+          bs.E({
+            tag: "input",
+            attrs: { type: "file", id: "exampleInputFile" }
+          }),
+          bs.HelpText({}, "Example block-level help text here.")
+        ]),
+        bs.Checkbox({ label: { title: "Check me out" }, inputCheckbox: {} }),
+        bs.Button({ label: "Submit", onClick: () => alert("Clicked!") })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `// At not-rendered place`,
+          bs.E({ tag: "br" }),
+          `const items = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 
+            'Porsche', 'Rolls-Royce', 'Volkswagen'];`,
+          bs.E({ tag: "br" }),
+          ``,
+          bs.E({ tag: "br" }),
+          `// At rendered place`,
+          bs.E({ tag: "br" }),
+          `bs.Form({}, [`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'exampleInputEmail1' }, 'Email address'),`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({ id: 'exampleInputEmail1', type: bs.InputTextType.Email, placeholder: 'Email' })`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'exampleInputPassword1' }, 'Password'),`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({ id: 'exampleInputPassword1', type: bs.InputTextType.Password, placeholder: 'Password' })`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'exampleInputTypeahead1' }, 'Typeahead'),`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({`,
+          bs.E({ tag: "br" }),
+          `            id: 'exampleInputTypeahead1',`,
+          bs.E({ tag: "br" }),
+          `            type: bs.InputTextType.Text,`,
+          bs.E({ tag: "br" }),
+          `            placeholder: 'Write to search',`,
+          bs.E({ tag: "br" }),
+          `            typeaheadOptions: { source: items }`,
+          bs.E({ tag: "br" }),
+          `        })`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'exampleInputFile' }, 'File input'),`,
+          bs.E({ tag: "br" }),
+          `        bs.E({ tag: 'input', attrs: { type: 'file', id: 'exampleInputFile' } }),`,
+          bs.E({ tag: "br" }),
+          `        bs.HelpText({}, 'Example block-level help text here.')`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.Checkbox({ label: { title: 'Check me out' }, inputCheckbox: {} }),`,
+          bs.E({ tag: "br" }),
+          `    bs.Button({ label: 'Submit', onClick: () => alert('Clicked!') })`,
+          bs.E({ tag: "br" }),
+          `])`,
+          bs.E({ tag: "br" })
         ])
-    ];
+      )
+    ),
+    bs.E(
+      {
+        style: [styles.bsCallout, styles.bsCalloutDanger],
+        attrs: { id: "callout-formgroup-inputgroup" }
+      },
+      [
+        bs.H4({}, `Don't mix form groups with input groups`),
+        bs.P(
+          {},
+          `Do not mix form groups directly with input groups. Instead, nest the input group inside of the form group.`
+        )
+      ]
+    )
+  ];
 }
 
 function inlineForm(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-inline' } }, 'Inline form')),
-        bs.p({}, [
-            `Set `, bs.code({}, 'inline'), ` input data property to your form for left-aligned and inline-block controls.`,
-            bs.strong({}, `This only applies to forms within viewports that are at least 768px wide.`)
-        ]),
-        bs.e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-inline-form-width' } }, [
-            bs.h4({}, `May require custom widths`),
-            bs.p({}, [
-                `Inputs and selects have `, bs.code({}, 'width: 100%;'), ` applied by default in Bootstrap. Within inline forms, we reset
-                that to `, bs.code({}, 'width: auto;'), ` so multiple controls can reside on the same line. Depending on your layout, 
+  return [
+    b.anchor(bs.H2({ attrs: { id: "forms-inline" } }, "Inline form")),
+    bs.P({}, [
+      `Set `,
+      bs.Code({}, "inline"),
+      ` input data property to your form for left-aligned and inline-block controls.`,
+      bs.Strong(
+        {},
+        `This only applies to forms within viewports that are at least 768px wide.`
+      )
+    ]),
+    bs.E(
+      {
+        style: [styles.bsCallout, styles.bsCalloutDanger],
+        attrs: { id: "callout-inline-form-width" }
+      },
+      [
+        bs.H4({}, `May require custom widths`),
+        bs.P({}, [
+          `Inputs and selects have `,
+          bs.Code({}, "width: 100%;"),
+          ` applied by default in Bootstrap. Within inline forms, we reset
+                that to `,
+          bs.Code({}, "width: auto;"),
+          ` so multiple controls can reside on the same line. Depending on your layout, 
                 additional custom widths may be required.`
-            ])
-        ]),
-        bs.e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-inline-form-labels' } }, [
-            bs.h4({}, `Always add labels`),
-            bs.p({}, [
-                `Screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, 
+        ])
+      ]
+    ),
+    bs.E(
+      {
+        style: [styles.bsCallout, styles.bsCalloutDanger],
+        attrs: { id: "callout-inline-form-labels" }
+      },
+      [
+        bs.H4({}, `Always add labels`),
+        bs.P({}, [
+          `Screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, 
                 you can hide the labels using the `,
-                bs.code({}, 'srOnly'),
-                ` label input data property. There are further alternative methods of providing a label for assistive technologies, 
+          bs.Code({}, "srOnly"),
+          ` label input data property. There are further alternative methods of providing a label for assistive technologies, 
                 such as the `,
-                bs.code({}, 'aria.label'), `, `,
-                bs.code({}, 'aria.labelledby'), ` or `,
-                bs.code({}, 'title'),
-                ` input data property.  If none of these is set, screen readers may resort to using the `,
-                bs.code({}, 'placeholder'), ` attribute defined by `, bs.code({}, 'placeholder'),
-                ` input data property, if present, but note that use of `, bs.code({}, 'placeholder'),
-                ` as a replacement for other labelling methods is not advised.`
-            ])
+          bs.Code({}, "aria.label"),
+          `, `,
+          bs.Code({}, "aria.labelledby"),
+          ` or `,
+          bs.Code({}, "title"),
+          ` input data property.  If none of these is set, screen readers may resort to using the `,
+          bs.Code({}, "placeholder"),
+          ` attribute defined by `,
+          bs.Code({}, "placeholder"),
+          ` input data property, if present, but note that use of `,
+          bs.Code({}, "placeholder"),
+          ` as a replacement for other labelling methods is not advised.`
+        ])
+      ]
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({ inline: true }, [
+        bs.FormGroup({}, [
+          bs.Label({ for: "exampleInputName2" }, "Name"),
+          " ",
+          bs.InputText({ id: "exampleInputName2", placeholder: "Jane Doe" })
         ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({ inline: true }, [
-                bs.formGroup({}, [
-                    bs.label({ for: 'exampleInputName2' }, 'Name'), ' ',
-                    bs.inputText({ id: 'exampleInputName2', placeholder: 'Jane Doe' })
-                ]), ' ',
-                bs.formGroup({}, [
-                    bs.label({ for: 'exampleInputEmail2' }, 'Email'), ' ',
-                    bs.inputText({
-                        id: 'exampleInputEmail2',
-                        type: bs.InputTextType.Email,
-                        placeholder: 'jane.doe@example.com'
-                    })
-                ]), ' ',
-                bs.button({ label: 'Send invitation', onClick: () => alert('Clicked!') })
-            ])
+        " ",
+        bs.FormGroup({}, [
+          bs.Label({ for: "exampleInputEmail2" }, "Email"),
+          " ",
+          bs.InputText({
+            id: "exampleInputEmail2",
+            type: bs.InputTextType.Email,
+            placeholder: "jane.doe@example.com"
+          })
         ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({ inline: true }, [`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'exampleInputName2' }, 'Name'), ' ',`, bs.e({ tag: 'br' }),
-            `        bs.inputText({ id: 'exampleInputName2', placeholder: 'Jane Doe' })`, bs.e({ tag: 'br' }),
-            `    ]), ' ',`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'exampleInputEmail2' }, 'Email'), ' ',`, bs.e({ tag: 'br' }),
-            `        bs.inputText({`, bs.e({ tag: 'br' }),
-            `            id: 'exampleInputEmail2',`, bs.e({ tag: 'br' }),
-            `            type: bs.InputTextType.Email,`, bs.e({ tag: 'br' }),
-            `            placeholder: 'jane.doe@example.com'`, bs.e({ tag: 'br' }),
-            `        })`,
-            bs.e({ tag: 'br' }),
-            `    ]), ' ',`, bs.e({ tag: 'br' }),
-            `    bs.button({ label: 'Send invitation', onClick: () => alert('Clicked!') })`, bs.e({ tag: 'br' }),
-            `])`
-        ]))),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({ inline: true }, [
-                bs.formGroup({}, [
-                    bs.label({ for: 'exampleInputEmail3', srOnly: true }, 'Email address'),
-                    bs.inputText({
-                        id: 'exampleInputEmail3',
-                        type: bs.InputTextType.Email,
-                        placeholder: 'Email'
-                    })
-                ]), ' ',
-                bs.formGroup({}, [
-                    bs.label({ for: 'exampleInputPassword3', srOnly: true }, 'Password'),
-                    bs.inputText({
-                        id: 'exampleInputPassword3',
-                        type: bs.InputTextType.Password,
-                        placeholder: 'Password'
-                    })
-                ]), ' ',
-                bs.checkbox({ label: { title: 'Remember me' }, inputCheckbox: {} }), ' ',
-                bs.button({ label: 'Sign in', onClick: () => alert('Clicked!') })
-            ])
+        " ",
+        bs.Button({
+          label: "Send invitation",
+          onClick: () => alert("Clicked!")
+        })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({ inline: true }, [`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'exampleInputName2' }, 'Name'), ' ',`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({ id: 'exampleInputName2', placeholder: 'Jane Doe' })`,
+          bs.E({ tag: "br" }),
+          `    ]), ' ',`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'exampleInputEmail2' }, 'Email'), ' ',`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({`,
+          bs.E({ tag: "br" }),
+          `            id: 'exampleInputEmail2',`,
+          bs.E({ tag: "br" }),
+          `            type: bs.InputTextType.Email,`,
+          bs.E({ tag: "br" }),
+          `            placeholder: 'jane.doe@example.com'`,
+          bs.E({ tag: "br" }),
+          `        })`,
+          bs.E({ tag: "br" }),
+          `    ]), ' ',`,
+          bs.E({ tag: "br" }),
+          `    bs.Button({ label: 'Send invitation', onClick: () => alert('Clicked!') })`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({ inline: true }, [
+        bs.FormGroup({}, [
+          bs.Label(
+            { for: "exampleInputEmail3", srOnly: true },
+            "Email address"
+          ),
+          bs.InputText({
+            id: "exampleInputEmail3",
+            type: bs.InputTextType.Email,
+            placeholder: "Email"
+          })
         ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({ inline: true }, [`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'exampleInputEmail3', srOnly: true }, 'Email address'),`, bs.e({ tag: 'br' }),
-            `        bs.inputText({`, bs.e({ tag: 'br' }),
-            `            id: 'exampleInputEmail3',`, bs.e({ tag: 'br' }),
-            `            type: bs.InputTextType.Email,`, bs.e({ tag: 'br' }),
-            `            placeholder: 'Email'`, bs.e({ tag: 'br' }),
-            `        })`, bs.e({ tag: 'br' }),
-            `    ]), ' ',`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'exampleInputPassword3', srOnly: true }, 'Password'),`, bs.e({ tag: 'br' }),
-            `        bs.inputText({`, bs.e({ tag: 'br' }),
-            `            id: 'exampleInputPassword3',`, bs.e({ tag: 'br' }),
-            `            type: bs.InputTextType.Password,`, bs.e({ tag: 'br' }),
-            `            placeholder: 'Password'`, bs.e({ tag: 'br' }),
-            `        })`, bs.e({ tag: 'br' }),
-            `    ]), ' ',`, bs.e({ tag: 'br' }),
-            `    bs.checkbox({ label: { title: 'Remember me' }, inputCheckbox: {} }), ' ',`, bs.e({ tag: 'br' }),
-            `    bs.button({ label: 'Sign in', onClick: () => alert('Clicked!') })`, bs.e({ tag: 'br' }),
-            `])`
-        ]))),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({ inline: true }, [
-                bs.formGroup({}, [
-                    bs.label({ for: 'exampleInputAmount', srOnly: true }, 'Amount (in dollars)'),
-                    bs.inputGroup({}, [
-                        bs.inputGroupAddon({}, '$'),
-                        bs.inputText({ id: 'exampleInputAmount', type: bs.InputTextType.Number, placeholder: 'Amount' }),
-                        bs.inputGroupAddon({}, '.00')
-                    ])
-                ]), ' ',
-                bs.button({ label: 'Transfer cash', option: bs.ButtonOption.Primary, onClick: () => alert('Clicked!') })
-            ])
+        " ",
+        bs.FormGroup({}, [
+          bs.Label({ for: "exampleInputPassword3", srOnly: true }, "Password"),
+          bs.InputText({
+            id: "exampleInputPassword3",
+            type: bs.InputTextType.Password,
+            placeholder: "Password"
+          })
         ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({ inline: true }, [`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'exampleInputAmount', srOnly: true }, 'Amount (in dollars)'),`, bs.e({ tag: 'br' }),
-            `        bs.inputGroup({}, [`, bs.e({ tag: 'br' }),
-            `            bs.inputGroupAddon({}, '$'),`, bs.e({ tag: 'br' }),
-            `            bs.inputText({ id: 'exampleInputAmount', type: bs.InputTextType.Number, placeholder: 'Amount' }),`,
-            bs.e({ tag: 'br' }),
-            `            bs.inputGroupAddon({}, '.00')`, bs.e({ tag: 'br' }),
-            `        ])     `, bs.e({ tag: 'br' }),
-            `    ]), ' ',`, bs.e({ tag: 'br' }),
-            `    bs.button({ label: 'Transfer cash', option: bs.ButtonOption.Primary, onClick: () => alert('Clicked!') })`,
-            bs.e({ tag: 'br' }),
-            `])`
-        ])))
-    ];
+        " ",
+        bs.Checkbox({ label: { title: "Remember me" }, inputCheckbox: {} }),
+        " ",
+        bs.Button({ label: "Sign in", onClick: () => alert("Clicked!") })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({ inline: true }, [`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'exampleInputEmail3', srOnly: true }, 'Email address'),`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({`,
+          bs.E({ tag: "br" }),
+          `            id: 'exampleInputEmail3',`,
+          bs.E({ tag: "br" }),
+          `            type: bs.InputTextType.Email,`,
+          bs.E({ tag: "br" }),
+          `            placeholder: 'Email'`,
+          bs.E({ tag: "br" }),
+          `        })`,
+          bs.E({ tag: "br" }),
+          `    ]), ' ',`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'exampleInputPassword3', srOnly: true }, 'Password'),`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({`,
+          bs.E({ tag: "br" }),
+          `            id: 'exampleInputPassword3',`,
+          bs.E({ tag: "br" }),
+          `            type: bs.InputTextType.Password,`,
+          bs.E({ tag: "br" }),
+          `            placeholder: 'Password'`,
+          bs.E({ tag: "br" }),
+          `        })`,
+          bs.E({ tag: "br" }),
+          `    ]), ' ',`,
+          bs.E({ tag: "br" }),
+          `    bs.Checkbox({ label: { title: 'Remember me' }, inputCheckbox: {} }), ' ',`,
+          bs.E({ tag: "br" }),
+          `    bs.Button({ label: 'Sign in', onClick: () => alert('Clicked!') })`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({ inline: true }, [
+        bs.FormGroup({}, [
+          bs.Label(
+            { for: "exampleInputAmount", srOnly: true },
+            "Amount (in dollars)"
+          ),
+          bs.InputGroup({}, [
+            bs.InputGroupAddon({}, "$"),
+            bs.InputText({
+              id: "exampleInputAmount",
+              type: bs.InputTextType.Number,
+              placeholder: "Amount"
+            }),
+            bs.InputGroupAddon({}, ".00")
+          ])
+        ]),
+        " ",
+        bs.Button({
+          label: "Transfer cash",
+          option: bs.ButtonOption.Primary,
+          onClick: () => alert("Clicked!")
+        })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({ inline: true }, [`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'exampleInputAmount', srOnly: true }, 'Amount (in dollars)'),`,
+          bs.E({ tag: "br" }),
+          `        bs.InputGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `            bs.InputGroupAddon({}, '$'),`,
+          bs.E({ tag: "br" }),
+          `            bs.InputText({ id: 'exampleInputAmount', type: bs.InputTextType.Number, placeholder: 'Amount' }),`,
+          bs.E({ tag: "br" }),
+          `            bs.InputGroupAddon({}, '.00')`,
+          bs.E({ tag: "br" }),
+          `        ])     `,
+          bs.E({ tag: "br" }),
+          `    ]), ' ',`,
+          bs.E({ tag: "br" }),
+          `    bs.Button({ label: 'Transfer cash', option: bs.ButtonOption.Primary, onClick: () => alert('Clicked!') })`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }
 
 function horizontalForm(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-horizontal' } }, 'Horizontal form')),
-        bs.p({}, [
-            `Use Bobrilstrap's predefined grid styles and components to align labels and groups of form controls 
-            in a horizontal layout by adding `, bs.code({}, 'horizontal'),
-            ` form input data property. Doing so changes `, bs.code({}, 'bs.formGroup'), `s to behave as grid rows, so no need for `,
-            bs.code({}, 'bs.row'), `.`
-
+  return [
+    b.anchor(bs.H2({ attrs: { id: "forms-horizontal" } }, "Horizontal form")),
+    bs.P({}, [
+      `Use Bobrilstrap's predefined grid styles and components to align labels and groups of form controls 
+            in a horizontal layout by adding `,
+      bs.Code({}, "horizontal"),
+      ` form input data property. Doing so changes `,
+      bs.Code({}, "bs.FormGroup"),
+      `s to behave as grid rows, so no need for `,
+      bs.Code({}, "bs.Row"),
+      `.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({ horizontal: true }, [
+        bs.FormGroup({}, [
+          bs.Label(
+            {
+              controlLabel: true,
+              for: "inputEmail3",
+              style: bs.colStyles(bs.Size.Sm)(2)
+            },
+            "Email"
+          ),
+          bs.Col(
+            { size: bs.Size.Sm, span: 10 },
+            bs.InputText({
+              id: "inputEmail3",
+              type: bs.InputTextType.Email,
+              placeholder: "Email"
+            })
+          )
         ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({ horizontal: true }, [
-                bs.formGroup({}, [
-                    bs.label({ controlLabel: true, for: 'inputEmail3', style: bs.colStyles(bs.Size.Sm)(2) }, 'Email'),
-                    bs.col(
-                        { size: bs.Size.Sm, span: 10 },
-                        bs.inputText({ id: 'inputEmail3', type: bs.InputTextType.Email, placeholder: 'Email' }))
-                ]),
-                bs.formGroup({}, [
-                    bs.label({ controlLabel: true, for: 'inputPassword3', style: bs.colStyles(bs.Size.Sm)(2) }, 'Password'),
-                    bs.col(
-                        { size: bs.Size.Sm, span: 10 },
-                        bs.inputText({ id: 'inputPassword3', type: bs.InputTextType.Password, placeholder: 'Password' }))
-                ]),
-                bs.formGroup({}, [
-                    bs.col(
-                        { size: bs.Size.Sm, span: 10, offsets: [{ size: bs.Size.Sm, span: 2 }] },
-                        bs.checkbox({ label: { title: 'Remember me' } }))
-                ]),
-                bs.formGroup({}, [
-                    bs.col(
-                        { size: bs.Size.Sm, span: 10, offsets: [{ size: bs.Size.Sm, span: 2 }] },
-                        bs.button({ label: 'Sign in', onClick: () => alert('Clicked!') })
-                    )
-                ])
-            ])
+        bs.FormGroup({}, [
+          bs.Label(
+            {
+              controlLabel: true,
+              for: "inputPassword3",
+              style: bs.colStyles(bs.Size.Sm)(2)
+            },
+            "Password"
+          ),
+          bs.Col(
+            { size: bs.Size.Sm, span: 10 },
+            bs.InputText({
+              id: "inputPassword3",
+              type: bs.InputTextType.Password,
+              placeholder: "Password"
+            })
+          )
         ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({ horizontal: true }, [`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ controlLabel: true, for: 'inputEmail3', style: bs.colStyles(bs.Size.Sm)(2) }, 'Email'),`,
-            bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Sm, span: 10 },`, bs.e({ tag: 'br' }),
-            `            bs.inputText({ id: 'inputEmail3', type: bs.InputTextType.Email, placeholder: 'Email' }))`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ controlLabel: true, for: 'inputPassword3', style: bs.colStyles(bs.Size.Sm)(2) }, 'Password'),`,
-            bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Sm, span: 10 },`, bs.e({ tag: 'br' }),
-            `            bs.inputText({ id: 'inputPassword3', type: bs.InputTextType.Password, placeholder: 'Password' }))`,
-            bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Sm, span: 10, offsets: [{ size: bs.Size.Sm, span: 2 }] },`, bs.e({ tag: 'br' }),
-            `             bs.checkbox({ label: { title: 'Remember me' } }))`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Sm, span: 10, offsets: [{ size: bs.Size.Sm, span: 2 }] },`, bs.e({ tag: 'br' }),
-            `            bs.button({ label: 'Sign in', onClick: () => alert('Clicked!') })`, bs.e({ tag: 'br' }),
-            `        )`, bs.e({ tag: 'br' }),
-            `    ])`, bs.e({ tag: 'br' }),
-            `])`
-        ])))
-    ];
+        bs.FormGroup({}, [
+          bs.Col(
+            {
+              size: bs.Size.Sm,
+              span: 10,
+              offsets: [{ size: bs.Size.Sm, span: 2 }]
+            },
+            bs.Checkbox({ label: { title: "Remember me" } })
+          )
+        ]),
+        bs.FormGroup({}, [
+          bs.Col(
+            {
+              size: bs.Size.Sm,
+              span: 10,
+              offsets: [{ size: bs.Size.Sm, span: 2 }]
+            },
+            bs.Button({ label: "Sign in", onClick: () => alert("Clicked!") })
+          )
+        ])
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({ horizontal: true }, [`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ controlLabel: true, for: 'inputEmail3', style: bs.colStyles(bs.Size.Sm)(2) }, 'Email'),`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Sm, span: 10 },`,
+          bs.E({ tag: "br" }),
+          `            bs.InputText({ id: 'inputEmail3', type: bs.InputTextType.Email, placeholder: 'Email' }))`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ controlLabel: true, for: 'inputPassword3', style: bs.colStyles(bs.Size.Sm)(2) }, 'Password'),`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Sm, span: 10 },`,
+          bs.E({ tag: "br" }),
+          `            bs.InputText({ id: 'inputPassword3', type: bs.InputTextType.Password, placeholder: 'Password' }))`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Sm, span: 10, offsets: [{ size: bs.Size.Sm, span: 2 }] },`,
+          bs.E({ tag: "br" }),
+          `             bs.Checkbox({ label: { title: 'Remember me' } }))`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Sm, span: 10, offsets: [{ size: bs.Size.Sm, span: 2 }] },`,
+          bs.E({ tag: "br" }),
+          `            bs.Button({ label: 'Sign in', onClick: () => alert('Clicked!') })`,
+          bs.E({ tag: "br" }),
+          `        )`,
+          bs.E({ tag: "br" }),
+          `    ])`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }
 
 function supportedControls(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-controls' } }, 'Supported controls')),
-        bs.p({}, [
-            `Most common form control, text-based input fields (`,
-            bs.code({}, 'bs.inputText'),
-            ` component). Includes support for all HTML5 types: `,
-            bs.code({}, 'text'), `, `,
-            bs.code({}, 'password'), `, `,
-            bs.code({}, 'datetime'), `, `,
-            bs.code({}, 'datetime-local'), `, `,
-            bs.code({}, 'date'), `, `,
-            bs.code({}, 'month'), `, `,
-            bs.code({}, 'time'), `, `,
-            bs.code({}, 'week'), `, `,
-            bs.code({}, 'number'), `, `,
-            bs.code({}, 'email'), `, `,
-            bs.code({}, 'url'), `, `,
-            bs.code({}, 'search'), `, `,
-            bs.code({}, 'tel'), ` and `,
-            bs.code({}, 'color'), `.`
-
-        ]),
-        bs.e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-input-needs-type' } }, [
-            bs.h4({}, `Type declaration required`),
-            bs.p({}, [
-                `Inputs type should be defined by the `, bs.code({}, 'type'), ` input data property or the `,
-                bs.code({}, 'bs.InputTextType.Text'), ` will be used as the default one.`
-            ])
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.formGroup({}, bs.inputText({ placeholder: 'Text input' })),
-                bs.formGroup({}, bs.inputText({ type: bs.InputTextType.Number, placeholder: 'Number input' }))
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.inputText({ placeholder: 'Text input' })`, bs.e({ tag: 'br' }),
-            `bs.inputText({ type: bs.InputTextType.Number, placeholder: 'Number input' })`
-        ]))),
-        bs.e({ style: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-xref-input-group' } }, [
-            bs.h4({}, `Input groups`),
-            bs.p({}, [
-                `To add integrated text or buttons before and/or after any text-based `, bs.code({}, '<input>'),
-                `, check out the input `, bs.code({}, 'bs.inputGroup'), `.`
-            ])
-        ]),
-        bs.h3({ attrs: { id: 'textarea' } }, 'Textarea'),
-        bs.p({}, [
-            `Form control which supports multiple lines of text. Change `, bs.code({}, 'rows'), ` attribute as necessary.`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.formGroup({}, bs.textarea({ rows: 3 }))
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.textarea({ rows: 3 })`
-        ]))),
-        bs.h3({ attrs: { id: 'checkboxes-and-radios' } }, 'Checkboxes and radios'),
-        bs.p({}, `Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.`),
-        bs.h4({ attrs: { id: 'default-stacked' } }, 'Default (stacked)'),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.checkbox({
-                    label: { title: 'Option one is this and that—be sure to include why it\'s great' }
-                }),
-                bs.checkbox({
-                    label: { title: 'Option two is disabled' },
-                    inputCheckbox: { disabled: true }
-                }),
-                bs.e({ tag: 'br' }),
-                bs.radio({
-                    label: { title: 'Option one is this and that—be sure to include why it\'s great' },
-                    inputRadio: { id: 'optionsRadios1', value: 'option1', name: 'optionsRadios' }
-                }),
-                bs.radio({
-                    label: { title: 'Option two can be something else and selecting it will deselect option one' },
-                    inputRadio: { id: 'optionsRadios2', value: 'option2', name: 'optionsRadios' }
-                }),
-                bs.radio({
-                    label: { title: 'Option three is disabled' },
-                    inputRadio: { id: 'optionsRadios3', value: 'option3', name: 'optionsRadios', disabled: true }
-                })
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.checkbox({`, bs.e({ tag: 'br' }),
-            `    label: { title: 'Option one is this and that—be sure to include why it\\'s great' }`, bs.e({ tag: 'br' }),
-            `}),`, bs.e({ tag: 'br' }),
-            `bs.checkbox({`, bs.e({ tag: 'br' }),
-            `    label: { title: 'Option two is disabled' },`, bs.e({ tag: 'br' }),
-            `    inputCheckbox: { disabled: true }`, bs.e({ tag: 'br' }),
-            `}),`, bs.e({ tag: 'br' }),
-            `bs.radio({`, bs.e({ tag: 'br' }),
-            `    label: { title: 'Option one is this and that—be sure to include why it\\'s great' },`, bs.e({ tag: 'br' }),
-            `    inputRadio: { id: 'optionsRadios1', value: 'option1', name: 'optionsRadios' }`, bs.e({ tag: 'br' }),
-            `}),`, bs.e({ tag: 'br' }),
-            `bs.radio({`, bs.e({ tag: 'br' }),
-            `    label: { title: 'Option two can be something else and selecting it will deselect option one' },`, bs.e({ tag: 'br' }),
-            `    inputRadio: { id: 'optionsRadios2', value: 'option2', name: 'optionsRadios' }`, bs.e({ tag: 'br' }),
-            `}),`, bs.e({ tag: 'br' }),
-            `bs.radio({`, bs.e({ tag: 'br' }),
-            `    label: { title: 'Option three is disabled' },`, bs.e({ tag: 'br' }),
-            `    inputRadio: { id: 'optionsRadios3', value: 'option3', name: 'optionsRadios', disabled: true }`, bs.e({ tag: 'br' }),
-            `})`
-        ]))),
-        bs.h4({ attrs: { id: 'inline-checkboxes-and-radios' } }, 'Inline checkboxes and radios'),
-        bs.p({}, [
-            `Use the `, bs.code({}, 'inline'),
-            ` input data property on a series of checkboxes or radios for controls that appear on the same line.`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.checkbox({ inline: true, label: { title: '1' }, inputCheckbox: { id: 'inlineCheckbox1' } }),
-                bs.checkbox({ inline: true, label: { title: '2' }, inputCheckbox: { id: 'inlineCheckbox2' } }),
-                bs.checkbox({ inline: true, label: { title: '3' }, inputCheckbox: { id: 'inlineCheckbox3' } })
-            ]),
-            bs.e({ tag: 'br' }),
-            bs.form({}, [
-                bs.radio({
-                    inline: true,
-                    label: { title: '1' },
-                    inputRadio: { id: 'inlineRadio1', value: 'option1', name: 'inlineRadioOptions' }
-                }),
-                bs.radio({
-                    inline: true,
-                    label: { title: '2' },
-                    inputRadio: { id: 'inlineRadio2', value: 'option2', name: 'inlineRadioOptions' }
-                }),
-                bs.radio({
-                    inline: true,
-                    label: { title: '3' },
-                    inputRadio: { id: 'inlineRadio3', value: 'option3', name: 'inlineRadioOptions' }
-                })
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.checkbox({ inline: true, label: { title: '1' }, inputCheckbox: { id: 'inlineCheckbox1' } }),`, bs.e({ tag: 'br' }),
-            `bs.checkbox({ inline: true, label: { title: '2' }, inputCheckbox: { id: 'inlineCheckbox2' } }),`, bs.e({ tag: 'br' }),
-            `bs.checkbox({ inline: true, label: { title: '3' }, inputCheckbox: { id: 'inlineCheckbox3' } }),`, bs.e({ tag: 'br' }),
-            `bs.radio({`, bs.e({ tag: 'br' }),
-            `    inline: true,`, bs.e({ tag: 'br' }),
-            `    label: { title: '1' },`, bs.e({ tag: 'br' }),
-            `    inputRadio: { id: 'inlineRadio1', value: 'option1', name: 'inlineRadioOptions' }`, bs.e({ tag: 'br' }),
-            `}),`, bs.e({ tag: 'br' }),
-            `bs.radio({`, bs.e({ tag: 'br' }),
-            `    inline: true,`, bs.e({ tag: 'br' }),
-            `    label: { title: '2' },`, bs.e({ tag: 'br' }),
-            `    inputRadio: { id: 'inlineRadio2', value: 'option2', name: 'inlineRadioOptions' }`, bs.e({ tag: 'br' }),
-            `}),`, bs.e({ tag: 'br' }),
-            `bs.radio({`, bs.e({ tag: 'br' }),
-            `    inline: true,`, bs.e({ tag: 'br' }),
-            `    label: { title: '3' },`, bs.e({ tag: 'br' }),
-            `    inputRadio: { id: 'inlineRadio3', value: 'option3', name: 'inlineRadioOptions' }`, bs.e({ tag: 'br' }),
-            `})`
-        ]))),
-        bs.h4({ attrs: { id: 'checkboxes-and-radios-without-la' } }, 'Checkboxes and radios without label text'),
-        bs.p({}, [
-            `Should you have no label definition, the input is positioned as you'd expect.`,
-            bs.strong({}, `Currently only works on non-inline checkboxes and radios. `),
-            `Remember to still provide some form of label for assistive technologies (for instance, using `,
-            bs.code({}, 'aria.label'), , `).`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.checkbox({ inputCheckbox: { id: 'blankCheckbox', aria: { label: '...' } } }),
-                bs.radio({ inputRadio: { id: 'blankRadio1', value: 'option1', name: 'blankRadio', aria: { label: '...' } } })
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.checkbox({ inputCheckbox: { id: 'blankCheckbox', aria: { label: '...' } } }),`, bs.e({ tag: 'br' }),
-            `bs.radio({ inputRadio: { id: 'blankRadio1', value: 'option1', name: 'blankRadio', aria: { label: '...' } } })`
-        ]))),
-        bs.h4({ attrs: { id: 'selects' } }, 'Selects'),
-        bs.p({}, [
-            `Note that many native select menus—namely in Safari and Chrome—have rounded corners that cannot be modified via `,
-            bs.code({}, 'border-radius'), ` properties.`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.select({
-                    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]
-                })
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.select({`, bs.e({ tag: 'br' }),
-            `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`, bs.e({ tag: 'br' }),
-            `})`
-        ]))),
-        bs.p({}, [
-            `For `, bs.code({}, 'select'), ` components with the `, bs.code({}, 'multiple'), ` input data property set to `,
-            bs.code({}, 'true'), `, multiple options are shown by default.`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.select({
-                    multiple: true,
-                    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]
-                })
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.select({`, bs.e({ tag: 'br' }),
-            `    multiple: true,`, bs.e({ tag: 'br' }),
-            `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`, bs.e({ tag: 'br' }),
-            `})`
-        ])))
-    ];
+  return [
+    b.anchor(bs.H2({ attrs: { id: "forms-controls" } }, "Supported controls")),
+    bs.P({}, [
+      `Most common form control, text-based input fields (`,
+      bs.Code({}, "bs.InputText"),
+      ` component). Includes support for all HTML5 types: `,
+      bs.Code({}, "text"),
+      `, `,
+      bs.Code({}, "password"),
+      `, `,
+      bs.Code({}, "datetime"),
+      `, `,
+      bs.Code({}, "datetime-local"),
+      `, `,
+      bs.Code({}, "date"),
+      `, `,
+      bs.Code({}, "month"),
+      `, `,
+      bs.Code({}, "time"),
+      `, `,
+      bs.Code({}, "week"),
+      `, `,
+      bs.Code({}, "number"),
+      `, `,
+      bs.Code({}, "email"),
+      `, `,
+      bs.Code({}, "url"),
+      `, `,
+      bs.Code({}, "search"),
+      `, `,
+      bs.Code({}, "tel"),
+      ` and `,
+      bs.Code({}, "color"),
+      `.`
+    ]),
+    bs.E(
+      {
+        style: [styles.bsCallout, styles.bsCalloutDanger],
+        attrs: { id: "callout-input-needs-type" }
+      },
+      [
+        bs.H4({}, `Type declaration required`),
+        bs.P({}, [
+          `Inputs type should be defined by the `,
+          bs.Code({}, "type"),
+          ` input data property or the `,
+          bs.Code({}, "bs.InputTextType.Text"),
+          ` will be used as the default one.`
+        ])
+      ]
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.FormGroup({}, bs.InputText({ placeholder: "Text input" })),
+        bs.FormGroup(
+          {},
+          bs.InputText({
+            type: bs.InputTextType.Number,
+            placeholder: "Number input"
+          })
+        )
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.InputText({ placeholder: 'Text input' })`,
+          bs.E({ tag: "br" }),
+          `bs.InputText({ type: bs.InputTextType.Number, placeholder: 'Number input' })`
+        ])
+      )
+    ),
+    bs.E(
+      {
+        style: [styles.bsCallout, styles.bsCalloutInfo],
+        attrs: { id: "callout-xref-input-group" }
+      },
+      [
+        bs.H4({}, `Input groups`),
+        bs.P({}, [
+          `To add integrated text or buttons before and/or after any text-based `,
+          bs.Code({}, "<input>"),
+          `, check out the input `,
+          bs.Code({}, "bs.InputGroup"),
+          `.`
+        ])
+      ]
+    ),
+    bs.H3({ attrs: { id: "textarea" } }, "Textarea"),
+    bs.P({}, [
+      `Form control which supports multiple lines of text. Change `,
+      bs.Code({}, "rows"),
+      ` attribute as necessary.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.FormGroup({}, bs.Textarea({ rows: 3 }))
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre({}, bs.Code({ style: langJs }, [`bs.Textarea({ rows: 3 })`]))
+    ),
+    bs.H3({ attrs: { id: "checkboxes-and-radios" } }, "Checkboxes and radios"),
+    bs.P(
+      {},
+      `Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.`
+    ),
+    bs.H4({ attrs: { id: "default-stacked" } }, "Default (stacked)"),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.Checkbox({
+          label: {
+            title:
+              "Option one is this and that—be sure to include why it's great"
+          }
+        }),
+        bs.Checkbox({
+          label: { title: "Option two is disabled" },
+          inputCheckbox: { disabled: true }
+        }),
+        bs.E({ tag: "br" }),
+        bs.Radio({
+          label: {
+            title:
+              "Option one is this and that—be sure to include why it's great"
+          },
+          inputRadio: {
+            id: "optionsRadios1",
+            value: "option1",
+            name: "optionsRadios"
+          }
+        }),
+        bs.Radio({
+          label: {
+            title:
+              "Option two can be something else and selecting it will deselect option one"
+          },
+          inputRadio: {
+            id: "optionsRadios2",
+            value: "option2",
+            name: "optionsRadios"
+          }
+        }),
+        bs.Radio({
+          label: { title: "Option three is disabled" },
+          inputRadio: {
+            id: "optionsRadios3",
+            value: "option3",
+            name: "optionsRadios",
+            disabled: true
+          }
+        })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Checkbox({`,
+          bs.E({ tag: "br" }),
+          `    label: { title: 'Option one is this and that—be sure to include why it\\'s great' }`,
+          bs.E({ tag: "br" }),
+          `}),`,
+          bs.E({ tag: "br" }),
+          `bs.Checkbox({`,
+          bs.E({ tag: "br" }),
+          `    label: { title: 'Option two is disabled' },`,
+          bs.E({ tag: "br" }),
+          `    inputCheckbox: { disabled: true }`,
+          bs.E({ tag: "br" }),
+          `}),`,
+          bs.E({ tag: "br" }),
+          `bs.Radio({`,
+          bs.E({ tag: "br" }),
+          `    label: { title: 'Option one is this and that—be sure to include why it\\'s great' },`,
+          bs.E({ tag: "br" }),
+          `    inputRadio: { id: 'optionsRadios1', value: 'option1', name: 'optionsRadios' }`,
+          bs.E({ tag: "br" }),
+          `}),`,
+          bs.E({ tag: "br" }),
+          `bs.Radio({`,
+          bs.E({ tag: "br" }),
+          `    label: { title: 'Option two can be something else and selecting it will deselect option one' },`,
+          bs.E({ tag: "br" }),
+          `    inputRadio: { id: 'optionsRadios2', value: 'option2', name: 'optionsRadios' }`,
+          bs.E({ tag: "br" }),
+          `}),`,
+          bs.E({ tag: "br" }),
+          `bs.Radio({`,
+          bs.E({ tag: "br" }),
+          `    label: { title: 'Option three is disabled' },`,
+          bs.E({ tag: "br" }),
+          `    inputRadio: { id: 'optionsRadios3', value: 'option3', name: 'optionsRadios', disabled: true }`,
+          bs.E({ tag: "br" }),
+          `})`
+        ])
+      )
+    ),
+    bs.H4(
+      { attrs: { id: "inline-checkboxes-and-radios" } },
+      "Inline checkboxes and radios"
+    ),
+    bs.P({}, [
+      `Use the `,
+      bs.Code({}, "inline"),
+      ` input data property on a series of checkboxes or radios for controls that appear on the same line.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.Checkbox({
+          inline: true,
+          label: { title: "1" },
+          inputCheckbox: { id: "inlineCheckbox1" }
+        }),
+        bs.Checkbox({
+          inline: true,
+          label: { title: "2" },
+          inputCheckbox: { id: "inlineCheckbox2" }
+        }),
+        bs.Checkbox({
+          inline: true,
+          label: { title: "3" },
+          inputCheckbox: { id: "inlineCheckbox3" }
+        })
+      ]),
+      bs.E({ tag: "br" }),
+      bs.Form({}, [
+        bs.Radio({
+          inline: true,
+          label: { title: "1" },
+          inputRadio: {
+            id: "inlineRadio1",
+            value: "option1",
+            name: "inlineRadioOptions"
+          }
+        }),
+        bs.Radio({
+          inline: true,
+          label: { title: "2" },
+          inputRadio: {
+            id: "inlineRadio2",
+            value: "option2",
+            name: "inlineRadioOptions"
+          }
+        }),
+        bs.Radio({
+          inline: true,
+          label: { title: "3" },
+          inputRadio: {
+            id: "inlineRadio3",
+            value: "option3",
+            name: "inlineRadioOptions"
+          }
+        })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Checkbox({ inline: true, label: { title: '1' }, inputCheckbox: { id: 'inlineCheckbox1' } }),`,
+          bs.E({ tag: "br" }),
+          `bs.Checkbox({ inline: true, label: { title: '2' }, inputCheckbox: { id: 'inlineCheckbox2' } }),`,
+          bs.E({ tag: "br" }),
+          `bs.Checkbox({ inline: true, label: { title: '3' }, inputCheckbox: { id: 'inlineCheckbox3' } }),`,
+          bs.E({ tag: "br" }),
+          `bs.Radio({`,
+          bs.E({ tag: "br" }),
+          `    inline: true,`,
+          bs.E({ tag: "br" }),
+          `    label: { title: '1' },`,
+          bs.E({ tag: "br" }),
+          `    inputRadio: { id: 'inlineRadio1', value: 'option1', name: 'inlineRadioOptions' }`,
+          bs.E({ tag: "br" }),
+          `}),`,
+          bs.E({ tag: "br" }),
+          `bs.Radio({`,
+          bs.E({ tag: "br" }),
+          `    inline: true,`,
+          bs.E({ tag: "br" }),
+          `    label: { title: '2' },`,
+          bs.E({ tag: "br" }),
+          `    inputRadio: { id: 'inlineRadio2', value: 'option2', name: 'inlineRadioOptions' }`,
+          bs.E({ tag: "br" }),
+          `}),`,
+          bs.E({ tag: "br" }),
+          `bs.Radio({`,
+          bs.E({ tag: "br" }),
+          `    inline: true,`,
+          bs.E({ tag: "br" }),
+          `    label: { title: '3' },`,
+          bs.E({ tag: "br" }),
+          `    inputRadio: { id: 'inlineRadio3', value: 'option3', name: 'inlineRadioOptions' }`,
+          bs.E({ tag: "br" }),
+          `})`
+        ])
+      )
+    ),
+    bs.H4(
+      { attrs: { id: "checkboxes-and-radios-without-la" } },
+      "Checkboxes and radios without label text"
+    ),
+    bs.P({}, [
+      `Should you have no label definition, the input is positioned as you'd expect.`,
+      bs.Strong(
+        {},
+        `Currently only works on non-inline checkboxes and radios. `
+      ),
+      `Remember to still provide some form of label for assistive technologies (for instance, using `,
+      bs.Code({}, "aria.label"),
+      ,
+      `).`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.Checkbox({
+          inputCheckbox: { id: "blankCheckbox", aria: { label: "..." } }
+        }),
+        bs.Radio({
+          inputRadio: {
+            id: "blankRadio1",
+            value: "option1",
+            name: "blankRadio",
+            aria: { label: "..." }
+          }
+        })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Checkbox({ inputCheckbox: { id: 'blankCheckbox', aria: { label: '...' } } }),`,
+          bs.E({ tag: "br" }),
+          `bs.Radio({ inputRadio: { id: 'blankRadio1', value: 'option1', name: 'blankRadio', aria: { label: '...' } } })`
+        ])
+      )
+    ),
+    bs.H4({ attrs: { id: "selects" } }, "Selects"),
+    bs.P({}, [
+      `Note that many native select menus—namely in Safari and Chrome—have rounded corners that cannot be modified via `,
+      bs.Code({}, "border-radius"),
+      ` properties.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.Select({
+          options: [
+            { value: "1" },
+            { value: "2" },
+            { value: "3" },
+            { value: "4" },
+            { value: "5" }
+          ]
+        })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Select({`,
+          bs.E({ tag: "br" }),
+          `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`,
+          bs.E({ tag: "br" }),
+          `})`
+        ])
+      )
+    ),
+    bs.P({}, [
+      `For `,
+      bs.Code({}, "select"),
+      ` components with the `,
+      bs.Code({}, "multiple"),
+      ` input data property set to `,
+      bs.Code({}, "true"),
+      `, multiple options are shown by default.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.Select({
+          multiple: true,
+          options: [
+            { value: "1" },
+            { value: "2" },
+            { value: "3" },
+            { value: "4" },
+            { value: "5" }
+          ]
+        })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Select({`,
+          bs.E({ tag: "br" }),
+          `    multiple: true,`,
+          bs.E({ tag: "br" }),
+          `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`,
+          bs.E({ tag: "br" }),
+          `})`
+        ])
+      )
+    )
+  ];
 }
 
 function staticControl(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-controls-static' } }, 'Static control')),
-        bs.p({}, [
-            `When you need to place plain text next to a form label within a form, use the `,
-            bs.code({}, 'formControlStatic'), ` input data property of `, bs.code({}, 'bs.paragraph'), `.`
+  return [
+    b.anchor(
+      bs.H2({ attrs: { id: "forms-controls-static" } }, "Static control")
+    ),
+    bs.P({}, [
+      `When you need to place plain text next to a form label within a form, use the `,
+      bs.Code({}, "formControlStatic"),
+      ` input data property of `,
+      bs.Code({}, "bs.Paragraph"),
+      `.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({ horizontal: true }, [
+        bs.FormGroup({}, [
+          bs.Label(
+            { controlLabel: true, style: bs.colStyles(bs.Size.Sm)(2) },
+            "Email"
+          ),
+          bs.Col(
+            { size: bs.Size.Sm, span: 10 },
+            bs.P({ formControlStatic: true }, "email@example.com")
+          )
         ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({ horizontal: true }, [
-                bs.formGroup({}, [
-                    bs.label({ controlLabel: true, style: bs.colStyles(bs.Size.Sm)(2) }, 'Email'),
-                    bs.col(
-                        { size: bs.Size.Sm, span: 10 },
-                        bs.p({ formControlStatic: true }, 'email@example.com'))
-                ]),
-                bs.formGroup({}, [
-                    bs.label({ controlLabel: true, for: 'inputPassword', style: bs.colStyles(bs.Size.Sm)(2) }, 'Password'),
-                    bs.col(
-                        { size: bs.Size.Sm, span: 10 },
-                        bs.inputText({ id: 'inputPassword', type: bs.InputTextType.Password, placeholder: 'Password' }))
-                ])
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({ horizontal: true }, [`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ controlLabel: true, style: bs.colStyles(bs.Size.Sm)(2) }, 'Email'),`, bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.sm, span: 10 },`, bs.e({ tag: 'br' }),
-            `            bs.p({ formControlStatic: true }, 'email@example.com'))`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ controlLabel: true, for: 'inputPassword', style: bs.colStyles(bs.Size.Sm)(2) }, 'Password'),`,
-            bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Sm, span: 10 },`, bs.e({ tag: 'br' }),
-            `            bs.inputText({ id: 'inputPassword', type: bs.InputTextType.Password, placeholder: 'Password' }))`,
-            bs.e({ tag: 'br' }),
-            `    ])`, bs.e({ tag: 'br' }),
-            `])`
-        ])))
-    ];
+        bs.FormGroup({}, [
+          bs.Label(
+            {
+              controlLabel: true,
+              for: "inputPassword",
+              style: bs.colStyles(bs.Size.Sm)(2)
+            },
+            "Password"
+          ),
+          bs.Col(
+            { size: bs.Size.Sm, span: 10 },
+            bs.InputText({
+              id: "inputPassword",
+              type: bs.InputTextType.Password,
+              placeholder: "Password"
+            })
+          )
+        ])
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({ horizontal: true }, [`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ controlLabel: true, style: bs.colStyles(bs.Size.Sm)(2) }, 'Email'),`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.sm, span: 10 },`,
+          bs.E({ tag: "br" }),
+          `            bs.P({ formControlStatic: true }, 'email@example.com'))`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ controlLabel: true, for: 'inputPassword', style: bs.colStyles(bs.Size.Sm)(2) }, 'Password'),`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Sm, span: 10 },`,
+          bs.E({ tag: "br" }),
+          `            bs.InputText({ id: 'inputPassword', type: bs.InputTextType.Password, placeholder: 'Password' }))`,
+          bs.E({ tag: "br" }),
+          `    ])`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }
 
 function formsControlFocus(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-control-focus' } }, 'Focus state')),
-        bs.p({}, [
-            `Bootstrap removes the default `, bs.code({}, 'outline'), ` styles on some form controls and apply a `,
-            bs.code({}, 'box-shadow'), ` in its place for `, bs.code({}, ':focus'), `.`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.inputText({ id: 'focusedInput', placeholder: 'Demonstrative focus state' })
-            ])
-        ]),
-        bs.e({ style: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-focus-demo' } }, [
-            bs.h4({}, [`Demo `, bs.code({}, ':focus'), `state`]),
-            bs.p({}, [
-                `The above example input uses custom styles in our documentation to demonstrate the `, bs.code({}, ':focus'),
-                ` state on a `, bs.code({}, '.form-control'), `.`
-            ])
+  return [
+    b.anchor(bs.H2({ attrs: { id: "forms-control-focus" } }, "Focus state")),
+    bs.P({}, [
+      `Bootstrap removes the default `,
+      bs.Code({}, "outline"),
+      ` styles on some form controls and apply a `,
+      bs.Code({}, "box-shadow"),
+      ` in its place for `,
+      bs.Code({}, ":focus"),
+      `.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.InputText({
+          id: "focusedInput",
+          placeholder: "Demonstrative focus state"
+        })
+      ])
+    ]),
+    bs.E(
+      {
+        style: [styles.bsCallout, styles.bsCalloutInfo],
+        attrs: { id: "callout-focus-demo" }
+      },
+      [
+        bs.H4({}, [`Demo `, bs.Code({}, ":focus"), `state`]),
+        bs.P({}, [
+          `The above example input uses custom styles in our documentation to demonstrate the `,
+          bs.Code({}, ":focus"),
+          ` state on a `,
+          bs.Code({}, ".form-control"),
+          `.`
         ])
-    ];
+      ]
+    )
+  ];
 }
 
 function formsControlDisabled(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-control-disabled' } }, 'Disabled state')),
-        bs.p({}, [
-            `Set the `, bs.code({}, 'disabled'),
-            ` input comonent data property to prevent user interactions. Disabled inputs appear lighter 
-            and add a `, bs.code({}, 'not-allowed'), ` cursor.`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.inputText({ id: 'disabledInput', placeholder: 'Disabled input here...', disabled: true })
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({}, [`, bs.e({ tag: 'br' }),
-            `    bs.inputText({ id: 'disabledInput', placeholder: 'Disabled input here...', disabled: true })`, bs.e({ tag: 'br' }),
-            `])`
-        ])))
-    ];
+  return [
+    b.anchor(
+      bs.H2({ attrs: { id: "forms-control-disabled" } }, "Disabled state")
+    ),
+    bs.P({}, [
+      `Set the `,
+      bs.Code({}, "disabled"),
+      ` input comonent data property to prevent user interactions. Disabled inputs appear lighter 
+            and add a `,
+      bs.Code({}, "not-allowed"),
+      ` cursor.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.InputText({
+          id: "disabledInput",
+          placeholder: "Disabled input here...",
+          disabled: true
+        })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({}, [`,
+          bs.E({ tag: "br" }),
+          `    bs.InputText({ id: 'disabledInput', placeholder: 'Disabled input here...', disabled: true })`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }
 
 function formsControlReadonly(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-control-readonly' } }, 'Readonly state')),
-        bs.p({}, [
-            `Set the `, bs.code({}, 'readonly '), ` input comonent data property to prevent modification of the input's value. Read-only 
+  return [
+    b.anchor(
+      bs.H2({ attrs: { id: "forms-control-readonly" } }, "Readonly state")
+    ),
+    bs.P({}, [
+      `Set the `,
+      bs.Code({}, "readonly "),
+      ` input comonent data property to prevent modification of the input's value. Read-only 
             inputs appear lighter (just like disabled inputs), but retain the standard cursor.`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.inputText({ placeholder: 'Readonly input here…', readonly: true })
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({}, [`, bs.e({ tag: 'br' }),
-            `     bs.inputText({ placeholder: 'Readonly input here…', readonly: true })`, bs.e({ tag: 'br' }),
-            `])`
-        ])))
-    ];
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.InputText({ placeholder: "Readonly input here…", readonly: true })
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({}, [`,
+          bs.E({ tag: "br" }),
+          `     bs.InputText({ placeholder: 'Readonly input here…', readonly: true })`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }
 
 function formsHelpText(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-help-text' } }, 'Help text')),
-        bs.p({}, `Block level help text for form controls..`),
-        bs.e({ style: [styles.bsCallout, styles.bsCalloutInfo], attrs: { id: 'callout-help-text-accessibility' } }, [
-            bs.h4({}, `Associating help text with form controls`),
-            bs.p({}, [
-                `Help text should be explicitly associated with the form control it relates to using the `,
-                bs.code({}, 'aria.describedby'),
-                ` input data property. This will ensure that assistive technologies – such as screen readers 
+  return [
+    b.anchor(bs.H2({ attrs: { id: "forms-help-text" } }, "Help text")),
+    bs.P({}, `Block level help text for form controls..`),
+    bs.E(
+      {
+        style: [styles.bsCallout, styles.bsCalloutInfo],
+        attrs: { id: "callout-help-text-accessibility" }
+      },
+      [
+        bs.H4({}, `Associating help text with form controls`),
+        bs.P({}, [
+          `Help text should be explicitly associated with the form control it relates to using the `,
+          bs.Code({}, "aria.describedby"),
+          ` input data property. This will ensure that assistive technologies – such as screen readers 
                 – will announce this help text when the user focuses or enters the control.`
-            ])
+        ])
+      ]
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.FormGroup({}, [
+          bs.Label({ for: "inputHelpBlock", title: "Input with help text" }),
+          bs.InputText({
+            id: "inputHelpBlock",
+            aria: { describedby: "helpBlock" }
+          })
         ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.formGroup({}, [
-                    bs.label({ for: 'inputHelpBlock', title: 'Input with help text' }),
-                    bs.inputText({ id: 'inputHelpBlock', aria: { describedby: 'helpBlock' } })
-                ]),
-                bs.helpText(
-                    { id: 'helpBlock' },
-                    'A block of help text that breaks onto a new line and may extend beyond one line.'
-                )
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({}, [`, bs.e({ tag: 'br' }),
-            `     bs.formGroup({}, [`, bs.e({ tag: 'br' }),
-            `         bs.label({ for: 'inputHelpBlock', title: 'Input with help text' }),`, bs.e({ tag: 'br' }),
-            `         bs.inputText({ id: 'inputHelpBlock', aria: { describedby: 'helpBlock' } })`, bs.e({ tag: 'br' }),
-            `     ]),`, bs.e({ tag: 'br' }),
-            `     bs.helpText(`, bs.e({ tag: 'br' }),
-            `         { id: 'helpBlock' },`, bs.e({ tag: 'br' }),
-            `         'A block of help text that breaks onto a new line and may extend beyond one line.'`, bs.e({ tag: 'br' }),
-            `     )`, bs.e({ tag: 'br' }),
-            `])`
-        ])))
-    ];
+        bs.HelpText(
+          { id: "helpBlock" },
+          "A block of help text that breaks onto a new line and may extend beyond one line."
+        )
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({}, [`,
+          bs.E({ tag: "br" }),
+          `     bs.FormGroup({}, [`,
+          bs.E({ tag: "br" }),
+          `         bs.Label({ for: 'inputHelpBlock', title: 'Input with help text' }),`,
+          bs.E({ tag: "br" }),
+          `         bs.InputText({ id: 'inputHelpBlock', aria: { describedby: 'helpBlock' } })`,
+          bs.E({ tag: "br" }),
+          `     ]),`,
+          bs.E({ tag: "br" }),
+          `     bs.HelpText(`,
+          bs.E({ tag: "br" }),
+          `         { id: 'helpBlock' },`,
+          bs.E({ tag: "br" }),
+          `         'A block of help text that breaks onto a new line and may extend beyond one line.'`,
+          bs.E({ tag: "br" }),
+          `     )`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }
 
 function validationStates(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-control-validation' } }, 'Validation states')),
-        bs.p({}, [
-            `Bootstrap includes validation styles for error, warning, and success states on form controls. To use, set `,
-            bs.code({}, 'validationState'), ` input data property to the `, bs.code({}, 'bs.formGroup'), ` node. Any node with defined`,
-            bs.code({}, 'controlLabel'), ` or `, bs.code({}, 'formControl'), ` style (implicitly by the property or by the style) and `,
-            bs.code({}, 'bs.helpText'), `s within that `, bs.code({}, 'bs.formGroup'), ` will receive the validation styles.`
-        ]),
-        bs.e({ style: [styles.bsCallout, styles.bsCalloutDanger], attrs: { id: 'callout-form-validation-state-accessibility' } }, [
-            bs.h4({}, `Conveying validation state to assistive technologies and colorblind users`),
-            bs.p({}, `Using these validation styles to denote the state of a form control only provides a visual, color-based indication, 
-            which will not be conveyed to users of assistive technologies - such as screen readers - or to colorblind users.`),
-            bs.p({}, [
-                `Ensure that an alternative indication of state is also provided. For instance, you can include a hint about state in the 
+  return [
+    b.anchor(
+      bs.H2({ attrs: { id: "forms-control-validation" } }, "Validation states")
+    ),
+    bs.P({}, [
+      `Bootstrap includes validation styles for error, warning, and success states on form controls. To use, set `,
+      bs.Code({}, "validationState"),
+      ` input data property to the `,
+      bs.Code({}, "bs.FormGroup"),
+      ` node. Any node with defined`,
+      bs.Code({}, "controlLabel"),
+      ` or `,
+      bs.Code({}, "formControl"),
+      ` style (implicitly by the property or by the style) and `,
+      bs.Code({}, "bs.HelpText"),
+      `s within that `,
+      bs.Code({}, "bs.FormGroup"),
+      ` will receive the validation styles.`
+    ]),
+    bs.E(
+      {
+        style: [styles.bsCallout, styles.bsCalloutDanger],
+        attrs: { id: "callout-form-validation-state-accessibility" }
+      },
+      [
+        bs.H4(
+          {},
+          `Conveying validation state to assistive technologies and colorblind users`
+        ),
+        bs.P(
+          {},
+          `Using these validation styles to denote the state of a form control only provides a visual, color-based indication, 
+            which will not be conveyed to users of assistive technologies - such as screen readers - or to colorblind users.`
+        ),
+        bs.P({}, [
+          `Ensure that an alternative indication of state is also provided. For instance, you can include a hint about state in the 
                 form control's <label> text itself (as is the case in the following code example), include a Glyphicon (with appropriate 
                 alternative text using the `,
-                bs.code({}, 'srOnly'), ` input date property or style), or by providing an additional help text 
+          bs.Code({}, "srOnly"),
+          ` input date property or style), or by providing an additional help text 
                 block. Specifically for assistive technologies, invalid form controls can also be assigned an `,
-                bs.code({}, 'aria.invalid'), `input date property.`
-            ])
+          bs.Code({}, "aria.invalid"),
+          `input date property.`
+        ])
+      ]
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.FormGroup({ validationState: bs.ValidationState.Success }, [
+          bs.Label({
+            for: "inputSuccess1",
+            title: "Input with success",
+            controlLabel: true
+          }),
+          bs.InputText({
+            id: "inputSuccess1",
+            aria: { describedby: "helpBlock2" }
+          }),
+          bs.HelpText(
+            { id: "helpBlock2" },
+            "A block of help text that breaks onto a new line and may extend beyond one line."
+          )
         ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.formGroup({ validationState: bs.ValidationState.Success }, [
-                    bs.label({ for: 'inputSuccess1', title: 'Input with success', controlLabel: true }),
-                    bs.inputText({ id: 'inputSuccess1', aria: { describedby: 'helpBlock2' } }),
-                    bs.helpText(
-                        { id: 'helpBlock2' },
-                        'A block of help text that breaks onto a new line and may extend beyond one line.'
-                    )
-                ]),
-                bs.formGroup({ validationState: bs.ValidationState.Warning }, [
-                    bs.label({ for: 'inputWarning1', title: 'Input with warning', controlLabel: true }),
-                    bs.inputText({ id: 'inputWarning1' })
-                ]),
-                bs.formGroup({ validationState: bs.ValidationState.Error }, [
-                    bs.label({ for: 'inputError1', title: 'Input with error', controlLabel: true }),
-                    bs.inputText({ id: 'inputError1' })
-                ]),
-                bs.e({ style: bs.validationStyles.hasSuccess }, [
-                    bs.checkbox({
-                        label: { title: 'Checkbox with success' },
-                        inputCheckbox: { id: 'checkboxSuccess' }
-                    })
-                ]),
-                bs.e({ style: bs.validationStyles.hasWarning }, [
-                    bs.checkbox({
-                        label: { title: 'Checkbox with warning' },
-                        inputCheckbox: { id: 'checkboxWarning' }
-                    })
-                ]),
-                bs.e({ style: bs.validationStyles.hasError }, [
-                    bs.checkbox({
-                        label: { title: 'Checkbox with error' },
-                        inputCheckbox: { id: 'checkboxError' }
-                    })
-                ])
-            ])
+        bs.FormGroup({ validationState: bs.ValidationState.Warning }, [
+          bs.Label({
+            for: "inputWarning1",
+            title: "Input with warning",
+            controlLabel: true
+          }),
+          bs.InputText({ id: "inputWarning1" })
         ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({}, [`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({ validationState: bs.ValidationState.Success }, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'inputSuccess1', title: 'Input with success', controlLabel: true }),`, bs.e({ tag: 'br' }),
-            `        bs.inputText({ id: 'inputSuccess1', aria: { describedby: 'helpBlock2' } }),`, bs.e({ tag: 'br' }),
-            `        bs.helpText(`, bs.e({ tag: 'br' }),
-            `            { id: 'helpBlock2' },`, bs.e({ tag: 'br' }),
-            `            'A block of help text that breaks onto a new line and may extend beyond one line.'`, bs.e({ tag: 'br' }),
-            `        )`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({ validationState: bs.ValidationState.Warning }, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'inputWarning1', title: 'Input with warning', controlLabel: true }),`, bs.e({ tag: 'br' }),
-            `        bs.inputText({ id: 'inputWarning1' })`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({ validationState: bs.ValidationState.Error }, [`, bs.e({ tag: 'br' }),
-            `        bs.label({ for: 'inputError1', title: 'Input with error', controlLabel: true }),`, bs.e({ tag: 'br' }),
-            `        bs.inputText({ id: 'inputError1' })`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.e({ style: bs.validationStyles.hasSuccess }, [`, bs.e({ tag: 'br' }),
-            `        bs.checkbox({`, bs.e({ tag: 'br' }),
-            `            label: { title: 'Checkbox with success' },`, bs.e({ tag: 'br' }),
-            `            inputCheckbox: { id: 'checkboxSuccess' }`, bs.e({ tag: 'br' }),
-            `        })`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.e({ style: bs.validationStyles.hasWarning }, [`, bs.e({ tag: 'br' }),
-            `        bs.checkbox({`, bs.e({ tag: 'br' }),
-            `            label: { title: 'Checkbox with warning' },`, bs.e({ tag: 'br' }),
-            `            inputCheckbox: { id: 'checkboxWarning' }`, bs.e({ tag: 'br' }),
-            `        })`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.e({ style: bs.validationStyles.hasError }, [`, bs.e({ tag: 'br' }),
-            `        bs.checkbox({`, bs.e({ tag: 'br' }),
-            `            label: { title: 'Checkbox with error' },`, bs.e({ tag: 'br' }),
-            `            inputCheckbox: { id: 'checkboxError' }`, bs.e({ tag: 'br' }),
-            `        })`, bs.e({ tag: 'br' }),
-            `    ])`, bs.e({ tag: 'br' }),
-            `])`
-        ])))
-    ];
+        bs.FormGroup({ validationState: bs.ValidationState.Error }, [
+          bs.Label({
+            for: "inputError1",
+            title: "Input with error",
+            controlLabel: true
+          }),
+          bs.InputText({ id: "inputError1" })
+        ]),
+        bs.E({ style: bs.validationStyles.hasSuccess }, [
+          bs.Checkbox({
+            label: { title: "Checkbox with success" },
+            inputCheckbox: { id: "checkboxSuccess" }
+          })
+        ]),
+        bs.E({ style: bs.validationStyles.hasWarning }, [
+          bs.Checkbox({
+            label: { title: "Checkbox with warning" },
+            inputCheckbox: { id: "checkboxWarning" }
+          })
+        ]),
+        bs.E({ style: bs.validationStyles.hasError }, [
+          bs.Checkbox({
+            label: { title: "Checkbox with error" },
+            inputCheckbox: { id: "checkboxError" }
+          })
+        ])
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({}, [`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({ validationState: bs.ValidationState.Success }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'inputSuccess1', title: 'Input with success', controlLabel: true }),`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({ id: 'inputSuccess1', aria: { describedby: 'helpBlock2' } }),`,
+          bs.E({ tag: "br" }),
+          `        bs.HelpText(`,
+          bs.E({ tag: "br" }),
+          `            { id: 'helpBlock2' },`,
+          bs.E({ tag: "br" }),
+          `            'A block of help text that breaks onto a new line and may extend beyond one line.'`,
+          bs.E({ tag: "br" }),
+          `        )`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({ validationState: bs.ValidationState.Warning }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'inputWarning1', title: 'Input with warning', controlLabel: true }),`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({ id: 'inputWarning1' })`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({ validationState: bs.ValidationState.Error }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({ for: 'inputError1', title: 'Input with error', controlLabel: true }),`,
+          bs.E({ tag: "br" }),
+          `        bs.InputText({ id: 'inputError1' })`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.E({ style: bs.validationStyles.hasSuccess }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Checkbox({`,
+          bs.E({ tag: "br" }),
+          `            label: { title: 'Checkbox with success' },`,
+          bs.E({ tag: "br" }),
+          `            inputCheckbox: { id: 'checkboxSuccess' }`,
+          bs.E({ tag: "br" }),
+          `        })`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.E({ style: bs.validationStyles.hasWarning }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Checkbox({`,
+          bs.E({ tag: "br" }),
+          `            label: { title: 'Checkbox with warning' },`,
+          bs.E({ tag: "br" }),
+          `            inputCheckbox: { id: 'checkboxWarning' }`,
+          bs.E({ tag: "br" }),
+          `        })`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.E({ style: bs.validationStyles.hasError }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Checkbox({`,
+          bs.E({ tag: "br" }),
+          `            label: { title: 'Checkbox with error' },`,
+          bs.E({ tag: "br" }),
+          `            inputCheckbox: { id: 'checkboxError' }`,
+          bs.E({ tag: "br" }),
+          `        })`,
+          bs.E({ tag: "br" }),
+          `    ])`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }
 
 function controlSizing(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'forms-control-sizes' } }, 'Control sizing')),
-        bs.p({}, [
-            `Set heights using `, bs.code({}, 'size'), ` input data property and set widths using grid column component `,
-            bs.code({}, 'bs.col'), ` or by `, bs.code({}, 'bs.colStyles'), `.`
+  return [
+    b.anchor(bs.H2({ attrs: { id: "forms-control-sizes" } }, "Control sizing")),
+    bs.P({}, [
+      `Set heights using `,
+      bs.Code({}, "size"),
+      ` input data property and set widths using grid column component `,
+      bs.Code({}, "bs.Col"),
+      ` or by `,
+      bs.Code({}, "bs.colStyles"),
+      `.`
+    ]),
+    bs.H3({}, "Height sizing"),
+    bs.P({}, `Create taller or shorter form controls that match button sizes.`),
+    bs.E({ style: [styles.bsExample, styles.bsExampleControlSizing] }, [
+      bs.Form({}, [
+        bs.E({ style: styles.controls }, [
+          bs.InputText({
+            size: bs.InputTextSize.Lg,
+            placeholder: "bs.InputTextSize.Lg"
+          }),
+          bs.InputText({ placeholder: "default" }),
+          bs.InputText({
+            size: bs.InputTextSize.Sm,
+            placeholder: "bs.InputTextSize.Sm"
+          }),
+          bs.Select({
+            size: bs.SelectSize.Lg,
+            options: [{ value: "bs.SelectSize.Lg" }]
+          }),
+          bs.Select({ options: [{ value: "default" }] }),
+          bs.Select({
+            size: bs.SelectSize.Sm,
+            options: [{ value: "bs.SelectSize.Sm" }]
+          })
+        ])
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.InputText({ size: bs.InputTextSize.Lg, placeholder: 'bs.InputTextSize.Lg' }),`,
+          bs.E({ tag: "br" }),
+          `bs.InputText({ placeholder: 'default' }),`,
+          bs.E({ tag: "br" }),
+          `bs.InputText({ size: bs.InputTextSize.Sm, placeholder: 'bs.InputTextSize.Sm' }),`,
+          bs.E({ tag: "br" }),
+          bs.E({ tag: "br" }),
+          `bs.Select({ size: bs.SelectSize.Lg, options: [{ value: 'bs.SelectSize.Lg' }] }),`,
+          bs.E({ tag: "br" }),
+          `bs.Select({ options: [{ value: 'default' }] }),`,
+          bs.E({ tag: "br" }),
+          `bs.Select({ size: bs.SelectSize.Sm, options: [{ value: 'bs.SelectSize.Sm' }] })`
+        ])
+      )
+    ),
+    bs.H3({}, "Horizontal form group sizes"),
+    bs.P({}, [
+      `Quickly size labels and form controls within horizontal form by adding setting `,
+      bs.Code({}, "size"),
+      ` input data property.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({ horizontal: true }, [
+        bs.FormGroup({ size: bs.FormGroupSize.Lg }, [
+          bs.Label({
+            title: "Large label",
+            for: "formGroupInputLarge",
+            controlLabel: true,
+            style: bs.colStyles(bs.Size.Sm)(2)
+          }),
+          bs.Col(
+            { size: bs.Size.Sm, span: 10 },
+            bs.InputText({
+              id: "formGroupInputLarge",
+              placeholder: "Large input"
+            })
+          )
         ]),
-        bs.h3({}, 'Height sizing'),
-        bs.p({}, `Create taller or shorter form controls that match button sizes.`),
-        bs.e({ style: [styles.bsExample, styles.bsExampleControlSizing] }, [
-            bs.form({}, [
-                bs.e({ style: styles.controls }, [
-                    bs.inputText({ size: bs.InputTextSize.Lg, placeholder: 'bs.InputTextSize.Lg' }),
-                    bs.inputText({ placeholder: 'default' }),
-                    bs.inputText({ size: bs.InputTextSize.Sm, placeholder: 'bs.InputTextSize.Sm' }),
-                    bs.select({ size: bs.SelectSize.Lg, options: [{ value: 'bs.SelectSize.Lg' }] }),
-                    bs.select({ options: [{ value: 'default' }] }),
-                    bs.select({ size: bs.SelectSize.Sm, options: [{ value: 'bs.SelectSize.Sm' }] })
-                ])
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.inputText({ size: bs.InputTextSize.Lg, placeholder: 'bs.InputTextSize.Lg' }),`, bs.e({ tag: 'br' }),
-            `bs.inputText({ placeholder: 'default' }),`, bs.e({ tag: 'br' }),
-            `bs.inputText({ size: bs.InputTextSize.Sm, placeholder: 'bs.InputTextSize.Sm' }),`, bs.e({ tag: 'br' }), bs.e({ tag: 'br' }),
-            `bs.select({ size: bs.SelectSize.Lg, options: [{ value: 'bs.SelectSize.Lg' }] }),`, bs.e({ tag: 'br' }),
-            `bs.select({ options: [{ value: 'default' }] }),`, bs.e({ tag: 'br' }),
-            `bs.select({ size: bs.SelectSize.Sm, options: [{ value: 'bs.SelectSize.Sm' }] })`
-        ]))),
-        bs.h3({}, 'Horizontal form group sizes'),
-        bs.p({}, [
-            `Quickly size labels and form controls within horizontal form by adding setting `,
-            bs.code({}, 'size'), ` input data property.`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({ horizontal: true }, [
-                bs.formGroup({ size: bs.FormGroupSize.Lg }, [
-                    bs.label({
-                        title: 'Large label',
-                        for: 'formGroupInputLarge',
-                        controlLabel: true,
-                        style: bs.colStyles(bs.Size.Sm)(2)
-                    }),
-                    bs.col(
-                        { size: bs.Size.Sm, span: 10 },
-                        bs.inputText({ id: 'formGroupInputLarge', placeholder: 'Large input' }))
-                ]),
-                bs.formGroup({ size: bs.FormGroupSize.Sm }, [
-                    bs.label({
-                        title: 'Small label', for: 'formGroupInputSmall', controlLabel: true, style: bs.colStyles(bs.Size.Sm)(2)
-                    }),
-                    bs.col(
-                        { size: bs.Size.Sm, span: 10 },
-                        bs.inputText({ id: 'formGroupInputSmall', placeholder: 'Small input' }))
-                ])
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({ horizontal: true }, [`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({ size: bs.FormGroupSize.Lg }, [`, bs.e({ tag: 'br' }),
-            `        bs.label({`, bs.e({ tag: 'br' }),
-            `            title: 'Large label',`, bs.e({ tag: 'br' }),
-            `            for: 'formGroupInputLarge',`, bs.e({ tag: 'br' }),
-            `            controlLabel: true,`, bs.e({ tag: 'br' }),
-            `            style: bs.colStyles(bs.Size.Sm)(2)`, bs.e({ tag: 'br' }),
-            `        }),`, bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Sm, span: 10 },`, bs.e({ tag: 'br' }),
-            `            bs.inputText({ id: 'formGroupInputLarge', placeholder: 'Large input' }))`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.formGroup({ size: bs.FormGroupSize.Sm }, [`, bs.e({ tag: 'br' }),
-            `        bs.label({`, bs.e({ tag: 'br' }),
-            `            title: 'Large label',`, bs.e({ tag: 'br' }),
-            `            for: 'formGroupInputSmall',`, bs.e({ tag: 'br' }),
-            `            controlLabel: true,`, bs.e({ tag: 'br' }),
-            `            style: bs.colStyles(bs.Size.Sm)(2)`, bs.e({ tag: 'br' }),
-            `        }),`, bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Sm, span: 10 },`, bs.e({ tag: 'br' }),
-            `            bs.inputText({ id: 'formGroupInputSmall', placeholder: 'Small input' }))`, bs.e({ tag: 'br' }),
-            `    ])`, bs.e({ tag: 'br' }),
-            `])`
-        ]))),
-        bs.h3({}, 'Column sizing'),
-        bs.p({}, `Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.`),
-        bs.e({ style: styles.bsExample }, [
-            bs.form({}, [
-                bs.row({}, [
-                    bs.col(
-                        { size: bs.Size.Xs, span: 2 },
-                        bs.inputText({ placeholder: 'bs.Size.Xs, 2' })),
-                    bs.col(
-                        { size: bs.Size.Xs, span: 4 },
-                        bs.inputText({ placeholder: 'bs.Size.Xs, 3' })),
-                    bs.col(
-                        { size: bs.Size.Xs, span: 3 },
-                        bs.inputText({ placeholder: 'bs.Size.Xs, 4' }))
-                ])
-            ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.form({}, [`, bs.e({ tag: 'br' }),
-            `    bs.row({}, [`, bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Xs, span: 2 },`, bs.e({ tag: 'br' }),
-            `            bs.inputText({ placeholder: 'bs.Size.Xs, 2' })),`, bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Xs, span: 4 },`, bs.e({ tag: 'br' }),
-            `            bs.inputText({ placeholder: 'bs.Size.Xs, 3' })),`, bs.e({ tag: 'br' }),
-            `        bs.col({ size: bs.Size.Xs, span: 3 },`, bs.e({ tag: 'br' }),
-            `            bs.inputText({ placeholder: 'bs.Size.Xs, 4' }))`, bs.e({ tag: 'br' }),
-            `    ])`, bs.e({ tag: 'br' }),
-            `])`
-        ])))
-    ];
+        bs.FormGroup({ size: bs.FormGroupSize.Sm }, [
+          bs.Label({
+            title: "Small label",
+            for: "formGroupInputSmall",
+            controlLabel: true,
+            style: bs.colStyles(bs.Size.Sm)(2)
+          }),
+          bs.Col(
+            { size: bs.Size.Sm, span: 10 },
+            bs.InputText({
+              id: "formGroupInputSmall",
+              placeholder: "Small input"
+            })
+          )
+        ])
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({ horizontal: true }, [`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({ size: bs.FormGroupSize.Lg }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({`,
+          bs.E({ tag: "br" }),
+          `            title: 'Large label',`,
+          bs.E({ tag: "br" }),
+          `            for: 'formGroupInputLarge',`,
+          bs.E({ tag: "br" }),
+          `            controlLabel: true,`,
+          bs.E({ tag: "br" }),
+          `            style: bs.colStyles(bs.Size.Sm)(2)`,
+          bs.E({ tag: "br" }),
+          `        }),`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Sm, span: 10 },`,
+          bs.E({ tag: "br" }),
+          `            bs.InputText({ id: 'formGroupInputLarge', placeholder: 'Large input' }))`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.FormGroup({ size: bs.FormGroupSize.Sm }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Label({`,
+          bs.E({ tag: "br" }),
+          `            title: 'Large label',`,
+          bs.E({ tag: "br" }),
+          `            for: 'formGroupInputSmall',`,
+          bs.E({ tag: "br" }),
+          `            controlLabel: true,`,
+          bs.E({ tag: "br" }),
+          `            style: bs.colStyles(bs.Size.Sm)(2)`,
+          bs.E({ tag: "br" }),
+          `        }),`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Sm, span: 10 },`,
+          bs.E({ tag: "br" }),
+          `            bs.InputText({ id: 'formGroupInputSmall', placeholder: 'Small input' }))`,
+          bs.E({ tag: "br" }),
+          `    ])`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    ),
+    bs.H3({}, "Column sizing"),
+    bs.P(
+      {},
+      `Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.`
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Form({}, [
+        bs.Row({}, [
+          bs.Col(
+            { size: bs.Size.Xs, span: 2 },
+            bs.InputText({ placeholder: "bs.Size.Xs, 2" })
+          ),
+          bs.Col(
+            { size: bs.Size.Xs, span: 4 },
+            bs.InputText({ placeholder: "bs.Size.Xs, 3" })
+          ),
+          bs.Col(
+            { size: bs.Size.Xs, span: 3 },
+            bs.InputText({ placeholder: "bs.Size.Xs, 4" })
+          )
+        ])
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Form({}, [`,
+          bs.E({ tag: "br" }),
+          `    bs.Row({}, [`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Xs, span: 2 },`,
+          bs.E({ tag: "br" }),
+          `            bs.InputText({ placeholder: 'bs.Size.Xs, 2' })),`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Xs, span: 4 },`,
+          bs.E({ tag: "br" }),
+          `            bs.InputText({ placeholder: 'bs.Size.Xs, 3' })),`,
+          bs.E({ tag: "br" }),
+          `        bs.Col({ size: bs.Size.Xs, span: 3 },`,
+          bs.E({ tag: "br" }),
+          `            bs.InputText({ placeholder: 'bs.Size.Xs, 4' }))`,
+          bs.E({ tag: "br" }),
+          `    ])`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }

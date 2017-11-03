@@ -1,11 +1,11 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
 
-export const caption = b.createDerivedComponent<IBaseData>(elem, {
-    id: 'bobrilstrap-caption',
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'caption';
-    }
+export const Caption = b.createDerivedComponent<IBaseData>(Elem, {
+  id: "bobrilstrap-caption",
+  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.tag = "caption";
+  }
 });
 
-export default caption;
+export default Caption;

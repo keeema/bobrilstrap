@@ -1,13 +1,13 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
 
-export const variable = b.createDerivedComponent<IBaseData>(elem, {
-    id: 'bobrilstrap-variable',
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'var';
-    }
+export const Variable = b.createDerivedComponent<IBaseData>(Elem, {
+  id: "bobrilstrap-variable",
+  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.tag = "var";
+  }
 });
 
-export const v = variable;
+export const V = Variable;
 
-export default variable;
+export default Variable;

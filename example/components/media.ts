@@ -1,8 +1,8 @@
-import * as b from 'bobril';
-import * as bs from '../../index';
-import { styles } from '../bsexample/css';
-import { pre, langJs } from '../prettify/pre';
-import { section } from '../common/section';
+import * as b from "bobril";
+import * as bs from "../../index";
+import { styles } from "../bsexample/css";
+import { pre, langJs } from "../prettify/pre";
+import { section } from "../common/section";
 
 const imageData = `data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1
 sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0
@@ -13,254 +13,413 @@ zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz4
 0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNCIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=`;
 
 export const media = b.createVirtualComponent({
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.children = section(
-            {
-                header: 'Media',
-                id: 'media',
-                lead: [`Components for building various types of components (like blog comments, Tweets, etc) that feature a 
-                left- or right-aligned image alongside textual content.`]
-            },
-            [
-                defaultMedia(),
-                mediaList()
-            ]);
-    }
+  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.children = section(
+      {
+        header: "Media",
+        id: "media",
+        lead: [
+          `Components for building various types of components (like blog comments, Tweets, etc) that feature a 
+                left- or right-aligned image alongside textual content.`
+        ]
+      },
+      [defaultMedia(), mediaList()]
+    );
+  }
 });
 
 function defaultMedia(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'media-default' } }, 'Default media')),
-        bs.p({}, `The default media displays a media object (images, video, audio) to the left or right of a content block.`),
-        bs.e({ style: styles.bsExample }, [
-            bs.media({}, [
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                    bs.a({ href: 'javascript:void(0)' }, bs.image({ style: bs.mediaStyles.mediaObject, src: imageData }))
-                ]),
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                    bs.mediaHeading4({}, 'Media heading'),
-                    `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
+  return [
+    b.anchor(bs.H2({ attrs: { id: "media-default" } }, "Default media")),
+    bs.P(
+      {},
+      `The default media displays a media object (images, video, audio) to the left or right of a content block.`
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Media({}, [
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
+          bs.A(
+            { href: "javascript:void(0)" },
+            bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData })
+          )
+        ]),
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+          bs.MediaHeading4({}, "Media heading"),
+          `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
                     vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia 
                     congue felis in faucibus.`
-                ])
-            ]),
-            bs.media({}, [
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                    bs.a({ href: 'javascript:void(0)' }, bs.image({ style: bs.mediaStyles.mediaObject, src: imageData }))
-                ]),
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                    bs.mediaHeading4({}, 'Media heading'),
-                    `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
+        ])
+      ]),
+      bs.Media({}, [
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
+          bs.A(
+            { href: "javascript:void(0)" },
+            bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData })
+          )
+        ]),
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+          bs.MediaHeading4({}, "Media heading"),
+          `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
                     vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia 
                     congue felis in faucibus.`,
-                    bs.media({}, [
-                        bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                            bs.a({ href: 'javascript:void(0)' }, bs.image({ style: bs.mediaStyles.mediaObject, src: imageData }))
-                        ]),
-                        bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                            bs.mediaHeading4({}, 'Media heading'),
-                            `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras 
+          bs.Media({}, [
+            bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
+              bs.A(
+                { href: "javascript:void(0)" },
+                bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData })
+              )
+            ]),
+            bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+              bs.MediaHeading4({}, "Media heading"),
+              `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras 
                             purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
                             fringilla. Donec lacinia congue felis in faucibus.`
-                        ])
-                    ])
-                ])
-            ]),
-            bs.media({}, [
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                    bs.mediaHeading4({}, 'Media heading'),
-                    `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
-                    vestibulum in vulputate at, tempus viverra turpis.`
-                ]),
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Right }, [
-                    bs.a({ href: 'javascript:void(0)' }, bs.image({ style: bs.mediaStyles.mediaObject, src: imageData }))
-                ])
-            ]),
-            bs.media({}, [
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                    bs.a({ href: 'javascript:void(0)' }, bs.image({
-                        style: bs.mediaStyles.mediaObject,
-                        src: imageData
-                    }))
-                ]),
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                    bs.mediaHeading4({}, 'Media heading'),
-                    `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
-                    vestibulum in vulputate at, tempus viverra turpis.`
-                ]),
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Right }, [
-                    bs.a({ href: 'javascript:void(0)' }, bs.image({
-                        style: bs.mediaStyles.mediaObject,
-                        src: imageData
-                    }))
-                ])
             ])
+          ])
+        ])
+      ]),
+      bs.Media({}, [
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+          bs.MediaHeading4({}, "Media heading"),
+          `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
+                    vestibulum in vulputate at, tempus viverra turpis.`
         ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.media({}, [`, bs.e({ tag: 'br' }),
-            `    bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [`, bs.e({ tag: 'br' }),
-            `        bs.a({ href: '...' }, bs.image({`, bs.e({ tag: 'br' }),
-            `            style: bs.mediaStyles.mediaObject, `, bs.e({ tag: 'br' }),
-            `            src: '...'`, bs.e({ tag: 'br' }),
-            `        }))`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [`, bs.e({ tag: 'br' }),
-            `        bs.mediaHeading4({}, 'Media heading'),`, bs.e({ tag: 'br' }),
-            `        ...`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.mediaContent({ alignment: bs.MediaContentAlignment.Right }, [`, bs.e({ tag: 'br' }),
-            `        bs.a({ href: '...' }, bs.image({`, bs.e({ tag: 'br' }),
-            `            style: bs.mediaStyles.mediaObject,`, bs.e({ tag: 'br' }),
-            `            src: '...'`, bs.e({ tag: 'br' }),
-            `        }))`, bs.e({ tag: 'br' }),
-            `    ])`, bs.e({ tag: 'br' }),
-            `])`
-        ]))),
-        bs.h2({ attrs: { id: 'media-alignment' } }, 'Media alignment'),
-        bs.p({}, 'The images or other media can be aligned top, middle, or bottom. The default is top aligned.'),
-        bs.e({ style: styles.bsExample }, [
-            bs.media({}, [
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                    bs.a({ href: 'javascript:void(0)' }, bs.image({
-                        style: bs.mediaStyles.mediaObject,
-                        src: imageData
-                    }))
-                ]),
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                    bs.mediaHeading4({}, 'Top aligned media'),
-                    bs.p({}, `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. 
-                    Donec lacinia congue felis in faucibus.`),
-                    bs.p({}, `Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus 
-                    et magnis dis parturient montes, nascetur ridiculus mus.`)
-                ])
-            ]),
-            bs.media({}, [
-                bs.mediaContent({ alignment: [bs.MediaContentAlignment.Left, bs.MediaContentAlignment.Middle] }, [
-                    bs.a({ href: 'javascript:void(0)' }, bs.image({
-                        style: bs.mediaStyles.mediaObject,
-                        src: imageData
-                    }))
-                ]),
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                    bs.mediaHeading4({}, 'Middle aligned media'),
-                    bs.p({}, `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. 
-                    Donec lacinia congue felis in faucibus.`),
-                    bs.p({}, `Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus 
-                    et magnis dis parturient montes, nascetur ridiculus mus.`)
-                ])
-            ]),
-            bs.media({}, [
-                bs.mediaContent({ alignment: [bs.MediaContentAlignment.Left, bs.MediaContentAlignment.Bottom] }, [
-                    bs.a({ href: 'javascript:void(0)' }, bs.image({
-                        style: bs.mediaStyles.mediaObject,
-                        src: imageData
-                    }))
-                ]),
-                bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                    bs.mediaHeading4({}, 'Bottom aligned media'),
-                    bs.p({}, `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. 
-                    Donec lacinia congue felis in faucibus.`),
-                    bs.p({}, `Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus 
-                    et magnis dis parturient montes, nascetur ridiculus mus.`)
-                ])
-            ])
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Right }, [
+          bs.A(
+            { href: "javascript:void(0)" },
+            bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData })
+          )
+        ])
+      ]),
+      bs.Media({}, [
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
+          bs.A(
+            { href: "javascript:void(0)" },
+            bs.Image({
+              style: bs.mediaStyles.mediaObject,
+              src: imageData
+            })
+          )
         ]),
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+          bs.MediaHeading4({}, "Media heading"),
+          `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
+                    vestibulum in vulputate at, tempus viverra turpis.`
+        ]),
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Right }, [
+          bs.A(
+            { href: "javascript:void(0)" },
+            bs.Image({
+              style: bs.mediaStyles.mediaObject,
+              src: imageData
+            })
+          )
+        ])
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Media({}, [`,
+          bs.E({ tag: "br" }),
+          `    bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.A({ href: '...' }, bs.Image({`,
+          bs.E({ tag: "br" }),
+          `            style: bs.mediaStyles.mediaObject, `,
+          bs.E({ tag: "br" }),
+          `            src: '...'`,
+          bs.E({ tag: "br" }),
+          `        }))`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.MediaHeading4({}, 'Media heading'),`,
+          bs.E({ tag: "br" }),
+          `        ...`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.MediaContent({ alignment: bs.MediaContentAlignment.Right }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.A({ href: '...' }, bs.Image({`,
+          bs.E({ tag: "br" }),
+          `            style: bs.mediaStyles.mediaObject,`,
+          bs.E({ tag: "br" }),
+          `            src: '...'`,
+          bs.E({ tag: "br" }),
+          `        }))`,
+          bs.E({ tag: "br" }),
+          `    ])`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    ),
+    bs.H2({ attrs: { id: "media-alignment" } }, "Media alignment"),
+    bs.P(
+      {},
+      "The images or other media can be aligned top, middle, or bottom. The default is top aligned."
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Media({}, [
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
+          bs.A(
+            { href: "javascript:void(0)" },
+            bs.Image({
+              style: bs.mediaStyles.mediaObject,
+              src: imageData
+            })
+          )
+        ]),
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+          bs.MediaHeading4({}, "Top aligned media"),
+          bs.P(
+            {},
+            `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. 
+                    Donec lacinia congue felis in faucibus.`
+          ),
+          bs.P(
+            {},
+            `Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus 
+                    et magnis dis parturient montes, nascetur ridiculus mus.`
+          )
+        ])
+      ]),
+      bs.Media({}, [
+        bs.MediaContent(
+          {
+            alignment: [
+              bs.MediaContentAlignment.Left,
+              bs.MediaContentAlignment.Middle
+            ]
+          },
+          [
+            bs.A(
+              { href: "javascript:void(0)" },
+              bs.Image({
+                style: bs.mediaStyles.mediaObject,
+                src: imageData
+              })
+            )
+          ]
+        ),
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+          bs.MediaHeading4({}, "Middle aligned media"),
+          bs.P(
+            {},
+            `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. 
+                    Donec lacinia congue felis in faucibus.`
+          ),
+          bs.P(
+            {},
+            `Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus 
+                    et magnis dis parturient montes, nascetur ridiculus mus.`
+          )
+        ])
+      ]),
+      bs.Media({}, [
+        bs.MediaContent(
+          {
+            alignment: [
+              bs.MediaContentAlignment.Left,
+              bs.MediaContentAlignment.Bottom
+            ]
+          },
+          [
+            bs.A(
+              { href: "javascript:void(0)" },
+              bs.Image({
+                style: bs.mediaStyles.mediaObject,
+                src: imageData
+              })
+            )
+          ]
+        ),
+        bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+          bs.MediaHeading4({}, "Bottom aligned media"),
+          bs.P(
+            {},
+            `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. 
+                    Donec lacinia congue felis in faucibus.`
+          ),
+          bs.P(
+            {},
+            `Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus 
+                    et magnis dis parturient montes, nascetur ridiculus mus.`
+          )
+        ])
+      ])
+    ]),
 
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.media({}, [`, bs.e({ tag: 'br' }),
-            `    bs.mediaContent({ alignment: [bs.MediaContentAlignment.Left, bs.MediaContentAlignment.Middle] }, [`, bs.e({ tag: 'br' }),
-            `        bs.a({ href: '...' }, bs.image({`, bs.e({ tag: 'br' }),
-            `            style: bs.mediaStyles.mediaObject, `, bs.e({ tag: 'br' }),
-            `            src: '...'`, bs.e({ tag: 'br' }),
-            `        }))`, bs.e({ tag: 'br' }),
-            `    ]),`, bs.e({ tag: 'br' }),
-            `    bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [`, bs.e({ tag: 'br' }),
-            `        bs.mediaHeading4({}, 'Middle aligned media'),`, bs.e({ tag: 'br' }),
-            `        ...`, bs.e({ tag: 'br' }),
-            `    ])`, bs.e({ tag: 'br' }),
-            `])`
-        ]))),
-    ];
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Media({}, [`,
+          bs.E({ tag: "br" }),
+          `    bs.MediaContent({ alignment: [bs.MediaContentAlignment.Left, bs.MediaContentAlignment.Middle] }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.A({ href: '...' }, bs.Image({`,
+          bs.E({ tag: "br" }),
+          `            style: bs.mediaStyles.mediaObject, `,
+          bs.E({ tag: "br" }),
+          `            src: '...'`,
+          bs.E({ tag: "br" }),
+          `        }))`,
+          bs.E({ tag: "br" }),
+          `    ]),`,
+          bs.E({ tag: "br" }),
+          `    bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.MediaHeading4({}, 'Middle aligned media'),`,
+          bs.E({ tag: "br" }),
+          `        ...`,
+          bs.E({ tag: "br" }),
+          `    ])`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }
 
 function mediaList(): b.IBobrilChildren {
-    return [
-        b.anchor(bs.h2({ attrs: { id: 'media-list' } }, 'Media List')),
-        bs.p({}, `With a bit of extra code, you can use media inside list (useful for comment threads or articles lists).`),
-        bs.e({ style: styles.bsExample }, [
-            bs.ul({ style: bs.mediaStyles.mediaList }, [
-                bs.li({ style: bs.media }, [
-                    bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                        bs.a({ href: 'javascript:void(0)' }, bs.image({
-                            style: bs.mediaStyles.mediaObject,
-                            src: imageData
-                        }))
-                    ]),
-                    bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                        bs.mediaHeading4({}, 'Media heading'),
-                        bs.p({}, `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
-                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`),
-                        bs.media({}, [
-                            bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                                bs.a({ href: 'javascript:void(0)' }, bs.image({
-                                    style: bs.mediaStyles.mediaObject,
-                                    src: imageData
-                                }))
-                            ]),
-                            bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                                bs.mediaHeading4({}, 'Nested media heading'),
-                                bs.p({}, `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin 
-                                commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`),
-                                bs.media({}, [
-                                    bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                                        bs.a({ href: 'javascript:void(0)' }, bs.image({
-                                            style: bs.mediaStyles.mediaObject,
-                                            src: imageData
-                                        }))
-                                    ]),
-                                    bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                                        bs.mediaHeading4({}, 'Nested media heading'),
-                                        bs.p({}, `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante 
-                                        sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`)
-                                    ])
-                                ])
-                            ])
-                        ]),
-                        bs.media({}, [
-                            bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                                bs.a({ href: 'javascript:void(0)' }, bs.image({
-                                    style: bs.mediaStyles.mediaObject,
-                                    src: imageData
-                                }))
-                            ]),
-                            bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [
-                                bs.mediaHeading4({}, 'Nested media heading'),
-                                bs.p({}, `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin 
-                                commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`)
-                            ])
-                        ])
-                    ])
+  return [
+    b.anchor(bs.H2({ attrs: { id: "media-list" } }, "Media List")),
+    bs.P(
+      {},
+      `With a bit of extra code, you can use media inside list (useful for comment threads or articles lists).`
+    ),
+    bs.E({ style: styles.bsExample }, [
+      bs.Ul({ style: bs.mediaStyles.mediaList }, [
+        bs.Li({ style: bs.Media }, [
+          bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
+            bs.A(
+              { href: "javascript:void(0)" },
+              bs.Image({
+                style: bs.mediaStyles.mediaObject,
+                src: imageData
+              })
+            )
+          ]),
+          bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+            bs.MediaHeading4({}, "Media heading"),
+            bs.P(
+              {},
+              `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. 
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`
+            ),
+            bs.Media({}, [
+              bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
+                bs.A(
+                  { href: "javascript:void(0)" },
+                  bs.Image({
+                    style: bs.mediaStyles.mediaObject,
+                    src: imageData
+                  })
+                )
+              ]),
+              bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+                bs.MediaHeading4({}, "Nested media heading"),
+                bs.P(
+                  {},
+                  `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin 
+                                commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`
+                ),
+                bs.Media({}, [
+                  bs.MediaContent(
+                    { alignment: bs.MediaContentAlignment.Left },
+                    [
+                      bs.A(
+                        { href: "javascript:void(0)" },
+                        bs.Image({
+                          style: bs.mediaStyles.mediaObject,
+                          src: imageData
+                        })
+                      )
+                    ]
+                  ),
+                  bs.MediaContent(
+                    { alignment: bs.MediaContentAlignment.Body },
+                    [
+                      bs.MediaHeading4({}, "Nested media heading"),
+                      bs.P(
+                        {},
+                        `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante 
+                                        sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`
+                      )
+                    ]
+                  )
                 ])
+              ])
+            ]),
+            bs.Media({}, [
+              bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
+                bs.A(
+                  { href: "javascript:void(0)" },
+                  bs.Image({
+                    style: bs.mediaStyles.mediaObject,
+                    src: imageData
+                  })
+                )
+              ]),
+              bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
+                bs.MediaHeading4({}, "Nested media heading"),
+                bs.P(
+                  {},
+                  `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin 
+                                commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`
+                )
+              ])
             ])
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.ul({ style: bs.mediaStyles.mediaList }, [`, bs.e({ tag: 'br' }),
-            `    bs.li({ style: bs.media }, [`, bs.e({ tag: 'br' }),
-            `        bs.mediaContent({ alignment: bs.MediaContentAlignment.Left }, [`, bs.e({ tag: 'br' }),
-            `            bs.a({ href: 'javascript:void(0)' }, bs.image({`, bs.e({ tag: 'br' }),
-            `                style: bs.mediaStyles.mediaObject,`, bs.e({ tag: 'br' }),
-            `                src: '...'`, bs.e({ tag: 'br' }),
-            `            }))`, bs.e({ tag: 'br' }),
-            `        ]),`, bs.e({ tag: 'br' }),
-            `       bs.mediaContent({ alignment: bs.MediaContentAlignment.Body }, [`, bs.e({ tag: 'br' }),
-            `            bs.mediaHeading4({}, 'Media heading'),`, bs.e({ tag: 'br' }),
-            `            ...`, bs.e({ tag: 'br' }),
-            `        ])`, bs.e({ tag: 'br' }),
-            `    ])`, bs.e({ tag: 'br' }),
-            `])`
-        ])))
-    ];
+          ])
+        ])
+      ])
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Ul({ style: bs.mediaStyles.mediaList }, [`,
+          bs.E({ tag: "br" }),
+          `    bs.Li({ style: bs.Media }, [`,
+          bs.E({ tag: "br" }),
+          `        bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [`,
+          bs.E({ tag: "br" }),
+          `            bs.A({ href: 'javascript:void(0)' }, bs.Image({`,
+          bs.E({ tag: "br" }),
+          `                style: bs.mediaStyles.mediaObject,`,
+          bs.E({ tag: "br" }),
+          `                src: '...'`,
+          bs.E({ tag: "br" }),
+          `            }))`,
+          bs.E({ tag: "br" }),
+          `        ]),`,
+          bs.E({ tag: "br" }),
+          `       bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [`,
+          bs.E({ tag: "br" }),
+          `            bs.MediaHeading4({}, 'Media heading'),`,
+          bs.E({ tag: "br" }),
+          `            ...`,
+          bs.E({ tag: "br" }),
+          `        ])`,
+          bs.E({ tag: "br" }),
+          `    ])`,
+          bs.E({ tag: "br" }),
+          `])`
+        ])
+      )
+    )
+  ];
 }

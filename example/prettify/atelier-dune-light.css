@@ -101,7 +101,9 @@
     color: #004444;
   }
 
-  .pun, .opn, .clo {
+  .pun,
+  .opn,
+  .clo {
     color: #444400;
   }
 

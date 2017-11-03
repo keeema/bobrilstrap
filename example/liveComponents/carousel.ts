@@ -1,8 +1,8 @@
-import * as b from 'bobril';
-import * as bs from '../../index';
-import { styles } from '../bsexample/css';
-import { pre, langJs } from '../prettify/pre';
-import { section } from '../common/section';
+import * as b from "bobril";
+import * as bs from "../../index";
+import { styles } from "../bsexample/css";
+import { pre, langJs } from "../prettify/pre";
+import { section } from "../common/section";
 
 export const image1 = `data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM
 9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDkwMCA1MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmU
@@ -32,46 +32,69 @@ pZHRoPSI5MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjNTU1Ii8+PGc+PHRleHQgeD0iMjk4LjMyMDMxMjU
 nPg==`;
 
 export const carousel = b.createVirtualComponent({
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.children = section(
-            {
-                header: 'Carousel',
-                id: 'carousel',
-                lead: []
-            },
-            [
-                example(),
-            ]);
-    }
+  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.children = section(
+      {
+        header: "Carousel",
+        id: "carousel",
+        lead: []
+      },
+      [example()]
+    );
+  }
 });
 
 function example(): b.IBobrilChildren {
-    return [
-        bs.p({}, [
-            `You can use `, bs.code({}, 'interval'), `, `, bs.code({}, 'pauseOn'), `, `, bs.code({}, 'keyboard'), `, `,
-            bs.code({}, 'slideTo'), `, `, bs.code({}, 'wrap'), ` or `, bs.code({}, 'onSlide'),
-            ` input data properties to specify expected behaviour and use `, bs.code({}, 'onSlide'),
-            ` callback to handle events.`
-        ]),
-        bs.e({ style: styles.bsExample }, [
-            bs.carousel({
-                id: 'carousel-example-generic',
-                items: [
-                    { image: bs.image({ src: image1 }) },
-                    { image: bs.image({ src: image2 }) },
-                    { image: bs.image({ src: image3 }) }
-                ]
-            })
-        ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            `bs.carousel({`, bs.e({ tag: 'br' }),
-            `    id: 'carousel-example-generic',`, bs.e({ tag: 'br' }),
-            `    items: [`, bs.e({ tag: 'br' }),
-            `        { image: bs.image({ src: ... }) },`, bs.e({ tag: 'br' }),
-            `        { image: bs.image({ src: ... }) },`, bs.e({ tag: 'br' }),
-            `        { image: bs.image({ src: ... }) }`, bs.e({ tag: 'br' }),
-            `    ]`, bs.e({ tag: 'br' }),
-            `})`
-        ])))
-    ];
+  return [
+    bs.P({}, [
+      `You can use `,
+      bs.Code({}, "interval"),
+      `, `,
+      bs.Code({}, "pauseOn"),
+      `, `,
+      bs.Code({}, "keyboard"),
+      `, `,
+      bs.Code({}, "slideTo"),
+      `, `,
+      bs.Code({}, "wrap"),
+      ` or `,
+      bs.Code({}, "onSlide"),
+      ` input data properties to specify expected behaviour and use `,
+      bs.Code({}, "onSlide"),
+      ` callback to handle events.`
+    ]),
+    bs.E({ style: styles.bsExample }, [
+      bs.Carousel({
+        id: "carousel-example-generic",
+        items: [
+          { image: bs.Image({ src: image1 }) },
+          { image: bs.Image({ src: image2 }) },
+          { image: bs.Image({ src: image3 }) }
+        ]
+      })
+    ]),
+    bs.Figure(
+      { style: styles.highlight },
+      pre(
+        {},
+        bs.Code({ style: langJs }, [
+          `bs.Carousel({`,
+          bs.E({ tag: "br" }),
+          `    id: 'carousel-example-generic',`,
+          bs.E({ tag: "br" }),
+          `    items: [`,
+          bs.E({ tag: "br" }),
+          `        { image: bs.Image({ src: ... }) },`,
+          bs.E({ tag: "br" }),
+          `        { image: bs.Image({ src: ... }) },`,
+          bs.E({ tag: "br" }),
+          `        { image: bs.Image({ src: ... }) }`,
+          bs.E({ tag: "br" }),
+          `    ]`,
+          bs.E({ tag: "br" }),
+          `})`
+        ])
+      )
+    )
+  ];
 }

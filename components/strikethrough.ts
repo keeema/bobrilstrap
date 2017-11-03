@@ -1,13 +1,13 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
 
-export const strikethrough = b.createDerivedComponent<IBaseData>(elem, {
-    id: 'bobrilstrap-strikethrough',
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 's';
-    }
+export const Strikethrough = b.createDerivedComponent<IBaseData>(Elem, {
+  id: "bobrilstrap-strikethrough",
+  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.tag = "s";
+  }
 });
 
-export const s = strikethrough;
+export const S = Strikethrough;
 
-export default strikethrough;
+export default Strikethrough;

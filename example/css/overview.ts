@@ -23,22 +23,22 @@ export const overview = b.createVirtualComponent({
 
 function typographyAndLinks(): b.IBobrilChildren {
     return [
-        b.anchor(bs.h2({ attrs: { id: 'overview-type-links' } }, 'Typography and links')),
-        bs.p({}, `Bootstrap sets basic global display, typography, and link styles. Specifically, we:`),
-        bs.ul({}, [
-            bs.li({}, ['Set ', bs.code({}, 'background-color: #fff;'), ' on the ', bs.code({}, 'body')]),
-            bs.li({}, [
+        b.anchor(bs.H2({ attrs: { id: 'overview-type-links' } }, 'Typography and links')),
+        bs.P({}, `Bootstrap sets basic global display, typography, and link styles. Specifically, we:`),
+        bs.Ul({}, [
+            bs.Li({}, ['Set ', bs.Code({}, 'background-color: #fff;'), ' on the ', bs.Code({}, 'body')]),
+            bs.Li({}, [
                 'Use the ',
-                bs.code({}, '@font-family-base'),
+                bs.Code({}, '@font-family-base'),
                 ', ',
-                bs.code({}, '@font-size-base'),
+                bs.Code({}, '@font-size-base'),
                 ', and ',
-                bs.code({}, '@line-height-base'),
+                bs.Code({}, '@line-height-base'),
                 ' attributes as our typographic base'
             ]),
-            bs.li({}, [
-                'Set the global link color via ', bs.code({}, '@link-color'), ' and apply link underlines only on ',
-                bs.code({}, ':hover')
+            bs.Li({}, [
+                'Set the global link color via ', bs.Code({}, '@link-color'), ' and apply link underlines only on ',
+                bs.Code({}, ':hover')
             ])
         ])
     ];
@@ -46,42 +46,42 @@ function typographyAndLinks(): b.IBobrilChildren {
 
 function normalizeCss(): b.IBobrilChildren {
     return [
-        b.anchor(bs.h2({ attrs: { id: 'overview-normalize' } }, 'Normalize.css')),
-        bs.p({}, [
+        b.anchor(bs.H2({ attrs: { id: 'overview-normalize' } }, 'Normalize.css')),
+        bs.P({}, [
             'For improved cross-browser rendering, bootstrap uses ',
-            bs.a({ href: 'http://necolas.github.io/normalize.css/', target: bs.Target.Blank }, 'Normalize.css'),
+            bs.A({ href: 'http://necolas.github.io/normalize.css/', target: bs.Target.Blank }, 'Normalize.css'),
             ', a project by ',
-            bs.a({ href: 'https://twitter.com/necolas', target: bs.Target.Blank }, 'Nicolas Gallagher'),
+            bs.A({ href: 'https://twitter.com/necolas', target: bs.Target.Blank }, 'Nicolas Gallagher'),
             ' and ',
-            bs.a({ href: 'https://twitter.com/jon_neal', target: bs.Target.Blank }, 'Jonathan Neal.')
+            bs.A({ href: 'https://twitter.com/jon_neal', target: bs.Target.Blank }, 'Jonathan Neal.')
         ])
     ];
 }
 
 function containers(): b.IBobrilChildren {
     return [
-        b.anchor(bs.h2({ attrs: { id: 'overview-containers' } }, 'Containers')),
-        bs.p({}, [
+        b.anchor(bs.H2({ attrs: { id: 'overview-containers' } }, 'Containers')),
+        bs.P({}, [
             `Bootstrap requires a containing element to wrap site contents and house our grid system. You may choose one of two 
             containers to use in your projects. Note that, due to `,
-            bs.code({}, 'padding'),
+            bs.Code({}, 'padding'),
             'and more, neither container is nestable.'
         ]),
-        bs.p({}, ['Use ', bs.code({}, 'bs.container({}, ...)'), ' for a responsive fixed width container.']),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            'bs.container({}, [', bs.e({ tag: 'br' }),
-            '   ...', bs.e({ tag: 'br' }),
+        bs.P({}, ['Use ', bs.Code({}, 'bs.Container({}, ...)'), ' for a responsive fixed width container.']),
+        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, [
+            'bs.Container({}, [', bs.E({ tag: 'br' }),
+            '   ...', bs.E({ tag: 'br' }),
             '])'
         ]))),
-        bs.p({}, [
+        bs.P({}, [
             'Use ',
-            bs.code({}, 'bs.container({ fluid: true }, ...)'),
+            bs.Code({}, 'bs.Container({ fluid: true }, ...)'),
             ' for a full width container, spanning the entire width of your viewport.'
         ]),
-        bs.figure({ style: styles.highlight }, pre({}, bs.code({ style: langJs }, [
-            'bs.container({ fluid: true }, [', bs.e({ tag: 'br' }),
-            '   ...', bs.e({ tag: 'br' }),
-            '])', bs.e({ tag: 'br' })
+        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, [
+            'bs.Container({ fluid: true }, [', bs.E({ tag: 'br' }),
+            '   ...', bs.E({ tag: 'br' }),
+            '])', bs.E({ tag: 'br' })
         ])))
     ];
 }

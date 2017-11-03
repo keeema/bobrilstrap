@@ -1,0 +1,72 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}",
+            "sourceMapPathOverrides": {
+                "bb/base/*": "${workspaceRoot}/*"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against inspirecloud.local",
+            "url": "http://gmc.inspirecloud.local.net:580",
+            "webRoot": "${workspaceRoot}",
+            "sourceMapPathOverrides": {
+                "bb/base/*": "${webRoot}/*"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against bb",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceRoot}",
+            "sourceMapPathOverrides": {
+                "bb/base/*": "${webRoot}/*"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against tests",
+            "url": "http://localhost:8080/test.html",
+            "webRoot": "${workspaceRoot}",
+            "sourceMapPathOverrides": {
+                "bb/base/*": "${webRoot}/*"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against rmad/model/dsl",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceRoot}/src/continents/rmad/model/dsl",
+            "sourceMapPathOverrides": {
+                "bb/base/*": "${webRoot}/*"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against rmad/model/dsl tests",
+            "url": "http://localhost:8080/test.html",
+            "webRoot": "${workspaceRoot}/src/continents/rmad/model/dsl",
+            "sourceMapPathOverrides": {
+                "bb/base/*": "${webRoot}/*"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}

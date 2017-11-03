@@ -1,22 +1,22 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
 
-export interface IInputGroupAddonData extends IBaseData {
-
-}
+export interface IInputGroupAddonData extends IBaseData {}
 
 interface ICtx extends b.IBobrilCtx {
-    data: IInputGroupAddonData;
+  data: IInputGroupAddonData;
 }
 
-export const inputGroupAddonStyle = b.styleDef('input-group-addon');
+export const inputGroupAddonStyle = b.styleDef("input-group-addon");
 
-export const inputGroupAddon = b.createDerivedComponent<IInputGroupAddonData>(elem, {
-    id: 'bobrilstrap-input-group-addon',
-    render(_ctx: ICtx, me: b.IBobrilNode) {
-        me.tag = 'span';
-        b.style(me, inputGroupAddonStyle);
-    }
+export const InputGroupAddon = b.createDerivedComponent<
+  IInputGroupAddonData
+>(Elem, {
+  id: "bobrilstrap-input-group-addon",
+  render(_ctx: ICtx, me: b.IBobrilNode) {
+    me.tag = "span";
+    b.style(me, inputGroupAddonStyle);
+  }
 });
 
-export default inputGroupAddon;
+export default InputGroupAddon;

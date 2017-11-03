@@ -1,3 +1,3 @@
 interface JQuery {
-    typeahead(command?: string): void;
+  typeahead(command?: string): void;
 }

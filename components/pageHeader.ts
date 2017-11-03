@@ -1,21 +1,19 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
 
-export interface IPageHeaderData extends IBaseData {
+export interface IPageHeaderData extends IBaseData {}
 
-}
-
-export const pageHeaderStyle = b.styleDef('page-header');
+export const pageHeaderStyle = b.styleDef("page-header");
 
 interface IPanelHeadingCtx extends b.IBobrilCtx {
-    data: IPageHeaderData;
+  data: IPageHeaderData;
 }
 
-export const pageHeader = b.createDerivedComponent<IPageHeaderData>(elem, {
-    id: 'bobrilstrap-page-header',
-    render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
-        b.style(me, pageHeaderStyle);
-    }
+export const PageHeader = b.createDerivedComponent<IPageHeaderData>(Elem, {
+  id: "bobrilstrap-page-header",
+  render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
+    b.style(me, pageHeaderStyle);
+  }
 });
 
-export default pageHeader;
+export default PageHeader;

@@ -1,11 +1,11 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
 
-export const dd = b.createDerivedComponent<IBaseData>(elem, {
-    id: 'bobrilstrap-dd',
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'dd';
-    }
+export const Dd = b.createDerivedComponent<IBaseData>(Elem, {
+  id: "bobrilstrap-dd",
+  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.tag = "dd";
+  }
 });
 
-export default dd;
+export default Dd;

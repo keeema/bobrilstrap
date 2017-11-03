@@ -1,12 +1,13 @@
-import * as b from 'bobril';
-import { li, ILiData } from './li';
+import * as b from "bobril";
+import { Li, ILiData } from "./li";
 
-export interface IPaginationItemData extends ILiData {
+export interface IPaginationItemData extends ILiData {}
 
-}
+export const PaginationItem = b.createDerivedComponent<IPaginationItemData>(
+  Li,
+  {
+    id: "bobrilstrap-pagination-item"
+  }
+);
 
-export const paginationItem = b.createDerivedComponent<IPaginationItemData>(li, {
-    id: 'bobrilstrap-pagination-item'
-});
-
-export default paginationItem;
+export default PaginationItem;

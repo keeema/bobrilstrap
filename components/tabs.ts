@@ -1,5 +1,5 @@
 import * as b from 'bobril';
-import { ul, IUlData } from './ul';
+import { Ul, IUlData } from './ul';
 import { navStyles, NavbarAlignment } from './nav';
 
 export interface ITabsData extends IUlData {
@@ -11,7 +11,7 @@ interface ITabsCtx extends b.IBobrilCtx {
     data: ITabsData;
 }
 
-export const tabs = b.createDerivedComponent<ITabsData>(ul, {
+export const Tabs = b.createDerivedComponent<ITabsData>(Ul, {
     id: 'bobrilstrap-tabs',
     render(ctx: ITabsCtx, me: b.IBobrilNode) {
         b.style(me, navStyles.nav);
@@ -22,4 +22,4 @@ export const tabs = b.createDerivedComponent<ITabsData>(ul, {
     }
 });
 
-export default tabs;
+export default Tabs;

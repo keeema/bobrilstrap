@@ -1,13 +1,13 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
 
-export const italics  = b.createDerivedComponent<IBaseData>(elem, {
-    id: 'bobrilstrap-italics',
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'em';
-    }
+export const Italics = b.createDerivedComponent<IBaseData>(Elem, {
+  id: "bobrilstrap-italics",
+  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.tag = "em";
+  }
 });
 
-export const em = italics;
+export const Em = Italics;
 
-export default italics;
+export default Italics;

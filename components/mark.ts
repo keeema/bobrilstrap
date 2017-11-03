@@ -1,11 +1,11 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
 
-export const mark = b.createDerivedComponent<IBaseData>(elem, {
-    id: 'bobrilstrap-mark',
-    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'mark';
-    }
+export const Mark = b.createDerivedComponent<IBaseData>(Elem, {
+  id: "bobrilstrap-mark",
+  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+    me.tag = "mark";
+  }
 });
 
-export default mark;
+export default Mark;

@@ -1,11 +1,10 @@
-import * as b from 'bobril';
-import { tab, ITabData } from './tab';
+import * as b from "bobril";
+import { Tab, ITabData } from "./tab";
 
-export interface INavbarNavItem extends ITabData {
-}
+export interface INavbarNavItem extends ITabData {}
 
-export const navbarNavItem = b.createDerivedComponent<INavbarNavItem>(tab, {
-    id: 'bobrilstrap-navbar-nav-item'
+export const NavbarNavItem = b.createDerivedComponent<INavbarNavItem>(Tab, {
+  id: "bobrilstrap-navbar-nav-item"
 });
 
-export default navbarNavItem;
+export default NavbarNavItem;

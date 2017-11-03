@@ -1,20 +1,18 @@
-import * as b from 'bobril';
-import { elem, IBaseData } from './element';
-import { panelStyles } from './panel';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
+import { panelStyles } from "./panel";
 
-export interface IPanelFooterData extends IBaseData {
-
-}
+export interface IPanelFooterData extends IBaseData {}
 
 interface IPanelFooterCtx extends b.IBobrilCtx {
-    data: IPanelFooterData;
+  data: IPanelFooterData;
 }
 
-export const panelFooter = b.createDerivedComponent<IPanelFooterData>(elem, {
-    id: 'bobrilstrap-panel-footer',
-    render(_ctx: IPanelFooterCtx, me: b.IBobrilNode) {
-        b.style(me, panelStyles.panelFooter);
-    }
+export const PanelFooter = b.createDerivedComponent<IPanelFooterData>(Elem, {
+  id: "bobrilstrap-panel-footer",
+  render(_ctx: IPanelFooterCtx, me: b.IBobrilNode) {
+    b.style(me, panelStyles.panelFooter);
+  }
 });
 
-export default panelFooter;
+export default PanelFooter;

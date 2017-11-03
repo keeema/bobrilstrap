@@ -1,19 +1,21 @@
-import * as b from 'bobril';
-import { li, ILiData } from './li';
-import { breadcrumbStyles } from './breadcrumb';
+import * as b from "bobril";
+import { Li, ILiData } from "./li";
+import { breadcrumbStyles } from "./breadcrumb";
 
-export interface IBreadcrumbItemData extends ILiData {
-}
+export interface IBreadcrumbItemData extends ILiData {}
 
 interface IBreadcrumbItemCtx extends b.IBobrilCtx {
-    data: IBreadcrumbItemData;
+  data: IBreadcrumbItemData;
 }
 
-export const breadcrumbItem = b.createDerivedComponent<IBreadcrumbItemData>(li, {
-    id: 'bobrilstrap-breadcrumb-item',
+export const BreadcrumbItem = b.createDerivedComponent<IBreadcrumbItemData>(
+  Li,
+  {
+    id: "bobrilstrap-breadcrumb-item",
     render(ctx: IBreadcrumbItemCtx, me: b.IBobrilNode) {
-        b.style(me, !!ctx.data.active && breadcrumbStyles.active);
+      b.style(me, !!ctx.data.active && breadcrumbStyles.active);
     }
-});
+  }
+);
 
-export default breadcrumbItem;
+export default BreadcrumbItem;

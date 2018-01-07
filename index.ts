@@ -64,6 +64,7 @@ export * from "./components/object";
 export * from "./components/ol";
 export * from "./components/option";
 export * from "./components/mark";
+export * from "./components/main";
 export * from "./components/media";
 export * from "./components/mediaContent";
 export * from "./components/mediaHeading";

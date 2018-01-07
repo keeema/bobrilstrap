@@ -1,12 +1,6 @@
 {
     "defaultSeverity": "warning",
     "rules": {
-        "align": [
-            true,
-            "parameters",
-            "arguments",
-            "statements"
-        ],
         "ban": false,
         "class-name": true,
         "comment-format": [
@@ -16,20 +10,12 @@
         "curly": false,
         "eofline": false,
         "forin": false,
-        "indent": [
-            true,
-            4
-        ],
         "interface-name": [
             true,
             "always-prefix"
         ],
         "jsdoc-format": true,
         "label-position": true,
-        "max-line-length": [
-            true,
-            140
-        ],
         "member-ordering": [
             true,
             "public-before-private",
@@ -47,9 +33,6 @@
             "timeEnd",
             "trace"
         ],
-        "no-consecutive-blank-lines": [
-            true
-        ],
         "no-construct": true,
         "no-parameter-properties": true,
         "no-debugger": true,
@@ -60,42 +43,17 @@
         "no-require-imports": false,
         "no-string-literal": false,
         "no-switch-case-fall-through": true,
-        "trailing-comma": [
-            true,
-            {
-                "singleline": "never"
-            }
-        ],
-        "no-trailing-whitespace": false,
         "no-unused-expression": false,
         "no-unused-variable": true,
         "no-use-before-declare": false,
         "no-var-keyword": true,
         "no-var-requires": false,
-        "one-line": [
-            true,
-            "check-open-brace",
-            "check-catch",
-            "check-else",
-            "check-whitespace"
-        ],
-        "quotemark": [
-            true,
-            "single"
-        ],
         "radix": true,
-        "semicolon": [
-            true,
-            "always"
-        ],
         "triple-equals": true,
         "typedef": [
             true,
             "property-declaration",
             "member-variable-declaration"
-        ],
-        "typedef-whitespace": [
-            false
         ],
         "use-strict": [
             false
@@ -104,15 +62,6 @@
             true,
             "allow-leading-underscore",
             "allow-pascal-case"
-        ],
-        "whitespace": [
-            true,
-            "check-branch",
-            "check-decl",
-            "check-operator",
-            "check-module",
-            "check-separator",
-            "check-type"
         ]
     }
 }

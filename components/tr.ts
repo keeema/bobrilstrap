@@ -10,8 +10,8 @@ export type ITdDataOrString = string | ITdData;
 
 export interface ITrData extends IBaseData {
   context?: TableContext;
-  columns?: IThDataOrString[];
-  headers?: ITdDataOrString[];
+  columns?: ITdDataOrString[];
+  headers?: IThDataOrString[];
 }
 
 interface ICtx extends b.IBobrilCtx {

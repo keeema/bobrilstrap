@@ -2,6 +2,7 @@ import * as b from "bobril";
 import { toLowerWithDashes } from "./bobrilHelpers";
 
 export interface IAria {
+  [key: string]: string | boolean | undefined | number;
   activedescendant?: string;
   atomic?: boolean;
   autocomplete?: string;
@@ -41,6 +42,7 @@ export interface IAria {
 }
 
 export interface IData {
+  [key: string]: string | boolean | undefined | number;
   toggle?: string;
   target?: string;
   dismiss?: string;
@@ -98,7 +100,7 @@ export const E = b.createVirtualComponent<IElementData>({
     me.children = ctx.data.children;
     me.attrs = ctx.data.attrs || {};
   },
-  postRender(ctx: b.IBobrilCtx, me: IElementBobrilNode): void {
+  postRender(ctx: ICtx, me: IElementBobrilNode): void {
     let aria = ctx.data.aria || {};
     let dataAttrs = ctx.data.data || {};
 

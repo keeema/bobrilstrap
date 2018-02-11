@@ -92,7 +92,7 @@ function handlePosition(ctx: ICtx) {
 }
 
 function endSwith(value: string, searchString: string, position?: number) {
-  var subjectString = value.toString();
+  const subjectString = value.toString();
   if (
     typeof position !== "number" ||
     !isFinite(position) ||

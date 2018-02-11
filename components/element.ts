@@ -51,7 +51,15 @@ export interface IData {
   slideTo?: number;
 }
 
-export interface IBaseData {
+export type ValueType =
+  | number
+  | string
+  | string[]
+  | boolean
+  | Object
+  | undefined;
+
+export interface IBaseData<TValueType = ValueType> {
   key?: string;
   id?: string;
   children?: b.IBobrilChildren;
@@ -62,7 +70,7 @@ export interface IBaseData {
   data?: IData;
 
   onClick?: (event: b.IBobrilMouseEvent) => boolean | void;
-  onChange?: (value?: number | string | boolean | Object) => void;
+  onChange?: (value: TValueType) => void;
   onKeyPress?: (event: b.IKeyPressEvent) => boolean;
 }
 

@@ -31,14 +31,13 @@ export enum InputTextType {
   Week
 }
 
-export interface IInputTextData<TValue> extends IBaseData {
+export interface IInputTextData<TValue> extends IBaseData<string> {
   value?: string;
   placeholder?: string;
   size?: InputTextSize;
   type?: InputTextType;
   disabled?: boolean;
   readonly?: boolean;
-  onChange?: (value: string) => void;
   typeaheadOptions?: ITypeaheadOptions<TValue>;
 }
 

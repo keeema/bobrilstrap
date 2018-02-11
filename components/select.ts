@@ -8,14 +8,13 @@ import {
 import { Option, IOptionsData as IOptionData } from "./option";
 import { createDictionary, IDictionary } from "./bobrilHelpers";
 
-export interface ISelectData extends IBaseData {
+export interface ISelectData extends IBaseData<string | string[]> {
   value?: string | string[];
   options: IOptionData[];
   multiple?: boolean;
   rows?: number;
   size?: SelectSize;
   disabled?: boolean;
-  onChange?: (values: string | string[]) => void;
 }
 
 interface ICtx extends b.IBobrilCtx {

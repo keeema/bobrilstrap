@@ -18,9 +18,15 @@
         "label-position": true,
         "member-ordering": [
             true,
-            "public-before-private",
-            "static-before-instance",
-            "variables-before-functions"
+            {
+                "order":[
+                    "static-field",
+                    "instance-field",
+                    "constructor",
+                    "static-method",
+                    "instance-method"
+                ]
+            }
         ],
         "no-any": true,
         "no-arg": true,
@@ -65,3 +71,4 @@
         ]
     }
 }
+

@@ -53,8 +53,8 @@ export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
 
 function getScrollListener(
   ctx: b.IBobrilCtx
-): (scrollInfo: b.IBobrilScroll) => void {
-  return (scrollInfo: b.IBobrilScroll) => {
+): (scrollInfo: b.IBobrilScroll | undefined) => void {
+  return (scrollInfo: b.IBobrilScroll | undefined) => {
     if (!scrollInfo || scrollInfo.node) return;
 
     b.invalidate(ctx);

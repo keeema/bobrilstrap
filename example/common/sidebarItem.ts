@@ -56,8 +56,10 @@ export interface IItemsData {
   isTop?: boolean;
 }
 
-function getScrollListener(ctx: ICtx): (scrollInfo: b.IBobrilScroll) => void {
-  return (scrollInfo: b.IBobrilScroll) => {
+function getScrollListener(
+  ctx: ICtx
+): (scrollInfo: b.IBobrilScroll | undefined) => void {
+  return (scrollInfo: b.IBobrilScroll | undefined) => {
     if (!scrollInfo || scrollInfo.node) return;
 
     handlePosition(ctx);

@@ -6,14 +6,13 @@ import {
   IElementBobrilCacheNode
 } from "./element";
 
-export interface ITextareaData extends IBaseData {
+export interface ITextareaData extends IBaseData<string> {
   value?: string;
   placeholder?: string;
   rows?: number;
   fixedSize?: boolean;
   disabled?: boolean;
   readonly?: boolean;
-  onChange?: (value: string) => void;
 }
 
 interface ICtx extends b.IBobrilCtx {

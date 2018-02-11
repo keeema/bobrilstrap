@@ -6,7 +6,7 @@ import {
   IElementBobrilCacheNode
 } from "./element";
 
-export interface IInputRadioData extends IBaseData {
+export interface IInputRadioData extends IBaseData<boolean> {
   value: string;
   checkedValue?: string;
   checked?: boolean;
@@ -15,7 +15,6 @@ export interface IInputRadioData extends IBaseData {
   readonly?: boolean;
   onChecked?: (value: string) => void;
   onUnChecked?: (value: string) => void;
-  onChange?: (checked: boolean) => void;
 }
 
 interface ICtx extends b.IBobrilCtx {

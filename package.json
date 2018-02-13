@@ -25,21 +25,22 @@
     "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
     "compilerOptions": {
       "declaration": true,
-      "noImplicitAny": true,
-      "noImplicitThis": true,
+      "strict": true,
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true,
-      "strictNullChecks": true
+      "noFallthroughCasesInSwitch": true
     }
   },
   "dependencies": {
     "@types/bootstrap": "^3.3.35",
     "@types/jquery": "^3.3.0",
-    "bobril": "^7.7.0||^8.0.1",
+    "bobril": "^8.4.0",
     "bootstrap": "^3.3.7",
     "bootstrap-3-typeahead": "^4.0.2",
     "jquery": "^3.3.1"
+  },
+  "resolutions": {
+    "@types/jquery": "3.3.0"
   }
 }

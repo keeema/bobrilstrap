@@ -35,7 +35,7 @@
   "dependencies": {
     "@types/bootstrap": "^3.3.35",
     "@types/jquery": "^3.3.0",
-    "bobril": "^8.4.0",
+    "bobril": "^8.4.1",
     "bootstrap": "^3.3.7",
     "bootstrap-3-typeahead": "^4.0.2",
     "jquery": "^3.3.1"

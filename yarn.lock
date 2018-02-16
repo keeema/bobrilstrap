@@ -8,7 +8,7 @@
   dependencies:
     "@types/jquery" "*"
 
-"@types/jquery@*", "@types/jquery@^3.3.0":
+"@types/jquery@*", "@types/jquery@3.3.0", "@types/jquery@^3.3.0":
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.0.tgz#6316ac20a1a13c5d521a2dc661befc7184f73f5b"
 
@@ -27,4 +27,3 @@ bootstrap@^3.3.7:
 jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
-  

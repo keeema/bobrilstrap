@@ -15,7 +15,7 @@ export const bobrilstrap = b.createVirtualComponent({
         [
           bs.P(
             {},
-            `To install bobrilstrap to your bobril application stop the running bobril-build and run following commands:`
+            `To install bobrilstrap to your bobril application stop the running bobril-build-core and run following commands:`
           ),
           bs.Figure(
             { style: styles.highlight },
@@ -24,7 +24,7 @@ export const bobrilstrap = b.createVirtualComponent({
               bs.Code({}, [
                 "npm i bobrilstrap --save",
                 bs.E({ tag: "br" }),
-                "bb"
+                "bb2"
               ])
             )
           ),

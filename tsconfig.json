@@ -1,35 +1,38 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "declaration": true,
-        "lib": [
-            "es5",
-            "dom",
-            "es2015.core",
-            "es2015.promise",
-            "es2015.iterable",
-            "es2015.collection"
-        ],
-        "removeComments": false,
-        "noLib": false,
-        "preserveConstEnums": false,
-        "experimentalDecorators": true,
-        "types": [],
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true,
-        "jsx": "react",
-        "reactNamespace": "b"
-    },
-    "include": [
-        "**/*"
+  "compilerOptions": {
+    "allowJs": false,
+    "checkJs": false,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "jsx": "React",
+    "lib": [
+      "es5",
+      "dom",
+      "es2015.core",
+      "es2015.promise",
+      "es2015.iterable",
+      "es2015.collection"
     ],
-    "compileOnSave": false,
-    "files": [
-        "node_modules/bobril/jsx.d.ts"
-    ]
+    "module": "CommonJS",
+    "noEmitHelpers": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": false,
+    "reactNamespace": "b",
+    "removeComments": false,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES5",
+    "types": []
+  },
+  "files": [
+    "node_modules/bobril/jsx.d.ts"
+  ],
+  "include": [
+    "**/*"
+  ]
 }

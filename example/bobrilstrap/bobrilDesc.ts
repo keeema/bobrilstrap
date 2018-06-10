@@ -38,18 +38,18 @@ export const bobrilDesc = b.createVirtualComponent({
           bs.P({}, [
             bs.Code({}, "Bobril"),
             " is distributed with ",
-            bs.Code({}, "bobril-build"),
+            bs.Code({}, "bobril-build-core"),
             " system, both as ",
             bs.Code({}, "npm"),
             " packages. It uses the npm packaging system, so init new ",
             "package by following command in project folder to start development of an application:",
             bs.Figure({ style: styles.highlight }, bs.Pre({}, ["npm init"])),
             "Now install the ",
-            bs.Code({}, "bobril-build"),
+            bs.Code({}, "bobril-build-core"),
             " globally (this step is needed only once on machine):",
             bs.Figure(
               { style: styles.highlight },
-              bs.Pre({}, ["npm i bobril-build -g"])
+              bs.Pre({}, ["npm i bobril-build-core -g"])
             ),
             "Install bobril as a dependency of your project:",
             bs.Figure(
@@ -73,9 +73,9 @@ export const bobrilDesc = b.createVirtualComponent({
               )
             ),
             "Finally run ",
-            bs.Code({}, "bobril-build"),
+            bs.Code({}, "bobril-build-core"),
             " by command:",
-            bs.Figure({ style: styles.highlight }, bs.Pre({}, ["bb"]))
+            bs.Figure({ style: styles.highlight }, bs.Pre({}, ["bb2"]))
           ]),
           bs.P({}, [
             "Now is everything prepared for developing a new application based on bobril and you can see the result on ",

@@ -4,7 +4,7 @@
     "checkJs": false,
     "declaration": true,
     "experimentalDecorators": true,
-    "jsx": "React",
+    "jsx": "react",
     "lib": [
       "es5",
       "dom",
@@ -13,7 +13,7 @@
       "es2015.iterable",
       "es2015.collection"
     ],
-    "module": "CommonJS",
+    "module": "commonjs",
     "noEmitHelpers": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -26,7 +26,7 @@
     "skipDefaultLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "ES5",
+    "target": "es5",
     "types": []
   },
   "files": [

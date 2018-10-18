@@ -25,6 +25,7 @@ export interface IPopoverOptions {
 
 export interface IPopoverData extends IPopoverOptions {
   children?: b.IBobrilNode;
+  visible?: boolean;
 }
 
 interface IPopoverCtx extends b.IBobrilCtx {
@@ -60,26 +61,6 @@ function registerNewPopover(ctx: IPopoverCtx) {
 
   const jQueryElement = $(element);
 
-  if (!ctx.popoveredElement) {
-    jQueryElement.popover({
-      title: ctx.data.title,
-      content: ctx.data.content,
-      animation: ctx.data.animation,
-      placement:
-        ctx.data.placement !== undefined
-          ? PopoverPlacement[ctx.data.placement].toLowerCase()
-          : undefined,
-      trigger: ctx.data.trigger
-        ? ctx.data.trigger
-            .map(value => PopoverTrigger[value].toLowerCase())
-            .join(" ")
-        : undefined
-    });
-    jQueryElement.on("shown.bs.Popover", () => (ctx.visible = true));
-    jQueryElement.on("hidden.bs.Popover", () => (ctx.visible = false));
-    ctx.popoveredElement = element;
-  }
-
   const newTitle =
     typeof ctx.data.title === "function" ? ctx.data.title() : ctx.data.title;
   const newContent =
@@ -87,21 +68,54 @@ function registerNewPopover(ctx: IPopoverCtx) {
       ? ctx.data.content()
       : ctx.data.content;
 
+  if (!ctx.popoveredElement) {
+    jQueryElement.popover({
+      title: newTitle,
+      content: newContent,
+      animation: ctx.data.animation,
+      placement:
+        ctx.data.placement !== undefined
+          ? (PopoverPlacement[
+              ctx.data.placement
+            ].toLowerCase() as BootstrapPlacement)
+          : undefined,
+      trigger: ctx.data.trigger
+        ? (ctx.data.trigger
+            .map(value => PopoverTrigger[value].toLowerCase())
+            .join(" ") as BootstrapTrigger)
+        : undefined
+    });
+
+    jQueryElement.on("shown.bs.Popover", () => (ctx.visible = true));
+    jQueryElement.on("hidden.bs.Popover", () => (ctx.visible = false));
+    ctx.popoveredElement = element;
+  }
+
+  if (isManualTrigger(ctx) && !!ctx.visible !== !!ctx.data.visible) {
+    ctx.visible = !!ctx.data.visible;
+    jQueryElement.popover(ctx.visible ? "show" : "hide");
+  }
+
   if (
     (ctx.lastTitle !== undefined && ctx.lastTitle !== newTitle) ||
     (ctx.lastContent !== undefined && ctx.lastContent !== newContent)
   ) {
-    jQueryElement.popover("setContent");
+    jQueryElement
+      .attr("data-content", newContent)
+      .attr("data-original-title", newTitle);
 
     if (ctx.visible) jQueryElement.popover("show");
   }
+  ctx.lastTitle = newTitle;
+  ctx.lastContent = newContent;
+}
 
-  ctx.lastTitle =
-    typeof ctx.data.title === "function" ? ctx.data.title() : ctx.data.title;
-  ctx.lastContent =
-    typeof ctx.data.content === "function"
-      ? ctx.data.content()
-      : ctx.data.content;
+function isManualTrigger(ctx: IPopoverCtx) {
+  return (
+    ctx.data.trigger !== undefined &&
+    ctx.data.trigger.length === 1 &&
+    ctx.data.trigger[0] === PopoverTrigger.Manual
+  );
 }
 
 function unregister(ctx: IPopoverCtx) {

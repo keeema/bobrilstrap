@@ -1,6 +1,6 @@
 /// <reference path="./typeahead.extend.d.ts" />
-
 import * as b from "bobril";
+
 import {
   Elem,
   IBaseData,
@@ -47,16 +47,6 @@ export interface ITypeaheadProcess<TValue> {
 
 export interface ITypeaheadSourceCallback<TValue> {
   (query: TValue, process: ITypeaheadProcess<TValue>): TValue[] | void;
-}
-
-export interface ITypeaheadOptions<TValue> {
-  source: TValue[] | ITypeaheadSourceCallback<TValue>;
-  items?: number;
-  minLength?: number;
-  matcher?: (item: TValue) => boolean;
-  sorter?: (items: TValue[]) => TValue[];
-  updater?: (item: TValue) => TValue;
-  highlighter?: (item: TValue) => string;
 }
 
 interface ICtx<TValue> extends b.IBobrilCtx {

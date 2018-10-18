@@ -3,18 +3,28 @@
 
 
 "@types/bootstrap@^3.3.35":
-  version "3.3.39"
-  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-3.3.39.tgz#aa0d208999e4a4f941de9468ff928c05507830f8"
+  version "3.3.40"
+  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-3.3.40.tgz#21daeff02dc96ff4ff0f31a885edf2ad78707d7b"
   dependencies:
     "@types/jquery" "*"
 
-"@types/jquery@*", "@types/jquery@3.3.0", "@types/jquery@^3.3.0":
+"@types/jquery@*", "@types/jquery@3.3.0":
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.0.tgz#6316ac20a1a13c5d521a2dc661befc7184f73f5b"
 
+"@types/jquery@^3.3.0":
+  version "3.3.21"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.21.tgz#850a8411ccf86f86f0d418eee002697bf8da3c9a"
+  dependencies:
+    "@types/sizzle" "*"
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+
 bobril@^8.8.1:
-  version "8.8.1"
-  resolved "https://registry.yarnpkg.com/bobril/-/bobril-8.8.1.tgz#0bdb995a6fc52682379a2a1b297db64f961305c8"
+  version "8.15.2"
+  resolved "https://registry.yarnpkg.com/bobril/-/bobril-8.15.2.tgz#c254dd1add45d3e2262d3824e02d11849fb47757"
 
 bootstrap-3-typeahead@^4.0.2:
   version "4.0.2"
@@ -22,7 +32,7 @@ bootstrap-3-typeahead@^4.0.2:
 
 bootstrap@^3.3.7:
   version "3.3.7"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
+  resolved "http://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
 
 jquery@^3.3.1:
   version "3.3.1"

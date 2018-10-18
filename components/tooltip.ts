@@ -24,6 +24,7 @@ export interface ITooltipOptions {
 
 export interface ITooltipData extends ITooltipOptions {
   children?: b.IBobrilNode;
+  visible?: boolean;
 }
 
 interface ITooltipCtx extends b.IBobrilCtx {
@@ -57,38 +58,49 @@ function registerNewTooltip(ctx: ITooltipCtx) {
   }
 
   const jQueryElement = $(element);
+  const newTitle =
+    typeof ctx.data.title === "function" ? ctx.data.title() : ctx.data.title;
 
   if (!ctx.tooltipedElement) {
     jQueryElement.tooltip({
-      title: ctx.data.title,
+      title: newTitle,
       animation: ctx.data.animation,
       placement:
         ctx.data.placement !== undefined
-          ? TooltipPlacement[ctx.data.placement].toLowerCase()
+          ? (TooltipPlacement[
+              ctx.data.placement
+            ].toLowerCase() as BootstrapPlacement)
           : undefined,
       trigger: ctx.data.trigger
-        ? ctx.data.trigger
+        ? (ctx.data.trigger
             .map(value => TooltipTrigger[value].toLowerCase())
-            .join(" ")
+            .join(" ") as BootstrapTrigger)
         : undefined
     });
-    jQueryElement.on("shown.bs.Tooltip", () => (ctx.visible = true));
-    jQueryElement.on("hidden.bs.Tooltip", () => (ctx.visible = false));
+    jQueryElement.on("shown.bs.tooltip", () => (ctx.visible = true));
+    jQueryElement.on("hidden.bs.tooltip", () => (ctx.visible = false));
     ctx.tooltipedElement = element;
   }
 
-  if (ctx.lastTitle !== undefined) {
-    const newTitle =
-      typeof ctx.data.title === "function" ? ctx.data.title() : ctx.data.title;
-    if (ctx.lastTitle !== newTitle) {
-      jQueryElement.attr("title", newTitle).tooltip("fixTitle");
-
-      if (ctx.visible) jQueryElement.tooltip("show");
-    }
+  if (isManualTrigger(ctx) && !!ctx.visible !== !!ctx.data.visible) {
+    ctx.visible = !!ctx.data.visible;
+    jQueryElement.tooltip(ctx.visible ? "show" : "hide");
   }
 
-  ctx.lastTitle =
-    typeof ctx.data.title === "function" ? ctx.data.title() : ctx.data.title;
+  if (ctx.lastTitle !== undefined && ctx.lastTitle !== newTitle) {
+    jQueryElement.attr("data-original-title", newTitle);
+    if (ctx.visible) jQueryElement.tooltip("show");
+  }
+
+  ctx.lastTitle = newTitle;
+}
+
+function isManualTrigger(ctx: ITooltipCtx) {
+  return (
+    ctx.data.trigger !== undefined &&
+    ctx.data.trigger.length === 1 &&
+    ctx.data.trigger[0] === TooltipTrigger.Manual
+  );
 }
 
 function unregister(ctx: ITooltipCtx) {

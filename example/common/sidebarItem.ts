@@ -68,7 +68,7 @@ function getScrollListener(
 
 function handlePosition(ctx: ICtx) {
   const scrollTop =
-    document.documentElement.scrollTop || document.body.scrollTop;
+  document.documentElement && document.documentElement.scrollTop || document.body.scrollTop;
   const topElement = document.getElementById(ctx.data.targetId);
   const top = topElement ? topElement.offsetTop : 0;
   let bottom = 0;

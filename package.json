@@ -36,7 +36,7 @@
     "@types/bootstrap": "^3.3.35",
     "@types/jquery": "^3.3.29",
     "bobril": "^8.8.1",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.0",
     "bootstrap-3-typeahead": "^4.0.2",
     "jquery": "^3.3.1"
   }

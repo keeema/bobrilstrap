@@ -114,11 +114,12 @@ function isStyleAvailable(
   stylesSource: IColStyles,
   colType: IColType | IColData
 ): boolean {
+  const size = colType.size;
   return (
-    colType.size !== undefined &&
+    size !== undefined &&
     !!colType.span &&
-    !!stylesSource(colType.size) &&
-    !!stylesSource(colType.size)(colType.span)
+    !!stylesSource(size) &&
+    !!stylesSource(size)(colType.span)
   );
 }
 

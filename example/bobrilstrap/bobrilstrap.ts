@@ -15,7 +15,7 @@ export const bobrilstrap = b.createVirtualComponent({
         [
           bs.P(
             {},
-            `To install bobrilstrap to your bobril application stop the running bobril-build-core and run following commands:`
+            `To install bobrilstrap to your bobril application stop the running bobril-build and run following commands:`
           ),
           bs.Figure(
             { style: styles.highlight },
@@ -24,7 +24,7 @@ export const bobrilstrap = b.createVirtualComponent({
               bs.Code({}, [
                 "npm i bobrilstrap --save",
                 bs.E({ tag: "br" }),
-                "bb2"
+                "bb"
               ])
             )
           ),
@@ -38,15 +38,15 @@ export const bobrilstrap = b.createVirtualComponent({
             prettify.pre(
               {},
               bs.Code({ style: prettify.langJs }, [
-                `import * as b from 'bobril';`,
+                `import * as b from "bobril";`,
                 bs.E({ tag: "br" }),
-                `import * as bs from 'bobrilstrap';`,
+                `import * as bs from "bobrilstrap";`,
                 bs.E({ tag: "br" }),
                 ``,
                 bs.E({ tag: "br" }),
                 `bs.init();`,
                 bs.E({ tag: "br" }),
-                `b.init(() => bs.H1({}, 'Hello World!'));`
+                `b.init(() => bs.H1({}, "Hello World!"));`
               ])
             )
           ),
@@ -100,11 +100,11 @@ export const bobrilstrap = b.createVirtualComponent({
             prettify.pre(
               {},
               bs.Code({ style: prettify.langJs }, [
-                `import * as b from 'bobril'; `,
+                `import * as b from "bobril"; `,
                 bs.E({ tag: "br" }),
-                `import Bobrilstrap from 'bobrilstrap';`,
+                `import Bobrilstrap from "bobrilstrap";`,
                 bs.E({ tag: "br" }),
-                `import { H1 } from 'bobrilstrap';`,
+                `import { H1 } from "bobrilstrap";`,
                 bs.E({ tag: "br" }),
                 ``,
                 bs.E({ tag: "br" }),
@@ -136,7 +136,7 @@ export const bobrilstrap = b.createVirtualComponent({
             prettify.pre(
               {},
               bs.Code({ style: prettify.langJs }, [
-                `b.asset('node_modules/myTheme/bootstrap.min.css'); `
+                `b.asset("node_modules/myTheme/bootstrap.min.css"); `
               ])
             )
           )

@@ -18,8 +18,8 @@ export interface IModalData extends IBaseData {
   backdrop?: boolean;
   animation?: boolean;
   onHide?: () => boolean;
-  onHidden?: (ev: JQuery.Event<HTMLElement>) => void;
-  onShown?: (ev: JQuery.Event<HTMLElement>) => void;
+  onHidden?: (ev: JQuery.Event) => void;
+  onShown?: (ev: JQuery.Event) => void;
 }
 
 interface IModalCtx extends b.IBobrilCtx {

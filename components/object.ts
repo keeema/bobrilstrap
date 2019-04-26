@@ -14,7 +14,7 @@ interface IObjectCtx extends b.IBobrilCtx {
   data: IObjectData;
 }
 
-export const Object = b.createDerivedComponent<IObjectData>(Elem, {
+export const ObjectElement = b.createDerivedComponent<IObjectData>(Elem, {
   id: "bobrilstrap-object",
   render(ctx: IObjectCtx, me: IElementBobrilNode) {
     me.tag = "object";
@@ -30,4 +30,4 @@ export const Object = b.createDerivedComponent<IObjectData>(Elem, {
   }
 });
 
-export default Object;
+export default ObjectElement;

@@ -59,10 +59,9 @@ export type ValueType =
   | Object
   | undefined;
 
-export interface IBaseData<TValueType = ValueType> {
+export interface IBaseData<TValueType = ValueType> extends b.IDataWithChildren {
   key?: string;
   id?: string;
-  children?: b.IBobrilChildren;
   style?: b.IBobrilStyles;
   aria?: IAria;
   attrs?: { [key: string]: string | number | boolean };

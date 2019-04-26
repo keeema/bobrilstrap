@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Bobril wrapper for bootstrap",
   "author": "Tomáš Růt",
   "license": "MIT",
@@ -29,13 +29,19 @@
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true
+      "noFallthroughCasesInSwitch": true,
+      "noEmitHelpers": true,
+      "preserveConstEnums": false,
+      "removeComments": false,
+      "skipLibCheck": true,
+      "skipDefaultLibCheck": true,
+      "sourceMap": true
     }
   },
   "dependencies": {
     "@types/bootstrap": "^3.3.35",
     "@types/jquery": "^3.3.29",
-    "bobril": "^8.17.1",
+    "bobril": "^10.1.2",
     "bootstrap": "^3.4.0",
     "bootstrap-3-typeahead": "^4.0.2",
     "jquery": "^3.3.1"

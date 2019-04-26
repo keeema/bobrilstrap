@@ -6,8 +6,7 @@ export const collapseStyles = {
   collapsed: b.styleDef("collapsed")
 };
 
-export interface ICollapseData {
-  children?: b.IBobrilNode;
+export interface ICollapseData extends b.IDataWithChildren {
   collapsed: boolean;
   onCollapsed?: () => void;
   onExpanded?: () => void;

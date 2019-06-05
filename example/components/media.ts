@@ -302,7 +302,7 @@ function mediaList(): b.IBobrilChildren {
     ),
     bs.E({ style: styles.bsExample }, [
       bs.Ul({ style: bs.mediaStyles.mediaList }, [
-        bs.Li({ style: bs.Media }, [
+        bs.Li({ style: bs.mediaStyles.mediaLeft }, [
           bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
             bs.A(
               { href: "javascript:void(0)" },
@@ -393,7 +393,7 @@ function mediaList(): b.IBobrilChildren {
         bs.Code({ style: langJs }, [
           `bs.Ul({ style: bs.mediaStyles.mediaList }, [`,
           bs.E({ tag: "br" }),
-          `    bs.Li({ style: bs.Media }, [`,
+          `    bs.Li({ style: bs.mediaStyles.mediaLeft }, [`,
           bs.E({ tag: "br" }),
           `        bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [`,
           bs.E({ tag: "br" }),

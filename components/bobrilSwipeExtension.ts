@@ -58,8 +58,6 @@ function handlePointerUp(
   return false;
 }
 
-export function init() {
-  b.addEvent("!PointerDown", 70, handlePointerDown);
-  b.addEvent("!PointerMove", 70, handlePointerMove);
-  b.addEvent("!PointerUp", 70, handlePointerUp);
-}
+b.addEvent("!PointerDown", 70, handlePointerDown);
+b.addEvent("!PointerMove", 70, handlePointerMove);
+b.addEvent("!PointerUp", 70, handlePointerUp);

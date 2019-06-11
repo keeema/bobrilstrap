@@ -1,6 +1,6 @@
 /// <reference types="bootstrap" />
 import * as b from "bobril";
-import * as bobrilSwipeExtension from "./components/bobrilSwipeExtension";
+import "./components/bobrilSwipeExtension";
 
 export * from "./components/a";
 export * from "./components/abbreviation";
@@ -126,40 +126,28 @@ export * from "./components/variable";
 export * from "./components/video";
 export * from "./components/well";
 
-export interface IInitOptions {
-  cssAsset?: string;
-}
+const defaultCss = b.asset("node_modules/bootstrap/dist/css/bootstrap.min.css");
 
-export function init(options?: IInitOptions): b.IBobrilNode {
+export function init(): b.IBobrilNode {
   b.asset("node_modules/jquery/dist/jquery.min.js");
   b.asset("node_modules/bootstrap/dist/js/bootstrap.min.js");
   b.asset("node_modules/bootstrap-3-typeahead/bootstrap3-typeahead.min.js");
-
-  if (!options || !options.cssAsset) {
-    addDefaultCss();
-  }
-
-  bobrilSwipeExtension.init();
+  moveDefaultCssToBeginning();
   return {};
 }
 
-function addDefaultCss(): void {
-  const css = b.asset(
-    "resource:node_modules/bootstrap/dist/css/bootstrap.min.css"
-  );
-
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = css;
-
-  const firstLink = document.head.getElementsByTagName("link")[0];
-  if (firstLink) {
-    document.head.insertBefore(link, firstLink);
-  } else {
-    document.head.appendChild(link);
+function moveDefaultCssToBeginning(): void {
+  const links = document.head.getElementsByTagName("link");
+  for (let i = 0; i < links.length; i++) {
+    const link = links[i];
+    if (link.href.endsWith(defaultCss)) {
+      if (i > 0) {
+        document.head.removeChild(link);
+        document.head.insertBefore(link, links[0]);
+      }
+      return;
+    }
   }
 }
 
-export const Bobrilstrap = init;
-
-export default init;
+init();

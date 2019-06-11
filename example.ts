@@ -1,15 +1,12 @@
+import "./example/bsexample/css";
+import "./index";
 import * as b from "bobril";
-import * as bse from "./example/bsexample/css";
-import * as bs from "./index";
 import { masterPage } from "./example/masterPage";
 import { bobrilstrapPage } from "./example/bobrilstrap/page";
 import { css } from "./example/css/page";
 import { components } from "./example/components/page";
 import { liveComponents } from "./example/liveComponents/page";
 import { donate } from "./example/donate/page";
-
-bs.init();
-bse.init();
 
 b.routes(
   b.route({ handler: masterPage }, [

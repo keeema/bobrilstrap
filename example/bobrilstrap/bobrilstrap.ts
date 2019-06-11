@@ -38,13 +38,12 @@ export const bobrilstrap = b.createVirtualComponent({
             prettify.pre(
               {},
               bs.Code({ style: prettify.langJs }, [
+                `import "bobrilstrap";`,
+                bs.E({ tag: "br" }),
                 `import * as b from "bobril";`,
                 bs.E({ tag: "br" }),
                 `import * as bs from "bobrilstrap";`,
                 bs.E({ tag: "br" }),
-                ``,
-                bs.E({ tag: "br" }),
-                `bs.init();`,
                 bs.E({ tag: "br" }),
                 `b.init(() => bs.H1({}, "Hello World!"));`
               ])
@@ -100,14 +99,12 @@ export const bobrilstrap = b.createVirtualComponent({
             prettify.pre(
               {},
               bs.Code({ style: prettify.langJs }, [
-                `import * as b from "bobril"; `,
+                `import "bobrilstrap";`,
                 bs.E({ tag: "br" }),
-                `import Bobrilstrap from "bobrilstrap";`,
+                `import * as b from "bobril"; `,
+                ,
                 bs.E({ tag: "br" }),
                 `import { H1 } from "bobrilstrap";`,
-                bs.E({ tag: "br" }),
-                bs.E({ tag: "br" }),
-                `<Bobrilstrap />;`,
                 bs.E({ tag: "br" }),
                 bs.E({ tag: "br" }),
                 `b.init(() => <H1>Hello World!</H1>);`
@@ -125,20 +122,18 @@ export const bobrilstrap = b.createVirtualComponent({
           bs.P({}, [
             `To use a custom `,
             bs.Code({}, "Bootstrap"),
-            ` theme just add `,
-            bs.Code({}, "options"),
-            " with ",
-            bs.Code({}, "cssAsset"),
-            " property as ",
-            bs.Code({}, "bs.init"),
-            ` function argument to use CSS file of related theme. Example:`
+            ` theme just add the theme files as standard `,
+            bs.Code({}, "bobril"),
+            ` application assets after the `,
+            bs.Code({}, "bobrilstrap"),
+            ` initialization. Example:`
           ]),
           bs.Figure(
             { style: styles.highlight },
             prettify.pre(
               {},
               bs.Code({ style: prettify.langJs }, [
-                `bs.init({ cssAsset: b.asset("node_modules/myTheme/bootstrap.min.css") });`
+                `b.asset("node_modules/myTheme/bootstrap.min.css"); `
               ])
             )
           )

@@ -45,6 +45,4 @@ export const styles = {
   typeInfo: b.styleDef("type-info")
 };
 
-export function init() {
-  b.asset("./docs.min.css");
-}
+b.asset("./docs.min.css");

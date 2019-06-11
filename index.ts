@@ -126,9 +126,15 @@ export * from "./components/variable";
 export * from "./components/video";
 export * from "./components/well";
 
-export function init(): void {
+export interface IInitOptions {
+  customCss?: boolean;
+}
+
+export function init(options?: IInitOptions): void {
   b.asset("node_modules/jquery/dist/jquery.min.js");
-  b.asset("node_modules/bootstrap/dist/css/bootstrap.min.css");
+  options &&
+    options.customCss &&
+    b.asset("node_modules/bootstrap/dist/css/bootstrap.min.css");
   b.asset("node_modules/bootstrap/dist/js/bootstrap.min.js");
   b.asset("node_modules/bootstrap-3-typeahead/bootstrap3-typeahead.min.js");
   bobrilSwipeExtension.init();

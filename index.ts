@@ -127,17 +127,37 @@ export * from "./components/video";
 export * from "./components/well";
 
 export interface IInitOptions {
-  customCss?: boolean;
+  cssAsset?: string;
 }
 
-export function init(options?: IInitOptions): void {
+export function init(options?: IInitOptions): b.IBobrilNode {
   b.asset("node_modules/jquery/dist/jquery.min.js");
-  options &&
-    options.customCss &&
-    b.asset("node_modules/bootstrap/dist/css/bootstrap.min.css");
   b.asset("node_modules/bootstrap/dist/js/bootstrap.min.js");
   b.asset("node_modules/bootstrap-3-typeahead/bootstrap3-typeahead.min.js");
+
+  if (!options || !options.cssAsset) {
+    addDefaultCss();
+  }
+
   bobrilSwipeExtension.init();
+  return {};
+}
+
+function addDefaultCss(): void {
+  const css = b.asset(
+    "resource:node_modules/bootstrap/dist/css/bootstrap.min.css"
+  );
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = css;
+
+  const firstLink = document.head.getElementsByTagName("link")[0];
+  if (firstLink) {
+    document.head.insertBefore(link, firstLink);
+  } else {
+    document.head.appendChild(link);
+  }
 }
 
 export const Bobrilstrap = init;

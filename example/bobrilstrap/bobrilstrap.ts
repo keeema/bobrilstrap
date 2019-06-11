@@ -106,9 +106,9 @@ export const bobrilstrap = b.createVirtualComponent({
                 bs.E({ tag: "br" }),
                 `import { H1 } from "bobrilstrap";`,
                 bs.E({ tag: "br" }),
-                ``,
                 bs.E({ tag: "br" }),
-                `<Bobrilstrap />; `,
+                `<Bobrilstrap />;`,
+                bs.E({ tag: "br" }),
                 bs.E({ tag: "br" }),
                 `b.init(() => <H1>Hello World!</H1>);`
               ])
@@ -125,18 +125,20 @@ export const bobrilstrap = b.createVirtualComponent({
           bs.P({}, [
             `To use a custom `,
             bs.Code({}, "Bootstrap"),
-            ` theme just add the theme files as standard `,
-            bs.Code({}, "bobril"),
-            ` application assets after the `,
-            bs.Code({}, "bobrilstrap"),
-            ` initialization.Example:`
+            ` theme just add `,
+            bs.Code({}, "options"),
+            " with ",
+            bs.Code({}, "cssAsset"),
+            " property as ",
+            bs.Code({}, "bs.init"),
+            ` function argument to use CSS file of related theme. Example:`
           ]),
           bs.Figure(
             { style: styles.highlight },
             prettify.pre(
               {},
               bs.Code({ style: prettify.langJs }, [
-                `b.asset("node_modules/myTheme/bootstrap.min.css"); `
+                `bs.init({ cssAsset: b.asset("node_modules/myTheme/bootstrap.min.css") });`
               ])
             )
           )

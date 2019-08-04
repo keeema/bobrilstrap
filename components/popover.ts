@@ -77,13 +77,14 @@ function registerNewPopover(ctx: IPopoverCtx) {
         ctx.data.placement !== undefined
           ? (PopoverPlacement[
               ctx.data.placement
-            ].toLowerCase() as BootstrapPlacement)
+            ].toLowerCase() as Bootstrap.Placement)
           : undefined,
-      trigger: ctx.data.trigger
-        ? (ctx.data.trigger
-            .map(value => PopoverTrigger[value].toLowerCase())
-            .join(" ") as BootstrapTrigger)
-        : undefined
+      trigger:
+        ctx.data.trigger !== undefined
+          ? (ctx.data.trigger
+              .map(value => PopoverTrigger[value].toLowerCase())
+              .join(" ") as Bootstrap.Trigger)
+          : undefined
     });
 
     jQueryElement.on("shown.bs.Popover", () => (ctx.visible = true));

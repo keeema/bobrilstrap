@@ -69,12 +69,12 @@ function registerNewTooltip(ctx: ITooltipCtx) {
         ctx.data.placement !== undefined
           ? (TooltipPlacement[
               ctx.data.placement
-            ].toLowerCase() as BootstrapPlacement)
+            ].toLowerCase() as Bootstrap.Placement)
           : undefined,
       trigger: ctx.data.trigger
         ? (ctx.data.trigger
             .map(value => TooltipTrigger[value].toLowerCase())
-            .join(" ") as BootstrapTrigger)
+            .join(" ") as Bootstrap.Trigger)
         : undefined
     });
     jQueryElement.on("shown.bs.tooltip", () => (ctx.visible = true));

@@ -13,9 +13,7 @@ export interface ICarouselItem {
 }
 
 export enum CarouselPauseOn {
-  Hover,
-  MouseEnter,
-  MouseLeave
+  Hover
 }
 
 export interface ICarouselData extends IBaseData {
@@ -133,11 +131,11 @@ export const Carousel = b.createDerivedComponent<ICarouselData>(Elem, {
       interval: ctx.data.interval,
       pause:
         ctx.data.pauseOn !== undefined
-          ? CarouselPauseOn[ctx.data.pauseOn].toLowerCase()
+          ? (CarouselPauseOn[ctx.data.pauseOn].toLowerCase() as "hover")
           : undefined,
       wrap: ctx.data.wrap,
       keyboard: ctx.data.keyboard
-    } as CarouselOptions);
+    });
     jqueryElement.on("slide.bs.Carousel", () => {
       ctx.initialSlideChanged = true;
       if (ctx.data.onSlide) ctx.data.onSlide();

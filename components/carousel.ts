@@ -1,5 +1,3 @@
-/// <reference path="./carousel.extend.d.ts" />
-
 import * as b from "bobril";
 import { Elem, IBaseData, IElementBobrilNode } from "./element";
 import { Ol } from "./ol";

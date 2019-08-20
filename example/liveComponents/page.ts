@@ -7,6 +7,7 @@ import { popovers } from "./popovers";
 import { collapse } from "./collapse";
 import { carousel } from "./carousel";
 import { affix } from "./affix";
+import { typeahead } from "./typeahead";
 
 export const liveComponents = b.createVirtualComponent({
   id: "bobrilstrap-javasctipt",
@@ -51,11 +52,24 @@ export const liveComponents = b.createVirtualComponent({
                 targetId: "affix",
                 title: "Affix",
                 subs: []
+              },
+              {
+                targetId: "typeahead",
+                title: "Typeahead",
+                subs: []
               }
             ]
           }
         },
-        [modals(), tooltips(), popovers(), collapse(), carousel(), affix()]
+        [
+          modals(),
+          tooltips(),
+          popovers(),
+          collapse(),
+          carousel(),
+          affix(),
+          typeahead()
+        ]
       )
     ];
   }

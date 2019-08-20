@@ -1,4 +1,4 @@
-/// <reference path="./typeahead.extend.d.ts" />
+/// <reference types="bootstrap-3-typeahead" />
 import * as b from "bobril";
 
 import {
@@ -31,14 +31,14 @@ export enum InputTextType {
   Week
 }
 
-export interface IInputTextData<TValue> extends IBaseData<string> {
+export interface IInputTextData extends IBaseData<string> {
   value?: string;
   placeholder?: string;
   size?: InputTextSize;
   type?: InputTextType;
   disabled?: boolean;
   readonly?: boolean;
-  typeaheadOptions?: ITypeaheadOptions<TValue>;
+  typeaheadOptions?: Bootstrap3Typeahead.Options;
 }
 
 export interface ITypeaheadProcess<TValue> {
@@ -49,8 +49,8 @@ export interface ITypeaheadSourceCallback<TValue> {
   (query: TValue, process: ITypeaheadProcess<TValue>): TValue[] | void;
 }
 
-interface ICtx<TValue> extends b.IBobrilCtx {
-  data: IInputTextData<TValue>;
+interface ICtx extends b.IBobrilCtx {
+  data: IInputTextData;
   value: string;
   me: IElementBobrilCacheNode;
   jQueryElement: JQuery | undefined;
@@ -76,51 +76,49 @@ inputTextSizeStyles(InputTextSize.Lg, inputTextStyles.lg);
 inputTextSizeStyles(InputTextSize.Default, false);
 inputTextSizeStyles(InputTextSize.Sm, inputTextStyles.sm);
 
-export const InputText = (function create<TValue>() {
-  return b.createOverridingComponent<IInputTextData<TValue>>(Elem, {
-    id: "bobrilstrap-input-text",
-    render(ctx: ICtx<TValue>, me: IElementBobrilNode) {
-      me.component.super.render(ctx, me);
-      if (ctx.data.value !== undefined) {
-        ctx.value = ctx.data.value;
-      }
-
-      me.tag = "input";
-      me.attrs["type"] = toLowerWithDashes(
-        ctx.data.type !== undefined
-          ? InputTextType[ctx.data.type]
-          : InputTextType[InputTextType.Text]
-      );
-      me.attrs.value = ctx.value;
-      b.style(me, inputTextStyles.formControl);
-      b.style(
-        me,
-        ctx.data.size !== undefined && inputTextSizeStyles(ctx.data.size)
-      );
-
-      if (ctx.data.placeholder) me.attrs["placeholder"] = ctx.data.placeholder;
-
-      if (ctx.data.disabled) me.attrs["disabled"] = "disabled";
-
-      if (ctx.data.readonly) me.attrs["readonly"] = "readonly";
-    },
-    onChange(ctx: ICtx<TValue>, value: string): void {
-      ctx.value = value;
-      ctx.me.component.super.onChange(ctx, value);
-    },
-    postInitDom(ctx: ICtx<TValue>) {
-      if (ctx.data.typeaheadOptions) registerNewTypeahead(ctx);
-    },
-    postUpdateDom(ctx: ICtx<TValue>) {
-      if (ctx.data.typeaheadOptions) registerNewTypeahead(ctx);
-    },
-    destroy(ctx: ICtx<TValue>) {
-      unregister(ctx);
+export const InputText = b.createOverridingComponent<IInputTextData>(Elem, {
+  id: "bobrilstrap-input-text",
+  render(ctx: ICtx, me: IElementBobrilNode) {
+    me.component.super.render(ctx, me);
+    if (ctx.data.value !== undefined) {
+      ctx.value = ctx.data.value;
     }
-  });
-})();
 
-function registerNewTypeahead<TValue>(ctx: ICtx<TValue>) {
+    me.tag = "input";
+    me.attrs["type"] = toLowerWithDashes(
+      ctx.data.type !== undefined
+        ? InputTextType[ctx.data.type]
+        : InputTextType[InputTextType.Text]
+    );
+    me.attrs.value = ctx.value;
+    b.style(me, inputTextStyles.formControl);
+    b.style(
+      me,
+      ctx.data.size !== undefined && inputTextSizeStyles(ctx.data.size)
+    );
+
+    if (ctx.data.placeholder) me.attrs["placeholder"] = ctx.data.placeholder;
+
+    if (ctx.data.disabled) me.attrs["disabled"] = "disabled";
+
+    if (ctx.data.readonly) me.attrs["readonly"] = "readonly";
+  },
+  onChange(ctx: ICtx, value: string): void {
+    ctx.value = value;
+    ctx.me.component.super.onChange(ctx, value);
+  },
+  postInitDom(ctx: ICtx) {
+    if (ctx.data.typeaheadOptions) registerNewTypeahead(ctx);
+  },
+  postUpdateDom(ctx: ICtx) {
+    if (ctx.data.typeaheadOptions) registerNewTypeahead(ctx);
+  },
+  destroy(ctx: ICtx) {
+    unregister(ctx);
+  }
+});
+
+function registerNewTypeahead(ctx: ICtx) {
   const element = b.getDomNode(ctx.me) as HTMLElement;
   if (!element) {
     ctx.jQueryElement = undefined;
@@ -133,7 +131,7 @@ function registerNewTypeahead<TValue>(ctx: ICtx<TValue>) {
   }
 }
 
-function unregister<TValue>(ctx: ICtx<TValue>) {
+function unregister(ctx: ICtx) {
   if (ctx.jQueryElement) {
     $(ctx.jQueryElement).typeahead("destroy");
     ctx.jQueryElement = undefined;

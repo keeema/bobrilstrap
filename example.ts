@@ -270,7 +270,8 @@ b.routes(
         b.route({ url: "popover", name: "popover" }),
         b.route({ url: "collapse", name: "collapse" }),
         b.route({ url: "carousel", name: "carousel" }),
-        b.route({ url: "affix", name: "affix" })
+        b.route({ url: "affix", name: "affix" }),
+        b.route({ url: "typeahead", name: "typeahead" })
       ]
     ),
     b.route({ url: "donate", name: "donate", handler: donate }),

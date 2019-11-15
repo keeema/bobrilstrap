@@ -1,6 +1,6 @@
 {
   "name": "bobrilstrap",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Bobril wrapper for bootstrap",
   "author": "Tomáš Růt",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "main": "index.ts"
   },
   "bobril": {
+    "tsVersion": "3.7.2",
     "example": "example.ts",
     "title": "Bobrilstrap",
     "additionalResourcesDirectory": "example/assets",
@@ -42,7 +43,7 @@
     "@types/bootstrap": "^3.3.35",
     "@types/bootstrap-3-typeahead": "^4.0.1",
     "@types/jquery": "^3.3.29",
-    "bobril": "^12.0.0",
+    "bobril": "^13.1.1",
     "bootstrap": "^3.4.0",
     "bootstrap-3-typeahead": "^4.0.2",
     "jquery": "^3.3.1"

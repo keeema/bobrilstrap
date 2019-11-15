@@ -53,7 +53,7 @@ function handlePointerUp(
     if (totalY > deltaX * 0.7) return false; // too much shaking hand
     let method = "onSwipe" + (ev.x > startX ? "Right" : "Left");
     b.ignoreClick(ev.x, ev.y);
-    b.bubble(node, method, ev);
+    b.bubble(node, method as b.EventNames, ev);
   }
   return false;
 }

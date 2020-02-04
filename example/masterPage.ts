@@ -3,6 +3,8 @@ import * as bs from "../index";
 import { styles } from "./bsexample/css";
 import { prettify } from "./prettify/prettify";
 
+const noMargin = b.styleDef({ margin: 0});
+
 export const masterPage = b.createVirtualComponent({
   render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
     me.children = [getNavigation(), ctx.data.activeRouteHandler(), getFooter()];
@@ -20,7 +22,7 @@ function handleMenuItemClick() {
 
 function getNavigation(): b.IBobrilNode {
   return bs.Navbar(
-    { static: bs.NavbarStatic.Top, header: true, style: styles.bsDocsNav },
+    { static: bs.NavbarStatic.Top, header: true, style: [styles.bsDocsNav, noMargin] },
     [
       bs.Container({}, [
         bs.NavbarHeader({}, [

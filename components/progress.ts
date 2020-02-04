@@ -13,7 +13,7 @@ interface IProgressCtx extends b.IBobrilCtx {
 
 export const progressStyle = b.styleDef("progress");
 
-export const Progress = b.createDerivedComponent<IProgressData>(Elem, {
+export const Progress = b.createDerivedComponent<IProgressData, IBaseData>(Elem, {
   id: "bobrilstrap-progress",
   render(ctx: IProgressCtx, me: b.IBobrilCacheNode) {
     b.style(me, progressStyle);

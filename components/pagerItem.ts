@@ -28,7 +28,7 @@ export const pagerItemAlignmentStyles: IDictionary<
 pagerItemAlignmentStyles(PagerItemAlignment.Previous, pagerItemStyles.previous);
 pagerItemAlignmentStyles(PagerItemAlignment.Next, pagerItemStyles.next);
 
-export const PagerItem = b.createDerivedComponent<IPagerItemData>(Li, {
+export const PagerItem = b.createDerivedComponent<IPagerItemData, ILiData>(Li, {
   id: "bobrilstrap-pager-item",
   render(ctx: IPagerItemCtx, me: b.IBobrilNode) {
     b.style(

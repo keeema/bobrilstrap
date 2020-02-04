@@ -14,7 +14,7 @@ interface IListGroupItemCtx extends b.IBobrilCtx {
   data: IListGroupItemData;
 }
 
-export const ListGroupItem = b.createDerivedComponent<IListGroupItemData>(Li, {
+export const ListGroupItem = b.createDerivedComponent<IListGroupItemData, ILiData>(Li, {
   id: "bobrilstrap-listgroup-item",
   render(ctx: IListGroupItemCtx, me: b.IBobrilNode) {
     b.style(me, listGroupStyles.listGroupItem);

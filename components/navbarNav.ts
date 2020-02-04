@@ -11,7 +11,7 @@ interface INavbarNavCtx extends b.IBobrilCtx {
   data: INavbarNavDadta;
 }
 
-export const NavbarNav = b.createDerivedComponent<INavbarNavDadta>(Ul, {
+export const NavbarNav = b.createDerivedComponent<INavbarNavDadta, IUlData>(Ul, {
   id: "bobrilstrap-navbar-nav",
   render(ctx: INavbarNavCtx, me: b.IBobrilNode) {
     b.style(me, navStyles.nav);

@@ -21,7 +21,7 @@ export const mediaStyles = {
   mediaList: b.styleDef("media-list")
 };
 
-export const Media = b.createDerivedComponent<IMediaData>(Elem, {
+export const Media = b.createDerivedComponent<IMediaData, IBaseData>(Elem, {
   id: "bobrilstrap-media",
   render(_ctx: IMediaCtx, me: b.IBobrilNode) {
     b.style(me, mediaStyles.media);

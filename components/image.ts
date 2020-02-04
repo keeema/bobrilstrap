@@ -41,7 +41,7 @@ imageShapeStyles(ImageShape.Rounded, imageStyles.imgRounded);
 imageShapeStyles(ImageShape.Circle, imageStyles.imgCircle);
 imageShapeStyles(ImageShape.Thumbnail, imageStyles.imgThumbnail);
 
-export const Image = b.createDerivedComponent<IImageData>(Elem, {
+export const Image = b.createDerivedComponent<IImageData, IBaseData>(Elem, {
   id: "bobrilstrap-image",
   render(ctx: ICtx, me: IElementBobrilNode) {
     me.tag = "img";

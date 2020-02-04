@@ -51,7 +51,7 @@ alertContextStyles(AlertContext.Info, alertStyles.alertInfo);
 alertContextStyles(AlertContext.Danger, alertStyles.alertDanger);
 alertContextStyles(AlertContext.Warning, alertStyles.alertWarning);
 
-export const Alert = b.createDerivedComponent<IAlertData>(Elem, {
+export const Alert = b.createDerivedComponent<IAlertData, IBaseData>(Elem, {
   id: "bobrilstrap-alert",
   init(ctx: IAlertCtx) {
     ctx.visible = true;

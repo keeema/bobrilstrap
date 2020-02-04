@@ -223,7 +223,7 @@ function paginationDefault(): b.IBobrilChildren {
       bs.Pagination(
         { size: bs.PaginationSize.Lg, aria: { label: "Page navigation" } },
         [
-          bs.PaginationItem(
+          bs.PaginationItem({},
             bs.A(
               { href: "javascript: void(0);", aria: { label: "Previous" } },
               bs.Span({ aria: { hidden: true } }, "«")
@@ -244,7 +244,7 @@ function paginationDefault(): b.IBobrilChildren {
         ]
       ),
       bs.Pagination({ aria: { label: "Page navigation" } }, [
-        bs.PaginationItem(
+        bs.PaginationItem({},
           bs.A(
             { href: "javascript: void(0);", aria: { label: "Previous" } },
             bs.Span({ aria: { hidden: true } }, "«")
@@ -266,7 +266,7 @@ function paginationDefault(): b.IBobrilChildren {
       bs.Pagination(
         { size: bs.PaginationSize.Sm, aria: { label: "Page navigation" } },
         [
-          bs.PaginationItem(
+          bs.PaginationItem({},
             bs.A(
               { href: "javascript: void(0);", aria: { label: "Previous" } },
               bs.Span({ aria: { hidden: true } }, "«")

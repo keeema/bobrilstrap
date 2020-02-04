@@ -76,7 +76,7 @@ inputTextSizeStyles(InputTextSize.Lg, inputTextStyles.lg);
 inputTextSizeStyles(InputTextSize.Default, false);
 inputTextSizeStyles(InputTextSize.Sm, inputTextStyles.sm);
 
-export const InputText = b.createOverridingComponent<IInputTextData>(Elem, {
+export const InputText = b.createOverridingComponent<IInputTextData, IBaseData>(Elem, {
   id: "bobrilstrap-input-text",
   render(ctx: ICtx, me: IElementBobrilNode) {
     me.component.super.render(ctx, me);

@@ -8,7 +8,7 @@ interface IPanelGroupCtx extends b.IBobrilCtx {
   data: IPanelGroupData;
 }
 
-export const PanelGroup = b.createDerivedComponent<IPanelGroupData>(Elem, {
+export const PanelGroup = b.createDerivedComponent<IPanelGroupData, IBaseData>(Elem, {
   id: "bobrilstrap-panel-group",
   render(_ctx: IPanelGroupCtx, me: b.IBobrilNode) {
     b.style(me, panelStyles.panelGroup);

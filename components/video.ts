@@ -14,7 +14,7 @@ interface IVideoCtx extends b.IBobrilCtx {
   data: IVideoData;
 }
 
-export const Video = b.createDerivedComponent<IVideoData>(Elem, {
+export const Video = b.createDerivedComponent<IVideoData, IBaseData>(Elem, {
   id: "bobrilstrap-video",
   render(ctx: IVideoCtx, me: IElementBobrilNode) {
     me.tag = "video";

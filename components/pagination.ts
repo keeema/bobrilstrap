@@ -31,7 +31,7 @@ export const paginationSizeStyles: IDictionary<
 paginationSizeStyles(PaginationSize.Lg, paginationStyles.lg);
 paginationSizeStyles(PaginationSize.Sm, paginationStyles.sm);
 
-export const Pagination = b.createDerivedComponent<IPaginationData>(Elem, {
+export const Pagination = b.createDerivedComponent<IPaginationData, IBaseData>(Elem, {
   id: "bobrilstrap-pagination",
   render(ctx: IPaginationCtx, me: b.IBobrilNode) {
     me.tag = "nav";

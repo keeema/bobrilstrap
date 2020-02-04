@@ -10,7 +10,7 @@ interface ICtx extends b.IBobrilCtx {
   data: ITBodyData;
 }
 
-export const TBody = b.createDerivedComponent<IBaseData>(Elem, {
+export const TBody = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
   id: "bobrilstrap-tbody",
   render(ctx: ICtx, me: b.IBobrilNode) {
     me.tag = "tbody";

@@ -18,7 +18,7 @@ interface ICtx extends b.IBobrilCtx {
   data: IAnchorData;
 }
 
-export const Anchor = b.createDerivedComponent<IAnchorData>(Elem, {
+export const Anchor = b.createDerivedComponent<IAnchorData, IBaseData>(Elem, {
   id: "bobrilstrap-a",
   render(ctx: ICtx, me: IElementBobrilNode) {
     me.tag = "a";

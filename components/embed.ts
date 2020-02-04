@@ -14,7 +14,7 @@ interface IEmbedCtx extends b.IBobrilCtx {
   data: IEmbedData;
 }
 
-export const Embed = b.createDerivedComponent<IEmbedData>(Elem, {
+export const Embed = b.createDerivedComponent<IEmbedData, IBaseData>(Elem, {
   id: "bobrilstrap-embed",
   render(ctx: IEmbedCtx, me: IElementBobrilNode) {
     me.tag = "embed";

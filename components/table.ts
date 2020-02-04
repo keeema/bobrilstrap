@@ -49,7 +49,7 @@ interface ICtx extends b.IBobrilCtx {
   data: ITableData;
 }
 
-export const Table = b.createDerivedComponent<ITableData>(Elem, {
+export const Table = b.createDerivedComponent<ITableData, IBaseData>(Elem, {
   id: "bobrilstrap-table",
   render(ctx: ICtx, me: b.IBobrilNode) {
     me.tag = "table";

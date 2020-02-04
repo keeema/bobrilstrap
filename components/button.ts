@@ -71,7 +71,7 @@ export const buttonStyles = {
 export const buttonSizeStyles = generateSizeStyles();
 export const buttonOptiontStyles = generateOptionsStyles();
 
-export const Button = b.createDerivedComponent<IButtonData>(Elem, {
+export const Button = b.createDerivedComponent<IButtonData, IBaseData>(Elem, {
   id: "bobrilstrap-button",
   render(ctx: ICtx, me: IElementBobrilNode) {
     me.tag = resolveTag(ctx);

@@ -40,7 +40,7 @@ interface ISpanCtx extends b.IBobrilCtx {
   data: ISpanData;
 }
 
-export const Span = b.createDerivedComponent<ISpanData>(Elem, {
+export const Span = b.createDerivedComponent<ISpanData, IBaseData>(Elem, {
   id: "bobrilstrap-span",
   render(ctx: ISpanCtx, me: b.IBobrilNode) {
     me.tag = "span";

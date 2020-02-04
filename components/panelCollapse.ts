@@ -9,7 +9,7 @@ interface IPanelCollapseCtx extends b.IBobrilCtx {
   data: IPanelCollapseData;
 }
 
-export const PanelCollapse = b.createDerivedComponent<IPanelCollapseData>(
+export const PanelCollapse = b.createDerivedComponent<IPanelCollapseData, IBaseData>(
   Elem,
   {
     id: "bobrilstrap-panel-collapse",

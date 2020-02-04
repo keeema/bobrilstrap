@@ -26,7 +26,7 @@ export const textareaStyles = {
   fixedSize: b.styleDef({ resize: "none" }, undefined, "textarea-fixed-size")
 };
 
-export const Textarea = b.createOverridingComponent<ITextareaData>(Elem, {
+export const Textarea = b.createOverridingComponent<ITextareaData, IBaseData>(Elem, {
   id: "bobrilstrap-textare",
   render(ctx: ICtx, me: IElementBobrilNode) {
     me.component.super.render(ctx, me);

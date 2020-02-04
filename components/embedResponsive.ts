@@ -37,7 +37,7 @@ interface IEmbedResponsiveCtx extends b.IBobrilCtx {
 
 export const EmbedResponsive = b.createDerivedComponent<
   IEmbedResponsiveData
->(Elem, {
+, IBaseData>(Elem, {
   id: "bobrilstrap-embed-responsive",
   render(ctx: IEmbedResponsiveCtx, me: IElementBobrilNode) {
     b.style(me, embedResponsiveStyles.embedResponsive);

@@ -9,42 +9,42 @@ interface IPanelTitleCtx extends b.IBobrilCtx {
   data: IPanelTitleData;
 }
 
-export const PanelTitle1 = b.createDerivedComponent<IPanelTitleData>(H1, {
+export const PanelTitle1 = b.createDerivedComponent<IPanelTitleData, IBaseData>(H1, {
   id: "bobrilstrap-panel-title-h1",
   render(_ctx: IPanelTitleCtx, me: b.IBobrilNode) {
     b.style(me, panelStyles.panelTitle);
   }
 });
 
-export const PanelTitle2 = b.createDerivedComponent<IPanelTitleData>(H2, {
+export const PanelTitle2 = b.createDerivedComponent<IPanelTitleData, IBaseData>(H2, {
   id: "bobrilstrap-panel-title-h2",
   render(_ctx: IPanelTitleCtx, me: b.IBobrilNode) {
     b.style(me, panelStyles.panelTitle);
   }
 });
 
-export const PanelTitle3 = b.createDerivedComponent<IPanelTitleData>(H3, {
+export const PanelTitle3 = b.createDerivedComponent<IPanelTitleData, IBaseData>(H3, {
   id: "bobrilstrap-panel-title-h3",
   render(_ctx: IPanelTitleCtx, me: b.IBobrilNode) {
     b.style(me, panelStyles.panelTitle);
   }
 });
 
-export const PanelTitle4 = b.createDerivedComponent<IPanelTitleData>(H4, {
+export const PanelTitle4 = b.createDerivedComponent<IPanelTitleData, IBaseData>(H4, {
   id: "bobrilstrap-panel-title-h4",
   render(_ctx: IPanelTitleCtx, me: b.IBobrilNode) {
     b.style(me, panelStyles.panelTitle);
   }
 });
 
-export const PanelTitle5 = b.createDerivedComponent<IPanelTitleData>(H5, {
+export const PanelTitle5 = b.createDerivedComponent<IPanelTitleData, IBaseData>(H5, {
   id: "bobrilstrap-panel-title-h5",
   render(_ctx: IPanelTitleCtx, me: b.IBobrilNode) {
     b.style(me, panelStyles.panelTitle);
   }
 });
 
-export const PanelTitle6 = b.createDerivedComponent<IPanelTitleData>(H6, {
+export const PanelTitle6 = b.createDerivedComponent<IPanelTitleData, IBaseData>(H6, {
   id: "bobrilstrap-panel-title-h6",
   render(_ctx: IPanelTitleCtx, me: b.IBobrilNode) {
     b.style(me, panelStyles.panelTitle);

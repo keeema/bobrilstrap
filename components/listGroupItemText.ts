@@ -9,7 +9,7 @@ interface IListGroupItemTextCtx extends b.IBobrilCtx {
 }
 
 export const ListGroupItemText = b.createDerivedComponent<
-  IListGroupItemTextData
+  IListGroupItemTextData, IParagraphData
 >(P, {
   id: "bobrilstrap-listgroup-item-text",
   render(_ctx: IListGroupItemTextCtx, me: b.IBobrilNode) {

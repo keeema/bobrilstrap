@@ -57,7 +57,7 @@ medialContentAlignmentStyles(
   mediaContentStyles.mediaBottom
 );
 
-export const MediaContent = b.createDerivedComponent<IMediaContentData>(Elem, {
+export const MediaContent = b.createDerivedComponent<IMediaContentData, IBaseData>(Elem, {
   id: "bobrilstrap-media-content",
   render(ctx: IMediaContentCtx, me: b.IBobrilNode) {
     const alignments =

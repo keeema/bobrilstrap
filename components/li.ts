@@ -15,7 +15,7 @@ export const liStyles = {
   disabled: b.styleDef("disabled")
 };
 
-export const Li = b.createDerivedComponent<ILiData>(Elem, {
+export const Li = b.createDerivedComponent<ILiData, IBaseData>(Elem, {
   id: "bobrilstrap-li",
   render(ctx: ICtx, me: b.IBobrilNode) {
     me.tag = "li";

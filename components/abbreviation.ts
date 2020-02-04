@@ -10,7 +10,7 @@ interface ICtx extends b.IBobrilCtx {
   data: IAbbreviationData;
 }
 
-export const Abbreviation = b.createDerivedComponent<IAbbreviationData>(Elem, {
+export const Abbreviation = b.createDerivedComponent<IAbbreviationData, IBaseData>(Elem, {
   id: "bobrilstrap-abbreviation",
   render(ctx: ICtx, me: b.IBobrilNode) {
     me.tag = "abbr";

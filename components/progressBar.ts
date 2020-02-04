@@ -59,7 +59,7 @@ progressBarContextStyles(
   progressBarStyles.progressBarDanger
 );
 
-export const ProgressBar = b.createDerivedComponent<IProgressBarData>(Elem, {
+export const ProgressBar = b.createDerivedComponent<IProgressBarData, IBaseData>(Elem, {
   id: "bobrilstrap-progress-bar",
   render(ctx: IProgressBarCtx, me: IElementBobrilNode) {
     b.style(me, progressBarStyles.progressBar);

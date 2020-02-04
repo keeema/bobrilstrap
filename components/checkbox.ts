@@ -19,7 +19,7 @@ export const checkboxStyles = {
   disabled: b.styleDef("disabled")
 };
 
-export const Checkbox = b.createDerivedComponent<ICheckboxData>(Elem, {
+export const Checkbox = b.createDerivedComponent<ICheckboxData, IBaseData>(Elem, {
   id: "bobrilstrap-checkbox",
   render(ctx: ICtx, me: b.IBobrilNode) {
     b.style(me, checkboxStyles.checkbox);

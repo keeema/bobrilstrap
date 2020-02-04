@@ -48,7 +48,7 @@ modalSizeStyles(ModalSize.Lg, modalStyles.lg);
 modalSizeStyles(ModalSize.Md, false);
 modalSizeStyles(ModalSize.Sm, modalStyles.sm);
 
-export const Modal = b.createDerivedComponent<IModalData>(Elem, {
+export const Modal = b.createDerivedComponent<IModalData, IBaseData>(Elem, {
   id: "bobrilstrap-modal",
   render(ctx: IModalCtx, me: IElementBobrilNode) {
     me.attrs["role"] = "dialog";

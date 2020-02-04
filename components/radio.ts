@@ -19,7 +19,7 @@ export const radioStyles = {
   disabled: b.styleDef("disabled")
 };
 
-export const Radio = b.createDerivedComponent<IRadioData>(Elem, {
+export const Radio = b.createDerivedComponent<IRadioData, IBaseData>(Elem, {
   id: "bobrilstrap-radio",
   render(ctx: ICtx, me: b.IBobrilNode) {
     b.style(me, radioStyles.radio);

@@ -14,7 +14,7 @@ export const pagerStyles = {
   pager: b.styleDef("pager")
 };
 
-export const Pager = b.createDerivedComponent<IPagerData>(Elem, {
+export const Pager = b.createDerivedComponent<IPagerData, IBaseData>(Elem, {
   id: "bobrilstrap-pager",
   render(ctx: IPagerCtx, me: b.IBobrilNode) {
     me.tag = "nav";

@@ -2,8 +2,9 @@ import * as b from "bobril";
 import * as bs from "../../index";
 import { styles } from "../bsexample/css";
 import { sideBarItem, IItemData } from "./sidebarItem";
+import { IUlData } from "../../components/ul";
 
-export interface IItemsData {
+export interface IItemsData extends IUlData {
   items: IItemData[];
   nextId?: string;
   topTargetId?: string;
@@ -13,7 +14,7 @@ interface IItemsCtx extends b.IBobrilCtx {
   data: IItemsData;
 }
 
-export const sideBarItems = b.createDerivedComponent<IItemsData>(bs.Ul, {
+export const sideBarItems = b.createDerivedComponent<IItemsData, IUlData>(bs.Ul, {
   id: "bs-example-sidebar-items",
   render(ctx: IItemsCtx, me: b.IBobrilNode) {
     b.style(me, [

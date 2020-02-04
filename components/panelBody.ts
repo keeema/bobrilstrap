@@ -8,7 +8,7 @@ interface IPanelBodyCtx extends b.IBobrilCtx {
   data: IPanelBodyData;
 }
 
-export const PanelBody = b.createDerivedComponent<IPanelBodyData>(Elem, {
+export const PanelBody = b.createDerivedComponent<IPanelBodyData, IBaseData>(Elem, {
   id: "bobrilstrap-panel-body",
   render(_ctx: IPanelBodyCtx, me: b.IBobrilNode) {
     b.style(me, panelStyles.panelBody);

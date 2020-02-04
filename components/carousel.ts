@@ -48,7 +48,7 @@ export const carouselStyles = {
   slide: b.styleDef("slide")
 };
 
-export const Carousel = b.createDerivedComponent<ICarouselData>(Elem, {
+export const Carousel = b.createDerivedComponent<ICarouselData, IBaseData>(Elem, {
   id: "bobrilstrap-carousel",
   render(ctx: ICarouselCtx, me: IElementBobrilNode) {
     b.style(me, carouselStyles.carousel, carouselStyles.slide);

@@ -11,7 +11,7 @@ export const inputGroupAddonStyle = b.styleDef("input-group-addon");
 
 export const InputGroupAddon = b.createDerivedComponent<
   IInputGroupAddonData
->(Elem, {
+, IBaseData>(Elem, {
   id: "bobrilstrap-input-group-addon",
   render(_ctx: ICtx, me: b.IBobrilNode) {
     me.tag = "span";

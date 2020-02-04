@@ -11,7 +11,7 @@ interface IIFrameCtx extends b.IBobrilCtx {
   data: IIFrameData;
 }
 
-export const IFrame = b.createDerivedComponent<IIFrameData>(Elem, {
+export const IFrame = b.createDerivedComponent<IIFrameData, IBaseData>(Elem, {
   id: "bobrilstrap-iframe",
   render(ctx: IIFrameCtx, me: IElementBobrilNode) {
     me.tag = "iframe";

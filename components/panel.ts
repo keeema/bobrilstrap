@@ -56,7 +56,7 @@ interface IPanelCtx extends b.IBobrilCtx {
   data: IPanelData;
 }
 
-export const Panel = b.createDerivedComponent<IPanelData>(Elem, {
+export const Panel = b.createDerivedComponent<IPanelData, IBaseData>(Elem, {
   id: "bobrilstrap-panel",
   render(ctx: IPanelCtx, me: b.IBobrilNode) {
     b.style(me, panelStyles.panel);

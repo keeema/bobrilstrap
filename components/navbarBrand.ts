@@ -11,7 +11,7 @@ interface INavbarBrandCtx extends b.IBobrilCtx {
   data: INavbarBrandData;
 }
 
-export const NavbarBrand = b.createDerivedComponent<INavbarBrandData>(A, {
+export const NavbarBrand = b.createDerivedComponent<INavbarBrandData, IAnchorData>(A, {
   id: "bobrilstrap-navbar-brand",
   render(ctx: INavbarBrandCtx, me: b.IBobrilNode) {
     b.style(me, navStyles.navbarBrand);

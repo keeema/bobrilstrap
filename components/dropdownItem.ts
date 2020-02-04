@@ -19,7 +19,7 @@ interface ICtx extends b.IBobrilCtx {
   data: IDropdownItemData;
 }
 
-export const DropdownItem = b.createDerivedComponent<IDropdownItemData>(Li, {
+export const DropdownItem = b.createDerivedComponent<IDropdownItemData, ILiData>(Li, {
   id: "bobrilstrap-dropdown-item",
   render(ctx: ICtx, me: IElementBobrilNode) {
     b.style(me, !!ctx.data.separator && dropdownItemStyles.divider);

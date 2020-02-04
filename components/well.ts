@@ -28,7 +28,7 @@ interface IWellCtx extends b.IBobrilCtx {
   data: IWellData;
 }
 
-export const Well = b.createDerivedComponent<IWellData>(Elem, {
+export const Well = b.createDerivedComponent<IWellData, IBaseData>(Elem, {
   id: "bobrilstrap-well",
   render(ctx: IWellCtx, me: b.IBobrilNode) {
     b.style(me, wellStyles.well);

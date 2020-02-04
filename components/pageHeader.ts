@@ -9,7 +9,7 @@ interface IPanelHeadingCtx extends b.IBobrilCtx {
   data: IPageHeaderData;
 }
 
-export const PageHeader = b.createDerivedComponent<IPageHeaderData>(Elem, {
+export const PageHeader = b.createDerivedComponent<IPageHeaderData, IBaseData>(Elem, {
   id: "bobrilstrap-page-header",
   render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
     b.style(me, pageHeaderStyle);

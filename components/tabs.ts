@@ -11,7 +11,7 @@ interface ITabsCtx extends b.IBobrilCtx {
     data: ITabsData;
 }
 
-export const Tabs = b.createDerivedComponent<ITabsData>(Ul, {
+export const Tabs = b.createDerivedComponent<ITabsData, IUlData>(Ul, {
     id: 'bobrilstrap-tabs',
     render(ctx: ITabsCtx, me: b.IBobrilNode) {
         b.style(me, navStyles.nav);

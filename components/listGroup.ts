@@ -51,7 +51,7 @@ listGroupItemContextStyles(
   listGroupStyles.listGroupItemDanger
 );
 
-export const ListGroup = b.createDerivedComponent<IListGroupData>(Ul, {
+export const ListGroup = b.createDerivedComponent<IListGroupData, IUlData>(Ul, {
   id: "bobrilstrap-listgroup",
   render(ctx: IListGroupCtx, me: b.IBobrilNode) {
     if (ctx.data.linkified) me.tag = "div";

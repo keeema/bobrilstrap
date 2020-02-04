@@ -23,7 +23,7 @@ interface ICtx extends b.IBobrilCtx {
   me: IElementBobrilCacheNode;
 }
 
-export const InputRadio = b.createOverridingComponent<IInputRadioData>(Elem, {
+export const InputRadio = b.createOverridingComponent<IInputRadioData, IBaseData>(Elem, {
   id: "bobrilstrap-input-radio",
   render(ctx: ICtx, me: IElementBobrilNode) {
     me.component.super.render(ctx, me);

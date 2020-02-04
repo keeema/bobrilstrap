@@ -10,7 +10,7 @@ interface INavbarHeaderCtx extends b.IBobrilCtx {
   data: INavbarHeaderData;
 }
 
-export const NavbarHeader = b.createDerivedComponent<INavbarHeaderData>(Elem, {
+export const NavbarHeader = b.createDerivedComponent<INavbarHeaderData, IBaseData>(Elem, {
   id: "bobrilstrap-navbar-header",
   render(ctx: INavbarHeaderCtx, me: b.IBobrilNode) {
     b.style(me, navStyles.navbarHeader);

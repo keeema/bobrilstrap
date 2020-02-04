@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { Elem, IBaseData } from "./element";
 
-export const Italics = b.createDerivedComponent<IBaseData>(Elem, {
+export const Italics = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
   id: "bobrilstrap-italics",
   render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
     me.tag = "em";

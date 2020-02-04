@@ -54,7 +54,7 @@ interface INavbarCtx extends b.IBobrilCtx {
   data: INavbarData;
 }
 
-export const Nav = b.createDerivedComponent<INavbarData>(Elem, {
+export const Nav = b.createDerivedComponent<INavbarData, IBaseData>(Elem, {
   id: "bobrilstrap-navbar",
   render(ctx: INavbarCtx, me: b.IBobrilNode) {
     me.tag = ctx.data.header ? "header" : "nav";

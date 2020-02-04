@@ -17,7 +17,7 @@ interface IListGroupItemLinkCtx extends b.IBobrilCtx {
 }
 
 export const ListGroupItemLink = b.createDerivedComponent<
-  IListGroupItemLinkData
+  IListGroupItemLinkData, IAnchorData
 >(A, {
   id: "bobrilstrap-listgroup-item-link",
   render(ctx: IListGroupItemLinkCtx, me: b.IBobrilNode) {

@@ -10,7 +10,7 @@ interface ICtx extends b.IBobrilCtx {
   data: ITHeadData;
 }
 
-export const THead = b.createDerivedComponent<ITHeadData>(Elem, {
+export const THead = b.createDerivedComponent<ITHeadData, IBaseData>(Elem, {
   id: "bobrilstrap-thead",
   render(ctx: ICtx, me: b.IBobrilNode) {
     me.tag = "thead";

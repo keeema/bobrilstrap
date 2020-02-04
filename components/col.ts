@@ -25,7 +25,7 @@ type IColStyles = IDictionary<Size, IDictionary<number, b.IBobrilStyle>>;
 
 export const Col: b.IComponentFactory<IColData> = b.createDerivedComponent<
   IColData
->(Elem, {
+, IBaseData>(Elem, {
   id: "bobrilstrap-col",
   render(ctx: ICtx, me: b.IBobrilNode) {
     applySimplyDefinedStyle(me, ctx.data);

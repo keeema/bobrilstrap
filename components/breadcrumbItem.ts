@@ -8,7 +8,7 @@ interface IBreadcrumbItemCtx extends b.IBobrilCtx {
   data: IBreadcrumbItemData;
 }
 
-export const BreadcrumbItem = b.createDerivedComponent<IBreadcrumbItemData>(
+export const BreadcrumbItem = b.createDerivedComponent<IBreadcrumbItemData, ILiData>(
   Li,
   {
     id: "bobrilstrap-breadcrumb-item",

@@ -12,7 +12,7 @@ interface IPillsCtx extends b.IBobrilCtx {
   data: IPillsData;
 }
 
-export const Pills = b.createDerivedComponent<IPillsData>(Ul, {
+export const Pills = b.createDerivedComponent<IPillsData, IUlData>(Ul, {
   id: "bobrilstrap-pills",
   render(ctx: IPillsCtx, me: b.IBobrilNode) {
     b.style(me, navStyles.nav);

@@ -15,7 +15,7 @@ export const paragraphStyles = {
   formControlStatic: b.styleDef("form-control-static")
 };
 
-export const P = b.createDerivedComponent<IParagraphData>(Elem, {
+export const P = b.createDerivedComponent<IParagraphData, IBaseData>(Elem, {
   id: "bobrilstrap-paragraph",
   render(ctx: ICtx, me: b.IBobrilNode) {
     me.tag = "p";

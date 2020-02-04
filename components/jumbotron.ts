@@ -9,7 +9,7 @@ interface IJumbotronCtx extends b.IBobrilCtx {
 
 export const jumbotronStyle = b.styleDef("jumbotron");
 
-export const Jumbotron = b.createDerivedComponent<IJumbotronData>(Elem, {
+export const Jumbotron = b.createDerivedComponent<IJumbotronData, IBaseData>(Elem, {
   id: "bobrilstrap-jumbotron",
   render(_ctx: IJumbotronCtx, me: b.IBobrilNode) {
     b.style(me, jumbotronStyle);

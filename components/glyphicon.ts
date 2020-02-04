@@ -288,7 +288,7 @@ interface ICtx extends b.IBobrilCtx {
   data: IGlyphiconData;
 }
 
-export const Glyphicon = b.createDerivedComponent<IGlyphiconData>(Elem, {
+export const Glyphicon = b.createDerivedComponent<IGlyphiconData, IBaseData>(Elem, {
   id: "bobrilstrap-glyphicon",
   render(ctx: ICtx, me: IElementBobrilNode) {
     me.tag = "span";

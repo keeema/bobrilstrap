@@ -13,7 +13,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const ResponsiveTable = b.createDerivedComponent<
   IResponsiveTableData
->(Elem, {
+, IBaseData>(Elem, {
   id: "bobrilstrap-responsive-table",
   render(ctx: ICtx, me: b.IBobrilNode) {
     b.style(me, tableStyles.responsive);

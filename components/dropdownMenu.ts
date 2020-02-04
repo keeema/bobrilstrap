@@ -15,7 +15,7 @@ interface ICtx extends b.IBobrilCtx {
   data: IDropDownMenuData;
 }
 
-export const DropdownMenu = b.createDerivedComponent<IDropDownMenuData>(Ul, {
+export const DropdownMenu = b.createDerivedComponent<IDropDownMenuData, IUlData>(Ul, {
   id: "bobrilstrap-dropdown-menu",
   render(ctx: ICtx, me: IElementBobrilNode) {
     b.style(me, dropdownMenuStyles.dropdownMenu);

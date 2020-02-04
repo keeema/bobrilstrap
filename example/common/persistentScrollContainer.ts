@@ -10,7 +10,7 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export const persistentScrollContainer = b.createDerivedComponent<
-  IPersistentScrollContainerData
+  IPersistentScrollContainerData, IContainerData
 >(Container, {
   init(ctx: ICtx) {
     if (!window.name) {

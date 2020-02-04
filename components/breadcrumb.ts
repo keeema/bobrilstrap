@@ -12,7 +12,7 @@ export const breadcrumbStyles = {
   active: b.styleDef("active")
 };
 
-export const Breadcrumb = b.createDerivedComponent<IBreadcrumbData>(Ol, {
+export const Breadcrumb = b.createDerivedComponent<IBreadcrumbData, IOlData>(Ol, {
   id: "bobrilstrap-breadcrumb",
   render(_ctx: IBreadcrumbCtx, me: b.IBobrilNode) {
     b.style(me, breadcrumbStyles.breadcrumb);

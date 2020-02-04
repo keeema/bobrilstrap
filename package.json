@@ -19,7 +19,7 @@
     "main": "index.ts"
   },
   "bobril": {
-    "tsVersion": "3.7.2",
+    "tsVersion": "3.7.4",
     "example": "example.ts",
     "title": "Bobrilstrap",
     "additionalResourcesDirectory": "example/assets",

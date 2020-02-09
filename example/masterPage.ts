@@ -2,6 +2,7 @@ import * as b from "bobril";
 import * as bs from "../index";
 import { styles } from "./bsexample/css";
 import { prettify } from "./prettify/prettify";
+import { InstallButton } from "./common/installButton";
 
 const noMargin = b.styleDef({ margin: 0 });
 
@@ -15,7 +16,7 @@ export const masterPage = b.createVirtualComponent({
 });
 
 const collapsedMenu = b.propim(true);
-function handleMenuItemClick() {
+export function handleMenuItemClick() {
   collapsedMenu(true);
   return false;
 }
@@ -131,7 +132,8 @@ function getNavigation(): b.IBobrilNode {
                   bs.A({ onClick: handleMenuItemClick }, texts.donate),
                   "donate"
                 )
-              )
+              ),
+              bs.NavbarNavItem({}, InstallButton())
             ])
           ])
         )
@@ -190,7 +192,7 @@ function getFooter(): b.IBobrilChildren {
   ];
 }
 
-const texts = {
+export const texts = {
   bobrilstrap: "Bobrilstrap",
   bootstrap: "Bootstrap",
   bootsrapLink: "https://getbootstrap.com/docs/3.3/",
@@ -205,5 +207,6 @@ const texts = {
   twitterLink: "https://twitter.com/keeema_",
   mit: "MIT",
   mitLink: "https://github.com/keeema/bobrilstrap/blob/master/LICENSE",
-  donate: "Donate"
+  donate: "Donate",
+  install: "Install Documentation"
 };

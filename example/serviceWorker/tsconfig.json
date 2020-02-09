@@ -3,7 +3,7 @@
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "checkJs": false,
-    "declaration": false,
+    "declaration": true,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "jsx": "react",
@@ -13,6 +13,10 @@
     ],
     "module": "commonjs",
     "noEmitHelpers": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "preserveConstEnums": false,
     "reactNamespace": "b",
     "removeComments": false,
@@ -21,6 +25,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "es5",
+    "types": [],
     "resolveJsonModule": true
   },
   "include": [

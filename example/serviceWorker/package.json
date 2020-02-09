@@ -12,7 +12,19 @@
     "variant": "serviceworker",
     "jasmineVersion": "3.3",
     "compilerOptions": {
-      "strict": true
+      "types": [],
+      "declaration": true,
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "noEmitHelpers": true,
+      "preserveConstEnums": false,
+      "removeComments": false,
+      "skipLibCheck": false,
+      "skipDefaultLibCheck": true,
+      "sourceMap": true
     }
   },
   "devDependencies": {

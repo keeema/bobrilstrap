@@ -23,7 +23,7 @@
     "example": "example.ts",
     "title": "Bobrilstrap",
     "additionalResourcesDirectory": "example/assets",
-    "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" /><link rel=\"manifest\" href=\"manifest.json\"><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#6f5499\"><meta name=\"apple-mobile-web-app-title\" content=\"Bobrilstrap\"><link rel=\"apple-touch-icon\" href=\"/images/icons/icon-152x152.png\"><meta name=\"description\" content=\"Bobril wrapper of the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web - Bootstrap.\"><meta name=\"theme-color\" content=\"#6f5499\" />",
+    "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" /><link rel=\"manifest\" href=\"manifest.json\"><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#6f5499\"><meta name=\"apple-mobile-web-app-title\" content=\"Bobrilstrap\"><link rel=\"apple-touch-icon\" href=\"/icons/icon-152x152.png\"><meta name=\"description\" content=\"Bobril wrapper of the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web - Bootstrap.\"><meta name=\"theme-color\" content=\"#6f5499\" />",
     "compilerOptions": {
       "declaration": true,
       "strict": true,
@@ -49,6 +49,7 @@
     "jquery": "^3.3.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "pwa-install-handler": "^2.0.6"
   }
 }

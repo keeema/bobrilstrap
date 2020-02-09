@@ -1,6 +1,7 @@
 import * as b from "bobril";
 import * as bs from "../../index";
 import { styles } from "../bsexample/css";
+import { isStandalone } from "./pwaHelpers";
 
 export interface IData {
   header: string;
@@ -36,6 +37,7 @@ export const header: b.IComponentFactory<IData> = b.createVirtualComponent<
       bs.H1({}, ctx.data.header),
       bs.P({ lead: !!ctx.data.iconText }, ctx.data.headerContent),
       !!ctx.data.iconText &&
+        !isStandalone() &&
         bs.A({ href: "https://badge.fury.io/js/bobrilstrap" }, [
           bs.Image({
             src: "https://badge.fury.io/js/bobrilstrap.svg",

@@ -5,3 +5,4 @@ example
 example.ts
 tsconfig.json
 tslint.json
+*.xcf

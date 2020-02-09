@@ -21,11 +21,11 @@ function availableGlyphs(): b.IBobrilChildren {
     b.anchor(bs.H2({ attrs: { id: "glyphicons-glyphs" } }, "Available glyphs")),
     bs.P({}, [
       `Includes over 250 glyphs in font format from the Glyphicon Halflings set. `,
-      bs.A({ href: "http://glyphicons.com/" }, "Glyphicons"),
+      bs.A({ href: "https://glyphicons.com/" }, "Glyphicons"),
       ` Halflings are normally not available for free, 
             but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that 
             you include a link back to `,
-      bs.A({ href: "http://glyphicons.com/" }, "Glyphicons"),
+      bs.A({ href: "https://glyphicons.com/" }, "Glyphicons"),
       ` whenever possible.`
     ]),
     bs.E(
@@ -54,11 +54,11 @@ function howToUse(): b.IBobrilChildren {
     b.anchor(bs.H2({ attrs: { id: "glyphicons-how-to-use" } }, "How to use")),
     bs.P({}, [
       `Includes over 250 glyphs in font format from the Glyphicon Halflings set. `,
-      bs.A({ href: "http://glyphicons.com/" }, "Glyphicons"),
+      bs.A({ href: "https://glyphicons.com/" }, "Glyphicons"),
       ` Halflings are normally not available for free, 
             but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that 
             you include a link back to `,
-      bs.A({ href: "http://glyphicons.com/" }, "Glyphicons"),
+      bs.A({ href: "https://glyphicons.com/" }, "Glyphicons"),
       ` whenever possible.`
     ]),
     bs.E(

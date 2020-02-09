@@ -278,3 +278,9 @@ b.routes(
     b.routeDefault({ name: "bobrilstrap", handler: bobrilstrapPage })
   ])
 );
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register(b.asset("project:./example/serviceWorker"))
+    .then(() => console.log("BB Service Worker Registered"));
+}

@@ -56,7 +56,7 @@ function handlingSpecificStructure(): b.IBobrilChildren {
         `In such case follow the structure rules in original `,
         bs.A(
           {
-            href: "http://getbootstrap.com/components/#btn-dropdowns",
+            href: "https://getbootstrap.com/components/#btn-dropdowns",
             target: bs.Target.Blank
           },
           "Bootstrap dropdown manual"

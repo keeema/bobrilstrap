@@ -3,7 +3,7 @@ import * as bs from "../index";
 import { styles } from "./bsexample/css";
 import { prettify } from "./prettify/prettify";
 
-const noMargin = b.styleDef({ margin: 0});
+const noMargin = b.styleDef({ margin: 0 });
 
 export const masterPage = b.createVirtualComponent({
   render(ctx: b.IBobrilCtx, me: b.IBobrilNode) {
@@ -22,7 +22,11 @@ function handleMenuItemClick() {
 
 function getNavigation(): b.IBobrilNode {
   return bs.Navbar(
-    { static: bs.NavbarStatic.Top, header: true, style: [styles.bsDocsNav, noMargin] },
+    {
+      static: bs.NavbarStatic.Top,
+      header: true,
+      style: [styles.bsDocsNav, noMargin]
+    },
     [
       bs.Container({}, [
         bs.NavbarHeader({}, [
@@ -191,7 +195,7 @@ const texts = {
   bootstrap: "Bootstrap",
   bootsrapLink: "https://getbootstrap.com/docs/3.3/",
   bobril: "Bobril",
-  bobrilLink: "http://bobril.com",
+  bobrilLink: "https://bobril.com",
   css: "CSS",
   components: "Components",
   javaScript: "JavaScript",

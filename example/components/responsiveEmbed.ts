@@ -44,7 +44,7 @@ function example(): b.IBobrilChildren {
       bs.EmbedResponsive({ aspectRatio: bs.EmbedAspectRatio.SixteenByNine }, [
         bs.IFrame({
           embedResponsive: true,
-          src: "http://www.youtube.com/embed/zpOULjyy-n8?rel=0",
+          src: "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
           attrs: { allowfullscreen: "" }
         })
       ])

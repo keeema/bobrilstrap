@@ -19,15 +19,7 @@ export const bobrilDesc = b.createVirtualComponent({
                         It is fast, low size framework with rendering based on Virtual DOM. The main focus is on speed and simplicity of 
                         code generation. Bobril is about 8x faster than react (see vdom-benchmark). For more details visit `,
             bs.A({ href: "https://github.com/Bobris/Bobril" }, "project pages"),
-            " or ",
-            bs.A(
-              {
-                href:
-                  "http://www.codeproject.com/Articles/1044425/Bobril-I-Getting-Started"
-              },
-              "how-to articles"
-            ),
-            " about bobril and additional frameworks."
+            "."
           ]
         },
         [

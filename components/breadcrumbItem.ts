@@ -5,17 +5,14 @@ import { breadcrumbStyles } from "./breadcrumb";
 export interface IBreadcrumbItemData extends ILiData {}
 
 interface IBreadcrumbItemCtx extends b.IBobrilCtx {
-  data: IBreadcrumbItemData;
+    data: IBreadcrumbItemData;
 }
 
-export const BreadcrumbItem = b.createDerivedComponent<IBreadcrumbItemData, ILiData>(
-  Li,
-  {
+export const BreadcrumbItem = b.createDerivedComponent<IBreadcrumbItemData, ILiData>(Li, {
     id: "bobrilstrap-breadcrumb-item",
     render(ctx: IBreadcrumbItemCtx, me: b.IBobrilNode) {
-      b.style(me, !!ctx.data.active && breadcrumbStyles.active);
+        b.style(me, !!ctx.data.active && breadcrumbStyles.active);
     }
-  }
-);
+});
 
 export default BreadcrumbItem;

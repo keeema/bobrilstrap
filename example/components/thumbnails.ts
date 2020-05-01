@@ -21,226 +21,222 @@ NlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTdjNzdkZj
 NFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+`;
 
 export const thumbnails = b.createVirtualComponent({
-  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-    me.children = section(
-      {
-        header: "Thumbnails",
-        id: "thumbnails",
-        lead: [
-          `Extend Bobrilstrap's `,
-          b.link(bs.A({}, "grid system"), "grid"),
-          ` with the thumbnail component to easily display grids of images, videos, text, and more.`
-        ]
-      },
-      [example()]
-    );
-  }
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+        me.children = section(
+            {
+                header: "Thumbnails",
+                id: "thumbnails",
+                lead: [
+                    `Extend Bobrilstrap's `,
+                    b.link(bs.A({}, "grid system"), "grid"),
+                    ` with the thumbnail component to easily display grids of images, videos, text, and more.`
+                ]
+            },
+            [example()]
+        );
+    }
 });
 
 function example(): b.IBobrilChildren {
-  return [
-    b.anchor(bs.H2({ attrs: { id: "thumbnails-default" } }, "Default example")),
-    bs.P(
-      {},
-      `By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required markup.`
-    ),
-    bs.E({ style: styles.bsExample }, [
-      bs.Row({}, [
-        bs.Col(
-          {
-            cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Md, span: 3 }]
-          },
-          [
-            bs.A(
-              { href: "javascript:void(0)", style: bs.helpers.thumbnail },
-              bs.Image({ src: imageData })
+    return [
+        b.anchor(bs.H2({ attrs: { id: "thumbnails-default" } }, "Default example")),
+        bs.P({}, `By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required markup.`),
+        bs.E({ style: styles.bsExample }, [
+            bs.Row({}, [
+                bs.Col(
+                    {
+                        cols: [
+                            { size: bs.Size.Xs, span: 6 },
+                            { size: bs.Size.Md, span: 3 }
+                        ]
+                    },
+                    [bs.A({ href: "javascript:void(0)", style: bs.helpers.thumbnail }, bs.Image({ src: imageData }))]
+                ),
+                bs.Col(
+                    {
+                        cols: [
+                            { size: bs.Size.Xs, span: 6 },
+                            { size: bs.Size.Md, span: 3 }
+                        ]
+                    },
+                    [bs.A({ href: "javascript:void(0)", style: bs.helpers.thumbnail }, bs.Image({ src: imageData }))]
+                ),
+                bs.Col(
+                    {
+                        cols: [
+                            { size: bs.Size.Xs, span: 6 },
+                            { size: bs.Size.Md, span: 3 }
+                        ]
+                    },
+                    [bs.A({ href: "javascript:void(0)", style: bs.helpers.thumbnail }, bs.Image({ src: imageData }))]
+                ),
+                bs.Col(
+                    {
+                        cols: [
+                            { size: bs.Size.Xs, span: 6 },
+                            { size: bs.Size.Md, span: 3 }
+                        ]
+                    },
+                    [bs.A({ href: "javascript:void(0)", style: bs.helpers.thumbnail }, bs.Image({ src: imageData }))]
+                )
+            ])
+        ]),
+        bs.Figure(
+            { style: styles.highlight },
+            pre(
+                {},
+                bs.Code({ style: langJs }, [
+                    `bs.Row({}, [`,
+                    bs.E({ tag: "br" }),
+                    `    bs.Col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Md, span: 3 }] }, [`,
+                    bs.E({ tag: "br" }),
+                    `        bs.A({ href: '...', style: bs.helpers.thumbnail }, bs.Image({ src: '...' }))`,
+                    bs.E({ tag: "br" }),
+                    `    ])`,
+                    bs.E({ tag: "br" }),
+                    `])`
+                ])
             )
-          ]
         ),
-        bs.Col(
-          {
-            cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Md, span: 3 }]
-          },
-          [
-            bs.A(
-              { href: "javascript:void(0)", style: bs.helpers.thumbnail },
-              bs.Image({ src: imageData })
-            )
-          ]
-        ),
-        bs.Col(
-          {
-            cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Md, span: 3 }]
-          },
-          [
-            bs.A(
-              { href: "javascript:void(0)", style: bs.helpers.thumbnail },
-              bs.Image({ src: imageData })
-            )
-          ]
-        ),
-        bs.Col(
-          {
-            cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Md, span: 3 }]
-          },
-          [
-            bs.A(
-              { href: "javascript:void(0)", style: bs.helpers.thumbnail },
-              bs.Image({ src: imageData })
-            )
-          ]
-        )
-      ])
-    ]),
-    bs.Figure(
-      { style: styles.highlight },
-      pre(
-        {},
-        bs.Code({ style: langJs }, [
-          `bs.Row({}, [`,
-          bs.E({ tag: "br" }),
-          `    bs.Col({ cols: [{ size: bs.Size.Xs, span: 6 }, { size: bs.Size.Md, span: 3 }] }, [`,
-          bs.E({ tag: "br" }),
-          `        bs.A({ href: '...', style: bs.helpers.thumbnail }, bs.Image({ src: '...' }))`,
-          bs.E({ tag: "br" }),
-          `    ])`,
-          bs.E({ tag: "br" }),
-          `])`
-        ])
-      )
-    ),
 
-    b.anchor(
-      bs.H2({ attrs: { id: "thumbnails-custom-content" } }, "Custom content")
-    ),
-    bs.P(
-      {},
-      `With a bit of extra markup, it's possible to add any kind of HTML content like headings, 
+        b.anchor(bs.H2({ attrs: { id: "thumbnails-custom-content" } }, "Custom content")),
+        bs.P(
+            {},
+            `With a bit of extra markup, it's possible to add any kind of HTML content like headings, 
         paragraphs, or buttons into thumbnails.`
-    ),
-    bs.E({ style: styles.bsExample }, [
-      bs.Row({}, [
-        bs.Col(
-          {
-            cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }]
-          },
-          [
-            bs.E({ tag: "div", style: bs.helpers.thumbnail }, [
-              bs.Image({ src: imageData2 }),
-              bs.E({ tag: "div", style: bs.typography.caption }, [
-                bs.H3({}, "Thumbnail label"),
-                bs.P(
-                  {},
-                  "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at " +
-                    "eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
-                ),
-                bs.P({}, [
-                  bs.Button({
-                    tag: bs.ButtonTag.A,
-                    option: bs.ButtonOption.Primary,
-                    label: "Button"
-                  }),
-                  " ",
-                  bs.Button({ tag: bs.ButtonTag.A, label: "Button" })
-                ])
-              ])
-            ])
-          ]
         ),
-        bs.Col(
-          {
-            cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }]
-          },
-          [
-            bs.E({ tag: "div", style: bs.helpers.thumbnail }, [
-              bs.Image({ src: imageData2 }),
-              bs.E({ tag: "div", style: bs.typography.caption }, [
-                bs.H3({}, "Thumbnail label"),
-                bs.P(
-                  {},
-                  "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at " +
-                    "eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+        bs.E({ style: styles.bsExample }, [
+            bs.Row({}, [
+                bs.Col(
+                    {
+                        cols: [
+                            { size: bs.Size.Sm, span: 6 },
+                            { size: bs.Size.Md, span: 4 }
+                        ]
+                    },
+                    [
+                        bs.E({ tag: "div", style: bs.helpers.thumbnail }, [
+                            bs.Image({ src: imageData2 }),
+                            bs.E({ tag: "div", style: bs.typography.caption }, [
+                                bs.H3({}, "Thumbnail label"),
+                                bs.P(
+                                    {},
+                                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at " +
+                                        "eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                                ),
+                                bs.P({}, [
+                                    bs.Button({
+                                        tag: bs.ButtonTag.A,
+                                        option: bs.ButtonOption.Primary,
+                                        label: "Button"
+                                    }),
+                                    " ",
+                                    bs.Button({ tag: bs.ButtonTag.A, label: "Button" })
+                                ])
+                            ])
+                        ])
+                    ]
                 ),
-                bs.P({}, [
-                  bs.Button({
-                    tag: bs.ButtonTag.A,
-                    option: bs.ButtonOption.Primary,
-                    label: "Button"
-                  }),
-                  " ",
-                  bs.Button({ tag: bs.ButtonTag.A, label: "Button" })
-                ])
-              ])
-            ])
-          ]
-        ),
-        bs.Col(
-          {
-            cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }]
-          },
-          [
-            bs.E({ tag: "div", style: bs.helpers.thumbnail }, [
-              bs.Image({ src: imageData2 }),
-              bs.E({ tag: "div", style: bs.typography.caption }, [
-                bs.H3({}, "Thumbnail label"),
-                bs.P(
-                  {},
-                  "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at " +
-                    "eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                bs.Col(
+                    {
+                        cols: [
+                            { size: bs.Size.Sm, span: 6 },
+                            { size: bs.Size.Md, span: 4 }
+                        ]
+                    },
+                    [
+                        bs.E({ tag: "div", style: bs.helpers.thumbnail }, [
+                            bs.Image({ src: imageData2 }),
+                            bs.E({ tag: "div", style: bs.typography.caption }, [
+                                bs.H3({}, "Thumbnail label"),
+                                bs.P(
+                                    {},
+                                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at " +
+                                        "eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                                ),
+                                bs.P({}, [
+                                    bs.Button({
+                                        tag: bs.ButtonTag.A,
+                                        option: bs.ButtonOption.Primary,
+                                        label: "Button"
+                                    }),
+                                    " ",
+                                    bs.Button({ tag: bs.ButtonTag.A, label: "Button" })
+                                ])
+                            ])
+                        ])
+                    ]
                 ),
-                bs.P({}, [
-                  bs.Button({
-                    tag: bs.ButtonTag.A,
-                    option: bs.ButtonOption.Primary,
-                    label: "Button"
-                  }),
-                  " ",
-                  bs.Button({ tag: bs.ButtonTag.A, label: "Button" })
-                ])
-              ])
+                bs.Col(
+                    {
+                        cols: [
+                            { size: bs.Size.Sm, span: 6 },
+                            { size: bs.Size.Md, span: 4 }
+                        ]
+                    },
+                    [
+                        bs.E({ tag: "div", style: bs.helpers.thumbnail }, [
+                            bs.Image({ src: imageData2 }),
+                            bs.E({ tag: "div", style: bs.typography.caption }, [
+                                bs.H3({}, "Thumbnail label"),
+                                bs.P(
+                                    {},
+                                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at " +
+                                        "eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                                ),
+                                bs.P({}, [
+                                    bs.Button({
+                                        tag: bs.ButtonTag.A,
+                                        option: bs.ButtonOption.Primary,
+                                        label: "Button"
+                                    }),
+                                    " ",
+                                    bs.Button({ tag: bs.ButtonTag.A, label: "Button" })
+                                ])
+                            ])
+                        ])
+                    ]
+                )
             ])
-          ]
+        ]),
+        bs.Figure(
+            { style: styles.highlight },
+            pre(
+                {},
+                bs.Code({ style: langJs }, [
+                    `bs.Row({}, [`,
+                    bs.E({ tag: "br" }),
+                    `    bs.Col({ cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }] }, [`,
+                    bs.E({ tag: "br" }),
+                    `        bs.E({ tag: 'div', style: bs.helpers.thumbnail }, [`,
+                    bs.E({ tag: "br" }),
+                    `            bs.Image({ src: '...' }),`,
+                    bs.E({ tag: "br" }),
+                    `            bs.E({ tag: 'div', style: bs.typography.caption }, [`,
+                    bs.E({ tag: "br" }),
+                    `                bs.H3({}, 'Thumbnail label'),`,
+                    bs.E({ tag: "br" }),
+                    `                bs.P({}, '...'),`,
+                    bs.E({ tag: "br" }),
+                    `                bs.P({}, [`,
+                    bs.E({ tag: "br" }),
+                    `                   bs.Button({ tag: bs.ButtonTag.A, option: bs.ButtonOption.Primary, label: 'Button' }),`,
+                    bs.E({ tag: "br" }),
+                    `                   ' ',`,
+                    bs.E({ tag: "br" }),
+                    `                   bs.Button({ tag: bs.ButtonTag.A, label: 'Button' })`,
+                    bs.E({ tag: "br" }),
+                    `                ])`,
+                    bs.E({ tag: "br" }),
+                    `            ])`,
+                    bs.E({ tag: "br" }),
+                    `        ])`,
+                    bs.E({ tag: "br" }),
+                    `    ])`,
+                    bs.E({ tag: "br" }),
+                    `])`
+                ])
+            )
         )
-      ])
-    ]),
-    bs.Figure(
-      { style: styles.highlight },
-      pre(
-        {},
-        bs.Code({ style: langJs }, [
-          `bs.Row({}, [`,
-          bs.E({ tag: "br" }),
-          `    bs.Col({ cols: [{ size: bs.Size.Sm, span: 6 }, { size: bs.Size.Md, span: 4 }] }, [`,
-          bs.E({ tag: "br" }),
-          `        bs.E({ tag: 'div', style: bs.helpers.thumbnail }, [`,
-          bs.E({ tag: "br" }),
-          `            bs.Image({ src: '...' }),`,
-          bs.E({ tag: "br" }),
-          `            bs.E({ tag: 'div', style: bs.typography.caption }, [`,
-          bs.E({ tag: "br" }),
-          `                bs.H3({}, 'Thumbnail label'),`,
-          bs.E({ tag: "br" }),
-          `                bs.P({}, '...'),`,
-          bs.E({ tag: "br" }),
-          `                bs.P({}, [`,
-          bs.E({ tag: "br" }),
-          `                   bs.Button({ tag: bs.ButtonTag.A, option: bs.ButtonOption.Primary, label: 'Button' }),`,
-          bs.E({ tag: "br" }),
-          `                   ' ',`,
-          bs.E({ tag: "br" }),
-          `                   bs.Button({ tag: bs.ButtonTag.A, label: 'Button' })`,
-          bs.E({ tag: "br" }),
-          `                ])`,
-          bs.E({ tag: "br" }),
-          `            ])`,
-          bs.E({ tag: "br" }),
-          `        ])`,
-          bs.E({ tag: "br" }),
-          `    ])`,
-          bs.E({ tag: "br" }),
-          `])`
-        ])
-      )
-    )
-  ];
+    ];
 }

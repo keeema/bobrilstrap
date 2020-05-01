@@ -5,14 +5,14 @@ import { panelStyles } from "./panel";
 export interface IPanelHeadingData extends IBaseData {}
 
 interface IPanelHeadingCtx extends b.IBobrilCtx {
-  data: IPanelHeadingData;
+    data: IPanelHeadingData;
 }
 
 export const PanelHeading = b.createDerivedComponent<IPanelHeadingData, IBaseData>(Elem, {
-  id: "bobrilstrap-panel-heading",
-  render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
-    b.style(me, panelStyles.panelHeading);
-  }
+    id: "bobrilstrap-panel-heading",
+    render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
+        b.style(me, panelStyles.panelHeading);
+    }
 });
 
 export default PanelHeading;

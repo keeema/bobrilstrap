@@ -1,44 +1,44 @@
-import * as b from 'bobril';
-import { Elem, IBaseData } from './element';
+import * as b from "bobril";
+import { Elem, IBaseData } from "./element";
 
 export const H1 = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
-    id: 'bobrilstrap-h1',
+    id: "bobrilstrap-h1",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'h1';
+        me.tag = "h1";
     }
 });
 
 export const H2 = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
-    id: 'bobrilstrap-h2',
+    id: "bobrilstrap-h2",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'h2';
+        me.tag = "h2";
     }
 });
 
 export const H3 = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
-    id: 'bobrilstrap-h3',
+    id: "bobrilstrap-h3",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'h3';
+        me.tag = "h3";
     }
 });
 
 export const H4 = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
-    id: 'bobrilstrap-h4',
+    id: "bobrilstrap-h4",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'h4';
+        me.tag = "h4";
     }
 });
 
 export const H5 = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
-    id: 'bobrilstrap-h5',
+    id: "bobrilstrap-h5",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'h5';
+        me.tag = "h5";
     }
 });
 
 export const H6 = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
-    id: 'bobrilstrap-h6',
+    id: "bobrilstrap-h6",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-        me.tag = 'h6';
+        me.tag = "h6";
     }
 });

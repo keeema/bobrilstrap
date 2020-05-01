@@ -3,20 +3,20 @@ import { Elem, IBaseData } from "./element";
 import { Tr, ITrData } from "./tr";
 
 export interface ITBodyData extends IBaseData {
-  rows?: ITrData[];
+    rows?: ITrData[];
 }
 
 interface ICtx extends b.IBobrilCtx {
-  data: ITBodyData;
+    data: ITBodyData;
 }
 
 export const TBody = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
-  id: "bobrilstrap-tbody",
-  render(ctx: ICtx, me: b.IBobrilNode) {
-    me.tag = "tbody";
+    id: "bobrilstrap-tbody",
+    render(ctx: ICtx, me: b.IBobrilNode) {
+        me.tag = "tbody";
 
-    if (ctx.data.rows) me.children = ctx.data.rows.map(row => Tr(row));
-  }
+        if (ctx.data.rows) me.children = ctx.data.rows.map(row => Tr(row));
+    }
 });
 
 export default TBody;

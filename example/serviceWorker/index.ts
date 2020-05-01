@@ -11,38 +11,38 @@ declare let swFiles: string[];
 const swCacheName = "app_" + swBuildId;
 
 self.addEventListener("install", function(e) {
-  console.log("SW Install version built " + swBuildDate);
-  // cache all files (it does no include sw.js itself), but we need to add index.html under "/" url
-  e.waitUntil(
-    caches.open(swCacheName).then(cache => {
-      return cache.addAll(swFiles.concat(["/"]));
-    })
-  );
+    console.log("SW Install version built " + swBuildDate);
+    // cache all files (it does no include sw.js itself), but we need to add index.html under "/" url
+    e.waitUntil(
+        caches.open(swCacheName).then(cache => {
+            return cache.addAll(swFiles.concat(["/"]));
+        })
+    );
 });
 
 self.addEventListener("activate", function(e) {
-  console.log("SW Activated version built " + swBuildDate);
-  // remove all old versions from cache
-  e.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames
-          .filter(function(cacheName) {
-            return cacheName.startsWith("app_") && cacheName != swCacheName;
-          })
-          .map(function(cacheName) {
-            return caches.delete(cacheName);
-          })
-      );
-    })
-  );
+    console.log("SW Activated version built " + swBuildDate);
+    // remove all old versions from cache
+    e.waitUntil(
+        caches.keys().then(function(cacheNames) {
+            return Promise.all(
+                cacheNames
+                    .filter(function(cacheName) {
+                        return cacheName.startsWith("app_") && cacheName != swCacheName;
+                    })
+                    .map(function(cacheName) {
+                        return caches.delete(cacheName);
+                    })
+            );
+        })
+    );
 });
 
 self.addEventListener("fetch", function(e) {
-  console.log("SW fetch", e.request.url);
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
-    })
-  );
+    console.log("SW fetch", e.request.url);
+    e.respondWith(
+        caches.match(e.request).then(function(response) {
+            return response || fetch(e.request);
+        })
+    );
 });

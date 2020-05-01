@@ -1,4 +1,6 @@
+// eslint-disable-next-line spaced-comment
 /// <reference types="bootstrap" />
+
 import * as b from "bobril";
 import "./components/bobrilSwipeExtension";
 
@@ -129,25 +131,25 @@ export * from "./components/well";
 const defaultCss = b.asset("node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 export function init(): b.IBobrilNode {
-  b.asset("node_modules/jquery/dist/jquery.min.js");
-  b.asset("node_modules/bootstrap/dist/js/bootstrap.min.js");
-  b.asset("node_modules/bootstrap-3-typeahead/bootstrap3-typeahead.min.js");
-  moveDefaultCssToBeginning();
-  return {};
+    b.asset("node_modules/jquery/dist/jquery.min.js");
+    b.asset("node_modules/bootstrap/dist/js/bootstrap.min.js");
+    b.asset("node_modules/bootstrap-3-typeahead/bootstrap3-typeahead.min.js");
+    moveDefaultCssToBeginning();
+    return {};
 }
 
 function moveDefaultCssToBeginning(): void {
-  const links = document.head.getElementsByTagName("link");
-  for (let i = 0; i < links.length; i++) {
-    const link = links[i];
-    if (link.href.endsWith(defaultCss)) {
-      if (i > 0) {
-        document.head.removeChild(link);
-        document.head.insertBefore(link, links[0]);
-      }
-      return;
+    const links = document.head.getElementsByTagName("link");
+    for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        if (link.href.endsWith(defaultCss)) {
+            if (i > 0) {
+                document.head.removeChild(link);
+                document.head.insertBefore(link, links[0]);
+            }
+            return;
+        }
     }
-  }
 }
 
 init();

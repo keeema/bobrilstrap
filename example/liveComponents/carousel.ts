@@ -32,69 +32,65 @@ pZHRoPSI5MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjNTU1Ii8+PGc+PHRleHQgeD0iMjk4LjMyMDMxMjU
 nPg==`;
 
 export const carousel = b.createVirtualComponent({
-  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-    me.children = section(
-      {
-        header: "Carousel",
-        id: "carousel",
-        lead: []
-      },
-      [example()]
-    );
-  }
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+        me.children = section(
+            {
+                header: "Carousel",
+                id: "carousel",
+                lead: []
+            },
+            [example()]
+        );
+    }
 });
 
 function example(): b.IBobrilChildren {
-  return [
-    bs.P({}, [
-      `You can use `,
-      bs.Code({}, "interval"),
-      `, `,
-      bs.Code({}, "pauseOn"),
-      `, `,
-      bs.Code({}, "keyboard"),
-      `, `,
-      bs.Code({}, "slideTo"),
-      `, `,
-      bs.Code({}, "wrap"),
-      ` or `,
-      bs.Code({}, "onSlide"),
-      ` input data properties to specify expected behaviour and use `,
-      bs.Code({}, "onSlide"),
-      ` callback to handle events.`
-    ]),
-    bs.E({ style: styles.bsExample }, [
-      bs.Carousel({
-        id: "carousel-example-generic",
-        items: [
-          { image: bs.Image({ src: image1 }) },
-          { image: bs.Image({ src: image2 }) },
-          { image: bs.Image({ src: image3 }) }
-        ]
-      })
-    ]),
-    bs.Figure(
-      { style: styles.highlight },
-      pre(
-        {},
-        bs.Code({ style: langJs }, [
-          `bs.Carousel({`,
-          bs.E({ tag: "br" }),
-          `    id: 'carousel-example-generic',`,
-          bs.E({ tag: "br" }),
-          `    items: [`,
-          bs.E({ tag: "br" }),
-          `        { image: bs.Image({ src: ... }) },`,
-          bs.E({ tag: "br" }),
-          `        { image: bs.Image({ src: ... }) },`,
-          bs.E({ tag: "br" }),
-          `        { image: bs.Image({ src: ... }) }`,
-          bs.E({ tag: "br" }),
-          `    ]`,
-          bs.E({ tag: "br" }),
-          `})`
-        ])
-      )
-    )
-  ];
+    return [
+        bs.P({}, [
+            `You can use `,
+            bs.Code({}, "interval"),
+            `, `,
+            bs.Code({}, "pauseOn"),
+            `, `,
+            bs.Code({}, "keyboard"),
+            `, `,
+            bs.Code({}, "slideTo"),
+            `, `,
+            bs.Code({}, "wrap"),
+            ` or `,
+            bs.Code({}, "onSlide"),
+            ` input data properties to specify expected behaviour and use `,
+            bs.Code({}, "onSlide"),
+            ` callback to handle events.`
+        ]),
+        bs.E({ style: styles.bsExample }, [
+            bs.Carousel({
+                id: "carousel-example-generic",
+                items: [{ image: bs.Image({ src: image1 }) }, { image: bs.Image({ src: image2 }) }, { image: bs.Image({ src: image3 }) }]
+            })
+        ]),
+        bs.Figure(
+            { style: styles.highlight },
+            pre(
+                {},
+                bs.Code({ style: langJs }, [
+                    `bs.Carousel({`,
+                    bs.E({ tag: "br" }),
+                    `    id: 'carousel-example-generic',`,
+                    bs.E({ tag: "br" }),
+                    `    items: [`,
+                    bs.E({ tag: "br" }),
+                    `        { image: bs.Image({ src: ... }) },`,
+                    bs.E({ tag: "br" }),
+                    `        { image: bs.Image({ src: ... }) },`,
+                    bs.E({ tag: "br" }),
+                    `        { image: bs.Image({ src: ... }) }`,
+                    bs.E({ tag: "br" }),
+                    `    ]`,
+                    bs.E({ tag: "br" }),
+                    `})`
+                ])
+            )
+        )
+    ];
 }

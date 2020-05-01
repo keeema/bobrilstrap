@@ -9,44 +9,39 @@ export type IThDataOrString = string | IThData;
 export type ITdDataOrString = string | ITdData;
 
 export interface ITrData extends IBaseData {
-  context?: TableContext;
-  columns?: ITdDataOrString[];
-  headers?: IThDataOrString[];
+    context?: TableContext;
+    columns?: ITdDataOrString[];
+    headers?: IThDataOrString[];
 }
 
 interface ICtx extends b.IBobrilCtx {
-  data: ITrData;
+    data: ITrData;
 }
 export const Tr = b.createDerivedComponent<ITrData, IBaseData>(Elem, {
-  id: "bobrilstrap-tr",
-  render(ctx: ICtx, me: b.IBobrilNode) {
-    me.tag = "tr";
-    b.style(
-      me,
-      ctx.data.context !== undefined && tableContextStyles(ctx.data.context)
-    );
+    id: "bobrilstrap-tr",
+    render(ctx: ICtx, me: b.IBobrilNode) {
+        me.tag = "tr";
+        b.style(me, ctx.data.context !== undefined && tableContextStyles(ctx.data.context));
 
-    if (ctx.data.headers)
-      me.children = mergeToChildren(
-        me,
-        ctx.data.headers.map(header => Th(getColumnData(header)))
-      );
-    if (ctx.data.columns)
-      me.children = mergeToChildren(
-        me,
-        ctx.data.columns.map(column => Td(getColumnData(column)))
-      );
-  }
+        if (ctx.data.headers)
+            me.children = mergeToChildren(
+                me,
+                ctx.data.headers.map(header => Th(getColumnData(header)))
+            );
+        if (ctx.data.columns)
+            me.children = mergeToChildren(
+                me,
+                ctx.data.columns.map(column => Td(getColumnData(column)))
+            );
+    }
 });
 
 export default Tr;
 
 interface IColumnWithChildren {
-  children?: b.IBobrilChildren;
+    children?: b.IBobrilChildren;
 }
 
-function getColumnData(
-  column: string | IColumnWithChildren
-): IColumnWithChildren {
-  return typeof column === "string" ? { children: column } : column;
+function getColumnData(column: string | IColumnWithChildren): IColumnWithChildren {
+    return typeof column === "string" ? { children: column } : column;
 }

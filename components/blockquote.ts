@@ -3,19 +3,19 @@ import { Elem, IBaseData } from "./element";
 import { typography } from "./typography";
 
 export interface IBlockquoteData extends IBaseData {
-  reverse?: boolean;
+    reverse?: boolean;
 }
 
 interface ICtx extends b.IBobrilCtx {
-  data: IBlockquoteData;
+    data: IBlockquoteData;
 }
 
 export const Blockquote = b.createDerivedComponent<IBlockquoteData, IBaseData>(Elem, {
-  id: "bobrilstrap-blockquote",
-  render(ctx: ICtx, me: b.IBobrilNode) {
-    me.tag = "blockquote";
-    b.style(me, !!ctx.data.reverse && typography.blockquoteReverse);
-  }
+    id: "bobrilstrap-blockquote",
+    render(ctx: ICtx, me: b.IBobrilNode) {
+        me.tag = "blockquote";
+        b.style(me, !!ctx.data.reverse && typography.blockquoteReverse);
+    }
 });
 
 export default Blockquote;

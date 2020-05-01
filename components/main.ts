@@ -2,8 +2,8 @@ import * as b from "bobril";
 import { Element, IElementData } from "./element";
 
 export const Main = b.createDerivedComponent<IElementData, IElementData>(Element, {
-  id: "bobrilstrap-main",
-  render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
-    me.tag = "main";
-  }
+    id: "bobrilstrap-main",
+    render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
+        me.tag = "main";
+    }
 });

@@ -6,17 +6,14 @@ import { collapseStyles } from "./collapse";
 export interface IPanelCollapseData extends IBaseData {}
 
 interface IPanelCollapseCtx extends b.IBobrilCtx {
-  data: IPanelCollapseData;
+    data: IPanelCollapseData;
 }
 
-export const PanelCollapse = b.createDerivedComponent<IPanelCollapseData, IBaseData>(
-  Elem,
-  {
+export const PanelCollapse = b.createDerivedComponent<IPanelCollapseData, IBaseData>(Elem, {
     id: "bobrilstrap-panel-collapse",
     render(_ctx: IPanelCollapseCtx, me: b.IBobrilNode) {
-      b.style(me, panelStyles.panelCollapse, collapseStyles.collapse);
+        b.style(me, panelStyles.panelCollapse, collapseStyles.collapse);
     }
-  }
-);
+});
 
 export default PanelCollapse;

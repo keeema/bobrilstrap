@@ -5,14 +5,14 @@ import { panelStyles } from "./panel";
 export interface IPanelFooterData extends IBaseData {}
 
 interface IPanelFooterCtx extends b.IBobrilCtx {
-  data: IPanelFooterData;
+    data: IPanelFooterData;
 }
 
 export const PanelFooter = b.createDerivedComponent<IPanelFooterData, IBaseData>(Elem, {
-  id: "bobrilstrap-panel-footer",
-  render(_ctx: IPanelFooterCtx, me: b.IBobrilNode) {
-    b.style(me, panelStyles.panelFooter);
-  }
+    id: "bobrilstrap-panel-footer",
+    render(_ctx: IPanelFooterCtx, me: b.IBobrilNode) {
+        b.style(me, panelStyles.panelFooter);
+    }
 });
 
 export default PanelFooter;

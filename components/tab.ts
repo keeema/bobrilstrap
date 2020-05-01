@@ -4,19 +4,19 @@ import { navStyles } from "./nav";
 import { IElementBobrilNode } from "./element";
 
 export interface ITabData extends ILiData {
-  dropdown?: boolean;
+    dropdown?: boolean;
 }
 
 interface ITabCtx extends b.IBobrilCtx {
-  data: ITabData;
+    data: ITabData;
 }
 
 export const Tab = b.createDerivedComponent<ITabData, ILiData>(Li, {
-  id: "bobrilstrap-tab",
-  render(ctx: ITabCtx, me: IElementBobrilNode) {
-    b.style(me, !!ctx.data.dropdown && navStyles.dropdown);
-    me.attrs["role"] = "presentation";
-  }
+    id: "bobrilstrap-tab",
+    render(ctx: ITabCtx, me: IElementBobrilNode) {
+        b.style(me, !!ctx.data.dropdown && navStyles.dropdown);
+        me.attrs["role"] = "presentation";
+    }
 });
 
 export default Tab;

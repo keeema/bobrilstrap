@@ -1,8 +1,8 @@
-import * as b from 'bobril';
-import { header } from '../common/docsHeader';
-import { bobrilDesc } from './bobrilDesc';
-import { bobrilstrap } from './bobrilstrap';
-import { docsContainer } from '../common/docsContainer';
+import * as b from "bobril";
+import { header } from "../common/docsHeader";
+import { bobrilDesc } from "./bobrilDesc";
+import { bobrilstrap } from "./bobrilstrap";
+import { docsContainer } from "../common/docsContainer";
 
 export const bobrilstrapPage = b.createVirtualComponent({
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
@@ -10,44 +10,43 @@ export const bobrilstrapPage = b.createVirtualComponent({
             header(texts),
             docsContainer(
                 {
-                    id: 'bobrilstrap',
+                    id: "bobrilstrap",
                     sidebar: {
-                        topTargetId: 'bobrilstrap-top',
+                        topTargetId: "bobrilstrap-top",
                         main: true,
                         items: [
                             {
-                                targetId: 'bobril', title: 'Bobril',
+                                targetId: "bobril",
+                                title: "Bobril",
                                 subs: []
                             },
                             {
-                                targetId: 'bobrilstrap-installation', title: 'Bobrilstrap installation',
-                                subs: [
-                                ]
+                                targetId: "bobrilstrap-installation",
+                                title: "Bobrilstrap installation",
+                                subs: []
                             },
                             {
-                                targetId: 'bobrilstrap-tsx', title: 'Using TSX',
-                                subs: [
-                                ]
+                                targetId: "bobrilstrap-tsx",
+                                title: "Using TSX",
+                                subs: []
                             },
                             {
-                                targetId: 'bobrilstrap-themes', title: 'Themes',
-                                subs: [
-                                ]
+                                targetId: "bobrilstrap-themes",
+                                title: "Themes",
+                                subs: []
                             }
                         ]
                     }
                 },
-                [
-                    bobrilDesc(),
-                    bobrilstrap()
-                ])
+                [bobrilDesc(), bobrilstrap()]
+            )
         ];
     }
 });
 
 const texts = {
-    header: 'Bobrilstrap',
+    header: "Bobrilstrap",
     headerContent: `Bobril wrapper of the most popular HTML, CSS, and JS framework for developing responsive,
      mobile first projects on the web - Bootstrap.`,
-    iconText: 'BS'
+    iconText: "BS"
 };

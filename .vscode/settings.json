@@ -4,5 +4,11 @@
         "**/.git": true,
         "**/.DS_Store": true,
         "dist": true
-    }
+    },
+    "cSpell.words": [
+        "bobril",
+        "bobrilstrap",
+        "bootstrap",
+        "typeahead"
+    ]
 }

@@ -25,10 +25,11 @@
     "preserveConstEnums": false,
     "reactNamespace": "b",
     "removeComments": false,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "skipDefaultLibCheck": true,
     "sourceMap": true,
     "strict": true,
+    "strictPropertyInitialization": true,
     "target": "es5",
     "resolveJsonModule": true
   },

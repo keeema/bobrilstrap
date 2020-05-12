@@ -5,14 +5,14 @@ export enum TooltipPlacement {
     Top,
     Bottom,
     Right,
-    Auto
+    Auto,
 }
 
 export enum TooltipTrigger {
     Click,
     Hover,
     Focus,
-    Manual
+    Manual,
 }
 
 export interface ITooltipOptions {
@@ -47,7 +47,7 @@ export const Tooltip = b.createVirtualComponent<ITooltipData>({
     },
     destroy(ctx: ITooltipCtx) {
         unregister(ctx);
-    }
+    },
 });
 
 function registerNewTooltip(ctx: ITooltipCtx): void {
@@ -67,8 +67,8 @@ function registerNewTooltip(ctx: ITooltipCtx): void {
             placement:
                 ctx.data.placement !== undefined ? (TooltipPlacement[ctx.data.placement].toLowerCase() as Bootstrap.Placement) : undefined,
             trigger: ctx.data.trigger
-                ? (ctx.data.trigger.map(value => TooltipTrigger[value].toLowerCase()).join(" ") as Bootstrap.Trigger)
-                : undefined
+                ? (ctx.data.trigger.map((value) => TooltipTrigger[value].toLowerCase()).join(" ") as Bootstrap.Trigger)
+                : undefined,
         });
         jQueryElement.on("shown.bs.tooltip", () => (ctx.visible = true));
         jQueryElement.on("hidden.bs.tooltip", () => (ctx.visible = false));
@@ -82,7 +82,9 @@ function registerNewTooltip(ctx: ITooltipCtx): void {
 
     if (ctx.lastTitle !== undefined && ctx.lastTitle !== newTitle) {
         jQueryElement.attr("data-original-title", newTitle);
-        if (ctx.visible) jQueryElement.tooltip("show");
+        if (ctx.visible) {
+            jQueryElement.tooltip("show");
+        }
     }
 
     ctx.lastTitle = newTitle;

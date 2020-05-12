@@ -13,8 +13,10 @@ export const Th = b.createDerivedComponent<IThData, IBaseData>(Elem, {
     id: "bobrilstrap-th",
     render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = "th";
-        if (ctx.data.colspan) me.attrs["colspan"] = ctx.data.colspan.toString();
-    }
+        if (ctx.data.colspan) {
+            me.attrs["colspan"] = ctx.data.colspan.toString();
+        }
+    },
 });
 
 export default Th;

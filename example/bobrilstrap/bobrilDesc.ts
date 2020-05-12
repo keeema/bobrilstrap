@@ -19,8 +19,8 @@ export const bobrilDesc = b.createVirtualComponent({
                         It is fast, low size framework with rendering based on Virtual DOM. The main focus is on speed and simplicity of 
                         code generation. Bobril is about 8x faster than react (see vdom-benchmark). For more details visit `,
                         bs.A({ href: "https://github.com/Bobris/Bobril" }, "project pages"),
-                        "."
-                    ]
+                        ".",
+                    ],
                 },
                 [
                     bs.E({ tag: "h2", attrs: { id: "bobril-getting-started" } }, "Getting started"),
@@ -51,14 +51,14 @@ export const bobrilDesc = b.createVirtualComponent({
                                     bs.E({ tag: "br" }),
                                     ``,
                                     bs.E({ tag: "br" }),
-                                    `b.init(() => "Hello World!");`
+                                    `b.init(() => "Hello World!");`,
                                 ])
                             )
                         ),
                         "Finally run ",
                         bs.Code({}, "bobril-build"),
                         " by command:",
-                        bs.Figure({ style: styles.highlight }, bs.Pre({}, ["bb"]))
+                        bs.Figure({ style: styles.highlight }, bs.Pre({}, ["bb"])),
                     ]),
                     bs.P({}, [
                         "Now is everything prepared for developing a new application based on bobril and you can see the result on ",
@@ -68,7 +68,7 @@ export const bobrilDesc = b.createVirtualComponent({
                         bs.A(
                             {
                                 href: "https://code.visualstudio.com",
-                                target: bs.Target.Blank
+                                target: bs.Target.Blank,
                             },
                             "Visual Studio Code"
                         ),
@@ -76,14 +76,14 @@ export const bobrilDesc = b.createVirtualComponent({
                         bs.A(
                             {
                                 href: "https://github.com/Bobris/Bobril",
-                                target: bs.Target.Blank
+                                target: bs.Target.Blank,
                             },
                             "Bobril GitHub pages"
                         ),
-                        "."
-                    ])
+                        ".",
+                    ]),
                 ]
-            )
+            ),
         ];
-    }
+    },
 });

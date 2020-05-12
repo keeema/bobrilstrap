@@ -5,7 +5,7 @@ import { createDictionary, IDictionary } from "./bobrilHelpers";
 export enum ModalSize {
     Lg,
     Md,
-    Sm
+    Sm,
 }
 
 export interface IModalData extends IBaseData {
@@ -37,7 +37,7 @@ export const modalStyles = {
     modalFooter: b.styleDef("modal-footer"),
     modalTitle: b.styleDef("modal-title"),
     lg: b.styleDef("modal-lg"),
-    sm: b.styleDef("modal-sm")
+    sm: b.styleDef("modal-sm"),
 };
 
 export const modalSizeStyles: IDictionary<ModalSize, b.IBobrilStyle> = createDictionary<ModalSize, b.IBobrilStyle>();
@@ -55,7 +55,7 @@ export const Modal = b.createDerivedComponent<IModalData, IBaseData>(Elem, {
                 [
                     !!ctx.data.header && b.styledDiv(ctx.data.header, modalStyles.modalHeader),
                     !!ctx.data.body && b.styledDiv(ctx.data.body, modalStyles.modalBody),
-                    !!ctx.data.footer && b.styledDiv(ctx.data.footer, modalStyles.modalFooter)
+                    !!ctx.data.footer && b.styledDiv(ctx.data.footer, modalStyles.modalFooter),
                 ],
                 modalStyles.modalContent
             ),
@@ -70,16 +70,16 @@ export const Modal = b.createDerivedComponent<IModalData, IBaseData>(Elem, {
         modalElement.modal({
             keyboard: ctx.data.keyboard,
             show: !!ctx.data.visible,
-            backdrop
+            backdrop,
         });
 
-        modalElement.on("hidden.bs.Modal", ev => {
+        modalElement.on("hidden.bs.Modal", (ev) => {
             if (ctx.data.onHidden) {
                 ctx.data.onHidden(ev);
             }
         });
 
-        modalElement.on("shown.bs.Modal", ev => {
+        modalElement.on("shown.bs.Modal", (ev) => {
             if (ctx.data.onShown) {
                 ctx.data.onShown(ev);
             }
@@ -87,12 +87,14 @@ export const Modal = b.createDerivedComponent<IModalData, IBaseData>(Elem, {
     },
     postUpdateDom(ctx: IModalCtx, _me: b.IBobrilCacheNode, element: HTMLElement) {
         if (!!ctx.data.visible !== !!ctx.visible) {
-            if (ctx.visible && ctx.data.onHide && !ctx.data.onHide()) return;
+            if (ctx.visible && ctx.data.onHide && !ctx.data.onHide()) {
+                return;
+            }
 
             ctx.visible = ctx.data.visible;
             $(element).modal(ctx.visible ? "show" : "hide");
         }
-    }
+    },
 });
 
 export default Modal;

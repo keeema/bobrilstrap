@@ -18,7 +18,7 @@ export const Progress = b.createDerivedComponent<IProgressData, IBaseData>(Elem,
     render(ctx: IProgressCtx, me: b.IBobrilCacheNode) {
         b.style(me, progressStyle);
         if (ctx.data.bars) {
-            ctx.data.bars.forEach(barData => mergeToChildren(me, ProgressBar(barData)));
+            ctx.data.bars.forEach((barData) => mergeToChildren(me, ProgressBar(barData)));
         }
-    }
+    },
 });

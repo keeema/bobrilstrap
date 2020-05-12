@@ -3,7 +3,7 @@ import * as b from "bobril";
 export const collapseStyles = {
     collapse: b.styleDef("collapse"),
     in: b.styleDef("in"),
-    collapsed: b.styleDef("collapsed")
+    collapsed: b.styleDef("collapsed"),
 };
 
 export interface ICollapseData extends b.IDataWithChildren {
@@ -29,21 +29,27 @@ export const Collapse = b.createVirtualComponent<ICollapseData>({
     postUpdateDom(ctx: ICollapseCtx) {
         registerNewCollapse(ctx);
         handleToggle(ctx);
-    }
+    },
 });
 
 function registerNewCollapse(ctx: ICollapseCtx): void {
     const element = b.getDomNode(ctx.me) as HTMLElement;
-    if (!element || ctx.collapsedElement === element) return;
+    if (!element || ctx.collapsedElement === element) {
+        return;
+    }
 
     ctx.collapsedElement = element;
     $(element).collapse({ toggle: !ctx.data.collapsed });
     ctx.collapsed = ctx.data.collapsed;
     $(element).on("hidden.bs.Collapse", () => {
-        if (ctx.data.onCollapsed) ctx.data.onCollapsed();
+        if (ctx.data.onCollapsed) {
+            ctx.data.onCollapsed();
+        }
     });
     $(element).on("shown.bs.Collapse", () => {
-        if (ctx.data.onExpanded) ctx.data.onExpanded();
+        if (ctx.data.onExpanded) {
+            ctx.data.onExpanded();
+        }
     });
 }
 

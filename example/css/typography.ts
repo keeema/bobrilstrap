@@ -9,7 +9,7 @@ export const typographyPage = b.createVirtualComponent({
         me.children = section(
             {
                 header: "Typography",
-                id: "type"
+                id: "type",
             },
             [
                 headings(),
@@ -20,10 +20,10 @@ export const typographyPage = b.createVirtualComponent({
                 abbreviations(),
                 addresses(),
                 blockquotes(),
-                lists()
+                lists(),
             ]
         );
-    }
+    },
 });
 
 function headings(): b.IBobrilChildren {
@@ -39,7 +39,7 @@ function headings(): b.IBobrilChildren {
             ` through `,
             bs.Code({}, "H6"),
             ` components are also available, for when you want to match the font styling of a heading but still want 
-            your text to be displayed inline.`
+            your text to be displayed inline.`,
         ]),
         bs.E(
             { style: [styles.bsExample, styles.bsExampleType] },
@@ -49,44 +49,44 @@ function headings(): b.IBobrilChildren {
                         {
                             columns: [
                                 { children: bs.H1({}, "bs.H1({}, ...) Bootstrap heading") },
-                                { children: "Semibold 36px", style: styles.typeInfo }
-                            ]
+                                { children: "Semibold 36px", style: styles.typeInfo },
+                            ],
                         },
                         {
                             columns: [
                                 { children: bs.H2({}, "bs.H2({}, ...) Bootstrap heading") },
                                 {
                                     children: "Semibold 30px",
-                                    style: styles.typeInfo
-                                }
-                            ]
+                                    style: styles.typeInfo,
+                                },
+                            ],
                         },
                         {
                             columns: [
                                 { children: bs.H3({}, "bs.H3({}, ...) Bootstrap heading") },
-                                { children: "Semibold 24px", style: styles.typeInfo }
-                            ]
+                                { children: "Semibold 24px", style: styles.typeInfo },
+                            ],
                         },
                         {
                             columns: [
                                 { children: bs.H4({}, "bs.H4({}, ...) Bootstrap heading") },
-                                { children: "Semibold 18px", style: styles.typeInfo }
-                            ]
+                                { children: "Semibold 18px", style: styles.typeInfo },
+                            ],
                         },
                         {
                             columns: [
                                 { children: bs.H5({}, "bs.H5({}, ...) Bootstrap heading") },
-                                { children: "Semibold 14px", style: styles.typeInfo }
-                            ]
+                                { children: "Semibold 14px", style: styles.typeInfo },
+                            ],
                         },
                         {
                             columns: [
                                 { children: bs.H6({}, "bs.H6({}, ...) Bootstrap heading") },
-                                { children: "Semibold 12px", style: styles.typeInfo }
-                            ]
-                        }
-                    ]
-                }
+                                { children: "Semibold 12px", style: styles.typeInfo },
+                            ],
+                        },
+                    ],
+                },
             })
         ),
         bs.Figure(
@@ -105,7 +105,7 @@ function headings(): b.IBobrilChildren {
                     `bs.H5({}, 'bs.H5({}, ...) Bootstrap heading')`,
                     bs.E({ tag: "br" }),
                     `bs.H6({}, 'bs.H6({}, ...) Bootstrap heading')`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
         ),
@@ -114,7 +114,7 @@ function headings(): b.IBobrilChildren {
             bs.Code({}, "small"),
             " component or ",
             bs.Code({}, "bs.typography.small"),
-            " bobril style definition."
+            " bobril style definition.",
         ]),
         bs.E(
             { style: [styles.bsExample, styles.bsExampleType] },
@@ -124,47 +124,47 @@ function headings(): b.IBobrilChildren {
                         {
                             columns: [
                                 {
-                                    children: bs.H1({}, ["bs.H1({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")])
-                                }
-                            ]
+                                    children: bs.H1({}, ["bs.H1({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")]),
+                                },
+                            ],
                         },
                         {
                             columns: [
                                 {
-                                    children: bs.H2({}, ["bs.H2({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")])
-                                }
-                            ]
+                                    children: bs.H2({}, ["bs.H2({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")]),
+                                },
+                            ],
                         },
                         {
                             columns: [
                                 {
-                                    children: bs.H3({}, ["bs.H3({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")])
-                                }
-                            ]
+                                    children: bs.H3({}, ["bs.H3({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")]),
+                                },
+                            ],
                         },
                         {
                             columns: [
                                 {
-                                    children: bs.H4({}, ["bs.H4({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")])
-                                }
-                            ]
+                                    children: bs.H4({}, ["bs.H4({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")]),
+                                },
+                            ],
                         },
                         {
                             columns: [
                                 {
-                                    children: bs.H5({}, ["bs.H5({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")])
-                                }
-                            ]
+                                    children: bs.H5({}, ["bs.H5({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")]),
+                                },
+                            ],
                         },
                         {
                             columns: [
                                 {
-                                    children: bs.H6({}, ["bs.H6({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")])
-                                }
-                            ]
-                        }
-                    ]
-                }
+                                    children: bs.H6({}, ["bs.H6({}, ...) Bootstrap heading ", bs.Small({}, "Secondary text")]),
+                                },
+                            ],
+                        },
+                    ],
+                },
             })
         ),
         bs.Figure(
@@ -183,10 +183,10 @@ function headings(): b.IBobrilChildren {
                     `bs.H5({}, ['bs.H5({}, ...) Bootstrap heading', bs.Small({}, 'Secondary text')])`,
                     bs.E({ tag: "br" }),
                     `bs.H6({}, ['bs.H6({}, ...) Bootstrap heading', bs.Small({}, 'Secondary text')])`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -205,7 +205,7 @@ function bodyCopy(): b.IBobrilChildren {
             bs.Code({}, "<body>"),
             ` and all paragraphs. In addition, `,
             bs.Code({}, "<p>"),
-            ` (paragraphs) receive a bottom margin of half their computed line-height (10px by default).`
+            ` (paragraphs) receive a bottom margin of half their computed line-height (10px by default).`,
         ]),
         bs.E({ style: [styles.bsExample] }, [
             bs.P(
@@ -223,7 +223,7 @@ function bodyCopy(): b.IBobrilChildren {
                 {},
                 `Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. 
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.`
-            )
+            ),
         ]),
         bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, "bs.P({}, ...)"))),
         bs.H3({ attrs: { id: "lead-body-copy" } }, "Lead body copy"),
@@ -235,7 +235,7 @@ function bodyCopy(): b.IBobrilChildren {
                 `Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.`
             )
         ),
-        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, "bs.P({ lead: true }, ...)")))
+        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, "bs.P({ lead: true }, ...)"))),
     ];
 }
 
@@ -285,14 +285,14 @@ function inlineTextElements(): b.IBobrilChildren {
             bs.Code({}, "font-size"),
             ` for nested `,
             bs.Code({}, "Small"),
-            ` components.`
+            ` components.`,
         ]),
         bs.P({}, [
             `You may alternatively use an inline element with `,
             bs.Code({}, "bs.typography.small"),
             ` style in place of any `,
             bs.Code({}, "Small"),
-            ` component.`
+            ` component.`,
         ]),
         bs.E({ style: styles.bsExample }, bs.P({}, bs.Small({}, "This line of text is meant to be treated as fine print."))),
         bs.Figure(
@@ -319,7 +319,7 @@ function inlineTextElements(): b.IBobrilChildren {
         bs.Figure(
             { style: styles.highlight },
             pre({}, bs.Code({ style: langJs }, [`['The following snippet of text is ', bs.Em({}, 'rendered as italicized  text'), '.']`]))
-        )
+        ),
     ];
 }
 
@@ -332,7 +332,7 @@ function alignmentStyles(): b.IBobrilChildren {
             bs.P({ style: bs.typography.textCenter }, "Center aligned text."),
             bs.P({ style: bs.typography.textRight }, "Right aligned text."),
             bs.P({ style: bs.typography.textJustify }, "Justified  text."),
-            bs.P({ style: bs.typography.textNowrap }, "No wrap text.")
+            bs.P({ style: bs.typography.textNowrap }, "No wrap text."),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -351,10 +351,10 @@ function alignmentStyles(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `   bs.P({ style: bs.typography.textNowrap }, 'No wrap text.')`,
                     bs.E({ tag: "br" }),
-                    `]`
+                    `]`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -365,7 +365,7 @@ function transformatiomStyles(): b.IBobrilChildren {
         bs.E({ style: styles.bsExample }, [
             bs.P({ style: bs.typography.textLowercase }, "Lowercased text."),
             bs.P({ style: bs.typography.textUppercase }, "Uppercased text."),
-            bs.P({ style: bs.typography.textCapitalize }, "Capitalized text.")
+            bs.P({ style: bs.typography.textCapitalize }, "Capitalized text."),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -380,10 +380,10 @@ function transformatiomStyles(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `   bs.P({ style: bs.typography.textCapitalize }, 'Capitalized text.')`,
                     bs.E({ tag: "br" }),
-                    `]`
+                    `]`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -396,7 +396,7 @@ function abbreviations(): b.IBobrilChildren {
             ` element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a `,
             bs.Code({}, "title"),
             ` input data property attribute have a light dotted bottom border and a help cursor on hover, 
-            providing additional context on hover and to users of assistive technologies.`
+            providing additional context on hover and to users of assistive technologies.`,
         ]),
         bs.H3({ attrs: { id: "basic-abbreviation" } }, "Basic abbreviation"),
         bs.E({ style: styles.bsExample }, ["An abbreviation of the word attribute is ", bs.Abbr({ title: "attribute" }, "attr"), "."]),
@@ -411,7 +411,7 @@ function abbreviations(): b.IBobrilChildren {
         bs.P({}, [`Set `, bs.Code({}, "initialism"), ` input data property to an abbreviation for a slightly smaller font-size.`]),
         bs.E({ style: styles.bsExample }, [
             bs.Abbr({ title: "HyperText Markup Language", initialism: true }, "HTML"),
-            " is the best thing since sliced bread."
+            " is the best thing since sliced bread.",
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -424,10 +424,10 @@ function abbreviations(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `   ' is the best thing since sliced bread.'`,
                     bs.E({ tag: "br" }),
-                    `]`
+                    `]`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -437,7 +437,7 @@ function addresses(): b.IBobrilChildren {
         bs.P({}, [
             `Present contact information for the nearest ancestor or the entire body of work. 
             Preserve formatting by ending all lines with `,
-            bs.Code({}, `bs.E({ tag: 'br' })`)
+            bs.Code({}, `bs.E({ tag: 'br' })`),
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Address({}, [
@@ -448,9 +448,9 @@ function addresses(): b.IBobrilChildren {
                 "San Francisco, CA 94103",
                 bs.E({ tag: "br" }),
                 bs.Abbr({ title: "Phone" }, "P:"),
-                " (123) 456-7890"
+                " (123) 456-7890",
             ]),
-            bs.Address({}, [bs.Strong({}, "Full Name"), bs.E({ tag: "br" }), bs.A({ href: "mailto:#" }, "first.last@example.com")])
+            bs.Address({}, [bs.Strong({}, "Full Name"), bs.E({ tag: "br" }), bs.A({ href: "mailto:#" }, "first.last@example.com")]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -479,10 +479,10 @@ function addresses(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `   ])`,
                     bs.E({ tag: "br" }),
-                    `]`
+                    `]`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -496,17 +496,17 @@ function blockquotes(): b.IBobrilChildren {
             bs.Code({}, "bs.Blockquote"),
             `around any HTML as the quote. For straight quotes, we recommend a `,
             bs.Code({}, "bs.P"),
-            "."
+            ".",
         ]),
         bs.E({ style: styles.bsExample }, [
-            bs.Blockquote({}, bs.P({}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."))
+            bs.Blockquote({}, bs.P({}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.")),
         ]),
         bs.Figure(
             { style: styles.highlight },
             pre(
                 {},
                 bs.Code({ style: langJs }, [
-                    `bs.Blockquote({}, bs.P({}, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.'))`
+                    `bs.Blockquote({}, bs.P({}, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.'))`,
                 ])
             )
         ),
@@ -518,13 +518,13 @@ function blockquotes(): b.IBobrilChildren {
             bs.Code({}, "bs.Footer"),
             `for identifying the source. Wrap the name of the source work in `,
             bs.Code({}, "bs.Cite"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Blockquote({}, [
                 bs.P({}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."),
-                bs.Footer({}, ["Someone famous in ", bs.Cite({ title: "Source Title" }, "Source Title")])
-            ])
+                bs.Footer({}, ["Someone famous in ", bs.Cite({ title: "Source Title" }, "Source Title")]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -537,7 +537,7 @@ function blockquotes(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Footer({}, ['Someone famous in ', bs.Cite({ title: 'Source Title' }, 'Source Title')])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -547,7 +547,7 @@ function blockquotes(): b.IBobrilChildren {
             bs.Blockquote(
                 { reverse: true },
                 bs.P({}, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.")
-            )
+            ),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -555,10 +555,10 @@ function blockquotes(): b.IBobrilChildren {
                 {},
                 bs.Code({ style: langJs }, [
                     `bs.Blockquote({ reverse: true }, bs.P({}, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Integer posuere erat a ante.'))`
+            Integer posuere erat a ante.'))`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -581,12 +581,12 @@ function lists(): b.IBobrilChildren {
                         bs.Li({}, "Phasellus iaculis neque"),
                         bs.Li({}, "Purus sodales ultricies"),
                         bs.Li({}, "Vestibulum laoreet porttitor sem"),
-                        bs.Li({}, "Ac tristique libero volutpat at")
+                        bs.Li({}, "Ac tristique libero volutpat at"),
                     ])
                 ),
                 bs.Li({}, "Faucibus porta lacus fringilla vel"),
                 bs.Li({}, "Aenean sit amet erat nunc"),
-                bs.Li({}, "Eget porttitor lorem")
+                bs.Li({}, "Eget porttitor lorem"),
             ])
         ),
         bs.Figure(
@@ -599,7 +599,7 @@ function lists(): b.IBobrilChildren {
                     `    bs.Li({}, ...)`,
                     bs.E({ tag: "br" }),
                     `])`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
         ),
@@ -615,7 +615,7 @@ function lists(): b.IBobrilChildren {
                 bs.Li({}, "Nulla volutpat aliquam velit"),
                 bs.Li({}, "Faucibus porta lacus fringilla vel"),
                 bs.Li({}, "Aenean sit amet erat nunc"),
-                bs.Li({}, "Eget porttitor lorem")
+                bs.Li({}, "Eget porttitor lorem"),
             ])
         ),
         bs.Figure(
@@ -627,7 +627,7 @@ function lists(): b.IBobrilChildren {
             `Remove the default `,
             bs.Code({}, "list-style"),
             ` and left margin on list items (immediate children only). 
-        This only applies to immediate children list items, meaning you will need to add the class for any nested lists as well.`
+        This only applies to immediate children list items, meaning you will need to add the class for any nested lists as well.`,
         ]),
         bs.E(
             { style: styles.bsExample },
@@ -643,12 +643,12 @@ function lists(): b.IBobrilChildren {
                         bs.Li({}, "Phasellus iaculis neque"),
                         bs.Li({}, "Purus sodales ultricies"),
                         bs.Li({}, "Vestibulum laoreet porttitor sem"),
-                        bs.Li({}, "Ac tristique libero volutpat at")
+                        bs.Li({}, "Ac tristique libero volutpat at"),
                     ])
                 ),
                 bs.Li({}, "Faucibus porta lacus fringilla vel"),
                 bs.Li({}, "Aenean sit amet erat nunc"),
-                bs.Li({}, "Eget porttitor lorem")
+                bs.Li({}, "Eget porttitor lorem"),
             ])
         ),
         bs.Figure(
@@ -660,7 +660,7 @@ function lists(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Li({}, ...)`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -679,7 +679,7 @@ function lists(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Li({}, ...)`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -694,7 +694,7 @@ function lists(): b.IBobrilChildren {
                 bs.Dd({}, "Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit."),
                 bs.Dd({}, "Donec id elit non mi porta gravida at eget metus."),
                 bs.Dt({}, "Malesuada porta"),
-                bs.Dd({}, "Etiam porta sem malesuada magna mollis euismod.")
+                bs.Dd({}, "Etiam porta sem malesuada magna mollis euismod."),
             ])
         ),
         bs.Figure(
@@ -708,7 +708,7 @@ function lists(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Dd({}, ...)`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -718,7 +718,7 @@ function lists(): b.IBobrilChildren {
             bs.Code({}, `<dl>`),
             ` line up side-by-side. Starts off stacked like default `,
             bs.Code({}, `<dl>`),
-            `s, but when the navbar expands, so do these.`
+            `s, but when the navbar expands, so do these.`,
         ]),
         bs.E(
             { style: styles.bsExample },
@@ -734,7 +734,7 @@ function lists(): b.IBobrilChildren {
                 bs.Dd(
                     {},
                     "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
-                )
+                ),
             ])
         ),
         bs.Figure(
@@ -748,7 +748,7 @@ function lists(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Dd({}, ...)`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -757,8 +757,8 @@ function lists(): b.IBobrilChildren {
             bs.P({}, [
                 `Horizontal description lists will truncate terms that are too long to fit in the left column with `,
                 bs.Code({}, "text-overflow"),
-                `. In narrower viewports, they will change to the default stacked layout.`
-            ])
-        ])
+                `. In narrower viewports, they will change to the default stacked layout.`,
+            ]),
+        ]),
     ];
 }

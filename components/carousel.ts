@@ -13,7 +13,7 @@ export interface ICarouselItem {
 }
 
 export enum CarouselPauseOn {
-    Hover
+    Hover,
 }
 
 export interface ICarouselData extends IBaseData {
@@ -45,7 +45,7 @@ export const carouselStyles = {
     item: b.styleDef("item"),
     left: b.styleDef("left"),
     right: b.styleDef("right"),
-    slide: b.styleDef("slide")
+    slide: b.styleDef("slide"),
 };
 
 export const Carousel = b.createDerivedComponent<ICarouselData, IBaseData>(Elem, {
@@ -54,7 +54,9 @@ export const Carousel = b.createDerivedComponent<ICarouselData, IBaseData>(Elem,
         b.style(me, carouselStyles.carousel, carouselStyles.slide);
         me.attrs["id"] = ctx.data.id;
 
-        if (!(ctx.data.data && ctx.data.data.ride)) me.attrs["data-ride"] = "carousel";
+        if (!(ctx.data.data && ctx.data.data.ride)) {
+            me.attrs["data-ride"] = "carousel";
+        }
 
         const initialSlide = ctx.data.slideTo === undefined ? 0 : ctx.data.slideTo;
 
@@ -76,7 +78,7 @@ export const Carousel = b.createDerivedComponent<ICarouselData, IBaseData>(Elem,
                 ctx.data.items.map((item, idx) =>
                     Elem(
                         {
-                            style: [carouselStyles.item, !ctx.initialSlideChanged && idx === initialSlide && carouselStyles.active]
+                            style: [carouselStyles.item, !ctx.initialSlideChanged && idx === initialSlide && carouselStyles.active],
                         },
                         [item.image, !!item.captionContent && Elem({ style: carouselStyles.carouselCaption }, item.captionContent)]
                     )
@@ -87,11 +89,11 @@ export const Carousel = b.createDerivedComponent<ICarouselData, IBaseData>(Elem,
                     style: [carouselStyles.left, carouselStyles.carouselControl],
                     href: `#${ctx.data.id}`,
                     attrs: { role: "button" },
-                    data: { slide: "prev" }
+                    data: { slide: "prev" },
                 },
                 [
                     Glyphicon({ icon: GlyphIcon.ChevronLeft, aria: { hidden: true } }),
-                    ctx.data.srOnlyPrev && Span({ style: helpers.srOnly }, ctx.data.srOnlyPrev)
+                    ctx.data.srOnlyPrev && Span({ style: helpers.srOnly }, ctx.data.srOnlyPrev),
                 ]
             ),
             A(
@@ -99,13 +101,13 @@ export const Carousel = b.createDerivedComponent<ICarouselData, IBaseData>(Elem,
                     style: [carouselStyles.right, carouselStyles.carouselControl],
                     href: `#${ctx.data.id}`,
                     attrs: { role: "button" },
-                    data: { slide: "next" }
+                    data: { slide: "next" },
                 },
                 [
                     Glyphicon({ icon: GlyphIcon.ChevronRight, aria: { hidden: true } }),
-                    ctx.data.srOnlyNext && Span({ style: helpers.srOnly }, ctx.data.srOnlyNext)
+                    ctx.data.srOnlyNext && Span({ style: helpers.srOnly }, ctx.data.srOnlyNext),
                 ]
-            )
+            ),
         ];
     },
     postInitDom(ctx: ICarouselCtx, _me: b.IBobrilNode, element: HTMLElement) {
@@ -114,11 +116,13 @@ export const Carousel = b.createDerivedComponent<ICarouselData, IBaseData>(Elem,
             interval: ctx.data.interval,
             pause: ctx.data.pauseOn !== undefined ? (CarouselPauseOn[ctx.data.pauseOn].toLowerCase() as "hover") : undefined,
             wrap: ctx.data.wrap,
-            keyboard: ctx.data.keyboard
+            keyboard: ctx.data.keyboard,
         });
         jqueryElement.on("slide.bs.Carousel", () => {
             ctx.initialSlideChanged = true;
-            if (ctx.data.onSlide) ctx.data.onSlide();
+            if (ctx.data.onSlide) {
+                ctx.data.onSlide();
+            }
         });
 
         handleSlideTo(ctx, jqueryElement);
@@ -135,10 +139,10 @@ export const Carousel = b.createDerivedComponent<ICarouselData, IBaseData>(Elem,
         const element = b.getDomNode(ctx.me) as HTMLElement;
         $(element).carousel("prev");
         return true;
-    }
+    },
 });
 
-function handleSlideTo(ctx: ICarouselCtx, jqueryElement: JQuery) {
+function handleSlideTo(ctx: ICarouselCtx, jqueryElement: JQuery): void {
     if (ctx.data.slideTo !== undefined) {
         jqueryElement.carousel(ctx.data.slideTo);
     }

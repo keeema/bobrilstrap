@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const formStyles = {
     formHorizontal: b.styleDef("form-horizontal"),
-    formInline: b.styleDef("form-inline")
+    formInline: b.styleDef("form-inline"),
 };
 
 export const Form = b.createDerivedComponent<IFormData, IBaseData>(Elem, {
@@ -21,7 +21,7 @@ export const Form = b.createDerivedComponent<IFormData, IBaseData>(Elem, {
         me.tag = "form";
         b.style(me, !!ctx.data.horizontal && formStyles.formHorizontal);
         b.style(me, !!ctx.data.inline && formStyles.formInline);
-    }
+    },
 });
 
 export default Form;

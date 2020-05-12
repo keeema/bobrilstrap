@@ -39,21 +39,23 @@ export const docsSidebar = b.createVirtualComponent<IDocsSidebarData>({
                         styles.bsDocsSidebar,
                         bs.hiddenStyles(bs.Device.Print),
                         bs.hiddenStyles(bs.Device.Sm),
-                        bs.hiddenStyles(bs.Device.Xs)
-                    ]
+                        bs.hiddenStyles(bs.Device.Xs),
+                    ],
                 },
                 sideBarItems({
                     items: ctx.data.items,
-                    topTargetId: ctx.data.topTargetId
+                    topTargetId: ctx.data.topTargetId,
                 })
             )
         );
-    }
+    },
 });
 
 function getScrollListener(ctx: b.IBobrilCtx): (scrollInfo: b.IBobrilScroll | undefined) => void {
     return (scrollInfo: b.IBobrilScroll | undefined) => {
-        if (!scrollInfo || scrollInfo.node) return;
+        if (!scrollInfo || scrollInfo.node) {
+            return;
+        }
 
         b.invalidate(ctx);
     };

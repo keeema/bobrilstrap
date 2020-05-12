@@ -5,5 +5,5 @@ export const Main = b.createDerivedComponent<IElementData, IElementData>(Element
     id: "bobrilstrap-main",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = "main";
-    }
+    },
 });

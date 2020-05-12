@@ -16,7 +16,7 @@ export const Tab = b.createDerivedComponent<ITabData, ILiData>(Li, {
     render(ctx: ITabCtx, me: IElementBobrilNode) {
         b.style(me, !!ctx.data.dropdown && navStyles.dropdown);
         me.attrs["role"] = "presentation";
-    }
+    },
 });
 
 export default Tab;

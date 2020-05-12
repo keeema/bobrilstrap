@@ -5,7 +5,7 @@ export const Strikethrough = b.createDerivedComponent<IBaseData, IBaseData>(Elem
     id: "bobrilstrap-strikethrough",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = "s";
-    }
+    },
 });
 
 export const S = Strikethrough;

@@ -20,7 +20,7 @@ export enum InputTextType {
     Text,
     Time,
     Url,
-    Week
+    Week,
 }
 
 export interface IInputTextData extends IBaseData<string> {
@@ -51,13 +51,13 @@ interface ICtx extends b.IBobrilCtx {
 export const inputTextStyles = {
     formControl: b.styleDef("form-control"),
     lg: b.styleDef("input-lg"),
-    sm: b.styleDef("input-sm")
+    sm: b.styleDef("input-sm"),
 };
 
 export enum InputTextSize {
     Lg,
     Default,
-    Sm
+    Sm,
 }
 
 export const inputTextSizeStyles: IDictionary<InputTextSize, b.IBobrilStyle> = createDictionary<InputTextSize, b.IBobrilStyle>();
@@ -81,25 +81,35 @@ export const InputText = b.createOverridingComponent<IInputTextData, IBaseData>(
         b.style(me, inputTextStyles.formControl);
         b.style(me, ctx.data.size !== undefined && inputTextSizeStyles(ctx.data.size));
 
-        if (ctx.data.placeholder) me.attrs["placeholder"] = ctx.data.placeholder;
+        if (ctx.data.placeholder) {
+            me.attrs["placeholder"] = ctx.data.placeholder;
+        }
 
-        if (ctx.data.disabled) me.attrs["disabled"] = "disabled";
+        if (ctx.data.disabled) {
+            me.attrs["disabled"] = "disabled";
+        }
 
-        if (ctx.data.readonly) me.attrs["readonly"] = "readonly";
+        if (ctx.data.readonly) {
+            me.attrs["readonly"] = "readonly";
+        }
     },
     onChange(ctx: ICtx, value: string): void {
         ctx.value = value;
         ctx.me.component.super.onChange(ctx, value);
     },
     postInitDom(ctx: ICtx) {
-        if (ctx.data.typeaheadOptions) registerNewTypeahead(ctx);
+        if (ctx.data.typeaheadOptions) {
+            registerNewTypeahead(ctx);
+        }
     },
     postUpdateDom(ctx: ICtx) {
-        if (ctx.data.typeaheadOptions) registerNewTypeahead(ctx);
+        if (ctx.data.typeaheadOptions) {
+            registerNewTypeahead(ctx);
+        }
     },
     destroy(ctx: ICtx) {
         unregister(ctx);
-    }
+    },
 });
 
 function registerNewTypeahead(ctx: ICtx): void {

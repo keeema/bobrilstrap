@@ -10,11 +10,11 @@ export const typeahead = b.createVirtualComponent({
             {
                 header: "Typeahead",
                 id: "typeahead",
-                lead: []
+                lead: [],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -28,15 +28,15 @@ function example(): b.IBobrilChildren {
             bs.Code({}, "bs.InputText"),
             ` input data properties. These options are described on `,
             bs.A({ href: "https://github.com/bassjobsen/Bootstrap-3-Typeahead/" }, "Bootstrap 3 Typeahead GitHub project pages"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.InputText({
                 placeholder: "Write some text...",
                 typeaheadOptions: {
-                    source: ["First", "Second", "Third"]
-                }
-            })
+                    source: ["First", "Second", "Third"],
+                },
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -53,9 +53,9 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `  }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }

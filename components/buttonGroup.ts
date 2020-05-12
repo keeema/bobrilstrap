@@ -8,14 +8,14 @@ export const buttonGroupStyles = {
     sm: b.styleDef("btn-group-sm"),
     xs: b.styleDef("btn-group-xs"),
     justified: b.styleDef("btn-group-justified"),
-    vertical: b.styleDef("btn-group-vertical")
+    vertical: b.styleDef("btn-group-vertical"),
 };
 
 export enum ButtonGroupSize {
     Lg,
     Default,
     Sm,
-    Xs
+    Xs,
 }
 
 export const buttonGroupSizeStyles: IDictionary<ButtonGroupSize, b.IBobrilStyle> = createDictionary<ButtonGroupSize, b.IBobrilStyle>();
@@ -43,7 +43,7 @@ export const ButtonGroup = b.createDerivedComponent<IButtonGroupData, IBaseData>
         b.style(me, !!ctx.data.justified && buttonGroupStyles.justified);
 
         me.attrs["role"] = "group";
-    }
+    },
 });
 
 export default ButtonGroup;

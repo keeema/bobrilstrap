@@ -23,16 +23,16 @@ export const docsContainer = b.createVirtualComponent<IDocsContainerData>({
                 persistentScrollContainer(
                     {
                         id: ctx.data.id,
-                        style: styles.bsDocsContainer
+                        style: styles.bsDocsContainer,
                     },
                     bs.Row({}, [
                         bs.Col({ size: bs.Size.Md, span: 9, attrs: { role: "main" } }, ctx.data.children),
                         !!ctx.data.sidebar &&
-                            bs.Col({ size: bs.Size.Md, span: 3, attrs: { role: "complementary" } }, docsSidebar(ctx.data.sidebar))
+                            bs.Col({ size: bs.Size.Md, span: 3, attrs: { role: "complementary" } }, docsSidebar(ctx.data.sidebar)),
                     ])
                 ),
                 ctx.data.id === "bobrilstrap" && mainConainerStyle
-            )
+            ),
         ];
-    }
+    },
 });

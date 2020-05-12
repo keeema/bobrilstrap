@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable no-console */
 import * as b from "bobril";
 import * as bs from "../../index";
 import pwaInstallHandler from "pwa-install-handler";
@@ -11,7 +13,7 @@ export const InstallButton = b.createVirtualComponent<never>({
     id: "install-button",
     init(ctx: IInstallButtonCtx): void {
         ctx.canInstall = false;
-        pwaInstallHandler.addListener(canInstall => {
+        pwaInstallHandler.addListener((canInstall) => {
             ctx.canInstall = canInstall;
             b.invalidate(ctx);
         });
@@ -23,15 +25,15 @@ export const InstallButton = b.createVirtualComponent<never>({
                 {
                     id: "installButton",
                     onClick: handleMenuItemClick,
-                    href: "javascript:void(0)"
+                    href: "javascript:void(0)",
                 },
                 texts.install
             );
     },
     onClick(): boolean {
-        pwaInstallHandler.install().then(isInstalled => {
+        pwaInstallHandler.install().then((isInstalled) => {
             console.log(isInstalled ? "User accepted installation prompt" : "User rejected installation prompt");
         });
         return handleMenuItemClick();
-    }
+    },
 });

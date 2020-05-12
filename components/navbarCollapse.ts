@@ -13,7 +13,7 @@ export const NavbarCollapse = b.createDerivedComponent<INavbarCollapseData, IBas
     id: "bobrilstrap-navbar-collapse",
     render(_ctx: INavbarCollapseCtx, me: b.IBobrilNode) {
         b.style(me, navStyles.navbarCollapse, collapseStyles.collapse);
-    }
+    },
 });
 
 export default NavbarCollapse;

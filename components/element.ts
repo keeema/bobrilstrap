@@ -100,29 +100,39 @@ export const E = b.createVirtualComponent<IElementData>({
         const aria = ctx.data.aria || {};
         const dataAttrs = ctx.data.data || {};
 
-        if (ctx.data.id) me.attrs.id = ctx.data.id;
+        if (ctx.data.id) {
+            me.attrs.id = ctx.data.id;
+        }
 
-        if (ctx.data.key) b.withKey(me, ctx.data.key);
+        if (ctx.data.key) {
+            b.withKey(me, ctx.data.key);
+        }
 
-        if (ctx.data.title) me.attrs["title"] = ctx.data.title;
+        if (ctx.data.title) {
+            me.attrs["title"] = ctx.data.title;
+        }
 
-        Object.keys(aria).forEach(key => {
+        Object.keys(aria).forEach((key) => {
             me.attrs[`aria-${toLowerWithDashes(key)}`] = aria[key];
         });
 
-        Object.keys(dataAttrs).forEach(key => {
+        Object.keys(dataAttrs).forEach((key) => {
             me.attrs[`data-${toLowerWithDashes(key)}`] = dataAttrs[key];
         });
 
         b.style(me, ctx.data.style);
     },
     onClick(ctx: ICtx, event: b.IBobrilMouseEvent): boolean {
-        if (!ctx.data.onClick) return false;
+        if (!ctx.data.onClick) {
+            return false;
+        }
 
         return !!ctx.data.onClick(event);
     },
     onChange(ctx: ICtx, value: string): void {
-        if (ctx.data.onChange) ctx.data.onChange(value);
+        if (ctx.data.onChange) {
+            ctx.data.onChange(value);
+        }
     },
     onKeyPress(ctx: ICtx, event: b.IKeyPressEvent): boolean {
         if (ctx.data.onKeyPress) {
@@ -130,7 +140,7 @@ export const E = b.createVirtualComponent<IElementData>({
         }
 
         return false;
-    }
+    },
 });
 
 export const Element = E;

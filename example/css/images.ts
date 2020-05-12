@@ -17,11 +17,11 @@ export const images = b.createVirtualComponent({
         me.children = section(
             {
                 header: "Images",
-                id: "images"
+                id: "images",
             },
             [responsiveImages(), imageShapes()]
         );
-    }
+    },
 });
 
 function responsiveImages(): b.IBobrilChildren {
@@ -32,7 +32,7 @@ function responsiveImages(): b.IBobrilChildren {
             bs.Code({}, "responsive"),
             `input dat property. This applies `,
             bs.Code({}, "max-width: 100%; height: auto; display: block;"),
-            ` to the image so that it scales nicely to the parent element.`
+            ` to the image so that it scales nicely to the parent element.`,
         ]),
         bs.P({}, [
             `To center images which use the `,
@@ -42,7 +42,7 @@ function responsiveImages(): b.IBobrilChildren {
             ` input data property. 
             See the helper styles section for more details about `,
             bs.Code({}, "centerBlock"),
-            ` style usage.`
+            ` style usage.`,
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -51,7 +51,7 @@ function responsiveImages(): b.IBobrilChildren {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-images-ie-svg" }
+                attrs: { id: "callout-images-ie-svg" },
             },
             [
                 bs.H4({}, `SVG images and IE 8-10`),
@@ -64,10 +64,10 @@ function responsiveImages(): b.IBobrilChildren {
                     `by setting the `,
                     bs.Code({}, "ieSvgFix"),
                     ` input data property where necessary. 
-                Bootstrap doesn't apply this automatically as it causes complications to other image formats.`
-                ])
+                Bootstrap doesn't apply this automatically as it causes complications to other image formats.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -78,25 +78,25 @@ function imageShapes(): b.IBobrilChildren {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-images-ie-rounded-corners" }
+                attrs: { id: "callout-images-ie-rounded-corners" },
             },
             [
                 bs.H4({}, `Cross-browser compatibility`),
-                bs.P({}, [`Keep in mind that Internet Explorer 8 lacks support for rounded corners.`])
+                bs.P({}, [`Keep in mind that Internet Explorer 8 lacks support for rounded corners.`]),
             ]
         ),
         bs.E({ style: [styles.bsExample, styles.bsExampleImages] }, [
             bs.Image({
                 src: imageData,
                 alt: "Rounded",
-                shape: bs.ImageShape.Rounded
+                shape: bs.ImageShape.Rounded,
             }),
             bs.Image({ src: imageData, alt: "Circle", shape: bs.ImageShape.Circle }),
             bs.Image({
                 src: imageData,
                 alt: "Thumbnail",
-                shape: bs.ImageShape.Thumbnail
-            })
+                shape: bs.ImageShape.Thumbnail,
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -107,9 +107,9 @@ function imageShapes(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `bs.Image({ src: '...', alt: 'Circle', shape: bs.ImageShape.Circle }),`,
                     bs.E({ tag: "br" }),
-                    `bs.Image({ src: '...', alt: 'Thumbnail', shape: bs.ImageShape.Thumbnail })`
+                    `bs.Image({ src: '...', alt: 'Thumbnail', shape: bs.ImageShape.Thumbnail })`,
                 ])
             )
-        )
+        ),
     ];
 }

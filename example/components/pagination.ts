@@ -13,12 +13,12 @@ export const pagination = b.createVirtualComponent({
                 lead: [
                     `Provide pagination links for your site or app with the multi-page pagination component, or the simpler `,
                     b.link(bs.A({}, "pager alternative"), "pagination-pager"),
-                    `.`
-                ]
+                    `.`,
+                ],
             },
             [paginationDefault(), pager()]
         );
-    }
+    },
 });
 
 function paginationDefault(): b.IBobrilChildren {
@@ -26,7 +26,7 @@ function paginationDefault(): b.IBobrilChildren {
         b.anchor(bs.H2({ attrs: { id: "pagination-default" } }, "Default pagination")),
         bs.P({}, [
             `Simple pagination inspired by Rdio, great for apps and search results. 
-            The large block is hard to miss, easily scalable, and provides large click areas.`
+            The large block is hard to miss, easily scalable, and provides large click areas.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Pagination({ aria: { label: "Page navigation" } }, [
@@ -42,8 +42,8 @@ function paginationDefault(): b.IBobrilChildren {
                 bs.PaginationItem(
                     {},
                     bs.A({ href: "javascript: void(0);", aria: { label: "Previous" } }, bs.Span({ aria: { hidden: true } }, "»"))
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -91,14 +91,14 @@ function paginationDefault(): b.IBobrilChildren {
                     `    ),`,
                     bs.E({ tag: "br" }),
                     `])`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutInfo],
-                attrs: { id: "callout-pagination-label" }
+                attrs: { id: "callout-pagination-label" },
             },
             [
                 bs.H4({}, [`Labelling the pagination component`]),
@@ -116,8 +116,8 @@ function paginationDefault(): b.IBobrilChildren {
                 purpose.For example, if the pagination component is used to navigate between a set of search results, an appropriate label 
                 could be `,
                     bs.Code({}, `aria: { label: 'Search results pages' }`),
-                    `.`
-                ])
+                    `.`,
+                ]),
             ]
         ),
         bs.H3({ id: "disabled-and-active-states" }, "Disabled and active states"),
@@ -127,7 +127,7 @@ function paginationDefault(): b.IBobrilChildren {
             ` input data property for unclickable 
             links and `,
             bs.Code({}, "active"),
-            ` to indicate the current page.`
+            ` to indicate the current page.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Pagination({ aria: { label: "Page navigation" } }, [
@@ -143,8 +143,8 @@ function paginationDefault(): b.IBobrilChildren {
                 bs.PaginationItem(
                     {},
                     bs.A({ href: "javascript: void(0);", aria: { label: "Next" } }, bs.Span({ aria: { hidden: true } }, "»"))
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -192,7 +192,7 @@ function paginationDefault(): b.IBobrilChildren {
                     `    ),`,
                     bs.E({ tag: "br" }),
                     `])`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
         ),
@@ -212,7 +212,7 @@ function paginationDefault(): b.IBobrilChildren {
                 bs.PaginationItem(
                     {},
                     bs.A({ href: "javascript: void(0);", aria: { label: "Next" } }, bs.Span({ aria: { hidden: true } }, "»"))
-                )
+                ),
             ]),
             bs.Pagination({ aria: { label: "Page navigation" } }, [
                 bs.PaginationItem(
@@ -227,7 +227,7 @@ function paginationDefault(): b.IBobrilChildren {
                 bs.PaginationItem(
                     {},
                     bs.A({ href: "javascript: void(0);", aria: { label: "Next" } }, bs.Span({ aria: { hidden: true } }, "»"))
-                )
+                ),
             ]),
             bs.Pagination({ size: bs.PaginationSize.Sm, aria: { label: "Page navigation" } }, [
                 bs.PaginationItem(
@@ -242,8 +242,8 @@ function paginationDefault(): b.IBobrilChildren {
                 bs.PaginationItem(
                     {},
                     bs.A({ href: "javascript: void(0);", aria: { label: "Next" } }, bs.Span({ aria: { hidden: true } }, "»"))
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -255,10 +255,10 @@ function paginationDefault(): b.IBobrilChildren {
                     `bs.Pagination({ aria: { label: '...' } }, [...])`,
                     bs.E({ tag: "br" }),
                     `bs.Pagination({ aria: { label: '...' }, size: bs.PaginationSize.Sm }, [...])`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -267,7 +267,7 @@ function pager(): b.IBobrilChildren {
         b.anchor(bs.H2({ attrs: { id: "pagination-pager" } }, "Pager")),
         bs.P({}, [
             `Quick previous and next links for simple pagination implementations with light markup and styles. 
-            It's great for simple sites like blogs or magazines.`
+            It's great for simple sites like blogs or magazines.`,
         ]),
         bs.H3({ id: "default-example" }, "Default example"),
         bs.P({}, [`By default, the pager centers links.`]),
@@ -275,8 +275,8 @@ function pager(): b.IBobrilChildren {
             bs.Pager({ aria: { label: "..." } }, [
                 bs.PagerItem({}, bs.A({ href: "javascript: void(0);", aria: { label: "Previous" } }, "Previous")),
                 " ",
-                bs.PagerItem({}, bs.A({ href: "javascript: void(0);", aria: { label: "Next" } }, "Next"))
-            ])
+                bs.PagerItem({}, bs.A({ href: "javascript: void(0);", aria: { label: "Next" } }, "Next")),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -289,7 +289,7 @@ function pager(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.PagerItem({}, bs.A({ href: '...;', aria: { label: 'Next' } }, 'Next'))`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -304,8 +304,8 @@ function pager(): b.IBobrilChildren {
                 bs.PagerItem(
                     { alignment: bs.PagerItemAlignment.Next },
                     bs.A({ href: "javascript: void(0);" }, ["Newer ", bs.Span({ aria: { hidden: true } }, " →")])
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -330,7 +330,7 @@ function pager(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ) `,
                     bs.E({ tag: "br" }),
-                    `]) `
+                    `]) `,
                 ])
             )
         ),
@@ -345,8 +345,8 @@ function pager(): b.IBobrilChildren {
                 bs.PagerItem(
                     { alignment: bs.PagerItemAlignment.Next },
                     bs.A({ href: "javascript: void(0);" }, ["Newer ", bs.Span({ aria: { hidden: true } }, " →")])
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -371,9 +371,9 @@ function pager(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ) `,
                     bs.E({ tag: "br" }),
-                    `]) `
+                    `]) `,
                 ])
             )
-        )
+        ),
     ];
 }

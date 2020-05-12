@@ -5,7 +5,7 @@ export const Pre = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
     id: "bobrilstrap-pre",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = "pre";
-    }
+    },
 });
 
 export default Pre;

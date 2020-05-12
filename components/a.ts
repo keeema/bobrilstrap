@@ -5,7 +5,7 @@ export enum Target {
     Blank,
     Self,
     Parent,
-    Top
+    Top,
 }
 
 export interface IAnchorData extends IBaseData {
@@ -23,10 +23,16 @@ export const Anchor = b.createDerivedComponent<IAnchorData, IBaseData>(Elem, {
     render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = "a";
 
-        if (ctx.data.href) me.attrs.href = ctx.data.href;
-        if (ctx.data.target !== undefined) me.attrs["target"] = `_${Target[ctx.data.target].toLowerCase()}`;
-        if (ctx.data.name) me.attrs["name"] = ctx.data.name;
-    }
+        if (ctx.data.href) {
+            me.attrs.href = ctx.data.href;
+        }
+        if (ctx.data.target !== undefined) {
+            me.attrs["target"] = `_${Target[ctx.data.target].toLowerCase()}`;
+        }
+        if (ctx.data.name) {
+            me.attrs["name"] = ctx.data.name;
+        }
+    },
 });
 
 export default Anchor;

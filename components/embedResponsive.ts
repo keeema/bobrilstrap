@@ -8,14 +8,14 @@ export interface IEmbedResponsiveData extends IBaseData {
 
 export enum EmbedAspectRatio {
     SixteenByNine,
-    FourByThree
+    FourByThree,
 }
 
 export const embedResponsiveStyles = {
     embedResponsive: b.styleDef("embed-responsive"),
     embedResponsiveItem: b.styleDef("embed-responsive-item"),
     embedResponsive16by9: b.styleDef("embed-responsive-16by9"),
-    embedResponsive4by3: b.styleDef("embed-responsive-4by3")
+    embedResponsive4by3: b.styleDef("embed-responsive-4by3"),
 };
 
 export const embedResponsiveAspectRatioStyles: IDictionary<EmbedAspectRatio, b.IBobrilStyle> = createDictionary<
@@ -34,7 +34,7 @@ export const EmbedResponsive = b.createDerivedComponent<IEmbedResponsiveData, IB
     render(ctx: IEmbedResponsiveCtx, me: IElementBobrilNode) {
         b.style(me, embedResponsiveStyles.embedResponsive);
         b.style(me, ctx.data.aspectRatio !== undefined && embedResponsiveAspectRatioStyles(ctx.data.aspectRatio));
-    }
+    },
 });
 
 export default EmbedResponsive;

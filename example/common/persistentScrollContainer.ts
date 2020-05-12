@@ -18,12 +18,14 @@ export const persistentScrollContainer = b.createDerivedComponent<IPersistentScr
 
         window.onscroll = (event: Event) => {
             const body = (event.target as { body?: HTMLElement }).body;
-            if (body) localStorage.setItem(getScrollStorageName(ctx.data.id), body.scrollTop.toString());
+            if (body) {
+                localStorage.setItem(getScrollStorageName(ctx.data.id), body.scrollTop.toString());
+            }
         };
     },
     postInitDom(ctx: ICtx) {
         document.body.scrollTop = parseInt(localStorage.getItem(getScrollStorageName(ctx.data.id)) || "0", 10);
-    }
+    },
 });
 
 function getScrollStorageName(id: string): string {

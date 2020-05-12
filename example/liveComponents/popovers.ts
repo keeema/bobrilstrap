@@ -10,11 +10,11 @@ export const popovers = b.createVirtualComponent({
             {
                 header: "Popover",
                 id: "popover",
-                lead: []
+                lead: [],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -33,7 +33,7 @@ function example(): b.IBobrilChildren {
             bs.Code({}, "trigger"),
             ` or turn `,
             bs.Code({}, "animation"),
-            ` on/off by input data properties. If the title or content are not static, they should be defined as a function.`
+            ` on/off by input data properties. If the title or content are not static, they should be defined as a function.`,
         ]),
         bs.E({ style: [styles.bsExample, styles.tooltipDemo] }, [
             b.styledDiv(
@@ -42,13 +42,13 @@ function example(): b.IBobrilChildren {
                         {
                             title: "Popover title",
                             content: "And here's some amazing content. It's very engaging. Right?",
-                            placement: bs.PopoverPlacement.Right
+                            placement: bs.PopoverPlacement.Right,
                         },
                         bs.Button({ label: "Click to toggle popover" })
-                    )
+                    ),
                 ],
                 styles.bsExampleTooltips
-            )
+            ),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -69,9 +69,9 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Button({ label: 'Click to toggle popover' })`,
                     bs.E({ tag: "br" }),
-                    `)`
+                    `)`,
                 ])
             )
-        )
+        ),
     ];
 }

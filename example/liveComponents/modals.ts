@@ -10,11 +10,11 @@ export const modals = b.createVirtualComponent({
             {
                 header: "Modals",
                 id: "modals",
-                lead: []
+                lead: [],
             },
             [liveDemo()]
         );
-    }
+    },
 });
 
 const liveDemoVisible = b.propim(false);
@@ -34,12 +34,12 @@ function liveDemo(): b.IBobrilChildren {
             bs.Code({}, "size"),
             ` etc. or callbacks like `,
             bs.Code({}, "onHide"),
-            ` to handle the close.`
+            ` to handle the close.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Button({
                 label: " Launch demo modal ",
-                onClick: () => liveDemoVisible(true)
+                onClick: () => liveDemoVisible(true),
             }),
             bs.Modal({
                 visible: liveDemoVisible(),
@@ -50,18 +50,18 @@ function liveDemo(): b.IBobrilChildren {
                         {
                             option: bs.ButtonOption.Close,
                             aria: { label: "Close" },
-                            onClick: () => liveDemoVisible(false)
+                            onClick: () => liveDemoVisible(false),
                         },
                         bs.Span({ aria: { hidden: true } }, "×")
                     ),
-                    bs.ModalTitle4({}, "Modal title")
+                    bs.ModalTitle4({}, "Modal title"),
                 ],
                 body: "One fine body…",
                 footer: bs.Button({
                     label: "Close",
-                    onClick: () => liveDemoVisible(false)
-                })
-            })
+                    onClick: () => liveDemoVisible(false),
+                }),
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -110,9 +110,9 @@ function liveDemo(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    footer: bs.Button({ label: 'Close', onClick: () => liveDemoVisible(false) })`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }

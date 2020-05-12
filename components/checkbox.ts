@@ -16,7 +16,7 @@ interface ICtx extends b.IBobrilCtx {
 export const checkboxStyles = {
     checkbox: b.styleDef("checkbox"),
     checkboxInline: b.styleDef("checkbox-inline"),
-    disabled: b.styleDef("disabled")
+    disabled: b.styleDef("disabled"),
 };
 
 export const Checkbox = b.createDerivedComponent<ICheckboxData, IBaseData>(Elem, {
@@ -35,7 +35,7 @@ export const Checkbox = b.createDerivedComponent<ICheckboxData, IBaseData>(Elem,
         }
 
         me.children = lbl;
-    }
+    },
 });
 
 export default Checkbox;

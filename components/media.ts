@@ -18,12 +18,12 @@ export const mediaStyles = {
     mediaBottom: mediaContentStyles.mediaBottom,
     mediaHeading: b.styleDef("media-heading"),
     mediaObject: b.styleDef("media-object"),
-    mediaList: b.styleDef("media-list")
+    mediaList: b.styleDef("media-list"),
 };
 
 export const Media = b.createDerivedComponent<IMediaData, IBaseData>(Elem, {
     id: "bobrilstrap-media",
     render(_ctx: IMediaCtx, me: b.IBobrilNode) {
         b.style(me, mediaStyles.media);
-    }
+    },
 });

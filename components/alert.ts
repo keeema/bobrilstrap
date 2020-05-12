@@ -23,7 +23,7 @@ export enum AlertContext {
     Success,
     Warning,
     Danger,
-    Info
+    Info,
 }
 
 export const alertStyles = {
@@ -35,7 +35,7 @@ export const alertStyles = {
     alertDismissable: b.styleDef("alert-dismissible"),
     alertLink: b.styleDef("alert-link"),
     fade: b.styleDef("fade"),
-    in: b.styleDef("in")
+    in: b.styleDef("in"),
 };
 
 export const alertContextStyles: IDictionary<AlertContext, b.IBobrilStyle> = createDictionary<AlertContext, b.IBobrilStyle>();
@@ -63,7 +63,7 @@ export const Alert = b.createDerivedComponent<IAlertData, IBaseData>(Elem, {
             const buttonData = b.assign({}, ctx.data.dismissButton, {
                 alert: true,
                 data: nativeDismiss ? b.assign({}, ctx.data.dismissButton.data, { dismiss: "alert" }) : ctx.data.dismissButton.data,
-                option: ButtonOption.Close
+                option: ButtonOption.Close,
             } as IButtonData);
 
             if (!buttonData.children) {
@@ -77,7 +77,9 @@ export const Alert = b.createDerivedComponent<IAlertData, IBaseData>(Elem, {
     postInitDom(ctx: IAlertCtx, _me: b.IBobrilNode, element: HTMLElement) {
         $(element).on("closed.bs.Alert", () => {
             ctx.visible = false;
-            if (ctx.data.onClosed) ctx.data.onClosed();
+            if (ctx.data.onClosed) {
+                ctx.data.onClosed();
+            }
         });
 
         if (ctx.data.timeout) {
@@ -85,8 +87,10 @@ export const Alert = b.createDerivedComponent<IAlertData, IBaseData>(Elem, {
         }
     },
     destroy(ctx: IAlertCtx) {
-        if (ctx.timeoutId) clearTimeout(ctx.timeoutId);
-    }
+        if (ctx.timeoutId) {
+            clearTimeout(ctx.timeoutId);
+        }
+    },
 });
 
 export default Alert;
@@ -96,5 +100,7 @@ function dismissOnTimeout(ctx: IAlertCtx, element: HTMLElement): void {
         clearTimeout(ctx.timeoutId);
         ctx.timeoutId = 0;
     }
-    if (ctx.visible) $(element).alert("close");
+    if (ctx.visible) {
+        $(element).alert("close");
+    }
 }

@@ -15,7 +15,7 @@ export const Dl = b.createDerivedComponent<IDlData, IBaseData>(Elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = "dl";
         b.style(me, !!ctx.data.horizontal && typography.dlHorizontal);
-    }
+    },
 });
 
 export default Dl;

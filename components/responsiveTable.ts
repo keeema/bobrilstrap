@@ -16,7 +16,7 @@ export const ResponsiveTable = b.createDerivedComponent<IResponsiveTableData, IB
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, tableStyles.responsive);
         mergeToChildren(me, Table(ctx.data.table));
-    }
+    },
 });
 
 export default ResponsiveTable;

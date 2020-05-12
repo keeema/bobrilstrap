@@ -5,7 +5,7 @@ export const Italics = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
     id: "bobrilstrap-italics",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = "em";
-    }
+    },
 });
 
 export const Em = Italics;

@@ -24,7 +24,7 @@ b.routes(
             b.route({ url: "grid-example-mixed", name: "grid-example-mixed" }),
             b.route({
                 url: "grid-example-mixed-complete",
-                name: "grid-example-mixed-complete"
+                name: "grid-example-mixed-complete",
             }),
             b.route({ url: "grid-example-wrapping", name: "grid-example-wrapping" }),
             b.route({ url: "grid-offsetting", name: "grid-offsetting" }),
@@ -54,7 +54,7 @@ b.routes(
             b.route({ url: "tables-condensed", name: "tables-condensed" }),
             b.route({
                 url: "tables-contextual-styles",
-                name: "tables-contextual-styles"
+                name: "tables-contextual-styles",
             }),
             b.route({ url: "tables-responsive", name: "tables-responsive" }),
             b.route({ url: "forms", name: "forms" }),
@@ -66,16 +66,16 @@ b.routes(
             b.route({ url: "forms-control-focus", name: "forms-control-focus" }),
             b.route({
                 url: "forms-control-disabled",
-                name: "forms-control-disabled"
+                name: "forms-control-disabled",
             }),
             b.route({
                 url: "forms-control-readonly",
-                name: "forms-control-readonly"
+                name: "forms-control-readonly",
             }),
             b.route({ url: "forms-help-text", name: "forms-help-text" }),
             b.route({
                 url: "forms-control-validation",
-                name: "forms-control-validation"
+                name: "forms-control-validation",
             }),
             b.route({ url: "forms-control-sizes", name: "forms-control-sizes" }),
             b.route({ url: "buttons", name: "buttons" }),
@@ -91,7 +91,7 @@ b.routes(
             b.route({ url: "helper-styles-colors", name: "helper-styles-colors" }),
             b.route({
                 url: "helper-styles-backgrounds",
-                name: "helper-styles-backgrounds"
+                name: "helper-styles-backgrounds",
             }),
             b.route({ url: "helper-styles-close", name: "helper-styles-close" }),
             b.route({ url: "helper-styles-carets", name: "helper-styles-carets" }),
@@ -99,43 +99,43 @@ b.routes(
             b.route({ url: "helper-styles-center", name: "helper-styles-center" }),
             b.route({
                 url: "helper-styles-clearfix",
-                name: "helper-styles-clearfix"
+                name: "helper-styles-clearfix",
             }),
             b.route({
                 url: "helper-styles-show-hide",
-                name: "helper-styles-show-hide"
+                name: "helper-styles-show-hide",
             }),
             b.route({
                 url: "helper-styles-screen-readers",
-                name: "helper-styles-screen-readers"
+                name: "helper-styles-screen-readers",
             }),
             b.route({
                 url: "helper-styles-image-replacement",
-                name: "helper-styles-image-replacement"
+                name: "helper-styles-image-replacement",
             }),
             b.route({ url: "responsive-utilities", name: "responsive-utilities" }),
             b.route({
                 url: "responsive-utilities-styles",
-                name: "responsive-utilities-styles"
+                name: "responsive-utilities-styles",
             }),
             b.route({
                 url: "responsive-utilities-print",
-                name: "responsive-utilities-print"
+                name: "responsive-utilities-print",
             }),
             b.route({
                 url: "responsive-utilities-tests",
-                name: "responsive-utilities-tests"
-            })
+                name: "responsive-utilities-tests",
+            }),
         ]),
         b.route({ url: "bobrilstrap", name: "bobrilstrap", handler: bobrilstrapPage }, [
             b.route({ url: "bobrilstrap-top", name: "bobrilstrap-top" }),
             b.route({ url: "bobril", name: "bobril" }),
             b.route({
                 url: "bobrilstrap-installation",
-                name: "bobrilstrap-installation"
+                name: "bobrilstrap-installation",
             }),
             b.route({ url: "bobrilstrap-tsx", name: "bobrilstrap-tsx" }),
-            b.route({ url: "bobrilstrap-themes", name: "bobrilstrap-themes" })
+            b.route({ url: "bobrilstrap-themes", name: "bobrilstrap-themes" }),
         ]),
         b.route({ url: "components", name: "components", handler: components }, [
             b.route({ url: "components-top", name: "components-top" }),
@@ -166,20 +166,20 @@ b.routes(
             b.route({ url: "input-groups-sizing", name: "input-groups-sizing" }),
             b.route({
                 url: "input-groups-checkboxes-radios",
-                name: "input-groups-checkboxes-radios"
+                name: "input-groups-checkboxes-radios",
             }),
             b.route({ url: "input-groups-buttons", name: "input-groups-buttons" }),
             b.route({
                 url: "input-groups-buttons-dropdowns",
-                name: "input-groups-buttons-dropdowns"
+                name: "input-groups-buttons-dropdowns",
             }),
             b.route({
                 url: "input-groups-buttons-segmented",
-                name: "input-groups-buttons-segmented"
+                name: "input-groups-buttons-segmented",
             }),
             b.route({
                 url: "input-groups-buttons-multiple",
-                name: "input-groups-buttons-multiple"
+                name: "input-groups-buttons-multiple",
             }),
             b.route({ url: "nav", name: "nav" }),
             b.route({ url: "nav-tabs", name: "nav-tabs" }),
@@ -196,7 +196,7 @@ b.routes(
             b.route({ url: "navbar-links", name: "navbar-links" }),
             b.route({
                 url: "navbar-component-alignment",
-                name: "navbar-component-alignment"
+                name: "navbar-component-alignment",
             }),
             b.route({ url: "navbar-fixed-top", name: "navbar-fixed-top" }),
             b.route({ url: "navbar-fixed-bottom", name: "navbar-fixed-bottom" }),
@@ -214,7 +214,7 @@ b.routes(
             b.route({ url: "thumbnails-default", name: "thumbnails-default" }),
             b.route({
                 url: "thumbnails-custom-content",
-                name: "thumbnails-custom-content"
+                name: "thumbnails-custom-content",
             }),
             b.route({ url: "alerts", name: "alerts" }),
             b.route({ url: "alerts-examples", name: "alerts-examples" }),
@@ -238,11 +238,11 @@ b.routes(
             b.route({ url: "list-group-disabled", name: "list-group-disabled" }),
             b.route({
                 url: "list-group-contextual-classes",
-                name: "list-group-contextual-classes"
+                name: "list-group-contextual-classes",
             }),
             b.route({
                 url: "list-group-custom-content",
-                name: "list-group-custom-content"
+                name: "list-group-custom-content",
             }),
             b.route({ url: "panels", name: "panels" }),
             b.route({ url: "panels-basic", name: "panels-basic" }),
@@ -252,13 +252,13 @@ b.routes(
             b.route({ url: "panels-tables", name: "panels-tables" }),
             b.route({ url: "panels-list-group", name: "panels-list-group" }),
             b.route({ url: "responsive-embed", name: "responsive-embed" }),
-            b.route({ url: "wells", name: "wells" })
+            b.route({ url: "wells", name: "wells" }),
         ]),
         b.route(
             {
                 url: "live-components",
                 name: "live-components",
-                handler: liveComponents
+                handler: liveComponents,
             },
             [
                 b.route({ url: "live-components-top", name: "live-components-top" }),
@@ -268,11 +268,11 @@ b.routes(
                 b.route({ url: "collapse", name: "collapse" }),
                 b.route({ url: "carousel", name: "carousel" }),
                 b.route({ url: "affix", name: "affix" }),
-                b.route({ url: "typeahead", name: "typeahead" })
+                b.route({ url: "typeahead", name: "typeahead" }),
             ]
         ),
         b.route({ url: "donate", name: "donate", handler: donate }),
-        b.routeDefault({ name: "bobrilstrap", handler: bobrilstrapPage })
+        b.routeDefault({ name: "bobrilstrap", handler: bobrilstrapPage }),
     ])
 );
 

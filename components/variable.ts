@@ -5,7 +5,7 @@ export const Variable = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
     id: "bobrilstrap-variable",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = "var";
-    }
+    },
 });
 
 export const V = Variable;

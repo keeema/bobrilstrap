@@ -14,7 +14,7 @@ export const InputGroupAddon = b.createDerivedComponent<IInputGroupAddonData, IB
     render(_ctx: ICtx, me: b.IBobrilNode) {
         me.tag = "span";
         b.style(me, inputGroupAddonStyle);
-    }
+    },
 });
 
 export default InputGroupAddon;

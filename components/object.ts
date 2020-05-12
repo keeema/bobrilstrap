@@ -21,10 +21,16 @@ export const ObjectElement = b.createDerivedComponent<IObjectData, IBaseData>(El
         b.style(me, !!ctx.data.embedResponsive && embedResponsiveStyles.embedResponsiveItem);
         me.attrs["data"] = ctx.data.dataSrc;
 
-        if (ctx.data.type !== undefined) me.attrs["type"] = ctx.data.type;
-        if (ctx.data.height !== undefined) me.attrs["height"] = ctx.data.height;
-        if (ctx.data.width !== undefined) me.attrs["width"] = ctx.data.width;
-    }
+        if (ctx.data.type !== undefined) {
+            me.attrs["type"] = ctx.data.type;
+        }
+        if (ctx.data.height !== undefined) {
+            me.attrs["height"] = ctx.data.height;
+        }
+        if (ctx.data.width !== undefined) {
+            me.attrs["width"] = ctx.data.width;
+        }
+    },
 });
 
 export default ObjectElement;

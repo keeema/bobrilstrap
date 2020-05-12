@@ -35,18 +35,26 @@ export const InputRadio = b.createOverridingComponent<IInputRadioData, IBaseData
 
         me.attrs["name"] = ctx.data.name;
 
-        if (ctx.data.disabled) me.attrs["disabled"] = "disabled";
+        if (ctx.data.disabled) {
+            me.attrs["disabled"] = "disabled";
+        }
 
-        if (ctx.data.readonly) me.attrs["readonly"] = "readonly";
+        if (ctx.data.readonly) {
+            me.attrs["readonly"] = "readonly";
+        }
     },
     onChange(ctx: ICtx, value: boolean): void {
         ctx.checked = value;
         ctx.me.component.super.onChange(ctx, value);
 
-        if (value && ctx.data.onChecked) ctx.data.onChecked(ctx.data.value);
+        if (value && ctx.data.onChecked) {
+            ctx.data.onChecked(ctx.data.value);
+        }
 
-        if (!value && ctx.data.onUnChecked) ctx.data.onUnChecked(ctx.data.value);
-    }
+        if (!value && ctx.data.onUnChecked) {
+            ctx.data.onUnChecked(ctx.data.value);
+        }
+    },
 });
 
 export default InputRadio;

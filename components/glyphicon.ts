@@ -265,12 +265,12 @@ export enum GlyphIcon {
     MenuLeft,
     MenuRight,
     MenuDown,
-    MenuUp
+    MenuUp,
 }
 
 export const glyphIconStyles = {
     glyphicon: b.styleDef("glyphicon"),
-    formControlFeedback: b.styleDef("form-control-feedback")
+    formControlFeedback: b.styleDef("form-control-feedback"),
 };
 
 export const glyphIconTypeStyles = generateStyles();
@@ -292,14 +292,14 @@ export const Glyphicon = b.createDerivedComponent<IGlyphiconData, IBaseData>(Ele
         b.style(me, glyphIconStyles.glyphicon);
         b.style(me, glyphIconTypeStyles(ctx.data.icon));
         b.style(me, !!ctx.data.formControlFeedback && glyphIconStyles.formControlFeedback);
-    }
+    },
 });
 
 export default Glyphicon;
 
 function generateStyles(): IDictionary<GlyphIcon, b.IBobrilStyle> {
     const result = createDictionary<GlyphIcon, b.IBobrilStyle>();
-    Object.keys(GlyphIcon).forEach(key => {
+    Object.keys(GlyphIcon).forEach((key) => {
         const castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
             result(castedValue, b.styleDef(`glyphicon-${toLowerWithDashes(GlyphIcon[castedValue])}`));

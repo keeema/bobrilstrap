@@ -12,7 +12,7 @@ export const ListGroupItemText = b.createDerivedComponent<IListGroupItemTextData
     id: "bobrilstrap-listgroup-item-text",
     render(_ctx: IListGroupItemTextCtx, me: b.IBobrilNode) {
         b.style(me, listGroupStyles.listGroupItemText);
-    }
+    },
 });
 
 export default ListGroupItemText;

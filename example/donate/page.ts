@@ -12,11 +12,11 @@ export const donate = b.createVirtualComponent({
         me.children = [
             header({
                 header: "Donate",
-                headerContent: ""
+                headerContent: "",
             }),
             docsContainer(
                 {
-                    id: "donate"
+                    id: "donate",
                 },
                 bs.Row({}, [
                     bs.Col(
@@ -35,11 +35,11 @@ export const donate = b.createVirtualComponent({
                             label: "Send 1€",
                             onClick: () => {
                                 window.open("https://www.paypal.me/keeema/1eur", "_blank");
-                            }
+                            },
                         })
-                    )
+                    ),
                 ])
-            )
+            ),
         ];
-    }
+    },
 });

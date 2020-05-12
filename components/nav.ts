@@ -27,19 +27,19 @@ export const navStyles = {
     dropdown: b.styleDef("dropdown"),
     disabled: b.styleDef("disabled"),
     collapse: b.styleDef("collapse"),
-    iconBar: b.styleDef("icon-bar")
+    iconBar: b.styleDef("icon-bar"),
 };
 
 export enum NavbarStatic {
-    Top = 0
+    Top = 0,
 }
 export enum NavbarFixed {
     Top = 0,
-    Bottom = 1
+    Bottom = 1,
 }
 export enum NavbarAlignment {
     Left = 0,
-    Right = 1
+    Right = 1,
 }
 
 export interface INavbarData extends IBaseData {
@@ -65,7 +65,7 @@ export const Nav = b.createDerivedComponent<INavbarData, IBaseData>(Elem, {
         b.style(me, ctx.data.fixed === NavbarFixed.Bottom && navStyles.navbarFixedBottom);
         b.style(me, ctx.data.alignment === NavbarAlignment.Right && navStyles.navbarRight);
         b.style(me, ctx.data.alignment === NavbarAlignment.Left && navStyles.navbarLeft);
-    }
+    },
 });
 
 export const Navbar = Nav;

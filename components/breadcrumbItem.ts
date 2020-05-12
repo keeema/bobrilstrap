@@ -12,7 +12,7 @@ export const BreadcrumbItem = b.createDerivedComponent<IBreadcrumbItemData, ILiD
     id: "bobrilstrap-breadcrumb-item",
     render(ctx: IBreadcrumbItemCtx, me: b.IBobrilNode) {
         b.style(me, !!ctx.data.active && breadcrumbStyles.active);
-    }
+    },
 });
 
 export default BreadcrumbItem;

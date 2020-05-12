@@ -16,8 +16,10 @@ export const Td = b.createDerivedComponent<ITdData, IBaseData>(Elem, {
     render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = "td";
         b.style(me, ctx.data.context !== undefined && tableContextStyles(ctx.data.context));
-        if (ctx.data.colspan) me.attrs["colspan"] = ctx.data.colspan.toString();
-    }
+        if (ctx.data.colspan) {
+            me.attrs["colspan"] = ctx.data.colspan.toString();
+        }
+    },
 });
 
 export default Td;

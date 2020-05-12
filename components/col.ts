@@ -31,7 +31,7 @@ export const Col: b.IComponentFactory<IColData> = b.createDerivedComponent<IColD
         applyCmpStyles(me, ctx.data.offsets, colOffsetStyles);
         applyCmpStyles(me, ctx.data.pushes, colPushStyles);
         applyCmpStyles(me, ctx.data.pulls, colPullStyles);
-    }
+    },
 });
 
 export default Col;
@@ -44,7 +44,7 @@ export const colPullStyles = getStyles((size, i) => `col-${Size[size].toLowerCas
 function getStyles(decorator: (size: Size, span: number) => string): IColStyles {
     const result: IColStyles = createDictionary<Size, IDictionary<number, b.IBobrilStyle>>();
 
-    Object.keys(Size).forEach(size => {
+    Object.keys(Size).forEach((size) => {
         const castedValue = parseInt(size, 10);
         if (!isNaN(castedValue)) {
             result(castedValue, createDictionary());
@@ -58,10 +58,14 @@ function getStyles(decorator: (size: Size, span: number) => string): IColStyles 
 }
 
 function applyCmpStyles(me: b.IBobrilNode, colTypes?: IColType | IColType[], stylesSource?: IColStyles): void {
-    if (colTypes === undefined || stylesSource === undefined) return;
+    if (colTypes === undefined || stylesSource === undefined) {
+        return;
+    }
 
     const styles = getCmpStyles(colTypes, stylesSource);
-    if (styles.length === 0) return;
+    if (styles.length === 0) {
+        return;
+    }
 
     b.style(me, styles);
 }
@@ -76,8 +80,8 @@ function getCmpStyles(colTypes: IColType | IColType[], stylesSource: IColStyles)
     const cols: IColType[] = getColTypeArray(colTypes);
 
     const styles: b.IBobrilStyle[] = cols
-        .filter(colType => isStyleAvailable(stylesSource, colType))
-        .map(colType => getStyle(stylesSource, colType));
+        .filter((colType) => isStyleAvailable(stylesSource, colType))
+        .map((colType) => getStyle(stylesSource, colType));
 
     return styles;
 }

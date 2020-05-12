@@ -10,11 +10,11 @@ export const labels = b.createVirtualComponent({
             {
                 header: "Labels",
                 id: "labels",
-                lead: []
+                lead: [],
             },
             [example(), availableVariations()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -26,17 +26,17 @@ function example(): b.IBobrilChildren {
             bs.H3({}, ["Example heading ", bs.Span({ labelContext: bs.SpanLabelContext.Default }, "New")]),
             bs.H4({}, ["Example heading ", bs.Span({ labelContext: bs.SpanLabelContext.Default }, "New")]),
             bs.H5({}, ["Example heading ", bs.Span({ labelContext: bs.SpanLabelContext.Default }, "New")]),
-            bs.H6({}, ["Example heading ", bs.Span({ labelContext: bs.SpanLabelContext.Default }, "New")])
+            bs.H6({}, ["Example heading ", bs.Span({ labelContext: bs.SpanLabelContext.Default }, "New")]),
         ]),
         bs.Figure(
             { style: styles.highlight },
             pre(
                 {},
                 bs.Code({ style: langJs }, [
-                    `bs.H3({}, ['Example heading ', bs.Span({ labelContext: bs.SpanLabelContext.Default }, 'New')])`
+                    `bs.H3({}, ['Example heading ', bs.Span({ labelContext: bs.SpanLabelContext.Default }, 'New')])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -48,7 +48,7 @@ function availableVariations(): b.IBobrilChildren {
             bs.Code({}, "labelContext"),
             ` input data property of `,
             bs.Code({}, "bs.Span"),
-            ` to change the appearance of a label.`
+            ` to change the appearance of a label.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Span({ labelContext: bs.SpanLabelContext.Default }, "Default"),
@@ -61,7 +61,7 @@ function availableVariations(): b.IBobrilChildren {
             " ",
             bs.Span({ labelContext: bs.SpanLabelContext.Warning }, "Warning"),
             " ",
-            bs.Span({ labelContext: bs.SpanLabelContext.Danger }, "Danger")
+            bs.Span({ labelContext: bs.SpanLabelContext.Danger }, "Danger"),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -78,9 +78,9 @@ function availableVariations(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `bs.Span({ labelContext: bs.SpanLabelContext.Warning }, 'Warning'), ' ',`,
                     bs.E({ tag: "br" }),
-                    `bs.Span({ labelContext: bs.SpanLabelContext.Danger }, 'Danger')`
+                    `bs.Span({ labelContext: bs.SpanLabelContext.Danger }, 'Danger')`,
                 ])
             )
-        )
+        ),
     ];
 }

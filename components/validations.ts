@@ -5,13 +5,13 @@ export const validationStyles = {
     hasSuccess: b.styleDef("has-success"),
     hasWarning: b.styleDef("has-warning "),
     hasError: b.styleDef("has-error"),
-    hasFeedback: b.styleDef("has-feedback")
+    hasFeedback: b.styleDef("has-feedback"),
 };
 
 export enum ValidationState {
     Success,
     Warning,
-    Error
+    Error,
 }
 
 export const validationStateStyles: IDictionary<ValidationState, b.IBobrilStyle> = createDictionary<ValidationState, b.IBobrilStyle>();

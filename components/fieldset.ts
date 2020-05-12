@@ -13,8 +13,10 @@ export const Fieldset = b.createDerivedComponent<IFieldSetData, IBaseData>(Elem,
     id: "bobrilstrap-fieldset",
     render(ctx: ICtx, me: IElementBobrilNode) {
         me.tag = "fieldset";
-        if (ctx.data.disabled) me.attrs["disabled"] = "disabled";
-    }
+        if (ctx.data.disabled) {
+            me.attrs["disabled"] = "disabled";
+        }
+    },
 });
 
 export default Fieldset;

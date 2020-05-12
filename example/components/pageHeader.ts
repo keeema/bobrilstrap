@@ -10,11 +10,11 @@ export const PageHeader = b.createVirtualComponent({
             {
                 header: "Page header",
                 id: "page-header",
-                lead: []
+                lead: [],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -26,9 +26,9 @@ function example(): b.IBobrilChildren {
             pre(
                 {},
                 bs.Code({ style: langJs }, [
-                    `bs.PageHeader({}, bs.H1({}, ['Example page header', ' ', bs.Small({}, 'Subtext for header')]))`
+                    `bs.PageHeader({}, bs.H1({}, ['Example page header', ' ', bs.Small({}, 'Subtext for header')]))`,
                 ])
             )
-        )
+        ),
     ];
 }

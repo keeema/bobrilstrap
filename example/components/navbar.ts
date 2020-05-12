@@ -18,7 +18,7 @@ export const navbarPage = b.createVirtualComponent({
             {
                 header: "Navbar",
                 id: "navbar",
-                lead: []
+                lead: [],
             },
             [
                 defaultNavbar(),
@@ -31,10 +31,10 @@ export const navbarPage = b.createVirtualComponent({
                 fixedTop(),
                 fixedBottom(),
                 staticTop(),
-                inverted()
+                inverted(),
             ]
         );
-    }
+    },
 });
 
 const collapsedMenu = b.propim(true);
@@ -48,29 +48,29 @@ function defaultNavbar(): b.IBobrilChildren {
         b.anchor(bs.H2({ attrs: { id: "navbar-default" } }, "Default navbar")),
         bs.P({}, [
             `Navbars are responsive meta components that serve as navigation headers for your application or site. 
-            They begin collapsed (and are toggleable) in mobile views and become horizontal as the available viewport width increases.`
+            They begin collapsed (and are toggleable) in mobile views and become horizontal as the available viewport width increases.`,
         ]),
         bs.P({}, bs.Strong({ style: bs.helpers.text.danger }, "Justified navbar nav links are currently not supported.")),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutWarning],
-                attrs: { id: "callout-navbar-overflow" }
+                attrs: { id: "callout-navbar-overflow" },
             },
             [
                 bs.H4({}, [`Overflowing content`]),
                 bs.P({}, [
                     `Since Bootstrap doesn't know how much space the content in your navbar needs, 
-                you might run into issues with content wrapping into a second row. To resolve this, you can:`
+                you might run into issues with content wrapping into a second row. To resolve this, you can:`,
                 ]),
                 bs.Ol({ type: bs.OlType.a }, [
                     bs.Li({}, "Reduce the amount or width of navbar items."),
                     bs.Li({}, [
                         "Hide certain navbar items at certain screen sizes using ",
                         b.link(bs.A({}, "responsive utility classes"), "responsive-utilities-styles"),
-                        "."
+                        ".",
                     ]),
-                    bs.Li({}, `Change the point at which your navbar switches between collapsed and horizontal mode.`)
-                ])
+                    bs.Li({}, `Change the point at which your navbar switches between collapsed and horizontal mode.`),
+                ]),
             ]
         ),
         bs.E({ style: styles.bsExample }, [
@@ -80,16 +80,16 @@ function defaultNavbar(): b.IBobrilChildren {
                         bs.Button(
                             {
                                 variant: bs.ButtonVariant.NavbarToggle,
-                                onClick: () => collapsedMenu(!collapsedMenu())
+                                onClick: () => collapsedMenu(!collapsedMenu()),
                             },
                             [
                                 bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                                 bs.Span({ style: bs.navStyles.iconBar }),
                                 bs.Span({ style: bs.navStyles.iconBar }),
-                                bs.Span({ style: bs.navStyles.iconBar })
+                                bs.Span({ style: bs.navStyles.iconBar }),
                             ]
                         ),
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand")
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand"),
                     ]),
                     bs.Collapse(
                         { collapsed: collapsedMenu() },
@@ -100,7 +100,7 @@ function defaultNavbar(): b.IBobrilChildren {
                                     bs.A(
                                         {
                                             href: "javascript:void(0)",
-                                            onClick: handleMenuItemClick
+                                            onClick: handleMenuItemClick,
                                         },
                                         "Link"
                                     )
@@ -110,7 +110,7 @@ function defaultNavbar(): b.IBobrilChildren {
                                     bs.A(
                                         {
                                             href: "javascript:void(0)",
-                                            onClick: handleMenuItemClick
+                                            onClick: handleMenuItemClick,
                                         },
                                         "Link"
                                     )
@@ -119,8 +119,8 @@ function defaultNavbar(): b.IBobrilChildren {
                                     {
                                         button: {
                                             label: "Dropdown",
-                                            variant: bs.ButtonVariant.DropdownNav
-                                        }
+                                            variant: bs.ButtonVariant.DropdownNav,
+                                        },
                                     },
                                     bs.DropdownMenu({}, [
                                         bs.DropdownItem(
@@ -128,7 +128,7 @@ function defaultNavbar(): b.IBobrilChildren {
                                             bs.A(
                                                 {
                                                     href: "javascript:void(0)",
-                                                    onClick: handleMenuItemClick
+                                                    onClick: handleMenuItemClick,
                                                 },
                                                 "Action"
                                             )
@@ -138,7 +138,7 @@ function defaultNavbar(): b.IBobrilChildren {
                                             bs.A(
                                                 {
                                                     href: "javascript:void(0)",
-                                                    onClick: handleMenuItemClick
+                                                    onClick: handleMenuItemClick,
                                                 },
                                                 "Another action"
                                             )
@@ -148,7 +148,7 @@ function defaultNavbar(): b.IBobrilChildren {
                                             bs.A(
                                                 {
                                                     href: "javascript:void(0)",
-                                                    onClick: handleMenuItemClick
+                                                    onClick: handleMenuItemClick,
                                                 },
                                                 "Something else here"
                                             )
@@ -159,18 +159,18 @@ function defaultNavbar(): b.IBobrilChildren {
                                             bs.A(
                                                 {
                                                     href: "javascript:void(0)",
-                                                    onClick: handleMenuItemClick
+                                                    onClick: handleMenuItemClick,
                                                 },
                                                 "Separated link"
                                             )
-                                        )
+                                        ),
                                     ])
-                                )
+                                ),
                             ]),
                             bs.Form({ style: [bs.navStyles.navbarForm, bs.navStyles.navbarLeft] }, [
                                 bs.FormGroup({}, bs.InputText({ placeholder: "Search" })),
                                 " ",
-                                bs.Button({ label: "Submit", onClick: handleMenuItemClick })
+                                bs.Button({ label: "Submit", onClick: handleMenuItemClick }),
                             ]),
                             bs.NavbarNav({ style: bs.navStyles.navbarRight }, [
                                 bs.NavbarNavItem(
@@ -178,7 +178,7 @@ function defaultNavbar(): b.IBobrilChildren {
                                     bs.A(
                                         {
                                             href: "javascript:void(0)",
-                                            onClick: handleMenuItemClick
+                                            onClick: handleMenuItemClick,
                                         },
                                         "Link"
                                     )
@@ -187,8 +187,8 @@ function defaultNavbar(): b.IBobrilChildren {
                                     {
                                         button: {
                                             label: "Dropdown",
-                                            variant: bs.ButtonVariant.DropdownNav
-                                        }
+                                            variant: bs.ButtonVariant.DropdownNav,
+                                        },
                                     },
                                     bs.DropdownMenu({}, [
                                         bs.DropdownItem(
@@ -196,7 +196,7 @@ function defaultNavbar(): b.IBobrilChildren {
                                             bs.A(
                                                 {
                                                     href: "javascript:void(0)",
-                                                    onClick: handleMenuItemClick
+                                                    onClick: handleMenuItemClick,
                                                 },
                                                 "Action"
                                             )
@@ -206,7 +206,7 @@ function defaultNavbar(): b.IBobrilChildren {
                                             bs.A(
                                                 {
                                                     href: "javascript:void(0)",
-                                                    onClick: handleMenuItemClick
+                                                    onClick: handleMenuItemClick,
                                                 },
                                                 "Another action"
                                             )
@@ -216,7 +216,7 @@ function defaultNavbar(): b.IBobrilChildren {
                                             bs.A(
                                                 {
                                                     href: "javascript:void(0)",
-                                                    onClick: handleMenuItemClick
+                                                    onClick: handleMenuItemClick,
                                                 },
                                                 "Something else here"
                                             )
@@ -227,18 +227,18 @@ function defaultNavbar(): b.IBobrilChildren {
                                             bs.A(
                                                 {
                                                     href: "javascript:void(0)",
-                                                    onClick: handleMenuItemClick
+                                                    onClick: handleMenuItemClick,
                                                 },
                                                 "Separated link"
                                             )
-                                        )
+                                        ),
                                     ])
-                                )
-                            ])
+                                ),
+                            ]),
                         ])
-                    )
-                ])
-            ])
+                    ),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -401,10 +401,10 @@ function defaultNavbar(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -416,16 +416,16 @@ function brandImage(): b.IBobrilChildren {
             bs.Code({}, "Image"),
             `. Since the `,
             bs.Code({}, "NavbarBrand"),
-            `has its own padding and height, you may need to override some CSS depending on your image.`
+            `has its own padding and height, you may need to override some CSS depending on your image.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Navbar({}, [
                 bs.Container({ fluid: true }, [
                     bs.NavbarHeader({}, [
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, bs.Image({ src: imageData, width: 20, height: 20 }))
-                    ])
-                ])
-            ])
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, bs.Image({ src: imageData, width: 20, height: 20 })),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -444,10 +444,10 @@ function brandImage(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 function forms(): b.IBobrilChildren {
@@ -457,7 +457,7 @@ function forms(): b.IBobrilChildren {
             `Place form content within `,
             bs.Code({}, "bs.navStyles.navbarForm"),
             ` for proper vertical alignment and collapsed behavior in 
-            narrow viewports. Use the alignment options to decide where it resides within the navbar content.`
+            narrow viewports. Use the alignment options to decide where it resides within the navbar content.`,
         ]),
         bs.P({}, [
             `As a heads up, `,
@@ -468,7 +468,7 @@ function forms(): b.IBobrilChildren {
             bs.Strong(
                 { style: bs.helpers.text.danger },
                 "Some form controls, like input groups, may require fixed widths to be show up properly within a navbar."
-            )
+            ),
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Navbar({}, [
@@ -479,27 +479,27 @@ function forms(): b.IBobrilChildren {
                                 variant: bs.ButtonVariant.NavbarToggle,
                                 data: {
                                     toggle: "collapse",
-                                    target: "#bs-example-navbar-collapse-2"
-                                }
+                                    target: "#bs-example-navbar-collapse-2",
+                                },
                             },
                             [
                                 bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                                 bs.Span({ style: bs.navStyles.iconBar }),
                                 bs.Span({ style: bs.navStyles.iconBar }),
-                                bs.Span({ style: bs.navStyles.iconBar })
+                                bs.Span({ style: bs.navStyles.iconBar }),
                             ]
                         ),
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand")
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand"),
                     ]),
                     bs.NavbarCollapse({ id: "bs-example-navbar-collapse-2" }, [
                         bs.Form({ style: [bs.navStyles.navbarForm, bs.navStyles.navbarLeft] }, [
                             bs.FormGroup({}, bs.InputText({ placeholder: "Search" })),
                             " ",
-                            bs.Button({ label: "Submit" })
-                        ])
-                    ])
-                ])
-            ])
+                            bs.Button({ label: "Submit" }),
+                        ]),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -512,10 +512,10 @@ function forms(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Button({ label: 'Submit' })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -530,7 +530,7 @@ function buttons(): b.IBobrilChildren {
             ` component input data not residing 
             in a `,
             bs.Code({}, "form"),
-            ` to vertically center them in the navbar.`
+            ` to vertically center them in the navbar.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Navbar({}, [
@@ -541,23 +541,23 @@ function buttons(): b.IBobrilChildren {
                                 variant: bs.ButtonVariant.NavbarToggle,
                                 data: {
                                     toggle: "collapse",
-                                    target: "#bs-example-navbar-collapse-3"
-                                }
+                                    target: "#bs-example-navbar-collapse-3",
+                                },
                             },
                             [
                                 bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                                 bs.Span({ style: bs.navStyles.iconBar }),
                                 bs.Span({ style: bs.navStyles.iconBar }),
-                                bs.Span({ style: bs.navStyles.iconBar })
+                                bs.Span({ style: bs.navStyles.iconBar }),
                             ]
                         ),
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand")
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand"),
                     ]),
                     bs.NavbarCollapse({ id: "bs-example-navbar-collapse-3" }, [
-                        bs.Button({ label: "Sign in", style: bs.navStyles.navbarBtn })
-                    ])
-                ])
-            ])
+                        bs.Button({ label: "Sign in", style: bs.navStyles.navbarBtn }),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -566,7 +566,7 @@ function buttons(): b.IBobrilChildren {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutWarning],
-                attrs: { id: "callout-navbar-btn-context" }
+                attrs: { id: "callout-navbar-btn-context" },
             },
             [
                 bs.H4({}, [`Context-specific usage`]),
@@ -583,10 +583,10 @@ function buttons(): b.IBobrilChildren {
                     bs.Code({}, "a"),
                     `nodes within `,
                     bs.Code({}, "NavbarNav"),
-                    `.`
-                ])
+                    `.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -598,7 +598,7 @@ function text(): b.IBobrilChildren {
             bs.Code({}, "bs.navStyles.navbarText"),
             `, usually on a `,
             bs.Code({}, "bs.P"),
-            ` component node for proper leading and color.`
+            ` component node for proper leading and color.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Navbar({}, [
@@ -609,28 +609,28 @@ function text(): b.IBobrilChildren {
                                 variant: bs.ButtonVariant.NavbarToggle,
                                 data: {
                                     toggle: "collapse",
-                                    target: "#bs-example-navbar-collapse-4"
-                                }
+                                    target: "#bs-example-navbar-collapse-4",
+                                },
                             },
                             [
                                 bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                                 bs.Span({ style: bs.navStyles.iconBar }),
                                 bs.Span({ style: bs.navStyles.iconBar }),
-                                bs.Span({ style: bs.navStyles.iconBar })
+                                bs.Span({ style: bs.navStyles.iconBar }),
                             ]
                         ),
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand")
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand"),
                     ]),
                     bs.NavbarCollapse({ id: "bs-example-navbar-collapse-4" }, [
-                        bs.P({ style: [bs.navStyles.navbarText] }, "Signed in as Mark Otto")
-                    ])
-                ])
-            ])
+                        bs.P({ style: [bs.navStyles.navbarText] }, "Signed in as Mark Otto"),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
             pre({}, bs.Code({ style: langJs }, [`bs.P({ style: [bs.navStyles.navbarText] }, 'Signed in as Mark Otto')`]))
-        )
+        ),
     ];
 }
 
@@ -640,7 +640,7 @@ function links(): b.IBobrilChildren {
         bs.P({}, [
             `For folks using standard links that are not within the regular navbar navigation component, use the `,
             bs.Code({}, "bs.navStyles.navbarLink"),
-            `style to add the proper colors for the default and inverse navbar options.`
+            `style to add the proper colors for the default and inverse navbar options.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Navbar({}, [
@@ -651,17 +651,17 @@ function links(): b.IBobrilChildren {
                                 variant: bs.ButtonVariant.NavbarToggle,
                                 data: {
                                     toggle: "collapse",
-                                    target: "#bs-example-navbar-collapse-5"
-                                }
+                                    target: "#bs-example-navbar-collapse-5",
+                                },
                             },
                             [
                                 bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                                 bs.Span({ style: bs.navStyles.iconBar }),
                                 bs.Span({ style: bs.navStyles.iconBar }),
-                                bs.Span({ style: bs.navStyles.iconBar })
+                                bs.Span({ style: bs.navStyles.iconBar }),
                             ]
                         ),
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand")
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand"),
                     ]),
                     bs.NavbarCollapse({ id: "bs-example-navbar-collapse-5" }, [
                         bs.P({ style: [bs.navStyles.navbarText, bs.navStyles.navbarRight] }, [
@@ -669,14 +669,14 @@ function links(): b.IBobrilChildren {
                             bs.A(
                                 {
                                     style: bs.navStyles.navbarLink,
-                                    href: "javascript:void(0)"
+                                    href: "javascript:void(0)",
                                 },
                                 "Mark Otto"
-                            )
-                        ])
-                    ])
-                ])
-            ])
+                            ),
+                        ]),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -689,10 +689,10 @@ function links(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.A({ style: bs.navStyles.navbarLink, href: '...' }, 'Mark Otto')`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -707,19 +707,19 @@ function alignment(): b.IBobrilChildren {
             ` utility styles. Both styles will add a CSS float in the specified direction. 
             For example, to align nav links, put them in a separate `,
             bs.Code({}, "bs.Ul"),
-            ` with the respective utility class applied.`
+            ` with the respective utility class applied.`,
         ]),
         bs.P({}, [
             `These styles are mixin-ed versions of `,
             bs.Code({}, "bs.helpers.float.pullLeft"),
             ` and `,
             bs.Code({}, "bs.helpers.float.pullRight"),
-            `, but they're scoped to media queries for easier handling of navbar components across device sizes.`
+            `, but they're scoped to media queries for easier handling of navbar components across device sizes.`,
         ]),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutWarning],
-                attrs: { id: "callout-navbar-right-align" }
+                attrs: { id: "callout-navbar-right-align" },
             },
             [
                 bs.H4({}, [`Right aligning multiple components`]),
@@ -729,10 +729,10 @@ function alignment(): b.IBobrilChildren {
                     ` styles. To properly space 
                 content, Botstrap uses negative margin on the last `,
                     bs.Code({}, "bs.navStyles.navbarRight"),
-                    ` node. When there are multiple elements using that class, these margins don't work as intended.`
-                ])
+                    ` node. When there are multiple elements using that class, these margins don't work as intended.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -750,7 +750,7 @@ function fixedTop(): b.IBobrilChildren {
             bs.Code({}, "bs.Container({}, ...)"),
             ` or `,
             bs.Code({}, "bs.Container({ fluid: true }, ...)"),
-            ` to center and pad navbar content.`
+            ` to center and pad navbar content.`,
         ]),
         bs.E({ style: [styles.bsExample, styles.bsNavbarTopExample] }, [
             bs.Navbar({ fixed: bs.NavbarFixed.Top }, [
@@ -761,27 +761,27 @@ function fixedTop(): b.IBobrilChildren {
                                 variant: bs.ButtonVariant.NavbarToggle,
                                 data: {
                                     toggle: "collapse",
-                                    target: "#bs-example-navbar-collapse-6"
-                                }
+                                    target: "#bs-example-navbar-collapse-6",
+                                },
                             },
                             [
                                 bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                                 bs.Span({ style: bs.navStyles.iconBar }),
                                 bs.Span({ style: bs.navStyles.iconBar }),
-                                bs.Span({ style: bs.navStyles.iconBar })
+                                bs.Span({ style: bs.navStyles.iconBar }),
                             ]
                         ),
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand")
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand"),
                     ]),
                     bs.NavbarCollapse({ id: "bs-example-navbar-collapse-6" }, [
                         bs.NavbarNav({}, [
                             bs.NavbarNavItem({ active: true }, bs.A({ href: "javascript:void(0)" }, "Home")),
                             bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link")),
-                            bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link"))
-                        ])
-                    ])
-                ])
-            ])
+                            bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link")),
+                        ]),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -796,24 +796,24 @@ function fixedTop(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-navbar-fixed-top-padding" }
+                attrs: { id: "callout-navbar-fixed-top-padding" },
             },
             [
                 bs.H4({}, [`Overflowing content`]),
                 bs.P({}, [
                     `The fixed navbar will overlay your other content, unless you add padding to the top of the `,
                     bs.Code({}, "<body>"),
-                    `. Try out your own values or use our snippet below. Tip: By default, the navbar is 50px high.`
-                ])
+                    `. Try out your own values or use our snippet below. Tip: By default, the navbar is 50px high.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -831,7 +831,7 @@ function fixedBottom(): b.IBobrilChildren {
             bs.Code({}, "bs.Container({}, ...)"),
             ` or `,
             bs.Code({}, "bs.Container({ fluid: true }, ...)"),
-            ` to center and pad navbar content.`
+            ` to center and pad navbar content.`,
         ]),
         bs.E({ style: [styles.bsExample, styles.bsNavbarBottomExample] }, [
             bs.Navbar({ fixed: bs.NavbarFixed.Bottom }, [
@@ -842,27 +842,27 @@ function fixedBottom(): b.IBobrilChildren {
                                 variant: bs.ButtonVariant.NavbarToggle,
                                 data: {
                                     toggle: "collapse",
-                                    target: "#bs-example-navbar-collapse-7"
-                                }
+                                    target: "#bs-example-navbar-collapse-7",
+                                },
                             },
                             [
                                 bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                                 bs.Span({ style: bs.navStyles.iconBar }),
                                 bs.Span({ style: bs.navStyles.iconBar }),
-                                bs.Span({ style: bs.navStyles.iconBar })
+                                bs.Span({ style: bs.navStyles.iconBar }),
                             ]
                         ),
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand")
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand"),
                     ]),
                     bs.NavbarCollapse({ id: "bs-example-navbar-collapse-7" }, [
                         bs.NavbarNav({}, [
                             bs.NavbarNavItem({ active: true }, bs.A({ href: "javascript:void(0)" }, "Home")),
                             bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link")),
-                            bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link"))
-                        ])
-                    ])
-                ])
-            ])
+                            bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link")),
+                        ]),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -877,24 +877,24 @@ function fixedBottom(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-navbar-fixed-bottom-padding" }
+                attrs: { id: "callout-navbar-fixed-bottom-padding" },
             },
             [
                 bs.H4({}, [`Overflowing content`]),
                 bs.P({}, [
                     `The fixed navbar will overlay your other content, unless you add padding to the bottom of the `,
                     bs.Code({}, "<body>"),
-                    `. Try out your own values or use our snippet below. Tip: By default, the navbar is 50px high.`
-                ])
+                    `. Try out your own values or use our snippet below. Tip: By default, the navbar is 50px high.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -912,7 +912,7 @@ function staticTop(): b.IBobrilChildren {
             bs.Code({}, "bs.Container({}, ...)"),
             ` or `,
             bs.Code({}, "bs.Container({ fluid: true }, ...)"),
-            ` to center and pad navbar content.`
+            ` to center and pad navbar content.`,
         ]),
         bs.E({ style: [styles.bsExample, styles.bsNavbarTopExample] }, [
             bs.Navbar({ static: bs.NavbarStatic.Top }, [
@@ -923,27 +923,27 @@ function staticTop(): b.IBobrilChildren {
                                 variant: bs.ButtonVariant.NavbarToggle,
                                 data: {
                                     toggle: "collapse",
-                                    target: "#bs-example-navbar-collapse-8"
-                                }
+                                    target: "#bs-example-navbar-collapse-8",
+                                },
                             },
                             [
                                 bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                                 bs.Span({ style: bs.navStyles.iconBar }),
                                 bs.Span({ style: bs.navStyles.iconBar }),
-                                bs.Span({ style: bs.navStyles.iconBar })
+                                bs.Span({ style: bs.navStyles.iconBar }),
                             ]
                         ),
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand")
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand"),
                     ]),
                     bs.NavbarCollapse({ id: "bs-example-navbar-collapse-8" }, [
                         bs.NavbarNav({}, [
                             bs.NavbarNavItem({ active: true }, bs.A({ href: "javascript:void(0)" }, "Home")),
                             bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link")),
-                            bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link"))
-                        ])
-                    ])
-                ])
-            ])
+                            bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link")),
+                        ]),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -958,10 +958,10 @@ function staticTop(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -975,7 +975,7 @@ function inverted(): b.IBobrilChildren {
             bs.Code({}, "Navbar"),
             ` to `,
             bs.Code({}, "true"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: [styles.bsExample, styles.bsNavbarTopExample] }, [
             bs.Navbar({ inverse: true }, [
@@ -986,27 +986,27 @@ function inverted(): b.IBobrilChildren {
                                 variant: bs.ButtonVariant.NavbarToggle,
                                 data: {
                                     toggle: "collapse",
-                                    target: "#bs-example-navbar-collapse-9"
-                                }
+                                    target: "#bs-example-navbar-collapse-9",
+                                },
                             },
                             [
                                 bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                                 bs.Span({ style: bs.navStyles.iconBar }),
                                 bs.Span({ style: bs.navStyles.iconBar }),
-                                bs.Span({ style: bs.navStyles.iconBar })
+                                bs.Span({ style: bs.navStyles.iconBar }),
                             ]
                         ),
-                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand")
+                        bs.NavbarBrand({ href: "javascript:void(0)" }, "Brand"),
                     ]),
                     bs.NavbarCollapse({ id: "bs-example-navbar-collapse-9" }, [
                         bs.NavbarNav({}, [
                             bs.NavbarNavItem({ active: true }, bs.A({ href: "javascript:void(0)" }, "Home")),
                             bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link")),
-                            bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link"))
-                        ])
-                    ])
-                ])
-            ])
+                            bs.NavbarNavItem({}, bs.A({ href: "javascript:void(0)" }, "Link")),
+                        ]),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -1014,6 +1014,6 @@ function inverted(): b.IBobrilChildren {
                 {},
                 bs.Code({ style: langJs }, [`bs.Navbar({ inverse: true }, [`, bs.E({ tag: "br" }), `    ...`, bs.E({ tag: "br" }), `])`])
             )
-        )
+        ),
     ];
 }

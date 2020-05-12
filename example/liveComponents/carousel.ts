@@ -37,11 +37,11 @@ export const carousel = b.createVirtualComponent({
             {
                 header: "Carousel",
                 id: "carousel",
-                lead: []
+                lead: [],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -61,13 +61,13 @@ function example(): b.IBobrilChildren {
             bs.Code({}, "onSlide"),
             ` input data properties to specify expected behaviour and use `,
             bs.Code({}, "onSlide"),
-            ` callback to handle events.`
+            ` callback to handle events.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Carousel({
                 id: "carousel-example-generic",
-                items: [{ image: bs.Image({ src: image1 }) }, { image: bs.Image({ src: image2 }) }, { image: bs.Image({ src: image3 }) }]
-            })
+                items: [{ image: bs.Image({ src: image1 }) }, { image: bs.Image({ src: image2 }) }, { image: bs.Image({ src: image3 }) }],
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -88,9 +88,9 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ]`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }

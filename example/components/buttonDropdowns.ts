@@ -21,19 +21,19 @@ export const buttonDropdowns = b.createVirtualComponent({
                     bs.Code({}, "boolean"),
                     ` or complex `,
                     bs.Code({}, "IButtonGroup"),
-                    `.`
-                ]
+                    `.`,
+                ],
             },
             [handlingSpecificStructure(), singleButtonDropdowns(), splitButtonDropdowns(), sizing(), dropupVariations()]
         );
-    }
+    },
 });
 
 function handlingSpecificStructure(): b.IBobrilChildren {
     return bs.E(
         {
             style: [styles.bsCallout, styles.bsCalloutDanger],
-            attrs: { id: "callout-btn-dropdowns-special-cases" }
+            attrs: { id: "callout-btn-dropdowns-special-cases" },
         },
         [
             bs.H4({}, `Handling specific dropdown structure`),
@@ -51,12 +51,12 @@ function handlingSpecificStructure(): b.IBobrilChildren {
                 bs.A(
                     {
                         href: "https://getbootstrap.com/components/#btn-dropdowns",
-                        target: bs.Target.Blank
+                        target: bs.Target.Blank,
                     },
                     "Bootstrap dropdown manual"
                 ),
-                `.`
-            ])
+                `.`,
+            ]),
         ]
     );
 }
@@ -69,7 +69,7 @@ function singleButtonDropdowns(): b.IBobrilChildren {
             bs.Code({}, "bs.ButtonGroup"),
             ` data property to wrap button in `,
             bs.Code({}, "bs.ButtonGroup"),
-            ` component.`
+            ` component.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             getSingleButtonDropdown("Default", bs.ButtonOption.Default),
@@ -82,7 +82,7 @@ function singleButtonDropdowns(): b.IBobrilChildren {
             " ",
             getSingleButtonDropdown("Warning", bs.ButtonOption.Warning),
             " ",
-            getSingleButtonDropdown("Danger", bs.ButtonOption.Danger)
+            getSingleButtonDropdown("Danger", bs.ButtonOption.Danger),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -113,10 +113,10 @@ function singleButtonDropdowns(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `)`
+                    `)`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -130,14 +130,14 @@ function getSingleButtonDropdown(
         {
             buttonGroup: true,
             button: { label, option, size },
-            up
+            up,
         },
         bs.DropdownMenu({}, [
             bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
             bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
             bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
             bs.DropdownItem({ separator: true }),
-            bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+            bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
         ])
     );
 }
@@ -150,7 +150,7 @@ function splitButtonDropdowns(): b.IBobrilChildren {
             bs.Code({}, "splitted"),
             ` property set to `,
             bs.Code({}, "true"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             getSplitButtonDropdown("Default"),
@@ -163,7 +163,7 @@ function splitButtonDropdowns(): b.IBobrilChildren {
             " ",
             getSplitButtonDropdown("Warning", bs.ButtonOption.Warning),
             " ",
-            getSplitButtonDropdown("Danger", bs.ButtonOption.Danger)
+            getSplitButtonDropdown("Danger", bs.ButtonOption.Danger),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -198,10 +198,10 @@ function splitButtonDropdowns(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `)`
+                    `)`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -211,14 +211,14 @@ function getSplitButtonDropdown(label: string, option: bs.ButtonOption = bs.Butt
             buttonGroup: true,
             button: { label, option, onClick: () => alert("Clicked!") },
             splitted: true,
-            splittedSrOnlyText: "Toggle Dropdown"
+            splittedSrOnlyText: "Toggle Dropdown",
         },
         bs.DropdownMenu({}, [
             bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
             bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
             bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
             bs.DropdownItem({ separator: true }),
-            bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+            bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
         ])
     );
 }
@@ -235,7 +235,7 @@ function sizing(): b.IBobrilChildren {
             getSingleButtonDropdown("Small", bs.ButtonOption.Default, bs.Size.Sm),
             " ",
             getSingleButtonDropdown("Extra small", bs.ButtonOption.Default, bs.Size.Xs),
-            " "
+            " ",
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -266,10 +266,10 @@ function sizing(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `)`
+                    `)`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -281,7 +281,7 @@ function dropupVariations(): b.IBobrilChildren {
             getSingleButtonDropdown("Dropup", bs.ButtonOption.Default, bs.Size.Md, true),
             " ",
             getSingleButtonDropdown("Right dropup", bs.ButtonOption.Primary, bs.Size.Md, true),
-            " "
+            " ",
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -314,9 +314,9 @@ function dropupVariations(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `)`
+                    `)`,
                 ])
             )
-        )
+        ),
     ];
 }

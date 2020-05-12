@@ -7,18 +7,18 @@ export const helpers = {
         success: b.styleDef("text-success"),
         info: b.styleDef("text-info"),
         warning: b.styleDef("text-warning"),
-        danger: b.styleDef("text-danger")
+        danger: b.styleDef("text-danger"),
     },
     background: {
         primary: b.styleDef("bg-primary"),
         success: b.styleDef("bg-success"),
         info: b.styleDef("bg-info"),
         warning: b.styleDef("bg-warning"),
-        danger: b.styleDef("bg-danger")
+        danger: b.styleDef("bg-danger"),
     },
     float: {
         pullLeft: b.styleDef("pull-left"),
-        pullRight: b.styleDef("pull-right")
+        pullRight: b.styleDef("pull-right"),
     },
     clearfix: b.styleDef("clearfix"),
     close: b.styleDef("close"),
@@ -30,7 +30,7 @@ export const helpers = {
     srOnly: b.styleDef("sr-only"),
     srOnlyFocusable: b.styleDef("sr-only-focusable"),
     textHide: b.styleDef("text-hide"),
-    thumbnail: b.styleDef("thumbnail")
+    thumbnail: b.styleDef("thumbnail"),
 };
 
 export default helpers;

@@ -21,13 +21,13 @@ interface ICtx extends b.IBobrilCtx {
 export const selectStyles = {
     formControl: b.styleDef("form-control"),
     lg: b.styleDef("input-lg"),
-    sm: b.styleDef("input-sm")
+    sm: b.styleDef("input-sm"),
 };
 
 export enum SelectSize {
     Lg,
     Default,
-    Sm
+    Sm,
 }
 
 export const selectSizeStyles: IDictionary<SelectSize, b.IBobrilStyle> = createDictionary<SelectSize, b.IBobrilStyle>();
@@ -51,18 +51,24 @@ export const Select = b.createOverridingComponent<ISelectData, IBaseData>(Elem, 
         me.attrs.value = ctx.value;
         b.style(me, selectStyles.formControl);
         b.style(me, ctx.data.size !== undefined && selectSizeStyles(ctx.data.size));
-        me.children = ctx.data.options.map(optionData => Option(optionData));
+        me.children = ctx.data.options.map((optionData) => Option(optionData));
 
-        if (ctx.data.rows) me.attrs["size"] = ctx.data.rows.toString();
+        if (ctx.data.rows) {
+            me.attrs["size"] = ctx.data.rows.toString();
+        }
 
-        if (ctx.data.disabled) me.attrs["disabled"] = "disabled";
+        if (ctx.data.disabled) {
+            me.attrs["disabled"] = "disabled";
+        }
 
-        if (ctx.data.multiple) me.attrs["multiple"] = "multiple";
+        if (ctx.data.multiple) {
+            me.attrs["multiple"] = "multiple";
+        }
     },
     onChange(ctx: ICtx, value: string | string[]): void {
         ctx.value = value;
         ctx.me.component.super.onChange(ctx, value);
-    }
+    },
 });
 
 export default Select;

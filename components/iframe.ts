@@ -17,7 +17,7 @@ export const IFrame = b.createDerivedComponent<IIFrameData, IBaseData>(Elem, {
         me.tag = "iframe";
         me.attrs["src"] = ctx.data.src;
         b.style(me, !!ctx.data.embedResponsive && embedResponsiveStyles.embedResponsiveItem);
-    }
+    },
 });
 
 export default IFrame;

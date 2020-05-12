@@ -5,7 +5,7 @@ export const Sub = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
     id: "bobrilstrap-sub",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = "sub";
-    }
+    },
 });
 
 export default Sub;

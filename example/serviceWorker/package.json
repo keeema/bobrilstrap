@@ -1,34 +1,34 @@
 {
-  "name": "serviceworker",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "bobril": {
-    "variant": "serviceworker",
-    "jasmineVersion": "3.3",
-    "compilerOptions": {
-      "types": [],
-      "declaration": true,
-      "strict": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true,
-      "noEmitHelpers": true,
-      "preserveConstEnums": false,
-      "removeComments": false,
-      "skipLibCheck": false,
-      "skipDefaultLibCheck": true,
-      "sourceMap": true
+    "name": "serviceworker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "bobril": {
+        "variant": "serviceworker",
+        "jasmineVersion": "3.3",
+        "compilerOptions": {
+            "types": [],
+            "declaration": true,
+            "strict": true,
+            "noUnusedLocals": true,
+            "noUnusedParameters": true,
+            "noImplicitReturns": true,
+            "noFallthroughCasesInSwitch": true,
+            "noEmitHelpers": true,
+            "preserveConstEnums": false,
+            "removeComments": false,
+            "skipLibCheck": false,
+            "skipDefaultLibCheck": true,
+            "sourceMap": true
+        }
+    },
+    "devDependencies": {
+        "typescript": "*",
+        "prettier": "^1.19.1"
     }
-  },
-  "devDependencies": {
-    "typescript": "*",
-    "prettier": "^1.19.1"
-  }
 }

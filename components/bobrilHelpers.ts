@@ -25,7 +25,7 @@ export function mergeToChildren(node: IWithChildren, item?: b.IBobrilChildren, u
 export const bobrilHelpers = {
     mergeToChildren,
     toLowerWithDashes,
-    createDictionary
+    createDictionary,
 };
 
 export default bobrilHelpers;
@@ -47,7 +47,9 @@ export interface IDictionary<TKey extends NumberOrString, TValue> {
 export function createDictionary<TKey extends NumberOrString, TValue>(): IDictionary<TKey, TValue> {
     const data: INumberData<TValue> | IStringData<TValue> = {};
     return (key: TKey, value?: TValue, setEvenUndefined?: boolean) => {
-        if (value !== undefined || setEvenUndefined) dataValue(data, key, value);
+        if (value !== undefined || setEvenUndefined) {
+            dataValue(data, key, value);
+        }
 
         return dataValue(data, key);
     };
@@ -56,17 +58,23 @@ export function createDictionary<TKey extends NumberOrString, TValue>(): IDictio
 function dataValue<TValue>(data: INumberData<TValue> | IStringData<TValue>, key: number | string, value?: TValue): TValue {
     if (typeof key === "string") {
         const innerData = data as IStringData<TValue>;
-        if (value !== undefined) innerData[key] = value;
+        if (value !== undefined) {
+            innerData[key] = value;
+        }
         return innerData[key];
     } else {
         const innerData = data as INumberData<TValue>;
-        if (value !== undefined) innerData[key] = value;
+        if (value !== undefined) {
+            innerData[key] = value;
+        }
         return innerData[key];
     }
 }
 
 export function toLowerWithDashes(value: string): string {
-    if (!value) return value;
+    if (!value) {
+        return value;
+    }
 
     value = value.charAt(0).toLowerCase() + value.slice(1);
     return value.replace(/[A-Z]/g, "-$&").toLowerCase();

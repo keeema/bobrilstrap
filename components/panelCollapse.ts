@@ -13,7 +13,7 @@ export const PanelCollapse = b.createDerivedComponent<IPanelCollapseData, IBaseD
     id: "bobrilstrap-panel-collapse",
     render(_ctx: IPanelCollapseCtx, me: b.IBobrilNode) {
         b.style(me, panelStyles.panelCollapse, collapseStyles.collapse);
-    }
+    },
 });
 
 export default PanelCollapse;

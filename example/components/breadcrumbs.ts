@@ -10,11 +10,11 @@ export const breadcrumbs = b.createVirtualComponent({
             {
                 header: "Breadcrumbs",
                 id: "breadcrumbs",
-                lead: [`Indicate the current page's location within a navigational hierarchy.`]
+                lead: [`Indicate the current page's location within a navigational hierarchy.`],
             },
             [info()]
         );
-    }
+    },
 });
 
 function info(): b.IBobrilChildren {
@@ -24,13 +24,13 @@ function info(): b.IBobrilChildren {
             bs.Breadcrumb({}, bs.BreadcrumbItem({ active: true }, "Home")),
             bs.Breadcrumb({}, [
                 bs.BreadcrumbItem({}, bs.A({ href: "javascript:void(0)" }, "Home")),
-                bs.BreadcrumbItem({ active: true }, "Library")
+                bs.BreadcrumbItem({ active: true }, "Library"),
             ]),
             bs.Breadcrumb({}, [
                 bs.BreadcrumbItem({}, bs.A({ href: "javascript:void(0)" }, "Home")),
                 bs.BreadcrumbItem({}, bs.A({ href: "javascript:void(0)" }, "Library")),
-                bs.BreadcrumbItem({ active: true }, "Data")
-            ])
+                bs.BreadcrumbItem({ active: true }, "Data"),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -45,9 +45,9 @@ function info(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.BreadcrumbItem({ active: true }, 'Data')`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

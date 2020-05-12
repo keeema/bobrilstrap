@@ -23,17 +23,19 @@ export const Tr = b.createDerivedComponent<ITrData, IBaseData>(Elem, {
         me.tag = "tr";
         b.style(me, ctx.data.context !== undefined && tableContextStyles(ctx.data.context));
 
-        if (ctx.data.headers)
+        if (ctx.data.headers) {
             me.children = mergeToChildren(
                 me,
-                ctx.data.headers.map(header => Th(getColumnData(header)))
+                ctx.data.headers.map((header) => Th(getColumnData(header)))
             );
-        if (ctx.data.columns)
+        }
+        if (ctx.data.columns) {
             me.children = mergeToChildren(
                 me,
-                ctx.data.columns.map(column => Td(getColumnData(column)))
+                ctx.data.columns.map((column) => Td(getColumnData(column)))
             );
-    }
+        }
+    },
 });
 
 export default Tr;

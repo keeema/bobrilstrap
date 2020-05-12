@@ -5,7 +5,7 @@ export const Del = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
     id: "bobrilstrap-del",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = "del";
-    }
+    },
 });
 
 export default Del;

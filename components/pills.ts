@@ -21,7 +21,7 @@ export const Pills = b.createDerivedComponent<IPillsData, IUlData>(Ul, {
         b.style(me, !!ctx.data.stacked && navStyles.navStacked);
         b.style(me, ctx.data.alignment === NavbarAlignment.Right && navStyles.navbarRight);
         b.style(me, ctx.data.alignment === NavbarAlignment.Left && navStyles.navbarLeft);
-    }
+    },
 });
 
 export default Pills;

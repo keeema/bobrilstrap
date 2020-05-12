@@ -16,7 +16,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const labelStyles = {
     srOnly: helpers.srOnly,
-    controlLabel: b.styleDef("control-label")
+    controlLabel: b.styleDef("control-label"),
 };
 
 export const Label = b.createDerivedComponent<ILabelData, IBaseData>(Elem, {
@@ -27,12 +27,16 @@ export const Label = b.createDerivedComponent<ILabelData, IBaseData>(Elem, {
         b.style(me, !!ctx.data.srOnly && labelStyles.srOnly);
         b.style(me, !!ctx.data.controlLabel && labelStyles.controlLabel);
 
-        if (ctx.data.for) me.attrs["for"] = ctx.data.for;
+        if (ctx.data.for) {
+            me.attrs["for"] = ctx.data.for;
+        }
 
-        if (ctx.data.title) mergeToChildren(me, ctx.data.title);
+        if (ctx.data.title) {
+            mergeToChildren(me, ctx.data.title);
+        }
 
         delete me.attrs["title"];
-    }
+    },
 });
 
 export default Label;

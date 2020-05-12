@@ -18,7 +18,7 @@ export const panelStyles = {
     panelBody: b.styleDef("panel-body"),
     panelFooter: b.styleDef("panel-footer"),
     panelTitle: b.styleDef("panel-title"),
-    panelCollapse: b.styleDef("panel-collapse")
+    panelCollapse: b.styleDef("panel-collapse"),
 };
 
 export enum PanelContext {
@@ -27,7 +27,7 @@ export enum PanelContext {
     Success,
     Warning,
     Danger,
-    Info
+    Info,
 }
 
 export const panelContextStyles: IDictionary<PanelContext, b.IBobrilStyle> = createDictionary<PanelContext, b.IBobrilStyle>();
@@ -55,12 +55,18 @@ export const Panel = b.createDerivedComponent<IPanelData, IBaseData>(Elem, {
         b.style(me, panelStyles.panel);
         b.style(me, (ctx.data.context !== undefined && panelContextStyles(ctx.data.context)) || panelStyles.panelDefault);
 
-        if (ctx.data.body) mergeToChildren(me, PanelBody({}, ctx.data.body), true);
+        if (ctx.data.body) {
+            mergeToChildren(me, PanelBody({}, ctx.data.body), true);
+        }
 
-        if (ctx.data.heading) mergeToChildren(me, PanelHeading({}, ctx.data.heading), true);
+        if (ctx.data.heading) {
+            mergeToChildren(me, PanelHeading({}, ctx.data.heading), true);
+        }
 
-        if (ctx.data.footer) mergeToChildren(me, PanelFooter({}, ctx.data.heading));
-    }
+        if (ctx.data.footer) {
+            mergeToChildren(me, PanelFooter({}, ctx.data.heading));
+        }
+    },
 });
 
 export default Panel;

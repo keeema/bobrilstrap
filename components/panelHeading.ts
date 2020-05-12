@@ -12,7 +12,7 @@ export const PanelHeading = b.createDerivedComponent<IPanelHeadingData, IBaseDat
     id: "bobrilstrap-panel-heading",
     render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
         b.style(me, panelStyles.panelHeading);
-    }
+    },
 });
 
 export default PanelHeading;

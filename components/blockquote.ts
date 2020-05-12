@@ -15,7 +15,7 @@ export const Blockquote = b.createDerivedComponent<IBlockquoteData, IBaseData>(E
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = "blockquote";
         b.style(me, !!ctx.data.reverse && typography.blockquoteReverse);
-    }
+    },
 });
 
 export default Blockquote;

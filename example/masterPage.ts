@@ -12,11 +12,11 @@ export const masterPage = b.createVirtualComponent({
     },
     postUpdateDom() {
         prettify.prettyPrint();
-    }
+    },
 });
 
 const collapsedMenu = b.propim(true);
-export function handleMenuItemClick() {
+export function handleMenuItemClick(): boolean {
     collapsedMenu(true);
     return false;
 }
@@ -26,7 +26,7 @@ function getNavigation(): b.IBobrilNode {
         {
             static: bs.NavbarStatic.Top,
             header: true,
-            style: [styles.bsDocsNav, noMargin]
+            style: [styles.bsDocsNav, noMargin],
         },
         [
             bs.Container({}, [
@@ -34,16 +34,16 @@ function getNavigation(): b.IBobrilNode {
                     bs.Button(
                         {
                             variant: bs.ButtonVariant.NavbarToggle,
-                            onClick: () => collapsedMenu(!collapsedMenu())
+                            onClick: () => collapsedMenu(!collapsedMenu()),
                         },
                         [
                             bs.Span({ style: bs.helpers.srOnly }, "Toggle navigation"),
                             bs.Span({ style: bs.navStyles.iconBar }),
                             bs.Span({ style: bs.navStyles.iconBar }),
-                            bs.Span({ style: bs.navStyles.iconBar })
+                            bs.Span({ style: bs.navStyles.iconBar }),
                         ]
                     ),
-                    b.link(bs.NavbarBrand({ href: "javascript:void(0)" }, "Bobrilstrap"), "bobrilstrap")
+                    b.link(bs.NavbarBrand({ href: "javascript:void(0)" }, "Bobrilstrap"), "bobrilstrap"),
                 ]),
                 bs.Collapse(
                     { collapsed: collapsedMenu() },
@@ -55,7 +55,7 @@ function getNavigation(): b.IBobrilNode {
                                     bs.A(
                                         {
                                             href: "javascript:void(0)",
-                                            onClick: handleMenuItemClick
+                                            onClick: handleMenuItemClick,
                                         },
                                         "CSS"
                                     ),
@@ -68,7 +68,7 @@ function getNavigation(): b.IBobrilNode {
                                     bs.A(
                                         {
                                             href: "javascript:void(0)",
-                                            onClick: handleMenuItemClick
+                                            onClick: handleMenuItemClick,
                                         },
                                         "Components"
                                     ),
@@ -81,13 +81,13 @@ function getNavigation(): b.IBobrilNode {
                                     bs.A(
                                         {
                                             href: "javascript:void(0)",
-                                            onClick: handleMenuItemClick
+                                            onClick: handleMenuItemClick,
                                         },
                                         "Live components"
                                     ),
                                     "live-components"
                                 )
-                            )
+                            ),
                         ]),
                         bs.NavbarNav({ style: bs.navStyles.navbarRight }, [
                             bs.NavbarNavItem(
@@ -96,7 +96,7 @@ function getNavigation(): b.IBobrilNode {
                                     {
                                         href: texts.githubLink,
                                         target: bs.Target.Blank,
-                                        onClick: handleMenuItemClick
+                                        onClick: handleMenuItemClick,
                                     },
                                     texts.gitHub
                                 )
@@ -107,7 +107,7 @@ function getNavigation(): b.IBobrilNode {
                                     {
                                         href: texts.bobrilLink,
                                         target: bs.Target.Blank,
-                                        onClick: handleMenuItemClick
+                                        onClick: handleMenuItemClick,
                                     },
                                     texts.bobril
                                 )
@@ -118,7 +118,7 @@ function getNavigation(): b.IBobrilNode {
                                     {
                                         href: texts.bootsrapLink,
                                         target: bs.Target.Blank,
-                                        onClick: handleMenuItemClick
+                                        onClick: handleMenuItemClick,
                                     },
                                     texts.bootstrap
                                 )
@@ -127,11 +127,11 @@ function getNavigation(): b.IBobrilNode {
                                 { active: b.isActive("donate") },
                                 b.link(bs.A({ onClick: handleMenuItemClick }, texts.donate), "donate")
                             ),
-                            bs.NavbarNavItem({}, InstallButton())
-                        ])
+                            bs.NavbarNavItem({}, InstallButton()),
+                        ]),
                     ])
-                )
-            ])
+                ),
+            ]),
         ]
     );
 }
@@ -144,7 +144,7 @@ function getFooter(): b.IBobrilChildren {
                     bs.Li({}, bs.A({ href: texts.githubLink, target: bs.Target.Blank }, texts.gitHub)),
                     bs.Li({}, bs.A({ href: texts.bobrilLink, target: bs.Target.Blank }, texts.bobril)),
                     bs.Li({}, bs.A({ href: texts.bootsrapLink, target: bs.Target.Blank }, texts.bootstrap)),
-                    bs.Li({ active: b.isActive("donate") }, b.link(bs.A({ onClick: handleMenuItemClick }, texts.donate), "donate"))
+                    bs.Li({ active: b.isActive("donate") }, b.link(bs.A({ onClick: handleMenuItemClick }, texts.donate), "donate")),
                 ]),
                 bs.P({}, [
                     `Written by `,
@@ -152,10 +152,10 @@ function getFooter(): b.IBobrilChildren {
                     ` .
                     Code licensed `,
                     bs.A({ href: texts.mitLink, target: bs.Target.Blank }, texts.mit),
-                    `.`
-                ])
-            ])
-        ])
+                    `.`,
+                ]),
+            ]),
+        ]),
     ];
 }
 
@@ -175,5 +175,5 @@ export const texts = {
     mit: "MIT",
     mitLink: "https://github.com/keeema/bobrilstrap/blob/master/LICENSE",
     donate: "Donate",
-    install: "Install Documentation"
+    install: "Install Documentation",
 };

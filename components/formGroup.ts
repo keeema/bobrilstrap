@@ -16,13 +16,13 @@ interface ICtx extends b.IBobrilCtx {
 export const formGroupStyles = {
     formGroup: b.styleDef("form-group"),
     lg: b.styleDef("form-group-lg"),
-    sm: b.styleDef("form-group-sm")
+    sm: b.styleDef("form-group-sm"),
 };
 
 export enum FormGroupSize {
     Lg,
     Default,
-    Sm
+    Sm,
 }
 
 export const formGroupSizeStyles: IDictionary<FormGroupSize, b.IBobrilStyle> = createDictionary<FormGroupSize, b.IBobrilStyle>();
@@ -38,7 +38,7 @@ export const FormGroup = b.createDerivedComponent<IFormGroupData, IBaseData>(Ele
         b.style(me, !!ctx.data.hasFeedback && validationStyles.hasFeedback);
         b.style(me, ctx.data.validationState !== undefined && validationStateStyles(ctx.data.validationState));
         b.style(me, ctx.data.size !== undefined && formGroupSizeStyles(ctx.data.size));
-    }
+    },
 });
 
 export default FormGroup;

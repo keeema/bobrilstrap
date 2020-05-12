@@ -6,7 +6,7 @@ export enum OlType {
     a,
     A,
     i,
-    I
+    I,
 }
 
 export interface IOlData extends IBaseData {
@@ -24,7 +24,7 @@ export const Ol = b.createDerivedComponent<IOlData, IBaseData>(Elem, {
         if (ctx.data.type !== undefined) {
             me.attrs["type"] = ctx.data.type === OlType.num ? "1" : OlType[ctx.data.type];
         }
-    }
+    },
 });
 
 export default Ol;

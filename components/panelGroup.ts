@@ -12,7 +12,7 @@ export const PanelGroup = b.createDerivedComponent<IPanelGroupData, IBaseData>(E
     id: "bobrilstrap-panel-group",
     render(_ctx: IPanelGroupCtx, me: b.IBobrilNode) {
         b.style(me, panelStyles.panelGroup);
-    }
+    },
 });
 
 export default PanelGroup;

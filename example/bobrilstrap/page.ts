@@ -18,35 +18,35 @@ export const bobrilstrapPage = b.createVirtualComponent({
                             {
                                 targetId: "bobril",
                                 title: "Bobril",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "bobrilstrap-installation",
                                 title: "Bobrilstrap installation",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "bobrilstrap-tsx",
                                 title: "Using TSX",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "bobrilstrap-themes",
                                 title: "Themes",
-                                subs: []
-                            }
-                        ]
-                    }
+                                subs: [],
+                            },
+                        ],
+                    },
                 },
                 [bobrilDesc(), bobrilstrap()]
-            )
+            ),
         ];
-    }
+    },
 });
 
 const texts = {
     header: "Bobrilstrap",
     headerContent: `Bobril wrapper of the most popular HTML, CSS, and JS framework for developing responsive,
      mobile first projects on the web - Bootstrap.`,
-    iconText: "BS"
+    iconText: "BS",
 };

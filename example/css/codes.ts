@@ -9,11 +9,11 @@ export const codes = b.createVirtualComponent({
         me.children = section(
             {
                 header: "Code",
-                id: "code"
+                id: "code",
             },
             [inline(), userInput(), basicBlock(), variables(), sampleOutput()]
         );
-    }
+    },
 });
 
 function inline(): b.IBobrilChildren {
@@ -24,7 +24,7 @@ function inline(): b.IBobrilChildren {
         bs.Figure(
             { style: styles.highlight },
             pre({}, bs.Code({ style: langJs }, [`['For example, ', bs.Code({}, 'section'), ' should be wrapped as inline.']`]))
-        )
+        ),
     ];
 }
 
@@ -38,7 +38,7 @@ function userInput(): b.IBobrilChildren {
             " followed by the name of the directory.",
             bs.E({ tag: "br" }),
             "To edit settings, press ",
-            bs.Kbd({}, "ctrl + ,")
+            bs.Kbd({}, "ctrl + ,"),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -53,10 +53,10 @@ function userInput(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `   'To edit settings, press ', kbd({}, 'ctrl + ,')`,
                     bs.E({ tag: "br" }),
-                    `]`
+                    `]`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -66,10 +66,10 @@ function basicBlock(): b.IBobrilChildren {
         bs.P({}, [
             `Use `,
             bs.Code({}, "Pre"),
-            ` for multiple lines of code. Be sure to escape any angle brackets in the code for proper rendering.`
+            ` for multiple lines of code. Be sure to escape any angle brackets in the code for proper rendering.`,
         ]),
         bs.E({ style: styles.bsExample }, bs.Pre({}, "<p>Sample text here...</p>")),
-        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, [`pre({}, '<p>Sample text here...</p>')`])))
+        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, [`pre({}, '<p>Sample text here...</p>')`]))),
     ];
 }
 
@@ -78,7 +78,10 @@ function variables(): b.IBobrilChildren {
         b.anchor(bs.H2({ attrs: { id: "code-variables" } }, "Variables")),
         bs.P({}, [`For indicating variables use the `, bs.Code({}, "bs.V"), ` or `, bs.Code({}, "bs.Variable"), ` component.`]),
         bs.E({ style: styles.bsExample }, [bs.V({}, "y"), " = ", bs.V({}, "mx"), " + ", bs.V({}, "b")]),
-        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, [`[v({}, 'y'), ' = ', v({}, 'mx'), ' + ', v({}, 'b')]`])))
+        bs.Figure(
+            { style: styles.highlight },
+            pre({}, bs.Code({ style: langJs }, [`[v({}, 'y'), ' = ', v({}, 'mx'), ' + ', v({}, 'b')]`]))
+        ),
     ];
 }
 
@@ -93,6 +96,6 @@ function sampleOutput(): b.IBobrilChildren {
                 {},
                 bs.Code({ style: langJs }, [`bs.Samp({}, 'This text is meant to be treated as sample output from a computer program.')`])
             )
-        )
+        ),
     ];
 }

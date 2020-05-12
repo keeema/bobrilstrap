@@ -43,8 +43,8 @@ export const components = b.createVirtualComponent({
                                 subs: [
                                     { targetId: "glyphicons-glyphs", title: "Available glyphs" },
                                     { targetId: "glyphicons-how-to-use", title: "How to use" },
-                                    { targetId: "glyphicons-examples", title: "Examples" }
-                                ]
+                                    { targetId: "glyphicons-examples", title: "Examples" },
+                                ],
                             },
                             {
                                 targetId: "dropdowns",
@@ -56,9 +56,9 @@ export const components = b.createVirtualComponent({
                                     { targetId: "dropdowns-divider", title: "Divider" },
                                     {
                                         targetId: "dropdowns-disabled",
-                                        title: "Disabled menu items"
-                                    }
-                                ]
+                                        title: "Disabled menu items",
+                                    },
+                                ],
                             },
                             {
                                 targetId: "btn-groups",
@@ -70,13 +70,13 @@ export const components = b.createVirtualComponent({
                                     { targetId: "btn-groups-nested", title: "Nesting" },
                                     {
                                         targetId: "btn-groups-vertical",
-                                        title: "Vertical variation"
+                                        title: "Vertical variation",
                                     },
                                     {
                                         targetId: "btn-groups-justified",
-                                        title: "Justified button groups"
-                                    }
-                                ]
+                                        title: "Justified button groups",
+                                    },
+                                ],
                             },
                             {
                                 targetId: "btn-dropdowns",
@@ -84,18 +84,18 @@ export const components = b.createVirtualComponent({
                                 subs: [
                                     {
                                         targetId: "btn-dropdowns-single",
-                                        title: "Single button dropdowns"
+                                        title: "Single button dropdowns",
                                     },
                                     {
                                         targetId: "btn-dropdowns-split",
-                                        title: "Split button dropdowns"
+                                        title: "Split button dropdowns",
                                     },
                                     { targetId: "btn-dropdowns-sizing", title: "Sizing" },
                                     {
                                         targetId: "btn-dropdowns-dropup",
-                                        title: "Dropup variation"
-                                    }
-                                ]
+                                        title: "Dropup variation",
+                                    },
+                                ],
                             },
                             {
                                 targetId: "input-groups",
@@ -105,22 +105,22 @@ export const components = b.createVirtualComponent({
                                     { targetId: "input-groups-sizing", title: "Sizing" },
                                     {
                                         targetId: "input-groups-checkboxes-radios",
-                                        title: "Checkboxes and radio addons"
+                                        title: "Checkboxes and radio addons",
                                     },
                                     { targetId: "input-groups-buttons", title: "Button addons" },
                                     {
                                         targetId: "input-groups-buttons-dropdowns",
-                                        title: "Buttons with dropdowns"
+                                        title: "Buttons with dropdowns",
                                     },
                                     {
                                         targetId: "input-groups-buttons-segmented",
-                                        title: "Segmented buttons"
+                                        title: "Segmented buttons",
                                     },
                                     {
                                         targetId: "input-groups-buttons-multiple",
-                                        title: "Multiple buttons"
-                                    }
-                                ]
+                                        title: "Multiple buttons",
+                                    },
+                                ],
                             },
                             {
                                 targetId: "nav",
@@ -130,8 +130,8 @@ export const components = b.createVirtualComponent({
                                     { targetId: "nav-pills", title: "Pills" },
                                     { targetId: "nav-justified", title: "Justified" },
                                     { targetId: "nav-disabled-links", title: "Disabled links" },
-                                    { targetId: "nav-dropdowns", title: "Using dropdowns" }
-                                ]
+                                    { targetId: "nav-dropdowns", title: "Using dropdowns" },
+                                ],
                             },
                             {
                                 targetId: "navbar",
@@ -145,18 +145,18 @@ export const components = b.createVirtualComponent({
                                     { targetId: "navbar-links", title: "Links" },
                                     {
                                         targetId: "navbar-component-alignment",
-                                        title: "Component alignment"
+                                        title: "Component alignment",
                                     },
                                     { targetId: "navbar-fixed-top", title: "Fixed to top" },
                                     { targetId: "navbar-fixed-bottom", title: "Fixed to bottom" },
                                     { targetId: "navbar-static-top", title: "Static top" },
-                                    { targetId: "navbar-inverted", title: "Inverted navbar" }
-                                ]
+                                    { targetId: "navbar-inverted", title: "Inverted navbar" },
+                                ],
                             },
                             {
                                 targetId: "breadcrumbs",
                                 title: "Breadcrumbs",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "pagination",
@@ -164,30 +164,30 @@ export const components = b.createVirtualComponent({
                                 subs: [
                                     {
                                         targetId: "pagination-default",
-                                        title: "Default pagination"
+                                        title: "Default pagination",
                                     },
-                                    { targetId: "pagination-pager", title: "Pager" }
-                                ]
+                                    { targetId: "pagination-pager", title: "Pager" },
+                                ],
                             },
                             {
                                 targetId: "labels",
                                 title: "Labels",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "badges",
                                 title: "Badges",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "jumbotron",
                                 title: "Jumbotron",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "page-header",
                                 title: "Page header",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "thumbnails",
@@ -196,9 +196,9 @@ export const components = b.createVirtualComponent({
                                     { targetId: "thumbnails-default", title: "Default example" },
                                     {
                                         targetId: "thumbnails-custom-content",
-                                        title: "Custom content"
-                                    }
-                                ]
+                                        title: "Custom content",
+                                    },
+                                ],
                             },
                             {
                                 targetId: "alerts",
@@ -207,10 +207,10 @@ export const components = b.createVirtualComponent({
                                     { targetId: "alerts-examples", title: "Examples" },
                                     {
                                         targetId: "alerts-dismissible",
-                                        title: "Dismissible alerts"
+                                        title: "Dismissible alerts",
                                     },
-                                    { targetId: "alerts-links", title: "Links in alerts" }
-                                ]
+                                    { targetId: "alerts-links", title: "Links in alerts" },
+                                ],
                             },
                             {
                                 targetId: "progress",
@@ -220,20 +220,20 @@ export const components = b.createVirtualComponent({
                                     { targetId: "progress-label", title: "With label" },
                                     {
                                         targetId: "progress-alternatives",
-                                        title: "Contextual alternatives"
+                                        title: "Contextual alternatives",
                                     },
                                     { targetId: "progress-striped", title: "Striped" },
                                     { targetId: "progress-animated", title: "Animated" },
-                                    { targetId: "progress-stacked", title: "Stacked" }
-                                ]
+                                    { targetId: "progress-stacked", title: "Stacked" },
+                                ],
                             },
                             {
                                 targetId: "media",
                                 title: "Media object",
                                 subs: [
                                     { targetId: "media-default", title: "Default media" },
-                                    { targetId: "media-list", title: "Media list" }
-                                ]
+                                    { targetId: "media-list", title: "Media list" },
+                                ],
                             },
                             {
                                 targetId: "list-group",
@@ -246,13 +246,13 @@ export const components = b.createVirtualComponent({
                                     { targetId: "list-group-disabled", title: "Disabled items" },
                                     {
                                         targetId: "list-group-contextual-classes",
-                                        title: "Contextual classes"
+                                        title: "Contextual classes",
                                     },
                                     {
                                         targetId: "list-group-custom-content",
-                                        title: "Custom content"
-                                    }
-                                ]
+                                        title: "Custom content",
+                                    },
+                                ],
                             },
                             {
                                 targetId: "panels",
@@ -263,24 +263,24 @@ export const components = b.createVirtualComponent({
                                     { targetId: "panels-footer", title: "Panel with footer" },
                                     {
                                         targetId: "panels-alternatives",
-                                        title: "Contextual alternatives"
+                                        title: "Contextual alternatives",
                                     },
                                     { targetId: "panels-tables", title: "With tables" },
-                                    { targetId: "panels-list-group", title: "With list groups" }
-                                ]
+                                    { targetId: "panels-list-group", title: "With list groups" },
+                                ],
                             },
                             {
                                 targetId: "responsive-embed",
                                 title: "Responsive embed",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "wells",
                                 title: "Wells",
-                                subs: []
-                            }
-                        ]
-                    }
+                                subs: [],
+                            },
+                        ],
+                    },
                 },
                 [
                     glyphicons(),
@@ -303,15 +303,15 @@ export const components = b.createVirtualComponent({
                     listGroup(),
                     panels(),
                     responsiveEmbed(),
-                    wells()
+                    wells(),
                 ]
-            )
+            ),
         ];
-    }
+    },
 });
 
 const texts = {
     header: "Components",
     headerContent: `Over a dozen reusable components built to provide iconography, dropdowns,
-     input groups, navigation, alerts, and much more.`
+     input groups, navigation, alerts, and much more.`,
 };

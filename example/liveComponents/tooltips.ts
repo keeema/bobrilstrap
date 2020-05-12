@@ -10,11 +10,11 @@ export const tooltips = b.createVirtualComponent({
             {
                 header: "Tooltip",
                 id: "tooltip",
-                lead: []
+                lead: [],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -32,7 +32,7 @@ function example(): b.IBobrilChildren {
             ` or turn `,
             bs.Code({}, "animation"),
             ` on/off by input data properties. If the title is 
-            not static, it should be defined as a function.`
+            not static, it should be defined as a function.`,
         ]),
         bs.E({ style: [styles.bsExample, styles.tooltipDemo] }, [
             b.styledDiv(
@@ -44,7 +44,7 @@ function example(): b.IBobrilChildren {
                     bs.Tooltip(
                         {
                             title: "Tooltip on bottom",
-                            placement: bs.TooltipPlacement.Bottom
+                            placement: bs.TooltipPlacement.Bottom,
                         },
                         bs.Button({ label: "Tooltip on bottom" })
                     ),
@@ -53,13 +53,13 @@ function example(): b.IBobrilChildren {
                         {
                             title: "Tooltip on right",
                             placement: bs.TooltipPlacement.Right,
-                            trigger: [bs.TooltipTrigger.Hover]
+                            trigger: [bs.TooltipTrigger.Hover],
                         },
                         bs.Button({ label: "Tooltip on right" })
-                    )
+                    ),
                 ],
                 styles.bsExampleTooltips
-            )
+            ),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -96,9 +96,9 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Button({ label: 'Tooltip on right' })`,
                     bs.E({ tag: "br" }),
-                    `)`
+                    `)`,
                 ])
             )
-        )
+        ),
     ];
 }

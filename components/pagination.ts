@@ -15,13 +15,13 @@ interface IPaginationCtx extends b.IBobrilCtx {
 export const paginationStyles = {
     pagination: b.styleDef("pagination"),
     lg: b.styleDef("pagination-lg"),
-    sm: b.styleDef("pagination-sm")
+    sm: b.styleDef("pagination-sm"),
 };
 
 export enum PaginationSize {
     Md,
     Lg,
-    Sm
+    Sm,
 }
 
 export const paginationSizeStyles: IDictionary<PaginationSize, b.IBobrilStyle> = createDictionary<PaginationSize, b.IBobrilStyle>();
@@ -37,7 +37,7 @@ export const Pagination = b.createDerivedComponent<IPaginationData, IBaseData>(E
             paginationStyles.pagination,
             !!ctx.data.size && paginationSizeStyles(ctx.data.size)
         );
-    }
+    },
 });
 
 export default Pagination;

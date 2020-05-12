@@ -15,8 +15,10 @@ export const TBody = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = "tbody";
 
-        if (ctx.data.rows) me.children = ctx.data.rows.map(row => Tr(row));
-    }
+        if (ctx.data.rows) {
+            me.children = ctx.data.rows.map((row) => Tr(row));
+        }
+    },
 });
 
 export default TBody;

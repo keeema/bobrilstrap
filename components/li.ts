@@ -12,7 +12,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const liStyles = {
     active: b.styleDef("active"),
-    disabled: b.styleDef("disabled")
+    disabled: b.styleDef("disabled"),
 };
 
 export const Li = b.createDerivedComponent<ILiData, IBaseData>(Elem, {
@@ -21,7 +21,7 @@ export const Li = b.createDerivedComponent<ILiData, IBaseData>(Elem, {
         me.tag = "li";
         b.style(me, !!ctx.data.active && liStyles.active);
         b.style(me, !!ctx.data.disabled && liStyles.disabled);
-    }
+    },
 });
 
 export default Li;

@@ -13,7 +13,7 @@ export const PageHeader = b.createDerivedComponent<IPageHeaderData, IBaseData>(E
     id: "bobrilstrap-page-header",
     render(_ctx: IPanelHeadingCtx, me: b.IBobrilNode) {
         b.style(me, pageHeaderStyle);
-    }
+    },
 });
 
 export default PageHeader;

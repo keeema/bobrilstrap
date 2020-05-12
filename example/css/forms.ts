@@ -9,7 +9,7 @@ export const forms = b.createVirtualComponent({
         me.children = section(
             {
                 header: "Forms",
-                id: "forms"
+                id: "forms",
             },
             [
                 basicExample(),
@@ -22,10 +22,10 @@ export const forms = b.createVirtualComponent({
                 formsControlReadonly(),
                 formsHelpText(),
                 validationStates(),
-                controlSizing()
+                controlSizing(),
             ]
         );
-    }
+    },
 });
 
 const items = ["Audi", "BMW", "Bugatti", "Ferrari", "Ford", "Lamborghini", "Mercedes Benz", "Porsche", "Rolls-Royce", "Volkswagen"];
@@ -46,7 +46,7 @@ function basicExample(): b.IBobrilChildren {
             bs.Code({}, "width: 100%;"),
             ` by default. Wrap labels and controls in `,
             bs.Code({}, "bs.FormGroup"),
-            ` for optimum spacing.`
+            ` for optimum spacing.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({}, [
@@ -55,16 +55,16 @@ function basicExample(): b.IBobrilChildren {
                     bs.InputText({
                         id: "exampleInputEmail1",
                         type: bs.InputTextType.Email,
-                        placeholder: "Email"
-                    })
+                        placeholder: "Email",
+                    }),
                 ]),
                 bs.FormGroup({}, [
                     bs.Label({ for: "exampleInputPassword1" }, "Password"),
                     bs.InputText({
                         id: "exampleInputPassword1",
                         type: bs.InputTextType.Password,
-                        placeholder: "Password"
-                    })
+                        placeholder: "Password",
+                    }),
                 ]),
                 bs.FormGroup({}, [
                     bs.Label({ for: "exampleInputTypeahead1" }, "Typeahead"),
@@ -72,20 +72,20 @@ function basicExample(): b.IBobrilChildren {
                         id: "exampleInputTypeahead1",
                         type: bs.InputTextType.Text,
                         placeholder: "Write to search",
-                        typeaheadOptions: { source: items }
-                    })
+                        typeaheadOptions: { source: items },
+                    }),
                 ]),
                 bs.FormGroup({}, [
                     bs.Label({ for: "exampleInputFile" }, "File input"),
                     bs.E({
                         tag: "input",
-                        attrs: { type: "file", id: "exampleInputFile" }
+                        attrs: { type: "file", id: "exampleInputFile" },
                     }),
-                    bs.HelpText({}, "Example block-level help text here.")
+                    bs.HelpText({}, "Example block-level help text here."),
                 ]),
                 bs.Checkbox({ label: { title: "Check me out" }, inputCheckbox: {} }),
-                bs.Button({ label: "Submit", onClick: () => alert("Clicked!") })
-            ])
+                bs.Button({ label: "Submit", onClick: () => alert("Clicked!") }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -152,20 +152,20 @@ function basicExample(): b.IBobrilChildren {
                     `    bs.Button({ label: 'Submit', onClick: () => alert('Clicked!') })`,
                     bs.E({ tag: "br" }),
                     `])`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-formgroup-inputgroup" }
+                attrs: { id: "callout-formgroup-inputgroup" },
             },
             [
                 bs.H4({}, `Don't mix form groups with input groups`),
-                bs.P({}, `Do not mix form groups directly with input groups. Instead, nest the input group inside of the form group.`)
+                bs.P({}, `Do not mix form groups directly with input groups. Instead, nest the input group inside of the form group.`),
             ]
-        )
+        ),
     ];
 }
 
@@ -176,12 +176,12 @@ function inlineForm(): b.IBobrilChildren {
             `Set `,
             bs.Code({}, "inline"),
             ` input data property to your form for left-aligned and inline-block controls.`,
-            bs.Strong({}, `This only applies to forms within viewports that are at least 768px wide.`)
+            bs.Strong({}, `This only applies to forms within viewports that are at least 768px wide.`),
         ]),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-inline-form-width" }
+                attrs: { id: "callout-inline-form-width" },
             },
             [
                 bs.H4({}, `May require custom widths`),
@@ -192,14 +192,14 @@ function inlineForm(): b.IBobrilChildren {
                 that to `,
                     bs.Code({}, "width: auto;"),
                     ` so multiple controls can reside on the same line. Depending on your layout, 
-                additional custom widths may be required.`
-                ])
+                additional custom widths may be required.`,
+                ]),
             ]
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-inline-form-labels" }
+                attrs: { id: "callout-inline-form-labels" },
             },
             [
                 bs.H4({}, `Always add labels`),
@@ -220,8 +220,8 @@ function inlineForm(): b.IBobrilChildren {
                     bs.Code({}, "placeholder"),
                     ` input data property, if present, but note that use of `,
                     bs.Code({}, "placeholder"),
-                    ` as a replacement for other labelling methods is not advised.`
-                ])
+                    ` as a replacement for other labelling methods is not advised.`,
+                ]),
             ]
         ),
         bs.E({ style: styles.bsExample }, [
@@ -229,7 +229,7 @@ function inlineForm(): b.IBobrilChildren {
                 bs.FormGroup({}, [
                     bs.Label({ for: "exampleInputName2" }, "Name"),
                     " ",
-                    bs.InputText({ id: "exampleInputName2", placeholder: "Jane Doe" })
+                    bs.InputText({ id: "exampleInputName2", placeholder: "Jane Doe" }),
                 ]),
                 " ",
                 bs.FormGroup({}, [
@@ -238,15 +238,15 @@ function inlineForm(): b.IBobrilChildren {
                     bs.InputText({
                         id: "exampleInputEmail2",
                         type: bs.InputTextType.Email,
-                        placeholder: "jane.doe@example.com"
-                    })
+                        placeholder: "jane.doe@example.com",
+                    }),
                 ]),
                 " ",
                 bs.Button({
                     label: "Send invitation",
-                    onClick: () => alert("Clicked!")
-                })
-            ])
+                    onClick: () => alert("Clicked!"),
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -281,7 +281,7 @@ function inlineForm(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Button({ label: 'Send invitation', onClick: () => alert('Clicked!') })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -292,8 +292,8 @@ function inlineForm(): b.IBobrilChildren {
                     bs.InputText({
                         id: "exampleInputEmail3",
                         type: bs.InputTextType.Email,
-                        placeholder: "Email"
-                    })
+                        placeholder: "Email",
+                    }),
                 ]),
                 " ",
                 bs.FormGroup({}, [
@@ -301,14 +301,14 @@ function inlineForm(): b.IBobrilChildren {
                     bs.InputText({
                         id: "exampleInputPassword3",
                         type: bs.InputTextType.Password,
-                        placeholder: "Password"
-                    })
+                        placeholder: "Password",
+                    }),
                 ]),
                 " ",
                 bs.Checkbox({ label: { title: "Remember me" }, inputCheckbox: {} }),
                 " ",
-                bs.Button({ label: "Sign in", onClick: () => alert("Clicked!") })
-            ])
+                bs.Button({ label: "Sign in", onClick: () => alert("Clicked!") }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -353,7 +353,7 @@ function inlineForm(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Button({ label: 'Sign in', onClick: () => alert('Clicked!') })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -366,18 +366,18 @@ function inlineForm(): b.IBobrilChildren {
                         bs.InputText({
                             id: "exampleInputAmount",
                             type: bs.InputTextType.Number,
-                            placeholder: "Amount"
+                            placeholder: "Amount",
                         }),
-                        bs.InputGroupAddon({}, ".00")
-                    ])
+                        bs.InputGroupAddon({}, ".00"),
+                    ]),
                 ]),
                 " ",
                 bs.Button({
                     label: "Transfer cash",
                     option: bs.ButtonOption.Primary,
-                    onClick: () => alert("Clicked!")
-                })
-            ])
+                    onClick: () => alert("Clicked!"),
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -404,10 +404,10 @@ function inlineForm(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Button({ label: 'Transfer cash', option: bs.ButtonOption.Primary, onClick: () => alert('Clicked!') })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -422,7 +422,7 @@ function horizontalForm(): b.IBobrilChildren {
             bs.Code({}, "bs.FormGroup"),
             `s to behave as grid rows, so no need for `,
             bs.Code({}, "bs.Row"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({ horizontal: true }, [
@@ -431,7 +431,7 @@ function horizontalForm(): b.IBobrilChildren {
                         {
                             controlLabel: true,
                             for: "inputEmail3",
-                            style: bs.colStyles(bs.Size.Sm)(2)
+                            style: bs.colStyles(bs.Size.Sm)(2),
                         },
                         "Email"
                     ),
@@ -440,16 +440,16 @@ function horizontalForm(): b.IBobrilChildren {
                         bs.InputText({
                             id: "inputEmail3",
                             type: bs.InputTextType.Email,
-                            placeholder: "Email"
+                            placeholder: "Email",
                         })
-                    )
+                    ),
                 ]),
                 bs.FormGroup({}, [
                     bs.Label(
                         {
                             controlLabel: true,
                             for: "inputPassword3",
-                            style: bs.colStyles(bs.Size.Sm)(2)
+                            style: bs.colStyles(bs.Size.Sm)(2),
                         },
                         "Password"
                     ),
@@ -458,31 +458,31 @@ function horizontalForm(): b.IBobrilChildren {
                         bs.InputText({
                             id: "inputPassword3",
                             type: bs.InputTextType.Password,
-                            placeholder: "Password"
+                            placeholder: "Password",
                         })
-                    )
+                    ),
                 ]),
                 bs.FormGroup({}, [
                     bs.Col(
                         {
                             size: bs.Size.Sm,
                             span: 10,
-                            offsets: [{ size: bs.Size.Sm, span: 2 }]
+                            offsets: [{ size: bs.Size.Sm, span: 2 }],
                         },
                         bs.Checkbox({ label: { title: "Remember me" } })
-                    )
+                    ),
                 ]),
                 bs.FormGroup({}, [
                     bs.Col(
                         {
                             size: bs.Size.Sm,
                             span: 10,
-                            offsets: [{ size: bs.Size.Sm, span: 2 }]
+                            offsets: [{ size: bs.Size.Sm, span: 2 }],
                         },
                         bs.Button({ label: "Sign in", onClick: () => alert("Clicked!") })
-                    )
-                ])
-            ])
+                    ),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -529,10 +529,10 @@ function horizontalForm(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -570,12 +570,12 @@ function supportedControls(): b.IBobrilChildren {
             bs.Code({}, "tel"),
             ` and `,
             bs.Code({}, "color"),
-            `.`
+            `.`,
         ]),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-input-needs-type" }
+                attrs: { id: "callout-input-needs-type" },
             },
             [
                 bs.H4({}, `Type declaration required`),
@@ -584,8 +584,8 @@ function supportedControls(): b.IBobrilChildren {
                     bs.Code({}, "type"),
                     ` input data property or the `,
                     bs.Code({}, "bs.InputTextType.Text"),
-                    ` will be used as the default one.`
-                ])
+                    ` will be used as the default one.`,
+                ]),
             ]
         ),
         bs.E({ style: styles.bsExample }, [
@@ -595,10 +595,10 @@ function supportedControls(): b.IBobrilChildren {
                     {},
                     bs.InputText({
                         type: bs.InputTextType.Number,
-                        placeholder: "Number input"
+                        placeholder: "Number input",
                     })
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -607,14 +607,14 @@ function supportedControls(): b.IBobrilChildren {
                 bs.Code({ style: langJs }, [
                     `bs.InputText({ placeholder: 'Text input' })`,
                     bs.E({ tag: "br" }),
-                    `bs.InputText({ type: bs.InputTextType.Number, placeholder: 'Number input' })`
+                    `bs.InputText({ type: bs.InputTextType.Number, placeholder: 'Number input' })`,
                 ])
             )
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutInfo],
-                attrs: { id: "callout-xref-input-group" }
+                attrs: { id: "callout-xref-input-group" },
             },
             [
                 bs.H4({}, `Input groups`),
@@ -623,8 +623,8 @@ function supportedControls(): b.IBobrilChildren {
                     bs.Code({}, "<input>"),
                     `, check out the input `,
                     bs.Code({}, "bs.InputGroup"),
-                    `.`
-                ])
+                    `.`,
+                ]),
             ]
         ),
         bs.H3({ attrs: { id: "textarea" } }, "Textarea"),
@@ -638,33 +638,33 @@ function supportedControls(): b.IBobrilChildren {
             bs.Form({}, [
                 bs.Checkbox({
                     label: {
-                        title: "Option one is this and that—be sure to include why it's great"
-                    }
+                        title: "Option one is this and that—be sure to include why it's great",
+                    },
                 }),
                 bs.Checkbox({
                     label: { title: "Option two is disabled" },
-                    inputCheckbox: { disabled: true }
+                    inputCheckbox: { disabled: true },
                 }),
                 bs.E({ tag: "br" }),
                 bs.Radio({
                     label: {
-                        title: "Option one is this and that—be sure to include why it's great"
+                        title: "Option one is this and that—be sure to include why it's great",
                     },
                     inputRadio: {
                         id: "optionsRadios1",
                         value: "option1",
-                        name: "optionsRadios"
-                    }
+                        name: "optionsRadios",
+                    },
                 }),
                 bs.Radio({
                     label: {
-                        title: "Option two can be something else and selecting it will deselect option one"
+                        title: "Option two can be something else and selecting it will deselect option one",
                     },
                     inputRadio: {
                         id: "optionsRadios2",
                         value: "option2",
-                        name: "optionsRadios"
-                    }
+                        name: "optionsRadios",
+                    },
                 }),
                 bs.Radio({
                     label: { title: "Option three is disabled" },
@@ -672,10 +672,10 @@ function supportedControls(): b.IBobrilChildren {
                         id: "optionsRadios3",
                         value: "option3",
                         name: "optionsRadios",
-                        disabled: true
-                    }
-                })
-            ])
+                        disabled: true,
+                    },
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -718,7 +718,7 @@ function supportedControls(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    inputRadio: { id: 'optionsRadios3', value: 'option3', name: 'optionsRadios', disabled: true }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
         ),
@@ -726,25 +726,25 @@ function supportedControls(): b.IBobrilChildren {
         bs.P({}, [
             `Use the `,
             bs.Code({}, "inline"),
-            ` input data property on a series of checkboxes or radios for controls that appear on the same line.`
+            ` input data property on a series of checkboxes or radios for controls that appear on the same line.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({}, [
                 bs.Checkbox({
                     inline: true,
                     label: { title: "1" },
-                    inputCheckbox: { id: "inlineCheckbox1" }
+                    inputCheckbox: { id: "inlineCheckbox1" },
                 }),
                 bs.Checkbox({
                     inline: true,
                     label: { title: "2" },
-                    inputCheckbox: { id: "inlineCheckbox2" }
+                    inputCheckbox: { id: "inlineCheckbox2" },
                 }),
                 bs.Checkbox({
                     inline: true,
                     label: { title: "3" },
-                    inputCheckbox: { id: "inlineCheckbox3" }
-                })
+                    inputCheckbox: { id: "inlineCheckbox3" },
+                }),
             ]),
             bs.E({ tag: "br" }),
             bs.Form({}, [
@@ -754,8 +754,8 @@ function supportedControls(): b.IBobrilChildren {
                     inputRadio: {
                         id: "inlineRadio1",
                         value: "option1",
-                        name: "inlineRadioOptions"
-                    }
+                        name: "inlineRadioOptions",
+                    },
                 }),
                 bs.Radio({
                     inline: true,
@@ -763,8 +763,8 @@ function supportedControls(): b.IBobrilChildren {
                     inputRadio: {
                         id: "inlineRadio2",
                         value: "option2",
-                        name: "inlineRadioOptions"
-                    }
+                        name: "inlineRadioOptions",
+                    },
                 }),
                 bs.Radio({
                     inline: true,
@@ -772,10 +772,10 @@ function supportedControls(): b.IBobrilChildren {
                     inputRadio: {
                         id: "inlineRadio3",
                         value: "option3",
-                        name: "inlineRadioOptions"
-                    }
-                })
-            ])
+                        name: "inlineRadioOptions",
+                    },
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -816,7 +816,7 @@ function supportedControls(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    inputRadio: { id: 'inlineRadio3', value: 'option3', name: 'inlineRadioOptions' }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
         ),
@@ -827,22 +827,22 @@ function supportedControls(): b.IBobrilChildren {
             `Remember to still provide some form of label for assistive technologies (for instance, using `,
             bs.Code({}, "aria.label"),
             ,
-            `).`
+            `).`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({}, [
                 bs.Checkbox({
-                    inputCheckbox: { id: "blankCheckbox", aria: { label: "..." } }
+                    inputCheckbox: { id: "blankCheckbox", aria: { label: "..." } },
                 }),
                 bs.Radio({
                     inputRadio: {
                         id: "blankRadio1",
                         value: "option1",
                         name: "blankRadio",
-                        aria: { label: "..." }
-                    }
-                })
-            ])
+                        aria: { label: "..." },
+                    },
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -851,7 +851,7 @@ function supportedControls(): b.IBobrilChildren {
                 bs.Code({ style: langJs }, [
                     `bs.Checkbox({ inputCheckbox: { id: 'blankCheckbox', aria: { label: '...' } } }),`,
                     bs.E({ tag: "br" }),
-                    `bs.Radio({ inputRadio: { id: 'blankRadio1', value: 'option1', name: 'blankRadio', aria: { label: '...' } } })`
+                    `bs.Radio({ inputRadio: { id: 'blankRadio1', value: 'option1', name: 'blankRadio', aria: { label: '...' } } })`,
                 ])
             )
         ),
@@ -859,14 +859,14 @@ function supportedControls(): b.IBobrilChildren {
         bs.P({}, [
             `Note that many native select menus—namely in Safari and Chrome—have rounded corners that cannot be modified via `,
             bs.Code({}, "border-radius"),
-            ` properties.`
+            ` properties.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({}, [
                 bs.Select({
-                    options: [{ value: "1" }, { value: "2" }, { value: "3" }, { value: "4" }, { value: "5" }]
-                })
-            ])
+                    options: [{ value: "1" }, { value: "2" }, { value: "3" }, { value: "4" }, { value: "5" }],
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -877,7 +877,7 @@ function supportedControls(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
         ),
@@ -888,15 +888,15 @@ function supportedControls(): b.IBobrilChildren {
             bs.Code({}, "multiple"),
             ` input data property set to `,
             bs.Code({}, "true"),
-            `, multiple options are shown by default.`
+            `, multiple options are shown by default.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({}, [
                 bs.Select({
                     multiple: true,
-                    options: [{ value: "1" }, { value: "2" }, { value: "3" }, { value: "4" }, { value: "5" }]
-                })
-            ])
+                    options: [{ value: "1" }, { value: "2" }, { value: "3" }, { value: "4" }, { value: "5" }],
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -909,10 +909,10 @@ function supportedControls(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    options: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }, { value: '5' }]`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -924,20 +924,20 @@ function staticControl(): b.IBobrilChildren {
             bs.Code({}, "formControlStatic"),
             ` input data property of `,
             bs.Code({}, "bs.Paragraph"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({ horizontal: true }, [
                 bs.FormGroup({}, [
                     bs.Label({ controlLabel: true, style: bs.colStyles(bs.Size.Sm)(2) }, "Email"),
-                    bs.Col({ size: bs.Size.Sm, span: 10 }, bs.P({ formControlStatic: true }, "email@example.com"))
+                    bs.Col({ size: bs.Size.Sm, span: 10 }, bs.P({ formControlStatic: true }, "email@example.com")),
                 ]),
                 bs.FormGroup({}, [
                     bs.Label(
                         {
                             controlLabel: true,
                             for: "inputPassword",
-                            style: bs.colStyles(bs.Size.Sm)(2)
+                            style: bs.colStyles(bs.Size.Sm)(2),
                         },
                         "Password"
                     ),
@@ -946,11 +946,11 @@ function staticControl(): b.IBobrilChildren {
                         bs.InputText({
                             id: "inputPassword",
                             type: bs.InputTextType.Password,
-                            placeholder: "Password"
+                            placeholder: "Password",
                         })
-                    )
-                ])
-            ])
+                    ),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -979,10 +979,10 @@ function staticControl(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -996,20 +996,20 @@ function formsControlFocus(): b.IBobrilChildren {
             bs.Code({}, "box-shadow"),
             ` in its place for `,
             bs.Code({}, ":focus"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({}, [
                 bs.InputText({
                     id: "focusedInput",
-                    placeholder: "Demonstrative focus state"
-                })
-            ])
+                    placeholder: "Demonstrative focus state",
+                }),
+            ]),
         ]),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutInfo],
-                attrs: { id: "callout-focus-demo" }
+                attrs: { id: "callout-focus-demo" },
             },
             [
                 bs.H4({}, [`Demo `, bs.Code({}, ":focus"), `state`]),
@@ -1018,10 +1018,10 @@ function formsControlFocus(): b.IBobrilChildren {
                     bs.Code({}, ":focus"),
                     ` state on a `,
                     bs.Code({}, ".form-control"),
-                    `.`
-                ])
+                    `.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -1034,16 +1034,16 @@ function formsControlDisabled(): b.IBobrilChildren {
             ` input comonent data property to prevent user interactions. Disabled inputs appear lighter 
             and add a `,
             bs.Code({}, "not-allowed"),
-            ` cursor.`
+            ` cursor.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({}, [
                 bs.InputText({
                     id: "disabledInput",
                     placeholder: "Disabled input here...",
-                    disabled: true
-                })
-            ])
+                    disabled: true,
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -1054,10 +1054,10 @@ function formsControlDisabled(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.InputText({ id: 'disabledInput', placeholder: 'Disabled input here...', disabled: true })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -1068,7 +1068,7 @@ function formsControlReadonly(): b.IBobrilChildren {
             `Set the `,
             bs.Code({}, "readonly "),
             ` input comonent data property to prevent modification of the input's value. Read-only 
-            inputs appear lighter (just like disabled inputs), but retain the standard cursor.`
+            inputs appear lighter (just like disabled inputs), but retain the standard cursor.`,
         ]),
         bs.E({ style: styles.bsExample }, [bs.Form({}, [bs.InputText({ placeholder: "Readonly input here…", readonly: true })])]),
         bs.Figure(
@@ -1080,10 +1080,10 @@ function formsControlReadonly(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `     bs.InputText({ placeholder: 'Readonly input here…', readonly: true })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -1094,7 +1094,7 @@ function formsHelpText(): b.IBobrilChildren {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutInfo],
-                attrs: { id: "callout-help-text-accessibility" }
+                attrs: { id: "callout-help-text-accessibility" },
             },
             [
                 bs.H4({}, `Associating help text with form controls`),
@@ -1102,8 +1102,8 @@ function formsHelpText(): b.IBobrilChildren {
                     `Help text should be explicitly associated with the form control it relates to using the `,
                     bs.Code({}, "aria.describedby"),
                     ` input data property. This will ensure that assistive technologies – such as screen readers 
-                – will announce this help text when the user focuses or enters the control.`
-                ])
+                – will announce this help text when the user focuses or enters the control.`,
+                ]),
             ]
         ),
         bs.E({ style: styles.bsExample }, [
@@ -1112,11 +1112,11 @@ function formsHelpText(): b.IBobrilChildren {
                     bs.Label({ for: "inputHelpBlock", title: "Input with help text" }),
                     bs.InputText({
                         id: "inputHelpBlock",
-                        aria: { describedby: "helpBlock" }
-                    })
+                        aria: { describedby: "helpBlock" },
+                    }),
                 ]),
-                bs.HelpText({ id: "helpBlock" }, "A block of help text that breaks onto a new line and may extend beyond one line.")
-            ])
+                bs.HelpText({ id: "helpBlock" }, "A block of help text that breaks onto a new line and may extend beyond one line."),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -1141,10 +1141,10 @@ function formsHelpText(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `     )`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -1164,12 +1164,12 @@ function validationStates(): b.IBobrilChildren {
             bs.Code({}, "bs.HelpText"),
             `s within that `,
             bs.Code({}, "bs.FormGroup"),
-            ` will receive the validation styles.`
+            ` will receive the validation styles.`,
         ]),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-form-validation-state-accessibility" }
+                attrs: { id: "callout-form-validation-state-accessibility" },
             },
             [
                 bs.H4({}, `Conveying validation state to assistive technologies and colorblind users`),
@@ -1186,8 +1186,8 @@ function validationStates(): b.IBobrilChildren {
                     ` input date property or style), or by providing an additional help text 
                 block. Specifically for assistive technologies, invalid form controls can also be assigned an `,
                     bs.Code({}, "aria.invalid"),
-                    `input date property.`
-                ])
+                    `input date property.`,
+                ]),
             ]
         ),
         bs.E({ style: styles.bsExample }, [
@@ -1196,49 +1196,49 @@ function validationStates(): b.IBobrilChildren {
                     bs.Label({
                         for: "inputSuccess1",
                         title: "Input with success",
-                        controlLabel: true
+                        controlLabel: true,
                     }),
                     bs.InputText({
                         id: "inputSuccess1",
-                        aria: { describedby: "helpBlock2" }
+                        aria: { describedby: "helpBlock2" },
                     }),
-                    bs.HelpText({ id: "helpBlock2" }, "A block of help text that breaks onto a new line and may extend beyond one line.")
+                    bs.HelpText({ id: "helpBlock2" }, "A block of help text that breaks onto a new line and may extend beyond one line."),
                 ]),
                 bs.FormGroup({ validationState: bs.ValidationState.Warning }, [
                     bs.Label({
                         for: "inputWarning1",
                         title: "Input with warning",
-                        controlLabel: true
+                        controlLabel: true,
                     }),
-                    bs.InputText({ id: "inputWarning1" })
+                    bs.InputText({ id: "inputWarning1" }),
                 ]),
                 bs.FormGroup({ validationState: bs.ValidationState.Error }, [
                     bs.Label({
                         for: "inputError1",
                         title: "Input with error",
-                        controlLabel: true
+                        controlLabel: true,
                     }),
-                    bs.InputText({ id: "inputError1" })
+                    bs.InputText({ id: "inputError1" }),
                 ]),
                 bs.E({ style: bs.validationStyles.hasSuccess }, [
                     bs.Checkbox({
                         label: { title: "Checkbox with success" },
-                        inputCheckbox: { id: "checkboxSuccess" }
-                    })
+                        inputCheckbox: { id: "checkboxSuccess" },
+                    }),
                 ]),
                 bs.E({ style: bs.validationStyles.hasWarning }, [
                     bs.Checkbox({
                         label: { title: "Checkbox with warning" },
-                        inputCheckbox: { id: "checkboxWarning" }
-                    })
+                        inputCheckbox: { id: "checkboxWarning" },
+                    }),
                 ]),
                 bs.E({ style: bs.validationStyles.hasError }, [
                     bs.Checkbox({
                         label: { title: "Checkbox with error" },
-                        inputCheckbox: { id: "checkboxError" }
-                    })
-                ])
-            ])
+                        inputCheckbox: { id: "checkboxError" },
+                    }),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -1315,10 +1315,10 @@ function validationStates(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -1332,7 +1332,7 @@ function controlSizing(): b.IBobrilChildren {
             bs.Code({}, "bs.Col"),
             ` or by `,
             bs.Code({}, "bs.colStyles"),
-            `.`
+            `.`,
         ]),
         bs.H3({}, "Height sizing"),
         bs.P({}, `Create taller or shorter form controls that match button sizes.`),
@@ -1341,24 +1341,24 @@ function controlSizing(): b.IBobrilChildren {
                 bs.E({ style: styles.controls }, [
                     bs.InputText({
                         size: bs.InputTextSize.Lg,
-                        placeholder: "bs.InputTextSize.Lg"
+                        placeholder: "bs.InputTextSize.Lg",
                     }),
                     bs.InputText({ placeholder: "default" }),
                     bs.InputText({
                         size: bs.InputTextSize.Sm,
-                        placeholder: "bs.InputTextSize.Sm"
+                        placeholder: "bs.InputTextSize.Sm",
                     }),
                     bs.Select({
                         size: bs.SelectSize.Lg,
-                        options: [{ value: "bs.SelectSize.Lg" }]
+                        options: [{ value: "bs.SelectSize.Lg" }],
                     }),
                     bs.Select({ options: [{ value: "default" }] }),
                     bs.Select({
                         size: bs.SelectSize.Sm,
-                        options: [{ value: "bs.SelectSize.Sm" }]
-                    })
-                ])
-            ])
+                        options: [{ value: "bs.SelectSize.Sm" }],
+                    }),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -1376,7 +1376,7 @@ function controlSizing(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `bs.Select({ options: [{ value: 'default' }] }),`,
                     bs.E({ tag: "br" }),
-                    `bs.Select({ size: bs.SelectSize.Sm, options: [{ value: 'bs.SelectSize.Sm' }] })`
+                    `bs.Select({ size: bs.SelectSize.Sm, options: [{ value: 'bs.SelectSize.Sm' }] })`,
                 ])
             )
         ),
@@ -1384,7 +1384,7 @@ function controlSizing(): b.IBobrilChildren {
         bs.P({}, [
             `Quickly size labels and form controls within horizontal form by adding setting `,
             bs.Code({}, "size"),
-            ` input data property.`
+            ` input data property.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Form({ horizontal: true }, [
@@ -1393,32 +1393,32 @@ function controlSizing(): b.IBobrilChildren {
                         title: "Large label",
                         for: "formGroupInputLarge",
                         controlLabel: true,
-                        style: bs.colStyles(bs.Size.Sm)(2)
+                        style: bs.colStyles(bs.Size.Sm)(2),
                     }),
                     bs.Col(
                         { size: bs.Size.Sm, span: 10 },
                         bs.InputText({
                             id: "formGroupInputLarge",
-                            placeholder: "Large input"
+                            placeholder: "Large input",
                         })
-                    )
+                    ),
                 ]),
                 bs.FormGroup({ size: bs.FormGroupSize.Sm }, [
                     bs.Label({
                         title: "Small label",
                         for: "formGroupInputSmall",
                         controlLabel: true,
-                        style: bs.colStyles(bs.Size.Sm)(2)
+                        style: bs.colStyles(bs.Size.Sm)(2),
                     }),
                     bs.Col(
                         { size: bs.Size.Sm, span: 10 },
                         bs.InputText({
                             id: "formGroupInputSmall",
-                            placeholder: "Small input"
+                            placeholder: "Small input",
                         })
-                    )
-                ])
-            ])
+                    ),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -1467,7 +1467,7 @@ function controlSizing(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -1478,9 +1478,9 @@ function controlSizing(): b.IBobrilChildren {
                 bs.Row({}, [
                     bs.Col({ size: bs.Size.Xs, span: 2 }, bs.InputText({ placeholder: "bs.Size.Xs, 2" })),
                     bs.Col({ size: bs.Size.Xs, span: 4 }, bs.InputText({ placeholder: "bs.Size.Xs, 3" })),
-                    bs.Col({ size: bs.Size.Xs, span: 3 }, bs.InputText({ placeholder: "bs.Size.Xs, 4" }))
-                ])
-            ])
+                    bs.Col({ size: bs.Size.Xs, span: 3 }, bs.InputText({ placeholder: "bs.Size.Xs, 4" })),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -1505,9 +1505,9 @@ function controlSizing(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

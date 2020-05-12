@@ -8,14 +8,14 @@ interface ICtx extends b.IBobrilCtx {
 }
 
 export const inputGroupBtnStyles = {
-    inputGroupBtn: b.styleDef("input-group-btn")
+    inputGroupBtn: b.styleDef("input-group-btn"),
 };
 
 export const InputGroupBtn = b.createDerivedComponent(Elem, {
     id: "bobrilstrap-input-group-button",
     render(_ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, inputGroupBtnStyles.inputGroupBtn);
-    }
+    },
 });
 
 export default InputGroupBtn;

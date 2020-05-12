@@ -12,7 +12,7 @@ export const PanelBody = b.createDerivedComponent<IPanelBodyData, IBaseData>(Ele
     id: "bobrilstrap-panel-body",
     render(_ctx: IPanelBodyCtx, me: b.IBobrilNode) {
         b.style(me, panelStyles.panelBody);
-    }
+    },
 });
 
 export default PanelBody;

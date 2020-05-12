@@ -14,7 +14,7 @@ export enum ListGroupItemContext {
     Success,
     Info,
     Warning,
-    Danger
+    Danger,
 }
 
 export const listGroupStyles = {
@@ -27,7 +27,7 @@ export const listGroupStyles = {
     listGroupItemSuccess: b.styleDef("list-group-item-success"),
     listGroupItemInfo: b.styleDef("list-group-item-info"),
     listGroupItemWarning: b.styleDef("list-group-item-warning"),
-    listGroupItemDanger: b.styleDef("list-group-item-danger")
+    listGroupItemDanger: b.styleDef("list-group-item-danger"),
 };
 
 export const listGroupItemContextStyles: IDictionary<ListGroupItemContext, b.IBobrilStyle> = createDictionary<
@@ -42,10 +42,12 @@ listGroupItemContextStyles(ListGroupItemContext.Danger, listGroupStyles.listGrou
 export const ListGroup = b.createDerivedComponent<IListGroupData, IUlData>(Ul, {
     id: "bobrilstrap-listgroup",
     render(ctx: IListGroupCtx, me: b.IBobrilNode) {
-        if (ctx.data.linkified) me.tag = "div";
+        if (ctx.data.linkified) {
+            me.tag = "div";
+        }
 
         b.style(me, listGroupStyles.listGroup);
-    }
+    },
 });
 
 export default ListGroup;

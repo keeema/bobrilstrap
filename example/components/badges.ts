@@ -10,11 +10,11 @@ export const badges = b.createVirtualComponent({
             {
                 header: "Badges",
                 id: "badges",
-                lead: [`Easily highlight new or unread items by `, bs.Code({}, "bs.Badge"), ` or to links, Bootstrap navs, and more.`]
+                lead: [`Easily highlight new or unread items by `, bs.Code({}, "bs.Badge"), ` or to links, Bootstrap navs, and more.`],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -23,7 +23,7 @@ function example(): b.IBobrilChildren {
             bs.A({ href: "javascript: void(0)" }, ["Inbox", " ", bs.Badge({}, "42")]),
             bs.E({ tag: "br" }),
             bs.E({ tag: "br" }),
-            bs.Button({ option: bs.ButtonOption.Primary }, ["Messages", " ", bs.Badge({}, "4")])
+            bs.Button({ option: bs.ButtonOption.Primary }, ["Messages", " ", bs.Badge({}, "4")]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -33,7 +33,7 @@ function example(): b.IBobrilChildren {
                     `bs.A({ href: '...' }, ['Inbox', ' ', bs.Badge({}, '42')])`,
                     bs.E({ tag: "br" }),
                     bs.E({ tag: "br" }),
-                    `bs.Button({ option: bs.ButtonOption.Primary }, ['Messages', ' ', bs.Badge({}, '4')])`
+                    `bs.Button({ option: bs.ButtonOption.Primary }, ['Messages', ' ', bs.Badge({}, '4')])`,
                 ])
             )
         ),
@@ -44,7 +44,7 @@ function example(): b.IBobrilChildren {
             ` are empty), 
             badges will simply collapse (via CSS's `,
             bs.Code({}, ":empty"),
-            ` selector) provided no content exists within.`
+            ` selector) provided no content exists within.`,
         ]),
         bs.H4({ id: "adapts-to-active-nav-states" }, "Adapts to active nav states"),
         bs.P({}, [`Built-in styles are included for placing badges in active states in pill navigations.`]),
@@ -52,8 +52,8 @@ function example(): b.IBobrilChildren {
             bs.Pills({}, [
                 bs.Pill({ active: true }, bs.A({ href: "javascript: void(0)" }, ["Home", " ", bs.Badge({}, "42")])),
                 bs.Pill({}, bs.A({ href: "javascript: void(0)" }, "Profile")),
-                bs.Pill({}, bs.A({ href: "javascript: void(0)" }, ["Messages ", " ", bs.Badge({}, "3")]))
-            ])
+                bs.Pill({}, bs.A({ href: "javascript: void(0)" }, ["Messages ", " ", bs.Badge({}, "3")])),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -68,9 +68,9 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Pill({}, bs.A({ href: '...' }, ['Messages ', ' ', bs.Badge({}, '3')]))`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

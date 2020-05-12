@@ -16,7 +16,7 @@ export const NavbarHeader = b.createDerivedComponent<INavbarHeaderData, IBaseDat
         b.style(me, navStyles.navbarHeader);
         b.style(me, ctx.data.alignment === NavbarAlignment.Right && navStyles.navbarRight);
         b.style(me, ctx.data.alignment === NavbarAlignment.Left && navStyles.navbarLeft);
-    }
+    },
 });
 
 export default NavbarHeader;

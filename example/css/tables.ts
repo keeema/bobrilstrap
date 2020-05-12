@@ -9,11 +9,11 @@ export const tables = b.createVirtualComponent({
         me.children = section(
             {
                 header: "Tables",
-                id: "tables"
+                id: "tables",
             },
             [basicExample(), stripedRows(), borderedTable(), hoverRows(), condensedTable(), contextualStyles(), responsiveTables()]
         );
-    }
+    },
 });
 
 function basicExample(): b.IBobrilChildren {
@@ -31,22 +31,22 @@ function basicExample(): b.IBobrilChildren {
             bs.Code({}, "string"),
             ` or `,
             bs.Code({}, "bs.IThData"),
-            `.`
+            `.`,
         ]),
         bs.E(
             { style: styles.bsExample },
             bs.Table({
                 caption: "Optional table caption.",
                 head: {
-                    row: { headers: ["#", "First Name", "Last Name", "Username"] }
+                    row: { headers: ["#", "First Name", "Last Name", "Username"] },
                 },
                 body: {
                     rows: [
                         { columns: ["1", "Mark", "Otto", "@mdo"] },
                         { columns: ["2", "Jacob", "Thornton", "@fat"] },
-                        { columns: ["3", "Larry", "the Bird", "@twitter"] }
-                    ]
-                }
+                        { columns: ["3", "Larry", "the Bird", "@twitter"] },
+                    ],
+                },
             })
         ),
         bs.Figure(
@@ -74,10 +74,10 @@ function basicExample(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -89,20 +89,20 @@ function stripedRows(): b.IBobrilChildren {
             bs.Code({}, "striped"),
             ` input data property to add zebra-striping to any table row within the `,
             bs.Code({}, "<tbody>"),
-            `.`
+            `.`,
         ]),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-tables-striped-ie8" }
+                attrs: { id: "callout-tables-striped-ie8" },
             },
             [
                 bs.H4({}, "Cross-browser compatibility"),
                 bs.P({}, [
                     `Striped tables are styled via the `,
                     bs.Code({}, ":nth-child"),
-                    ` CSS selector, which is not available in Internet Explorer 8.`
-                ])
+                    ` CSS selector, which is not available in Internet Explorer 8.`,
+                ]),
             ]
         ),
         bs.E(
@@ -110,15 +110,15 @@ function stripedRows(): b.IBobrilChildren {
             bs.Table({
                 striped: true,
                 head: {
-                    row: { headers: ["#", "First Name", "Last Name", "Username"] }
+                    row: { headers: ["#", "First Name", "Last Name", "Username"] },
                 },
                 body: {
                     rows: [
                         { columns: ["1", "Mark", "Otto", "@mdo"] },
                         { columns: ["2", "Jacob", "Thornton", "@fat"] },
-                        { columns: ["3", "Larry", "the Bird", "@twitter"] }
-                    ]
-                }
+                        { columns: ["3", "Larry", "the Bird", "@twitter"] },
+                    ],
+                },
             })
         ),
         bs.Figure(
@@ -146,10 +146,10 @@ function stripedRows(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -162,15 +162,15 @@ function borderedTable(): b.IBobrilChildren {
             bs.Table({
                 bordered: true,
                 head: {
-                    row: { headers: ["#", "First Name", "Last Name", "Username"] }
+                    row: { headers: ["#", "First Name", "Last Name", "Username"] },
                 },
                 body: {
                     rows: [
                         { columns: ["1", "Mark", "Otto", "@mdo"] },
                         { columns: ["2", "Jacob", "Thornton", "@fat"] },
-                        { columns: ["3", "Larry", "the Bird", "@twitter"] }
-                    ]
-                }
+                        { columns: ["3", "Larry", "the Bird", "@twitter"] },
+                    ],
+                },
             })
         ),
         bs.Figure(
@@ -198,10 +198,10 @@ function borderedTable(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -213,22 +213,22 @@ function hoverRows(): b.IBobrilChildren {
             bs.Code({}, "hover"),
             ` input data property to enable a hover state on table rows within a `,
             bs.Code({}, "<tbody>"),
-            `.`
+            `.`,
         ]),
         bs.E(
             { style: styles.bsExample },
             bs.Table({
                 hover: true,
                 head: {
-                    row: { headers: ["#", "First Name", "Last Name", "Username"] }
+                    row: { headers: ["#", "First Name", "Last Name", "Username"] },
                 },
                 body: {
                     rows: [
                         { columns: ["1", "Mark", "Otto", "@mdo"] },
                         { columns: ["2", "Jacob", "Thornton", "@fat"] },
-                        { columns: ["3", "Larry", "the Bird", "@twitter"] }
-                    ]
-                }
+                        { columns: ["3", "Larry", "the Bird", "@twitter"] },
+                    ],
+                },
             })
         ),
         bs.Figure(
@@ -256,10 +256,10 @@ function hoverRows(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -272,15 +272,15 @@ function condensedTable(): b.IBobrilChildren {
             bs.Table({
                 condensed: true,
                 head: {
-                    row: { headers: ["#", "First Name", "Last Name", "Username"] }
+                    row: { headers: ["#", "First Name", "Last Name", "Username"] },
                 },
                 body: {
                     rows: [
                         { columns: ["1", "Mark", "Otto", "@mdo"] },
                         { columns: ["2", "Jacob", "Thornton", "@fat"] },
-                        { columns: ["3", "Larry", "the Bird", "@twitter"] }
-                    ]
-                }
+                        { columns: ["3", "Larry", "the Bird", "@twitter"] },
+                    ],
+                },
             })
         ),
         bs.Figure(
@@ -308,10 +308,10 @@ function condensedTable(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -324,45 +324,45 @@ function contextualStyles(): b.IBobrilChildren {
             bs.Table({
                 head: {
                     row: {
-                        headers: ["#", "Column heading", "Column heading", "Column heading"]
-                    }
+                        headers: ["#", "Column heading", "Column heading", "Column heading"],
+                    },
                 },
                 body: {
                     rows: [
                         {
                             columns: ["1", "Column content", "Column content", "@	Column content"],
-                            context: bs.TableContext.Active
+                            context: bs.TableContext.Active,
                         },
                         {
-                            columns: ["2", "Column content", "Column content", "@	Column content"]
+                            columns: ["2", "Column content", "Column content", "@	Column content"],
                         },
                         {
                             columns: ["3", "Column content", "Column content", "@	Column content"],
-                            context: bs.TableContext.Success
+                            context: bs.TableContext.Success,
                         },
                         {
-                            columns: ["4", "Column content", "Column content", "@	Column content"]
+                            columns: ["4", "Column content", "Column content", "@	Column content"],
                         },
                         {
                             columns: ["5", "Column content", "Column content", "@	Column content"],
-                            context: bs.TableContext.Warning
+                            context: bs.TableContext.Warning,
                         },
                         {
-                            columns: ["6", "Column content", "Column content", "@	Column content"]
+                            columns: ["6", "Column content", "Column content", "@	Column content"],
                         },
                         {
                             columns: ["7", "Column content", "Column content", "@	Column content"],
-                            context: bs.TableContext.Danger
+                            context: bs.TableContext.Danger,
                         },
                         {
-                            columns: ["8", "Column content", "Column content", "@	Column content"]
+                            columns: ["8", "Column content", "Column content", "@	Column content"],
                         },
                         {
                             columns: ["9", "Column content", "Column content", "@	Column content"],
-                            context: bs.TableContext.Info
-                        }
-                    ]
-                }
+                            context: bs.TableContext.Info,
+                        },
+                    ],
+                },
             })
         ),
         bs.Figure(
@@ -400,7 +400,7 @@ function contextualStyles(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
         ),
@@ -409,8 +409,8 @@ function contextualStyles(): b.IBobrilChildren {
             bs.Table({
                 head: {
                     row: {
-                        headers: ["#", "Column heading", "Column heading", "Column heading", "Column heading", "Column heading"]
-                    }
+                        headers: ["#", "Column heading", "Column heading", "Column heading", "Column heading", "Column heading"],
+                    },
                 },
                 body: {
                     rows: [
@@ -419,28 +419,28 @@ function contextualStyles(): b.IBobrilChildren {
                                 "1",
                                 <bs.ITdData>{
                                     children: "Column content",
-                                    context: bs.TableContext.Active
+                                    context: bs.TableContext.Active,
                                 },
                                 <bs.ITdData>{
                                     children: "Column content",
-                                    context: bs.TableContext.Success
+                                    context: bs.TableContext.Success,
                                 },
                                 <bs.ITdData>{
                                     children: "Column content",
-                                    context: bs.TableContext.Warning
+                                    context: bs.TableContext.Warning,
                                 },
                                 <bs.ITdData>{
                                     children: "Column content",
-                                    context: bs.TableContext.Danger
+                                    context: bs.TableContext.Danger,
                                 },
                                 <bs.ITdData>{
                                     children: "Column content",
-                                    context: bs.TableContext.Info
-                                }
-                            ]
-                        }
-                    ]
-                }
+                                    context: bs.TableContext.Info,
+                                },
+                            ],
+                        },
+                    ],
+                },
             })
         ),
         bs.Figure(
@@ -480,14 +480,14 @@ function contextualStyles(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-tables-context-accessibility" }
+                attrs: { id: "callout-tables-context-accessibility" },
             },
             [
                 bs.H4({}, "Conveying meaning to assistive technologies"),
@@ -499,10 +499,10 @@ function contextualStyles(): b.IBobrilChildren {
                     bs.Code({}, "srOnly"),
                     ` style from `,
                     bs.Code({}, "bs.helpers"),
-                    `.`
-                ])
+                    `.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -513,12 +513,12 @@ function responsiveTables(): b.IBobrilChildren {
             `Create responsive tables by `,
             bs.Code({}, "bs.ResponsiveTable({ table: ... })"),
             ` component to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, 
-            you will not see any difference in these tables.`
+            you will not see any difference in these tables.`,
         ]),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-tables-responsive-overflow" }
+                attrs: { id: "callout-tables-responsive-overflow" },
             },
             [
                 bs.H4({}, "Vertical clipping/truncation"),
@@ -526,8 +526,8 @@ function responsiveTables(): b.IBobrilChildren {
                     `Responsive tables make use of `,
                     bs.Code({}, "overflow-y: hidden"),
                     `, which clips off any content that goes beyond the bottom or top edges of the table. In particular, 
-                this can clip off dropdown menus and other third-party widgets.`
-                ])
+                this can clip off dropdown menus and other third-party widgets.`,
+                ]),
             ]
         ),
         bs.E({ style: styles.bsExample }, [
@@ -542,24 +542,24 @@ function responsiveTables(): b.IBobrilChildren {
                                 "Table heading",
                                 "Table heading",
                                 "Table heading",
-                                "Table heading"
-                            ]
-                        }
+                                "Table heading",
+                            ],
+                        },
                     },
                     body: {
                         rows: [
                             {
-                                columns: ["1", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"]
+                                columns: ["1", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"],
                             },
                             {
-                                columns: ["2", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"]
+                                columns: ["2", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"],
                             },
                             {
-                                columns: ["3", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"]
-                            }
-                        ]
-                    }
-                }
+                                columns: ["3", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"],
+                            },
+                        ],
+                    },
+                },
             }),
             bs.ResponsiveTable({
                 table: {
@@ -573,25 +573,25 @@ function responsiveTables(): b.IBobrilChildren {
                                 "Table heading",
                                 "Table heading",
                                 "Table heading",
-                                "Table heading"
-                            ]
-                        }
+                                "Table heading",
+                            ],
+                        },
                     },
                     body: {
                         rows: [
                             {
-                                columns: ["1", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"]
+                                columns: ["1", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"],
                             },
                             {
-                                columns: ["2", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"]
+                                columns: ["2", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"],
                             },
                             {
-                                columns: ["3", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"]
-                            }
-                        ]
-                    }
-                }
-            })
+                                columns: ["3", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell", "Table cell"],
+                            },
+                        ],
+                    },
+                },
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -626,9 +626,9 @@ function responsiveTables(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    }`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }

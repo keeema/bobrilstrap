@@ -18,8 +18,10 @@ export const Option = b.createDerivedComponent<IOptionsData, IBaseData>(Elem, {
         me.attrs.value = ctx.data.value;
         me.children = ctx.data.label || ctx.data.value;
 
-        if (ctx.data.disabled) me.attrs["disabled"] = "disabled";
-    }
+        if (ctx.data.disabled) {
+            me.attrs["disabled"] = "disabled";
+        }
+    },
 });
 
 export default Option;

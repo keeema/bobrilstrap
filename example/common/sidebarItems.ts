@@ -22,13 +22,13 @@ export const sideBarItems = b.createDerivedComponent<IItemsData, IUlData>(bs.Ul,
             ...ctx.data.items.map((item, i) => {
                 const data = b.assign(
                     {
-                        nextId: i < ctx.data.items.length - 1 ? ctx.data.items[i + 1].targetId : ctx.data.nextId
+                        nextId: i < ctx.data.items.length - 1 ? ctx.data.items[i + 1].targetId : ctx.data.nextId,
                     },
                     item
                 );
                 return sideBarItem(data);
             }),
-            ctx.data.topTargetId && sideBarItem({ targetId: ctx.data.topTargetId, title: "Back to top" })
+            ctx.data.topTargetId && sideBarItem({ targetId: ctx.data.topTargetId, title: "Back to top" }),
         ];
-    }
+    },
 });

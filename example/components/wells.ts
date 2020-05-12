@@ -10,11 +10,11 @@ export const wells = b.createVirtualComponent({
             {
                 header: "Wells",
                 id: "wells",
-                lead: []
+                lead: [],
             },
             [defaultWell(), optionalStyles()]
         );
-    }
+    },
 });
 
 function defaultWell(): b.IBobrilChildren {
@@ -24,11 +24,11 @@ function defaultWell(): b.IBobrilChildren {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutInfo],
-                attrs: { id: "callout-alerts-no-default" }
+                attrs: { id: "callout-alerts-no-default" },
             },
             [bs.Well({}, "Look, I'm in a well!")]
         ),
-        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, [`bs.Well({}, 'Look, I\\'m in a well!')`])))
+        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, [`bs.Well({}, 'Look, I\\'m in a well!')`]))),
     ];
 }
 
@@ -45,6 +45,6 @@ function optionalStyles(): b.IBobrilChildren {
         bs.Figure(
             { style: styles.highlight },
             pre({}, bs.Code({ style: langJs }, [` bs.Well({ size: bs.WellSize.Sm }, 'Look, I\\'m in a small well!')`]))
-        )
+        ),
     ];
 }

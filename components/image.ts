@@ -24,13 +24,13 @@ export const imageStyles = {
     imgRounded: b.styleDef("img-rounded"),
     imgCircle: b.styleDef("img-circle"),
     imgThumbnail: b.styleDef("img-thumbnail"),
-    ieSvgFix: b.styleDef({ width: "100% \\9" }, undefined, "ie-svg-fix")
+    ieSvgFix: b.styleDef({ width: "100% \\9" }, undefined, "ie-svg-fix"),
 };
 
 export enum ImageShape {
     Rounded,
     Circle,
-    Thumbnail
+    Thumbnail,
 }
 
 export const imageShapeStyles: IDictionary<ImageShape, b.IBobrilStyle> = createDictionary<ImageShape, b.IBobrilStyle>();
@@ -45,14 +45,18 @@ export const Image = b.createDerivedComponent<IImageData, IBaseData>(Elem, {
         me.attrs["src"] = ctx.data.src;
         me.attrs["alt"] = ctx.data.alt;
 
-        if (ctx.data.height !== undefined) me.attrs["height"] = ctx.data.height;
-        if (ctx.data.width !== undefined) me.attrs["width"] = ctx.data.width;
+        if (ctx.data.height !== undefined) {
+            me.attrs["height"] = ctx.data.height;
+        }
+        if (ctx.data.width !== undefined) {
+            me.attrs["width"] = ctx.data.width;
+        }
 
         b.style(me, ctx.data.shape !== undefined && imageShapeStyles(ctx.data.shape));
         b.style(me, !!ctx.data.responsive && imageStyles.imgResponsive);
         b.style(me, !!ctx.data.centerBlock && imageStyles.centerBlock);
         b.style(me, !!ctx.data.ieSvgFix && imageStyles.ieSvgFix);
-    }
+    },
 });
 
 export default Image;

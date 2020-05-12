@@ -28,14 +28,18 @@ export const InputCheckbox = b.createOverridingComponent<IInputCheckBoxData>(Ele
         me.attrs["type"] = "checkbox";
         me.attrs.value = ctx.checked;
 
-        if (ctx.data.disabled) me.attrs["disabled"] = "disabled";
+        if (ctx.data.disabled) {
+            me.attrs["disabled"] = "disabled";
+        }
 
-        if (ctx.data.readonly) me.attrs["readonly"] = "readonly";
+        if (ctx.data.readonly) {
+            me.attrs["readonly"] = "readonly";
+        }
     },
     onChange(ctx: ICtx, value: boolean): void {
         ctx.checked = value;
         ctx.me.component.super.onChange(ctx, value);
-    }
+    },
 });
 
 export default InputCheckbox;

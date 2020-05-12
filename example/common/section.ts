@@ -23,7 +23,7 @@ export const section = b.createVirtualComponent<IData>({
             b.anchor(bs.H1({ attrs: { id: ctx.data.id }, style: styles.pageHeader }, ctx.data.header)),
             !!ctx.data.lead && bs.P({ lead: true }, ctx.data.lead),
             !!ctx.data.description && bs.P({}, ctx.data.description),
-            ctx.data.children
+            ctx.data.children,
         ];
-    }
+    },
 });

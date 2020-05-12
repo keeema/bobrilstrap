@@ -5,12 +5,12 @@ import { createDictionary, IDictionary } from "./bobrilHelpers";
 export const wellStyles = {
     well: b.styleDef("well"),
     lg: b.styleDef("well-lg"),
-    sm: b.styleDef("well-sm")
+    sm: b.styleDef("well-sm"),
 };
 
 export enum WellSize {
     Lg,
-    Sm
+    Sm,
 }
 
 export const wellSizeStyles: IDictionary<WellSize, b.IBobrilStyle> = createDictionary<WellSize, b.IBobrilStyle>();
@@ -30,7 +30,7 @@ export const Well = b.createDerivedComponent<IWellData, IBaseData>(Elem, {
     render(ctx: IWellCtx, me: b.IBobrilNode) {
         b.style(me, wellStyles.well);
         b.style(me, ctx.data.size !== undefined && wellSizeStyles(ctx.data.size));
-    }
+    },
 });
 
 export default Well;

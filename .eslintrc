@@ -1,1 +1,1 @@
-{ "extends": "eslint-config-bobril", "rules": { "curly": "off" } }
+{ "extends": "eslint-config-bobril" }

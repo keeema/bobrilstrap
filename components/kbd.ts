@@ -5,7 +5,7 @@ export const Kbd = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
     id: "bobrilstrap-kbd",
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = "kbd";
-    }
+    },
 });
 
 export default Kbd;

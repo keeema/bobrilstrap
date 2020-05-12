@@ -18,7 +18,7 @@ export enum ButtonVariant {
     DropdownNav,
     Navbar,
     NavbarToggle,
-    ListGroup
+    ListGroup,
 }
 
 export interface IButtonData extends IBaseData {
@@ -41,13 +41,13 @@ interface ICtx extends b.IBobrilCtx {
 
 export enum ButtonType {
     Button,
-    Submit
+    Submit,
 }
 
 export enum ButtonTag {
     Button,
     Input,
-    A
+    A,
 }
 
 export enum ButtonOption {
@@ -58,14 +58,14 @@ export enum ButtonOption {
     Info,
     Link,
     Primary,
-    Close
+    Close,
 }
 
 export const buttonStyles = {
     active: b.styleDef("active"),
     disabled: b.styleDef("disabled"),
     btn: b.styleDef("btn"),
-    btnBlock: b.styleDef("btn-block")
+    btnBlock: b.styleDef("btn-block"),
 };
 
 export const buttonSizeStyles = generateSizeStyles();
@@ -133,7 +133,9 @@ export const Button = b.createDerivedComponent<IButtonData, IBaseData>(Elem, {
             ctx.data.data.toggle = "dropdown";
             b.style(me, dropdownStyles.dropdownToggle);
 
-            if (ctx.data.tag !== ButtonTag.Input) mergeToChildren(me, " ");
+            if (ctx.data.tag !== ButtonTag.Input) {
+                mergeToChildren(me, " ");
+            }
 
             mergeToChildren(me, Span({ style: helpers.caret }));
         } else if (ctx.data.variant === ButtonVariant.NavbarToggle) {
@@ -143,7 +145,7 @@ export const Button = b.createDerivedComponent<IButtonData, IBaseData>(Elem, {
         }
 
         mergeToChildren(me, ctx.data.srOnly && Span({ style: helpers.srOnly }, ctx.data.srOnly));
-    }
+    },
 });
 
 export const Btn = Button;
@@ -151,7 +153,7 @@ export default Button;
 
 function generateOptionsStyles(): IDictionary<ButtonOption, b.IBobrilStyle> {
     const result = createDictionary<ButtonOption, b.IBobrilStyle>();
-    Object.keys(ButtonOption).forEach(key => {
+    Object.keys(ButtonOption).forEach((key) => {
         const castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
             result(
@@ -166,7 +168,7 @@ function generateOptionsStyles(): IDictionary<ButtonOption, b.IBobrilStyle> {
 
 function generateSizeStyles(): IDictionary<Size, b.IBobrilStyle> {
     const result = createDictionary<Size, b.IBobrilStyle>();
-    Object.keys(Size).forEach(key => {
+    Object.keys(Size).forEach((key) => {
         const castedValue = parseInt(key, 10);
         if (!isNaN(castedValue)) {
             result(castedValue, castedValue === Size.Md ? undefined : b.styleDef(`btn-${Size[castedValue].toLowerCase()}`));
@@ -183,7 +185,7 @@ function resolveTag(ctx: ICtx): string {
                 tag:
                     ctx.data.variant === ButtonVariant.Navbar || ctx.data.variant === ButtonVariant.DropdownNav
                         ? ButtonTag.A
-                        : ButtonTag.Button
+                        : ButtonTag.Button,
             },
             ctx.data
         );

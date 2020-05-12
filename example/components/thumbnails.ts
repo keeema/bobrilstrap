@@ -29,12 +29,12 @@ export const thumbnails = b.createVirtualComponent({
                 lead: [
                     `Extend Bobrilstrap's `,
                     b.link(bs.A({}, "grid system"), "grid"),
-                    ` with the thumbnail component to easily display grids of images, videos, text, and more.`
-                ]
+                    ` with the thumbnail component to easily display grids of images, videos, text, and more.`,
+                ],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -47,8 +47,8 @@ function example(): b.IBobrilChildren {
                     {
                         cols: [
                             { size: bs.Size.Xs, span: 6 },
-                            { size: bs.Size.Md, span: 3 }
-                        ]
+                            { size: bs.Size.Md, span: 3 },
+                        ],
                     },
                     [bs.A({ href: "javascript:void(0)", style: bs.helpers.thumbnail }, bs.Image({ src: imageData }))]
                 ),
@@ -56,8 +56,8 @@ function example(): b.IBobrilChildren {
                     {
                         cols: [
                             { size: bs.Size.Xs, span: 6 },
-                            { size: bs.Size.Md, span: 3 }
-                        ]
+                            { size: bs.Size.Md, span: 3 },
+                        ],
                     },
                     [bs.A({ href: "javascript:void(0)", style: bs.helpers.thumbnail }, bs.Image({ src: imageData }))]
                 ),
@@ -65,8 +65,8 @@ function example(): b.IBobrilChildren {
                     {
                         cols: [
                             { size: bs.Size.Xs, span: 6 },
-                            { size: bs.Size.Md, span: 3 }
-                        ]
+                            { size: bs.Size.Md, span: 3 },
+                        ],
                     },
                     [bs.A({ href: "javascript:void(0)", style: bs.helpers.thumbnail }, bs.Image({ src: imageData }))]
                 ),
@@ -74,12 +74,12 @@ function example(): b.IBobrilChildren {
                     {
                         cols: [
                             { size: bs.Size.Xs, span: 6 },
-                            { size: bs.Size.Md, span: 3 }
-                        ]
+                            { size: bs.Size.Md, span: 3 },
+                        ],
                     },
                     [bs.A({ href: "javascript:void(0)", style: bs.helpers.thumbnail }, bs.Image({ src: imageData }))]
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -94,7 +94,7 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -111,8 +111,8 @@ function example(): b.IBobrilChildren {
                     {
                         cols: [
                             { size: bs.Size.Sm, span: 6 },
-                            { size: bs.Size.Md, span: 4 }
-                        ]
+                            { size: bs.Size.Md, span: 4 },
+                        ],
                     },
                     [
                         bs.E({ tag: "div", style: bs.helpers.thumbnail }, [
@@ -128,21 +128,21 @@ function example(): b.IBobrilChildren {
                                     bs.Button({
                                         tag: bs.ButtonTag.A,
                                         option: bs.ButtonOption.Primary,
-                                        label: "Button"
+                                        label: "Button",
                                     }),
                                     " ",
-                                    bs.Button({ tag: bs.ButtonTag.A, label: "Button" })
-                                ])
-                            ])
-                        ])
+                                    bs.Button({ tag: bs.ButtonTag.A, label: "Button" }),
+                                ]),
+                            ]),
+                        ]),
                     ]
                 ),
                 bs.Col(
                     {
                         cols: [
                             { size: bs.Size.Sm, span: 6 },
-                            { size: bs.Size.Md, span: 4 }
-                        ]
+                            { size: bs.Size.Md, span: 4 },
+                        ],
                     },
                     [
                         bs.E({ tag: "div", style: bs.helpers.thumbnail }, [
@@ -158,21 +158,21 @@ function example(): b.IBobrilChildren {
                                     bs.Button({
                                         tag: bs.ButtonTag.A,
                                         option: bs.ButtonOption.Primary,
-                                        label: "Button"
+                                        label: "Button",
                                     }),
                                     " ",
-                                    bs.Button({ tag: bs.ButtonTag.A, label: "Button" })
-                                ])
-                            ])
-                        ])
+                                    bs.Button({ tag: bs.ButtonTag.A, label: "Button" }),
+                                ]),
+                            ]),
+                        ]),
                     ]
                 ),
                 bs.Col(
                     {
                         cols: [
                             { size: bs.Size.Sm, span: 6 },
-                            { size: bs.Size.Md, span: 4 }
-                        ]
+                            { size: bs.Size.Md, span: 4 },
+                        ],
                     },
                     [
                         bs.E({ tag: "div", style: bs.helpers.thumbnail }, [
@@ -188,16 +188,16 @@ function example(): b.IBobrilChildren {
                                     bs.Button({
                                         tag: bs.ButtonTag.A,
                                         option: bs.ButtonOption.Primary,
-                                        label: "Button"
+                                        label: "Button",
                                     }),
                                     " ",
-                                    bs.Button({ tag: bs.ButtonTag.A, label: "Button" })
-                                ])
-                            ])
-                        ])
+                                    bs.Button({ tag: bs.ButtonTag.A, label: "Button" }),
+                                ]),
+                            ]),
+                        ]),
                     ]
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -234,9 +234,9 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

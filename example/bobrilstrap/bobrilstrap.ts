@@ -10,7 +10,7 @@ export const bobrilstrap = b.createVirtualComponent({
             section(
                 {
                     id: "bobrilstrap-installation",
-                    header: "Bobrilstrap installation"
+                    header: "Bobrilstrap installation",
                 },
                 [
                     bs.P({}, `To install bobrilstrap to your bobril application stop the running bobril-build and run following commands:`),
@@ -21,7 +21,7 @@ export const bobrilstrap = b.createVirtualComponent({
                     bs.P({}, [
                         "To initialize the bobrilstrap framework change the file ",
                         bs.Italics({}, "index.ts"),
-                        " to look like following: "
+                        " to look like following: ",
                     ]),
                     bs.Figure(
                         { style: styles.highlight },
@@ -35,17 +35,17 @@ export const bobrilstrap = b.createVirtualComponent({
                                 `import * as bs from "bobrilstrap";`,
                                 bs.E({ tag: "br" }),
                                 bs.E({ tag: "br" }),
-                                `b.init(() => bs.H1({}, "Hello World!"));`
+                                `b.init(() => bs.H1({}, "Hello World!"));`,
                             ])
                         )
                     ),
-                    bs.P({}, ["Now you can use all the bobrilstrap components provided by the ", bs.Code({}, "bobrilstrap"), " package."])
+                    bs.P({}, ["Now you can use all the bobrilstrap components provided by the ", bs.Code({}, "bobrilstrap"), " package."]),
                 ]
             ),
             section(
                 {
                     id: "bobrilstrap-tsx",
-                    header: "Using TSX"
+                    header: "Using TSX",
                 },
                 [
                     bs.P({}, [
@@ -60,7 +60,7 @@ export const bobrilstrap = b.createVirtualComponent({
                         bs.Italics({}, "package.json"),
                         " by adding following lines (not necessary when you don't use the TSX directly in ",
                         bs.Italics({}, "index.tsx"),
-                        " file):"
+                        " file):",
                     ]),
                     bs.Figure(
                         { style: styles.highlight },
@@ -71,7 +71,7 @@ export const bobrilstrap = b.createVirtualComponent({
                                 bs.E({ tag: "br" }),
                                 `  "main": "index.tsx"`,
                                 bs.E({ tag: "br" }),
-                                `}`
+                                `}`,
                             ])
                         )
                     ),
@@ -89,16 +89,16 @@ export const bobrilstrap = b.createVirtualComponent({
                                 `import { H1 } from "bobrilstrap";`,
                                 bs.E({ tag: "br" }),
                                 bs.E({ tag: "br" }),
-                                `b.init(() => <H1>Hello World!</H1>);`
+                                `b.init(() => <H1>Hello World!</H1>);`,
                             ])
                         )
-                    )
+                    ),
                 ]
             ),
             section(
                 {
                     id: "bobrilstrap-themes",
-                    header: "Themes"
+                    header: "Themes",
                 },
                 [
                     bs.P({}, [
@@ -108,14 +108,14 @@ export const bobrilstrap = b.createVirtualComponent({
                         bs.Code({}, "bobril"),
                         ` application assets after the `,
                         bs.Code({}, "bobrilstrap"),
-                        ` initialization. Example:`
+                        ` initialization. Example:`,
                     ]),
                     bs.Figure(
                         { style: styles.highlight },
                         prettify.pre({}, bs.Code({ style: prettify.langJs }, [`b.asset("node_modules/myTheme/bootstrap.min.css"); `]))
-                    )
+                    ),
                 ]
-            )
+            ),
         ];
-    }
+    },
 });

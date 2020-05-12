@@ -22,9 +22,13 @@ export const Video = b.createDerivedComponent<IVideoData, IBaseData>(Elem, {
         me.attrs["src"] = ctx.data.src;
         me.attrs["type"] = ctx.data.type;
 
-        if (ctx.data.height !== undefined) me.attrs["height"] = ctx.data.height;
-        if (ctx.data.width !== undefined) me.attrs["width"] = ctx.data.width;
-    }
+        if (ctx.data.height !== undefined) {
+            me.attrs["height"] = ctx.data.height;
+        }
+        if (ctx.data.width !== undefined) {
+            me.attrs["width"] = ctx.data.width;
+        }
+    },
 });
 
 export default Video;

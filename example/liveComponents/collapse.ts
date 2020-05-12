@@ -10,11 +10,11 @@ export const collapse = b.createVirtualComponent({
             {
                 header: "Collapse",
                 id: "collapse",
-                lead: []
+                lead: [],
             },
             [example()]
         );
-    }
+    },
 });
 
 let expanded = 0;
@@ -33,11 +33,11 @@ function example(): b.IBobrilChildren {
                             bs.A(
                                 {
                                     href: "javascript:void(0)",
-                                    onClick: () => toggleExpandItem(1)
+                                    onClick: () => toggleExpandItem(1),
                                 },
                                 "Collapsible Group Item #1"
-                            )
-                        ])
+                            ),
+                        ]),
                     ]),
                     bs.Collapse({ collapsed: expanded !== 1 }, [
                         bs.PanelCollapse({}, [
@@ -47,10 +47,10 @@ function example(): b.IBobrilChildren {
                             3 wolf moon tempor, sunt aliqua put a bird on it squid single- origin coffee nulla assumenda shoreditch 
                             et.Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.Ad 
                             vegan excepteur butcher vice lomo.Leggings occaecat craft beer farm- to - table, raw denim aesthetic 
-                            synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.`
-                            ])
-                        ])
-                    ])
+                            synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.`,
+                            ]),
+                        ]),
+                    ]),
                 ]),
                 bs.Panel({}, [
                     bs.PanelHeading({}, [
@@ -58,11 +58,11 @@ function example(): b.IBobrilChildren {
                             bs.A(
                                 {
                                     href: "javascript:void(0)",
-                                    onClick: () => toggleExpandItem(2)
+                                    onClick: () => toggleExpandItem(2),
                                 },
                                 "Collapsible Group Item #2"
-                            )
-                        ])
+                            ),
+                        ]),
                     ]),
                     bs.Collapse({ collapsed: expanded !== 2 }, [
                         bs.PanelCollapse({}, [
@@ -72,10 +72,10 @@ function example(): b.IBobrilChildren {
                             3 wolf moon tempor, sunt aliqua put a bird on it squid single- origin coffee nulla assumenda shoreditch 
                             et.Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.Ad 
                             vegan excepteur butcher vice lomo.Leggings occaecat craft beer farm- to - table, raw denim aesthetic 
-                            synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.`
-                            ])
-                        ])
-                    ])
+                            synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.`,
+                            ]),
+                        ]),
+                    ]),
                 ]),
                 bs.Panel({}, [
                     bs.PanelHeading({}, [
@@ -83,11 +83,11 @@ function example(): b.IBobrilChildren {
                             bs.A(
                                 {
                                     href: "javascript:void(0)",
-                                    onClick: () => toggleExpandItem(3)
+                                    onClick: () => toggleExpandItem(3),
                                 },
                                 "Collapsible Group Item #3"
-                            )
-                        ])
+                            ),
+                        ]),
                     ]),
                     bs.Collapse({ collapsed: expanded !== 3 }, [
                         bs.PanelCollapse({}, [
@@ -97,12 +97,12 @@ function example(): b.IBobrilChildren {
                             3 wolf moon tempor, sunt aliqua put a bird on it squid single- origin coffee nulla assumenda shoreditch 
                             et.Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.Ad 
                             vegan excepteur butcher vice lomo.Leggings occaecat craft beer farm- to - table, raw denim aesthetic 
-                            synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.`
-                            ])
-                        ])
-                    ])
-                ])
-            ])
+                            synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.`,
+                            ]),
+                        ]),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -159,9 +159,9 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ...`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

@@ -8,7 +8,7 @@ export enum MediaContentAlignment {
     Right = 2,
     Top = 3,
     Middle = 4,
-    Bottom = 5
+    Bottom = 5,
 }
 
 export interface IMediaContentData extends IBaseData {
@@ -25,7 +25,7 @@ export const mediaContentStyles = {
     mediaRight: b.styleDef("media-right"),
     mediaTop: b.styleDef("media-top"),
     mediaMiddle: b.styleDef("media-middle"),
-    mediaBottom: b.styleDef("media-bottom")
+    mediaBottom: b.styleDef("media-bottom"),
 };
 
 export const medialContentAlignmentStyles: IDictionary<MediaContentAlignment, b.IBobrilStyle> = createDictionary<
@@ -43,8 +43,8 @@ export const MediaContent = b.createDerivedComponent<IMediaContentData, IBaseDat
     id: "bobrilstrap-media-content",
     render(ctx: IMediaContentCtx, me: b.IBobrilNode) {
         const alignments = ctx.data.alignment instanceof Array ? ctx.data.alignment : [ctx.data.alignment];
-        alignments.forEach(alignment => b.style(me, medialContentAlignmentStyles(alignment)));
-    }
+        alignments.forEach((alignment) => b.style(me, medialContentAlignmentStyles(alignment)));
+    },
 });
 
 export default MediaContent;

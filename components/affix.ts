@@ -3,7 +3,7 @@ import * as b from "bobril";
 export const affixStyles = {
     affix: b.styleDef("affix"),
     affixTop: b.styleDef("affix-top"),
-    affixBottom: b.styleDef("affix-bottom")
+    affixBottom: b.styleDef("affix-bottom"),
 };
 
 export interface IAffixData {
@@ -28,19 +28,21 @@ export const Affix = b.createVirtualComponent<IAffixData>({
     },
     postUpdateDom(ctx: IAffixCtx) {
         registerNewAffix(ctx);
-    }
+    },
 });
 
 function registerNewAffix(ctx: IAffixCtx): void {
     const element = b.getDomNode(ctx.me) as HTMLElement;
-    if (!element || ctx.data.postponeInit || ctx.affixedElement === element) return;
+    if (!element || ctx.data.postponeInit || ctx.affixedElement === element) {
+        return;
+    }
 
     ctx.affixedElement = element;
     $(element).affix({
         offset: {
             top: getDimension(ctx.data.top),
-            bottom: getDimension(ctx.data.bottom)
-        }
+            bottom: getDimension(ctx.data.bottom),
+        },
     });
 }
 

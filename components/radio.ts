@@ -16,7 +16,7 @@ interface ICtx extends b.IBobrilCtx {
 export const radioStyles = {
     radio: b.styleDef("radio"),
     radioInline: b.styleDef("radio-inline"),
-    disabled: b.styleDef("disabled")
+    disabled: b.styleDef("disabled"),
 };
 
 export const Radio = b.createDerivedComponent<IRadioData, IBaseData>(Elem, {
@@ -35,7 +35,7 @@ export const Radio = b.createDerivedComponent<IRadioData, IBaseData>(Elem, {
         }
 
         me.children = lbl;
-    }
+    },
 });
 
 export default Radio;

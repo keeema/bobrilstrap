@@ -24,7 +24,9 @@ function handlePointerDown(ev: b.IBobrilPointerEvent): boolean {
         lastY = startY;
         totalX = 0;
         totalY = 0;
-    } else pointerId = null;
+    } else {
+        pointerId = null;
+    }
     return false;
 }
 
@@ -43,10 +45,18 @@ function handlePointerUp(ev: b.IBobrilPointerEvent, _target: Node | undefined, n
         pointerId = null;
         const deltaX = Math.abs(ev.x - startX);
         const deltaY = Math.abs(ev.y - startY);
-        if (deltaX < 75) return false; // too small horizontal move
-        if (deltaY / deltaX >= 0.3) return false; // too much vertical for horizontal move
-        if (totalX > deltaX * 1.5) return false; // too much shaking hand
-        if (totalY > deltaX * 0.7) return false; // too much shaking hand
+        if (deltaX < 75) {
+            return false;
+        } // too small horizontal move
+        if (deltaY / deltaX >= 0.3) {
+            return false;
+        } // too much vertical for horizontal move
+        if (totalX > deltaX * 1.5) {
+            return false;
+        } // too much shaking hand
+        if (totalY > deltaX * 0.7) {
+            return false;
+        } // too much shaking hand
         const method = "onSwipe" + (ev.x > startX ? "Right" : "Left");
         b.ignoreClick(ev.x, ev.y);
         b.bubble(node, method as b.EventNames, ev);

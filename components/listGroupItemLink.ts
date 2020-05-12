@@ -19,7 +19,7 @@ export const ListGroupItemLink = b.createDerivedComponent<IListGroupItemLinkData
         b.style(me, !!ctx.data.active && listGroupStyles.active);
         b.style(me, !!ctx.data.disabled && listGroupStyles.disabled);
         b.style(me, ctx.data.context !== undefined && listGroupItemContextStyles(ctx.data.context));
-    }
+    },
 });
 
 export default ListGroupItemLink;

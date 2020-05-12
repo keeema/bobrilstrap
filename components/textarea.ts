@@ -18,7 +18,7 @@ interface ICtx extends b.IBobrilCtx {
 
 export const textareaStyles = {
     formControl: b.styleDef("form-control"),
-    fixedSize: b.styleDef({ resize: "none" }, undefined, "textarea-fixed-size")
+    fixedSize: b.styleDef({ resize: "none" }, undefined, "textarea-fixed-size"),
 };
 
 export const Textarea = b.createOverridingComponent<ITextareaData, IBaseData>(Elem, {
@@ -37,18 +37,26 @@ export const Textarea = b.createOverridingComponent<ITextareaData, IBaseData>(El
 
         b.style(me, !!ctx.data.fixedSize && textareaStyles.fixedSize);
 
-        if (ctx.data.rows) me.attrs["rows"] = ctx.data.rows.toString();
+        if (ctx.data.rows) {
+            me.attrs["rows"] = ctx.data.rows.toString();
+        }
 
-        if (ctx.data.placeholder) me.attrs["placeholder"] = ctx.data.placeholder.toString();
+        if (ctx.data.placeholder) {
+            me.attrs["placeholder"] = ctx.data.placeholder.toString();
+        }
 
-        if (ctx.data.disabled) me.attrs["disabled"] = "disabled";
+        if (ctx.data.disabled) {
+            me.attrs["disabled"] = "disabled";
+        }
 
-        if (ctx.data.readonly) me.attrs["readonly"] = "readonly";
+        if (ctx.data.readonly) {
+            me.attrs["readonly"] = "readonly";
+        }
     },
     onChange(ctx: ICtx, value: string): void {
         ctx.value = value;
         ctx.me.component.super.onChange(ctx, value);
-    }
+    },
 });
 
 export default Textarea;

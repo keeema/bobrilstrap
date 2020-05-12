@@ -8,7 +8,7 @@ export enum ProgressBarContext {
     Success,
     Info,
     Warning,
-    Danger
+    Danger,
 }
 
 export interface IProgressBarData extends IBaseData {
@@ -31,7 +31,7 @@ export const progressBarStyles = {
     progressBarWarning: b.styleDef("progress-bar-warning"),
     progressBarDanger: b.styleDef("progress-bar-danger"),
     progressBarStriped: b.styleDef("progress-bar-striped"),
-    active: b.styleDef("active")
+    active: b.styleDef("active"),
 };
 
 export const progressBarContextStyles: IDictionary<ProgressBarContext, b.IBobrilStyle> = createDictionary<
@@ -54,7 +54,7 @@ export const ProgressBar = b.createDerivedComponent<IProgressBarData, IBaseData>
         b.style(me, !!ctx.data.minWidth, { minWidth: ctx.data.minWidth });
         me.attrs["role"] = "progressbar";
         mergeToChildren(me, ctx.data.srOnlyText && Span({ style: helpers.srOnly }, ctx.data.srOnlyText), true);
-    }
+    },
 });
 
 export default ProgressBar;

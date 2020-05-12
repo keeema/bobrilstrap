@@ -17,7 +17,7 @@ export const NavbarBrand = b.createDerivedComponent<INavbarBrandData, IAnchorDat
         b.style(me, navStyles.navbarBrand);
         b.style(me, ctx.data.alignment === NavbarAlignment.Right && navStyles.navbarRight);
         b.style(me, ctx.data.alignment === NavbarAlignment.Left && navStyles.navbarLeft);
-    }
+    },
 });
 
 export default NavbarBrand;

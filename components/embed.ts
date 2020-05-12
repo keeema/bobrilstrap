@@ -21,10 +21,16 @@ export const Embed = b.createDerivedComponent<IEmbedData, IBaseData>(Elem, {
         b.style(me, !!ctx.data.embedResponsive && embedResponsiveStyles.embedResponsiveItem);
         me.attrs["src"] = ctx.data.src;
 
-        if (ctx.data.type !== undefined) me.attrs["type"] = ctx.data.type;
-        if (ctx.data.height !== undefined) me.attrs["height"] = ctx.data.height;
-        if (ctx.data.width !== undefined) me.attrs["width"] = ctx.data.width;
-    }
+        if (ctx.data.type !== undefined) {
+            me.attrs["type"] = ctx.data.type;
+        }
+        if (ctx.data.height !== undefined) {
+            me.attrs["height"] = ctx.data.height;
+        }
+        if (ctx.data.width !== undefined) {
+            me.attrs["width"] = ctx.data.width;
+        }
+    },
 });
 
 export default Embed;

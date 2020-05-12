@@ -11,11 +11,11 @@ export const overview = b.createVirtualComponent({
                 header: "Overview",
                 id: "overview",
                 lead: `Get the lowdown on the key pieces of Bobrilstrap's and Bootstrap's infrastructure,
-                 including our approach to better, faster, stronger web development.`
+                 including our approach to better, faster, stronger web development.`,
             },
             [typographyAndLinks(), normalizeCss(), containers()]
         );
-    }
+    },
 });
 
 function typographyAndLinks(): b.IBobrilChildren {
@@ -31,15 +31,15 @@ function typographyAndLinks(): b.IBobrilChildren {
                 bs.Code({}, "@font-size-base"),
                 ", and ",
                 bs.Code({}, "@line-height-base"),
-                " attributes as our typographic base"
+                " attributes as our typographic base",
             ]),
             bs.Li({}, [
                 "Set the global link color via ",
                 bs.Code({}, "@link-color"),
                 " and apply link underlines only on ",
-                bs.Code({}, ":hover")
-            ])
-        ])
+                bs.Code({}, ":hover"),
+            ]),
+        ]),
     ];
 }
 
@@ -52,8 +52,8 @@ function normalizeCss(): b.IBobrilChildren {
             ", a project by ",
             bs.A({ href: "https://twitter.com/necolas", target: bs.Target.Blank }, "Nicolas Gallagher"),
             " and ",
-            bs.A({ href: "https://twitter.com/jon_neal", target: bs.Target.Blank }, "Jonathan Neal.")
-        ])
+            bs.A({ href: "https://twitter.com/jon_neal", target: bs.Target.Blank }, "Jonathan Neal."),
+        ]),
     ];
 }
 
@@ -64,7 +64,7 @@ function containers(): b.IBobrilChildren {
             `Bootstrap requires a containing element to wrap site contents and house our grid system. You may choose one of two 
             containers to use in your projects. Note that, due to `,
             bs.Code({}, "padding"),
-            "and more, neither container is nestable."
+            "and more, neither container is nestable.",
         ]),
         bs.P({}, ["Use ", bs.Code({}, "bs.Container({}, ...)"), " for a responsive fixed width container."]),
         bs.Figure(
@@ -74,7 +74,7 @@ function containers(): b.IBobrilChildren {
         bs.P({}, [
             "Use ",
             bs.Code({}, "bs.Container({ fluid: true }, ...)"),
-            " for a full width container, spanning the entire width of your viewport."
+            " for a full width container, spanning the entire width of your viewport.",
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -86,9 +86,9 @@ function containers(): b.IBobrilChildren {
                     "   ...",
                     bs.E({ tag: "br" }),
                     "])",
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
-        )
+        ),
     ];
 }

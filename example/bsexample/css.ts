@@ -40,7 +40,7 @@ export const styles = {
     hiddenOn: b.styleDef("hidden-on"),
     showGrid: b.styleDef("show-grid"),
     tooltipDemo: b.styleDef("tooltip-demo"),
-    typeInfo: b.styleDef("type-info")
+    typeInfo: b.styleDef("type-info"),
 };
 
 b.asset("./docs.min.css");

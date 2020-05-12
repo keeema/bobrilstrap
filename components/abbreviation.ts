@@ -15,7 +15,7 @@ export const Abbreviation = b.createDerivedComponent<IAbbreviationData, IBaseDat
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = "abbr";
         b.style(me, !!ctx.data.initialism && typography.initialism);
-    }
+    },
 });
 
 export const Abbr = Abbreviation;

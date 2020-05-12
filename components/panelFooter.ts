@@ -12,7 +12,7 @@ export const PanelFooter = b.createDerivedComponent<IPanelFooterData, IBaseData>
     id: "bobrilstrap-panel-footer",
     render(_ctx: IPanelFooterCtx, me: b.IBobrilNode) {
         b.style(me, panelStyles.panelFooter);
-    }
+    },
 });
 
 export default PanelFooter;

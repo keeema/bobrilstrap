@@ -8,7 +8,7 @@ import { InputGroupBtn, IInputGroupBtnData } from "./inputGroupBtn";
 export const dropdownStyles = {
     dropdown: b.styleDef("dropdown"),
     dropdownToggle: b.styleDef("dropdown-toggle"),
-    dropup: b.styleDef("dropup")
+    dropup: b.styleDef("dropup"),
 };
 
 export interface IDropdownData extends IBaseData {
@@ -43,7 +43,7 @@ export const Dropdown = b.createDerivedComponent<IDropdownData, IBaseData>(Elem,
 
             b.style(me, ctx.data.up ? dropdownStyles.dropup : dropdownStyles.dropdown);
         }
-    }
+    },
 });
 
 export default Dropdown;
@@ -52,7 +52,9 @@ function updateButtonDataForDropdown(originalButtonData: IButtonData): IButtonDa
     const buttonData = b.assign({}, originalButtonData);
     buttonData.variant = originalButtonData.variant !== undefined ? originalButtonData.variant : ButtonVariant.Dropdown;
     buttonData.aria = b.assign({}, buttonData.aria) as IAria;
-    if (buttonData.aria !== undefined) buttonData.aria.haspopup = true;
+    if (buttonData.aria !== undefined) {
+        buttonData.aria.haspopup = true;
+    }
     return buttonData;
 }
 
@@ -64,7 +66,7 @@ function addButton(ctx: ICtx, me: b.IBobrilNode): void {
             updateButtonDataForDropdown({
                 option: ctx.data.button.option,
                 size: ctx.data.button.size,
-                srOnly: ctx.data.splittedSrOnlyText
+                srOnly: ctx.data.splittedSrOnlyText,
             })
         );
         dropdownButton = Button(ctx.data.button);

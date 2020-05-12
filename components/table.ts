@@ -11,7 +11,7 @@ export enum TableContext {
     Success,
     Warning,
     Danger,
-    Info
+    Info,
 }
 
 export const tableContextStyles: IDictionary<TableContext, b.IBobrilStyle> = createDictionary<TableContext, b.IBobrilStyle>();
@@ -27,7 +27,7 @@ export const tableStyles = {
     tableStriped: b.styleDef("table-striped"),
     tableBordered: b.styleDef("table-bordered"),
     tableHover: b.styleDef("table-hover"),
-    tableCondensed: b.styleDef("table-condensed")
+    tableCondensed: b.styleDef("table-condensed"),
 };
 
 export interface ITableData extends IBaseData {
@@ -56,12 +56,18 @@ export const Table = b.createDerivedComponent<ITableData, IBaseData>(Elem, {
         b.style(me, !!ctx.data.hover && tableStyles.tableHover);
         b.style(me, !!ctx.data.condensed && tableStyles.tableCondensed);
 
-        if (ctx.data.caption) mergeToChildren(me, Caption({}, ctx.data.caption));
+        if (ctx.data.caption) {
+            mergeToChildren(me, Caption({}, ctx.data.caption));
+        }
 
-        if (ctx.data.head) mergeToChildren(me, THead(ctx.data.head));
+        if (ctx.data.head) {
+            mergeToChildren(me, THead(ctx.data.head));
+        }
 
-        if (ctx.data.body) mergeToChildren(me, TBody(ctx.data.body));
-    }
+        if (ctx.data.body) {
+            mergeToChildren(me, TBody(ctx.data.body));
+        }
+    },
 });
 
 export default Table;

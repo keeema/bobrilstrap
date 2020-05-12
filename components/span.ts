@@ -8,7 +8,7 @@ export enum SpanLabelContext {
     Success,
     Info,
     Warning,
-    Danger
+    Danger,
 }
 
 export const spanStyles = {
@@ -18,7 +18,7 @@ export const spanStyles = {
     labelSuccess: b.styleDef("label-success"),
     labelInfo: b.styleDef("label-info"),
     labelWarning: b.styleDef("label-warning"),
-    labelDanger: b.styleDef("label-danger")
+    labelDanger: b.styleDef("label-danger"),
 };
 
 export const spanLabelContextStyles: IDictionary<SpanLabelContext, b.IBobrilStyle> = createDictionary<SpanLabelContext, b.IBobrilStyle>();
@@ -43,7 +43,7 @@ export const Span = b.createDerivedComponent<ISpanData, IBaseData>(Elem, {
         me.tag = "span";
         b.style(me, ctx.data.labelContext !== undefined && spanStyles.label);
         b.style(me, ctx.data.labelContext !== undefined && spanLabelContextStyles(ctx.data.labelContext));
-    }
+    },
 });
 
 export default Span;

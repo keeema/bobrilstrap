@@ -16,7 +16,7 @@ export const Container = b.createDerivedComponent<IContainerData, IBaseData>(Ele
     id: "bobrilstrap-container",
     render(ctx: ICtx, me: b.IBobrilNode) {
         b.style(me, ctx.data.fluid ? containerFluidStyle : containerStyle);
-    }
+    },
 });
 
 export default Container;

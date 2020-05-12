@@ -5,7 +5,7 @@ import { IElementBobrilNode } from "./element";
 export const dropdownItemStyles = b.assign(
     {
         divider: b.styleDef("divider"),
-        dropdownHeader: b.styleDef("dropdown-header")
+        dropdownHeader: b.styleDef("dropdown-header"),
     },
     liStyles
 );
@@ -27,7 +27,7 @@ export const DropdownItem = b.createDerivedComponent<IDropdownItemData, ILiData>
         if (ctx.data.separator) {
             me.attrs["role"] = "separator";
         }
-    }
+    },
 });
 
 export default DropdownItem;

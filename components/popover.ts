@@ -5,14 +5,14 @@ export enum PopoverPlacement {
     Top,
     Bottom,
     Right,
-    Auto
+    Auto,
 }
 
 export enum PopoverTrigger {
     Click,
     Hover,
     Focus,
-    Manual
+    Manual,
 }
 
 export interface IPopoverOptions {
@@ -49,7 +49,7 @@ export const Popover = b.createVirtualComponent<IPopoverData>({
     },
     destroy(ctx: IPopoverCtx) {
         unregister(ctx);
-    }
+    },
 });
 
 function registerNewPopover(ctx: IPopoverCtx): void {
@@ -73,8 +73,8 @@ function registerNewPopover(ctx: IPopoverCtx): void {
                 ctx.data.placement !== undefined ? (PopoverPlacement[ctx.data.placement].toLowerCase() as Bootstrap.Placement) : undefined,
             trigger:
                 ctx.data.trigger !== undefined
-                    ? (ctx.data.trigger.map(value => PopoverTrigger[value].toLowerCase()).join(" ") as Bootstrap.Trigger)
-                    : undefined
+                    ? (ctx.data.trigger.map((value) => PopoverTrigger[value].toLowerCase()).join(" ") as Bootstrap.Trigger)
+                    : undefined,
         });
 
         jQueryElement.on("shown.bs.Popover", () => (ctx.visible = true));
@@ -90,7 +90,9 @@ function registerNewPopover(ctx: IPopoverCtx): void {
     if ((ctx.lastTitle !== undefined && ctx.lastTitle !== newTitle) || (ctx.lastContent !== undefined && ctx.lastContent !== newContent)) {
         jQueryElement.attr("data-content", newContent).attr("data-original-title", newTitle);
 
-        if (ctx.visible) jQueryElement.popover("show");
+        if (ctx.visible) {
+            jQueryElement.popover("show");
+        }
     }
     ctx.lastTitle = newTitle;
     ctx.lastContent = newContent;

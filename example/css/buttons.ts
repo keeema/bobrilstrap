@@ -9,11 +9,11 @@ export const buttons = b.createVirtualComponent({
         me.children = section(
             {
                 header: "Buttons",
-                id: "buttons"
+                id: "buttons",
             },
             [buttonsTags(), options(), sizes(), activeState(), disabledState()]
         );
-    }
+    },
 });
 
 function buttonsTags(): b.IBobrilChildren {
@@ -25,27 +25,27 @@ function buttonsTags(): b.IBobrilChildren {
                 bs.Button({
                     label: "Link",
                     tag: bs.ButtonTag.A,
-                    onClick: () => alert("Clicked <a> element!")
+                    onClick: () => alert("Clicked <a> element!"),
                 }),
                 " ",
                 bs.Button({
                     label: "Button (default)",
-                    onClick: () => alert("Clicked <button> element!")
+                    onClick: () => alert("Clicked <button> element!"),
                 }),
                 " ",
                 bs.Button({
                     label: "Input",
                     tag: bs.ButtonTag.Input,
-                    onClick: () => alert("Clicked <input> element!")
+                    onClick: () => alert("Clicked <input> element!"),
                 }),
                 " ",
                 bs.Button({
                     label: "Submit",
                     tag: bs.ButtonTag.Input,
                     type: bs.ButtonType.Submit,
-                    onClick: () => alert("Clicked submit!")
-                })
-            ])
+                    onClick: () => alert("Clicked submit!"),
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -76,14 +76,14 @@ function buttonsTags(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    onClick: () => alert('Clicked submit!')`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-buttons-context-usage" }
+                attrs: { id: "callout-buttons-context-usage" },
             },
             [
                 bs.H4({}, `Context-specific usage`),
@@ -98,31 +98,31 @@ function buttonsTags(): b.IBobrilChildren {
                     bs.Code({}, "tag"),
                     ` input data property, only `,
                     bs.Code({}, "button"),
-                    `s are supported within our Nav and Navbar components.`
-                ])
+                    `s are supported within our Nav and Navbar components.`,
+                ]),
             ]
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-buttons-ff-height" }
+                attrs: { id: "callout-buttons-ff-height" },
             },
             [
                 bs.H4({}, `Cross-browser rendering`),
                 bs.P({}, [
                     `As a best practice, `,
                     bs.Strong({}, [`we highly recommend using the `, bs.Code({}, "bs.Button"), ` (the default) tag whenever possible`]),
-                    ` to ensure matching cross-browser rendering.`
+                    ` to ensure matching cross-browser rendering.`,
                 ]),
                 bs.P({}, [
                     `Among other things, there's a bug in Firefox <30 that prevents Bootstrap from setting the `,
                     bs.Code({}, "line-height"),
                     ` of `,
                     bs.Code({}, "<input>"),
-                    `-based buttons, causing them to not exactly match the height of other buttons on Firefox`
-                ])
+                    `-based buttons, causing them to not exactly match the height of other buttons on Firefox`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -136,38 +136,38 @@ function options(): b.IBobrilChildren {
             bs.Button({
                 label: "Primary",
                 option: bs.ButtonOption.Primary,
-                onClick: () => alert("Clicked!")
+                onClick: () => alert("Clicked!"),
             }),
             " ",
             bs.Button({
                 label: "Success",
                 option: bs.ButtonOption.Success,
-                onClick: () => alert("Clicked!")
+                onClick: () => alert("Clicked!"),
             }),
             " ",
             bs.Button({
                 label: "Info",
                 option: bs.ButtonOption.Info,
-                onClick: () => alert("Clicked!")
+                onClick: () => alert("Clicked!"),
             }),
             " ",
             bs.Button({
                 label: "Warning",
                 option: bs.ButtonOption.Warning,
-                onClick: () => alert("Clicked!")
+                onClick: () => alert("Clicked!"),
             }),
             " ",
             bs.Button({
                 label: "Danger",
                 option: bs.ButtonOption.Danger,
-                onClick: () => alert("Clicked!")
+                onClick: () => alert("Clicked!"),
             }),
             " ",
             bs.Button({
                 label: "Link",
                 option: bs.ButtonOption.Link,
-                onClick: () => alert("Clicked!")
-            })
+                onClick: () => alert("Clicked!"),
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -186,14 +186,14 @@ function options(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `bs.Button({ label: 'Danger', option: bs.ButtonOption.Danger, onClick: () => alert('Clicked!') }), ' ',`,
                     bs.E({ tag: "br" }),
-                    `bs.Button({ label: 'Link', option: bs.ButtonOption.Link, onClick: () => alert('Clicked!') })`
+                    `bs.Button({ label: 'Link', option: bs.ButtonOption.Link, onClick: () => alert('Clicked!') })`,
                 ])
             )
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-buttons-context-usage" }
+                attrs: { id: "callout-buttons-context-usage" },
             },
             [
                 bs.H4({}, `Context-specific usage`),
@@ -203,10 +203,10 @@ function options(): b.IBobrilChildren {
                 from the content itself (the visible text of the button), or is included through alternative means, such as additional 
                 text hidden with the `,
                     bs.Code({}, "bs.helpers.srOnly"),
-                    ` style.`
-                ])
+                    ` style.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -223,13 +223,13 @@ function sizes(): b.IBobrilChildren {
                 bs.Button({
                     label: "Large button",
                     size: bs.Size.Lg,
-                    option: bs.ButtonOption.Primary
-                })
+                    option: bs.ButtonOption.Primary,
+                }),
             ]),
             bs.P({}, [
                 bs.Button({ label: "Default button", size: bs.Size.Md }),
                 " ",
-                bs.Button({ label: "Default button", option: bs.ButtonOption.Primary })
+                bs.Button({ label: "Default button", option: bs.ButtonOption.Primary }),
             ]),
             bs.P({}, [
                 bs.Button({ label: "Small button", size: bs.Size.Sm }),
@@ -237,8 +237,8 @@ function sizes(): b.IBobrilChildren {
                 bs.Button({
                     label: "Small button",
                     size: bs.Size.Sm,
-                    option: bs.ButtonOption.Primary
-                })
+                    option: bs.ButtonOption.Primary,
+                }),
             ]),
             bs.P({}, [
                 bs.Button({ label: "Extra small button", size: bs.Size.Xs }),
@@ -246,9 +246,9 @@ function sizes(): b.IBobrilChildren {
                 bs.Button({
                     label: "Extra small button",
                     size: bs.Size.Xs,
-                    option: bs.ButtonOption.Primary
-                })
-            ])
+                    option: bs.ButtonOption.Primary,
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -285,14 +285,14 @@ function sizes(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Button({ label: 'Extra small button', size: bs.Size.Xs, option: bs.ButtonOption.Primary`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
         bs.P({}, [
             `Create block level buttons—those that span the full width of a parent by `,
             bs.Code({}, "block"),
-            ` input data property.`
+            ` input data property.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Well({ style: [bs.helpers.centerBlock, limitedWidthStyle] }, [
@@ -300,9 +300,9 @@ function sizes(): b.IBobrilChildren {
                 bs.Button({
                     label: "Block level button",
                     block: true,
-                    option: bs.ButtonOption.Primary
-                })
-            ])
+                    option: bs.ButtonOption.Primary,
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -311,10 +311,10 @@ function sizes(): b.IBobrilChildren {
                 bs.Code({ style: langJs }, [
                     `bs.Button({ label: 'Block level button', block: true }),`,
                     bs.E({ tag: "br" }),
-                    `bs.Button({ label: 'Block level button', block: true, option: bs.ButtonOption.Primary })`
+                    `bs.Button({ label: 'Block level button', block: true, option: bs.ButtonOption.Primary })`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -329,17 +329,17 @@ function activeState(): b.IBobrilChildren {
             bs.Code({}, "bs.Button"),
             `(and set the `,
             bs.Code({}, "aria.pressed"),
-            ` property) should you need to replicate the active state programmatically.`
+            ` property) should you need to replicate the active state programmatically.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Button({
                 label: "Primary link",
                 option: bs.ButtonOption.Primary,
                 size: bs.Size.Lg,
-                active: true
+                active: true,
             }),
             " ",
-            bs.Button({ label: "Link", size: bs.Size.Lg, active: true })
+            bs.Button({ label: "Link", size: bs.Size.Lg, active: true }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -348,10 +348,10 @@ function activeState(): b.IBobrilChildren {
                 bs.Code({ style: langJs }, [
                     `bs.Button({ label: 'Primary link', option: bs.ButtonOption.Primary, size: bs.Size.Lg, active: true }), ' ',`,
                     bs.E({ tag: "br" }),
-                    `bs.Button({ label: 'Link', size: bs.Size.Lg, active: true })`
+                    `bs.Button({ label: 'Link', size: bs.Size.Lg, active: true })`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -363,7 +363,7 @@ function disabledState(): b.IBobrilChildren {
             bs.Code({}, "opacity"),
             `. You can do this by setting the input data property `,
             bs.Code({}, "disabled"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Button({
@@ -371,14 +371,14 @@ function disabledState(): b.IBobrilChildren {
                 option: bs.ButtonOption.Primary,
                 size: bs.Size.Lg,
                 disabled: true,
-                onClick: () => alert("Clicked")
+                onClick: () => alert("Clicked"),
             }),
             " ",
             bs.Button({
                 label: "Button",
                 size: bs.Size.Lg,
                 disabled: true,
-                onClick: () => alert("Clicked")
+                onClick: () => alert("Clicked"),
             }),
             bs.Button({
                 label: "Primary link",
@@ -386,7 +386,7 @@ function disabledState(): b.IBobrilChildren {
                 size: bs.Size.Lg,
                 disabled: true,
                 tag: bs.ButtonTag.A,
-                onClick: () => alert("Clicked")
+                onClick: () => alert("Clicked"),
             }),
             " ",
             bs.Button({
@@ -394,8 +394,8 @@ function disabledState(): b.IBobrilChildren {
                 size: bs.Size.Lg,
                 disabled: true,
                 tag: bs.ButtonTag.A,
-                onClick: () => alert("Clicked")
-            })
+                onClick: () => alert("Clicked"),
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -434,14 +434,14 @@ function disabledState(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `}), ' ',`,
                     bs.E({ tag: "br" }),
-                    `bs.Button({ label: 'Link', size: Lg, disabled: true, tag: bs.ButtonTag.A, onClick: () => alert('Clicked') })`
+                    `bs.Button({ label: 'Link', size: Lg, disabled: true, tag: bs.ButtonTag.A, onClick: () => alert('Clicked') })`,
                 ])
             )
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-buttons-ie-disabled" }
+                attrs: { id: "callout-buttons-ie-disabled" },
             },
             [
                 bs.H4({}, `Cross-browser compatibility`),
@@ -450,14 +450,14 @@ function disabledState(): b.IBobrilChildren {
                     bs.Code({}, "disabled"),
                     ` property to a `,
                     bs.Code({}, "bs.Button"),
-                    ` Internet Explorer 9 and below will render text gray with a nasty text-shadow that we cannot fix.`
-                ])
+                    ` Internet Explorer 9 and below will render text gray with a nasty text-shadow that we cannot fix.`,
+                ]),
             ]
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-buttons-disabled-anchor" }
+                attrs: { id: "callout-buttons-disabled-anchor" },
             },
             [
                 bs.H4({}, `Link functionality caveat`),
@@ -471,9 +471,9 @@ function disabledState(): b.IBobrilChildren {
                     bs.Code({}, "pointer-events: none"),
                     ` keyboard navigation 
                 remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to 
-                activate these links. So to be safe, use custom JavaScript to disable such links.`
-                ])
+                activate these links. So to be safe, use custom JavaScript to disable such links.`,
+                ]),
             ]
-        )
+        ),
     ];
 }

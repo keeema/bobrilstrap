@@ -26,48 +26,48 @@ export const liveComponents = b.createVirtualComponent({
                             {
                                 targetId: "modals",
                                 title: "Modals",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "tooltip",
                                 title: "Tooltip",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "popover",
                                 title: "Popover",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "collapse",
                                 title: "Collapse",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "carousel",
                                 title: "Carousel",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "affix",
                                 title: "Affix",
-                                subs: []
+                                subs: [],
                             },
                             {
                                 targetId: "typeahead",
                                 title: "Typeahead",
-                                subs: []
-                            }
-                        ]
-                    }
+                                subs: [],
+                            },
+                        ],
+                    },
                 },
                 [modals(), tooltips(), popovers(), collapse(), carousel(), affix(), typeahead()]
-            )
+            ),
         ];
-    }
+    },
 });
 
 const texts = {
     header: "Live components",
-    headerContent: `Bring Bobrilstrap's components to life. Easily include them all, or one by one.`
+    headerContent: `Bring Bobrilstrap's components to life. Easily include them all, or one by one.`,
 };

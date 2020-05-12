@@ -10,11 +10,11 @@ export const progress = b.createVirtualComponent({
             {
                 header: "Progress bars",
                 id: "progress",
-                lead: [`Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.`]
+                lead: [`Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.`],
             },
             [info(), example(), withLabel(), contextualAlternatives(), striped(), animated(), stacked()]
         );
-    }
+    },
 });
 
 function info() {
@@ -22,16 +22,16 @@ function info() {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-progress-animation-css3" }
+                attrs: { id: "callout-progress-animation-css3" },
             },
             [
                 bs.H4({}, [`Cross-browser compatibility`]),
                 bs.P({}, [
                     `Progress bars use CSS3 transitions and animations to achieve some of their effects. These features are not supported 
-                in Internet Explorer 9 and below or older versions of Firefox. Opera 12 does not support animations.`
-                ])
+                in Internet Explorer 9 and below or older versions of Firefox. Opera 12 does not support animations.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -44,9 +44,9 @@ function example(): b.IBobrilChildren {
                 bs.ProgressBar({
                     value: 60,
                     srOnlyText: "60% Complete",
-                    aria: { valuenow: 60, valuemax: 0, valuemin: 100 }
-                })
-            ])
+                    aria: { valuenow: 60, valuemax: 0, valuemin: 100 },
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -61,7 +61,7 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -70,7 +70,7 @@ function example(): b.IBobrilChildren {
             bs.Code({}, "bars"),
             ` filled with  `,
             bs.Code({}, "bs.IProgressBarData[]"),
-            `. The result is same.`
+            `. The result is same.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Progress({
@@ -78,10 +78,10 @@ function example(): b.IBobrilChildren {
                     {
                         value: 60,
                         srOnlyText: "60% Complete",
-                        aria: { valuenow: 60, valuemax: 0, valuemin: 100 }
-                    }
-                ]
-            })
+                        aria: { valuenow: 60, valuemax: 0, valuemin: 100 },
+                    },
+                ],
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -96,10 +96,10 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ]`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -108,7 +108,7 @@ function withLabel(): b.IBobrilChildren {
         b.anchor(bs.H2({ attrs: { id: "progress-label" } }, "With label")),
         bs.P({}, [`Use children instead of `, bs.Code({}, "srOnlyText"), `to show a visible percentage.`]),
         bs.E({ style: styles.bsExample }, [
-            bs.Progress({}, [bs.ProgressBar({ value: 60, aria: { valuenow: 60, valuemax: 0, valuemin: 100 } }, "60%")])
+            bs.Progress({}, [bs.ProgressBar({ value: 60, aria: { valuenow: 60, valuemax: 0, valuemin: 100 } }, "60%")]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -119,14 +119,14 @@ function withLabel(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.ProgressBar({ value: 60, aria: { volumenow: 60, volumemax: 0, volumemin: 100 } }, '60%')`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
         bs.P({}, [
             `To ensure that the label text remains legible even for low percentages, consider setting a `,
             bs.Code({}, "minwidth"),
-            ` input data property.`
+            ` input data property.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Progress({}, [
@@ -134,21 +134,21 @@ function withLabel(): b.IBobrilChildren {
                     {
                         value: 0,
                         aria: { valuenow: 60, valuemax: 0, valuemin: 100 },
-                        minWidth: "2em"
+                        minWidth: "2em",
                     },
                     "0%"
-                )
+                ),
             ]),
             bs.Progress({}, [
                 bs.ProgressBar(
                     {
                         value: 2,
                         aria: { valuenow: 60, valuemax: 0, valuemin: 100 },
-                        minWidth: "2em"
+                        minWidth: "2em",
                     },
                     "2%"
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -169,10 +169,10 @@ function withLabel(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `         { value: 2, aria: { volumenow: 60, volumemax: 0, volumemin: 100 }, minWidth: '2em' }, '2%')`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -186,33 +186,33 @@ function contextualAlternatives(): b.IBobrilChildren {
                     value: 40,
                     srOnlyText: "40% Complete (success)",
                     context: bs.ProgressBarContext.Success,
-                    aria: { valuenow: 40, valuemax: 0, valuemin: 100 }
-                })
+                    aria: { valuenow: 40, valuemax: 0, valuemin: 100 },
+                }),
             ]),
             bs.Progress({}, [
                 bs.ProgressBar({
                     value: 20,
                     srOnlyText: "20% Complete",
                     context: bs.ProgressBarContext.Info,
-                    aria: { valuenow: 20, valuemax: 0, valuemin: 100 }
-                })
+                    aria: { valuenow: 20, valuemax: 0, valuemin: 100 },
+                }),
             ]),
             bs.Progress({}, [
                 bs.ProgressBar({
                     value: 60,
                     srOnlyText: "60% Complete (warning)",
                     context: bs.ProgressBarContext.Warning,
-                    aria: { valuenow: 60, valuemax: 0, valuemin: 100 }
-                })
+                    aria: { valuenow: 60, valuemax: 0, valuemin: 100 },
+                }),
             ]),
             bs.Progress({}, [
                 bs.ProgressBar({
                     value: 80,
                     srOnlyText: "80% Complete (danger)",
                     context: bs.ProgressBarContext.Danger,
-                    aria: { valuenow: 80, valuemax: 0, valuemin: 100 }
-                })
-            ])
+                    aria: { valuenow: 80, valuemax: 0, valuemin: 100 },
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -282,10 +282,10 @@ function contextualAlternatives(): b.IBobrilChildren {
                     `    })`,
                     bs.E({ tag: "br" }),
                     `])`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -300,8 +300,8 @@ function striped(): b.IBobrilChildren {
                     striped: true,
                     srOnlyText: "40% Complete (success)",
                     context: bs.ProgressBarContext.Success,
-                    aria: { valuenow: 40, valuemax: 0, valuemin: 100 }
-                })
+                    aria: { valuenow: 40, valuemax: 0, valuemin: 100 },
+                }),
             ]),
             bs.Progress({}, [
                 bs.ProgressBar({
@@ -309,8 +309,8 @@ function striped(): b.IBobrilChildren {
                     striped: true,
                     srOnlyText: "20% Complete",
                     context: bs.ProgressBarContext.Info,
-                    aria: { valuenow: 20, valuemax: 0, valuemin: 100 }
-                })
+                    aria: { valuenow: 20, valuemax: 0, valuemin: 100 },
+                }),
             ]),
             bs.Progress({}, [
                 bs.ProgressBar({
@@ -318,8 +318,8 @@ function striped(): b.IBobrilChildren {
                     striped: true,
                     srOnlyText: "60% Complete (warning)",
                     context: bs.ProgressBarContext.Warning,
-                    aria: { valuenow: 60, valuemax: 0, valuemin: 100 }
-                })
+                    aria: { valuenow: 60, valuemax: 0, valuemin: 100 },
+                }),
             ]),
             bs.Progress({}, [
                 bs.ProgressBar({
@@ -327,9 +327,9 @@ function striped(): b.IBobrilChildren {
                     striped: true,
                     srOnlyText: "80% Complete (danger)",
                     context: bs.ProgressBarContext.Danger,
-                    aria: { valuenow: 80, valuemax: 0, valuemin: 100 }
-                })
-            ])
+                    aria: { valuenow: 80, valuemax: 0, valuemin: 100 },
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -405,10 +405,10 @@ function striped(): b.IBobrilChildren {
                     `    })`,
                     bs.E({ tag: "br" }),
                     `])`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -421,7 +421,7 @@ function animated(): b.IBobrilChildren {
             bs.Code({}, "active"),
             ` and `,
             bs.Code({}, "striped"),
-            ` input data properties to to animate the stripes right to left. Not available in IE9 and below.`
+            ` input data properties to to animate the stripes right to left. Not available in IE9 and below.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Progress({}, [
@@ -430,8 +430,8 @@ function animated(): b.IBobrilChildren {
                     striped: true,
                     active: animation,
                     srOnlyText: "45% Complete",
-                    aria: { valuenow: 45, valuemax: 0, valuemin: 100 }
-                })
+                    aria: { valuenow: 45, valuemax: 0, valuemin: 100 },
+                }),
             ]),
             bs.Button({
                 label: "Toggle animation",
@@ -439,8 +439,8 @@ function animated(): b.IBobrilChildren {
                 onClick: () => {
                     animation = !animation;
                     b.invalidate();
-                }
-            })
+                },
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -463,10 +463,10 @@ function animated(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -480,20 +480,20 @@ function stacked(): b.IBobrilChildren {
                     {
                         value: 35,
                         srOnlyText: "35% Complete (success)",
-                        context: bs.ProgressBarContext.Success
+                        context: bs.ProgressBarContext.Success,
                     },
                     {
                         value: 20,
                         srOnlyText: "20% Complete (warning)",
-                        context: bs.ProgressBarContext.Warning
+                        context: bs.ProgressBarContext.Warning,
                     },
                     {
                         value: 10,
                         srOnlyText: "10% Complete (danger)",
-                        context: bs.ProgressBarContext.Danger
-                    }
-                ]
-            })
+                        context: bs.ProgressBarContext.Danger,
+                    },
+                ],
+            }),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -512,9 +512,9 @@ function stacked(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ]`,
                     bs.E({ tag: "br" }),
-                    `})`
+                    `})`,
                 ])
             )
-        )
+        ),
     ];
 }

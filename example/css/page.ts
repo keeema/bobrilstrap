@@ -32,11 +32,11 @@ export const css = b.createVirtualComponent({
                                 subs: [
                                     {
                                         targetId: "overview-type-links",
-                                        title: "Typography and links"
+                                        title: "Typography and links",
                                     },
                                     { targetId: "overview-normalize", title: "Normalize" },
-                                    { targetId: "overview-containers", title: "Containers" }
-                                ]
+                                    { targetId: "overview-containers", title: "Containers" },
+                                ],
                             },
                             {
                                 targetId: "grid",
@@ -46,28 +46,28 @@ export const css = b.createVirtualComponent({
                                     { targetId: "grid-options", title: "Grid options" },
                                     {
                                         targetId: "grid-example-basic",
-                                        title: "Example: Stacked-to-horizontal"
+                                        title: "Example: Stacked-to-horizontal",
                                     },
                                     {
                                         targetId: "grid-example-fluid",
-                                        title: "Example: Fluid container"
+                                        title: "Example: Fluid container",
                                     },
                                     {
                                         targetId: "grid-example-mixed",
-                                        title: "Example: Mobile and desktop"
+                                        title: "Example: Mobile and desktop",
                                     },
                                     {
                                         targetId: "grid-example-mixed-complete",
-                                        title: "Example: Mobile, tablet and desktop"
+                                        title: "Example: Mobile, tablet and desktop",
                                     },
                                     {
                                         targetId: "grid-example-wrapping",
-                                        title: "Example: Column wrapping"
+                                        title: "Example: Column wrapping",
                                     },
                                     { targetId: "grid-offsetting", title: "Offsetting columns" },
                                     { targetId: "grid-nesting", title: "Nesting columns" },
-                                    { targetId: "grid-column-ordering", title: "Column ordering" }
-                                ]
+                                    { targetId: "grid-column-ordering", title: "Column ordering" },
+                                ],
                             },
                             {
                                 targetId: "type",
@@ -77,18 +77,18 @@ export const css = b.createVirtualComponent({
                                     { targetId: "type-body-copy", title: "Body copy" },
                                     {
                                         targetId: "type-inline-text",
-                                        title: "Inline text elements"
+                                        title: "Inline text elements",
                                     },
                                     { targetId: "type-alignment", title: "Alignment styles" },
                                     {
                                         targetId: "type-transformation",
-                                        title: "Transformation styles"
+                                        title: "Transformation styles",
                                     },
                                     { targetId: "type-abbreviations", title: "Abbreviations" },
                                     { targetId: "type-addresses", title: "Addresses" },
                                     { targetId: "type-blockquotes", title: "Blockquotes" },
-                                    { targetId: "type-lists", title: "Lists" }
-                                ]
+                                    { targetId: "type-lists", title: "Lists" },
+                                ],
                             },
                             {
                                 targetId: "code",
@@ -98,8 +98,8 @@ export const css = b.createVirtualComponent({
                                     { targetId: "code-user-input", title: "User input" },
                                     { targetId: "code-block", title: "Basic block" },
                                     { targetId: "code-variables", title: "Variables" },
-                                    { targetId: "code-sample-output", title: "Sample output" }
-                                ]
+                                    { targetId: "code-sample-output", title: "Sample output" },
+                                ],
                             },
                             {
                                 targetId: "tables",
@@ -112,10 +112,10 @@ export const css = b.createVirtualComponent({
                                     { targetId: "tables-condensed", title: "Condensed table" },
                                     {
                                         targetId: "tables-contextual-styles",
-                                        title: "Contextual styles"
+                                        title: "Contextual styles",
                                     },
-                                    { targetId: "tables-responsive", title: "Responsive tables" }
-                                ]
+                                    { targetId: "tables-responsive", title: "Responsive tables" },
+                                ],
                             },
                             {
                                 targetId: "forms",
@@ -127,24 +127,24 @@ export const css = b.createVirtualComponent({
                                     { targetId: "forms-controls", title: "Supported controls" },
                                     {
                                         targetId: "forms-controls-static",
-                                        title: "Static control"
+                                        title: "Static control",
                                     },
                                     { targetId: "forms-control-focus", title: "Focus state" },
                                     {
                                         targetId: "forms-control-disabled",
-                                        title: "Disabled state"
+                                        title: "Disabled state",
                                     },
                                     {
                                         targetId: "forms-control-readonly",
-                                        title: "Readonly state"
+                                        title: "Readonly state",
                                     },
                                     { targetId: "forms-help-text", title: "Help text" },
                                     {
                                         targetId: "forms-control-validation",
-                                        title: "Validation states"
+                                        title: "Validation states",
                                     },
-                                    { targetId: "forms-control-sizes", title: "Control sizing" }
-                                ]
+                                    { targetId: "forms-control-sizes", title: "Control sizing" },
+                                ],
                             },
                             {
                                 targetId: "buttons",
@@ -154,16 +154,16 @@ export const css = b.createVirtualComponent({
                                     { targetId: "buttons-options", title: "Options" },
                                     { targetId: "buttons-sizes", title: "Sizes" },
                                     { targetId: "buttons-active", title: "Active state" },
-                                    { targetId: "buttons-disabled", title: "Disabled state" }
-                                ]
+                                    { targetId: "buttons-disabled", title: "Disabled state" },
+                                ],
                             },
                             {
                                 targetId: "images",
                                 title: "Images",
                                 subs: [
                                     { targetId: "images-responsive", title: "Responsive images" },
-                                    { targetId: "images-shapes", title: "Image shapes" }
-                                ]
+                                    { targetId: "images-shapes", title: "Image shapes" },
+                                ],
                             },
                             {
                                 targetId: "helper-styles",
@@ -171,33 +171,33 @@ export const css = b.createVirtualComponent({
                                 subs: [
                                     {
                                         targetId: "helper-styles-colors",
-                                        title: "Contextual colors"
+                                        title: "Contextual colors",
                                     },
                                     {
                                         targetId: "helper-styles-backgrounds",
-                                        title: "Contextual backgrounds"
+                                        title: "Contextual backgrounds",
                                     },
                                     { targetId: "helper-styles-close", title: "Close icon" },
                                     { targetId: "helper-styles-carets", title: "Carets" },
                                     { targetId: "helper-styles-floats", title: "Quick floats" },
                                     {
                                         targetId: "helper-styles-center",
-                                        title: "Center content blocks"
+                                        title: "Center content blocks",
                                     },
                                     { targetId: "helper-styles-clearfix", title: "Clearfix" },
                                     {
                                         targetId: "helper-styles-show-hide",
-                                        title: "Showing and hiding content"
+                                        title: "Showing and hiding content",
                                     },
                                     {
                                         targetId: "helper-styles-screen-readers",
-                                        title: "Screen reader and keyboard navigation content"
+                                        title: "Screen reader and keyboard navigation content",
                                     },
                                     {
                                         targetId: "helper-styles-image-replacement",
-                                        title: "Image replacement"
-                                    }
-                                ]
+                                        title: "Image replacement",
+                                    },
+                                ],
                             },
                             {
                                 targetId: "responsive-utilities",
@@ -205,29 +205,29 @@ export const css = b.createVirtualComponent({
                                 subs: [
                                     {
                                         targetId: "responsive-utilities-styles",
-                                        title: "Available styles"
+                                        title: "Available styles",
                                     },
                                     {
                                         targetId: "responsive-utilities-print",
-                                        title: "Print styles"
+                                        title: "Print styles",
                                     },
                                     {
                                         targetId: "responsive-utilities-tests",
-                                        title: "Test cases"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+                                        title: "Test cases",
+                                    },
+                                ],
+                            },
+                        ],
+                    },
                 },
                 [overview(), grids(), typographyPage(), codes(), tables(), forms(), buttons(), images(), helpersPage(), responsive()]
-            )
+            ),
         ];
-    }
+    },
 });
 
 const texts = {
     header: "CSS",
     headerContent: `Global CSS settings, fundamental HTML elements styled and enhanced with extensible
-     classes, and an advanced grid system. Everything wrapped to bobril components.`
+     classes, and an advanced grid system. Everything wrapped to bobril components.`,
 };

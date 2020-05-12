@@ -10,11 +10,11 @@ export const navs = b.createVirtualComponent({
             {
                 header: "Navs",
                 id: "nav",
-                lead: []
+                lead: [],
             },
             [info(), tabsExample(), pillsExample(), justified(), disabled(), dropdowns()]
         );
-    }
+    },
 });
 
 function info(): b.IBobrilChildren {
@@ -22,7 +22,7 @@ function info(): b.IBobrilChildren {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-navs-accessibility" }
+                attrs: { id: "callout-navs-accessibility" },
             },
             [
                 bs.H4({}, [`Make navs used as navigation accessible`]),
@@ -37,10 +37,10 @@ function info(): b.IBobrilChildren {
                     bs.Code({}, "bs.Nav"),
                     ` component around the whole navigation. Do not add the role to the `,
                     bs.Code({}, "bs.Ul"),
-                    ` itself, as this would prevent it from being announced as an actual list by assistive technologies.`
-                ])
+                    ` itself, as this would prevent it from being announced as an actual list by assistive technologies.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -51,8 +51,8 @@ function tabsExample(): b.IBobrilChildren {
             bs.Tabs({}, [
                 bs.Tab({ active: true }, bs.A({ href: "javascript:void(0)" }, "Home")),
                 bs.Tab({}, bs.A({ href: "javascript:void(0)" }, "Profile")),
-                bs.Tab({}, bs.A({ href: "javascript:void(0)" }, "Messages"))
-            ])
+                bs.Tab({}, bs.A({ href: "javascript:void(0)" }, "Messages")),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -67,10 +67,10 @@ function tabsExample(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Tab({}, bs.A({ href: '...' }, 'Messages'))`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -83,8 +83,8 @@ function pillsExample(): b.IBobrilChildren {
             bs.Pills({}, [
                 bs.Pill({ active: true }, bs.A({ href: "javascript:void(0)" }, "Home")),
                 bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Profile")),
-                bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Messages"))
-            ])
+                bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Messages")),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -99,7 +99,7 @@ function pillsExample(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Pill({}, bs.A({ href: '...' }, 'Messages'))`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -108,8 +108,8 @@ function pillsExample(): b.IBobrilChildren {
             bs.Pills({ stacked: true, style: navPillsStackedExample }, [
                 bs.Pill({ active: true }, bs.A({ href: "javascript:void(0)" }, "Home")),
                 bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Profile")),
-                bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Messages"))
-            ])
+                bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Messages")),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -124,10 +124,10 @@ function pillsExample(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Pill({}, bs.A({ href: '...' }, 'Messages'))`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -137,34 +137,34 @@ function justified(): b.IBobrilChildren {
         bs.P({}, [
             `Easily make tabs or pills equal widths of their parent at screens wider than 768px with `,
             bs.Code({}, "justified: true"),
-            `. On smaller screens, the nav links are stacked.`
+            `. On smaller screens, the nav links are stacked.`,
         ]),
         bs.P({}, bs.Strong({ style: bs.helpers.text.danger }, "Justified navbar nav links are currently not supported.")),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-navs-justified-safari" }
+                attrs: { id: "callout-navs-justified-safari" },
             },
             [
                 bs.H4({}, [`Make navs used as navigation accessible`]),
                 bs.P({}, [
                     `As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering 
-                errors in the justified nav that are cleared upon refreshing. `
-                ])
+                errors in the justified nav that are cleared upon refreshing. `,
+                ]),
             ]
         ),
         bs.E({ style: styles.bsExample }, [
             bs.Tabs({ justified: true }, [
                 bs.Tab({ active: true }, bs.A({ href: "javascript:void(0)" }, "Home")),
                 bs.Tab({}, bs.A({ href: "javascript:void(0)" }, "Profile")),
-                bs.Tab({}, bs.A({ href: "javascript:void(0)" }, "Messages"))
+                bs.Tab({}, bs.A({ href: "javascript:void(0)" }, "Messages")),
             ]),
             bs.E({ tag: "br" }),
             bs.Pills({ justified: true }, [
                 bs.Pill({ active: true }, bs.A({ href: "javascript:void(0)" }, "Home")),
                 bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Profile")),
-                bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Messages"))
-            ])
+                bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Messages")),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -183,10 +183,10 @@ function justified(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ...`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -197,23 +197,23 @@ function disabled(): b.IBobrilChildren {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-navs-anchor-disabled" }
+                attrs: { id: "callout-navs-anchor-disabled" },
             },
             [
                 bs.H4({}, [`Link functionality not impacted`]),
                 bs.P({}, [
                     `This class will only change the `,
                     bs.Code({}, "<a>"),
-                    `'s appearance, not its functionality. Use custom JavaScript to disable links here.`
-                ])
+                    `'s appearance, not its functionality. Use custom JavaScript to disable links here.`,
+                ]),
             ]
         ),
         bs.E({ style: styles.bsExample }, [
             bs.Pills({}, [
                 bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Clickable link")),
                 bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Clickable link")),
-                bs.Pill({ disabled: true }, bs.A({ href: "javascript:void(0)" }, "Disabled link"))
-            ])
+                bs.Pill({ disabled: true }, bs.A({ href: "javascript:void(0)" }, "Disabled link")),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -228,10 +228,10 @@ function disabled(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ...`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -241,7 +241,7 @@ function dropdowns(): b.IBobrilChildren {
         bs.P({}, [
             `As in previous cases - you can use the prepared helper `,
             bs.Code({}, "bs.Dropdown"),
-            ` or compose from specific components.`
+            ` or compose from specific components.`,
         ]),
         bs.H3({ attrs: { id: "tabs-with-dropdowns" } }, "Tabs with dropdowns"),
         bs.E({ style: styles.bsExample }, [
@@ -250,17 +250,17 @@ function dropdowns(): b.IBobrilChildren {
                 bs.Tab({}, bs.A({ href: "javascript:void(0)" }, "Help")),
                 bs.Dropdown(
                     {
-                        button: { label: "Dropdown", variant: bs.ButtonVariant.DropdownNav }
+                        button: { label: "Dropdown", variant: bs.ButtonVariant.DropdownNav },
                     },
                     bs.DropdownMenu({}, [
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                         bs.DropdownItem({ separator: true }),
-                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                     ])
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -293,7 +293,7 @@ function dropdowns(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    )`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -304,17 +304,17 @@ function dropdowns(): b.IBobrilChildren {
                 bs.Pill({}, bs.A({ href: "javascript:void(0)" }, "Help")),
                 bs.Dropdown(
                     {
-                        button: { label: "Dropdown", variant: bs.ButtonVariant.DropdownNav }
+                        button: { label: "Dropdown", variant: bs.ButtonVariant.DropdownNav },
                     },
                     bs.DropdownMenu({}, [
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                         bs.DropdownItem({ separator: true }),
-                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                     ])
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -347,9 +347,9 @@ function dropdowns(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    )`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

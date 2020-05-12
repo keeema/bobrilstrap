@@ -17,7 +17,7 @@ export const Ul = b.createDerivedComponent<IUlData, IBaseData>(Elem, {
         me.tag = "ul";
         b.style(me, !!ctx.data.unstyled && typography.listUnstyled);
         b.style(me, !!ctx.data.inline && typography.listInline);
-    }
+    },
 });
 
 export default Ul;

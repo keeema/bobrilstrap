@@ -10,18 +10,18 @@ export const responsiveEmbed = b.createVirtualComponent({
             {
                 header: "Responsive embed",
                 id: "responsive-embed",
-                lead: []
+                lead: [],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
     return [
         bs.P({}, [
             `Allow browsers to determine video or slideshow dimensions based on the width of their containing block by 
-            creating an intrinsic ratio that will properly scale on any device.`
+            creating an intrinsic ratio that will properly scale on any device.`,
         ]),
         bs.P({}, [
             `Rules are directly applied to `,
@@ -38,16 +38,16 @@ function example(): b.IBobrilChildren {
             bs.Code({}, "embedResponsive"),
             ` property is set to `,
             bs.Code({}, "true"),
-            `) when you want to match the styling for other attributes.`
+            `) when you want to match the styling for other attributes.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.EmbedResponsive({ aspectRatio: bs.EmbedAspectRatio.SixteenByNine }, [
                 bs.IFrame({
                     embedResponsive: true,
                     src: "https://www.youtube.com/embed/zpOULjyy-n8?rel=0",
-                    attrs: { allowfullscreen: "" }
-                })
-            ])
+                    attrs: { allowfullscreen: "" },
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -58,9 +58,9 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.Iframe({ embedResponsive: true, src: ...' })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

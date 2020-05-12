@@ -10,11 +10,11 @@ export const buttonGroups = b.createVirtualComponent({
             {
                 header: "Button groups",
                 id: "btn-groups",
-                lead: `Group a series of buttons together on a single line with the button group.`
+                lead: `Group a series of buttons together on a single line with the button group.`,
             },
             [labeling(), example(), toolbar(), sizing(), nesting(), vertical(), justified()]
         );
-    }
+    },
 });
 
 function labeling(): b.IBobrilChildren {
@@ -22,7 +22,7 @@ function labeling(): b.IBobrilChildren {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-btn-group-accessibility" }
+                attrs: { id: "callout-btn-group-accessibility" },
             },
             [
                 bs.H4({}, `Provide a label`),
@@ -32,10 +32,10 @@ function labeling(): b.IBobrilChildren {
                     bs.Code({}, "aria.label"),
                     `, but alternatives such as `,
                     bs.Code({}, "aria.labelledby"),
-                    ` can also be used.`
-                ])
+                    ` can also be used.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -44,7 +44,7 @@ function example(): b.IBobrilChildren {
         b.anchor(bs.H2({ attrs: { id: "btn-groups-single" } }, "Basic example")),
         bs.P({}, [`Wrap a series of `, bs.Code({}, "bs.Button"), `s in `, bs.Code({}, "bs.ButtonGroup"), `.`]),
         bs.E({ style: styles.bsExample }, [
-            bs.ButtonGroup({}, [bs.Button({ label: "Left" }), bs.Button({ label: "Middle" }), bs.Button({ label: "Right" })])
+            bs.ButtonGroup({}, [bs.Button({ label: "Left" }), bs.Button({ label: "Middle" }), bs.Button({ label: "Right" })]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -59,10 +59,10 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `   bs.Button({ label: 'Right' })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -74,7 +74,7 @@ function toolbar(): b.IBobrilChildren {
             bs.Code({}, "bs.ButtonGroup"),
             ` into a `,
             bs.Code({}, "bs.ButtonToolbar"),
-            ` for more complex components..`
+            ` for more complex components..`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.ButtonToolbar({}, [
@@ -82,11 +82,11 @@ function toolbar(): b.IBobrilChildren {
                     bs.Button({ label: "1" }),
                     bs.Button({ label: "2" }),
                     bs.Button({ label: "3" }),
-                    bs.Button({ label: "4" })
+                    bs.Button({ label: "4" }),
                 ]),
                 bs.ButtonGroup({}, [bs.Button({ label: "5" }), bs.Button({ label: "6" }), bs.Button({ label: "7" })]),
-                bs.ButtonGroup({}, [bs.Button({ label: "8" })])
-            ])
+                bs.ButtonGroup({}, [bs.Button({ label: "8" })]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -101,10 +101,10 @@ function toolbar(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.ButtonGroup({}, ...)`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -118,13 +118,13 @@ function sizing(): b.IBobrilChildren {
             bs.Code({}, "size"),
             ` input data property on each `,
             bs.Code({}, "bs.ButtonGroup"),
-            `, including when nesting multiple groups.`
+            `, including when nesting multiple groups.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.ButtonGroup({ size: bs.ButtonGroupSize.Lg }, [
                 bs.Button({ label: "Left" }),
                 bs.Button({ label: "Middle" }),
-                bs.Button({ label: "Right" })
+                bs.Button({ label: "Right" }),
             ]),
             bs.E({ tag: "br" }),
             bs.ButtonGroup({}, [bs.Button({ label: "Left" }), bs.Button({ label: "Middle" }), bs.Button({ label: "Right" })]),
@@ -132,14 +132,14 @@ function sizing(): b.IBobrilChildren {
             bs.ButtonGroup({ size: bs.ButtonGroupSize.Sm }, [
                 bs.Button({ label: "Left" }),
                 bs.Button({ label: "Middle" }),
-                bs.Button({ label: "Right" })
+                bs.Button({ label: "Right" }),
             ]),
             bs.E({ tag: "br" }),
             bs.ButtonGroup({ size: bs.ButtonGroupSize.Xs }, [
                 bs.Button({ label: "Left" }),
                 bs.Button({ label: "Middle" }),
-                bs.Button({ label: "Right" })
-            ])
+                bs.Button({ label: "Right" }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -152,10 +152,10 @@ function sizing(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `bs.ButtonGroup({ size: bs.ButtonGroupSize.Sm }, ...),`,
                     bs.E({ tag: "br" }),
-                    `bs.ButtonGroup({ size: bs.ButtonGroupSize.Xs }, ...)`
+                    `bs.ButtonGroup({ size: bs.ButtonGroupSize.Xs }, ...)`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -167,7 +167,7 @@ function nesting(): b.IBobrilChildren {
             bs.Code({}, "bs.ButtonGroup"),
             ` within another `,
             bs.Code({}, "bs.ButtonGroup"),
-            ` when you want dropdown menus mixed with a series of buttons.`
+            ` when you want dropdown menus mixed with a series of buttons.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.ButtonGroup({}, [
@@ -177,10 +177,10 @@ function nesting(): b.IBobrilChildren {
                     bs.Button({ label: "Dropdown", variant: bs.ButtonVariant.Dropdown }),
                     bs.DropdownMenu({}, [
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
-                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link"))
-                    ])
-                ])
-            ])
+                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -207,7 +207,7 @@ function nesting(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -216,7 +216,7 @@ function nesting(): b.IBobrilChildren {
             bs.Code({}, "bs.Dropdown"),
             ` component with defined`,
             bs.Code({}, "bs.ButtonGroup"),
-            ` property directly as well.`
+            ` property directly as well.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.ButtonGroup({}, [
@@ -225,10 +225,10 @@ function nesting(): b.IBobrilChildren {
                 bs.Dropdown({ buttonGroup: true, button: { label: "Dropdown" } }, [
                     bs.DropdownMenu({}, [
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
-                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link"))
-                    ])
-                ])
-            ])
+                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -253,10 +253,10 @@ function nesting(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -265,7 +265,7 @@ function vertical(): b.IBobrilChildren {
         b.anchor(bs.H2({ attrs: { id: "btn-groups-vertical" } }, "Vertical variation")),
         bs.P({}, [
             `Make a set of buttons appear vertically stacked rather than horizontally. `,
-            bs.Strong({ style: bs.helpers.text.danger }, `Split button dropdowns are not supported here.`)
+            bs.Strong({ style: bs.helpers.text.danger }, `Split button dropdowns are not supported here.`),
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.ButtonGroup({ vertical: true }, [
@@ -275,8 +275,8 @@ function vertical(): b.IBobrilChildren {
                     bs.Button({ label: "Dropdown", variant: bs.ButtonVariant.Dropdown }),
                     bs.DropdownMenu({}, [
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
-                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link"))
-                    ])
+                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
+                    ]),
                 ]),
                 bs.Button({ label: "Button" }),
                 bs.Button({ label: "Button" }),
@@ -285,25 +285,25 @@ function vertical(): b.IBobrilChildren {
                     bs.Button({ label: "Dropdown", variant: bs.ButtonVariant.Dropdown }),
                     bs.DropdownMenu({}, [
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
-                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link"))
-                    ])
+                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
+                    ]),
                 ]),
                 ,
                 bs.ButtonGroup({}, [
                     bs.Button({ label: "Dropdown", variant: bs.ButtonVariant.Dropdown }),
                     bs.DropdownMenu({}, [
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
-                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link"))
-                    ])
+                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
+                    ]),
                 ]),
                 bs.ButtonGroup({}, [
                     bs.Button({ label: "Dropdown", variant: bs.ButtonVariant.Dropdown }),
                     bs.DropdownMenu({}, [
                         bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
-                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link"))
-                    ])
-                ])
-            ])
+                        bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Dropdown link")),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -314,10 +314,10 @@ function vertical(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ...`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -326,12 +326,12 @@ function justified(): b.IBobrilChildren {
         b.anchor(bs.H2({ attrs: { id: "btn-groups-justified" } }, "Justified button groups")),
         bs.P({}, [
             `Make a group of buttons stretch at equal sizes to span the entire width of its parent. 
-            Also works with button dropdowns within the button group.`
+            Also works with button dropdowns within the button group.`,
         ]),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-btn-group-justified-dbl-border" }
+                attrs: { id: "callout-btn-group-justified-dbl-border" },
             },
             [
                 bs.H4({}, `Handling borders`),
@@ -344,14 +344,14 @@ function justified(): b.IBobrilChildren {
                     bs.Code({}, "margin"),
                     ` doesn't work with `,
                     bs.Code({}, "display: table-cell"),
-                    `. As a result, depending on your customizations to Bootstrap, you may wish to remove or re-color the borders.`
-                ])
+                    `. As a result, depending on your customizations to Bootstrap, you may wish to remove or re-color the borders.`,
+                ]),
             ]
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-btn-group-ie8-border" }
+                attrs: { id: "callout-btn-group-ie8-border" },
             },
             [
                 bs.H4({}, `IE8 and borders`),
@@ -360,9 +360,9 @@ function justified(): b.IBobrilChildren {
                     bs.Code({}, "<a>"),
                     ` or `,
                     bs.Code({}, "<button>"),
-                    ` elements. To get around that, wrap each button in another .btn-group.`
+                    ` elements. To get around that, wrap each button in another .btn-group.`,
                 ]),
-                bs.P({}, [`See #12476 for more information.`])
+                bs.P({}, [`See #12476 for more information.`]),
             ]
         ),
         bs.H4({}, ["With ", bs.Code({}, "<a>"), " elements"]),
@@ -371,19 +371,19 @@ function justified(): b.IBobrilChildren {
             bs.Code({}, "bs.Button"),
             `s in `,
             bs.Code({}, "bs.ButtonGroup({ justified: true }, ...)"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.ButtonGroup({ justified: true, aria: { label: "Justified button group" } }, [
                 bs.Button({ tag: bs.ButtonTag.A, label: "Left" }),
                 bs.Button({ tag: bs.ButtonTag.A, label: "Middle" }),
-                bs.Button({ tag: bs.ButtonTag.A, label: "Right" })
+                bs.Button({ tag: bs.ButtonTag.A, label: "Right" }),
             ]),
             bs.E({ tag: "br" }),
             bs.ButtonGroup(
                 {
                     justified: true,
-                    aria: { label: "Justified button group with nested dropdown" }
+                    aria: { label: "Justified button group with nested dropdown" },
                 },
                 [
                     bs.Button({ tag: bs.ButtonTag.A, label: "Left" }),
@@ -392,18 +392,18 @@ function justified(): b.IBobrilChildren {
                         bs.Button({
                             tag: bs.ButtonTag.A,
                             label: "Dropdown",
-                            variant: bs.ButtonVariant.Dropdown
+                            variant: bs.ButtonVariant.Dropdown,
                         }),
                         bs.DropdownMenu({}, [
                             bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
                             bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                             bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                             bs.DropdownItem({ header: true }, "Dropdown header"),
-                            bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
-                        ])
-                    ])
+                            bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
+                        ]),
+                    ]),
                 ]
-            )
+            ),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -414,7 +414,7 @@ function justified(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ...`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -426,15 +426,15 @@ function justified(): b.IBobrilChildren {
             bs.Strong({ style: bs.helpers.text.danger }, [`you must wrap each button in a `, bs.Code({}, "bs.ButtonGroup")]),
             `. Most browsers don't properly apply our CSS for justification to `,
             bs.Code({}, "<button>"),
-            ` elements, but since we support button dropdowns, we can work around that.`
+            ` elements, but since we support button dropdowns, we can work around that.`,
         ]),
 
         bs.E({ style: styles.bsExample }, [
             bs.ButtonGroup({ justified: true, aria: { label: "Justified button group" } }, [
                 bs.ButtonGroup({}, bs.Button({ label: "Left" })),
                 bs.ButtonGroup({}, bs.Button({ label: "Middle" })),
-                bs.ButtonGroup({}, bs.Button({ label: "Right" }))
-            ])
+                bs.ButtonGroup({}, bs.Button({ label: "Right" })),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -449,9 +449,9 @@ function justified(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.ButtonGroup({}, bs.Button({ label: 'Right' }))`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

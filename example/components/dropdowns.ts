@@ -10,11 +10,11 @@ export const dropdowns = b.createVirtualComponent({
             {
                 header: "Dropdowns",
                 id: "dropdowns",
-                lead: `Toggleable, contextual menu for displaying lists of links.`
+                lead: `Toggleable, contextual menu for displaying lists of links.`,
             },
             [example(), alignment(), headers(), divider(), disabled()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -25,22 +25,22 @@ function example(): b.IBobrilChildren {
             bs.Code({}, "bs.Dropdown"),
             `, or another element that declares `,
             bs.Code({}, "position: relative;"),
-            `. Then add the menu.`
+            `. Then add the menu.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Dropdown(
                 {
                     button: { label: "Dropdown", id: "dropdownMenu1" },
-                    style: bs.helpers.clearfix
+                    style: bs.helpers.clearfix,
                 },
                 bs.DropdownMenu({ aria: { labelledby: "dropdownMenu1" } }, [
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                     bs.DropdownItem({ separator: true }),
-                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                 ])
-            )
+            ),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -65,7 +65,7 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `)`
+                    `)`,
                 ])
             )
         ),
@@ -76,23 +76,23 @@ function example(): b.IBobrilChildren {
             bs.Code({}, "dropdownStyles.dropup"),
             ` instead of `,
             bs.Code({}, "dropdownStyles.dropdown"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Dropdown(
                 {
                     up: true,
                     button: { label: "Dropup", id: "dropdownMenu1" },
-                    style: bs.helpers.clearfix
+                    style: bs.helpers.clearfix,
                 },
                 bs.DropdownMenu({ aria: { labelledby: "dropdownMenu1" } }, [
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                     bs.DropdownItem({ separator: true }),
-                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                 ])
-            )
+            ),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -123,10 +123,10 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `)`
+                    `)`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -136,12 +136,12 @@ function alignment(): b.IBobrilChildren {
         bs.P({}, [
             `By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Set the`,
             bs.Code({}, "right"),
-            ` dropdown menu component input data property to right align the dropdown menu.`
+            ` dropdown menu component input data property to right align the dropdown menu.`,
         ]),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-dropdown-positioning" }
+                attrs: { id: "callout-dropdown-positioning" },
             },
             [
                 bs.H4({}, `May require additional positioning`),
@@ -149,8 +149,8 @@ function alignment(): b.IBobrilChildren {
                     `Dropdowns are automatically positioned via CSS within the normal flow of the document. This means dropdowns may be cropped 
                 by parents with certain `,
                     bs.Code({}, "overflow"),
-                    ` properties or appear out of bounds of the viewport. Address these issues on your own as they arise.`
-                ])
+                    ` properties or appear out of bounds of the viewport. Address these issues on your own as they arise.`,
+                ]),
             ]
         ),
         bs.Figure(
@@ -162,10 +162,10 @@ function alignment(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ...`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -177,7 +177,7 @@ function headers(): b.IBobrilChildren {
             bs.Dropdown(
                 {
                     button: { label: "Dropdown", id: "dropdownMenu3" },
-                    style: bs.helpers.clearfix
+                    style: bs.helpers.clearfix,
                 },
                 bs.DropdownMenu({ aria: { labelledby: "dropdownMenu3" } }, [
                     bs.DropdownItem({ header: true }, "Dropdown header"),
@@ -185,9 +185,9 @@ function headers(): b.IBobrilChildren {
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                     bs.DropdownItem({ header: true }, "Dropdown header"),
-                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                 ])
-            )
+            ),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -202,10 +202,10 @@ function headers(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ...`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -217,16 +217,16 @@ function divider(): b.IBobrilChildren {
             bs.Dropdown(
                 {
                     button: { label: "Dropdown", id: "dropdownMenuDivider" },
-                    style: bs.helpers.clearfix
+                    style: bs.helpers.clearfix,
                 },
                 bs.DropdownMenu({ aria: { labelledby: "dropdownMenuDivider" } }, [
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                     bs.DropdownItem({ separator: true }),
-                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                 ])
-            )
+            ),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -241,10 +241,10 @@ function divider(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ...`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -256,20 +256,20 @@ function disabled(): b.IBobrilChildren {
             bs.Code({}, "disabled"),
             ` input data property on a `,
             bs.Code({}, "bs.DropdownItem"),
-            ` component in the dropdown to disable the link.`
+            ` component in the dropdown to disable the link.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Dropdown(
                 {
                     button: { label: "Dropdown", id: "dropdownMenu4" },
-                    style: bs.helpers.clearfix
+                    style: bs.helpers.clearfix,
                 },
                 bs.DropdownMenu({ aria: { labelledby: "dropdownMenu4" } }, [
                     bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Regular link")),
                     bs.DropdownItem({ disabled: true }, bs.A({ href: "javascript:void(0)" }, "Disabled link")),
-                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another link"))
+                    bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another link")),
                 ])
-            )
+            ),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -284,9 +284,9 @@ function disabled(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.DropdownItem({}, bs.A({ href: '...' }, 'Another link'))`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

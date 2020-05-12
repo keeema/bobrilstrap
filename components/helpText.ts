@@ -8,7 +8,7 @@ export const HelpText = b.createDerivedComponent<IBaseData, IBaseData>(Elem, {
     render(_ctx: b.IBobrilCtx, me: b.IBobrilNode) {
         me.tag = "span";
         b.style(me, helpTextStyle);
-    }
+    },
 });
 
 export default HelpText;

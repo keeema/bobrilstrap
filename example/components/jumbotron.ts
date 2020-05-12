@@ -10,11 +10,11 @@ export const jumbotron = b.createVirtualComponent({
             {
                 header: "Jumbotron",
                 id: "jumbotron",
-                lead: []
+                lead: [],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -34,10 +34,10 @@ function example(): b.IBobrilChildren {
                         label: "Learn more",
                         tag: bs.ButtonTag.A,
                         size: bs.Size.Lg,
-                        option: bs.ButtonOption.Primary
+                        option: bs.ButtonOption.Primary,
                     })
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -52,7 +52,7 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.P({}, bs.Button({ label: 'Learn more', tag: bs.ButtonTag.A, size: bs.Size.Lg, option: bs.ButtonOption.Primary }))`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -61,7 +61,7 @@ function example(): b.IBobrilChildren {
             bs.Code({}, "bs.Container"),
             `s and instead add a `,
             bs.Code({}, "bs.Container"),
-            ` within.`
+            ` within.`,
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -76,9 +76,9 @@ function example(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

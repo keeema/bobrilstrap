@@ -20,12 +20,12 @@ export const media = b.createVirtualComponent({
                 id: "media",
                 lead: [
                     `Components for building various types of components (like blog comments, Tweets, etc) that feature a 
-                left- or right-aligned image alongside textual content.`
-                ]
+                left- or right-aligned image alongside textual content.`,
+                ],
             },
             [defaultMedia(), mediaList()]
         );
-    }
+    },
 });
 
 function defaultMedia(): b.IBobrilChildren {
@@ -35,18 +35,18 @@ function defaultMedia(): b.IBobrilChildren {
         bs.E({ style: styles.bsExample }, [
             bs.Media({}, [
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                    bs.A({ href: "javascript:void(0)" }, bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData }))
+                    bs.A({ href: "javascript:void(0)" }, bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData })),
                 ]),
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                     bs.MediaHeading4({}, "Media heading"),
                     `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
                     vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia 
-                    congue felis in faucibus.`
-                ])
+                    congue felis in faucibus.`,
+                ]),
             ]),
             bs.Media({}, [
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                    bs.A({ href: "javascript:void(0)" }, bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData }))
+                    bs.A({ href: "javascript:void(0)" }, bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData })),
                 ]),
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                     bs.MediaHeading4({}, "Media heading"),
@@ -55,26 +55,26 @@ function defaultMedia(): b.IBobrilChildren {
                     congue felis in faucibus.`,
                     bs.Media({}, [
                         bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
-                            bs.A({ href: "javascript:void(0)" }, bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData }))
+                            bs.A({ href: "javascript:void(0)" }, bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData })),
                         ]),
                         bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                             bs.MediaHeading4({}, "Media heading"),
                             `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras 
                             purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate 
-                            fringilla. Donec lacinia congue felis in faucibus.`
-                        ])
-                    ])
-                ])
+                            fringilla. Donec lacinia congue felis in faucibus.`,
+                        ]),
+                    ]),
+                ]),
             ]),
             bs.Media({}, [
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                     bs.MediaHeading4({}, "Media heading"),
                     `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
-                    vestibulum in vulputate at, tempus viverra turpis.`
+                    vestibulum in vulputate at, tempus viverra turpis.`,
                 ]),
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Right }, [
-                    bs.A({ href: "javascript:void(0)" }, bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData }))
-                ])
+                    bs.A({ href: "javascript:void(0)" }, bs.Image({ style: bs.mediaStyles.mediaObject, src: imageData })),
+                ]),
             ]),
             bs.Media({}, [
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
@@ -82,25 +82,25 @@ function defaultMedia(): b.IBobrilChildren {
                         { href: "javascript:void(0)" },
                         bs.Image({
                             style: bs.mediaStyles.mediaObject,
-                            src: imageData
+                            src: imageData,
                         })
-                    )
+                    ),
                 ]),
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                     bs.MediaHeading4({}, "Media heading"),
                     `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, 
-                    vestibulum in vulputate at, tempus viverra turpis.`
+                    vestibulum in vulputate at, tempus viverra turpis.`,
                 ]),
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Right }, [
                     bs.A(
                         { href: "javascript:void(0)" },
                         bs.Image({
                             style: bs.mediaStyles.mediaObject,
-                            src: imageData
+                            src: imageData,
                         })
-                    )
-                ])
-            ])
+                    ),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -141,7 +141,7 @@ function defaultMedia(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
         ),
@@ -154,9 +154,9 @@ function defaultMedia(): b.IBobrilChildren {
                         { href: "javascript:void(0)" },
                         bs.Image({
                             style: bs.mediaStyles.mediaObject,
-                            src: imageData
+                            src: imageData,
                         })
-                    )
+                    ),
                 ]),
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                     bs.MediaHeading4({}, "Top aligned media"),
@@ -170,22 +170,22 @@ function defaultMedia(): b.IBobrilChildren {
                         {},
                         `Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus 
                     et magnis dis parturient montes, nascetur ridiculus mus.`
-                    )
-                ])
+                    ),
+                ]),
             ]),
             bs.Media({}, [
                 bs.MediaContent(
                     {
-                        alignment: [bs.MediaContentAlignment.Left, bs.MediaContentAlignment.Middle]
+                        alignment: [bs.MediaContentAlignment.Left, bs.MediaContentAlignment.Middle],
                     },
                     [
                         bs.A(
                             { href: "javascript:void(0)" },
                             bs.Image({
                                 style: bs.mediaStyles.mediaObject,
-                                src: imageData
+                                src: imageData,
                             })
-                        )
+                        ),
                     ]
                 ),
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
@@ -200,22 +200,22 @@ function defaultMedia(): b.IBobrilChildren {
                         {},
                         `Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus 
                     et magnis dis parturient montes, nascetur ridiculus mus.`
-                    )
-                ])
+                    ),
+                ]),
             ]),
             bs.Media({}, [
                 bs.MediaContent(
                     {
-                        alignment: [bs.MediaContentAlignment.Left, bs.MediaContentAlignment.Bottom]
+                        alignment: [bs.MediaContentAlignment.Left, bs.MediaContentAlignment.Bottom],
                     },
                     [
                         bs.A(
                             { href: "javascript:void(0)" },
                             bs.Image({
                                 style: bs.mediaStyles.mediaObject,
-                                src: imageData
+                                src: imageData,
                             })
-                        )
+                        ),
                     ]
                 ),
                 bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
@@ -230,9 +230,9 @@ function defaultMedia(): b.IBobrilChildren {
                         {},
                         `Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus 
                     et magnis dis parturient montes, nascetur ridiculus mus.`
-                    )
-                ])
-            ])
+                    ),
+                ]),
+            ]),
         ]),
 
         bs.Figure(
@@ -262,10 +262,10 @@ function defaultMedia(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -281,9 +281,9 @@ function mediaList(): b.IBobrilChildren {
                             { href: "javascript:void(0)" },
                             bs.Image({
                                 style: bs.mediaStyles.mediaObject,
-                                src: imageData
+                                src: imageData,
                             })
-                        )
+                        ),
                     ]),
                     bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                         bs.MediaHeading4({}, "Media heading"),
@@ -298,9 +298,9 @@ function mediaList(): b.IBobrilChildren {
                                     { href: "javascript:void(0)" },
                                     bs.Image({
                                         style: bs.mediaStyles.mediaObject,
-                                        src: imageData
+                                        src: imageData,
                                     })
-                                )
+                                ),
                             ]),
                             bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                                 bs.MediaHeading4({}, "Nested media heading"),
@@ -315,9 +315,9 @@ function mediaList(): b.IBobrilChildren {
                                             { href: "javascript:void(0)" },
                                             bs.Image({
                                                 style: bs.mediaStyles.mediaObject,
-                                                src: imageData
+                                                src: imageData,
                                             })
-                                        )
+                                        ),
                                     ]),
                                     bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                                         bs.MediaHeading4({}, "Nested media heading"),
@@ -325,10 +325,10 @@ function mediaList(): b.IBobrilChildren {
                                             {},
                                             `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante 
                                         sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`
-                                        )
-                                    ])
-                                ])
-                            ])
+                                        ),
+                                    ]),
+                                ]),
+                            ]),
                         ]),
                         bs.Media({}, [
                             bs.MediaContent({ alignment: bs.MediaContentAlignment.Left }, [
@@ -336,9 +336,9 @@ function mediaList(): b.IBobrilChildren {
                                     { href: "javascript:void(0)" },
                                     bs.Image({
                                         style: bs.mediaStyles.mediaObject,
-                                        src: imageData
+                                        src: imageData,
                                     })
-                                )
+                                ),
                             ]),
                             bs.MediaContent({ alignment: bs.MediaContentAlignment.Body }, [
                                 bs.MediaHeading4({}, "Nested media heading"),
@@ -346,12 +346,12 @@ function mediaList(): b.IBobrilChildren {
                                     {},
                                     `Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin 
                                 commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.`
-                                )
-                            ])
-                        ])
-                    ])
-                ])
-            ])
+                                ),
+                            ]),
+                        ]),
+                    ]),
+                ]),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -384,9 +384,9 @@ function mediaList(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    ])`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

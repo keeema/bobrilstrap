@@ -16,12 +16,12 @@ interface ICtx extends b.IBobrilCtx {
 export const inputGroupStyles = {
     inputGroup: b.styleDef("input-group"),
     lg: b.styleDef("input-group-lg"),
-    sm: b.styleDef("input-group-sm")
+    sm: b.styleDef("input-group-sm"),
 };
 
 export enum InputGroupSize {
     Lg,
-    Sm
+    Sm,
 }
 
 export const inputGroupSizeStyles: IDictionary<InputGroupSize, b.IBobrilStyle> = createDictionary<InputGroupSize, b.IBobrilStyle>();
@@ -36,7 +36,7 @@ export const InputGroup = b.createDerivedComponent<IInputGroupData, IBaseData>(E
         b.style(me, !!ctx.data.hasFeedback && validationStyles.hasFeedback);
         b.style(me, ctx.data.validationState !== undefined && validationStateStyles(ctx.data.validationState));
         b.style(me, ctx.data.size !== undefined && inputGroupSizeStyles(ctx.data.size));
-    }
+    },
 });
 
 export default InputGroup;

@@ -15,8 +15,10 @@ export const THead = b.createDerivedComponent<ITHeadData, IBaseData>(Elem, {
     render(ctx: ICtx, me: b.IBobrilNode) {
         me.tag = "thead";
 
-        if (ctx.data.row) me.children = Tr(ctx.data.row);
-    }
+        if (ctx.data.row) {
+            me.children = Tr(ctx.data.row);
+        }
+    },
 });
 
 export default THead;

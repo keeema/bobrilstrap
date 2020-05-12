@@ -19,8 +19,8 @@ export const inputGroups = b.createVirtualComponent({
                     bs.Code({}, "bs.InputGroupAddon"),
                     ` or `,
                     bs.Code({}, "bs.InputGroupBtn"),
-                    ` component to prepend or append elements to a single .form-control.`
-                ]
+                    ` component to prepend or append elements to a single .form-control.`,
+                ],
             },
             [
                 info(),
@@ -30,10 +30,10 @@ export const inputGroups = b.createVirtualComponent({
                 buttonAddons(),
                 buttonWithDropdowns(),
                 segmentedButtons(),
-                multipleButtons()
+                multipleButtons(),
             ]
         );
-    }
+    },
 });
 
 function info(): b.IBobrilChildren {
@@ -41,7 +41,7 @@ function info(): b.IBobrilChildren {
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-inputgroup-text-input-only" }
+                attrs: { id: "callout-inputgroup-text-input-only" },
             },
             [
                 bs.H4({}, [`Textual `, bs.Code({}, "<input>"), `s only`]),
@@ -51,14 +51,14 @@ function info(): b.IBobrilChildren {
                     bs.Code({}, "<textarea>"),
                     ` elements here as their `,
                     bs.Code({}, "rows"),
-                    ` attribute will not be respected in some cases.`
-                ])
+                    ` attribute will not be respected in some cases.`,
+                ]),
             ]
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-inputgroup-dont-mix" }
+                attrs: { id: "callout-inputgroup-dont-mix" },
             },
             [
                 bs.H4({}, [`Don't mix with other components`]),
@@ -66,13 +66,13 @@ function info(): b.IBobrilChildren {
                     {},
                     `Do not mix form groups or grid column classes directly with input groups. Instead, nest the 
             input group inside of the form group or grid-related element.`
-                )
+                ),
             ]
         ),
         bs.E(
             {
                 style: [styles.bsCallout, styles.bsCalloutDanger],
-                attrs: { id: "callout-inputgroup-form-labels" }
+                attrs: { id: "callout-inputgroup-form-labels" },
             },
             [
                 bs.H4({}, [`Textual `, bs.Code({}, "<input>"), `s only`]),
@@ -100,10 +100,10 @@ function info(): b.IBobrilChildren {
                     bs.Code({}, "placeholder"),
                     ` attribute) and what additional information will need to be conveyed will vary 
                 depending on the exact type of interface widget you're implementing. The examples in this section provide 
-                a few suggested, case-specific approaches.`
-                ])
+                a few suggested, case-specific approaches.`,
+                ]),
             ]
-        )
+        ),
     ];
 }
 
@@ -118,7 +118,7 @@ function basicExample(): b.IBobrilChildren {
                 bs.Code({}, "bs.InputGroupAddon"),
                 ` or `,
                 bs.Code({}, "bs.InputGroupBtn"),
-                `) on a single side.`
+                `) on a single side.`,
             ])
         ),
         bs.P({}, bs.Strong({ style: bs.helpers.text.danger }, `We do not support multiple form-controls in a single input group.`)),
@@ -127,29 +127,29 @@ function basicExample(): b.IBobrilChildren {
                 bs.InputGroupAddon({ id: "basic-addon1" }, "@"),
                 bs.InputText({
                     placeholder: "Username",
-                    aria: { describedby: "basic-addon1" }
-                })
+                    aria: { describedby: "basic-addon1" },
+                }),
             ]),
             bs.E({ tag: "br" }),
             bs.InputGroup({}, [
                 bs.InputText({
                     placeholder: `Recipient's username`,
-                    aria: { describedby: "basic-addon2" }
+                    aria: { describedby: "basic-addon2" },
                 }),
-                bs.InputGroupAddon({ id: "basic-addon2" }, "@example.com")
+                bs.InputGroupAddon({ id: "basic-addon2" }, "@example.com"),
             ]),
             bs.E({ tag: "br" }),
             bs.InputGroup({}, [
                 bs.InputGroupAddon({}, "$"),
                 bs.InputText({ placeholder: "Amount (to the nearest dollar)" }),
-                bs.InputGroupAddon({}, ".00")
+                bs.InputGroupAddon({}, ".00"),
             ]),
             bs.E({ tag: "br" }),
             bs.Label({}, "Your vanity URL"),
             bs.InputGroup({}, [
                 bs.InputGroupAddon({ id: "basic-addon3" }, "https://example.com/users/"),
-                bs.InputText({ id: "basic-url", aria: { describedby: "basic-addon3" } })
-            ])
+                bs.InputText({ id: "basic-url", aria: { describedby: "basic-addon3" } }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -190,10 +190,10 @@ function basicExample(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    bs.InputText({ id: 'basic-url', aria: { describedby: 'basic-addon3' } })`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -206,15 +206,15 @@ function sizing(): b.IBobrilChildren {
             ` property of the `,
             bs.Code({}, "bs.InputGroup"),
             ` component itself and contents within will automatically resize—no need for repeating the form control
-             size classes on each element.`
+             size classes on each element.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.InputGroup({ size: bs.InputGroupSize.Lg }, [
                 bs.InputGroupAddon({ id: "sizing-addon1" }, "@"),
                 bs.InputText({
                     placeholder: "Username",
-                    aria: { describedby: "sizing-addon1" }
-                })
+                    aria: { describedby: "sizing-addon1" },
+                }),
             ]),
             bs.E({ tag: "br" }),
 
@@ -222,17 +222,17 @@ function sizing(): b.IBobrilChildren {
                 bs.InputGroupAddon({ id: "sizing-addon2" }, "@"),
                 bs.InputText({
                     placeholder: "Username",
-                    aria: { describedby: "sizing-addon2" }
-                })
+                    aria: { describedby: "sizing-addon2" },
+                }),
             ]),
             bs.E({ tag: "br" }),
             bs.InputGroup({ size: bs.InputGroupSize.Sm }, [
                 bs.InputGroupAddon({ id: "sizing-addon3" }, "@"),
                 bs.InputText({
                     placeholder: "Username",
-                    aria: { describedby: "sizing-addon3" }
-                })
-            ])
+                    aria: { describedby: "sizing-addon3" },
+                }),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -262,10 +262,10 @@ function sizing(): b.IBobrilChildren {
                     `    bs.InputText({ placeholder: 'Username', aria: { describedby: 'sizing-addon3' } })`,
                     bs.E({ tag: "br" }),
                     `])`,
-                    bs.E({ tag: "br" })
+                    bs.E({ tag: "br" }),
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -279,7 +279,7 @@ function checkboxesRadioboxes(): b.IBobrilChildren {
                     { size: bs.Size.Lg, span: 6 },
                     bs.InputGroup({}, [
                         bs.InputGroupAddon({}, bs.InputCheckbox({ aria: { label: "..." } })),
-                        bs.InputText({ aria: { label: "..." } })
+                        bs.InputText({ aria: { label: "..." } }),
                     ])
                 ),
                 bs.Col(
@@ -290,13 +290,13 @@ function checkboxesRadioboxes(): b.IBobrilChildren {
                             bs.InputRadio({
                                 name: "radio1",
                                 value: "value1",
-                                aria: { label: "..." }
+                                aria: { label: "..." },
                             })
                         ),
-                        bs.InputText({ aria: { label: "..." } })
+                        bs.InputText({ aria: { label: "..." } }),
                     ])
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -327,10 +327,10 @@ function checkboxesRadioboxes(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    )`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -342,7 +342,7 @@ function buttonAddons(): b.IBobrilChildren {
             bs.Code({}, "bs.InputGroupAddon"),
             `, you'll need to use `,
             bs.Code({}, "bs.InputGroupBtn"),
-            ` to wrap the buttons. This is required due to default browser styles that cannot be overridden.`
+            ` to wrap the buttons. This is required due to default browser styles that cannot be overridden.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Row({}, [
@@ -352,8 +352,8 @@ function buttonAddons(): b.IBobrilChildren {
                         bs.InputGroupBtn({}, bs.Button({ label: "Go!" })),
                         bs.InputText({
                             placeholder: "Search for...",
-                            aria: { label: "..." }
-                        })
+                            aria: { label: "..." },
+                        }),
                     ])
                 ),
                 bs.Col(
@@ -361,12 +361,12 @@ function buttonAddons(): b.IBobrilChildren {
                     bs.InputGroup({}, [
                         bs.InputText({
                             placeholder: "Search for...",
-                            aria: { label: "..." }
+                            aria: { label: "..." },
                         }),
-                        bs.InputGroupBtn({}, bs.Button({ label: "Go!" }))
+                        bs.InputGroupBtn({}, bs.Button({ label: "Go!" })),
                     ])
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -399,10 +399,10 @@ function buttonAddons(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    )`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -412,7 +412,7 @@ function buttonWithDropdowns(): b.IBobrilChildren {
         bs.P({}, [
             `As in previous cases - you can use the prepared helper `,
             bs.Code({}, "bs.Dropdown"),
-            ` or compose from specific input components.`
+            ` or compose from specific input components.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Row({}, [
@@ -426,10 +426,10 @@ function buttonWithDropdowns(): b.IBobrilChildren {
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                                 bs.DropdownItem({ separator: true }),
-                                bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                                bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                             ])
                         ),
-                        bs.InputText({})
+                        bs.InputText({}),
                     ])
                 ),
                 bs.Col(
@@ -443,12 +443,12 @@ function buttonWithDropdowns(): b.IBobrilChildren {
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                                 bs.DropdownItem({ separator: true }),
-                                bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                                bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                             ])
-                        )
+                        ),
                     ])
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -515,10 +515,10 @@ function buttonWithDropdowns(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    )`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -528,7 +528,7 @@ function segmentedButtons(): b.IBobrilChildren {
         bs.P({}, [
             `As in previous cases - you can use the prepared helper `,
             bs.Code({}, "bs.Dropdown"),
-            ` or compose from specific input components.`
+            ` or compose from specific input components.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Row({}, [
@@ -539,17 +539,17 @@ function segmentedButtons(): b.IBobrilChildren {
                             {
                                 button: { label: "Action" },
                                 inputGroupBtn: true,
-                                splitted: true
+                                splitted: true,
                             },
                             bs.DropdownMenu({}, [
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                                 bs.DropdownItem({ separator: true }),
-                                bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                                bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                             ])
                         ),
-                        bs.InputText({})
+                        bs.InputText({}),
                     ])
                 ),
                 bs.Col(
@@ -560,19 +560,19 @@ function segmentedButtons(): b.IBobrilChildren {
                             {
                                 button: { label: "Action" },
                                 inputGroupBtn: true,
-                                splitted: true
+                                splitted: true,
                             },
                             bs.DropdownMenu({}, [
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Action")),
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Another action")),
                                 bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Something else here")),
                                 bs.DropdownItem({ separator: true }),
-                                bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link"))
+                                bs.DropdownItem({}, bs.A({ href: "javascript:void(0)" }, "Separated link")),
                             ])
-                        )
+                        ),
                     ])
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -655,10 +655,10 @@ function segmentedButtons(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    )`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }
 
@@ -668,7 +668,7 @@ function multipleButtons(): b.IBobrilChildren {
         bs.P({}, [
             `While you can only have one add-on per side, you can have multiple buttons inside a single `,
             bs.Code({}, "bs.InputGroupBtn"),
-            `.`
+            `.`,
         ]),
         bs.E({ style: styles.bsExample }, [
             bs.Row({}, [
@@ -677,12 +677,12 @@ function multipleButtons(): b.IBobrilChildren {
                     bs.InputGroup({}, [
                         bs.InputGroupBtn({}, [
                             bs.Button({ aria: { label: "Bold" } }, bs.Glyphicon({ icon: bs.GlyphIcon.Bold })),
-                            bs.Button({ aria: { label: "Italic" } }, bs.Glyphicon({ icon: bs.GlyphIcon.Italic }))
+                            bs.Button({ aria: { label: "Italic" } }, bs.Glyphicon({ icon: bs.GlyphIcon.Italic })),
                         ]),
                         bs.InputText({
                             placeholder: "Search for...",
-                            aria: { label: "..." }
-                        })
+                            aria: { label: "..." },
+                        }),
                     ])
                 ),
                 bs.Col(
@@ -690,15 +690,15 @@ function multipleButtons(): b.IBobrilChildren {
                     bs.InputGroup({}, [
                         bs.InputText({
                             placeholder: "Search for...",
-                            aria: { label: "..." }
+                            aria: { label: "..." },
                         }),
                         bs.InputGroupBtn({}, [
                             bs.Button({ aria: { label: "Bold" } }, bs.Glyphicon({ icon: bs.GlyphIcon.Bold })),
-                            bs.Button({ aria: { label: "Italic" } }, bs.Glyphicon({ icon: bs.GlyphIcon.Italic }))
-                        ])
+                            bs.Button({ aria: { label: "Italic" } }, bs.Glyphicon({ icon: bs.GlyphIcon.Italic })),
+                        ]),
                     ])
-                )
-            ])
+                ),
+            ]),
         ]),
         bs.Figure(
             { style: styles.highlight },
@@ -743,9 +743,9 @@ function multipleButtons(): b.IBobrilChildren {
                     bs.E({ tag: "br" }),
                     `    )`,
                     bs.E({ tag: "br" }),
-                    `])`
+                    `])`,
                 ])
             )
-        )
+        ),
     ];
 }

@@ -24,7 +24,7 @@ export const header: b.IComponentFactory<IData> = b.createVirtualComponent<IData
             ctx.data.iconText &&
                 bs.Span(
                     {
-                        style: [styles.bsDocsBooticon, styles.bsDocsBooticonLg, styles.bsDocsBooticonOutline]
+                        style: [styles.bsDocsBooticon, styles.bsDocsBooticonLg, styles.bsDocsBooticonOutline],
                     },
                     ctx.data.iconText
                 ),
@@ -36,9 +36,9 @@ export const header: b.IComponentFactory<IData> = b.createVirtualComponent<IData
                     bs.Image({
                         src: "https://badge.fury.io/js/bobrilstrap.svg",
                         alt: "npm version",
-                        height: 18
-                    })
-                ])
+                        height: 18,
+                    }),
+                ]),
         ]);
-    }
+    },
 });

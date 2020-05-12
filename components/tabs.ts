@@ -19,7 +19,7 @@ export const Tabs = b.createDerivedComponent<ITabsData, IUlData>(Ul, {
         b.style(me, !!ctx.data.justified && navStyles.navJustified);
         b.style(me, ctx.data.alignment === NavbarAlignment.Right && navStyles.navbarRight);
         b.style(me, ctx.data.alignment === NavbarAlignment.Left && navStyles.navbarLeft);
-    }
+    },
 });
 
 export default Tabs;

@@ -9,12 +9,12 @@ export interface IPagerItemData extends ILiData {
 export enum PagerItemAlignment {
     None,
     Previous,
-    Next
+    Next,
 }
 
 export const pagerItemStyles = {
     previous: b.styleDef("previous"),
-    next: b.styleDef("next")
+    next: b.styleDef("next"),
 };
 
 interface IPagerItemCtx extends b.IBobrilCtx {
@@ -32,7 +32,7 @@ export const PagerItem = b.createDerivedComponent<IPagerItemData, ILiData>(Li, {
     id: "bobrilstrap-pager-item",
     render(ctx: IPagerItemCtx, me: b.IBobrilNode) {
         b.style(me, !!ctx.data.alignment && pagerItemAlignmentStyles(ctx.data.alignment));
-    }
+    },
 });
 
 export default PagerItem;

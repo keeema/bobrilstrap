@@ -15,7 +15,7 @@ export const ListGroupItem = b.createDerivedComponent<IListGroupItemData, ILiDat
     render(ctx: IListGroupItemCtx, me: b.IBobrilNode) {
         b.style(me, listGroupStyles.listGroupItem);
         b.style(me, ctx.data.context !== undefined && listGroupItemContextStyles(ctx.data.context));
-    }
+    },
 });
 
 export default ListGroupItem;

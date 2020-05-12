@@ -10,11 +10,11 @@ export const affix = b.createVirtualComponent({
             {
                 header: "Affix",
                 id: "affix",
-                lead: []
+                lead: [],
             },
             [example()]
         );
-    }
+    },
 });
 
 function example(): b.IBobrilChildren {
@@ -24,8 +24,8 @@ function example(): b.IBobrilChildren {
             bs.Code({}, "position: fixed;"),
             ` on and off, emulating the effect found with `,
             bs.Code({}, `position: sticky;`),
-            `. The subnavigation on the right is a live demo of the affix plugin.`
+            `. The subnavigation on the right is a live demo of the affix plugin.`,
         ]),
-        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, [`bs.Affix({ top: 325, bottom: 260 }, ... )`])))
+        bs.Figure({ style: styles.highlight }, pre({}, bs.Code({ style: langJs }, [`bs.Affix({ top: 325, bottom: 260 }, ... )`]))),
     ];
 }

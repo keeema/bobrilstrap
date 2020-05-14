@@ -5,11 +5,11 @@ import * as bs from "../../index";
 import pwaInstallHandler from "pwa-install-handler";
 import { handleMenuItemClick, texts } from "../masterPage";
 
-interface IInstallButtonCtx extends b.IBobrilCtx<never> {
+interface IInstallButtonCtx extends b.IBobrilCtx<{}> {
     canInstall: boolean;
 }
 
-export const InstallButton = b.createVirtualComponent<never>({
+export const InstallButton = b.createVirtualComponent<{}>({
     id: "install-button",
     init(ctx: IInstallButtonCtx): void {
         ctx.canInstall = false;

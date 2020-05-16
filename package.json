@@ -1,6 +1,6 @@
 {
     "name": "bobrilstrap",
-    "version": "3.4.2",
+    "version": "3.4.3",
     "description": "Bobril wrapper for bootstrap",
     "author": "Tomáš Růt",
     "license": "MIT",
@@ -56,6 +56,6 @@
         "eslint-config-bobril": "^1.0.2",
         "prettier": "^2.0.5",
         "pwa-install-handler": "^2.0.6",
-        "typescript": "^3.9.2"
+        "typescript": "3.8.3"
     }
 }

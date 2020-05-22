@@ -1,7 +1,6 @@
 /**/node_modules
 dist
 example
-example.ts
 tsconfig.json
 tslint.json
 *.xcf

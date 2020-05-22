@@ -19,10 +19,10 @@
         "main": "index.ts"
     },
     "bobril": {
-        "example": "example.ts",
+        "example": "example/example.tsx",
         "title": "Bobrilstrap",
         "additionalResourcesDirectory": "example/assets",
-        "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" /><link rel=\"manifest\" href=\"manifest.json\"><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#6f5499\"><meta name=\"apple-mobile-web-app-title\" content=\"Bobrilstrap\"><link rel=\"apple-touch-icon\" href=\"/icons/icon-152x152.png\"><meta name=\"description\" content=\"Bobril wrapper of the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web - Bootstrap.\"><meta name=\"theme-color\" content=\"#6f5499\" />",
+        "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
         "compilerOptions": {
             "declaration": true,
             "strict": true,
@@ -41,21 +41,22 @@
         "tabWidth": 4
     },
     "dependencies": {
-        "@types/bootstrap": "^3.3.35",
-        "@types/bootstrap-3-typeahead": "^4.0.1",
-        "@types/jquery": "^3.3.36",
-        "bobril": "^14.6.1",
-        "bootstrap": "^3.4.0",
-        "bootstrap-3-typeahead": "^4.0.2",
-        "jquery": "^3.5.0"
+        "bobril": "^14.8.0"
     },
     "devDependencies": {
+        "@popperjs/core": "^2.4.0",
+        "@types/bootstrap": "^4.5.0",
+        "@types/jquery": "^3.3.38",
         "@typescript-eslint/eslint-plugin": "^2.30.0",
         "@typescript-eslint/parser": "^2.30.0",
+        "bootstrap": "^4.5.0",
         "eslint": "^6.8.0",
         "eslint-config-bobril": "^1.0.2",
+        "i": "^0.3.6",
+        "jquery": "^3.5.1",
+        "npm": "^6.14.5",
         "prettier": "^2.0.5",
         "pwa-install-handler": "^2.0.6",
-        "typescript": "3.8.3"
+        "typescript": "3.9.2"
     }
 }

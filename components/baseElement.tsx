@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { omit } from "../helpers/objectHelper";
 
 export interface IAria {
     ariaActivedescendant?: string;
@@ -42,40 +43,44 @@ export interface IAria {
 export interface IKnownAttrs {
     title?: string;
     id?: string;
+    for?: string;
 }
 
 export interface IAttrs {
-    [key: string]: string | number | boolean;
+    [key: string]: unknown;
 }
 
-export interface IBaseElementData extends b.IDataWithChildren, IAria, IKnownAttrs, b.IBubblingAndBroadcastEvents {
+export type IAllAttrs = IAttrs & IAria & IKnownAttrs & b.IBubblingAndBroadcastEvents;
+
+export interface IBaseElementData extends b.IDataWithChildren, IAllAttrs {
     style?: b.IBobrilStyles;
 }
 
 export abstract class BaseElement<TData extends IBaseElementData> extends b.Component<TData> {
-    static id: string = "bobrilstrap-base-element";
-    abstract readonly prefix: b.IBobrilStyle;
-    abstract readonly omitComponentProperties: (keyof TData)[];
+    readonly tag?: string;
+    readonly componentAdditionalAttributes?: IAllAttrs;
+    abstract readonly componentProperties: (keyof TData)[];
 
     render(): b.IBobrilNode {
-        const styles: b.IBobrilStyles = [this.data.style, this.componentStyles];
-
+        const Tag = (this.tag || "div") as any;
         return (
-            <div style={styles} {...this.plainData}>
+            <Tag style={this.styles} {...this.plainData} {...this.componentAdditionalAttributes}>
                 {this.data.children}
-            </div>
+            </Tag>
         );
     }
 
-    private get componentStyles(): b.IBobrilStyleArray {
-        return [this.prefix, ...this.componentSpecificStyles];
+    private get styles(): b.IBobrilStyleArray {
+        return [...this.componentSpecificStyles, this.data.style];
     }
 
     private get plainData(): IBaseElementData {
-        const result = b.assign({}, this.data);
-        this.omitComponentProperties.forEach((key) => delete result[key]);
-        return result;
+        return omit(this.data, "style", ...this.componentProperties);
     }
 
     abstract get componentSpecificStyles(): b.IBobrilStyleArray;
+
+    protected get element(): HTMLDivElement {
+        return b.getDomNode(this.me) as HTMLDivElement;
+    }
 }

@@ -33,6 +33,9 @@
     "target": "es5",
     "resolveJsonModule": true
   },
+  "files": [
+    "/home/keeema/.bbcore/tools/jasmine330.d.ts"
+  ],
   "include": [
     "**/*"
   ]

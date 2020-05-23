@@ -1,5 +1,6 @@
 /**/node_modules
 dist
+www
 example
 tsconfig.json
 tslint.json

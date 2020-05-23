@@ -3,9 +3,12 @@ import { Carousel } from "../index";
 import { ICarouselActions } from "../components/carousel";
 import { image1, image2, image3 } from "./carouselImages";
 
+const w100 = b.styleDef("w-100");
+
 export function CarouselExample(): b.IBobrilNode {
     const [carouselIndex, setCarouselIndex] = b.useState(0);
     const [carouselActions, setCarouselActions] = b.useState<ICarouselActions>(() => new Function());
+
     return (
         <Carousel
             crossFade
@@ -22,13 +25,13 @@ export function CarouselExample(): b.IBobrilNode {
             </Carousel.Indicators>
             <Carousel.Inner>
                 <Carousel.Item active>
-                    <img src={image1} />
+                    <img src={image1} style={w100} />
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img src={image2} />
+                    <img src={image2} style={w100} />
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img src={image3} />
+                    <img src={image3} style={w100} />
                 </Carousel.Item>
             </Carousel.Inner>
             <Carousel.Control.Prev onClick={() => carouselActions("prev")}>

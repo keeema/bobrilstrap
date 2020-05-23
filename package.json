@@ -19,6 +19,7 @@
         "main": "index.ts"
     },
     "bobril": {
+        "buildOutputDir": "www",
         "example": "example/example.tsx",
         "title": "Bobrilstrap 4",
         "additionalResourcesDirectory": "example/assets",

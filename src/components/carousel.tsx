@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { IBaseElementData, BaseElement } from "./baseElement";
 import { CarouselOption, CarouselEventHandler } from "bootstrap";
-import { pick } from "../helpers/objectHelper";
+import { pick } from "../../helpers/objectHelper";
 import $ from "jquery";
 import { CarouselInner } from "./carouselInner";
 import { CarouselItem } from "./carouselItem";

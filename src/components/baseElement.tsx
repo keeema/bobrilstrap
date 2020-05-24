@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { omit } from "../helpers/objectHelper";
+import { omit } from "../../helpers/objectHelper";
 
 export interface IAria {
     ariaActivedescendant?: string;

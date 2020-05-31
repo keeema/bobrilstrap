@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { IBaseElementData, BaseElement } from "./baseElement";
 
-const styles = {
+export const carouselItemStyles = {
     carouselItem: b.styleDef("carousel-item"),
     slide: b.styleDef("slide"),
     active: b.styleDef("active"),
@@ -16,6 +16,6 @@ export class CarouselItem extends BaseElement<ICarouselItemData> {
     readonly componentProperties: (keyof ICarouselItemData)[] = ["active"];
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [styles.carouselItem, this.data.active && styles.active];
+        return [carouselItemStyles.carouselItem, this.data.active && carouselItemStyles.active];
     }
 }

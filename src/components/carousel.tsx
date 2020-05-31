@@ -8,7 +8,7 @@ import { CarouselItem } from "./carouselItem";
 import { CarouselControlPrev, CarouselControlNext } from "./carouselControl";
 import { CarouselIndicators } from "./carouselIndicators";
 
-const styles = {
+export const carouselStyles = {
     carousel: b.styleDef("carousel"),
     slide: b.styleDef("slide"),
     carouselFade: b.styleDef("carousel-fade"),
@@ -18,14 +18,14 @@ export interface ICarouselActions {
     (action: "cycle" | "pause" | number | "prev" | "next" | "dispose"): void;
 }
 
-interface ICarouselPlainData {
-    crossFade?: boolean;
+interface ICarouselElementData {
+    "cross-fade"?: boolean;
     onCarouselCreated?(carousel: ICarouselActions, element: JQuery<HTMLDivElement>): void;
     onSlid?(event: CarouselEventHandler<HTMLDivElement>): void;
     onSlide?(event: CarouselEventHandler<HTMLDivElement>): void;
 }
 
-export type ICarouselData = ICarouselPlainData & CarouselOption & IBaseElementData;
+export type ICarouselData = ICarouselElementData & CarouselOption & IBaseElementData;
 
 export class Carousel extends BaseElement<ICarouselData> {
     static Inner = CarouselInner;
@@ -35,11 +35,11 @@ export class Carousel extends BaseElement<ICarouselData> {
 
     static id: string = "bobrilstrap-carousel-inner";
     readonly carouselConfigProperties: (keyof CarouselOption)[] = ["interval", "keyboard", "slide", "pause", "ride", "wrap", "touch"];
-    readonly carouselDataProperties: (keyof ICarouselPlainData)[] = ["onCarouselCreated", "crossFade"];
+    readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "cross-fade"];
     readonly componentProperties: (keyof ICarouselData)[] = [...this.carouselDataProperties, ...this.carouselConfigProperties];
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [styles.carousel, styles.slide, this.data.crossFade && styles.carouselFade];
+        return [carouselStyles.carousel, carouselStyles.slide, this.data["cross-fade"] && carouselStyles.carouselFade];
     }
 
     postInitDom(): void {

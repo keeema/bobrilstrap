@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { IBaseElementData, BaseElement } from "./baseElement";
 
-const styles = {
+export const carouselIndicatorStyles = {
     carouselIndicators: b.styleDef("carousel-indicators"),
     active: b.styleDef("active"),
 };
@@ -16,7 +16,7 @@ export class CarouselIndicatorsItem extends BaseElement<ICarouselIndicatorsItemD
     readonly componentProperties: (keyof ICarouselIndicatorsItemData)[] = [];
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [this.data.active && styles.active];
+        return [this.data.active && carouselIndicatorStyles.active];
     }
 }
 export interface ICarouselIndicatorsData extends IBaseElementData {}
@@ -26,5 +26,5 @@ export class CarouselIndicators extends BaseElement<ICarouselIndicatorsData> {
     static id: string = "bobrilstrap-carousel-indicators";
     readonly tag: string = "ol";
     readonly componentProperties: (keyof ICarouselIndicatorsData)[] = [];
-    readonly componentSpecificStyles: b.IBobrilStyleArray = [styles.carouselIndicators];
+    readonly componentSpecificStyles: b.IBobrilStyleArray = [carouselIndicatorStyles.carouselIndicators];
 }

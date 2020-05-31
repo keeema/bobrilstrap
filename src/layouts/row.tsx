@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { IBaseElementData, BaseElement } from "../../index";
 
-const styles = {
+export const rowStyles = {
     row: b.styleDef("row"),
 };
 
@@ -12,6 +12,6 @@ export class Row extends BaseElement<IRowData> {
     readonly componentProperties: (keyof IRowData)[] = [];
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [styles.row];
+        return [rowStyles.row];
     }
 }

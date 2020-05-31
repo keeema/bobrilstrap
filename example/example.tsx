@@ -3,11 +3,24 @@ import "../index";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CarouselExample } from "./carousel";
 import { ButtonExample } from "./button";
-import { Container } from "../src/layouts/container";
+import { Container, Row, Col } from "../index";
 
 b.init(() => (
     <Container fluid>
-        <ButtonExample />
-        <CarouselExample />
+        <Row>
+            <Col sm={5} offset={3}>
+                Col 1
+            </Col>
+        </Row>
+        <Row>
+            <Col sm="auto">
+                <ButtonExample />
+            </Col>
+        </Row>
+        <Row>
+            <Col>
+                <CarouselExample />
+            </Col>
+        </Row>
     </Container>
 ));

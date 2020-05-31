@@ -17,7 +17,7 @@ export type ButtonVariant =
     | "outline-light"
     | "outline-link";
 
-const styles = {
+export const buttonStyles = {
     btn: b.styleDef("btn"),
     primary: b.styleDef("btn-primary"),
     secondary: b.styleDef("btn-primary"),
@@ -48,6 +48,6 @@ export class Button extends BaseElement<IButtonData> {
     }
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [styles.btn, styles[this.data.variant]];
+        return [buttonStyles.btn, buttonStyles[this.data.variant]];
     }
 }

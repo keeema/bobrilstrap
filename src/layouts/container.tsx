@@ -1,8 +1,8 @@
 import * as b from "bobril";
 import { IBaseElementData, BaseElement } from "../../index";
+import { Size } from "./size";
 
-export type ContainerSize = "sm" | "md" | "lg" | "xl";
-const styles = {
+export const containerStyles = {
     container: b.styleDef("container"),
     fluid: b.styleDef("container-fluid"),
     sm: b.styleDef("container-sm"),
@@ -12,7 +12,7 @@ const styles = {
 };
 
 export interface IContainerData extends IBaseElementData {
-    fluid?: boolean | ContainerSize;
+    fluid?: boolean | Size;
 }
 
 export class Container extends BaseElement<IContainerData> {
@@ -20,6 +20,12 @@ export class Container extends BaseElement<IContainerData> {
     readonly componentProperties: (keyof IContainerData)[] = ["fluid"];
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [this.data.fluid ? (typeof this.data.fluid === "boolean" ? styles.fluid : styles[this.data.fluid]) : styles.container];
+        return [
+            this.data.fluid
+                ? typeof this.data.fluid === "boolean"
+                    ? containerStyles.fluid
+                    : containerStyles[this.data.fluid]
+                : containerStyles.container,
+        ];
     }
 }

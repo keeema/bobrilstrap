@@ -11,7 +11,7 @@ export function CarouselExample(): b.IBobrilNode {
 
     return (
         <Carousel
-            crossFade
+            cross-fade
             pause={false}
             ride="carousel"
             keyboard

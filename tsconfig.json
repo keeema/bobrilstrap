@@ -34,7 +34,7 @@
     "resolveJsonModule": true
   },
   "files": [
-    "/Users/tomasrut/.bbcore/tools/jasmine330.d.ts"
+    "/home/keeema/.bbcore/tools/jasmine330.d.ts"
   ],
   "include": [
     "**/*"

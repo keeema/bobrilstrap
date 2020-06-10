@@ -20,14 +20,14 @@ interface IColElementData {
     "offset-xl"?: ColSize;
 }
 
-const scale: SizeScale[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const colSizeScale: ColSize[] = [...scale, "auto"];
+export const sizeScale: SizeScale[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const colSizeScale: ColSize[] = [...sizeScale, "auto"];
 
 export const colStyles = {
     col: b.styleDef("col"),
 
-    span: new Map<SizeScale | undefined, b.IBobrilStyle>(scale.map((value) => [value, b.styleDef(`col-${value}`)])),
-    offset: new Map<SizeScale | undefined, b.IBobrilStyle>(scale.map((value) => [value, b.styleDef(`offset-${value}`)])),
+    span: new Map<SizeScale | undefined, b.IBobrilStyle>(sizeScale.map((value) => [value, b.styleDef(`col-${value}`)])),
+    offset: new Map<SizeScale | undefined, b.IBobrilStyle>(sizeScale.map((value) => [value, b.styleDef(`offset-${value}`)])),
 
     sm: new Map<ColSize | undefined, b.IBobrilStyle>(
         colSizeScale.map((value) => [value, b.styleDef(value ? `col-sm-${value}` : "col-sm")])
@@ -43,16 +43,16 @@ export const colStyles = {
     ),
 
     smOffset: new Map<ColSize | undefined, b.IBobrilStyle>(
-        scale.map((value) => [value, b.styleDef(value ? `offset-sm-${value}` : "col-sm")])
+        sizeScale.map((value) => [value, b.styleDef(value ? `offset-sm-${value}` : "col-sm")])
     ),
     mdOffset: new Map<ColSize | undefined, b.IBobrilStyle>(
-        scale.map((value) => [value, b.styleDef(value ? `offset-md-${value}` : "col-md")])
+        sizeScale.map((value) => [value, b.styleDef(value ? `offset-md-${value}` : "col-md")])
     ),
     lgOffset: new Map<ColSize | undefined, b.IBobrilStyle>(
-        scale.map((value) => [value, b.styleDef(value ? `offset-lg-${value}` : "col-lg")])
+        sizeScale.map((value) => [value, b.styleDef(value ? `offset-lg-${value}` : "col-lg")])
     ),
     xlOffset: new Map<ColSize | undefined, b.IBobrilStyle>(
-        scale.map((value) => [value, b.styleDef(value ? `offset-xl-${value}` : "col-xl")])
+        sizeScale.map((value) => [value, b.styleDef(value ? `offset-xl-${value}` : "col-xl")])
     ),
 };
 
@@ -81,6 +81,7 @@ export class Col extends BaseElement<IColData> {
             colStyles.offset.get(colData.offset),
             colStyles.sm.get(colData.sm),
             colStyles.md.get(colData.md),
+            colStyles.lg.get(colData.lg),
             colStyles.xl.get(colData.xl),
             colStyles.smOffset.get(colData["offset-sm"]),
             colStyles.mdOffset.get(colData["offset-md"]),

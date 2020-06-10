@@ -12,6 +12,12 @@ b.init(() => (
                 Col 1
             </Col>
         </Row>
+        <Row span={2} xl={4} invisible>
+            <Col>Col 1</Col>
+            <Col>Col 2</Col>
+            <Col>Col 3</Col>
+            <Col>Col 4</Col>
+        </Row>
         <Row>
             <Col sm="auto">
                 <ButtonExample />

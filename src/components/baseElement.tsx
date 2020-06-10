@@ -54,7 +54,14 @@ export type IAllAttrs = IAttrs & IAria & IKnownAttrs & b.IBubblingAndBroadcastEv
 
 export interface IBaseElementData extends b.IDataWithChildren, IAllAttrs {
     style?: b.IBobrilStyles;
+    visible?: boolean;
+    invisible?: boolean;
 }
+
+export const baseStyles = {
+    visible: b.styleDef("visible"),
+    invisible: b.styleDef("invisible"),
+};
 
 export abstract class BaseElement<TData extends IBaseElementData> extends b.Component<TData> {
     readonly tag?: string;
@@ -71,7 +78,14 @@ export abstract class BaseElement<TData extends IBaseElementData> extends b.Comp
     }
 
     private get styles(): b.IBobrilStyleArray {
-        return [...this.componentSpecificStyles, this.data.style];
+        return [...this.componentSpecificStyles, ...this.getBaseStyles, this.data.style];
+    }
+
+    private get getBaseStyles(): b.IBobrilStyleArray {
+        return [
+            (this.data.visible === true || this.data.invisible === false) && baseStyles.visible,
+            (this.data.invisible === true || this.data.visible === false) && baseStyles.invisible,
+        ];
     }
 
     private get plainData(): IBaseElementData {

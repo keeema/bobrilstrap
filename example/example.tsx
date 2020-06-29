@@ -4,9 +4,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { CarouselExample } from "./carousel";
 import { ButtonExample } from "./button";
 import { Container, Row, Col } from "../index";
+import { alignSelf } from "../src/utilities/flex";
 
 b.init(() => (
     <Container fluid>
+        <Row>
+            <Col sm style={alignSelf("start")}>
+                Col 1
+            </Col>
+        </Row>
         <Row>
             <Col sm={5} offset={3}>
                 Col 1

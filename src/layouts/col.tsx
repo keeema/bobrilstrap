@@ -1,9 +1,10 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "../../index";
 import { pick } from "../../helpers/objectHelper";
+import { createDictionary } from "../utilities/dict";
+import { IBaseElementData, BaseElement } from "../components/baseElement";
 
 export type SizeScale = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-export type ColSize = boolean | "auto" | SizeScale;
+export type ColSize = true | "auto" | SizeScale;
 
 interface IColElementData {
     span?: SizeScale;
@@ -14,46 +15,30 @@ interface IColElementData {
     lg?: ColSize;
     xl?: ColSize;
 
-    "offset-sm"?: ColSize;
-    "offset-md"?: ColSize;
-    "offset-lg"?: ColSize;
-    "offset-xl"?: ColSize;
+    "offset-sm"?: SizeScale;
+    "offset-md"?: SizeScale;
+    "offset-lg"?: SizeScale;
+    "offset-xl"?: SizeScale;
 }
 
 export const sizeScale: SizeScale[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const colSizeScale: ColSize[] = [...sizeScale, "auto"];
+const colSizeScale: ColSize[] = [...sizeScale, true, "auto"];
 
 export const colStyles = {
     col: b.styleDef("col"),
 
-    span: new Map<SizeScale | undefined, b.IBobrilStyle>(sizeScale.map((value) => [value, b.styleDef(`col-${value}`)])),
-    offset: new Map<SizeScale | undefined, b.IBobrilStyle>(sizeScale.map((value) => [value, b.styleDef(`offset-${value}`)])),
+    span: createDictionary(sizeScale.map((value) => [value, b.styleDef(`col-${value}`)])),
+    offset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-${value}`)])),
 
-    sm: new Map<ColSize | undefined, b.IBobrilStyle>(
-        colSizeScale.map((value) => [value, b.styleDef(value ? `col-sm-${value}` : "col-sm")])
-    ),
-    md: new Map<ColSize | undefined, b.IBobrilStyle>(
-        colSizeScale.map((value) => [value, b.styleDef(value ? `col-md-${value}` : "col-md")])
-    ),
-    lg: new Map<ColSize | undefined, b.IBobrilStyle>(
-        colSizeScale.map((value) => [value, b.styleDef(value ? `col-lg-${value}` : "col-lg")])
-    ),
-    xl: new Map<ColSize | undefined, b.IBobrilStyle>(
-        colSizeScale.map((value) => [value, b.styleDef(value ? `col-xl-${value}` : "col-xl")])
-    ),
+    sm: createDictionary(colSizeScale.map((value) => [value, b.styleDef(value !== true ? `col-sm-${value}` : "col-sm")])),
+    md: createDictionary(colSizeScale.map((value) => [value, b.styleDef(value !== true ? `col-md-${value}` : "col-md")])),
+    lg: createDictionary(colSizeScale.map((value) => [value, b.styleDef(value !== true ? `col-lg-${value}` : "col-lg")])),
+    xl: createDictionary(colSizeScale.map((value) => [value, b.styleDef(value !== true ? `col-xl-${value}` : "col-xl")])),
 
-    smOffset: new Map<ColSize | undefined, b.IBobrilStyle>(
-        sizeScale.map((value) => [value, b.styleDef(value ? `offset-sm-${value}` : "col-sm")])
-    ),
-    mdOffset: new Map<ColSize | undefined, b.IBobrilStyle>(
-        sizeScale.map((value) => [value, b.styleDef(value ? `offset-md-${value}` : "col-md")])
-    ),
-    lgOffset: new Map<ColSize | undefined, b.IBobrilStyle>(
-        sizeScale.map((value) => [value, b.styleDef(value ? `offset-lg-${value}` : "col-lg")])
-    ),
-    xlOffset: new Map<ColSize | undefined, b.IBobrilStyle>(
-        sizeScale.map((value) => [value, b.styleDef(value ? `offset-xl-${value}` : "col-xl")])
-    ),
+    smOffset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-sm-${value}`)])),
+    mdOffset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-md-${value}`)])),
+    lgOffset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-lg-${value}`)])),
+    xlOffset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-xl-${value}`)])),
 };
 
 export type IColData = IColElementData & IBaseElementData;
@@ -77,16 +62,16 @@ export class Col extends BaseElement<IColData> {
         colData;
         return [
             this.hasNoSpanStyle && colStyles.col,
-            colStyles.span.get(colData.span),
-            colStyles.offset.get(colData.offset),
-            colStyles.sm.get(colData.sm),
-            colStyles.md.get(colData.md),
-            colStyles.lg.get(colData.lg),
-            colStyles.xl.get(colData.xl),
-            colStyles.smOffset.get(colData["offset-sm"]),
-            colStyles.mdOffset.get(colData["offset-md"]),
-            colStyles.lgOffset.get(colData["offset-lg"]),
-            colStyles.xlOffset.get(colData["offset-xl"]),
+            colData.span && colStyles.span(colData.span),
+            colData.offset && colStyles.offset(colData.offset),
+            colData.sm && colStyles.sm(colData.sm),
+            colData.md && colStyles.md(colData.md),
+            colData.lg && colStyles.lg(colData.lg),
+            colData.xl && colStyles.xl(colData.xl),
+            colData["offset-sm"] && colStyles.smOffset(colData["offset-sm"]),
+            colData["offset-md"] && colStyles.mdOffset(colData["offset-md"]),
+            colData["offset-lg"] && colStyles.lgOffset(colData["offset-lg"]),
+            colData["offset-xl"] && colStyles.xlOffset(colData["offset-xl"]),
         ];
     }
 

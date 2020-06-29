@@ -6,3 +6,5 @@ export * from "./src/layouts/col";
 export * from "./src/layouts/container";
 export * from "./src/layouts/row";
 export * from "./src/layouts/size";
+export * from "./src/utilities/dict";
+export * from "./src/utilities/flex";

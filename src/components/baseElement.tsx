@@ -46,11 +46,16 @@ export interface IKnownAttrs {
     for?: string;
 }
 
+export interface IDataAttrs {
+    "data-toggle"?: "collapse";
+    "data-target"?: string;
+}
+
 export interface IAttrs {
     [key: string]: unknown;
 }
 
-export type IAllAttrs = IAttrs & IAria & IKnownAttrs & b.IBubblingAndBroadcastEvents;
+export type IAllAttrs = IAttrs & IAria & IDataAttrs & IKnownAttrs & b.IBubblingAndBroadcastEvents;
 
 export interface IBaseElementData extends b.IDataWithChildren, IAllAttrs {
     style?: b.IBobrilStyles;

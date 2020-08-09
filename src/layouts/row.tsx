@@ -1,24 +1,24 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement, sizeScale, SizeScale } from "../../index";
+import { IBaseElementData, BaseElement, spanScale, SpanScale } from "../../index";
 import { pick } from "../../helpers/objectHelper";
 import { createDictionary } from "../utilities/dict";
 
 export const rowStyles = {
     row: b.styleDef("row"),
     noGutters: b.styleDef("no-gutters"),
-    span: createDictionary(sizeScale.map((value) => [value, b.styleDef(`row-cols-${value}`)])),
-    sm: createDictionary(sizeScale.map((value) => [value, b.styleDef(`row-cols-sm-${value}`)])),
-    md: createDictionary(sizeScale.map((value) => [value, b.styleDef(`row-cols-md-${value}`)])),
-    lg: createDictionary(sizeScale.map((value) => [value, b.styleDef(`row-cols-lg-${value}`)])),
-    xl: createDictionary(sizeScale.map((value) => [value, b.styleDef(`row-cols-xl-${value}`)])),
+    span: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-${value}`)])),
+    sm: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-sm-${value}`)])),
+    md: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-md-${value}`)])),
+    lg: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-lg-${value}`)])),
+    xl: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-xl-${value}`)])),
 };
 
 export interface IRowElementData {
-    span?: SizeScale;
-    sm?: SizeScale;
-    md?: SizeScale;
-    lg?: SizeScale;
-    xl?: SizeScale;
+    span?: SpanScale;
+    sm?: SpanScale;
+    md?: SpanScale;
+    lg?: SpanScale;
+    xl?: SpanScale;
     "no-gutters"?: boolean;
 }
 

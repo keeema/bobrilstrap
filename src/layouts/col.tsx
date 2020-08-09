@@ -3,42 +3,42 @@ import { pick } from "../../helpers/objectHelper";
 import { createDictionary } from "../utilities/dict";
 import { IBaseElementData, BaseElement } from "../components/baseElement";
 
-export type SizeScale = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-export type ColSize = true | "auto" | SizeScale;
+export type SpanScale = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+export type ColSpan = true | "auto" | SpanScale;
 
 interface IColElementData {
-    span?: SizeScale;
-    offset?: SizeScale;
+    span?: SpanScale;
+    offset?: SpanScale;
 
-    sm?: ColSize;
-    md?: ColSize;
-    lg?: ColSize;
-    xl?: ColSize;
+    sm?: ColSpan;
+    md?: ColSpan;
+    lg?: ColSpan;
+    xl?: ColSpan;
 
-    "offset-sm"?: SizeScale;
-    "offset-md"?: SizeScale;
-    "offset-lg"?: SizeScale;
-    "offset-xl"?: SizeScale;
+    "offset-sm"?: SpanScale;
+    "offset-md"?: SpanScale;
+    "offset-lg"?: SpanScale;
+    "offset-xl"?: SpanScale;
 }
 
-export const sizeScale: SizeScale[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const colSizeScale: ColSize[] = [...sizeScale, true, "auto"];
+export const spanScale: SpanScale[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const colSpanScale: ColSpan[] = [...spanScale, true, "auto"];
 
 export const colStyles = {
     col: b.styleDef("col"),
 
-    span: createDictionary(sizeScale.map((value) => [value, b.styleDef(`col-${value}`)])),
-    offset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-${value}`)])),
+    span: createDictionary(spanScale.map((value) => [value, b.styleDef(`col-${value}`)])),
+    offset: createDictionary(spanScale.map((value) => [value, b.styleDef(`offset-${value}`)])),
 
-    sm: createDictionary(colSizeScale.map((value) => [value, b.styleDef(value !== true ? `col-sm-${value}` : "col-sm")])),
-    md: createDictionary(colSizeScale.map((value) => [value, b.styleDef(value !== true ? `col-md-${value}` : "col-md")])),
-    lg: createDictionary(colSizeScale.map((value) => [value, b.styleDef(value !== true ? `col-lg-${value}` : "col-lg")])),
-    xl: createDictionary(colSizeScale.map((value) => [value, b.styleDef(value !== true ? `col-xl-${value}` : "col-xl")])),
+    sm: createDictionary(colSpanScale.map((value) => [value, b.styleDef(value !== true ? `col-sm-${value}` : "col-sm")])),
+    md: createDictionary(colSpanScale.map((value) => [value, b.styleDef(value !== true ? `col-md-${value}` : "col-md")])),
+    lg: createDictionary(colSpanScale.map((value) => [value, b.styleDef(value !== true ? `col-lg-${value}` : "col-lg")])),
+    xl: createDictionary(colSpanScale.map((value) => [value, b.styleDef(value !== true ? `col-xl-${value}` : "col-xl")])),
 
-    smOffset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-sm-${value}`)])),
-    mdOffset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-md-${value}`)])),
-    lgOffset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-lg-${value}`)])),
-    xlOffset: createDictionary(sizeScale.map((value) => [value, b.styleDef(`offset-xl-${value}`)])),
+    smOffset: createDictionary(spanScale.map((value) => [value, b.styleDef(`offset-sm-${value}`)])),
+    mdOffset: createDictionary(spanScale.map((value) => [value, b.styleDef(`offset-md-${value}`)])),
+    lgOffset: createDictionary(spanScale.map((value) => [value, b.styleDef(`offset-lg-${value}`)])),
+    xlOffset: createDictionary(spanScale.map((value) => [value, b.styleDef(`offset-xl-${value}`)])),
 };
 
 export type IColData = IColElementData & IBaseElementData;

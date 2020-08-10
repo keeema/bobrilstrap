@@ -1,19 +1,19 @@
 import * as b from "bobril";
 import { BaseElement, IBaseElementData } from "./baseElement";
 import { pick } from "../../helpers/objectHelper";
-import { Size, sizeScale } from "../layouts/size";
+import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createDictionary } from "../utilities/dict";
 import { NavbarBrand } from "./navbarBrand";
 import { Nav } from "./nav";
 
-const sizeScaleOrDefault: (Size | true)[] = [...sizeScale, true];
+const breakpointsOrDefault: (Breakpoint | true)[] = [...breakpoints, true];
 
 export type NavbarColorSchema = "dark" | "light";
 
 export const navbarStyles = {
     navbar: b.styleDef("navbar"),
     expand: createDictionary(
-        sizeScaleOrDefault.map((size) => [size, b.styleDef(size !== true ? `navbar-expand-${size}` : "navbar-expand")])
+        breakpointsOrDefault.map((size) => [size, b.styleDef(size !== true ? `navbar-expand-${size}` : "navbar-expand")])
     ),
     colorSchema: createDictionary<NavbarColorSchema, b.IBobrilStyle>([
         ["dark", b.styleDef("navbar-dark")],
@@ -22,7 +22,7 @@ export const navbarStyles = {
 };
 
 interface INavbarElementData {
-    expand?: boolean | Size;
+    expand?: boolean | Breakpoint;
     "color-schema"?: NavbarColorSchema;
 }
 

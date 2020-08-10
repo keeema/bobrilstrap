@@ -59,3 +59,8 @@ const alignments: Alignment[] = [
 export const alignItems = createDictionary(alignments.map((value) => [value, b.styleDef(`align-items-${value}`)]));
 export const alignSelf = createDictionary(alignments.map((value) => [value, b.styleDef(`align-self-${value}`)]));
 export const justifyContent = createDictionary(alignments.map((value) => [value, b.styleDef(`justify-content-${value}`)]));
+
+export type VerticalAlignment = "baseline" | "top" | "middle" | "bottom" | "text-bottom" | "text-top";
+const verticalAlignments = ["baseline", "top", "middle", "bottom", "text-bottom", "text-top"];
+
+export const align = createDictionary(verticalAlignments.map((value) => [value, b.styleDef(`align-${value}`)]));

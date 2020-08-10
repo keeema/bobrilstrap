@@ -1,10 +1,10 @@
 import * as b from "bobril";
-import { NavigationHeader } from "./navigation/header";
+import { Navigation } from "./navigation/navigation";
 
 export function Main(data: b.IRouteHandlerData): b.IBobrilNode {
     return (
         <>
-            <NavigationHeader />
+            <Navigation />
             {data.activeRouteHandler()}
         </>
     );

@@ -5,6 +5,8 @@ import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createDictionary } from "../utilities/dict";
 import { NavbarBrand } from "./navbarBrand";
 import { Nav } from "./nav";
+import { NavbarToggler } from "./navbarToggler";
+import { NavbarCollapse } from "./navbarCollapse";
 
 const breakpointsOrDefault: (Breakpoint | true)[] = [...breakpoints, true];
 
@@ -33,7 +35,8 @@ export class Navbar extends BaseElement<INavbarData> {
 
     static Brand = NavbarBrand;
     static Nav = Nav;
-    // static Link = NavbarLink;
+    static Toggler = NavbarToggler;
+    static Collapse = NavbarCollapse;
 
     readonly componentProperties: (keyof INavbarElementData)[] = ["expand", "color-schema"];
 

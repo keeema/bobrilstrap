@@ -76,6 +76,6 @@ export class Col extends BaseElement<IColData> {
     }
 
     private get hasNoSpanStyle(): boolean {
-        return !(this.data.span || this.data.sm || this.data.lg || this.data.xl);
+        return !(this.data.span || this.data.sm || this.data.md || this.data.lg || this.data.xl);
     }
 }

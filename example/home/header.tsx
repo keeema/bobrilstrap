@@ -8,7 +8,7 @@ export function HomeHeader(): b.IBobrilNode {
         <main style={[masterHeadStyle]}>
             <Container>
                 <Row>
-                    <Col span={6} md={4} style={[margin({ side: "x", size: "auto" }), order(2, "md")]}>
+                    <Col span={12} md={4} style={[margin({ side: "x", size: "auto" }), order(2, "md")]}>
                         <div style={[images.bobrilstrap, margin({ side: "x", size: "auto" })]}></div>
                     </Col>
                     <Col md={8} style={[padding({ side: "r", size: 5, breakpoint: "md" }), textAlign("center"), textAlign("left", "md")]}>

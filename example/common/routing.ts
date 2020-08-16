@@ -12,7 +12,19 @@ export interface IRouteWithNavDefinition extends IRouteWithName {
 
 export function bobrilNavRoute(route: IRouteWithNavDefinition): b.IRoute {
     const subRoutes = route.subs.map((sub) => bobrilNavRoute(sub));
-    route.default && subRoutes.push(b.routeDefault(route.default));
-
+    if (route.default) {
+        const url = route.default.url!;
+        subRoutes.push(
+            b.routeDefault({
+                name: url + "Default",
+                url: url,
+                handler: {
+                    canActivate() {
+                        return b.createRedirectReplace(url);
+                    },
+                },
+            })
+        );
+    }
     return b.route(route, subRoutes);
 }

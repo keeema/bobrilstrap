@@ -22,7 +22,8 @@ const sidebarStyle = b.styleDef({
 });
 
 const linksStyle = b.styleDef({
-    maxHeight: "calc(100vh - 9rem)",
+    // maxHeight: "calc(100vh - 9rem)",
+    maxHeight: "100%",
     display: "block",
     overflowY: "auto",
     paddingTop: "1rem",

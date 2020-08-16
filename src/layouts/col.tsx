@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import { pick } from "../../helpers/objectHelper";
-import { createDictionary } from "../utilities/dict";
+import { createDictionary } from "../../helpers/dict";
 import { IBaseElementData, BaseElement } from "../components/baseElement";
 
 export type SpanScale = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;

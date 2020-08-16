@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { BaseElement, IBaseElementData } from "./baseElement";
 import { pick } from "../../helpers/objectHelper";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
-import { createDictionary } from "../utilities/dict";
+import { createDictionary } from "../../helpers/dict";
 import { NavbarBrand } from "./navbarBrand";
 import { Nav } from "./nav";
 import { NavbarToggler } from "./navbarToggler";

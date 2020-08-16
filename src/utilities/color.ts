@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createDictionary } from "./dict";
+import { createDictionary } from "../../helpers/dict";
 
 export type BackgroundGradientColor = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
 export type Color = BackgroundGradientColor | "muted" | "white";

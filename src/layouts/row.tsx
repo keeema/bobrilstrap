@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { IBaseElementData, BaseElement, spanScale, SpanScale } from "../../index";
 import { pick } from "../../helpers/objectHelper";
-import { createDictionary } from "../utilities/dict";
+import { createDictionary } from "../../helpers/dict";
 
 export const rowStyles = {
     row: b.styleDef("row"),

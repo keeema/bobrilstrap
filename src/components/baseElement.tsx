@@ -1,5 +1,6 @@
 import * as b from "bobril";
 import { omit } from "../../helpers/objectHelper";
+import { Tags } from "../../helpers/tags";
 
 export interface IAria {
     "aria-activedescendant"?: string;
@@ -58,6 +59,7 @@ export interface IAttrs {
 export type IAllAttrs = IAttrs & IAria & IDataAttrs & IKnownAttrs & b.IBubblingAndBroadcastEvents;
 
 export interface IBaseElementData extends b.IDataWithChildren, IAllAttrs {
+    as?: Tags;
     style?: b.IBobrilStyles;
     visible?: boolean;
     invisible?: boolean;
@@ -74,7 +76,7 @@ export abstract class BaseElement<TData extends IBaseElementData> extends b.Comp
     abstract readonly componentProperties: (keyof TData)[];
 
     render(): b.IBobrilNode {
-        const Tag = (this.tag || "div") as any;
+        const Tag = (this.data.as ?? this.tag ?? "div") as any;
         return (
             <Tag style={this.styles} {...this.plainData} {...this.componentAdditionalAttributes}>
                 {this.data.children}
@@ -94,7 +96,7 @@ export abstract class BaseElement<TData extends IBaseElementData> extends b.Comp
     }
 
     private get plainData(): IBaseElementData {
-        return omit(this.data, "style", ...this.componentProperties);
+        return omit(this.data, "style", "visible", "invisible", "as", ...this.componentProperties);
     }
 
     abstract get componentSpecificStyles(): b.IBobrilStyleArray;

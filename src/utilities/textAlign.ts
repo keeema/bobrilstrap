@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createFilledDictionary } from "./dict";
+import { createFilledDictionary } from "../../helpers/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
 export type TextAlign = "left" | "center" | "right";

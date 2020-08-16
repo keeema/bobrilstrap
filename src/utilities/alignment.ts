@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createDictionary } from "./dict";
+import { createDictionary } from "../../helpers/dict";
 
 export type Alignment =
     | "start"

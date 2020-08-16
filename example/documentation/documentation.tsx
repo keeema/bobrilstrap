@@ -1,10 +1,17 @@
 import * as b from "bobril";
-import { Container } from "../../src/layouts/container";
+import { Row, Container } from "../../index";
+import { PrimarySidebar } from "./primarySidebar/primarySidebar";
+import { Content } from "./content";
+import { SecondarySidebar } from "./secondarySidebar/secondarySidebar";
 
 export function Documentation(): b.IBobrilNode {
     return (
         <Container fluid>
-            <h1>Documentation</h1>
+            <Row>
+                <PrimarySidebar />
+                <SecondarySidebar />
+                <Content />
+            </Row>
         </Container>
     );
 }

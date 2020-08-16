@@ -19,7 +19,7 @@ export * from "./src/layouts/row";
 export * from "./src/utilities/alignment";
 export * from "./src/layouts/breakpoint";
 export * from "./src/utilities/color";
-export * from "./src/utilities/dict";
+export * from "./src/utilities/display";
 export * from "./src/utilities/order";
 export * from "./src/utilities/spacing";
 export * from "./src/utilities/textAlign";

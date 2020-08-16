@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { Button } from "../index";
+import { Button } from "../../index";
 
 const underline = b.styleDef({ textDecoration: "underline" });
 

@@ -1,6 +1,5 @@
 import * as b from "bobril";
-import { Carousel } from "../index";
-import { ICarouselActions } from "../src/components/carousel";
+import { Carousel, ICarouselActions } from "../../index";
 import { image1, image2, image3 } from "./carouselImages";
 
 const w100 = b.styleDef("w-100");

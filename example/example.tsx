@@ -3,5 +3,6 @@ import "../index";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import * as routes from "./routes";
+import { bobrilNavRoute } from "./common/routing";
 
-b.routes(b.route(routes.main, [b.route(routes.home), b.route(routes.documentation), b.routeDefault(routes.home)]));
+b.routes(b.route(routes.main, [b.route(routes.home), bobrilNavRoute(routes.documentation), b.routeDefault(routes.home)]));

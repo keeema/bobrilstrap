@@ -16,7 +16,7 @@ export const introductionRoute: IRouteWithNavDefinition = {
             subs: [
                 {
                     url: "test-1",
-                    name: "test-2",
+                    name: "test-1",
                     label: "Test 1",
                     subs: [],
                 },

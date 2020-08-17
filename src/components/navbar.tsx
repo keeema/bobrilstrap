@@ -14,6 +14,7 @@ export type NavbarColorSchema = "dark" | "light";
 
 export const navbarStyles = {
     navbar: b.styleDef("navbar"),
+    fixedTop: b.styleDef("fixed-top"),
     expand: createDictionary(
         breakpointsOrDefault.map((size) => [size, b.styleDef(size !== true ? `navbar-expand-${size}` : "navbar-expand")])
     ),
@@ -25,6 +26,7 @@ export const navbarStyles = {
 
 interface INavbarElementData {
     expand?: boolean | Breakpoint;
+    "fixed-top"?: boolean;
     "color-schema"?: NavbarColorSchema;
 }
 
@@ -38,7 +40,7 @@ export class Navbar extends BaseElement<INavbarData> {
     static Toggler = NavbarToggler;
     static Collapse = NavbarCollapse;
 
-    readonly componentProperties: (keyof INavbarElementData)[] = ["expand", "color-schema"];
+    readonly componentProperties: (keyof INavbarElementData)[] = ["expand", "color-schema", "fixed-top"];
 
     readonly tag: string = "nav";
 
@@ -47,6 +49,7 @@ export class Navbar extends BaseElement<INavbarData> {
         return [
             navbarStyles.navbar,
             data.expand !== false && navbarStyles.expand(data.expand ?? true),
+            data["fixed-top"] && navbarStyles.fixedTop,
             data["color-schema"] && navbarStyles.colorSchema(data["color-schema"]),
         ];
     }

@@ -21,16 +21,16 @@ export function SecondarySidebar(): b.IBobrilNode {
 
 const sidebarStyle = b.styleDef({
     order: 2,
-    paddingTop: "1.5rem",
     paddingBottom: "1.5rem",
     fontSize: ".875rem",
     position: "sticky",
     top: "4rem",
-    height: "subtract(100vh, 4rem)",
+    height: "calc(100vh - 4rem)",
     overflowY: "auto",
 });
 
 const sectionStyle = b.styleDef({
+    paddingTop: "1rem",
     paddingLeft: 0,
     borderLeft: "1px solid #eee",
     listStyleType: "none",

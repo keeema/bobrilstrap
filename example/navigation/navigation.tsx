@@ -13,7 +13,7 @@ export function Navigation(): b.IBobrilNode {
     const [collapsed, setCollapsed] = b.useState(true);
 
     return (
-        <Navbar expand="md" color-schema="dark" style={backgroundColor("dark")}>
+        <Navbar fixed-top expand="md" color-schema="dark" style={[navbarStyle, backgroundColor("dark")]}>
             <BobrilstrapIcon />
             <Navbar.Toggler onClick={() => setCollapsed(!collapsed)}>
                 <span style={togglerIcon}></span>
@@ -30,3 +30,7 @@ export function Navigation(): b.IBobrilNode {
         </Navbar>
     );
 }
+
+const navbarStyle = b.styleDef({
+    position: "sticky",
+});

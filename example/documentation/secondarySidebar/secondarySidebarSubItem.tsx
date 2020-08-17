@@ -1,26 +1,19 @@
 import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../common/routing";
-import { SecondarySidebarSubItem } from "./secondarySidebarSubItem";
 
-export function SecondarySidebarItem({ route }: { route: IRouteWithNavDefinition }): b.IBobrilNode {
+export function SecondarySidebarSubItem({ route }: { route: IRouteWithNavDefinition }): b.IBobrilNode {
     return (
         <li style={itemStyle}>
             <a href={b.urlOfRoute(route.name)} style={linkStyle}>
                 {route.label}
             </a>
-            {route.subs.length > 0 && (
-                <ul style={sectionStyle}>
-                    {route.subs.map((sub) => (
-                        <SecondarySidebarSubItem route={sub} />
-                    ))}
-                </ul>
-            )}
         </li>
     );
 }
 
 const itemStyle = b.styleDef({
     textDecoration: "none",
+    paddingLeft: "1rem",
 });
 
 const linkStyle = b.styleDef(
@@ -36,9 +29,3 @@ const linkStyle = b.styleDef(
         },
     }
 );
-
-const sectionStyle = b.styleDef({
-    paddingLeft: 0,
-    borderLeft: "1px solid #eee",
-    listStyleType: "none",
-});

@@ -2,14 +2,18 @@ import * as b from "bobril";
 import { Col } from "../../../index";
 import { display } from "../../../src/utilities/display";
 import { SecondarySidebarItem } from "./secondarySidebarItem";
+import { currentActiveSubRoute } from "../../common/routing";
+import { documentation } from "../routeDefs";
 
 export function SecondarySidebar(): b.IBobrilNode {
+    const currentFirstLevelDocumentationRoute = currentActiveSubRoute(documentation);
+    const currentSecondLevelDocumentationRoute = currentActiveSubRoute(currentFirstLevelDocumentationRoute);
     return (
         <Col as="nav" xl={2} style={[sidebarStyle, display("none"), display("block", "xl")]}>
             <ul style={sectionStyle}>
-                <SecondarySidebarItem>Test 1</SecondarySidebarItem>
-                <SecondarySidebarItem>Test 2</SecondarySidebarItem>
-                <SecondarySidebarItem>Test 3</SecondarySidebarItem>
+                {currentSecondLevelDocumentationRoute.subs.map((sub) => (
+                    <SecondarySidebarItem route={sub} />
+                ))}
             </ul>
         </Col>
     );

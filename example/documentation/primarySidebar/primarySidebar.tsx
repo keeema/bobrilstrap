@@ -1,14 +1,15 @@
 import * as b from "bobril";
 import { Col } from "../../../index";
 import { SidebarItem } from "./primarySidebarItem";
+import { documentation } from "../routeDefs";
 
 export function PrimarySidebar(): b.IBobrilNode {
     return (
         <Col md={3} xl={2} style={sidebarStyle}>
             <nav style={linksStyle}>
-                <SidebarItem>First</SidebarItem>
-                <SidebarItem active>Second</SidebarItem>
-                <SidebarItem>Third</SidebarItem>
+                {documentation.subs.map((sub) => (
+                    <SidebarItem route={sub} />
+                ))}
             </nav>
         </Col>
     );

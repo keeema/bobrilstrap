@@ -1,25 +1,30 @@
 import * as b from "bobril";
 import { Nav } from "../../../index";
+import { IRouteWithNavDefinition } from "../../common/routing";
 
-export function SidebarItem({ active, children }: { active?: boolean; children: string }): b.IBobrilNode {
+export function SidebarItem({ route }: { route: IRouteWithNavDefinition }): b.IBobrilNode {
+    const mainItemActive = b.isActive(route.name);
     return (
-        <div style={[sidebarItemStyle, active && sidebarItemActiveStyle]}>
-            <a href="#" style={[sidebarLinkStyle, active && sidebarLinkActiveStyle]}>
-                {children}
+        <div style={[sidebarItemStyle, mainItemActive && sidebarItemActiveStyle]}>
+            <a href={b.urlOfRoute(route.name)} style={[sidebarLinkStyle, mainItemActive && sidebarLinkActiveStyle]}>
+                {route.label}
             </a>
-            {active && (
+            {mainItemActive && (
                 <Nav as="ul" style={navStyle}>
-                    <Nav.Item>
-                        <Nav.Link style={navItemLinkStyle}>Test 1</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link active style={[navItemLinkStyle, active && navItemLinkActiveStyle]}>
-                            Test 2
-                        </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link style={navItemLinkStyle}>Test 3</Nav.Link>
-                    </Nav.Item>
+                    {route.subs.map((sub) => {
+                        const subActive = b.isActive(sub.name);
+                        return (
+                            <Nav.Item>
+                                <Nav.Link
+                                    href={b.urlOfRoute(sub.name)}
+                                    active={subActive}
+                                    style={[navItemLinkStyle, subActive && navItemLinkActiveStyle]}
+                                >
+                                    {sub.label}
+                                </Nav.Link>
+                            </Nav.Item>
+                        );
+                    })}
                 </Nav>
             )}
         </div>

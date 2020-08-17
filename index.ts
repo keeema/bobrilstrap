@@ -6,6 +6,7 @@ export * from "./src/components/carouselControl";
 export * from "./src/components/carouselIndicators";
 export * from "./src/components/carouselInner";
 export * from "./src/components/carouselItem";
+export * from "./src/components/collapse";
 export * from "./src/components/nav";
 export * from "./src/components/navItem";
 export * from "./src/components/navLink";

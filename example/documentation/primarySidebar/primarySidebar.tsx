@@ -14,7 +14,7 @@ export function PrimarySidebar(): b.IBobrilNode {
             <Button variant="dark" onClick={() => setCollapsed(!collapsed)} style={(margin("auto"), display("none", "md"))}>
                 Part
             </Button>
-            <Collapse as="nav" style={linksStyle} collapsed={collapsed} onClick={() => setCollapsed(true)}>
+            <Collapse as="nav" style={linksStyle} collapsed={collapsed} onClick={() => setCollapsed(smallDevice)}>
                 {documentation.subs.map((sub) => (
                     <SidebarItem route={sub} />
                 ))}

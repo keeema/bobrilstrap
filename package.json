@@ -23,7 +23,7 @@
         "example": "example/example.tsx",
         "title": "Bobrilstrap 4",
         "additionalResourcesDirectory": "example/assets",
-        "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
+        "head": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
         "compilerOptions": {
             "declaration": true,
             "strict": true,
@@ -43,12 +43,12 @@
     },
     "dependencies": {
         "@types/bootstrap": "^4.5.0",
+        "@types/jquery": "^3.3.38",
         "bobril": "^14.8.0",
         "bootstrap": "^4.5.0"
     },
     "devDependencies": {
         "@popperjs/core": "^2.4.0",
-        "@types/jquery": "^3.3.38",
         "@typescript-eslint/eslint-plugin": "^2.30.0",
         "@typescript-eslint/parser": "^2.30.0",
         "eslint": "^6.8.0",

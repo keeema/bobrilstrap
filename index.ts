@@ -19,6 +19,7 @@ export * from "./src/layouts/container";
 export * from "./src/layouts/row";
 export * from "./src/utilities/alignment";
 export * from "./src/layouts/breakpoint";
+export * from "./src/utilities/clearfix";
 export * from "./src/utilities/color";
 export * from "./src/utilities/display";
 export * from "./src/utilities/order";

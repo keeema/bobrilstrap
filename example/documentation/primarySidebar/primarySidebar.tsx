@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { Col, Button, display } from "../../../index";
+import { Col, Button, display, Collapse, clearfix } from "../../../index";
 import { SidebarItem } from "./primarySidebarItem";
 import { documentation } from "../routeDefs";
 
@@ -24,11 +24,11 @@ export function PrimarySidebar(): b.IBobrilNode {
             <Button variant="dark" onClick={() => setCollapsed(!collapsed)} style={display("none", "md")}>
                 Part
             </Button>
-            <nav style={[linksStyle, collapsed && display("none")]} onClick={() => setCollapsed(smallDevice())}>
+            <Collapse as="nav" collapsed={collapsed} style={[clearfix, linksStyle]} onClick={() => setCollapsed(smallDevice())}>
                 {documentation.subs.map((sub) => (
                     <SidebarItem route={sub} />
                 ))}
-            </nav>
+            </Collapse>
         </Col>
     );
 }

@@ -23,5 +23,6 @@ export * from "./src/utilities/clearfix";
 export * from "./src/utilities/color";
 export * from "./src/utilities/display";
 export * from "./src/utilities/order";
+export * from "./src/utilities/sizing";
 export * from "./src/utilities/spacing";
 export * from "./src/utilities/textAlign";

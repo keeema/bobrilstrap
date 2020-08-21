@@ -1,7 +1,8 @@
 import * as b from "bobril";
-import { Col, Button, display, Collapse, clearfix } from "../../../index";
+import { Col, Button, display, Collapse, margin } from "../../../index";
 import { SidebarItem } from "./primarySidebarItem";
 import { documentation } from "../routeDefs";
+import { textAlign } from "../../../src/utilities/textAlign";
 
 export function PrimarySidebar(): b.IBobrilNode {
     const isSmallDevice = (): boolean => window.innerWidth < 768;
@@ -21,10 +22,19 @@ export function PrimarySidebar(): b.IBobrilNode {
 
     return (
         <Col span={12} md={3} xl={2} style={[sidebarStyle, smallDevice() ? smallDeviceHeight : standardHeight]}>
-            <Button variant="dark" onClick={() => setCollapsed(!collapsed)} style={display("none", "md")}>
+            <Button
+                variant="dark"
+                onClick={() => setCollapsed(!collapsed)}
+                style={[display("none", "md"), margin("auto"), display("block")]}
+            >
                 Part
             </Button>
-            <Collapse as="nav" collapsed={collapsed} style={[clearfix, linksStyle]} onClick={() => setCollapsed(smallDevice())}>
+            <Collapse
+                as="nav"
+                collapsed={collapsed}
+                style={[linksStyle, textAlign("center"), textAlign("left", "md")]}
+                onClick={() => setCollapsed(smallDevice())}
+            >
                 {documentation.subs.map((sub) => (
                     <SidebarItem route={sub} />
                 ))}

@@ -1,5 +1,7 @@
 import * as b from "bobril";
 import { IBaseElementData, BaseElement } from "./baseElement";
+import { Breakpoint, breakpoints } from "../layouts/breakpoint";
+import { createFilledDictionary } from "../../helpers/dict";
 
 export type ButtonVariant =
     | "primary"
@@ -37,21 +39,23 @@ export const buttonStyles = {
     "outline-light": b.styleDef("btn-outline-light"),
     "outline-dark": b.styleDef("btn-outline-dark"),
     "outline-link": b.styleDef("btn-outline-link"),
+    sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`btn-${breakpoint}`)])),
 };
 
 export interface IButtonData extends IBaseElementData {
     variant?: ButtonVariant;
     href?: string;
+    size?: Breakpoint;
 }
 
 export class Button extends BaseElement<IButtonData> {
-    readonly componentProperties: (keyof IButtonData)[] = ["variant" /* , href */];
+    readonly componentProperties: (keyof IButtonData)[] = ["variant", "breakpoint" /* , href */];
 
     get tag(): string {
         return this.data.href ? "a" : "button";
     }
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [buttonStyles.btn, buttonStyles[this.data.variant ?? "primary"]];
+        return [buttonStyles.btn, buttonStyles[this.data.variant ?? "primary"], this.data.size && buttonStyles.sizes(this.data.size)];
     }
 }

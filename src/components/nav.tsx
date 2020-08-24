@@ -32,7 +32,9 @@ export class Nav extends BaseElement<INavData> {
 
     readonly componentProperties: (keyof INavElementData)[] = ["pills", "fill", "justified", "tabs", "navbar"];
 
-    readonly tag: string = "nav";
+    get tag(): string {
+        return "nav";
+    }
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
         const data = pick(this.data, ...this.componentProperties);

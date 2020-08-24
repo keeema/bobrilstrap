@@ -42,7 +42,9 @@ export class Navbar extends BaseElement<INavbarData> {
 
     readonly componentProperties: (keyof INavbarElementData)[] = ["expand", "color-schema", "fixed-top"];
 
-    readonly tag: string = "nav";
+    get tag(): string {
+        return "nav";
+    }
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
         const data = pick(this.data, ...this.componentProperties);

@@ -13,7 +13,9 @@ export class NavbarToggler extends BaseElement<INavbarTogglerData> {
     static id: string = "bobrilstrap-navbar-toggler";
     readonly componentProperties: (keyof INavbarTogglerElementData)[] = [];
 
-    readonly tag: string = "button";
+    get tag(): string {
+        return "button";
+    }
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
         return [navbarTogglerStyles.navbarToggler];

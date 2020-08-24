@@ -15,7 +15,9 @@ export class NavbarBrand extends BaseElement<INavbarBrandData> {
     static id: string = "bobrilstrap-navbar-brand";
     readonly componentProperties: (keyof INavbarBrandElementData)[] = ["href"];
 
-    readonly tag: string = "a";
+    get tag(): string {
+        return "a";
+    }
 
     get componentAdditionalAttributes(): INavbarBrandData {
         return { href: this.data.href ?? "javascript:void(0)" };

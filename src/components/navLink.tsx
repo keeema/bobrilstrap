@@ -19,7 +19,9 @@ export class NavLink extends BaseElement<INavLinkData> {
     static id: string = "bobrilstrap-nav-link";
     readonly componentProperties: (keyof INavLinkElementData)[] = ["disabled", "active", "href"];
 
-    readonly tag: string = "a";
+    get tag(): string {
+        return "a";
+    }
 
     get componentAdditionalAttributes(): INavLinkData {
         return { href: this.data.href ?? "javascript:void(0)" };

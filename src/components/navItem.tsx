@@ -13,7 +13,9 @@ export class NavItem extends BaseElement<INavItemData> {
     static id: string = "bobrilstrap-nav-item";
     readonly componentProperties: (keyof INavItemElementData)[] = [];
 
-    readonly tag: string = "li";
+    get tag(): string {
+        return "li";
+    }
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
         return [navItemStyles.navItem];

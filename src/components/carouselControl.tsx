@@ -11,13 +11,19 @@ export const carouselControlStyles = {
 export interface ICarouselControlData extends IBaseElementData {}
 
 abstract class CarouselControl extends BaseElement<ICarouselControlData> {
-    readonly tag: string = "a";
     readonly componentProperties: (keyof ICarouselControlData)[] = [];
-    readonly componentAdditionalAttributes: IAttrs = { href: "javascript:void(0);" };
+    get tag(): string {
+        return "a";
+    }
+    get componentAdditionalAttributes(): IAttrs {
+        return { href: "javascript:void(0);" };
+    }
 }
 
 abstract class CarouselControlIcon extends BaseElement<ICarouselControlData> {
-    readonly tag: string = "span";
+    get tag(): string {
+        return "span";
+    }
     readonly componentProperties: (keyof ICarouselControlData)[] = [];
 }
 
@@ -40,6 +46,9 @@ export class CarouselControlPrev extends CarouselControl {
 export class CarouselControlNext extends CarouselControl {
     static id: string = "bobrilstrap-carousel-control-next";
     static Icon = CarouselControlNextIcon;
-    readonly componentAdditionalAttributes: IAttrs = { href: "javascript:void(0);" };
     readonly componentSpecificStyles: b.IBobrilStyleArray = [carouselControlStyles.carouselControlNext];
+
+    get componentAdditionalAttributes(): IAttrs {
+        return { href: "javascript:void(0);" };
+    }
 }

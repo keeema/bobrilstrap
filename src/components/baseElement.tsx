@@ -71,12 +71,18 @@ export const baseStyles = {
 };
 
 export abstract class BaseElement<TData extends IBaseElementData> extends b.Component<TData> {
-    readonly tag?: string;
-    readonly componentAdditionalAttributes?: IAllAttrs;
+    get componentAdditionalAttributes(): IAllAttrs {
+        return {};
+    }
+
     abstract readonly componentProperties: (keyof TData)[];
 
+    get tag(): string {
+        return "div";
+    }
+
     render(): b.IBobrilNode {
-        const Tag = (this.data.as ?? this.tag ?? "div") as any;
+        const Tag = (this.data.as ?? this.tag) as any;
         return (
             <Tag style={this.styles} {...this.plainData} {...this.componentAdditionalAttributes}>
                 {this.data.children}

@@ -2,6 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { LoremIpsum } from "../../../../common/loremIpsim";
 import { Anchor } from "../../../../common/anchor";
+import { Code } from "../../../../common/code";
 
 export const introductionRoute: IRouteWithNavDefinition = {
     url: "introduction",
@@ -45,8 +46,7 @@ export function Introduction(): b.IBobrilNode {
             <Anchor name="quick-start">
                 <h2>Quick Start</h2>
             </Anchor>
-            <pre>
-                <code class="language-tsx">{`import * as b from "bobril";
+            <Code language="tsx">{`import * as b from "bobril";
 interface IHelloData {
   name: string;
   children: b.IBobrilChildren;
@@ -68,8 +68,7 @@ b.init(() => (
     </p>
   </Hello>
 ));
-`}</code>
-            </pre>
+`}</Code>
             <LoremIpsum />
             <LoremIpsum />
             <Anchor name="test-1">

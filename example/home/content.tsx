@@ -16,8 +16,8 @@ export function HomeContent(): b.IBobrilNode {
                 <Paragraph>
                     <h4>Easy to use</h4>
                     <p>
-                        Bobrilstrap and its components are ready as TSX components which are supposed to be used the standard way is known
-                        from Bobril or React.
+                        Bobrilstrap is ready in form of TSX components which are supposed to be used the standard way which is known from
+                        Bobril or React.
                     </p>
                 </Paragraph>
             </Row>

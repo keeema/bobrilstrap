@@ -197,7 +197,7 @@ export function Grid(): b.IBobrilNode {
             </Anchor>
             <Example>
                 <Container>
-                    <Row style={justifyContent("center", "md")} class="row justify-content-md-center">
+                    <Row style={justifyContent("center", "md")}>
                         <Col lg={2} style={gridStyle}>
                             1 of 3
                         </Col>
@@ -220,7 +220,7 @@ export function Grid(): b.IBobrilNode {
                 </Container>
             </Example>
             <Code language="tsx">{`<Container>
-    <Row class="row justify-content-md-center">
+    <Row style={justifyContent("center", "md")}>
         <Col lg={2}>1 of 3</Col>
         <Col md="auto">Variable width content</Col>
         <Col lg={2}>3 of 3</Col>

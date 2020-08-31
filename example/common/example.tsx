@@ -13,6 +13,7 @@ const exampleRowStyle = b.styleDef({
     paddingTop: ".75rem",
     paddingBottom: ".75rem",
     border: "1px solid rgba(86, 61, 124, .2)",
+    marginBottom: -14,
 });
 
 const exampleStyle = b.styleDef({

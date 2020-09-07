@@ -3,7 +3,7 @@ import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/anchor";
 import { Code } from "../../../../common/code";
 import { Example } from "../../../../common/example";
-import { Container, Col, Row } from "../../../../../index";
+import { Container, Col, Row, Table, font, display } from "../../../../../index";
 import { width } from "../../../../../src/utilities/sizing";
 import { justifyContent } from "../../../../../src/utilities/alignment";
 
@@ -17,6 +17,12 @@ export const gridRoute: IRouteWithNavDefinition = {
             url: "how-it-works",
             name: "how-it-works",
             label: "How it works",
+            subs: [],
+        },
+        {
+            url: "grid-options",
+            name: "grid-options",
+            label: "Grid options",
             subs: [],
         },
         {
@@ -92,6 +98,98 @@ export function Grid(): b.IBobrilNode {
                 The above example creates three equal-width columns on small, medium, large, and extra large devices using our predefined
                 grid classes. Those columns are centered in the page with the parent .container.
             </p>
+            <Anchor name="grid-options">
+                <h2>Grid options</h2>
+            </Anchor>
+            <p>See how aspects of the Bootstrap grid system work across multiple devices with a handy table.</p>
+            <Table bordered striped style={[tableStyle, display("block"), display("table", "sm")]}>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            <span style={font("bold")}>Extra small</span>
+                            <br />
+                            <span style={font("normal")}>{"<576px"}</span>
+                        </th>
+                        <th>
+                            <span style={font("bold")}>Small</span>
+                            <br />
+                            <span style={font("normal")}>{"≥576px"}</span>
+                        </th>
+                        <th>
+                            <span style={font("bold")}>Medium</span>
+                            <br />
+                            <span style={font("normal")}>{"≥768px"}</span>
+                        </th>
+                        <th>
+                            <span style={font("bold")}>Large</span>
+                            <br />
+                            <span style={font("normal")}>{"≥992px"}</span>
+                        </th>
+                        <th>
+                            <span style={font("bold")}>Extra large</span>
+                            <br />
+                            <span style={font("normal")}>{"≥1200px"}</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            <span style={font("bold")}>Max container width</span>
+                        </th>
+                        <td>None (auto)</td>
+                        <td>540px</td>
+                        <td>720px</td>
+                        <td>960px</td>
+                        <td>1140px</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span style={font("bold")}>Component</span>
+                        </th>
+                        <td>
+                            <code>{`<Col>`}</code>
+                        </td>
+                        <td>
+                            <code>{`<Col sm>`}</code>
+                        </td>
+                        <td>
+                            <code>{`<Col md>`}</code>
+                        </td>
+                        <td>
+                            <code>{`<Col lg>`}</code>
+                        </td>
+                        <td>
+                            <code>{`<Col xl>`}</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span style={font("bold")}># of columns</span>
+                        </th>
+                        <td colspan="5">12</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span style={font("bold")}>Gutter width</span>
+                        </th>
+                        <td colspan="5">30px (15px on each side of a column)</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span style={font("bold")}>Nestable</span>
+                        </th>
+                        <td colspan="5">Yes</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span style={font("bold")}>Column ordering</span>
+                        </th>
+                        <td colspan="5">Yes</td>
+                    </tr>
+                </tbody>
+            </Table>
             <Anchor name="auto-layout-columns">
                 <h2>Auto-layout columns</h2>
             </Anchor>
@@ -234,3 +332,10 @@ export function Grid(): b.IBobrilNode {
         </>
     );
 }
+
+const tableStyle = b.styleDef({
+    overflowX: "auto",
+    width: "100%",
+    maxWidth: "100%",
+    marginBottom: "1rem",
+});

@@ -49,7 +49,7 @@ export interface IButtonData extends IBaseElementData {
 }
 
 export class Button extends BaseElement<IButtonData> {
-    readonly componentProperties: (keyof IButtonData)[] = ["variant", "breakpoint" /* , href */];
+    readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , href */];
 
     get tag(): string {
         return this.data.href ? "a" : "button";

@@ -56,8 +56,8 @@ const navStyle = b.styleDef({ display: "block" });
 const navItemLinkStyle = b.styleDef(
     {
         display: "block",
-        padding: ".25rem 1.5rem",
-        fontSize: "90%",
+        padding: ".25rem 2.25rem",
+        fontSize: "80%",
         color: "rgba(0, 0, 0, .65)",
     },
     {

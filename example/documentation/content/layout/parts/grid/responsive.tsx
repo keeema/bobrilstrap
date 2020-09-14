@@ -227,12 +227,12 @@ export function Responsive(): b.IBobrilNode {
                 </Container>
             </Example>
             <Code language="tsx">{`<Container>
-<Row span={3}>
-<Col>Column</Col>
-<Col>Column</Col>
-<Col>Column</Col>
-<Col>Column</Col>
-</Row>
+    <Row span={3}>
+        <Col>Column</Col>
+        <Col>Column</Col>
+        <Col>Column</Col>
+        <Col>Column</Col>
+    </Row>
 </Container>`}</Code>
             <Example>
                 <Container>
@@ -245,12 +245,12 @@ export function Responsive(): b.IBobrilNode {
                 </Container>
             </Example>
             <Code language="tsx">{`<Container>
-<Row span={4}>
-<Col>Column</Col>
-<Col>Column</Col>
-<Col>Column</Col>
-<Col>Column</Col>
-</Row>
+    <Row span={4}>
+        <Col>Column</Col>
+        <Col>Column</Col>
+        <Col>Column</Col>
+        <Col>Column</Col>
+    </Row>
 </Container>`}</Code>
             <Example>
                 <Container>
@@ -263,12 +263,12 @@ export function Responsive(): b.IBobrilNode {
                 </Container>
             </Example>
             <Code language="tsx">{`<Container>
-<Row span={1} sm={2} md={4}>
-<Col>Column</Col>
-<Col>Column</Col>
-<Col>Column</Col>
-<Col>Column</Col>
-</Row>
+    <Row span={1} sm={2} md={4}>
+        <Col>Column</Col>
+        <Col>Column</Col>
+        <Col>Column</Col>
+        <Col>Column</Col>
+    </Row>
 </Container>`}</Code>
         </>
     );

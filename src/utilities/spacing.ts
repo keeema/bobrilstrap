@@ -4,11 +4,11 @@ import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
 export type SpacingType = "m" | "p";
 export type Side = "t" | "b" | "l" | "r" | "x" | "y" | "";
-export type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | "auto";
+export type SpacingSize = -5 | -4 | -3 | -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | "auto";
 
 const spacingTypes: SpacingType[] = ["m", "p"];
 const sides: Side[] = ["t", "b", "l", "r", "x", "y", ""];
-const spacingSizes: SpacingSize[] = [0, 1, 2, 3, 4, 5, "auto"];
+const spacingSizes: SpacingSize[] = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, "auto"];
 
 const spacings = createFilledDictionary(
     spacingTypes.map((spacingType) => [
@@ -16,7 +16,12 @@ const spacings = createFilledDictionary(
         createFilledDictionary(
             sides.map((side) => [
                 side,
-                createFilledDictionary(spacingSizes.map((size) => [size, b.styleDef(`${spacingType}${side}-${size}`)])),
+                createFilledDictionary(
+                    spacingSizes.map((size) => [
+                        size,
+                        b.styleDef(`${spacingType}${side}-${size === "auto" || size >= 0 ? size : `n${Math.abs(size)}`}`),
+                    ])
+                ),
             ])
         ),
     ])
@@ -32,7 +37,12 @@ export const spacingOnBreakpoints = createFilledDictionary(
                     breakpoints.map((breakpoint) => [
                         breakpoint,
                         createFilledDictionary(
-                            spacingSizes.map((size) => [size, b.styleDef(`${spacingType}${side}-${breakpoint}-${size}`)])
+                            spacingSizes.map((size) => [
+                                size,
+                                b.styleDef(
+                                    `${spacingType}${side}-${breakpoint}-${size === "auto" || size >= 0 ? size : `n${Math.abs(size)}`}`
+                                ),
+                            ])
                         ),
                     ])
                 ),

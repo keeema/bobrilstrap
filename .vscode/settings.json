@@ -6,14 +6,20 @@
         "dist": true
     },
     "cSpell.words": [
+        "Bobrilstrap",
+        "Bobrilstrap’s",
         "bbcore",
         "bobril",
         "bobrilstrap",
         "bootstrap",
         "darcula",
         "downlevel",
+        "flexbox",
+        "lightgray",
+        "mixins",
         "popperjs",
         "prismjs",
+        "s",
         "tomasrut",
         "typeahead"
     ]

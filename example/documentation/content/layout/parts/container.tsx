@@ -3,6 +3,7 @@ import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/anchor";
 import { Code } from "../../../../common/code";
 import { Table, font, display, textColor } from "../../../../../index";
+import { tableStyle } from "../../../../common/styles";
 
 export const containersRoute: IRouteWithNavDefinition = {
     url: "containers",
@@ -23,9 +24,9 @@ export const containersRoute: IRouteWithNavDefinition = {
             subs: [],
         },
         {
-            url: "responsive",
-            name: "responsive",
-            label: "Responsive",
+            url: "responsive-breakpoints",
+            name: "responsive-breakpoints",
+            label: "Responsive breakpoints",
             subs: [],
         },
     ],
@@ -54,8 +55,8 @@ export function Container(): b.IBobrilNode {
             <Code language="tsx">{`<Container fluid>
   <!-- Content here -->
 </Container>`}</Code>
-            <Anchor name="responsive">
-                <h2>Responsive</h2>
+            <Anchor name="responsive-breakpoints">
+                <h2>Responsive breakpoints</h2>
             </Anchor>
             <p>
                 Responsive containers allow you to specify a class that is 100% wide until the specified breakpoint is reached, after which
@@ -164,10 +165,3 @@ export function Container(): b.IBobrilNode {
         </>
     );
 }
-
-const tableStyle = b.styleDef({
-    overflowX: "auto",
-    width: "100%",
-    maxWidth: "100%",
-    marginBottom: "1rem",
-});

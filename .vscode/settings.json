@@ -6,9 +6,15 @@
         "dist": true
     },
     "cSpell.words": [
+        "bbcore",
         "bobril",
         "bobrilstrap",
         "bootstrap",
+        "darcula",
+        "downlevel",
+        "popperjs",
+        "prismjs",
+        "tomasrut",
         "typeahead"
     ]
 }

@@ -19,6 +19,7 @@
         "main": "index.ts"
     },
     "bobril": {
+        "bbVersion": "1.26.3",
         "buildOutputDir": "docs",
         "example": "example/example.tsx",
         "title": "Bobrilstrap 4",

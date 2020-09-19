@@ -8,6 +8,7 @@ import { GridOptions } from "./gridOptions";
 import { AutoLayoutColumns } from "./autoLayoutColumns";
 import { gridStyle } from "../../../../../common/styles";
 import { Responsive } from "./responsive";
+import { Alignment } from "./alignment";
 
 export const gridRoute: IRouteWithNavDefinition = {
     url: "grid",
@@ -95,6 +96,37 @@ export const gridRoute: IRouteWithNavDefinition = {
                 },
             ],
         },
+        {
+            url: "alignment",
+            name: "alignment",
+            label: "Alignment",
+            subs: [
+                {
+                    url: "vertical-alignment",
+                    name: "vertical-alignment",
+                    label: "Vertical alignment",
+                    subs: [],
+                },
+                {
+                    url: "horizontal-alignment",
+                    name: "horizontal-alignment",
+                    label: "Horizontal alignment",
+                    subs: [],
+                },
+                {
+                    url: "no-gutters",
+                    name: "no-gutters",
+                    label: "No gutters",
+                    subs: [],
+                },
+                {
+                    url: "column-wrapping",
+                    name: "column-wrapping",
+                    label: "Column wrapping",
+                    subs: [],
+                },
+            ],
+        },
     ],
 };
 
@@ -138,6 +170,7 @@ export function Grid(): b.IBobrilNode {
             <GridOptions />
             <AutoLayoutColumns />
             <Responsive />
+            <Alignment />
         </>
     );
 }

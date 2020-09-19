@@ -8,3 +8,5 @@ export const tableStyle = b.styleDef({
 });
 
 export const gridStyle = b.styleDef({ border: "1px solid gray", backgroundColor: "lightgray", padding: 15 });
+
+export const rowBox = b.styleDef({ minHeight: "10.5rem", backgroundColor: "#e6e6e6" });

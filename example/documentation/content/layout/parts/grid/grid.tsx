@@ -1,14 +1,11 @@
 import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../../common/routing";
-import { Anchor } from "../../../../../common/anchor";
-import { Code } from "../../../../../common/code";
-import { Example } from "../../../../../common/example";
-import { Container, Col, Row } from "../../../../../../index";
 import { GridOptions } from "./gridOptions";
 import { AutoLayoutColumns } from "./autoLayoutColumns";
-import { gridStyle } from "../../../../../common/styles";
 import { Responsive } from "./responsive";
 import { Alignment } from "./alignment";
+import { Reordering } from "./reordering";
+import { HowItWorks } from "./howItWorks";
 
 export const gridRoute: IRouteWithNavDefinition = {
     url: "grid",
@@ -125,7 +122,51 @@ export const gridRoute: IRouteWithNavDefinition = {
                     label: "Column wrapping",
                     subs: [],
                 },
+                {
+                    url: "column-breaks",
+                    name: "column-breaks",
+                    label: "Column breaks",
+                    subs: [],
+                },
             ],
+        },
+        {
+            url: "reordering",
+            name: "reordering",
+            label: "Reordering",
+            subs: [
+                {
+                    url: "order-utilities",
+                    name: "order-utilities",
+                    label: "Order utilities",
+                    subs: [],
+                },
+                {
+                    url: "offsetting-columns",
+                    name: "offsetting-columns",
+                    label: "Offsetting columns",
+                    subs: [
+                        {
+                            url: "offsets",
+                            name: "offsets",
+                            label: "offsets",
+                            subs: [],
+                        },
+                        {
+                            url: "margin-utilities",
+                            name: "margin-utilities",
+                            label: "Margin utilities",
+                            subs: [],
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            url: "nesting",
+            name: "nesting",
+            label: "Nesting",
+            subs: [],
         },
     ],
 };
@@ -134,43 +175,12 @@ export function Grid(): b.IBobrilNode {
     return (
         <>
             <h1>Grid</h1>
-            <Anchor name="how-it-works">
-                <h2>How it works</h2>
-            </Anchor>
-            <p>
-                Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with flexbox
-                and is fully responsive.
-            </p>
-            <Example>
-                <Container>
-                    <Row>
-                        <Col sm style={gridStyle}>
-                            One of three columns.
-                        </Col>
-                        <Col sm style={gridStyle}>
-                            One of three columns.
-                        </Col>
-                        <Col sm style={gridStyle}>
-                            One of three columns.
-                        </Col>
-                    </Row>
-                </Container>
-            </Example>
-            <Code language="tsx">{`<Container>
-    <Row>
-        <Col sm>One of three columns.</Col>
-        <Col sm>One of three columns.</Col>
-        <Col sm>One of three columns.</Col>
-    </Row>
-</Container>`}</Code>
-            <p>
-                The above example creates three equal-width columns on small, medium, large, and extra large devices using our predefined
-                grid classes. Those columns are centered in the page with the parent .container.
-            </p>
+            <HowItWorks />
             <GridOptions />
             <AutoLayoutColumns />
             <Responsive />
             <Alignment />
+            <Reordering />
         </>
     );
 }

@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../common/routing";
-import { Documentation } from "./documentation";
+import { Documentation } from "./Documentation";
 import { gettingStarted } from "./content/gettingStarted/routeDefs";
 import { layout } from "./content/layout/routeDefs";
 

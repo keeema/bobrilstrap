@@ -1,6 +1,6 @@
 import * as b from "bobril";
-import { Main } from "./main";
-import { Home } from "./home/home";
+import { Main } from "./Main";
+import { Home } from "./home/Home";
 import { IRouteWithName } from "./common/routing";
 import { documentation as documentationDef } from "./documentation/routeDefs";
 

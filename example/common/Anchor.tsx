@@ -1,5 +1,41 @@
 import * as b from "bobril";
 
 export function Anchor({ children, name, params }: { children: b.IBobrilChildren; name?: string; params?: b.Params }): b.IBobrilNode {
-    return b.anchor(children, name, params);
+    const me = b.useRef(null);
+    const lastTransitionRunCount = b.useState<number | undefined>(undefined);
+
+    b.useEffect(() => {
+        const current = me.current;
+        current && handleAnchorRoute(current, lastTransitionRunCount, name, params);
+    });
+
+    return <span ref={me}>{children}</span>;
+}
+
+function handleAnchorRoute(
+    me: b.IBobrilCacheNode,
+    lastTransitionRunCount: b.IProp<number | undefined>,
+    name?: string,
+    params?: b.Params
+): void {
+    let routeName: string | undefined;
+    if (name) {
+        routeName = name;
+    } else {
+        const firstChild = (me.children && me.children[0]) as b.IBobrilCacheNode;
+        routeName = firstChild.attrs && firstChild.attrs.id;
+    }
+    if (!b.isActive(routeName, params)) {
+        lastTransitionRunCount(0);
+        return;
+    }
+    if (lastTransitionRunCount() === b.transitionRunCount) {
+        return;
+    }
+    scrollIntoView(b.getDomNode(me) as HTMLElement);
+    lastTransitionRunCount(b.transitionRunCount);
+}
+
+function scrollIntoView(el: HTMLElement, offset = 0): void {
+    window.scroll(0, el.offsetTop - offset);
 }

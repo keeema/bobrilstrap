@@ -1,7 +1,7 @@
 import * as b from "bobril";
 
 export function Anchor({ children, name, params }: { children: b.IBobrilChildren; name?: string; params?: b.Params }): b.IBobrilNode {
-    const me = b.useRef(null);
+    const me = b.useRef<b.IBobrilCacheNode | null>(null);
     const lastTransitionRunCount = b.useState<number | undefined>(undefined);
 
     b.useEffect(() => {
@@ -9,7 +9,7 @@ export function Anchor({ children, name, params }: { children: b.IBobrilChildren
         current && handleAnchorRoute(current, lastTransitionRunCount, name, params);
     });
 
-    return <span ref={me}>{children}</span>;
+    return <b.Fragment ref={me}>{children}</b.Fragment>;
 }
 
 function handleAnchorRoute(

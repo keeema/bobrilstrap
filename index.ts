@@ -1,4 +1,5 @@
 import "bootstrap";
+export * from "./src/components/Alert";
 export * from "./src/components/BaseElement";
 export * from "./src/components/Button";
 export * from "./src/components/Carousel";

@@ -2,6 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Code } from "../../../../common/Code";
+import { Lead } from "../../../../common/Lead";
 
 export const introductionRoute: IRouteWithNavDefinition = {
     url: "introduction",
@@ -28,7 +29,7 @@ export function Introduction(): b.IBobrilNode {
     return (
         <>
             <h1>Introduction</h1>
-            <p>Learn how to create application with Bobrilstrap.</p>
+            <Lead>Learn how to create application with Bobrilstrap.</Lead>
             <Anchor name="installation">
                 <h2>Installation</h2>
             </Anchor>

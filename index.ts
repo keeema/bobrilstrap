@@ -1,6 +1,8 @@
 import "bootstrap";
 export * from "./src/components/Alert";
+export * from "./src/components/Badge";
 export * from "./src/components/BaseElement";
+export * from "./src/components/Breadcrumb";
 export * from "./src/components/Button";
 export * from "./src/components/Carousel";
 export * from "./src/components/CarouselControl";
@@ -26,6 +28,7 @@ export * from "./src/utilities/color";
 export * from "./src/utilities/display";
 export * from "./src/utilities/font";
 export * from "./src/utilities/order";
+export * from "./src/utilities/screenReaders";
 export * from "./src/utilities/sizing";
 export * from "./src/utilities/spacing";
 export * from "./src/utilities/textAlign";

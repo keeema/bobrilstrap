@@ -20,6 +20,7 @@
             "}",
             "",
             "export class ${1/(.*)/${1:/capitalize}/} extends BaseElement<I${1/(.*)/${1:/capitalize}/}Data> {",
+            "    static id: string = \"bobrilstrap-${1}\";",
             "    readonly componentProperties: (keyof I${1/(.*)/${1:/capitalize}/}Data)[] = [];",
             "",
             "    get componentSpecificStyles(): b.IBobrilStyleArray {",

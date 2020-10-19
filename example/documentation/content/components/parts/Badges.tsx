@@ -131,11 +131,9 @@ export function Badges(): b.IBobrilNode {
                 ))}
             </Example>
             <Code language="tsx">
-                {`{(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map((variant) => (
-    <>
-        <Badge variant={variant}>{variant.toUpperCase()}</Badge>{" "}
-    </>
-))}`}
+                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map(
+                    (variant) => `<Badge variant="${variant}">${variant.toUpperCase()}</Badge>{" "}\n`
+                )}
             </Code>
             <Anchor name="badges-pills">
                 <h2>Pills</h2>
@@ -151,11 +149,9 @@ export function Badges(): b.IBobrilNode {
                 ))}
             </Example>
             <Code language="tsx">
-                {`{(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map((variant) => (
-    <>
-        <Badge variant={variant} pill>{variant.toUpperCase()}</Badge>{" "}
-    </>
-))}`}
+                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map(
+                    (variant) => `<Badge variant="${variant}" pill>${variant.toUpperCase()}</Badge>{" "}\n`
+                )}
             </Code>
             <Anchor name="badges-links">
                 <h2>Links</h2>
@@ -174,11 +170,9 @@ export function Badges(): b.IBobrilNode {
                 ))}
             </Example>
             <Code language="tsx">
-                {`{(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map((variant) => (
-    <>
-        <Badge variant={variant} href="#">{variant.toUpperCase()}</Badge>{" "}
-    </>
-))}`}
+                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map(
+                    (variant) => `<Badge variant="${variant}" href="#">${variant.toUpperCase()}</Badge>{" "}\n`
+                )}
             </Code>
         </>
     );

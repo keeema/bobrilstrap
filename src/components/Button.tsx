@@ -43,13 +43,15 @@ export const buttonStyles = {
 };
 
 export interface IButtonData extends IBaseElementData {
+    as?: "button" | "a" | "input";
     variant?: ButtonVariant;
     href?: string;
     size?: Breakpoint;
+    type?: "button" | "submit" | "reset";
 }
 
 export class Button extends BaseElement<IButtonData> {
-    readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , href */];
+    readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , href, type */];
 
     get tag(): string {
         return this.data.href ? "a" : "button";

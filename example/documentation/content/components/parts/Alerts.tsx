@@ -70,9 +70,9 @@ export function Alerts(): b.IBobrilNode {
                 ))}
             </Example>
             <Code language="tsx">
-                {`{(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as AlertVariant[]).map((variant) => (
-    <Alert variant={variant}>A simple {variant} alert — check it out!</Alert>
-))}`}
+                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as AlertVariant[]).map(
+                    (variant) => `<Alert variant="${variant}">A simple ${variant} alert — check it out!</Alert>\n`
+                )}
             </Code>
             <Anchor name="alerts-link-color">
                 <h2>Link color</h2>

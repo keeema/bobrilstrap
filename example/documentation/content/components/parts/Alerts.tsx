@@ -56,7 +56,9 @@ export const alertsRoute: IRouteWithNavDefinition = {
 export function Alerts(): b.IBobrilNode {
     return (
         <>
-            <h1>Alerts</h1>
+            <Anchor name="alerts">
+                <h1>Alerts</h1>
+            </Anchor>
             <Lead>
                 Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
             </Lead>

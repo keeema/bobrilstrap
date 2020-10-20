@@ -28,7 +28,9 @@ export const introductionRoute: IRouteWithNavDefinition = {
 export function Introduction(): b.IBobrilNode {
     return (
         <>
-            <h1>Introduction</h1>
+            <Anchor name="introduction">
+                <h1>Introduction</h1>
+            </Anchor>
             <Lead>Learn how to create application with Bobrilstrap.</Lead>
             <Anchor name="installation">
                 <h2>Installation</h2>

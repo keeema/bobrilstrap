@@ -20,7 +20,7 @@ export function Responsive(): b.IBobrilNode {
             </Anchor>
             <p>
                 For grids that are the same from the smallest of devices to the largest, use the <code>{`<Col>`}</code> component. Specify
-                <code>span=*</code> attribute when you need a particularly sized column.
+                <code>span=*</code> prop when you need a particularly sized column.
             </p>
             <Example>
                 <Container>
@@ -56,7 +56,7 @@ export function Responsive(): b.IBobrilNode {
                 <h3>Stacked horizontal</h3>
             </Anchor>
             <p>
-                Using a single set of <code>sm=*</code> attributes, you can create a basic grid system that starts out stacked and becomes
+                Using a single set of <code>sm=*</code> props, you can create a basic grid system that starts out stacked and becomes
                 horizontal at the small breakpoint (<code>sm</code>).
             </p>
             <Example>
@@ -97,8 +97,8 @@ export function Responsive(): b.IBobrilNode {
                 <h3>Mix and match</h3>
             </Anchor>
             <p>
-                Don’t want your columns to simply stack in some grid tiers? Use a combination of different attributes for each tier as
-                needed. See the example below for a better idea of how it all works.
+                Don’t want your columns to simply stack in some grid tiers? Use a combination of different props for each tier as needed.
+                See the example below for a better idea of how it all works.
             </p>
             <Example>
                 <Container>
@@ -192,9 +192,9 @@ export function Responsive(): b.IBobrilNode {
                 <h3>Row columns</h3>
             </Anchor>
             <p>
-                Use the responsive <code>{`<Row span="*">`}</code> or e.g. <code>{`<Row sm="*">`}</code> attributes to quickly set the
-                number of columns that best render your content and layout. Whereas normal <code>{`<Col span="*">`}</code> attributes apply
-                to the individual columns, the row columns classes are set on the parent <code>{`<Row>`}</code> as a shortcut.
+                Use the responsive <code>{`<Row span="*">`}</code> or e.g. <code>{`<Row sm="*">`}</code> props to quickly set the number of
+                columns that best render your content and layout. Whereas normal <code>{`<Col span="*">`}</code> props apply to the
+                individual columns, the row columns classes are set on the parent <code>{`<Row>`}</code> as a shortcut.
             </p>
             <p>Use these row columns classes to quickly create basic grid layouts or to control your card layouts.</p>
             <Example>

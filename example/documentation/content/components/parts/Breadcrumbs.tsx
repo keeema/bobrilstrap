@@ -30,7 +30,9 @@ export const breadcrumbsRoute: IRouteWithNavDefinition = {
 export function Breadcrumbs(): b.IBobrilNode {
     return (
         <>
-            <h1>Breadcrumbs</h1>
+            <Anchor name="breadcrumbs">
+                <h1>Breadcrumbs</h1>
+            </Anchor>
             <Lead>Indicate the current page’s location within a navigational hierarchy that automatically adds separators.</Lead>
             <Anchor name="breadcrumbs-examples">
                 <h2>Examples</h2>

@@ -17,7 +17,7 @@ export function Alignment(): b.IBobrilNode {
             </Anchor>
             <p>
                 For grids that are the same from the smallest of devices to the largest, use the <code>{`<Col>`}</code> component. Specify
-                <code>span=*</code> attribute when you need a particularly sized column.
+                <code>span=*</code> prop when you need a particularly sized column.
             </p>
             <Example>
                 <Container>

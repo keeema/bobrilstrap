@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createFilledDictionary } from "../../helpers/dict";
 
@@ -23,6 +23,9 @@ export type ButtonVariant =
 
 export const buttonStyles = {
     btn: b.styleDef("btn"),
+    block: b.styleDef("btn-block"),
+    active: b.styleDef("active"),
+    disabled: b.styleDef("disabled"),
     primary: b.styleDef("btn-primary"),
     secondary: b.styleDef("btn-secondary"),
     success: b.styleDef("btn-success"),
@@ -48,16 +51,38 @@ export interface IButtonData extends IBaseElementData {
     href?: string;
     size?: Breakpoint;
     type?: "button" | "submit" | "reset";
+    block?: boolean;
+    active?: boolean;
 }
 
+// TODO: Check behavior of disabled link in old browsers
 export class Button extends BaseElement<IButtonData> {
-    readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , href, type */];
+    readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , "href" */, "type", "block", "active"];
 
     get tag(): string {
         return this.data.href ? "a" : "button";
     }
 
+    get componentAdditionalAttributes(): IAllAttrs {
+        return { type: this.data.type ?? this.isButtonOrInput ? "button" : undefined };
+    }
+
     get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [buttonStyles.btn, buttonStyles[this.data.variant ?? "primary"], this.data.size && buttonStyles.sizes(this.data.size)];
+        return [
+            buttonStyles.btn,
+            buttonStyles[this.data.variant ?? "primary"],
+            this.data.size && buttonStyles.sizes(this.data.size),
+            this.data.active && buttonStyles.active,
+            this.data.block && buttonStyles.block,
+            this.isAnchor && this.data.disabled && buttonStyles.disabled,
+        ];
+    }
+
+    private get isButtonOrInput(): boolean {
+        return this.tag === "button" || this.data.as === "input";
+    }
+
+    private isAnchor(): boolean {
+        return this.tag === "a" || this.data.as === "a";
     }
 }

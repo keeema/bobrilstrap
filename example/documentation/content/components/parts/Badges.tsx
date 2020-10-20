@@ -42,7 +42,9 @@ export const badgesRoute: IRouteWithNavDefinition = {
 export function Badges(): b.IBobrilNode {
     return (
         <>
-            <h1>Badges</h1>
+            <Anchor name="badges">
+                <h1>Badges</h1>
+            </Anchor>
             <Lead>Documentation and examples for badges, our small count and labeling component.</Lead>
             <Anchor name="badges-examples">
                 <h2>Examples</h2>
@@ -122,7 +124,7 @@ export function Badges(): b.IBobrilNode {
             <Anchor name="badges-contextual-variations">
                 <h2>Contextual variation</h2>
             </Anchor>
-            <p>Add any of the below mentioned modifier attribute values to change the appearance of a badge.</p>
+            <p>Add any of the below mentioned modifier prop values to change the appearance of a badge.</p>
             <Example>
                 {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map((variant) => (
                     <>
@@ -157,8 +159,8 @@ export function Badges(): b.IBobrilNode {
                 <h2>Links</h2>
             </Anchor>
             <p>
-                Usage of href attribute automatically sets <code>{`<a>`}</code> element and quickly provides actionable badges with hover
-                and focus states.
+                Usage of href prop automatically sets <code>{`<a>`}</code> element and quickly provides actionable badges with hover and
+                focus states.
             </p>
             <Example>
                 {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map((variant) => (

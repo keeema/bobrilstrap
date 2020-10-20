@@ -6,6 +6,7 @@ import { Responsive } from "./Responsive";
 import { Alignment } from "./Alignment";
 import { Reordering } from "./Reordering";
 import { HowItWorks } from "./HowItWorks";
+import { Anchor } from "../../../../../common/Anchor";
 
 export const gridRoute: IRouteWithNavDefinition = {
     url: "grid",
@@ -174,7 +175,9 @@ export const gridRoute: IRouteWithNavDefinition = {
 export function Grid(): b.IBobrilNode {
     return (
         <>
-            <h1>Grid</h1>
+            <Anchor name="grid">
+                <h1>Grid</h1>
+            </Anchor>
             <HowItWorks />
             <GridOptions />
             <AutoLayoutColumns />

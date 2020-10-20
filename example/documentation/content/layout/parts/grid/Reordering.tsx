@@ -57,7 +57,7 @@ export function Reordering(): b.IBobrilNode {
                 <h4>Offsets</h4>
             </Anchor>
             <p>
-                Move columns to the right using <code>offset</code> or <code>offset-breakpoint-*</code> attribute.
+                Move columns to the right using <code>offset</code> or <code>offset-breakpoint-*</code> prop.
             </p>
             <Example>
                 <Container>

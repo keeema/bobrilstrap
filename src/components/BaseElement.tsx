@@ -63,6 +63,7 @@ export interface IBaseElementData extends b.IDataWithChildren, IAllAttrs {
     style?: b.IBobrilStyles;
     visible?: boolean;
     invisible?: boolean;
+    disabled?: boolean;
 }
 
 export const baseStyles = {
@@ -102,7 +103,7 @@ export abstract class BaseElement<TData extends IBaseElementData> extends b.Comp
     }
 
     private get plainData(): IBaseElementData {
-        return omit(this.data, "style", "visible", "invisible", "as", ...this.componentProperties);
+        return omit(this.data, "style", "visible", "invisible", "as", /* "disabled", */ ...this.componentProperties);
     }
 
     abstract get componentSpecificStyles(): b.IBobrilStyleArray;

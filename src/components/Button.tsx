@@ -2,6 +2,8 @@ import * as b from "bobril";
 import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createFilledDictionary } from "../../helpers/dict";
+import { ButtonToolbar } from "./ButtonToolbar";
+import { ButtonGroup } from "./ButtonGroup";
 
 export type ButtonVariant =
     | "primary"
@@ -57,6 +59,11 @@ export interface IButtonData extends IBaseElementData {
 
 // TODO: Check behavior of disabled link in old browsers
 export class Button extends BaseElement<IButtonData> {
+    static id: string = "bobrilstrap-button";
+
+    static Toolbar = ButtonToolbar;
+    static Group = ButtonGroup;
+
     readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , "href" */, "type", "block", "active"];
 
     get tag(): string {

@@ -2,7 +2,7 @@ import * as b from "bobril";
 import * as $ from "jquery";
 import { AlertHeading } from "./AlertHeading";
 import { AlertLink } from "./AlertLink";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
 
 export type AlertVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
 export const alertStyles = {
@@ -42,6 +42,10 @@ export class Alert extends BaseElement<IAlertData> {
         "onDismiss",
         "onDismissed",
     ];
+
+    get componentAdditionalAttributes(): IAllAttrs {
+        return { role: this.data.role || "alert" };
+    }
 
     render(): b.IBobrilNode {
         if (this.data.dismissible) {
@@ -83,7 +87,7 @@ export class Alert extends BaseElement<IAlertData> {
 function DismissButton({ dismissAriaLabel }: IAlertData): b.IBobrilNode {
     return (
         <button type="button" class="close" data-dismiss="alert" aria-label={dismissAriaLabel ?? "Close"}>
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden>&times;</span>
         </button>
     );
 }

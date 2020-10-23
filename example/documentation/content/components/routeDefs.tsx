@@ -5,6 +5,7 @@ import { Components } from "./Components";
 import { badgesRoute } from "./parts/Badges";
 import { breadcrumbsRoute } from "./parts/Breadcrumbs";
 import { buttonsRoute } from "./parts/Buttons";
+import { buttonGroupRoute } from "./parts/ButtonGroup";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -12,5 +13,5 @@ export const components: IRouteWithNavDefinition = {
     label: "Components",
     handler: (data) => <Components {...data} />,
     default: alertsRoute,
-    subs: [alertsRoute, badgesRoute, breadcrumbsRoute, buttonsRoute],
+    subs: [alertsRoute, badgesRoute, breadcrumbsRoute, buttonsRoute, buttonGroupRoute],
 };

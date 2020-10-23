@@ -87,8 +87,7 @@ export function Buttons(): b.IBobrilNode {
             <p>
                 Normally <code>{`<Button>`}</code> components will render a HTML <code>{`<button>`}</code> element. However you can render
                 whatever you'd like, adding a <code>href</code> prop will automatically render an <code>{`<a>`}</code> element. You can use
-                the <code>as</code> prop to render whatever your heart desires. React Bootstrap will take care of the proper ARIA roles for
-                you.
+                the <code>as</code> prop to render whatever your heart desires. Bobrilstrap will take care of the proper ARIA roles for you.
             </p>
             <Example>
                 <Button href="#">Link</Button> <Button type="submit">Button</Button> <Button as="input" type="button" value="Input" />{" "}
@@ -191,21 +190,21 @@ export function Buttons(): b.IBobrilNode {
             </Anchor>
             <p>
                 Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. However, you can still
-                force the same active appearance with <code>active</code> prop (and include the <code>aria-pressed="true"</code> prop)
-                should you need to replicate the state programmatically.
+                force the same active appearance with <code>active</code> prop (and include the <code>aria-pressed</code> prop) should you
+                need to replicate the state programmatically.
             </p>
             <Example>
-                <Button variant="primary" size="lg" active>
+                <Button variant="primary" size="lg" active aria-pressed>
                     Primary button
                 </Button>{" "}
-                <Button variant="secondary" size="lg" active>
+                <Button variant="secondary" size="lg" active aria-pressed>
                     Button
                 </Button>
             </Example>
-            <Code language="tsx">{`<Button variant="primary" size="lg" active>
+            <Code language="tsx">{`<Button variant="primary" size="lg" active aria-pressed>
     Primary button
 </Button>{" "}
-<Button variant="secondary" size="lg" active>
+<Button variant="secondary" size="lg" active aria-pressed>
     Button
 </Button>`}</Code>
             <Anchor name="buttons-disabled-state">
@@ -215,23 +214,23 @@ export function Buttons(): b.IBobrilNode {
                 Make buttons look inactive by adding the disabled boolean prop to any <code>{"<Button>"}</code> component.
             </p>
             <Example>
-                <Button variant="primary" size="lg" disabled>
+                <Button variant="primary" size="lg" disabled aria-disabled>
                     Primary button
                 </Button>{" "}
-                <Button variant="secondary" size="lg" disabled>
+                <Button variant="secondary" size="lg" disabled aria-disabled>
                     Button
                 </Button>{" "}
-                <Button href="#" variant="secondary" size="lg" disabled>
+                <Button href="#" variant="secondary" size="lg" disabled aria-disabled>
                     Link
                 </Button>
             </Example>
-            <Code language="tsx">{`<Button variant="primary" size="lg" disabled>
+            <Code language="tsx">{`<Button variant="primary" size="lg" disabled aria-disabled>
     Primary button
 </Button>{" "}
-<Button variant="secondary" size="lg" disabled>
+<Button variant="secondary" size="lg" disabled aria-disabled>
     Button
 </Button>{" "}
-<Button href="#" variant="secondary" size="lg" disabled>
+<Button href="#" variant="secondary" size="lg" disabled aria-disabled>
     Link
 </Button>`}</Code>
         </>

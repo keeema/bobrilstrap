@@ -6,8 +6,8 @@ export interface IAria {
     "aria-activedescendant"?: string;
     "aria-atomic"?: boolean;
     "aria-autocomplete"?: string;
-    "aria-busy"?: boolean | string;
-    "aria-checked"?: boolean | string;
+    "aria-busy"?: boolean;
+    "aria-checked"?: boolean;
     "aria-controls"?: string;
     "aria-describedby"?: string;
     "aria-disabled"?: boolean;

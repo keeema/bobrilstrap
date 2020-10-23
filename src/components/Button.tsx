@@ -71,7 +71,10 @@ export class Button extends BaseElement<IButtonData> {
     }
 
     get componentAdditionalAttributes(): IAllAttrs {
-        return { type: this.data.type ?? this.isButtonOrInput ? "button" : undefined };
+        return {
+            type: this.data.type ?? this.isButtonOrInput ? "button" : undefined,
+            role: this.data.role ?? (this.isAnchor && "button"),
+        };
     }
 
     get componentSpecificStyles(): b.IBobrilStyleArray {
@@ -89,7 +92,7 @@ export class Button extends BaseElement<IButtonData> {
         return this.tag === "button" || this.data.as === "input";
     }
 
-    private isAnchor(): boolean {
+    private get isAnchor(): boolean {
         return this.tag === "a" || this.data.as === "a";
     }
 }

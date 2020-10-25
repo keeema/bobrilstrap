@@ -26,6 +26,12 @@ export const buttonGroupRoute: IRouteWithNavDefinition = {
             label: "Button toolbar",
             subs: [],
         },
+        {
+            url: "sizing",
+            name: "button-group-sizing",
+            label: "Sizing",
+            subs: [],
+        },
     ],
 };
 
@@ -187,6 +193,43 @@ export function ButtonGroup(): b.IBobrilNode {
         />
     </InputGroup>
 </Button.Toolbar>`}
+            </Code>
+            <Anchor name="button-group-sizing">
+                <h2>Sizing</h2>
+            </Anchor>
+            <Example>
+                <Button.Group size="lg">
+                    <Button variant="secondary">Left</Button>
+                    <Button variant="secondary">Center</Button>
+                    <Button variant="secondary">Middle</Button>
+                </Button.Group>{" "}
+                <Button.Group>
+                    <Button variant="secondary">Left</Button>
+                    <Button variant="secondary">Center</Button>
+                    <Button variant="secondary">Middle</Button>
+                </Button.Group>{" "}
+                <Button.Group size="sm">
+                    <Button variant="secondary">Left</Button>
+                    <Button variant="secondary">Center</Button>
+                    <Button variant="secondary">Middle</Button>
+                </Button.Group>
+            </Example>
+            <Code language="tsx">
+                {`<Button.Group size="lg">
+    <Button variant="secondary">Left</Button>
+    <Button variant="secondary">Center</Button>
+    <Button variant="secondary">Middle</Button>
+</Button.Group>{" "}
+<Button.Group>
+    <Button variant="secondary">Left</Button>
+    <Button variant="secondary">Center</Button>
+    <Button variant="secondary">Middle</Button>
+</Button.Group>{" "}
+<Button.Group size="sm">
+    <Button variant="secondary">Left</Button>
+    <Button variant="secondary">Center</Button>
+    <Button variant="secondary">Middle</Button>
+</Button.Group>`}
             </Code>
         </>
     );

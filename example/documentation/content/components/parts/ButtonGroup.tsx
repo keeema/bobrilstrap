@@ -2,10 +2,11 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button } from "../../../../../index";
+import { Button, InputGroup, margin } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { margin } from "../../../../../src/utilities/spacing";
+import { Form } from "../../../../../src/components/Form";
+import { justifyContent } from "../../../../../src/utilities/alignment";
 
 export const buttonGroupRoute: IRouteWithNavDefinition = {
     url: "button-group",
@@ -16,7 +17,7 @@ export const buttonGroupRoute: IRouteWithNavDefinition = {
         {
             url: "examples",
             name: "button-group-examples",
-            label: "Examples",
+            label: "Basic example",
             subs: [],
         },
         {
@@ -36,7 +37,7 @@ export function ButtonGroup(): b.IBobrilNode {
             </Anchor>
             <Lead>Group a series of buttons together on a single line with the button group, and super-power them with TypeScript.</Lead>
             <Anchor name="button-group-examples">
-                <h2>Examples</h2>
+                <h2>Basic example</h2>
             </Anchor>
             <p>
                 Wrap a series of <code>{"<Button>"}</code>s in <code>{"<Button.Group>"}</code>
@@ -101,6 +102,90 @@ export function ButtonGroup(): b.IBobrilNode {
     <Button.Group aria-label="Third group">
         <Button variant="secondary">8</Button>
     </Button.Group>
+</Button.Toolbar>`}
+            </Code>
+            <p>
+                Feel free to mix input groups with button groups in your toolbars. Similar to the example above, you’ll likely need some
+                utilities though to space things properly.
+            </p>
+            <Example>
+                <Button.Toolbar style={margin({ side: "b", size: 3 })} aria-label="Toolbar with button groups">
+                    <Button.Group style={margin({ side: "r", size: 2 })} aria-label="First group">
+                        <Button variant="secondary">1</Button>
+                        <Button variant="secondary">2</Button>
+                        <Button variant="secondary">3</Button>
+                        <Button variant="secondary">4</Button>
+                    </Button.Group>
+                    <InputGroup>
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="btnGroupAddon">@</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <Form.Input
+                            type="text"
+                            placeholder="Input group example"
+                            aria-label="Input group example"
+                            aria-describedby="btnGroupAddon"
+                        />
+                    </InputGroup>
+                </Button.Toolbar>
+                <Button.Toolbar style={justifyContent("between")} aria-label="Toolbar with button groups">
+                    <Button.Group style={margin({ side: "r", size: 2 })} aria-label="First group">
+                        <Button variant="secondary">1</Button>
+                        <Button variant="secondary">2</Button>
+                        <Button variant="secondary">3</Button>
+                        <Button variant="secondary">4</Button>
+                    </Button.Group>
+                    <InputGroup>
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="btnGroupAddon2">@</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <Form.Input
+                            type="text"
+                            placeholder="Input group example"
+                            aria-label="Input group example"
+                            aria-describedby="btnGroupAddon2"
+                        />
+                    </InputGroup>
+                </Button.Toolbar>
+            </Example>
+            <Code language="tsx">
+                {`<Button.Toolbar style={margin({ side: "b", size: 3 })} aria-label="Toolbar with button groups">
+    <Button.Group style={margin({ side: "r", size: 2 })} aria-label="First group">
+        <Button variant="secondary">1</Button>
+        <Button variant="secondary">2</Button>
+        <Button variant="secondary">3</Button>
+        <Button variant="secondary">4</Button>
+    </Button.Group>
+    <InputGroup>
+        <InputGroup.Prepend>
+            <InputGroup.Text id="btnGroupAddon">@</InputGroup.Text>
+        </InputGroup.Prepend>
+        <Form.Input
+            type="text"
+            placeholder="Input group example"
+            aria-label="Input group example"
+            aria-describedby="btnGroupAddon"
+        />
+    </InputGroup>
+</Button.Toolbar>
+<Button.Toolbar style={justifyContent("between")} aria-label="Toolbar with button groups">
+    <Button.Group style={margin({ side: "r", size: 2 })} aria-label="First group">
+        <Button variant="secondary">1</Button>
+        <Button variant="secondary">2</Button>
+        <Button variant="secondary">3</Button>
+        <Button variant="secondary">4</Button>
+    </Button.Group>
+    <InputGroup>
+        <InputGroup.Prepend>
+            <InputGroup.Text id="btnGroupAddon2">@</InputGroup.Text>
+        </InputGroup.Prepend>
+        <Form.Input
+            type="text"
+            placeholder="Input group example"
+            aria-label="Input group example"
+            aria-describedby="btnGroupAddon2"
+        />
+    </InputGroup>
 </Button.Toolbar>`}
             </Code>
         </>

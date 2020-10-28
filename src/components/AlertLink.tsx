@@ -14,7 +14,7 @@ export class AlertLink extends BaseElement<IAlertLinkData> {
     get tag(): string {
         return "a";
     }
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [alertLinkStyles.alertLink];
     }
 }

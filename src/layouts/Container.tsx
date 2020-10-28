@@ -19,7 +19,7 @@ export class Container extends BaseElement<IContainerData> {
     static id: string = "bobrilstrap-container";
     readonly componentProperties: (keyof IContainerData)[] = ["fluid"];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [
             this.data.fluid
                 ? typeof this.data.fluid === "boolean"

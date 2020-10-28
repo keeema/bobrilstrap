@@ -15,7 +15,7 @@ abstract class CarouselControl extends BaseElement<ICarouselControlData> {
     get tag(): string {
         return "a";
     }
-    get componentAdditionalAttributes(): IAttrs {
+    componentAdditionalAttributes(): IAttrs {
         return { href: "javascript:void(0);" };
     }
 }
@@ -29,26 +29,26 @@ abstract class CarouselControlIcon extends BaseElement<ICarouselControlData> {
 
 class CarouselControlPrevIcon extends CarouselControlIcon {
     static id: string = "bobrilstrap-carousel-control-prev-icon";
-    readonly componentSpecificStyles: b.IBobrilStyleArray = [carouselControlStyles.carouselControlPrevIcon];
+    componentSpecificStyles = (): b.IBobrilStyleArray => [carouselControlStyles.carouselControlPrevIcon];
 }
 
 class CarouselControlNextIcon extends CarouselControlIcon {
     static id: string = "bobrilstrap-carousel-control-next-icon";
-    readonly componentSpecificStyles: b.IBobrilStyleArray = [carouselControlStyles.carouselControlNextIcon];
+    componentSpecificStyles = (): b.IBobrilStyleArray => [carouselControlStyles.carouselControlNextIcon];
 }
 
 export class CarouselControlPrev extends CarouselControl {
     static id: string = "bobrilstrap-carousel-control-prev";
     static Icon = CarouselControlPrevIcon;
-    readonly componentSpecificStyles: b.IBobrilStyleArray = [carouselControlStyles.carouselControlPrev];
+    componentSpecificStyles = (): b.IBobrilStyleArray => [carouselControlStyles.carouselControlPrev];
 }
 
 export class CarouselControlNext extends CarouselControl {
     static id: string = "bobrilstrap-carousel-control-next";
     static Icon = CarouselControlNextIcon;
-    readonly componentSpecificStyles: b.IBobrilStyleArray = [carouselControlStyles.carouselControlNext];
+    componentSpecificStyles = (): b.IBobrilStyleArray => [carouselControlStyles.carouselControlNext];
 
-    get componentAdditionalAttributes(): IAttrs {
+    componentAdditionalAttributes(): IAttrs {
         return { href: "javascript:void(0);" };
     }
 }

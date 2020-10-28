@@ -46,7 +46,7 @@ export class Navbar extends BaseElement<INavbarData> {
         return "nav";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         const data = pick(this.data, ...this.componentProperties);
         return [
             navbarStyles.navbar,

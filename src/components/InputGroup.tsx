@@ -22,7 +22,7 @@ export class InputGroup extends BaseElement<IInputGroupData> {
     static Text = InputGroupText;
     readonly componentProperties: (keyof IInputGroupData)[] = ["size"];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [inputGroupStyles.inputGroup, this.data.size && inputGroupStyles.sizes(this.data.size)];
     }
 }

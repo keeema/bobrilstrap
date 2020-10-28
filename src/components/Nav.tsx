@@ -36,7 +36,7 @@ export class Nav extends BaseElement<INavData> {
         return "nav";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         const data = pick(this.data, ...this.componentProperties);
         return [
             data.navbar ? navStyles.navbarNav : navStyles.nav,

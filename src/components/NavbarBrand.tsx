@@ -19,11 +19,11 @@ export class NavbarBrand extends BaseElement<INavbarBrandData> {
         return "a";
     }
 
-    get componentAdditionalAttributes(): INavbarBrandData {
+    componentAdditionalAttributes(): INavbarBrandData {
         return { href: this.data.href ?? "javascript:void(0)" };
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [navbarBrandStyles.navbarBrand];
     }
 }

@@ -34,7 +34,7 @@ export class Table extends BaseElement<ITableData> {
         return "table";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [
             tableStyles.table,
             this.data.variant && tableStyles[this.data.variant],

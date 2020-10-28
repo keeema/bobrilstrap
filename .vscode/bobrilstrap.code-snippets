@@ -23,7 +23,7 @@
             "    static id: string = \"bobrilstrap-${1}\";",
             "    readonly componentProperties: (keyof I${1/(.*)/${1:/capitalize}/}Data)[] = [];",
             "",
-            "    get componentSpecificStyles(): b.IBobrilStyleArray {",
+            "    componentSpecificStyles(): b.IBobrilStyleArray {",
             "        return [",
             "            ${1}Styles.${1},",
             "             ];",

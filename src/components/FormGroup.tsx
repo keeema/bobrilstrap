@@ -11,7 +11,7 @@ export class FormGroup extends BaseElement<IFormGroupData> {
     static id: string = "bobrilstrap-form-group";
     readonly componentProperties: (keyof IFormGroupData)[] = [];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [formGroupStyles.formGroup];
     }
 }

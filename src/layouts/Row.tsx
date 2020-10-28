@@ -29,7 +29,7 @@ export class Row extends BaseElement<IRowData> {
     static id: string = "bobrilstrap-row";
     readonly componentProperties: (keyof IRowElementData)[] = ["span", "sm", "md", "lg", "xl", "no-gutters"];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         const rowData = pick(this.data, ...this.componentProperties);
         return [
             rowStyles.row,

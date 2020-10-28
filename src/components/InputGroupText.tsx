@@ -11,7 +11,7 @@ export class InputGroupText extends BaseElement<IInputGroupTextData> {
     static id: string = "bobrilstrap-input-group-text";
     readonly componentProperties: (keyof IInputGroupTextData)[] = [];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [inputGroupTextStyles.inputGroupText];
     }
 }

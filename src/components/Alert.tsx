@@ -43,7 +43,7 @@ export class Alert extends BaseElement<IAlertData> {
         "onDismissed",
     ];
 
-    get componentAdditionalAttributes(): IAllAttrs {
+    componentAdditionalAttributes(): IAllAttrs {
         return { role: this.data.role || "alert" };
     }
 
@@ -62,7 +62,7 @@ export class Alert extends BaseElement<IAlertData> {
         this.data.dismissible && this.registerCallback();
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [
             alertStyles.alert,
             alertStyles[this.data.variant ?? "primary"],

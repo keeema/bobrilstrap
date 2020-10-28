@@ -48,7 +48,7 @@ export interface IKnownAttrs {
 }
 
 export interface IDataAttrs {
-    "data-toggle"?: "collapse";
+    "data-toggle"?: string;
     "data-target"?: string;
 }
 
@@ -72,27 +72,26 @@ export const baseStyles = {
 };
 
 export abstract class BaseElement<TData extends IBaseElementData> extends b.Component<TData> {
-    get componentAdditionalAttributes(): IAllAttrs {
-        return {};
-    }
-
     abstract readonly componentProperties: (keyof TData)[];
 
     get tag(): string {
         return "div";
     }
+    componentAdditionalAttributes(): IAllAttrs {
+        return {};
+    }
 
     render(): b.IBobrilNode {
         const Tag = (this.data.as ?? this.tag) as any;
         return (
-            <Tag style={this.styles} {...this.plainData} {...this.componentAdditionalAttributes}>
+            <Tag style={this.styles} {...this.plainData} {...this.componentAdditionalAttributes()}>
                 {this.data.children}
             </Tag>
         );
     }
 
     private get styles(): b.IBobrilStyleArray {
-        return [...this.componentSpecificStyles, ...this.getBaseStyles, this.data.style];
+        return [...this.componentSpecificStyles(), ...this.getBaseStyles, this.data.style];
     }
 
     private get getBaseStyles(): b.IBobrilStyleArray {
@@ -106,7 +105,7 @@ export abstract class BaseElement<TData extends IBaseElementData> extends b.Comp
         return omit(this.data, "style", "visible", "invisible", "as", /* "disabled", */ ...this.componentProperties);
     }
 
-    abstract get componentSpecificStyles(): b.IBobrilStyleArray;
+    abstract componentSpecificStyles(): b.IBobrilStyleArray;
 
     protected get element(): HTMLDivElement {
         return b.getDomNode(this.me) as HTMLDivElement;

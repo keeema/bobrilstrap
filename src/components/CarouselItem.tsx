@@ -15,7 +15,7 @@ export class CarouselItem extends BaseElement<ICarouselItemData> {
     static id: string = "bobrilstrap-carousel-item";
     readonly componentProperties: (keyof ICarouselItemData)[] = ["active"];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [carouselItemStyles.carouselItem, this.data.active && carouselItemStyles.active];
     }
 }

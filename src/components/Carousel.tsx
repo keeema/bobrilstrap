@@ -38,7 +38,7 @@ export class Carousel extends BaseElement<ICarouselData> {
     readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "cross-fade"];
     readonly componentProperties: (keyof ICarouselData)[] = [...this.carouselDataProperties, ...this.carouselConfigProperties];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [carouselStyles.carousel, carouselStyles.slide, this.data["cross-fade"] && carouselStyles.carouselFade];
     }
 

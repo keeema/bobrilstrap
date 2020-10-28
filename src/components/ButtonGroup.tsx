@@ -5,23 +5,28 @@ import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const buttonGroupStyles = {
     buttonGroup: b.styleDef("btn-group"),
+    buttonGroupVertical: b.styleDef("btn-group-vertical"),
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`btn-group-${breakpoint}`)])),
 };
 
 export interface IButtonGroupData extends IBaseElementData {
     size?: Breakpoint;
+    vertical?: boolean;
 }
 
-export class ButtonGroup extends BaseElement<IButtonGroupData> {
+export class ButtonGroup<TData extends IButtonGroupData> extends BaseElement<TData> {
     static id: string = "bobrilstrap-button-group";
 
-    readonly componentProperties: (keyof IButtonGroupData)[] = ["size"];
+    readonly componentProperties: (keyof IButtonGroupData)[] = ["size", "vertical"];
 
-    get componentAdditionalAttributes(): IAllAttrs {
+    componentAdditionalAttributes(): IAllAttrs {
         return { role: this.data.role || "group" };
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [buttonGroupStyles.buttonGroup, this.data.size && buttonGroupStyles.sizes(this.data.size)];
+    componentSpecificStyles(): b.IBobrilStyleArray {
+        return [
+            this.data.vertical ? buttonGroupStyles.buttonGroupVertical : buttonGroupStyles.buttonGroup,
+            this.data.size && buttonGroupStyles.sizes(this.data.size),
+        ];
     }
 }

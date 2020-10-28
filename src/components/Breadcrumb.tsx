@@ -17,7 +17,7 @@ export class Breadcrumb extends BaseElement<IBreadcrumbData> {
         return "ol";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [breadcrumbStyles.breadcrumb];
     }
 }

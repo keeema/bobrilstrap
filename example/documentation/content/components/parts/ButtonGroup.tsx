@@ -2,11 +2,10 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button, InputGroup, margin } from "../../../../../index";
+import { Button, InputGroup, margin, justifyContent, Dropdown, Form } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { Form } from "../../../../../src/components/Form";
-import { justifyContent } from "../../../../../src/utilities/alignment";
+import { font } from "../../../../../src/utilities/font";
 
 export const buttonGroupRoute: IRouteWithNavDefinition = {
     url: "button-group",
@@ -30,6 +29,18 @@ export const buttonGroupRoute: IRouteWithNavDefinition = {
             url: "sizing",
             name: "button-group-sizing",
             label: "Sizing",
+            subs: [],
+        },
+        {
+            url: "nesting",
+            name: "button-group-nesting",
+            label: "Nesting",
+            subs: [],
+        },
+        {
+            url: "vertical-variation",
+            name: "button-group-vertical-variation",
+            label: "Vertical variation",
             subs: [],
         },
     ],
@@ -229,6 +240,85 @@ export function ButtonGroup(): b.IBobrilNode {
     <Button variant="secondary">Left</Button>
     <Button variant="secondary">Center</Button>
     <Button variant="secondary">Middle</Button>
+</Button.Group>`}
+            </Code>
+            <Anchor name="button-group-nesting">
+                <h2>Nesting</h2>
+            </Anchor>
+            <Example>
+                <Button.Group aria-label="Button group with nested dropdown">
+                    <Button variant="secondary">1</Button>
+                    <Button variant="secondary">2</Button>
+                    <Dropdown>
+                        {/* Variant of Button.Group */}
+                        <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+                            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </Button.Group>
+            </Example>
+            <Code language="tsx">
+                {`<Button.Group aria-label="Button group with nested dropdown">
+    <Button variant="secondary">1</Button>
+    <Button variant="secondary">2</Button>
+    <Dropdown>
+        {/* Variant of Button.Group */}
+        <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
+        <Dropdown.Menu>
+            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+        </Dropdown.Menu>
+    </Dropdown>
+</Button.Group>`}
+            </Code>
+
+            <Anchor name="button-group-vertical-variation">
+                <h2>Vertical variation</h2>
+            </Anchor>
+            <p>
+                Make a set of buttons appear vertically stacked rather than horizontally.{" "}
+                <span style={font("bold")}>Split button dropdowns are not supported here.</span>
+            </p>
+            <Example>
+                <Button.Group vertical aria-label="Vertical button group">
+                    <Button variant="secondary">Button</Button>
+                    <Button variant="secondary">Button</Button>
+                    <Button variant="secondary">Button</Button>
+                </Button.Group>
+            </Example>
+            <Code language="tsx">
+                {`<Button.Group vertical aria-label="Vertical button group">
+    <Button variant="secondary">Button</Button>
+    <Button variant="secondary">Button</Button>
+    <Button variant="secondary">Button</Button>
+</Button.Group>`}
+            </Code>
+            <Example>
+                <Button.Group vertical aria-label="Vertical button group">
+                    <Button variant="secondary">Button</Button>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+                            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    <Button variant="secondary">Button</Button>
+                </Button.Group>
+            </Example>
+            <Code language="tsx">
+                {`<Button.Group vertical aria-label="Vertical button group">
+    <Button variant="secondary">Button</Button>
+    <Dropdown>
+        <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
+        <Dropdown.Menu>
+            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+        </Dropdown.Menu>
+    </Dropdown>
+    <Button variant="secondary">Button</Button>
 </Button.Group>`}
             </Code>
         </>

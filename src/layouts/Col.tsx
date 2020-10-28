@@ -61,7 +61,7 @@ export class Col extends BaseElement<IColData> {
         "offset-xl",
     ];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         const colData = pick(this.data, ...this.componentProperties);
         colData;
         return [

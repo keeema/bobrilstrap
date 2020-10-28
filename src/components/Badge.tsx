@@ -30,7 +30,7 @@ export class Badge extends BaseElement<IBadgeData> {
         return this.data.href ? "a" : "span";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [badgeStyles.badge, badgeStyles[this.data.variant ?? "primary"], this.data.pill && badgeStyles.pill];
     }
 }

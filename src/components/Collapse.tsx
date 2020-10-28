@@ -23,11 +23,8 @@ export class Collapse extends BaseElement<ICollapseData> {
     private collapsed?: boolean;
     private firstLoad: boolean = true;
 
-    static get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [collapseStyles.collapse];
-    }
-    get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [...Collapse.componentSpecificStyles, !this.data.collapsed && this.firstLoad && noTransition];
+    componentSpecificStyles(): b.IBobrilStyleArray {
+        return [collapseStyles.collapse, !this.data.collapsed && this.firstLoad && noTransition];
     }
 
     postInitDom(): void {

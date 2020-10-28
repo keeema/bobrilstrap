@@ -17,7 +17,7 @@ export class NavbarToggler extends BaseElement<INavbarTogglerData> {
         return "button";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [navbarTogglerStyles.navbarToggler];
     }
 }

@@ -8,7 +8,7 @@ export const navbarCollapseStyles = {
 export class NavbarCollapse extends Collapse {
     static id: string = "bobrilstrap-navbar-collapse";
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
-        return [...Collapse.componentSpecificStyles, navbarCollapseStyles.navbarCollapse];
+    componentSpecificStyles(): b.IBobrilStyleArray {
+        return [...super.componentSpecificStyles(), navbarCollapseStyles.navbarCollapse];
     }
 }

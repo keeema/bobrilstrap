@@ -18,7 +18,7 @@ export class BreadcrumbItem extends BaseElement<IBreadcrumbItemData> {
         return "li";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [breadcrumbItemStyles.breadcrumbItem, this.data.active && breadcrumbItemStyles.active];
     }
 }

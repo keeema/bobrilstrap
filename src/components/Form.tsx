@@ -20,7 +20,7 @@ export class Form extends BaseElement<IFormData> {
         return "form";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [];
     }
 }

@@ -58,7 +58,7 @@ export interface IButtonData extends IBaseElementData {
 }
 
 // TODO: Check behavior of disabled link in old browsers
-export class Button extends BaseElement<IButtonData> {
+export class Button<TData extends IButtonData> extends BaseElement<TData> {
     static id: string = "bobrilstrap-button";
 
     static Toolbar = ButtonToolbar;
@@ -70,14 +70,22 @@ export class Button extends BaseElement<IButtonData> {
         return this.data.href ? "a" : "button";
     }
 
-    get componentAdditionalAttributes(): IAllAttrs {
+    private get isButtonOrInput(): boolean {
+        return this.tag === "button" || this.data.as === "input";
+    }
+
+    private get isAnchor(): boolean {
+        return this.tag === "a" || this.data.as === "a";
+    }
+
+    componentAdditionalAttributes(): IAllAttrs {
         return {
             type: this.data.type ?? this.isButtonOrInput ? "button" : undefined,
             role: this.data.role ?? (this.isAnchor && "button"),
         };
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [
             buttonStyles.btn,
             buttonStyles[this.data.variant ?? "primary"],
@@ -86,13 +94,5 @@ export class Button extends BaseElement<IButtonData> {
             this.data.block && buttonStyles.block,
             this.isAnchor && this.data.disabled && buttonStyles.disabled,
         ];
-    }
-
-    private get isButtonOrInput(): boolean {
-        return this.tag === "button" || this.data.as === "input";
-    }
-
-    private get isAnchor(): boolean {
-        return this.tag === "a" || this.data.as === "a";
     }
 }

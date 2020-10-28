@@ -17,7 +17,7 @@ export class NavItem extends BaseElement<INavItemData> {
         return "li";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [navItemStyles.navItem];
     }
 }

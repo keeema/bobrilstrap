@@ -15,7 +15,7 @@ export class AlertHeading extends BaseElement<IAlertHeadingData> {
         return "h4";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [alertHeadingStyles.alertHeading];
     }
 }

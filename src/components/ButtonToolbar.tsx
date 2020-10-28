@@ -11,11 +11,11 @@ export class ButtonToolbar extends BaseElement<IButtonToolbarData> {
     static id: string = "bobrilstrap-button-toolbar";
     readonly componentProperties: (keyof IButtonToolbarData)[] = [];
 
-    get componentAdditionalAttributes(): IAllAttrs {
+    componentAdditionalAttributes(): IAllAttrs {
         return { role: this.data.role || "toolbar" };
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [buttonToolbarStyles.buttonToolbar];
     }
 }

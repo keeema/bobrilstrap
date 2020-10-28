@@ -23,11 +23,11 @@ export class NavLink extends BaseElement<INavLinkData> {
         return "a";
     }
 
-    get componentAdditionalAttributes(): INavLinkData {
+    componentAdditionalAttributes(): INavLinkData {
         return { href: this.data.href ?? "javascript:void(0)" };
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [navLinkStyles.navLink, this.data.disabled && navLinkStyles.disabled, this.data.active && navLinkStyles.active];
     }
 }

@@ -43,7 +43,7 @@ export class FormInput extends BaseElement<IFormInputData> {
         return "input";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [formInputStyles.formControl];
     }
 }

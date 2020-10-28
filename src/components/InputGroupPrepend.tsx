@@ -11,7 +11,7 @@ export class InputGroupPrepend extends BaseElement<IInputGroupPrependData> {
     static id: string = "bobrilstrap-input-group-prepend";
     readonly componentProperties: (keyof IInputGroupPrependData)[] = [];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [inputGroupPrependStyles.inputGroupPrepend];
     }
 }

@@ -17,7 +17,7 @@ export class CarouselIndicatorsItem extends BaseElement<ICarouselIndicatorsItemD
     }
     readonly componentProperties: (keyof ICarouselIndicatorsItemData)[] = [];
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [this.data.active && carouselIndicatorStyles.active];
     }
 }
@@ -30,5 +30,7 @@ export class CarouselIndicators extends BaseElement<ICarouselIndicatorsData> {
         return "ol";
     }
     readonly componentProperties: (keyof ICarouselIndicatorsData)[] = [];
-    readonly componentSpecificStyles: b.IBobrilStyleArray = [carouselIndicatorStyles.carouselIndicators];
+    componentSpecificStyles(): b.IBobrilStyleArray {
+        return [carouselIndicatorStyles.carouselIndicators];
+    }
 }

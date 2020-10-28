@@ -11,7 +11,7 @@ export class FormLabel extends BaseElement<IFormLabelData> {
         return "label";
     }
 
-    get componentSpecificStyles(): b.IBobrilStyleArray {
+    componentSpecificStyles(): b.IBobrilStyleArray {
         return [];
     }
 }

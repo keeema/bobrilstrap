@@ -165,7 +165,7 @@ export function Badges(): b.IBobrilNode {
             <Example>
                 {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map((variant) => (
                     <>
-                        <Badge variant={variant} href="#">
+                        <Badge variant={variant} href="javascript:void(0)">
                             {variant.toUpperCase()}
                         </Badge>{" "}
                     </>
@@ -173,7 +173,7 @@ export function Badges(): b.IBobrilNode {
             </Example>
             <Code language="tsx">
                 {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map(
-                    (variant) => `<Badge variant="${variant}" href="#">${variant.toUpperCase()}</Badge>{" "}\n`
+                    (variant) => `<Badge variant="${variant}" href="javascript:void(0)">${variant.toUpperCase()}</Badge>{" "}\n`
                 )}
             </Code>
         </>

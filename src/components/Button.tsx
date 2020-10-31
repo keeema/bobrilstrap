@@ -26,7 +26,6 @@ export type ButtonVariant =
 export const buttonStyles = {
     btn: b.styleDef("btn"),
     block: b.styleDef("btn-block"),
-    active: b.styleDef("active"),
     disabled: b.styleDef("disabled"),
     primary: b.styleDef("btn-primary"),
     secondary: b.styleDef("btn-secondary"),
@@ -64,7 +63,7 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
     static Toolbar = ButtonToolbar;
     static Group = ButtonGroup;
 
-    readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , "href" */, "type", "block", "active"];
+    readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , "href" */, "type", "block"];
 
     get tag(): string {
         return this.data.href ? "a" : "button";
@@ -82,6 +81,7 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
         return {
             type: this.data.type ?? this.isButtonOrInput ? "button" : undefined,
             role: this.data.role ?? (this.isAnchor && "button"),
+            href: this.data.href ?? this.isAnchor ? "javascript:void(0)" : undefined,
         };
     }
 
@@ -90,7 +90,6 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
             buttonStyles.btn,
             buttonStyles[this.data.variant ?? "primary"],
             this.data.size && buttonStyles.sizes(this.data.size),
-            this.data.active && buttonStyles.active,
             this.data.block && buttonStyles.block,
             this.isAnchor && this.data.disabled && buttonStyles.disabled,
         ];

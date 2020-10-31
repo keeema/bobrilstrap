@@ -3,7 +3,6 @@ import { IBaseElementData, BaseElement } from "./BaseElement";
 
 export const breadcrumbItemStyles = {
     breadcrumbItem: b.styleDef("breadcrumb-item"),
-    active: b.styleDef("active"),
 };
 
 export interface IBreadcrumbItemData extends IBaseElementData {
@@ -12,13 +11,13 @@ export interface IBreadcrumbItemData extends IBaseElementData {
 
 export class BreadcrumbItem extends BaseElement<IBreadcrumbItemData> {
     static id: string = "bobrilstrap-breadcrumb-item";
-    readonly componentProperties: (keyof IBreadcrumbItemData)[] = ["active"];
+    readonly componentProperties: (keyof IBreadcrumbItemData)[] = [];
 
     get tag(): string {
         return "li";
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [breadcrumbItemStyles.breadcrumbItem, this.data.active && breadcrumbItemStyles.active];
+        return [breadcrumbItemStyles.breadcrumbItem];
     }
 }

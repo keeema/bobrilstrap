@@ -41,10 +41,10 @@ export function Breadcrumbs(): b.IBobrilNode {
                 <nav aria-label="breadcrumb">
                     <Breadcrumb>
                         <Breadcrumb.Item>
-                            <a href="#">Home</a>
+                            <a href="javascript:void(0)">Home</a>
                         </Breadcrumb.Item>
                         <Breadcrumb.Item>
-                            <a href="#">Library</a>
+                            <a href="javascript:void(0)">Library</a>
                         </Breadcrumb.Item>
                         <Breadcrumb.Item active aria-current="page">
                             Data
@@ -56,10 +56,10 @@ export function Breadcrumbs(): b.IBobrilNode {
                 {`<nav aria-label="breadcrumb">
     <Breadcrumb>
         <Breadcrumb.Item>
-            <a href="#">Home</a>
+            <a href="javascript:void(0)">Home</a>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
-            <a href="#">Library</a>
+            <a href="javascript:void(0)">Library</a>
         </Breadcrumb.Item>
         <Breadcrumb.Item active aria-current="page">
             Data

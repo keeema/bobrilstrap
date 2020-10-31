@@ -1,10 +1,9 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const navLinkStyles = {
     navLink: b.styleDef("nav-link"),
     disabled: b.styleDef("disabled"),
-    active: b.styleDef("active"),
 };
 
 interface INavLinkElementData {
@@ -17,17 +16,17 @@ export type INavLinkData = INavLinkElementData & IBaseElementData;
 
 export class NavLink extends BaseElement<INavLinkData> {
     static id: string = "bobrilstrap-nav-link";
-    readonly componentProperties: (keyof INavLinkElementData)[] = ["disabled", "active", "href"];
+    readonly componentProperties: (keyof INavLinkElementData)[] = ["disabled" /* , "href" */];
 
     get tag(): string {
         return "a";
     }
 
-    componentAdditionalAttributes(): INavLinkData {
+    componentAdditionalAttributes(): IAllAttrs {
         return { href: this.data.href ?? "javascript:void(0)" };
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [navLinkStyles.navLink, this.data.disabled && navLinkStyles.disabled, this.data.active && navLinkStyles.active];
+        return [navLinkStyles.navLink, this.data.disabled && navLinkStyles.disabled];
     }
 }

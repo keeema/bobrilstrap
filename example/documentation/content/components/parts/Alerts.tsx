@@ -84,12 +84,13 @@ export function Alerts(): b.IBobrilNode {
             </p>
             <Example>
                 <Alert>
-                    A simple primary alert with <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you like.
+                    A simple primary alert with <Alert.Link href="javascript:void(0)">an example link</Alert.Link>. Give it a click if you
+                    like.
                 </Alert>
             </Example>
             <Code language="tsx">
                 {`<Alert>
-    A simple primary alert with <Alert.Link href="#">an example link</Alert.Link>. Give it a click if you like.
+    A simple primary alert with <Alert.Link href="javascript:void(0)">an example link</Alert.Link>. Give it a click if you like.
 </Alert>`}
             </Code>
             <Anchor name="alerts-additional-content">

@@ -64,11 +64,13 @@ export interface IBaseElementData extends b.IDataWithChildren, IAllAttrs {
     visible?: boolean;
     invisible?: boolean;
     disabled?: boolean;
+    active?: boolean;
 }
 
 export const baseStyles = {
     visible: b.styleDef("visible"),
     invisible: b.styleDef("invisible"),
+    active: b.styleDef("active"),
 };
 
 export abstract class BaseElement<TData extends IBaseElementData> extends b.Component<TData> {
@@ -98,11 +100,12 @@ export abstract class BaseElement<TData extends IBaseElementData> extends b.Comp
         return [
             (this.data.visible === true || this.data.invisible === false) && baseStyles.visible,
             (this.data.invisible === true || this.data.visible === false) && baseStyles.invisible,
+            this.data.active && baseStyles.active,
         ];
     }
 
     private get plainData(): IBaseElementData {
-        return omit(this.data, "style", "visible", "invisible", "as", /* "disabled", */ ...this.componentProperties);
+        return omit(this.data, "style", "visible", "invisible", "active", "as", /* "disabled", */ ...this.componentProperties);
     }
 
     abstract componentSpecificStyles(): b.IBobrilStyleArray;

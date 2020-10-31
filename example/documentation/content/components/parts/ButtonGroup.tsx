@@ -8,38 +8,38 @@ import { Lead } from "../../../../common/Lead";
 import { font } from "../../../../../src/utilities/font";
 
 export const buttonGroupRoute: IRouteWithNavDefinition = {
-    url: "button-group",
-    name: "button-group",
-    label: "Button group",
+    url: "button-groups",
+    name: "button-groups",
+    label: "Button groups",
     handler: () => <ButtonGroup />,
     subs: [
         {
             url: "examples",
-            name: "button-group-examples",
+            name: "button-groups-examples",
             label: "Basic example",
             subs: [],
         },
         {
             url: "toolbar",
-            name: "button-group-toolbar",
+            name: "button-groups-toolbar",
             label: "Button toolbar",
             subs: [],
         },
         {
             url: "sizing",
-            name: "button-group-sizing",
+            name: "button-groups-sizing",
             label: "Sizing",
             subs: [],
         },
         {
             url: "nesting",
-            name: "button-group-nesting",
+            name: "button-groups-nesting",
             label: "Nesting",
             subs: [],
         },
         {
             url: "vertical-variation",
-            name: "button-group-vertical-variation",
+            name: "button-groups-vertical-variation",
             label: "Vertical variation",
             subs: [],
         },
@@ -49,11 +49,11 @@ export const buttonGroupRoute: IRouteWithNavDefinition = {
 export function ButtonGroup(): b.IBobrilNode {
     return (
         <>
-            <Anchor name="button-group">
+            <Anchor name="button-groups">
                 <h1>Button group</h1>
             </Anchor>
             <Lead>Group a series of buttons together on a single line with the button group, and super-power them with TypeScript.</Lead>
-            <Anchor name="button-group-examples">
+            <Anchor name="button-groups-examples">
                 <h2>Basic example</h2>
             </Anchor>
             <p>
@@ -78,7 +78,7 @@ export function ButtonGroup(): b.IBobrilNode {
                 announce them, despite the presence of the correct role attribute. In the examples provided here, we use aria-label, but
                 alternatives such as aria-labelledby can also be used.
             </p>
-            <Anchor name="button-group-toolbar">
+            <Anchor name="button-groups-toolbar">
                 <h2>Button toolbar</h2>
             </Anchor>
             <p>
@@ -205,9 +205,12 @@ export function ButtonGroup(): b.IBobrilNode {
     </InputGroup>
 </Button.Toolbar>`}
             </Code>
-            <Anchor name="button-group-sizing">
+            <Anchor name="button-groups-sizing">
                 <h2>Sizing</h2>
             </Anchor>
+            <p>
+                Instead of applying button sizing classes to every button in a group, just add <code>size</code> prop.
+            </p>
             <Example>
                 <Button.Group size="lg">
                     <Button variant="secondary">Left</Button>
@@ -242,9 +245,13 @@ export function ButtonGroup(): b.IBobrilNode {
     <Button variant="secondary">Middle</Button>
 </Button.Group>`}
             </Code>
-            <Anchor name="button-group-nesting">
+            <Anchor name="button-groups-nesting">
                 <h2>Nesting</h2>
             </Anchor>
+            <p>
+                Place a <code>{`<Button.Group>`}</code> within another <code>{`<Button.Group>`}</code> when you want dropdown menus mixed
+                with a series of buttons.
+            </p>
             <Example>
                 <Button.Group aria-label="Button group with nested dropdown">
                     <Button variant="secondary">1</Button>
@@ -253,8 +260,8 @@ export function ButtonGroup(): b.IBobrilNode {
                         {/* Variant of Button.Group */}
                         <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
-                            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+                            <Dropdown.Item href="javascript:void(0)">Dropdown link</Dropdown.Item>
+                            <Dropdown.Item href="javascript:void(0)">Dropdown link</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Button.Group>
@@ -267,14 +274,14 @@ export function ButtonGroup(): b.IBobrilNode {
         {/* Variant of Button.Group */}
         <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
         <Dropdown.Menu>
-            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
-            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+            <Dropdown.Item href="javascript:void(0)">Dropdown link</Dropdown.Item>
+            <Dropdown.Item href="javascript:void(0)">Dropdown link</Dropdown.Item>
         </Dropdown.Menu>
     </Dropdown>
 </Button.Group>`}
             </Code>
 
-            <Anchor name="button-group-vertical-variation">
+            <Anchor name="button-groups-vertical-variation">
                 <h2>Vertical variation</h2>
             </Anchor>
             <p>
@@ -301,8 +308,8 @@ export function ButtonGroup(): b.IBobrilNode {
                     <Dropdown>
                         <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
-                            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+                            <Dropdown.Item href="javascript:void(0)">Dropdown link</Dropdown.Item>
+                            <Dropdown.Item href="javascript:void(0)">Dropdown link</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <Button variant="secondary">Button</Button>
@@ -314,8 +321,8 @@ export function ButtonGroup(): b.IBobrilNode {
     <Dropdown>
         <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
         <Dropdown.Menu>
-            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
-            <Dropdown.Item href="#">Dropdown link</Dropdown.Item>
+            <Dropdown.Item href="javascript:void(0)">Dropdown link</Dropdown.Item>
+            <Dropdown.Item href="javascript:void(0)">Dropdown link</Dropdown.Item>
         </Dropdown.Menu>
     </Dropdown>
     <Button variant="secondary">Button</Button>

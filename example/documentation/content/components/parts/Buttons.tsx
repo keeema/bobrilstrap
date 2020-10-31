@@ -59,7 +59,7 @@ export function Buttons(): b.IBobrilNode {
                 <h1>Buttons</h1>
             </Anchor>
             <Lead>
-                Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and
+                Use Bobrilstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and
                 more.
             </Lead>
             <Anchor name="buttons-examples">
@@ -90,11 +90,12 @@ export function Buttons(): b.IBobrilNode {
                 the <code>as</code> prop to render whatever your heart desires. Bobrilstrap will take care of the proper ARIA roles for you.
             </p>
             <Example>
-                <Button href="#">Link</Button> <Button type="submit">Button</Button> <Button as="input" type="button" value="Input" />{" "}
-                <Button as="input" type="submit" value="Submit" /> <Button as="input" type="reset" value="Reset" />
+                <Button href="javascript:void(0)">Link</Button> <Button type="submit">Button</Button>{" "}
+                <Button as="input" type="button" value="Input" /> <Button as="input" type="submit" value="Submit" />{" "}
+                <Button as="input" type="reset" value="Reset" />
             </Example>
             <Code language="tsx">
-                {`<Button href="#">Link</Button> <Button type="submit">Button</Button>{' '}
+                {`<Button href="javascript:void(0)">Link</Button> <Button type="submit">Button</Button>{' '}
 <Button as="input" type="button" value="Input" />{' '}
 <Button as="input" type="submit" value="Submit" />{' '}
 <Button as="input" type="reset" value="Reset" />`}
@@ -220,7 +221,7 @@ export function Buttons(): b.IBobrilNode {
                 <Button variant="secondary" size="lg" disabled aria-disabled>
                     Button
                 </Button>{" "}
-                <Button href="#" variant="secondary" size="lg" disabled aria-disabled>
+                <Button href="javascript:void(0)" variant="secondary" size="lg" disabled aria-disabled>
                     Link
                 </Button>
             </Example>
@@ -230,7 +231,7 @@ export function Buttons(): b.IBobrilNode {
 <Button variant="secondary" size="lg" disabled aria-disabled>
     Button
 </Button>{" "}
-<Button href="#" variant="secondary" size="lg" disabled aria-disabled>
+<Button href="javascript:void(0)" variant="secondary" size="lg" disabled aria-disabled>
     Link
 </Button>`}</Code>
         </>

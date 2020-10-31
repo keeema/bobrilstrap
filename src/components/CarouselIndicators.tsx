@@ -3,7 +3,6 @@ import { IBaseElementData, BaseElement } from "./BaseElement";
 
 export const carouselIndicatorStyles = {
     carouselIndicators: b.styleDef("carousel-indicators"),
-    active: b.styleDef("active"),
 };
 
 export interface ICarouselIndicatorsItemData extends IBaseElementData {
@@ -18,7 +17,7 @@ export class CarouselIndicatorsItem extends BaseElement<ICarouselIndicatorsItemD
     readonly componentProperties: (keyof ICarouselIndicatorsItemData)[] = [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [this.data.active && carouselIndicatorStyles.active];
+        return [];
     }
 }
 export interface ICarouselIndicatorsData extends IBaseElementData {}

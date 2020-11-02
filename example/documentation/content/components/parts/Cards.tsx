@@ -3,8 +3,26 @@ import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
 import { Lead } from "../../../../common/Lead";
-import { Blockquote, Button, Card, ListGroup, margin, textAlign, textColor } from "../../../../../index";
+import {
+    Blockquote,
+    Button,
+    Card,
+    Col,
+    ListGroup,
+    margin,
+    Nav,
+    Row,
+    textAlign,
+    textColor,
+    width,
+    backgroundGradientColorScale,
+    backgroundColor,
+    TextAlign,
+    borderColorScale,
+    borderColor,
+} from "../../../../../index";
 import { Code } from "../../../../common/Code";
+import { holderImage } from "../../../../common/holder";
 
 export const cardsRoute: IRouteWithNavDefinition = {
     url: "cards",
@@ -68,6 +86,81 @@ export const cardsRoute: IRouteWithNavDefinition = {
                 },
             ],
         },
+        {
+            url: "sizing",
+            name: "cards-sizing",
+            label: "Sizing",
+            subs: [
+                {
+                    url: "grid",
+                    name: "cards-sizing-grid",
+                    label: "Using grid",
+                    subs: [],
+                },
+                {
+                    url: "sizing-utilities",
+                    name: "cards-sizing-utilities",
+                    label: "Using utilities",
+                    subs: [],
+                },
+            ],
+        },
+        {
+            url: "text-alignment",
+            name: "cards-text-alignment",
+            label: "Text alignment",
+            subs: [],
+        },
+        {
+            url: "navigation",
+            name: "cards-navigation",
+            label: "Navigation",
+            subs: [],
+        },
+        {
+            url: "images",
+            name: "cards-images",
+            label: "Images",
+            subs: [
+                {
+                    url: "caps",
+                    name: "cards-images-caps",
+                    label: "Image caps",
+                    subs: [],
+                },
+                {
+                    url: "overlays",
+                    name: "cards-images-overlays",
+                    label: "Image overlays",
+                    subs: [],
+                },
+            ],
+        },
+        {
+            url: "horizontal",
+            name: "cards-horizontal",
+            label: "Horizontal",
+            subs: [],
+        },
+        {
+            url: "styles",
+            name: "cards-styles",
+            label: "Card styles",
+            subs: [
+                {
+                    url: "background-and-color",
+                    name: "cards-styles-background-and-color",
+                    label: "Background and color",
+                    subs: [],
+                },
+                {
+                    url: "border",
+                    name: "cards-styles-border",
+                    label: "Border",
+                    subs: [],
+                },
+            ],
+        },
     ],
 };
 
@@ -98,7 +191,7 @@ export function Cards(): b.IBobrilNode {
             </p>
             <Example>
                 <Card style={{ width: "18rem" }}>
-                    <Card.Image src={imageUri} />
+                    <Card.Image src={holderImage("100px180")} position="top" />
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>
@@ -110,7 +203,7 @@ export function Cards(): b.IBobrilNode {
             </Example>
             <Code language="tsx">
                 {`<Card style={{ width: "18rem" }}>
-    <Card.Image src={imageUri} />
+    <Card.Image src="${holderImage("100px180")}" position="top" />
     <Card.Body>
         <Card.Title>Card title</Card.Title>
         <Card.Text>
@@ -173,7 +266,7 @@ export function Cards(): b.IBobrilNode {
             </Anchor>
             <Example>
                 <Card style={{ width: "18rem" }}>
-                    <Card.Image src={imageUri} />
+                    <Card.Image src={holderImage("100px180")} position="top" />
                     <Card.Body>
                         <Card.Text>
                             Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -182,7 +275,7 @@ export function Cards(): b.IBobrilNode {
                 </Card>
             </Example>
             <Code language="tsx">{`<Card style={{ width: "18rem" }}>
-    <Card.Image src={imageUri} />
+    <Card.Image src="${holderImage("100px180")}" position="top" />
     <Card.Body>
         <Card.Text>
             Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -222,7 +315,7 @@ export function Cards(): b.IBobrilNode {
             </p>
             <Example>
                 <Card style={{ width: "18rem" }}>
-                    <Card.Image src={imageUri} />
+                    <Card.Image src={holderImage("100px180")} position="top" />
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>
@@ -241,7 +334,7 @@ export function Cards(): b.IBobrilNode {
                 </Card>
             </Example>
             <Code language="tsx">{`<Card style={{ width: "18rem" }}>
-    <Card.Image src={imageUri} />
+    <Card.Image src={imageUri} position="top" />
     <Card.Body>
         <Card.Title>Card title</Card.Title>
         <Card.Text>
@@ -324,9 +417,468 @@ export function Cards(): b.IBobrilNode {
     </Card.Body>
     <Card.Footer>2 days ago</Card.Footer>
 </Card>`}</Code>
+            <Anchor name="cards-sizing">
+                <h2>Sizing</h2>
+            </Anchor>
+            <p>
+                Cards assume no specific width to start, so they’ll be 100% wide unless otherwise stated. You can change this as needed with
+                grid or utilities.
+            </p>
+            <Anchor name="cards-sizing-grid">
+                <h3>Using grid</h3>
+            </Anchor>
+            <Example>
+                <Row>
+                    <Col sm={6}>
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>Special title treatment</Card.Title>
+                                <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                                <Button>Go somewhere</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col sm={6}>
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>Special title treatment</Card.Title>
+                                <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                                <Button>Go somewhere</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Example>
+            <Code language="tsx">{`<Row>
+    <Col sm={6}>
+        <Card>
+            <Card.Body>
+                <Card.Title>Special title treatment</Card.Title>
+                <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                <Button>Go somewhere</Button>
+            </Card.Body>
+        </Card>
+    </Col>
+    <Col sm={6}>
+        <Card>
+            <Card.Body>
+                <Card.Title>Special title treatment</Card.Title>
+                <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                <Button>Go somewhere</Button>
+            </Card.Body>
+        </Card>
+    </Col>
+</Row>`}</Code>
+            <Anchor name="cards-sizing-utilities">
+                <h3>Using utilities</h3>
+            </Anchor>
+            <Example>
+                <Card style={width(75)}>
+                    <Card.Body>
+                        <Card.Title>Special title treatment</Card.Title>
+                        <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                        <Button>Go somewhere</Button>
+                    </Card.Body>
+                </Card>
+                <Card style={width(50)}>
+                    <Card.Body>
+                        <Card.Title>Special title treatment</Card.Title>
+                        <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                        <Button>Go somewhere</Button>
+                    </Card.Body>
+                </Card>
+            </Example>
+            <Code language="tsx">{`<Card style={width(75)}>
+    <Card.Body>
+        <Card.Title>Special title treatment</Card.Title>
+        <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+        <Button>Go somewhere</Button>
+    </Card.Body>
+</Card>
+<Card style={width(50)}>
+    <Card.Body>
+        <Card.Title>Special title treatment</Card.Title>
+        <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+        <Button>Go somewhere</Button>
+    </Card.Body>
+</Card>`}</Code>
+            <Anchor name="cards-text-alignment">
+                <h2>Text alignment</h2>
+            </Anchor>
+            <p>You can quickly change the text alignment of any card—in its entirety or specific parts.</p>
+            <Example>
+                {new Array<TextAlign>("left", "center", "right").map((alignment) => (
+                    <Card style={[{ width: "18rem" }, textAlign(alignment)]}>
+                        <Card.Body>
+                            <Card.Title>Special title treatment</Card.Title>
+                            <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                            <Button>Go somewhere</Button>
+                        </Card.Body>
+                    </Card>
+                ))}
+            </Example>
+            <Code language="tsx">
+                {new Array<TextAlign>("left", "center", "right")
+                    .map(
+                        (alignment) =>
+                            `<Card style={[{ width: "18rem" }, textAlign(${alignment})]}>
+    <Card.Body>
+        <Card.Title>Special title treatment</Card.Title>
+        <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+        <Button>Go somewhere</Button>
+    </Card.Body>
+</Card>`
+                    )
+                    .join("\n")}
+            </Code>
+            <Anchor name="cards-navigation">
+                <h2>Navigation</h2>
+            </Anchor>
+            <p>Add some navigation to a card’s header (or block).</p>
+            <Example>
+                <Card style={textAlign("center")}>
+                    <Card.Header>
+                        <Nav tabs card-header-tabs>
+                            <Nav.Item>
+                                <Nav.Link href="javascript:void(0)" active>
+                                    Active
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="javascript:void(0)">Link</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="javascript:void(0)" disabled tabindex={-1} aria-disabled>
+                                    Disabled
+                                </Nav.Link>
+                            </Nav.Item>
+                        </Nav>
+                    </Card.Header>
+                    <Card.Body>
+                        <Card.Title>Special title treatment</Card.Title>
+                        <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                        <Button>Go somewhere</Button>
+                    </Card.Body>
+                </Card>
+            </Example>
+            <Code language="tsx">
+                {`<Card style={textAlign("center")}>
+    <Card.Header>
+        <Nav tabs card-header-tabs>
+            <Nav.Item>
+                <Nav.Link href="javascript:void(0)" active>
+                    Active
+                </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="javascript:void(0)">Link</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="javascript:void(0)" disabled tabindex={-1} aria-disabled>
+                    Disabled
+                </Nav.Link>
+            </Nav.Item>
+        </Nav>
+    </Card.Header>
+    <Card.Body>
+        <Card.Title>Special title treatment</Card.Title>
+        <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+        <Button>Go somewhere</Button>
+    </Card.Body>
+</Card>`}
+            </Code>
+            <Example>
+                <Card style={textAlign("center")}>
+                    <Card.Header>
+                        <Nav pills card-header-pills>
+                            <Nav.Item>
+                                <Nav.Link href="javascript:void(0)" active>
+                                    Active
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="javascript:void(0)">Link</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link href="javascript:void(0)" disabled tabindex={-1} aria-disabled>
+                                    Disabled
+                                </Nav.Link>
+                            </Nav.Item>
+                        </Nav>
+                    </Card.Header>
+                    <Card.Body>
+                        <Card.Title>Special title treatment</Card.Title>
+                        <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                        <Button>Go somewhere</Button>
+                    </Card.Body>
+                </Card>
+            </Example>
+            <Code language="tsx">
+                {`<Card style={textAlign("center")}>
+    <Card.Header>
+        <Nav pills card-header-pills>
+            <Nav.Item>
+                <Nav.Link href="javascript:void(0)" active>
+                    Active
+                </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="javascript:void(0)">Link</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="javascript:void(0)" disabled tabindex={-1} aria-disabled>
+                    Disabled
+                </Nav.Link>
+            </Nav.Item>
+        </Nav>
+    </Card.Header>
+    <Card.Body>
+        <Card.Title>Special title treatment</Card.Title>
+        <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+        <Button>Go somewhere</Button>
+    </Card.Body>
+</Card>`}
+            </Code>
+            <Anchor name="cards-images">
+                <h2>Images</h2>
+            </Anchor>
+            <p>
+                Cards include a few options for working with images. Choose from appending “image caps” at either end of a card, overlaying
+                images with card content, or simply embedding the image in a card.
+            </p>
+            <Anchor name="cards-images-caps">
+                <h3>Image caps</h3>
+            </Anchor>
+            <p>Similar to headers and footers, cards can include top and bottom “image caps”—images at the top or bottom of a card.</p>
+            <Example>
+                <Card>
+                    <Card.Image src={holderImage("100px180")} position="top" />
+                    <Card.Body>
+                        <Card.Title>Card title</Card.Title>
+                        <Card.Text>
+                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
+                            little bit longer.
+                        </Card.Text>
+                        <Card.Text>
+                            <small style={textColor("muted")}>Last updated 3 mins ago</small>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Example>
+            <Code language="tsx">
+                {`<Card>
+    <Card.Image src="${holderImage("100px180")}" position="top" />
+    <Card.Body>
+        <Card.Title>Card title</Card.Title>
+        <Card.Text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
+            little bit longer.
+        </Card.Text>
+        <Card.Text>
+            <small style={textColor("muted")}>Last updated 3 mins ago</small>
+        </Card.Text>
+    </Card.Body>
+</Card>`}
+            </Code>
+            <Example>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Card title</Card.Title>
+                        <Card.Text>
+                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
+                            little bit longer.
+                        </Card.Text>
+                        <Card.Text>
+                            <small style={textColor("muted")}>Last updated 3 mins ago</small>
+                        </Card.Text>
+                    </Card.Body>
+                    <Card.Image src={holderImage("100px180")} position="bottom" />
+                </Card>
+            </Example>
+            <Code language="tsx">
+                {`<Card>
+    <Card.Body>
+        <Card.Title>Card title</Card.Title>
+        <Card.Text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
+            little bit longer.
+        </Card.Text>
+        <Card.Text>
+            <small style={textColor("muted")}>Last updated 3 mins ago</small>
+        </Card.Text>
+    </Card.Body>
+    <Card.Image src="${holderImage("100px180")}" position="bottom" />
+</Card>`}
+            </Code>
+            <Anchor name="cards-images-overlays">
+                <h3>Image overlays</h3>
+            </Anchor>
+            <p>
+                Turn an image into a card background and overlay your card’s text. Depending on the image, you may or may not need
+                additional styles or utilities.
+            </p>
+            <Example>
+                <Card style={[backgroundColor("dark"), textColor("white")]}>
+                    <Card.Image src={holderImage("100px270")} />
+                    <Card.Image.Overlay>
+                        <Card.Title>Card title</Card.Title>
+                        <Card.Text>
+                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
+                            little bit longer.
+                        </Card.Text>
+                        <Card.Text>
+                            <small>Last updated 3 mins ago</small>
+                        </Card.Text>
+                    </Card.Image.Overlay>
+                </Card>
+            </Example>
+            <Code language="tsx">
+                {`<Card style={[backgroundColor("dark"), textColor("white")]}>
+    <Card.Image src="${holderImage("100px270")}" />
+    <Card.Image.Overlay>
+        <Card.Title>Card title</Card.Title>
+        <Card.Text>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
+            little bit longer.
+        </Card.Text>
+        <Card.Text>
+            <small>Last updated 3 mins ago</small>
+        </Card.Text>
+    </Card.Image.Overlay>
+</Card>`}
+            </Code>
+            <Anchor name="cards-horizontal">
+                <h2>Horizontal</h2>
+            </Anchor>
+            <p>Using a combination of grid and utilities, cards can be made horizontal in a mobile-friendly and responsive way.</p>
+            <Example>
+                <Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
+                    <Row no-gutters>
+                        <Col md={4}>
+                            <Card.Image src={holderImage("100px270")} />
+                        </Col>
+                        <Col md={8}>
+                            <Card.Body>
+                                <Card.Title>Card title</Card.Title>
+                                <Card.Text>
+                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content
+                                    is a little bit longer.
+                                </Card.Text>
+                                <Card.Text>
+                                    <small style={textColor("muted")}>Last updated 3 mins ago</small>
+                                </Card.Text>
+                            </Card.Body>
+                        </Col>
+                    </Row>
+                </Card>
+            </Example>
+            <Code language="tsx">
+                {`<Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
+    <Row no-gutters>
+        <Col md={4}>
+            <Card.Image src={holderImage("100px270")} />
+        </Col>
+        <Col md={8}>
+            <Card.Body>
+                <Card.Title>Card title</Card.Title>
+                <Card.Text>
+                    This is a wider card with supporting text below as a natural lead-in to additional content. This content
+                    is a little bit longer.
+                </Card.Text>
+                <Card.Text>
+                    <small style={textColor("muted")}>Last updated 3 mins ago</small>
+                </Card.Text>
+            </Card.Body>
+        </Col>
+    </Row>
+</Card>`}
+            </Code>
+            <Anchor name="cards-styles">
+                <h2>Cards styles</h2>
+            </Anchor>
+            <p>Cards include various options for customizing their backgrounds, borders, and color.</p>
+            <Anchor name="cards-styles-background-and-color">
+                <h3>Background and color</h3>
+            </Anchor>
+            <Example>
+                {backgroundGradientColorScale.map((bgColor) => (
+                    <Card
+                        style={[
+                            textColor(bgColor === "light" ? "dark" : "white"),
+                            backgroundColor(bgColor),
+                            margin({ side: "b", size: 3 }),
+                            { width: "18rem" },
+                        ]}
+                    >
+                        <Card.Header>Header</Card.Header>
+                        <Card.Body>
+                            <Card.Title>Card title - {bgColor}</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                ))}
+            </Example>
+            <Code language="tsx">
+                {backgroundGradientColorScale
+                    .map(
+                        (bgColor) =>
+                            `<Card style={[textColor("${
+                                bgColor === "light" ? "dark" : "white"
+                            }"), backgroundColor("${bgColor}"), margin({ side: "b", size: 3 }), { width: "18rem" }]}>
+    <Card.Header>Header</Card.Header>
+    <Card.Body>
+        <Card.Title>Card title - ${bgColor}</Card.Title>
+        <Card.Text>
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+        </Card.Text>
+    </Card.Body>
+</Card>`
+                    )
+                    .join("\n")}
+            </Code>
+            <Anchor name="cards-styles-border">
+                <h3>Border</h3>
+            </Anchor>
+            <Example>
+                {borderColorScale.map((borderColorItem) => (
+                    <Card
+                        style={[
+                            textColor(["white", "light"].indexOf(borderColorItem) >= 0 ? "dark" : borderColorItem),
+                            borderColor(borderColorItem),
+                            margin({ side: "b", size: 3 }),
+                            { width: "18rem" },
+                        ]}
+                    >
+                        <Card.Header>Header</Card.Header>
+                        <Card.Body>
+                            <Card.Title>Card title - {borderColorItem}</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                ))}
+            </Example>
+            <Code language="tsx">
+                {borderColorScale
+                    .map(
+                        (borderColorItem) =>
+                            `<Card style={[textColor("${
+                                ["white", "light"].indexOf(borderColorItem) >= 0 ? "dark" : borderColorItem
+                            }"), backgroundColor("${borderColorItem}"), margin({ side: "b", size: 3 }), { width: "18rem" }]}>
+    <Card.Header>Header</Card.Header>
+    <Card.Body>
+        <Card.Title>Card title - ${borderColorItem}</Card.Title>
+        <Card.Text>
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+        </Card.Text>
+    </Card.Body>
+</Card>`
+                    )
+                    .join("\n")}
+            </Code>
         </>
     );
 }
-
-const imageUri =
-    "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1757fa20239%20text%20%7B%20fill%3A%23999%3Bfont-weight%3Anormal%3Bfont-family%3A-apple-system%2CBlinkMacSystemFont%2C%26quot%3BSegoe%20UI%26quot%3B%2CRoboto%2C%26quot%3BHelvetica%20Neue%26quot%3B%2CArial%2C%26quot%3BNoto%20Sans%26quot%3B%2Csans-serif%2C%26quot%3BApple%20Color%20Emoji%26quot%3B%2C%26quot%3BSegoe%20UI%20Emoji%26quot%3B%2C%26quot%3BSegoe%20UI%20Symbol%26quot%3B%2C%26quot%3BNoto%20Color%20Emoji%26quot%3B%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1757fa20239%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23373940%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22105.78125%22%20y%3D%2296.721875%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E";

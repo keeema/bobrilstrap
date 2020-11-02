@@ -11,6 +11,8 @@ export const navStyles = {
     fill: b.styleDef("nav-fill"),
     justified: b.styleDef("nav-justifed"),
     tabs: b.styleDef("nav-tabs"),
+    cardHeaderTabs: b.styleDef("card-header-tabs"),
+    cardHeaderPills: b.styleDef("card-header-pills"),
 };
 
 interface INavElementData {
@@ -19,6 +21,8 @@ interface INavElementData {
     fill?: boolean;
     justified?: boolean;
     tabs?: boolean;
+    "card-header-tabs"?: boolean;
+    "card-header-pills"?: boolean;
     navbar?: boolean;
 }
 
@@ -30,7 +34,15 @@ export class Nav extends BaseElement<INavData> {
     static Item = NavItem;
     static Link = NavLink;
 
-    readonly componentProperties: (keyof INavElementData)[] = ["pills", "fill", "justified", "tabs", "navbar"];
+    readonly componentProperties: (keyof INavElementData)[] = [
+        "pills",
+        "card-header-pills",
+        "fill",
+        "justified",
+        "tabs",
+        "card-header-tabs",
+        "navbar",
+    ];
 
     get tag(): string {
         return "nav";
@@ -44,6 +56,8 @@ export class Nav extends BaseElement<INavData> {
             data.fill && navStyles.fill,
             data.justified && navStyles.justified,
             data.tabs && navStyles.tabs,
+            data["card-header-tabs"] && navStyles.cardHeaderTabs,
+            data["card-header-pills"] && navStyles.cardHeaderPills,
         ];
     }
 }

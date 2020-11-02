@@ -29,3 +29,9 @@ export const backgroundColor = createDictionary<BackgroundColor, b.IBobrilStyle>
 export const backgroundGradientColor = createDictionary<Color, b.IBobrilStyle>(
     backgroundGradientColorScale.map((variant) => [variant, b.styleDef(`bg-gradient-${variant}`)])
 );
+
+export type BorderColor = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark" | "white";
+export const borderColorScale: BorderColor[] = ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark", "white"];
+export const borderColor = createDictionary<BorderColor, b.IBobrilStyle>(
+    borderColorScale.map((variant) => [variant, b.styleDef(`border-${variant}`)])
+);

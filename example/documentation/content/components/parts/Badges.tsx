@@ -40,6 +40,7 @@ export const badgesRoute: IRouteWithNavDefinition = {
 };
 
 export function Badges(): b.IBobrilNode {
+    const badgeVariants = new Array<BadgeVariant>("primary", "secondary", "success", "danger", "warning", "info", "light", "dark");
     return (
         <>
             <Anchor name="badges">
@@ -126,23 +127,21 @@ export function Badges(): b.IBobrilNode {
             </Anchor>
             <p>Add any of the below mentioned modifier prop values to change the appearance of a badge.</p>
             <Example>
-                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map((variant) => (
+                {badgeVariants.map((variant) => (
                     <>
                         <Badge variant={variant}>{variant.toUpperCase()}</Badge>{" "}
                     </>
                 ))}
             </Example>
             <Code language="tsx">
-                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map(
-                    (variant) => `<Badge variant="${variant}">${variant.toUpperCase()}</Badge>{" "}\n`
-                )}
+                {badgeVariants.map((variant) => `<Badge variant="${variant}">${variant.toUpperCase()}</Badge>{" "}\n`)}
             </Code>
             <Anchor name="badges-pills">
                 <h2>Pills</h2>
             </Anchor>
             <p>Make badges more rounded</p>
             <Example>
-                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map((variant) => (
+                {badgeVariants.map((variant) => (
                     <>
                         <Badge variant={variant} pill>
                             {variant.toUpperCase()}
@@ -151,9 +150,7 @@ export function Badges(): b.IBobrilNode {
                 ))}
             </Example>
             <Code language="tsx">
-                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map(
-                    (variant) => `<Badge variant="${variant}" pill>${variant.toUpperCase()}</Badge>{" "}\n`
-                )}
+                {badgeVariants.map((variant) => `<Badge variant="${variant}" pill>${variant.toUpperCase()}</Badge>{" "}\n`)}
             </Code>
             <Anchor name="badges-links">
                 <h2>Links</h2>
@@ -163,7 +160,7 @@ export function Badges(): b.IBobrilNode {
                 focus states.
             </p>
             <Example>
-                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map((variant) => (
+                {badgeVariants.map((variant) => (
                     <>
                         <Badge variant={variant} href="javascript:void(0)">
                             {variant.toUpperCase()}
@@ -172,7 +169,7 @@ export function Badges(): b.IBobrilNode {
                 ))}
             </Example>
             <Code language="tsx">
-                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as BadgeVariant[]).map(
+                {badgeVariants.map(
                     (variant) => `<Badge variant="${variant}" href="javascript:void(0)">${variant.toUpperCase()}</Badge>{" "}\n`
                 )}
             </Code>

@@ -70,14 +70,16 @@ export function Buttons(): b.IBobrilNode {
                 more control.
             </p>
             <Example>
-                {(["primary", "secondary", "success", "warning", "danger", "light", "dark", "link"] as ButtonVariant[]).map((variant) => (
-                    <>
-                        <Button variant={variant}>{variant.toUpperCase()}</Button>{" "}
-                    </>
-                ))}
+                {new Array<ButtonVariant>("primary", "secondary", "success", "warning", "danger", "light", "dark", "link").map(
+                    (variant) => (
+                        <>
+                            <Button variant={variant}>{variant.toUpperCase()}</Button>{" "}
+                        </>
+                    )
+                )}
             </Example>
             <Code language="tsx">
-                {(["primary", "secondary", "success", "warning", "danger", "light", "dark", "link"] as ButtonVariant[]).map(
+                {new Array<ButtonVariant>("primary", "secondary", "success", "warning", "danger", "light", "dark", "link").map(
                     (variant) => `<Button variant="${variant}">${variant.toUpperCase()}</Button>{" "}\n`
                 )}
             </Code>
@@ -108,7 +110,7 @@ export function Buttons(): b.IBobrilNode {
                 <code>outline-*</code> ones to remove all background images and colors on any button.
             </p>
             <Example>
-                {([
+                {new Array<ButtonVariant>(
                     "outline-primary",
                     "outline-secondary",
                     "outline-success",
@@ -116,15 +118,15 @@ export function Buttons(): b.IBobrilNode {
                     "outline-danger",
                     "outline-light",
                     "outline-dark",
-                    "outline-link",
-                ] as ButtonVariant[]).map((variant) => (
+                    "outline-link"
+                ).map((variant) => (
                     <>
                         <Button variant={variant}>{variant.toUpperCase()}</Button>{" "}
                     </>
                 ))}
             </Example>
             <Code language="tsx">
-                {([
+                {new Array<ButtonVariant>(
                     "outline-primary",
                     "outline-secondary",
                     "outline-success",
@@ -132,8 +134,8 @@ export function Buttons(): b.IBobrilNode {
                     "outline-danger",
                     "outline-light",
                     "outline-dark",
-                    "outline-link",
-                ] as ButtonVariant[]).map((variant) => `<Button variant="${variant}">${variant.toUpperCase()}</Button>{" "}\n`)}
+                    "outline-link"
+                ).map((variant) => `<Button variant="${variant}">${variant.toUpperCase()}</Button>{" "}\n`)}
             </Code>
             <Anchor name="buttons-sizes">
                 <h2>Sizes</h2>

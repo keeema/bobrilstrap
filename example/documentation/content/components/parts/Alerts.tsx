@@ -67,12 +67,12 @@ export function Alerts(): b.IBobrilNode {
             </Anchor>
             <p>Alerts are available for any length of text, as well as an optional dismiss button.</p>
             <Example>
-                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as AlertVariant[]).map((variant) => (
+                {new Array<AlertVariant>("primary", "secondary", "success", "danger", "warning", "info", "light", "dark").map((variant) => (
                     <Alert variant={variant}>A simple {variant} alert — check it out!</Alert>
                 ))}
             </Example>
             <Code language="tsx">
-                {(["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] as AlertVariant[]).map(
+                {new Array<AlertVariant>("primary", "secondary", "success", "danger", "warning", "info", "light", "dark").map(
                     (variant) => `<Alert variant="${variant}">A simple ${variant} alert — check it out!</Alert>\n`
                 )}
             </Code>

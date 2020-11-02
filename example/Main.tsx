@@ -2,19 +2,22 @@ import * as b from "bobril";
 import * as prismJs from "prismjs";
 import { Navigation } from "./navigation/Navigation";
 import { margin, buttonStyles } from "../index";
+import { runHolder } from "./common/holder";
 
 export function Main(data: b.IRouteHandlerData): b.IBobrilNode {
+    const me = b.useRef<b.IBobrilCacheNode | null>(null);
     b.useEffect(() => {
         deleteCopyButtons();
         prismJs.highlightAll();
         fixCopies();
+        runHolder();
     });
 
     return (
-        <>
+        <b.Fragment ref={me}>
             <Navigation />
             {data.activeRouteHandler()}
-        </>
+        </b.Fragment>
     );
 }
 

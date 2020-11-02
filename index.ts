@@ -14,6 +14,7 @@ export * from "./src/components/CardBody";
 export * from "./src/components/CardFooter";
 export * from "./src/components/CardHeader";
 export * from "./src/components/CardImage";
+export * from "./src/components/CardImageOverlay";
 export * from "./src/components/CardLink";
 export * from "./src/components/CardSubtitle";
 export * from "./src/components/CardText";

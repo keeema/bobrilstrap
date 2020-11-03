@@ -68,4 +68,4 @@ const navItemLinkStyle = b.styleDef(
     }
 );
 
-const navItemLinkActiveStyle = b.styleDefEx(navItemLinkStyle, { color: "rgba(0,0,0,.85)" });
+const navItemLinkActiveStyle = b.styleDefEx(navItemLinkStyle, { color: "rgba(0,0,0,.85)", fontWeight: "bold" });

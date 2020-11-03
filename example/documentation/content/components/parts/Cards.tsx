@@ -22,7 +22,7 @@ import {
     borderColor,
 } from "../../../../../index";
 import { Code } from "../../../../common/Code";
-import { holderImage } from "../../../../common/holder";
+import { placeholderUri } from "../../../../common/placeholderGenerator";
 
 export const cardsRoute: IRouteWithNavDefinition = {
     url: "cards",
@@ -191,7 +191,7 @@ export function Cards(): b.IBobrilNode {
             </p>
             <Example>
                 <Card style={{ width: "18rem" }}>
-                    <Card.Image src={holderImage("100px180")} position="top" />
+                    <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>
@@ -203,7 +203,7 @@ export function Cards(): b.IBobrilNode {
             </Example>
             <Code language="tsx">
                 {`<Card style={{ width: "18rem" }}>
-    <Card.Image src="${holderImage("100px180")}" position="top" />
+    <Card.Image src="placeholderUri(100, "%", 180, "px")" position="top" />
     <Card.Body>
         <Card.Title>Card title</Card.Title>
         <Card.Text>
@@ -266,7 +266,7 @@ export function Cards(): b.IBobrilNode {
             </Anchor>
             <Example>
                 <Card style={{ width: "18rem" }}>
-                    <Card.Image src={holderImage("100px180")} position="top" />
+                    <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                     <Card.Body>
                         <Card.Text>
                             Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -275,7 +275,7 @@ export function Cards(): b.IBobrilNode {
                 </Card>
             </Example>
             <Code language="tsx">{`<Card style={{ width: "18rem" }}>
-    <Card.Image src="${holderImage("100px180")}" position="top" />
+    <Card.Image src="placeholderUri(100, "%", 180, "px")" position="top" />
     <Card.Body>
         <Card.Text>
             Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -315,7 +315,7 @@ export function Cards(): b.IBobrilNode {
             </p>
             <Example>
                 <Card style={{ width: "18rem" }}>
-                    <Card.Image src={holderImage("100px180")} position="top" />
+                    <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>
@@ -652,7 +652,7 @@ export function Cards(): b.IBobrilNode {
             <p>Similar to headers and footers, cards can include top and bottom “image caps”—images at the top or bottom of a card.</p>
             <Example>
                 <Card>
-                    <Card.Image src={holderImage("100px180")} position="top" />
+                    <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>
@@ -667,7 +667,7 @@ export function Cards(): b.IBobrilNode {
             </Example>
             <Code language="tsx">
                 {`<Card>
-    <Card.Image src="${holderImage("100px180")}" position="top" />
+    <Card.Image src="placeholderUri(100, "%", 180, "px")" position="top" />
     <Card.Body>
         <Card.Title>Card title</Card.Title>
         <Card.Text>
@@ -692,7 +692,7 @@ export function Cards(): b.IBobrilNode {
                             <small style={textColor("muted")}>Last updated 3 mins ago</small>
                         </Card.Text>
                     </Card.Body>
-                    <Card.Image src={holderImage("100px180")} position="bottom" />
+                    <Card.Image src={placeholderUri(100, "%", 180, "px")} position="bottom" />
                 </Card>
             </Example>
             <Code language="tsx">
@@ -707,7 +707,7 @@ export function Cards(): b.IBobrilNode {
             <small style={textColor("muted")}>Last updated 3 mins ago</small>
         </Card.Text>
     </Card.Body>
-    <Card.Image src="${holderImage("100px180")}" position="bottom" />
+    <Card.Image src="placeholderUri(100, "%", 180, "px")" position="bottom" />
 </Card>`}
             </Code>
             <Anchor name="cards-images-overlays">
@@ -719,7 +719,7 @@ export function Cards(): b.IBobrilNode {
             </p>
             <Example>
                 <Card style={[backgroundColor("dark"), textColor("white")]}>
-                    <Card.Image src={holderImage("100px270")} />
+                    <Card.Image src={placeholderUri(100, "%", 270, "px")} />
                     <Card.Image.Overlay>
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>
@@ -734,7 +734,7 @@ export function Cards(): b.IBobrilNode {
             </Example>
             <Code language="tsx">
                 {`<Card style={[backgroundColor("dark"), textColor("white")]}>
-    <Card.Image src="${holderImage("100px270")}" />
+    <Card.Image src="placeholderUri(100, "%", 270, "px")" />
     <Card.Image.Overlay>
         <Card.Title>Card title</Card.Title>
         <Card.Text>
@@ -755,7 +755,7 @@ export function Cards(): b.IBobrilNode {
                 <Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
                     <Row no-gutters>
                         <Col md={4}>
-                            <Card.Image src={holderImage("100px270")} />
+                            <Card.Image src={placeholderUri(100, "%", 270, "px")} />
                         </Col>
                         <Col md={8}>
                             <Card.Body>
@@ -776,7 +776,7 @@ export function Cards(): b.IBobrilNode {
                 {`<Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
     <Row no-gutters>
         <Col md={4}>
-            <Card.Image src={holderImage("100px270")} />
+            <Card.Image src="placeholderUri(100, "%", 270, "px")" />
         </Col>
         <Col md={8}>
             <Card.Body>

@@ -2,7 +2,6 @@ import * as b from "bobril";
 import * as prismJs from "prismjs";
 import { Navigation } from "./navigation/Navigation";
 import { margin, buttonStyles } from "../index";
-import { runHolder } from "./common/holder";
 
 export function Main(data: b.IRouteHandlerData): b.IBobrilNode {
     const me = b.useRef<b.IBobrilCacheNode | null>(null);
@@ -10,7 +9,6 @@ export function Main(data: b.IRouteHandlerData): b.IBobrilNode {
         deleteCopyButtons();
         prismJs.highlightAll();
         fixCopies();
-        runHolder();
     });
 
     return (

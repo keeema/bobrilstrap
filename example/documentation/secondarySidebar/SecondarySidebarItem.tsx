@@ -39,6 +39,5 @@ const linkStyle = b.styleDef(
 
 const sectionStyle = b.styleDef({
     paddingLeft: 0,
-    borderLeft: "1px solid #eee",
     listStyleType: "none",
 });

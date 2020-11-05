@@ -1,7 +1,10 @@
 import * as b from "bobril";
 import { IBaseElementData, BaseElement } from "./BaseElement";
 import { CardBody } from "./CardBody";
+import { CardColumns } from "./CardColumns";
+import { CardDeck } from "./CardDeck";
 import { CardFooter } from "./CardFooter";
+import { CardGroup } from "./CardGroup";
 import { CardHeader } from "./CardHeader";
 import { CardImage } from "./CardImage";
 import { CardLink } from "./CardLink";
@@ -19,7 +22,10 @@ export class Card extends BaseElement<ICardData> {
     static id: string = "bobrilstrap-card";
 
     static Body = CardBody;
+    static Columns = CardColumns;
+    static Deck = CardDeck;
     static Footer = CardFooter;
+    static Group = CardGroup;
     static Header = CardHeader;
     static Image = CardImage;
     static Link = CardLink;

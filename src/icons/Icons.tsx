@@ -2,6 +2,8 @@ import * as b from "bobril";
 import { IconBase } from "./IconBase";
 
 export class AlarmFill extends IconBase {
+    static id: string = "bobrilstrap-icon-alarm-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13,6 +15,8 @@ export class AlarmFill extends IconBase {
 }
 
 export class Alarm extends IconBase {
+    static id: string = "bobrilstrap-icon-alarm";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -24,6 +28,8 @@ export class Alarm extends IconBase {
 }
 
 export class AlignBottom extends IconBase {
+    static id: string = "bobrilstrap-icon-align-bottom";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M6 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2z" />
@@ -33,6 +39,8 @@ export class AlignBottom extends IconBase {
 }
 
 export class AlignCenter extends IconBase {
+    static id: string = "bobrilstrap-icon-align-center";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8 1a.5.5 0 0 1 .5.5V6h-1V1.5A.5.5 0 0 1 8 1zm0 14a.5.5 0 0 1-.5-.5V10h1v4.5a.5.5 0 0 1-.5.5zM2 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7z" />
@@ -41,6 +49,8 @@ export class AlignCenter extends IconBase {
 }
 
 export class AlignEnd extends IconBase {
+    static id: string = "bobrilstrap-icon-align-end";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z" />
@@ -50,6 +60,8 @@ export class AlignEnd extends IconBase {
 }
 
 export class AlignMiddle extends IconBase {
+    static id: string = "bobrilstrap-icon-align-middle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10zM1 8a.5.5 0 0 0 .5.5H6v-1H1.5A.5.5 0 0 0 1 8zm14 0a.5.5 0 0 1-.5.5H10v-1h4.5a.5.5 0 0 1 .5.5z" />
@@ -58,6 +70,8 @@ export class AlignMiddle extends IconBase {
 }
 
 export class AlignStart extends IconBase {
+    static id: string = "bobrilstrap-icon-align-start";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M1.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z" />
@@ -67,6 +81,8 @@ export class AlignStart extends IconBase {
 }
 
 export class AlignTop extends IconBase {
+    static id: string = "bobrilstrap-icon-align-top";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M6 14a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10z" />
@@ -76,6 +92,8 @@ export class AlignTop extends IconBase {
 }
 
 export class Alt extends IconBase {
+    static id: string = "bobrilstrap-icon-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -87,6 +105,8 @@ export class Alt extends IconBase {
 }
 
 export class AppIndicator extends IconBase {
+    static id: string = "bobrilstrap-icon-app-indicator";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -99,6 +119,8 @@ export class AppIndicator extends IconBase {
 }
 
 export class App extends IconBase {
+    static id: string = "bobrilstrap-icon-app";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -110,6 +132,8 @@ export class App extends IconBase {
 }
 
 export class ArchiveFill extends IconBase {
+    static id: string = "bobrilstrap-icon-archive-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -121,6 +145,8 @@ export class ArchiveFill extends IconBase {
 }
 
 export class Archive extends IconBase {
+    static id: string = "bobrilstrap-icon-archive";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -132,6 +158,8 @@ export class Archive extends IconBase {
 }
 
 export class Arrow90degDown extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-90deg-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -143,6 +171,8 @@ export class Arrow90degDown extends IconBase {
 }
 
 export class Arrow90degLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-90deg-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -154,6 +184,8 @@ export class Arrow90degLeft extends IconBase {
 }
 
 export class Arrow90degRight extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-90deg-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -165,6 +197,8 @@ export class Arrow90degRight extends IconBase {
 }
 
 export class Arrow90degUp extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-90deg-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -176,6 +210,8 @@ export class Arrow90degUp extends IconBase {
 }
 
 export class ArrowBarDown extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-bar-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -187,6 +223,8 @@ export class ArrowBarDown extends IconBase {
 }
 
 export class ArrowBarLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-bar-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -198,6 +236,8 @@ export class ArrowBarLeft extends IconBase {
 }
 
 export class ArrowBarRight extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-bar-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -209,6 +249,8 @@ export class ArrowBarRight extends IconBase {
 }
 
 export class ArrowBarUp extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-bar-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -220,6 +262,8 @@ export class ArrowBarUp extends IconBase {
 }
 
 export class ArrowClockwise extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-clockwise";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
@@ -229,6 +273,8 @@ export class ArrowClockwise extends IconBase {
 }
 
 export class ArrowCounterclockwise extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-counterclockwise";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z" />
@@ -238,6 +284,8 @@ export class ArrowCounterclockwise extends IconBase {
 }
 
 export class ArrowDownCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -249,6 +297,8 @@ export class ArrowDownCircleFill extends IconBase {
 }
 
 export class ArrowDownCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -261,6 +311,8 @@ export class ArrowDownCircle extends IconBase {
 }
 
 export class ArrowDownLeftCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-left-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -272,6 +324,8 @@ export class ArrowDownLeftCircleFill extends IconBase {
 }
 
 export class ArrowDownLeftCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-left-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -284,6 +338,8 @@ export class ArrowDownLeftCircle extends IconBase {
 }
 
 export class ArrowDownLeftSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-left-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -295,6 +351,8 @@ export class ArrowDownLeftSquareFill extends IconBase {
 }
 
 export class ArrowDownLeftSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-left-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -310,6 +368,8 @@ export class ArrowDownLeftSquare extends IconBase {
 }
 
 export class ArrowDownLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -321,6 +381,8 @@ export class ArrowDownLeft extends IconBase {
 }
 
 export class ArrowDownRightCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-right-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -332,6 +394,8 @@ export class ArrowDownRightCircleFill extends IconBase {
 }
 
 export class ArrowDownRightCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-right-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -344,6 +408,8 @@ export class ArrowDownRightCircle extends IconBase {
 }
 
 export class ArrowDownRightSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-right-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -355,6 +421,8 @@ export class ArrowDownRightSquareFill extends IconBase {
 }
 
 export class ArrowDownRightSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-right-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -370,6 +438,8 @@ export class ArrowDownRightSquare extends IconBase {
 }
 
 export class ArrowDownRight extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -381,6 +451,8 @@ export class ArrowDownRight extends IconBase {
 }
 
 export class ArrowDownShort extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-short";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -392,6 +464,8 @@ export class ArrowDownShort extends IconBase {
 }
 
 export class ArrowDownSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -403,6 +477,8 @@ export class ArrowDownSquareFill extends IconBase {
 }
 
 export class ArrowDownSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -418,6 +494,8 @@ export class ArrowDownSquare extends IconBase {
 }
 
 export class ArrowDownUp extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -429,6 +507,8 @@ export class ArrowDownUp extends IconBase {
 }
 
 export class ArrowDown extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -440,6 +520,8 @@ export class ArrowDown extends IconBase {
 }
 
 export class ArrowLeftCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-left-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -451,6 +533,8 @@ export class ArrowLeftCircleFill extends IconBase {
 }
 
 export class ArrowLeftCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-left-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -463,6 +547,8 @@ export class ArrowLeftCircle extends IconBase {
 }
 
 export class ArrowLeftRight extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-left-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -474,6 +560,8 @@ export class ArrowLeftRight extends IconBase {
 }
 
 export class ArrowLeftShort extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-left-short";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -485,6 +573,8 @@ export class ArrowLeftShort extends IconBase {
 }
 
 export class ArrowLeftSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-left-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -496,6 +586,8 @@ export class ArrowLeftSquareFill extends IconBase {
 }
 
 export class ArrowLeftSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-left-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -511,6 +603,8 @@ export class ArrowLeftSquare extends IconBase {
 }
 
 export class ArrowLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -522,6 +616,8 @@ export class ArrowLeft extends IconBase {
 }
 
 export class ArrowRepeat extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-repeat";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
@@ -534,6 +630,8 @@ export class ArrowRepeat extends IconBase {
 }
 
 export class ArrowReturnLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-return-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -545,6 +643,8 @@ export class ArrowReturnLeft extends IconBase {
 }
 
 export class ArrowReturnRight extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-return-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -556,6 +656,8 @@ export class ArrowReturnRight extends IconBase {
 }
 
 export class ArrowRightCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-right-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -567,6 +669,8 @@ export class ArrowRightCircleFill extends IconBase {
 }
 
 export class ArrowRightCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-right-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -579,6 +683,8 @@ export class ArrowRightCircle extends IconBase {
 }
 
 export class ArrowRightShort extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-right-short";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -590,6 +696,8 @@ export class ArrowRightShort extends IconBase {
 }
 
 export class ArrowRightSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-right-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -601,6 +709,8 @@ export class ArrowRightSquareFill extends IconBase {
 }
 
 export class ArrowRightSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-right-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -616,6 +726,8 @@ export class ArrowRightSquare extends IconBase {
 }
 
 export class ArrowRight extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -627,6 +739,8 @@ export class ArrowRight extends IconBase {
 }
 
 export class ArrowUpCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -638,6 +752,8 @@ export class ArrowUpCircleFill extends IconBase {
 }
 
 export class ArrowUpCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -650,6 +766,8 @@ export class ArrowUpCircle extends IconBase {
 }
 
 export class ArrowUpLeftCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-left-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -661,6 +779,8 @@ export class ArrowUpLeftCircleFill extends IconBase {
 }
 
 export class ArrowUpLeftCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-left-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -673,6 +793,8 @@ export class ArrowUpLeftCircle extends IconBase {
 }
 
 export class ArrowUpLeftSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-left-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -684,6 +806,8 @@ export class ArrowUpLeftSquareFill extends IconBase {
 }
 
 export class ArrowUpLeftSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-left-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -699,6 +823,8 @@ export class ArrowUpLeftSquare extends IconBase {
 }
 
 export class ArrowUpLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -710,6 +836,8 @@ export class ArrowUpLeft extends IconBase {
 }
 
 export class ArrowUpRightCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-right-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -721,6 +849,8 @@ export class ArrowUpRightCircleFill extends IconBase {
 }
 
 export class ArrowUpRightCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-right-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -733,6 +863,8 @@ export class ArrowUpRightCircle extends IconBase {
 }
 
 export class ArrowUpRightSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-right-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -744,6 +876,8 @@ export class ArrowUpRightSquareFill extends IconBase {
 }
 
 export class ArrowUpRightSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-right-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -759,6 +893,8 @@ export class ArrowUpRightSquare extends IconBase {
 }
 
 export class ArrowUpRight extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -770,6 +906,8 @@ export class ArrowUpRight extends IconBase {
 }
 
 export class ArrowUpShort extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-short";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -781,6 +919,8 @@ export class ArrowUpShort extends IconBase {
 }
 
 export class ArrowUpSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -792,6 +932,8 @@ export class ArrowUpSquareFill extends IconBase {
 }
 
 export class ArrowUpSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -807,6 +949,8 @@ export class ArrowUpSquare extends IconBase {
 }
 
 export class ArrowUp extends IconBase {
+    static id: string = "bobrilstrap-icon-arrow-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -818,6 +962,8 @@ export class ArrowUp extends IconBase {
 }
 
 export class ArrowsAngleContract extends IconBase {
+    static id: string = "bobrilstrap-icon-arrows-angle-contract";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -829,6 +975,8 @@ export class ArrowsAngleContract extends IconBase {
 }
 
 export class ArrowsAngleExpand extends IconBase {
+    static id: string = "bobrilstrap-icon-arrows-angle-expand";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -840,6 +988,8 @@ export class ArrowsAngleExpand extends IconBase {
 }
 
 export class ArrowsCollapse extends IconBase {
+    static id: string = "bobrilstrap-icon-arrows-collapse";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -851,6 +1001,8 @@ export class ArrowsCollapse extends IconBase {
 }
 
 export class ArrowsExpand extends IconBase {
+    static id: string = "bobrilstrap-icon-arrows-expand";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -862,6 +1014,8 @@ export class ArrowsExpand extends IconBase {
 }
 
 export class ArrowsFullscreen extends IconBase {
+    static id: string = "bobrilstrap-icon-arrows-fullscreen";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -873,6 +1027,8 @@ export class ArrowsFullscreen extends IconBase {
 }
 
 export class ArrowsMove extends IconBase {
+    static id: string = "bobrilstrap-icon-arrows-move";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -884,6 +1040,8 @@ export class ArrowsMove extends IconBase {
 }
 
 export class AspectRatioFill extends IconBase {
+    static id: string = "bobrilstrap-icon-aspect-ratio-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -895,6 +1053,8 @@ export class AspectRatioFill extends IconBase {
 }
 
 export class AspectRatio extends IconBase {
+    static id: string = "bobrilstrap-icon-aspect-ratio";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -910,6 +1070,8 @@ export class AspectRatio extends IconBase {
 }
 
 export class Asterisk extends IconBase {
+    static id: string = "bobrilstrap-icon-asterisk";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -921,6 +1083,8 @@ export class Asterisk extends IconBase {
 }
 
 export class At extends IconBase {
+    static id: string = "bobrilstrap-icon-at";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -932,6 +1096,8 @@ export class At extends IconBase {
 }
 
 export class AwardFill extends IconBase {
+    static id: string = "bobrilstrap-icon-award-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8 0l1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z" />
@@ -941,6 +1107,8 @@ export class AwardFill extends IconBase {
 }
 
 export class Award extends IconBase {
+    static id: string = "bobrilstrap-icon-award";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -953,6 +1121,8 @@ export class Award extends IconBase {
 }
 
 export class Back extends IconBase {
+    static id: string = "bobrilstrap-icon-back";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -964,6 +1134,8 @@ export class Back extends IconBase {
 }
 
 export class BackspaceFill extends IconBase {
+    static id: string = "bobrilstrap-icon-backspace-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -975,6 +1147,8 @@ export class BackspaceFill extends IconBase {
 }
 
 export class BackspaceReverseFill extends IconBase {
+    static id: string = "bobrilstrap-icon-backspace-reverse-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -986,6 +1160,8 @@ export class BackspaceReverseFill extends IconBase {
 }
 
 export class BackspaceReverse extends IconBase {
+    static id: string = "bobrilstrap-icon-backspace-reverse";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -997,6 +1173,8 @@ export class BackspaceReverse extends IconBase {
 }
 
 export class Backspace extends IconBase {
+    static id: string = "bobrilstrap-icon-backspace";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1008,6 +1186,8 @@ export class Backspace extends IconBase {
 }
 
 export class Badge4kFill extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-4k-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3.577 8.9v.03h1.828V5.898h-.062a46.781 46.781 0 0 0-1.766 3.001z" />
@@ -1020,6 +1200,8 @@ export class Badge4kFill extends IconBase {
 }
 
 export class Badge4k extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-4k";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4.807 5.001C4.021 6.298 3.203 7.6 2.5 8.917v.971h2.905V11h1.112V9.888h.733V8.93h-.733V5.001h-1.71zm-1.23 3.93v-.032a46.781 46.781 0 0 1 1.766-3.001h.062V8.93H3.577zm9.831-3.93h-1.306L9.835 7.687h-.057V5H8.59v6h1.187V9.075l.615-.699L12.072 11H13.5l-2.232-3.415 2.14-2.584z" />
@@ -1032,6 +1214,8 @@ export class Badge4k extends IconBase {
 }
 
 export class Badge8kFill extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-8k-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3.9 6.605c0 .51.405.866.95.866.545 0 .945-.356.945-.866s-.4-.852-.945-.852c-.545 0-.95.343-.95.852zm-.192 2.668c0 .589.492.984 1.142.984.646 0 1.143-.395 1.143-.984S5.496 8.28 4.85 8.28c-.65 0-1.142.404-1.142.993z" />
@@ -1044,6 +1228,8 @@ export class Badge8kFill extends IconBase {
 }
 
 export class Badge8k extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-8k";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4.837 11.114c1.406 0 2.333-.725 2.333-1.766 0-.945-.712-1.38-1.256-1.49v-.053c.496-.15 1.02-.55 1.02-1.331 0-.914-.831-1.587-2.084-1.587-1.257 0-2.087.673-2.087 1.587 0 .773.51 1.177 1.02 1.331v.053c-.546.11-1.258.54-1.258 1.494 0 1.042.906 1.762 2.312 1.762zm.013-3.643c-.545 0-.95-.356-.95-.866s.405-.852.95-.852c.545 0 .945.343.945.852 0 .51-.4.866-.945.866zm0 2.786c-.65 0-1.142-.395-1.142-.984S4.2 8.28 4.85 8.28c.646 0 1.143.404 1.143.993s-.497.984-1.143.984zM13.408 5h-1.306L9.835 7.685h-.057V5H8.59v5.998h1.187V9.075l.615-.699 1.679 2.623H13.5l-2.232-3.414L13.408 5z" />
@@ -1056,6 +1242,8 @@ export class Badge8k extends IconBase {
 }
 
 export class BadgeAdFill extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-ad-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1067,6 +1255,8 @@ export class BadgeAdFill extends IconBase {
 }
 
 export class BadgeAd extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-ad";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1079,6 +1269,8 @@ export class BadgeAd extends IconBase {
 }
 
 export class BadgeCcFill extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-cc-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1090,6 +1282,8 @@ export class BadgeCcFill extends IconBase {
 }
 
 export class BadgeCc extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-cc";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3.708 7.755c0-1.111.488-1.753 1.319-1.753.681 0 1.138.47 1.186 1.107H7.36V7c-.052-1.186-1.024-2-2.342-2C3.414 5 2.5 6.05 2.5 7.751v.747c0 1.7.905 2.73 2.518 2.73 1.314 0 2.285-.792 2.342-1.939v-.114H6.213c-.048.615-.496 1.05-1.186 1.05-.84 0-1.319-.62-1.319-1.727v-.743zm6.14 0c0-1.111.488-1.753 1.318-1.753.682 0 1.139.47 1.187 1.107H13.5V7c-.053-1.186-1.024-2-2.342-2C9.554 5 8.64 6.05 8.64 7.751v.747c0 1.7.905 2.73 2.518 2.73 1.314 0 2.285-.792 2.342-1.939v-.114h-1.147c-.048.615-.497 1.05-1.187 1.05-.839 0-1.318-.62-1.318-1.727v-.743z" />
@@ -1102,6 +1296,8 @@ export class BadgeCc extends IconBase {
 }
 
 export class BadgeHdFill extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-hd-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M10.53 5.968h-.843v4.06h.843c1.117 0 1.622-.667 1.622-2.02 0-1.354-.51-2.04-1.622-2.04z" />
@@ -1114,6 +1310,8 @@ export class BadgeHdFill extends IconBase {
 }
 
 export class BadgeHd extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-hd";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1126,6 +1324,8 @@ export class BadgeHd extends IconBase {
 }
 
 export class BadgeTmFill extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-tm-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1137,6 +1337,8 @@ export class BadgeTmFill extends IconBase {
 }
 
 export class BadgeTm extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-tm";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5.295 11V5.995H7V5H2.403v.994h1.701V11h1.19zm3.397 0V7.01h.058l1.428 3.239h.773l1.42-3.24h.057V11H13.5V5.001h-1.2l-1.71 3.894h-.039l-1.71-3.894H7.634V11h1.06z" />
@@ -1149,6 +1351,8 @@ export class BadgeTm extends IconBase {
 }
 
 export class BadgeVoFill extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-vo-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M12.296 8.394v-.782c0-1.156-.571-1.736-1.362-1.736-.796 0-1.363.58-1.363 1.736v.782c0 1.156.567 1.732 1.363 1.732.79 0 1.362-.576 1.362-1.732z" />
@@ -1161,6 +1365,8 @@ export class BadgeVoFill extends IconBase {
 }
 
 export class BadgeVo extends IconBase {
+    static id: string = "bobrilstrap-icon-badge-vo";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4.508 11h1.429l1.99-5.999H6.61L5.277 9.708H5.22L3.875 5.001H2.5L4.508 11zM13.5 8.39v-.77c0-1.696-.962-2.733-2.566-2.733-1.604 0-2.571 1.029-2.571 2.734v.769c0 1.691.967 2.724 2.57 2.724 1.605 0 2.567-1.033 2.567-2.724zm-1.204-.778v.782c0 1.156-.571 1.732-1.362 1.732-.796 0-1.363-.576-1.363-1.732v-.782c0-1.156.567-1.736 1.363-1.736.79 0 1.362.58 1.362 1.736z" />
@@ -1173,6 +1379,8 @@ export class BadgeVo extends IconBase {
 }
 
 export class BagCheckFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bag-check-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1184,6 +1392,8 @@ export class BagCheckFill extends IconBase {
 }
 
 export class BagCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-bag-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1199,6 +1409,8 @@ export class BagCheck extends IconBase {
 }
 
 export class BagDashFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bag-dash-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1210,6 +1422,8 @@ export class BagDashFill extends IconBase {
 }
 
 export class BagDash extends IconBase {
+    static id: string = "bobrilstrap-icon-bag-dash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1222,6 +1436,8 @@ export class BagDash extends IconBase {
 }
 
 export class BagFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bag-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1233,6 +1449,8 @@ export class BagFill extends IconBase {
 }
 
 export class BagPlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bag-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1244,6 +1462,8 @@ export class BagPlusFill extends IconBase {
 }
 
 export class BagPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-bag-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1259,6 +1479,8 @@ export class BagPlus extends IconBase {
 }
 
 export class BagXFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bag-x-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1270,6 +1492,8 @@ export class BagXFill extends IconBase {
 }
 
 export class BagX extends IconBase {
+    static id: string = "bobrilstrap-icon-bag-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1285,6 +1509,8 @@ export class BagX extends IconBase {
 }
 
 export class Bag extends IconBase {
+    static id: string = "bobrilstrap-icon-bag";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1296,6 +1522,8 @@ export class Bag extends IconBase {
 }
 
 export class BarChartFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bar-chart-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <rect width="4" height="5" x="1" y="10" rx="1" />
@@ -1306,6 +1534,8 @@ export class BarChartFill extends IconBase {
 }
 
 export class BarChartLineFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bar-chart-line-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1317,6 +1547,8 @@ export class BarChartLineFill extends IconBase {
 }
 
 export class BarChartLine extends IconBase {
+    static id: string = "bobrilstrap-icon-bar-chart-line";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1328,6 +1560,8 @@ export class BarChartLine extends IconBase {
 }
 
 export class BarChartSteps extends IconBase {
+    static id: string = "bobrilstrap-icon-bar-chart-steps";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 .5 0z" />
@@ -1339,6 +1573,8 @@ export class BarChartSteps extends IconBase {
 }
 
 export class BarChart extends IconBase {
+    static id: string = "bobrilstrap-icon-bar-chart";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1350,6 +1586,8 @@ export class BarChart extends IconBase {
 }
 
 export class BasketFill extends IconBase {
+    static id: string = "bobrilstrap-icon-basket-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1361,6 +1599,8 @@ export class BasketFill extends IconBase {
 }
 
 export class Basket extends IconBase {
+    static id: string = "bobrilstrap-icon-basket";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1372,6 +1612,8 @@ export class Basket extends IconBase {
 }
 
 export class Basket2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-basket2-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1383,6 +1625,8 @@ export class Basket2Fill extends IconBase {
 }
 
 export class Basket2 extends IconBase {
+    static id: string = "bobrilstrap-icon-basket2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z" />
@@ -1395,6 +1639,8 @@ export class Basket2 extends IconBase {
 }
 
 export class Basket3Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-basket3-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1407,6 +1653,8 @@ export class Basket3Fill extends IconBase {
 }
 
 export class Basket3 extends IconBase {
+    static id: string = "bobrilstrap-icon-basket3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1418,6 +1666,8 @@ export class Basket3 extends IconBase {
 }
 
 export class BatteryCharging extends IconBase {
+    static id: string = "bobrilstrap-icon-battery-charging";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M14.5 9.5a1.5 1.5 0 0 0 0-3v3z" />
@@ -1434,6 +1684,8 @@ export class BatteryCharging extends IconBase {
 }
 
 export class BatteryFull extends IconBase {
+    static id: string = "bobrilstrap-icon-battery-full";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1446,6 +1698,8 @@ export class BatteryFull extends IconBase {
 }
 
 export class BatteryHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-battery-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1458,6 +1712,8 @@ export class BatteryHalf extends IconBase {
 }
 
 export class Battery extends IconBase {
+    static id: string = "bobrilstrap-icon-battery";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1470,6 +1726,8 @@ export class Battery extends IconBase {
 }
 
 export class BellFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bell-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
@@ -1478,6 +1736,8 @@ export class BellFill extends IconBase {
 }
 
 export class Bell extends IconBase {
+    static id: string = "bobrilstrap-icon-bell";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z" />
@@ -1490,6 +1750,8 @@ export class Bell extends IconBase {
 }
 
 export class Bezier extends IconBase {
+    static id: string = "bobrilstrap-icon-bezier";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1502,6 +1764,8 @@ export class Bezier extends IconBase {
 }
 
 export class Bezier2 extends IconBase {
+    static id: string = "bobrilstrap-icon-bezier2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1513,6 +1777,8 @@ export class Bezier2 extends IconBase {
 }
 
 export class Bicycle extends IconBase {
+    static id: string = "bobrilstrap-icon-bicycle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1524,6 +1790,8 @@ export class Bicycle extends IconBase {
 }
 
 export class BinocularsFill extends IconBase {
+    static id: string = "bobrilstrap-icon-binoculars-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4.5 1A1.5 1.5 0 0 0 3 2.5V3h4v-.5A1.5 1.5 0 0 0 5.5 1h-1zM7 4v1h2V4h4v.882a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V13H9v-1.5a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5V13H1V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V4h4zM1 14v.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V14H1zm8 0v.5a1.5 1.5 0 0 0 1.5 1.5h3a1.5 1.5 0 0 0 1.5-1.5V14H9zm4-11H9v-.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5V3z" />
@@ -1532,6 +1800,8 @@ export class BinocularsFill extends IconBase {
 }
 
 export class Binoculars extends IconBase {
+    static id: string = "bobrilstrap-icon-binoculars";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1543,6 +1813,8 @@ export class Binoculars extends IconBase {
 }
 
 export class BlockquoteLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-blockquote-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1555,6 +1827,8 @@ export class BlockquoteLeft extends IconBase {
 }
 
 export class BlockquoteRight extends IconBase {
+    static id: string = "bobrilstrap-icon-blockquote-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1567,6 +1841,8 @@ export class BlockquoteRight extends IconBase {
 }
 
 export class BookFill extends IconBase {
+    static id: string = "bobrilstrap-icon-book-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1578,6 +1854,8 @@ export class BookFill extends IconBase {
 }
 
 export class BookHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-book-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1589,6 +1867,8 @@ export class BookHalf extends IconBase {
 }
 
 export class Book extends IconBase {
+    static id: string = "bobrilstrap-icon-book";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1600,6 +1880,8 @@ export class Book extends IconBase {
 }
 
 export class BookmarkCheckFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-check-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1611,6 +1893,8 @@ export class BookmarkCheckFill extends IconBase {
 }
 
 export class BookmarkCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1626,6 +1910,8 @@ export class BookmarkCheck extends IconBase {
 }
 
 export class BookmarkDashFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-dash-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1637,6 +1923,8 @@ export class BookmarkDashFill extends IconBase {
 }
 
 export class BookmarkDash extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-dash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1649,6 +1937,8 @@ export class BookmarkDash extends IconBase {
 }
 
 export class BookmarkFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1660,6 +1950,8 @@ export class BookmarkFill extends IconBase {
 }
 
 export class BookmarkHeartFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-heart-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1671,6 +1963,8 @@ export class BookmarkHeartFill extends IconBase {
 }
 
 export class BookmarkHeart extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-heart";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1683,6 +1977,8 @@ export class BookmarkHeart extends IconBase {
 }
 
 export class BookmarkPlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1694,6 +1990,8 @@ export class BookmarkPlusFill extends IconBase {
 }
 
 export class BookmarkPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1709,6 +2007,8 @@ export class BookmarkPlus extends IconBase {
 }
 
 export class BookmarkStarFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-star-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1720,6 +2020,8 @@ export class BookmarkStarFill extends IconBase {
 }
 
 export class BookmarkStar extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-star";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1732,6 +2034,8 @@ export class BookmarkStar extends IconBase {
 }
 
 export class BookmarkXFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-x-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1743,6 +2047,8 @@ export class BookmarkXFill extends IconBase {
 }
 
 export class BookmarkX extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1758,6 +2064,8 @@ export class BookmarkX extends IconBase {
 }
 
 export class Bookmark extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmark";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1769,6 +2077,8 @@ export class Bookmark extends IconBase {
 }
 
 export class BookmarksFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmarks-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1784,6 +2094,8 @@ export class BookmarksFill extends IconBase {
 }
 
 export class Bookmarks extends IconBase {
+    static id: string = "bobrilstrap-icon-bookmarks";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1799,6 +2111,8 @@ export class Bookmarks extends IconBase {
 }
 
 export class Bookshelf extends IconBase {
+    static id: string = "bobrilstrap-icon-bookshelf";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1810,6 +2124,8 @@ export class Bookshelf extends IconBase {
 }
 
 export class BootstrapFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bootstrap-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1821,6 +2137,8 @@ export class BootstrapFill extends IconBase {
 }
 
 export class BootstrapReboot extends IconBase {
+    static id: string = "bobrilstrap-icon-bootstrap-reboot";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1832,6 +2150,8 @@ export class BootstrapReboot extends IconBase {
 }
 
 export class Bootstrap extends IconBase {
+    static id: string = "bobrilstrap-icon-bootstrap";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1847,6 +2167,8 @@ export class Bootstrap extends IconBase {
 }
 
 export class BorderStyle extends IconBase {
+    static id: string = "bobrilstrap-icon-border-style";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm8 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-4 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm8 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-4-4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-1z" />
@@ -1855,6 +2177,8 @@ export class BorderStyle extends IconBase {
 }
 
 export class BorderWidth extends IconBase {
+    static id: string = "bobrilstrap-icon-border-width";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
@@ -1863,6 +2187,8 @@ export class BorderWidth extends IconBase {
 }
 
 export class BoundingBoxCircles extends IconBase {
+    static id: string = "bobrilstrap-icon-bounding-box-circles";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1874,6 +2200,8 @@ export class BoundingBoxCircles extends IconBase {
 }
 
 export class BoundingBox extends IconBase {
+    static id: string = "bobrilstrap-icon-bounding-box";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1885,6 +2213,8 @@ export class BoundingBox extends IconBase {
 }
 
 export class BoxArrowDownLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-down-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1900,6 +2230,8 @@ export class BoxArrowDownLeft extends IconBase {
 }
 
 export class BoxArrowDownRight extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-down-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1915,6 +2247,8 @@ export class BoxArrowDownRight extends IconBase {
 }
 
 export class BoxArrowDown extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1930,6 +2264,8 @@ export class BoxArrowDown extends IconBase {
 }
 
 export class BoxArrowInDownLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-in-down-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1945,6 +2281,8 @@ export class BoxArrowInDownLeft extends IconBase {
 }
 
 export class BoxArrowInDownRight extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-in-down-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1960,6 +2298,8 @@ export class BoxArrowInDownRight extends IconBase {
 }
 
 export class BoxArrowInDown extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-in-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1975,6 +2315,8 @@ export class BoxArrowInDown extends IconBase {
 }
 
 export class BoxArrowInLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-in-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -1990,6 +2332,8 @@ export class BoxArrowInLeft extends IconBase {
 }
 
 export class BoxArrowInRight extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-in-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2005,6 +2349,8 @@ export class BoxArrowInRight extends IconBase {
 }
 
 export class BoxArrowInUpLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-in-up-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2020,6 +2366,8 @@ export class BoxArrowInUpLeft extends IconBase {
 }
 
 export class BoxArrowInUpRight extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-in-up-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2035,6 +2383,8 @@ export class BoxArrowInUpRight extends IconBase {
 }
 
 export class BoxArrowInUp extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-in-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2050,6 +2400,8 @@ export class BoxArrowInUp extends IconBase {
 }
 
 export class BoxArrowLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2065,6 +2417,8 @@ export class BoxArrowLeft extends IconBase {
 }
 
 export class BoxArrowRight extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2080,6 +2434,8 @@ export class BoxArrowRight extends IconBase {
 }
 
 export class BoxArrowUpLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-up-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2095,6 +2451,8 @@ export class BoxArrowUpLeft extends IconBase {
 }
 
 export class BoxArrowUpRight extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-up-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2110,6 +2468,8 @@ export class BoxArrowUpRight extends IconBase {
 }
 
 export class BoxArrowUp extends IconBase {
+    static id: string = "bobrilstrap-icon-box-arrow-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2125,6 +2485,8 @@ export class BoxArrowUp extends IconBase {
 }
 
 export class BoxSeam extends IconBase {
+    static id: string = "bobrilstrap-icon-box-seam";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2136,6 +2498,8 @@ export class BoxSeam extends IconBase {
 }
 
 export class Box extends IconBase {
+    static id: string = "bobrilstrap-icon-box";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2147,6 +2511,8 @@ export class Box extends IconBase {
 }
 
 export class Braces extends IconBase {
+    static id: string = "bobrilstrap-icon-braces";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6zM13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6z" />
@@ -2155,6 +2521,8 @@ export class Braces extends IconBase {
 }
 
 export class Bricks extends IconBase {
+    static id: string = "bobrilstrap-icon-bricks";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2166,6 +2534,8 @@ export class Bricks extends IconBase {
 }
 
 export class BriefcaseFill extends IconBase {
+    static id: string = "bobrilstrap-icon-briefcase-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2181,6 +2551,8 @@ export class BriefcaseFill extends IconBase {
 }
 
 export class Briefcase extends IconBase {
+    static id: string = "bobrilstrap-icon-briefcase";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2196,6 +2568,8 @@ export class Briefcase extends IconBase {
 }
 
 export class BrightnessAltHighFill extends IconBase {
+    static id: string = "bobrilstrap-icon-brightness-alt-high-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2207,6 +2581,8 @@ export class BrightnessAltHighFill extends IconBase {
 }
 
 export class BrightnessAltHigh extends IconBase {
+    static id: string = "bobrilstrap-icon-brightness-alt-high";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2218,6 +2594,8 @@ export class BrightnessAltHigh extends IconBase {
 }
 
 export class BrightnessAltLowFill extends IconBase {
+    static id: string = "bobrilstrap-icon-brightness-alt-low-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5 6a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-8.486 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z" />
@@ -2227,6 +2605,8 @@ export class BrightnessAltLowFill extends IconBase {
 }
 
 export class BrightnessAltLow extends IconBase {
+    static id: string = "bobrilstrap-icon-brightness-alt-low";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5 6a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-8.486 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z" />
@@ -2236,6 +2616,8 @@ export class BrightnessAltLow extends IconBase {
 }
 
 export class BrightnessHighFill extends IconBase {
+    static id: string = "bobrilstrap-icon-brightness-high-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" />
@@ -2248,6 +2630,8 @@ export class BrightnessHighFill extends IconBase {
 }
 
 export class BrightnessHigh extends IconBase {
+    static id: string = "bobrilstrap-icon-brightness-high";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2259,6 +2643,8 @@ export class BrightnessHigh extends IconBase {
 }
 
 export class BrightnessLowFill extends IconBase {
+    static id: string = "bobrilstrap-icon-brightness-low-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8.5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z" />
@@ -2267,6 +2653,8 @@ export class BrightnessLowFill extends IconBase {
 }
 
 export class BrightnessLow extends IconBase {
+    static id: string = "bobrilstrap-icon-brightness-low";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
@@ -2276,6 +2664,8 @@ export class BrightnessLow extends IconBase {
 }
 
 export class BroadcastPin extends IconBase {
+    static id: string = "bobrilstrap-icon-broadcast-pin";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2287,6 +2677,8 @@ export class BroadcastPin extends IconBase {
 }
 
 export class Broadcast extends IconBase {
+    static id: string = "bobrilstrap-icon-broadcast";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2299,6 +2691,8 @@ export class Broadcast extends IconBase {
 }
 
 export class BrushFill extends IconBase {
+    static id: string = "bobrilstrap-icon-brush-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2310,6 +2704,8 @@ export class BrushFill extends IconBase {
 }
 
 export class Brush extends IconBase {
+    static id: string = "bobrilstrap-icon-brush";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2321,6 +2717,8 @@ export class Brush extends IconBase {
 }
 
 export class BucketFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bucket-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2332,6 +2730,8 @@ export class BucketFill extends IconBase {
 }
 
 export class Bucket extends IconBase {
+    static id: string = "bobrilstrap-icon-bucket";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2343,6 +2743,8 @@ export class Bucket extends IconBase {
 }
 
 export class BugFill extends IconBase {
+    static id: string = "bobrilstrap-icon-bug-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2354,6 +2756,8 @@ export class BugFill extends IconBase {
 }
 
 export class Bug extends IconBase {
+    static id: string = "bobrilstrap-icon-bug";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2365,6 +2769,8 @@ export class Bug extends IconBase {
 }
 
 export class Building extends IconBase {
+    static id: string = "bobrilstrap-icon-building";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2377,6 +2783,8 @@ export class Building extends IconBase {
 }
 
 export class Bullseye extends IconBase {
+    static id: string = "bobrilstrap-icon-bullseye";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -2388,6 +2796,8 @@ export class Bullseye extends IconBase {
 }
 
 export class CalculatorFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calculator-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2399,6 +2809,8 @@ export class CalculatorFill extends IconBase {
 }
 
 export class Calculator extends IconBase {
+    static id: string = "bobrilstrap-icon-calculator";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2411,6 +2823,8 @@ export class Calculator extends IconBase {
 }
 
 export class CalendarCheckFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-check-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2422,6 +2836,8 @@ export class CalendarCheckFill extends IconBase {
 }
 
 export class CalendarCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2437,6 +2853,8 @@ export class CalendarCheck extends IconBase {
 }
 
 export class CalendarDateFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-date-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2448,6 +2866,8 @@ export class CalendarDateFill extends IconBase {
 }
 
 export class CalendarDate extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-date";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2460,6 +2880,8 @@ export class CalendarDate extends IconBase {
 }
 
 export class CalendarDayFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-day-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2471,6 +2893,8 @@ export class CalendarDayFill extends IconBase {
 }
 
 export class CalendarDay extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-day";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2483,6 +2907,8 @@ export class CalendarDay extends IconBase {
 }
 
 export class CalendarEventFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-event-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2494,6 +2920,8 @@ export class CalendarEventFill extends IconBase {
 }
 
 export class CalendarEvent extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-event";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2506,6 +2934,8 @@ export class CalendarEvent extends IconBase {
 }
 
 export class CalendarFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z" />
@@ -2514,6 +2944,8 @@ export class CalendarFill extends IconBase {
 }
 
 export class CalendarMinusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-minus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2525,6 +2957,8 @@ export class CalendarMinusFill extends IconBase {
 }
 
 export class CalendarMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2537,6 +2971,8 @@ export class CalendarMinus extends IconBase {
 }
 
 export class CalendarMonthFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-month-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2548,6 +2984,8 @@ export class CalendarMonthFill extends IconBase {
 }
 
 export class CalendarMonth extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-month";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2560,6 +2998,8 @@ export class CalendarMonth extends IconBase {
 }
 
 export class CalendarPlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2571,6 +3011,8 @@ export class CalendarPlusFill extends IconBase {
 }
 
 export class CalendarPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2586,6 +3028,8 @@ export class CalendarPlus extends IconBase {
 }
 
 export class CalendarRangeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-range-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2597,6 +3041,8 @@ export class CalendarRangeFill extends IconBase {
 }
 
 export class CalendarRange extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-range";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2609,6 +3055,8 @@ export class CalendarRange extends IconBase {
 }
 
 export class CalendarWeekFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-week-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2620,6 +3068,8 @@ export class CalendarWeekFill extends IconBase {
 }
 
 export class CalendarWeek extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-week";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2632,6 +3082,8 @@ export class CalendarWeek extends IconBase {
 }
 
 export class CalendarXFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-x-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2643,6 +3095,8 @@ export class CalendarXFill extends IconBase {
 }
 
 export class CalendarX extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2658,6 +3112,8 @@ export class CalendarX extends IconBase {
 }
 
 export class Calendar extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2669,6 +3125,8 @@ export class Calendar extends IconBase {
 }
 
 export class Calendar2CheckFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-check-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2680,6 +3138,8 @@ export class Calendar2CheckFill extends IconBase {
 }
 
 export class Calendar2Check extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2696,6 +3156,8 @@ export class Calendar2Check extends IconBase {
 }
 
 export class Calendar2DateFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-date-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2707,6 +3169,8 @@ export class Calendar2DateFill extends IconBase {
 }
 
 export class Calendar2Date extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-date";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2719,6 +3183,8 @@ export class Calendar2Date extends IconBase {
 }
 
 export class Calendar2DayFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-day-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2730,6 +3196,8 @@ export class Calendar2DayFill extends IconBase {
 }
 
 export class Calendar2Day extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-day";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2742,6 +3210,8 @@ export class Calendar2Day extends IconBase {
 }
 
 export class Calendar2EventFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-event-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2753,6 +3223,8 @@ export class Calendar2EventFill extends IconBase {
 }
 
 export class Calendar2Event extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-event";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2765,6 +3237,8 @@ export class Calendar2Event extends IconBase {
 }
 
 export class Calendar2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2776,6 +3250,8 @@ export class Calendar2Fill extends IconBase {
 }
 
 export class Calendar2MinusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-minus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2787,6 +3263,8 @@ export class Calendar2MinusFill extends IconBase {
 }
 
 export class Calendar2Minus extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2800,6 +3278,8 @@ export class Calendar2Minus extends IconBase {
 }
 
 export class Calendar2MonthFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-month-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2811,6 +3291,8 @@ export class Calendar2MonthFill extends IconBase {
 }
 
 export class Calendar2Month extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-month";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2823,6 +3305,8 @@ export class Calendar2Month extends IconBase {
 }
 
 export class Calendar2PlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2834,6 +3318,8 @@ export class Calendar2PlusFill extends IconBase {
 }
 
 export class Calendar2Plus extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2850,6 +3336,8 @@ export class Calendar2Plus extends IconBase {
 }
 
 export class Calendar2RangeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-range-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2861,6 +3349,8 @@ export class Calendar2RangeFill extends IconBase {
 }
 
 export class Calendar2Range extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-range";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2873,6 +3363,8 @@ export class Calendar2Range extends IconBase {
 }
 
 export class Calendar2WeekFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-week-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2884,6 +3376,8 @@ export class Calendar2WeekFill extends IconBase {
 }
 
 export class Calendar2Week extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-week";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2896,6 +3390,8 @@ export class Calendar2Week extends IconBase {
 }
 
 export class Calendar2XFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-x-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2907,6 +3403,8 @@ export class Calendar2XFill extends IconBase {
 }
 
 export class Calendar2X extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2923,6 +3421,8 @@ export class Calendar2X extends IconBase {
 }
 
 export class Calendar2 extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2935,6 +3435,8 @@ export class Calendar2 extends IconBase {
 }
 
 export class Calendar3EventFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar3-event-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2946,6 +3448,8 @@ export class Calendar3EventFill extends IconBase {
 }
 
 export class Calendar3Event extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar3-event";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2958,6 +3462,8 @@ export class Calendar3Event extends IconBase {
 }
 
 export class Calendar3Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar3-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2H0z" />
@@ -2967,6 +3473,8 @@ export class Calendar3Fill extends IconBase {
 }
 
 export class Calendar3RangeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar3-range-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2978,6 +3486,8 @@ export class Calendar3RangeFill extends IconBase {
 }
 
 export class Calendar3Range extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar3-range";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -2990,6 +3500,8 @@ export class Calendar3Range extends IconBase {
 }
 
 export class Calendar3WeekFill extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar3-week-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3001,6 +3513,8 @@ export class Calendar3WeekFill extends IconBase {
 }
 
 export class Calendar3Week extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar3-week";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3016,6 +3530,8 @@ export class Calendar3Week extends IconBase {
 }
 
 export class Calendar3 extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3031,6 +3547,8 @@ export class Calendar3 extends IconBase {
 }
 
 export class Calendar4Event extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar4-event";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3043,6 +3561,8 @@ export class Calendar4Event extends IconBase {
 }
 
 export class Calendar4Range extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar4-range";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3055,6 +3575,8 @@ export class Calendar4Range extends IconBase {
 }
 
 export class Calendar4Week extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar4-week";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3067,6 +3589,8 @@ export class Calendar4Week extends IconBase {
 }
 
 export class Calendar4 extends IconBase {
+    static id: string = "bobrilstrap-icon-calendar4";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3078,6 +3602,8 @@ export class Calendar4 extends IconBase {
 }
 
 export class CameraFill extends IconBase {
+    static id: string = "bobrilstrap-icon-camera-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -3090,6 +3616,8 @@ export class CameraFill extends IconBase {
 }
 
 export class CameraReelsFill extends IconBase {
+    static id: string = "bobrilstrap-icon-camera-reels-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3103,6 +3631,8 @@ export class CameraReelsFill extends IconBase {
 }
 
 export class CameraReels extends IconBase {
+    static id: string = "bobrilstrap-icon-camera-reels";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3116,6 +3646,8 @@ export class CameraReels extends IconBase {
 }
 
 export class CameraVideoFill extends IconBase {
+    static id: string = "bobrilstrap-icon-camera-video-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3127,6 +3659,8 @@ export class CameraVideoFill extends IconBase {
 }
 
 export class CameraVideoOffFill extends IconBase {
+    static id: string = "bobrilstrap-icon-camera-video-off-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3138,6 +3672,8 @@ export class CameraVideoOffFill extends IconBase {
 }
 
 export class CameraVideoOff extends IconBase {
+    static id: string = "bobrilstrap-icon-camera-video-off";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3149,6 +3685,8 @@ export class CameraVideoOff extends IconBase {
 }
 
 export class CameraVideo extends IconBase {
+    static id: string = "bobrilstrap-icon-camera-video";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3160,6 +3698,8 @@ export class CameraVideo extends IconBase {
 }
 
 export class Camera extends IconBase {
+    static id: string = "bobrilstrap-icon-camera";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3173,6 +3713,8 @@ export class Camera extends IconBase {
 }
 
 export class Camera2 extends IconBase {
+    static id: string = "bobrilstrap-icon-camera2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9 5C7.343 5 5 6.343 5 8a4 4 0 0 1 4-4v1z" />
@@ -3186,6 +3728,8 @@ export class Camera2 extends IconBase {
 }
 
 export class CapslockFill extends IconBase {
+    static id: string = "bobrilstrap-icon-capslock-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3197,6 +3741,8 @@ export class CapslockFill extends IconBase {
 }
 
 export class Capslock extends IconBase {
+    static id: string = "bobrilstrap-icon-capslock";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3208,6 +3754,8 @@ export class Capslock extends IconBase {
 }
 
 export class CardChecklist extends IconBase {
+    static id: string = "bobrilstrap-icon-card-checklist";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3223,6 +3771,8 @@ export class CardChecklist extends IconBase {
 }
 
 export class CardHeading extends IconBase {
+    static id: string = "bobrilstrap-icon-card-heading";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3239,6 +3789,8 @@ export class CardHeading extends IconBase {
 }
 
 export class CardImage extends IconBase {
+    static id: string = "bobrilstrap-icon-card-image";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3250,6 +3802,8 @@ export class CardImage extends IconBase {
 }
 
 export class CardList extends IconBase {
+    static id: string = "bobrilstrap-icon-card-list";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3268,6 +3822,8 @@ export class CardList extends IconBase {
 }
 
 export class CardText extends IconBase {
+    static id: string = "bobrilstrap-icon-card-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3283,6 +3839,8 @@ export class CardText extends IconBase {
 }
 
 export class CaretDownFill extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-down-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
@@ -3291,6 +3849,8 @@ export class CaretDownFill extends IconBase {
 }
 
 export class CaretDownSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-down-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3302,6 +3862,8 @@ export class CaretDownSquareFill extends IconBase {
 }
 
 export class CaretDownSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-down-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3317,6 +3879,8 @@ export class CaretDownSquare extends IconBase {
 }
 
 export class CaretDown extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3328,6 +3892,8 @@ export class CaretDown extends IconBase {
 }
 
 export class CaretLeftFill extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-left-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
@@ -3336,6 +3902,8 @@ export class CaretLeftFill extends IconBase {
 }
 
 export class CaretLeftSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-left-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3347,6 +3915,8 @@ export class CaretLeftSquareFill extends IconBase {
 }
 
 export class CaretLeftSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-left-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3362,6 +3932,8 @@ export class CaretLeftSquare extends IconBase {
 }
 
 export class CaretLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3373,6 +3945,8 @@ export class CaretLeft extends IconBase {
 }
 
 export class CaretRightFill extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-right-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
@@ -3381,6 +3955,8 @@ export class CaretRightFill extends IconBase {
 }
 
 export class CaretRightSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-right-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3392,6 +3968,8 @@ export class CaretRightSquareFill extends IconBase {
 }
 
 export class CaretRightSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-right-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3407,6 +3985,8 @@ export class CaretRightSquare extends IconBase {
 }
 
 export class CaretRight extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3418,6 +3998,8 @@ export class CaretRight extends IconBase {
 }
 
 export class CaretUpFill extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-up-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -3426,6 +4008,8 @@ export class CaretUpFill extends IconBase {
 }
 
 export class CaretUpSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-up-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3437,6 +4021,8 @@ export class CaretUpSquareFill extends IconBase {
 }
 
 export class CaretUpSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-up-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3452,6 +4038,8 @@ export class CaretUpSquare extends IconBase {
 }
 
 export class CaretUp extends IconBase {
+    static id: string = "bobrilstrap-icon-caret-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3463,6 +4051,8 @@ export class CaretUp extends IconBase {
 }
 
 export class CartCheckFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cart-check-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3474,6 +4064,8 @@ export class CartCheckFill extends IconBase {
 }
 
 export class CartCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-cart-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3489,6 +4081,8 @@ export class CartCheck extends IconBase {
 }
 
 export class CartDashFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cart-dash-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3500,6 +4094,8 @@ export class CartDashFill extends IconBase {
 }
 
 export class CartDash extends IconBase {
+    static id: string = "bobrilstrap-icon-cart-dash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3512,6 +4108,8 @@ export class CartDash extends IconBase {
 }
 
 export class CartFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cart-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3523,6 +4121,8 @@ export class CartFill extends IconBase {
 }
 
 export class CartPlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cart-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3534,6 +4134,8 @@ export class CartPlusFill extends IconBase {
 }
 
 export class CartPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-cart-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3549,6 +4151,8 @@ export class CartPlus extends IconBase {
 }
 
 export class CartXFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cart-x-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3560,6 +4164,8 @@ export class CartXFill extends IconBase {
 }
 
 export class CartX extends IconBase {
+    static id: string = "bobrilstrap-icon-cart-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3575,6 +4181,8 @@ export class CartX extends IconBase {
 }
 
 export class Cart extends IconBase {
+    static id: string = "bobrilstrap-icon-cart";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3586,6 +4194,8 @@ export class Cart extends IconBase {
 }
 
 export class Cart2 extends IconBase {
+    static id: string = "bobrilstrap-icon-cart2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3597,6 +4207,8 @@ export class Cart2 extends IconBase {
 }
 
 export class Cart3 extends IconBase {
+    static id: string = "bobrilstrap-icon-cart3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3608,6 +4220,8 @@ export class Cart3 extends IconBase {
 }
 
 export class Cart4 extends IconBase {
+    static id: string = "bobrilstrap-icon-cart4";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3619,6 +4233,8 @@ export class Cart4 extends IconBase {
 }
 
 export class CashStack extends IconBase {
+    static id: string = "bobrilstrap-icon-cash-stack";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M14 3H1a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1h-1z" />
@@ -3629,6 +4245,8 @@ export class CashStack extends IconBase {
 }
 
 export class Cash extends IconBase {
+    static id: string = "bobrilstrap-icon-cash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z" />
@@ -3638,6 +4256,8 @@ export class Cash extends IconBase {
 }
 
 export class Cast extends IconBase {
+    static id: string = "bobrilstrap-icon-cast";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.646 9.354l-3.792 3.792a.5.5 0 0 0 .353.854h7.586a.5.5 0 0 0 .354-.854L8.354 9.354a.5.5 0 0 0-.708 0z" />
@@ -3647,6 +4267,8 @@ export class Cast extends IconBase {
 }
 
 export class ChatDotsFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-dots-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3658,6 +4280,8 @@ export class ChatDotsFill extends IconBase {
 }
 
 export class ChatDots extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-dots";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3670,6 +4294,8 @@ export class ChatDots extends IconBase {
 }
 
 export class ChatFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z" />
@@ -3678,6 +4304,8 @@ export class ChatFill extends IconBase {
 }
 
 export class ChatLeftDotsFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-left-dots-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3689,6 +4317,8 @@ export class ChatLeftDotsFill extends IconBase {
 }
 
 export class ChatLeftDots extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-left-dots";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3701,6 +4331,8 @@ export class ChatLeftDots extends IconBase {
 }
 
 export class ChatLeftFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-left-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3712,6 +4344,8 @@ export class ChatLeftFill extends IconBase {
 }
 
 export class ChatLeftQuoteFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-left-quote-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3723,6 +4357,8 @@ export class ChatLeftQuoteFill extends IconBase {
 }
 
 export class ChatLeftQuote extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-left-quote";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3738,6 +4374,8 @@ export class ChatLeftQuote extends IconBase {
 }
 
 export class ChatLeftTextFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-left-text-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3749,6 +4387,8 @@ export class ChatLeftTextFill extends IconBase {
 }
 
 export class ChatLeftText extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-left-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3764,6 +4404,8 @@ export class ChatLeftText extends IconBase {
 }
 
 export class ChatLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3775,6 +4417,8 @@ export class ChatLeft extends IconBase {
 }
 
 export class ChatQuoteFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-quote-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3786,6 +4430,8 @@ export class ChatQuoteFill extends IconBase {
 }
 
 export class ChatQuote extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-quote";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3807,6 +4453,8 @@ export class ChatQuote extends IconBase {
 }
 
 export class ChatRightDotsFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-right-dots-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3818,6 +4466,8 @@ export class ChatRightDotsFill extends IconBase {
 }
 
 export class ChatRightDots extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-right-dots";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3830,6 +4480,8 @@ export class ChatRightDots extends IconBase {
 }
 
 export class ChatRightFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-right-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3841,6 +4493,8 @@ export class ChatRightFill extends IconBase {
 }
 
 export class ChatRightQuoteFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-right-quote-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3852,6 +4506,8 @@ export class ChatRightQuoteFill extends IconBase {
 }
 
 export class ChatRightQuote extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-right-quote";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3867,6 +4523,8 @@ export class ChatRightQuote extends IconBase {
 }
 
 export class ChatRightTextFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-right-text-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3878,6 +4536,8 @@ export class ChatRightTextFill extends IconBase {
 }
 
 export class ChatRightText extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-right-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3893,6 +4553,8 @@ export class ChatRightText extends IconBase {
 }
 
 export class ChatRight extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3904,6 +4566,8 @@ export class ChatRight extends IconBase {
 }
 
 export class ChatSquareDotsFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-square-dots-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3915,6 +4579,8 @@ export class ChatSquareDotsFill extends IconBase {
 }
 
 export class ChatSquareDots extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-square-dots";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3927,6 +4593,8 @@ export class ChatSquareDots extends IconBase {
 }
 
 export class ChatSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3938,6 +4606,8 @@ export class ChatSquareFill extends IconBase {
 }
 
 export class ChatSquareQuoteFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-square-quote-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3949,6 +4619,8 @@ export class ChatSquareQuoteFill extends IconBase {
 }
 
 export class ChatSquareQuote extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-square-quote";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3964,6 +4636,8 @@ export class ChatSquareQuote extends IconBase {
 }
 
 export class ChatSquareTextFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-square-text-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3975,6 +4649,8 @@ export class ChatSquareTextFill extends IconBase {
 }
 
 export class ChatSquareText extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-square-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -3990,6 +4666,8 @@ export class ChatSquareText extends IconBase {
 }
 
 export class ChatSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4001,6 +4679,8 @@ export class ChatSquare extends IconBase {
 }
 
 export class ChatTextFill extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-text-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4012,6 +4692,8 @@ export class ChatTextFill extends IconBase {
 }
 
 export class ChatText extends IconBase {
+    static id: string = "bobrilstrap-icon-chat-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4027,6 +4709,8 @@ export class ChatText extends IconBase {
 }
 
 export class Chat extends IconBase {
+    static id: string = "bobrilstrap-icon-chat";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4038,6 +4722,8 @@ export class Chat extends IconBase {
 }
 
 export class CheckAll extends IconBase {
+    static id: string = "bobrilstrap-icon-check-all";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4049,6 +4735,8 @@ export class CheckAll extends IconBase {
 }
 
 export class CheckCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-check-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4060,6 +4748,8 @@ export class CheckCircleFill extends IconBase {
 }
 
 export class CheckCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-check-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -4072,6 +4762,8 @@ export class CheckCircle extends IconBase {
 }
 
 export class CheckSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-check-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4083,6 +4775,8 @@ export class CheckSquareFill extends IconBase {
 }
 
 export class CheckSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-check-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4098,6 +4792,8 @@ export class CheckSquare extends IconBase {
 }
 
 export class Check extends IconBase {
+    static id: string = "bobrilstrap-icon-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4109,6 +4805,8 @@ export class Check extends IconBase {
 }
 
 export class Check2All extends IconBase {
+    static id: string = "bobrilstrap-icon-check2-all";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4121,6 +4819,8 @@ export class Check2All extends IconBase {
 }
 
 export class Check2Circle extends IconBase {
+    static id: string = "bobrilstrap-icon-check2-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4136,6 +4836,8 @@ export class Check2Circle extends IconBase {
 }
 
 export class Check2Square extends IconBase {
+    static id: string = "bobrilstrap-icon-check2-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4151,6 +4853,8 @@ export class Check2Square extends IconBase {
 }
 
 export class Check2 extends IconBase {
+    static id: string = "bobrilstrap-icon-check2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4162,6 +4866,8 @@ export class Check2 extends IconBase {
 }
 
 export class ChevronBarContract extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-bar-contract";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4173,6 +4879,8 @@ export class ChevronBarContract extends IconBase {
 }
 
 export class ChevronBarDown extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-bar-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4184,6 +4892,8 @@ export class ChevronBarDown extends IconBase {
 }
 
 export class ChevronBarExpand extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-bar-expand";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4195,6 +4905,8 @@ export class ChevronBarExpand extends IconBase {
 }
 
 export class ChevronBarLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-bar-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4206,6 +4918,8 @@ export class ChevronBarLeft extends IconBase {
 }
 
 export class ChevronBarRight extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-bar-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4217,6 +4931,8 @@ export class ChevronBarRight extends IconBase {
 }
 
 export class ChevronBarUp extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-bar-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4228,6 +4944,8 @@ export class ChevronBarUp extends IconBase {
 }
 
 export class ChevronCompactDown extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-compact-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4239,6 +4957,8 @@ export class ChevronCompactDown extends IconBase {
 }
 
 export class ChevronCompactLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-compact-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4250,6 +4970,8 @@ export class ChevronCompactLeft extends IconBase {
 }
 
 export class ChevronCompactRight extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-compact-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4261,6 +4983,8 @@ export class ChevronCompactRight extends IconBase {
 }
 
 export class ChevronCompactUp extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-compact-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4272,6 +4996,8 @@ export class ChevronCompactUp extends IconBase {
 }
 
 export class ChevronContract extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-contract";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4283,6 +5009,8 @@ export class ChevronContract extends IconBase {
 }
 
 export class ChevronDoubleDown extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-double-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4298,6 +5026,8 @@ export class ChevronDoubleDown extends IconBase {
 }
 
 export class ChevronDoubleLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-double-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4313,6 +5043,8 @@ export class ChevronDoubleLeft extends IconBase {
 }
 
 export class ChevronDoubleRight extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-double-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4328,6 +5060,8 @@ export class ChevronDoubleRight extends IconBase {
 }
 
 export class ChevronDoubleUp extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-double-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4343,6 +5077,8 @@ export class ChevronDoubleUp extends IconBase {
 }
 
 export class ChevronDown extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4354,6 +5090,8 @@ export class ChevronDown extends IconBase {
 }
 
 export class ChevronExpand extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-expand";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4365,6 +5103,8 @@ export class ChevronExpand extends IconBase {
 }
 
 export class ChevronLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4376,6 +5116,8 @@ export class ChevronLeft extends IconBase {
 }
 
 export class ChevronRight extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4387,6 +5129,8 @@ export class ChevronRight extends IconBase {
 }
 
 export class ChevronUp extends IconBase {
+    static id: string = "bobrilstrap-icon-chevron-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4398,6 +5142,8 @@ export class ChevronUp extends IconBase {
 }
 
 export class CircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <circle cx="8" cy="8" r="8" />
@@ -4406,6 +5152,8 @@ export class CircleFill extends IconBase {
 }
 
 export class CircleHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-circle-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15V1a7 7 0 1 1 0 14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
@@ -4414,6 +5162,8 @@ export class CircleHalf extends IconBase {
 }
 
 export class CircleSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-circle-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 6a6 6 0 1 1 12 0A6 6 0 0 1 0 6z" />
@@ -4423,6 +5173,8 @@ export class CircleSquare extends IconBase {
 }
 
 export class Circle extends IconBase {
+    static id: string = "bobrilstrap-icon-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -4431,6 +5183,8 @@ export class Circle extends IconBase {
 }
 
 export class ClipboardCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-clipboard-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4446,6 +5200,8 @@ export class ClipboardCheck extends IconBase {
 }
 
 export class ClipboardData extends IconBase {
+    static id: string = "bobrilstrap-icon-clipboard-data";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4462,6 +5218,8 @@ export class ClipboardData extends IconBase {
 }
 
 export class ClipboardMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-clipboard-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4477,6 +5235,8 @@ export class ClipboardMinus extends IconBase {
 }
 
 export class ClipboardPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-clipboard-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4492,6 +5252,8 @@ export class ClipboardPlus extends IconBase {
 }
 
 export class ClipboardX extends IconBase {
+    static id: string = "bobrilstrap-icon-clipboard-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4507,6 +5269,8 @@ export class ClipboardX extends IconBase {
 }
 
 export class Clipboard extends IconBase {
+    static id: string = "bobrilstrap-icon-clipboard";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4522,6 +5286,8 @@ export class Clipboard extends IconBase {
 }
 
 export class ClockFill extends IconBase {
+    static id: string = "bobrilstrap-icon-clock-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4533,6 +5299,8 @@ export class ClockFill extends IconBase {
 }
 
 export class ClockHistory extends IconBase {
+    static id: string = "bobrilstrap-icon-clock-history";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4549,6 +5317,8 @@ export class ClockHistory extends IconBase {
 }
 
 export class Clock extends IconBase {
+    static id: string = "bobrilstrap-icon-clock";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm8-7A8 8 0 1 1 0 8a8 8 0 0 1 16 0z" />
@@ -4561,6 +5331,8 @@ export class Clock extends IconBase {
 }
 
 export class CloudArrowDownFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-arrow-down-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4572,6 +5344,8 @@ export class CloudArrowDownFill extends IconBase {
 }
 
 export class CloudArrowDown extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-arrow-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4587,6 +5361,8 @@ export class CloudArrowDown extends IconBase {
 }
 
 export class CloudArrowUpFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-arrow-up-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4598,6 +5374,8 @@ export class CloudArrowUpFill extends IconBase {
 }
 
 export class CloudArrowUp extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-arrow-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4613,6 +5391,8 @@ export class CloudArrowUp extends IconBase {
 }
 
 export class CloudCheckFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-check-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4624,6 +5404,8 @@ export class CloudCheckFill extends IconBase {
 }
 
 export class CloudCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4639,6 +5421,8 @@ export class CloudCheck extends IconBase {
 }
 
 export class CloudDownloadFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-download-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4650,6 +5434,8 @@ export class CloudDownloadFill extends IconBase {
 }
 
 export class CloudDownload extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-download";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4665,6 +5451,8 @@ export class CloudDownload extends IconBase {
 }
 
 export class CloudFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4676,6 +5464,8 @@ export class CloudFill extends IconBase {
 }
 
 export class CloudMinusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-minus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4687,6 +5477,8 @@ export class CloudMinusFill extends IconBase {
 }
 
 export class CloudMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4699,6 +5491,8 @@ export class CloudMinus extends IconBase {
 }
 
 export class CloudPlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4710,6 +5504,8 @@ export class CloudPlusFill extends IconBase {
 }
 
 export class CloudPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4725,6 +5521,8 @@ export class CloudPlus extends IconBase {
 }
 
 export class CloudSlashFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-slash-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4736,6 +5534,8 @@ export class CloudSlashFill extends IconBase {
 }
 
 export class CloudSlash extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-slash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4747,6 +5547,8 @@ export class CloudSlash extends IconBase {
 }
 
 export class CloudUploadFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-upload-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4758,6 +5560,8 @@ export class CloudUploadFill extends IconBase {
 }
 
 export class CloudUpload extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud-upload";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4773,6 +5577,8 @@ export class CloudUpload extends IconBase {
 }
 
 export class Cloud extends IconBase {
+    static id: string = "bobrilstrap-icon-cloud";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4784,6 +5590,8 @@ export class Cloud extends IconBase {
 }
 
 export class CodeSlash extends IconBase {
+    static id: string = "bobrilstrap-icon-code-slash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4795,6 +5603,8 @@ export class CodeSlash extends IconBase {
 }
 
 export class CodeSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-code-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4810,6 +5620,8 @@ export class CodeSquare extends IconBase {
 }
 
 export class Code extends IconBase {
+    static id: string = "bobrilstrap-icon-code";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4821,6 +5633,8 @@ export class Code extends IconBase {
 }
 
 export class CollectionFill extends IconBase {
+    static id: string = "bobrilstrap-icon-collection-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7z" />
@@ -4833,6 +5647,8 @@ export class CollectionFill extends IconBase {
 }
 
 export class CollectionPlayFill extends IconBase {
+    static id: string = "bobrilstrap-icon-collection-play-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4844,6 +5660,8 @@ export class CollectionPlayFill extends IconBase {
 }
 
 export class CollectionPlay extends IconBase {
+    static id: string = "bobrilstrap-icon-collection-play";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4859,6 +5677,8 @@ export class CollectionPlay extends IconBase {
 }
 
 export class Collection extends IconBase {
+    static id: string = "bobrilstrap-icon-collection";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4870,6 +5690,8 @@ export class Collection extends IconBase {
 }
 
 export class ColumnsGap extends IconBase {
+    static id: string = "bobrilstrap-icon-columns-gap";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4881,6 +5703,8 @@ export class ColumnsGap extends IconBase {
 }
 
 export class Columns extends IconBase {
+    static id: string = "bobrilstrap-icon-columns";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M15 2H1v12h14V2zM1 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H1z" />
@@ -4890,6 +5714,8 @@ export class Columns extends IconBase {
 }
 
 export class Command extends IconBase {
+    static id: string = "bobrilstrap-icon-command";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4901,6 +5727,8 @@ export class Command extends IconBase {
 }
 
 export class CompassFill extends IconBase {
+    static id: string = "bobrilstrap-icon-compass-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4912,6 +5740,8 @@ export class CompassFill extends IconBase {
 }
 
 export class Compass extends IconBase {
+    static id: string = "bobrilstrap-icon-compass";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4924,6 +5754,8 @@ export class Compass extends IconBase {
 }
 
 export class ConeStriped extends IconBase {
+    static id: string = "bobrilstrap-icon-cone-striped";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9.97 4.88l.953 3.811C10.159 8.878 9.14 9 8 9c-1.14 0-2.158-.122-2.923-.309L6.03 4.88C6.635 4.957 7.3 5 8 5s1.365-.043 1.97-.12zm-.245-.978L8.97.88C8.718-.13 7.282-.13 7.03.88L6.275 3.9C6.8 3.965 7.382 4 8 4c.618 0 1.2-.036 1.725-.098zm4.396 8.613a.5.5 0 0 1 .037.96l-6 2a.5.5 0 0 1-.316 0l-6-2a.5.5 0 0 1 .037-.96l2.391-.598.565-2.257c.862.212 1.964.339 3.165.339s2.303-.127 3.165-.339l.565 2.257 2.391.598z" />
@@ -4932,6 +5764,8 @@ export class ConeStriped extends IconBase {
 }
 
 export class Cone extends IconBase {
+    static id: string = "bobrilstrap-icon-cone";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.03 1.88c.252-1.01 1.688-1.01 1.94 0l2.905 11.62H14a.5.5 0 0 1 0 1H2a.5.5 0 0 1 0-1h2.125L7.03 1.88z" />
@@ -4940,6 +5774,8 @@ export class Cone extends IconBase {
 }
 
 export class Controller extends IconBase {
+    static id: string = "bobrilstrap-icon-controller";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4953,6 +5789,8 @@ export class Controller extends IconBase {
 }
 
 export class CpuFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cpu-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4964,6 +5802,8 @@ export class CpuFill extends IconBase {
 }
 
 export class Cpu extends IconBase {
+    static id: string = "bobrilstrap-icon-cpu";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4975,6 +5815,8 @@ export class Cpu extends IconBase {
 }
 
 export class CreditCard2BackFill extends IconBase {
+    static id: string = "bobrilstrap-icon-credit-card-2-back-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4987,6 +5829,8 @@ export class CreditCard2BackFill extends IconBase {
 }
 
 export class CreditCard2Back extends IconBase {
+    static id: string = "bobrilstrap-icon-credit-card-2-back";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -4999,6 +5843,8 @@ export class CreditCard2Back extends IconBase {
 }
 
 export class CreditCard2FrontFill extends IconBase {
+    static id: string = "bobrilstrap-icon-credit-card-2-front-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5010,6 +5856,8 @@ export class CreditCard2FrontFill extends IconBase {
 }
 
 export class CreditCard2Front extends IconBase {
+    static id: string = "bobrilstrap-icon-credit-card-2-front";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5026,6 +5874,8 @@ export class CreditCard2Front extends IconBase {
 }
 
 export class CreditCardFill extends IconBase {
+    static id: string = "bobrilstrap-icon-credit-card-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4z" />
@@ -5038,6 +5888,8 @@ export class CreditCardFill extends IconBase {
 }
 
 export class CreditCard extends IconBase {
+    static id: string = "bobrilstrap-icon-credit-card";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5050,6 +5902,8 @@ export class CreditCard extends IconBase {
 }
 
 export class Crop extends IconBase {
+    static id: string = "bobrilstrap-icon-crop";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5061,6 +5915,8 @@ export class Crop extends IconBase {
 }
 
 export class CupFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cup-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5072,6 +5928,8 @@ export class CupFill extends IconBase {
 }
 
 export class CupStraw extends IconBase {
+    static id: string = "bobrilstrap-icon-cup-straw";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5083,6 +5941,8 @@ export class CupStraw extends IconBase {
 }
 
 export class Cup extends IconBase {
+    static id: string = "bobrilstrap-icon-cup";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5094,6 +5954,8 @@ export class Cup extends IconBase {
 }
 
 export class CursorFill extends IconBase {
+    static id: string = "bobrilstrap-icon-cursor-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5105,6 +5967,8 @@ export class CursorFill extends IconBase {
 }
 
 export class CursorText extends IconBase {
+    static id: string = "bobrilstrap-icon-cursor-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5116,6 +5980,8 @@ export class CursorText extends IconBase {
 }
 
 export class Cursor extends IconBase {
+    static id: string = "bobrilstrap-icon-cursor";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5127,6 +5993,8 @@ export class Cursor extends IconBase {
 }
 
 export class DashCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-dash-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
@@ -5135,6 +6003,8 @@ export class DashCircleFill extends IconBase {
 }
 
 export class DashCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-dash-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5144,6 +6014,8 @@ export class DashCircle extends IconBase {
 }
 
 export class DashSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-dash-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5155,6 +6027,8 @@ export class DashSquareFill extends IconBase {
 }
 
 export class DashSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-dash-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5167,6 +6041,8 @@ export class DashSquare extends IconBase {
 }
 
 export class Dash extends IconBase {
+    static id: string = "bobrilstrap-icon-dash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
@@ -5175,6 +6051,8 @@ export class Dash extends IconBase {
 }
 
 export class Diagram2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-diagram-2-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5186,6 +6064,8 @@ export class Diagram2Fill extends IconBase {
 }
 
 export class Diagram2 extends IconBase {
+    static id: string = "bobrilstrap-icon-diagram-2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5197,6 +6077,8 @@ export class Diagram2 extends IconBase {
 }
 
 export class Diagram3Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-diagram-3-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5208,6 +6090,8 @@ export class Diagram3Fill extends IconBase {
 }
 
 export class Diagram3 extends IconBase {
+    static id: string = "bobrilstrap-icon-diagram-3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5219,6 +6103,8 @@ export class Diagram3 extends IconBase {
 }
 
 export class DiamondFill extends IconBase {
+    static id: string = "bobrilstrap-icon-diamond-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5230,6 +6116,8 @@ export class DiamondFill extends IconBase {
 }
 
 export class DiamondHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-diamond-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5241,6 +6129,8 @@ export class DiamondHalf extends IconBase {
 }
 
 export class Diamond extends IconBase {
+    static id: string = "bobrilstrap-icon-diamond";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5252,6 +6142,8 @@ export class Diamond extends IconBase {
 }
 
 export class Dice1Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-1-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5263,6 +6155,8 @@ export class Dice1Fill extends IconBase {
 }
 
 export class Dice1 extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-1";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5275,6 +6169,8 @@ export class Dice1 extends IconBase {
 }
 
 export class Dice2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-2-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5286,6 +6182,8 @@ export class Dice2Fill extends IconBase {
 }
 
 export class Dice2 extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5299,6 +6197,8 @@ export class Dice2 extends IconBase {
 }
 
 export class Dice3Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-3-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5310,6 +6210,8 @@ export class Dice3Fill extends IconBase {
 }
 
 export class Dice3 extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5324,6 +6226,8 @@ export class Dice3 extends IconBase {
 }
 
 export class Dice4Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-4-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5335,6 +6239,8 @@ export class Dice4Fill extends IconBase {
 }
 
 export class Dice4 extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-4";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5350,6 +6256,8 @@ export class Dice4 extends IconBase {
 }
 
 export class Dice5Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-5-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5361,6 +6269,8 @@ export class Dice5Fill extends IconBase {
 }
 
 export class Dice5 extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-5";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5377,6 +6287,8 @@ export class Dice5 extends IconBase {
 }
 
 export class Dice6Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-6-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5388,6 +6300,8 @@ export class Dice6Fill extends IconBase {
 }
 
 export class Dice6 extends IconBase {
+    static id: string = "bobrilstrap-icon-dice-6";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5405,6 +6319,8 @@ export class Dice6 extends IconBase {
 }
 
 export class DisplayFill extends IconBase {
+    static id: string = "bobrilstrap-icon-display-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M6 12c0 .667-.083 1.167-.25 1.5H5a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-.75c-.167-.333-.25-.833-.25-1.5h4c2 0 2-2 2-2V4c0-2-2-2-2-2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h4z" />
@@ -5413,6 +6329,8 @@ export class DisplayFill extends IconBase {
 }
 
 export class Display extends IconBase {
+    static id: string = "bobrilstrap-icon-display";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5.75 13.5c.167-.333.25-.833.25-1.5h4c0 .667.083 1.167.25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75z" />
@@ -5425,6 +6343,8 @@ export class Display extends IconBase {
 }
 
 export class DistributeHorizontal extends IconBase {
+    static id: string = "bobrilstrap-icon-distribute-horizontal";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5437,6 +6357,8 @@ export class DistributeHorizontal extends IconBase {
 }
 
 export class DistributeVertical extends IconBase {
+    static id: string = "bobrilstrap-icon-distribute-vertical";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5449,6 +6371,8 @@ export class DistributeVertical extends IconBase {
 }
 
 export class DoorClosedFill extends IconBase {
+    static id: string = "bobrilstrap-icon-door-closed-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5460,6 +6384,8 @@ export class DoorClosedFill extends IconBase {
 }
 
 export class DoorClosed extends IconBase {
+    static id: string = "bobrilstrap-icon-door-closed";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z" />
@@ -5469,6 +6395,8 @@ export class DoorClosed extends IconBase {
 }
 
 export class DoorOpenFill extends IconBase {
+    static id: string = "bobrilstrap-icon-door-open-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5480,6 +6408,8 @@ export class DoorOpenFill extends IconBase {
 }
 
 export class DoorOpen extends IconBase {
+    static id: string = "bobrilstrap-icon-door-open";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5496,6 +6426,8 @@ export class DoorOpen extends IconBase {
 }
 
 export class Dot extends IconBase {
+    static id: string = "bobrilstrap-icon-dot";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
@@ -5504,6 +6436,8 @@ export class Dot extends IconBase {
 }
 
 export class Download extends IconBase {
+    static id: string = "bobrilstrap-icon-download";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5519,6 +6453,8 @@ export class Download extends IconBase {
 }
 
 export class DropletFill extends IconBase {
+    static id: string = "bobrilstrap-icon-droplet-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5530,6 +6466,8 @@ export class DropletFill extends IconBase {
 }
 
 export class DropletHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-droplet-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5545,6 +6483,8 @@ export class DropletHalf extends IconBase {
 }
 
 export class Droplet extends IconBase {
+    static id: string = "bobrilstrap-icon-droplet";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5560,6 +6500,8 @@ export class Droplet extends IconBase {
 }
 
 export class Earbuds extends IconBase {
+    static id: string = "bobrilstrap-icon-earbuds";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5571,6 +6513,8 @@ export class Earbuds extends IconBase {
 }
 
 export class EaselFill extends IconBase {
+    static id: string = "bobrilstrap-icon-easel-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.473.337a.5.5 0 0 0-.946 0L6.954 2h2.092L8.473.337zM12.15 11h-1.058l1.435 4.163a.5.5 0 0 0 .946-.326L12.15 11zM8.5 11h-1v2.5a.5.5 0 0 0 1 0V11zm-3.592 0H3.85l-1.323 3.837a.5.5 0 1 0 .946.326L4.908 11zM1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3z" />
@@ -5579,6 +6523,8 @@ export class EaselFill extends IconBase {
 }
 
 export class Easel extends IconBase {
+    static id: string = "bobrilstrap-icon-easel";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.473.337a.5.5 0 0 0-.946 0L6.954 2h2.092L8.473.337zM12.15 11h-1.058l1.435 4.163a.5.5 0 0 0 .946-.326L12.15 11zM8.5 11h-1v2.5a.5.5 0 0 0 1 0V11zm-3.592 0H3.85l-1.323 3.837a.5.5 0 1 0 .946.326L4.908 11z" />
@@ -5588,6 +6534,8 @@ export class Easel extends IconBase {
 }
 
 export class EggFill extends IconBase {
+    static id: string = "bobrilstrap-icon-egg-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M14 10a6 6 0 0 1-12 0C2 5.686 5 0 8 0s6 5.686 6 10z" />
@@ -5596,6 +6544,8 @@ export class EggFill extends IconBase {
 }
 
 export class EggFried extends IconBase {
+    static id: string = "bobrilstrap-icon-egg-fried";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5608,6 +6558,8 @@ export class EggFried extends IconBase {
 }
 
 export class Egg extends IconBase {
+    static id: string = "bobrilstrap-icon-egg";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5619,6 +6571,8 @@ export class Egg extends IconBase {
 }
 
 export class EjectFill extends IconBase {
+    static id: string = "bobrilstrap-icon-eject-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5630,6 +6584,8 @@ export class EjectFill extends IconBase {
 }
 
 export class Eject extends IconBase {
+    static id: string = "bobrilstrap-icon-eject";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5641,6 +6597,8 @@ export class Eject extends IconBase {
 }
 
 export class EmojiAngryFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-angry-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5652,6 +6610,8 @@ export class EmojiAngryFill extends IconBase {
 }
 
 export class EmojiAngry extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-angry";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5669,6 +6629,8 @@ export class EmojiAngry extends IconBase {
 }
 
 export class EmojiDizzyFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-dizzy-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5681,6 +6643,8 @@ export class EmojiDizzyFill extends IconBase {
 }
 
 export class EmojiDizzy extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-dizzy";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5694,6 +6658,8 @@ export class EmojiDizzy extends IconBase {
 }
 
 export class EmojiExpressionlessFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-expressionless-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5705,6 +6671,8 @@ export class EmojiExpressionlessFill extends IconBase {
 }
 
 export class EmojiExpressionless extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-expressionless";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5717,6 +6685,8 @@ export class EmojiExpressionless extends IconBase {
 }
 
 export class EmojiFrownFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-frown-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5728,6 +6698,8 @@ export class EmojiFrownFill extends IconBase {
 }
 
 export class EmojiFrown extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-frown";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5741,6 +6713,8 @@ export class EmojiFrown extends IconBase {
 }
 
 export class EmojiHeartEyesFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-heart-eyes-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5752,6 +6726,8 @@ export class EmojiHeartEyesFill extends IconBase {
 }
 
 export class EmojiHeartEyes extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-heart-eyes";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5764,6 +6740,8 @@ export class EmojiHeartEyes extends IconBase {
 }
 
 export class EmojiLaughingFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-laughing-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5775,6 +6753,8 @@ export class EmojiLaughingFill extends IconBase {
 }
 
 export class EmojiLaughing extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-laughing";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5788,6 +6768,8 @@ export class EmojiLaughing extends IconBase {
 }
 
 export class EmojiNeutralFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-neutral-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5799,6 +6781,8 @@ export class EmojiNeutralFill extends IconBase {
 }
 
 export class EmojiNeutral extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-neutral";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5809,6 +6793,8 @@ export class EmojiNeutral extends IconBase {
 }
 
 export class EmojiSmileFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-smile-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5820,6 +6806,8 @@ export class EmojiSmileFill extends IconBase {
 }
 
 export class EmojiSmileUpsideDownFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-smile-upside-down-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5831,6 +6819,8 @@ export class EmojiSmileUpsideDownFill extends IconBase {
 }
 
 export class EmojiSmileUpsideDown extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-smile-upside-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 1a7 7 0 1 1 0 14A7 7 0 0 1 8 1zm0-1a8 8 0 1 1 0 16A8 8 0 0 1 8 0z" />
@@ -5844,6 +6834,8 @@ export class EmojiSmileUpsideDown extends IconBase {
 }
 
 export class EmojiSmile extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-smile";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5857,6 +6849,8 @@ export class EmojiSmile extends IconBase {
 }
 
 export class EmojiSunglassesFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-sunglasses-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5868,6 +6862,8 @@ export class EmojiSunglassesFill extends IconBase {
 }
 
 export class EmojiSunglasses extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-sunglasses";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5881,6 +6877,8 @@ export class EmojiSunglasses extends IconBase {
 }
 
 export class EmojiWinkFill extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-wink-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5892,6 +6890,8 @@ export class EmojiWinkFill extends IconBase {
 }
 
 export class EmojiWink extends IconBase {
+    static id: string = "bobrilstrap-icon-emoji-wink";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5909,6 +6909,8 @@ export class EmojiWink extends IconBase {
 }
 
 export class EnvelopeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-envelope-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5920,6 +6922,8 @@ export class EnvelopeFill extends IconBase {
 }
 
 export class EnvelopeOpenFill extends IconBase {
+    static id: string = "bobrilstrap-icon-envelope-open-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z" />
@@ -5928,6 +6932,8 @@ export class EnvelopeOpenFill extends IconBase {
 }
 
 export class EnvelopeOpen extends IconBase {
+    static id: string = "bobrilstrap-icon-envelope-open";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5939,6 +6945,8 @@ export class EnvelopeOpen extends IconBase {
 }
 
 export class Envelope extends IconBase {
+    static id: string = "bobrilstrap-icon-envelope";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5950,6 +6958,8 @@ export class Envelope extends IconBase {
 }
 
 export class ExclamationCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5961,6 +6971,8 @@ export class ExclamationCircleFill extends IconBase {
 }
 
 export class ExclamationCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -5970,6 +6982,8 @@ export class ExclamationCircle extends IconBase {
 }
 
 export class ExclamationDiamondFill extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-diamond-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5981,6 +6995,8 @@ export class ExclamationDiamondFill extends IconBase {
 }
 
 export class ExclamationDiamond extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-diamond";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -5993,6 +7009,8 @@ export class ExclamationDiamond extends IconBase {
 }
 
 export class ExclamationOctagonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-octagon-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6004,6 +7022,8 @@ export class ExclamationOctagonFill extends IconBase {
 }
 
 export class ExclamationOctagon extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-octagon";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6016,6 +7036,8 @@ export class ExclamationOctagon extends IconBase {
 }
 
 export class ExclamationSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6027,6 +7049,8 @@ export class ExclamationSquareFill extends IconBase {
 }
 
 export class ExclamationSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6039,6 +7063,8 @@ export class ExclamationSquare extends IconBase {
 }
 
 export class ExclamationTriangleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-triangle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6050,6 +7076,8 @@ export class ExclamationTriangleFill extends IconBase {
 }
 
 export class ExclamationTriangle extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation-triangle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6062,6 +7090,8 @@ export class ExclamationTriangle extends IconBase {
 }
 
 export class Exclamation extends IconBase {
+    static id: string = "bobrilstrap-icon-exclamation";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
@@ -6070,6 +7100,8 @@ export class Exclamation extends IconBase {
 }
 
 export class Exclude extends IconBase {
+    static id: string = "bobrilstrap-icon-exclude";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6081,6 +7113,8 @@ export class Exclude extends IconBase {
 }
 
 export class EyeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-eye-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -6090,6 +7124,8 @@ export class EyeFill extends IconBase {
 }
 
 export class EyeSlashFill extends IconBase {
+    static id: string = "bobrilstrap-icon-eye-slash-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z" />
@@ -6100,6 +7136,8 @@ export class EyeSlashFill extends IconBase {
 }
 
 export class EyeSlash extends IconBase {
+    static id: string = "bobrilstrap-icon-eye-slash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z" />
@@ -6111,6 +7149,8 @@ export class EyeSlash extends IconBase {
 }
 
 export class Eye extends IconBase {
+    static id: string = "bobrilstrap-icon-eye";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6123,6 +7163,8 @@ export class Eye extends IconBase {
 }
 
 export class Eyeglasses extends IconBase {
+    static id: string = "bobrilstrap-icon-eyeglasses";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6134,6 +7176,8 @@ export class Eyeglasses extends IconBase {
 }
 
 export class FileArrowDownFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-arrow-down-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6145,6 +7189,8 @@ export class FileArrowDownFill extends IconBase {
 }
 
 export class FileArrowDown extends IconBase {
+    static id: string = "bobrilstrap-icon-file-arrow-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6160,6 +7206,8 @@ export class FileArrowDown extends IconBase {
 }
 
 export class FileArrowUpFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-arrow-up-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6171,6 +7219,8 @@ export class FileArrowUpFill extends IconBase {
 }
 
 export class FileArrowUp extends IconBase {
+    static id: string = "bobrilstrap-icon-file-arrow-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6186,6 +7236,8 @@ export class FileArrowUp extends IconBase {
 }
 
 export class FileBarGraphFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-bar-graph-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6197,6 +7249,8 @@ export class FileBarGraphFill extends IconBase {
 }
 
 export class FileBarGraph extends IconBase {
+    static id: string = "bobrilstrap-icon-file-bar-graph";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6209,6 +7263,8 @@ export class FileBarGraph extends IconBase {
 }
 
 export class FileBinaryFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-binary-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6220,6 +7276,8 @@ export class FileBinaryFill extends IconBase {
 }
 
 export class FileBinary extends IconBase {
+    static id: string = "bobrilstrap-icon-file-binary";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6232,6 +7290,8 @@ export class FileBinary extends IconBase {
 }
 
 export class FileBreakFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-break-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6243,6 +7303,8 @@ export class FileBreakFill extends IconBase {
 }
 
 export class FileBreak extends IconBase {
+    static id: string = "bobrilstrap-icon-file-break";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M0 10.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
@@ -6252,6 +7314,8 @@ export class FileBreak extends IconBase {
 }
 
 export class FileCheckFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-check-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6263,6 +7327,8 @@ export class FileCheckFill extends IconBase {
 }
 
 export class FileCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-file-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6278,6 +7344,8 @@ export class FileCheck extends IconBase {
 }
 
 export class FileCodeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-code-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6289,6 +7357,8 @@ export class FileCodeFill extends IconBase {
 }
 
 export class FileCode extends IconBase {
+    static id: string = "bobrilstrap-icon-file-code";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6304,6 +7374,8 @@ export class FileCode extends IconBase {
 }
 
 export class FileDiffFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-diff-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6315,6 +7387,8 @@ export class FileDiffFill extends IconBase {
 }
 
 export class FileDiff extends IconBase {
+    static id: string = "bobrilstrap-icon-file-diff";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6330,6 +7404,8 @@ export class FileDiff extends IconBase {
 }
 
 export class FileEarmarkArrowDownFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-arrow-down-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6341,6 +7417,8 @@ export class FileEarmarkArrowDownFill extends IconBase {
 }
 
 export class FileEarmarkArrowDown extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-arrow-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6354,6 +7432,8 @@ export class FileEarmarkArrowDown extends IconBase {
 }
 
 export class FileEarmarkArrowUpFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-arrow-up-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6365,6 +7445,8 @@ export class FileEarmarkArrowUpFill extends IconBase {
 }
 
 export class FileEarmarkArrowUp extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-arrow-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6378,6 +7460,8 @@ export class FileEarmarkArrowUp extends IconBase {
 }
 
 export class FileEarmarkBarGraphFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-bar-graph-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6389,6 +7473,8 @@ export class FileEarmarkBarGraphFill extends IconBase {
 }
 
 export class FileEarmarkBarGraph extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-bar-graph";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6398,6 +7484,8 @@ export class FileEarmarkBarGraph extends IconBase {
 }
 
 export class FileEarmarkBinaryFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-binary-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6409,6 +7497,8 @@ export class FileEarmarkBinaryFill extends IconBase {
 }
 
 export class FileEarmarkBinary extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-binary";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6418,6 +7508,8 @@ export class FileEarmarkBinary extends IconBase {
 }
 
 export class FileEarmarkBreakFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-break-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6429,6 +7521,8 @@ export class FileEarmarkBreakFill extends IconBase {
 }
 
 export class FileEarmarkBreak extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-break";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6440,6 +7534,8 @@ export class FileEarmarkBreak extends IconBase {
 }
 
 export class FileEarmarkCheckFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-check-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6451,6 +7547,8 @@ export class FileEarmarkCheckFill extends IconBase {
 }
 
 export class FileEarmarkCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6464,6 +7562,8 @@ export class FileEarmarkCheck extends IconBase {
 }
 
 export class FileEarmarkCodeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-code-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6475,6 +7575,8 @@ export class FileEarmarkCodeFill extends IconBase {
 }
 
 export class FileEarmarkCode extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-code";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6488,6 +7590,8 @@ export class FileEarmarkCode extends IconBase {
 }
 
 export class FileEarmarkDiffFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-diff-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6499,6 +7603,8 @@ export class FileEarmarkDiffFill extends IconBase {
 }
 
 export class FileEarmarkDiff extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-diff";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6513,6 +7619,8 @@ export class FileEarmarkDiff extends IconBase {
 }
 
 export class FileEarmarkEaselFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-easel-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6524,6 +7632,8 @@ export class FileEarmarkEaselFill extends IconBase {
 }
 
 export class FileEarmarkEasel extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-easel";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6537,6 +7647,8 @@ export class FileEarmarkEasel extends IconBase {
 }
 
 export class FileEarmarkExcelFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-excel-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6548,6 +7660,8 @@ export class FileEarmarkExcelFill extends IconBase {
 }
 
 export class FileEarmarkExcel extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-excel";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6561,6 +7675,8 @@ export class FileEarmarkExcel extends IconBase {
 }
 
 export class FileEarmarkFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6572,6 +7688,8 @@ export class FileEarmarkFill extends IconBase {
 }
 
 export class FileEarmarkFontFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-font-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6583,6 +7701,8 @@ export class FileEarmarkFontFill extends IconBase {
 }
 
 export class FileEarmarkFont extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-font";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6592,6 +7712,8 @@ export class FileEarmarkFont extends IconBase {
 }
 
 export class FileEarmarkImageFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-image-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6603,6 +7725,8 @@ export class FileEarmarkImageFill extends IconBase {
 }
 
 export class FileEarmarkImage extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-image";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6615,6 +7739,8 @@ export class FileEarmarkImage extends IconBase {
 }
 
 export class FileEarmarkLockFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-lock-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6626,6 +7752,8 @@ export class FileEarmarkLockFill extends IconBase {
 }
 
 export class FileEarmarkLock extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-lock";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6639,6 +7767,8 @@ export class FileEarmarkLock extends IconBase {
 }
 
 export class FileEarmarkLock2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-lock2-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6650,6 +7780,8 @@ export class FileEarmarkLock2Fill extends IconBase {
 }
 
 export class FileEarmarkLock2 extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-lock2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6663,6 +7795,8 @@ export class FileEarmarkLock2 extends IconBase {
 }
 
 export class FileEarmarkMedicalFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-medical-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6674,6 +7808,8 @@ export class FileEarmarkMedicalFill extends IconBase {
 }
 
 export class FileEarmarkMedical extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-medical";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6687,6 +7823,8 @@ export class FileEarmarkMedical extends IconBase {
 }
 
 export class FileEarmarkMinusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-minus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6698,6 +7836,8 @@ export class FileEarmarkMinusFill extends IconBase {
 }
 
 export class FileEarmarkMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6708,6 +7848,8 @@ export class FileEarmarkMinus extends IconBase {
 }
 
 export class FileEarmarkMusicFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-music-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6719,6 +7861,8 @@ export class FileEarmarkMusicFill extends IconBase {
 }
 
 export class FileEarmarkMusic extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-music";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6732,6 +7876,8 @@ export class FileEarmarkMusic extends IconBase {
 }
 
 export class FileEarmarkPersonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-person-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6743,6 +7889,8 @@ export class FileEarmarkPersonFill extends IconBase {
 }
 
 export class FileEarmarkPerson extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-person";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6754,6 +7902,8 @@ export class FileEarmarkPerson extends IconBase {
 }
 
 export class FileEarmarkPlayFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-play-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6765,6 +7915,8 @@ export class FileEarmarkPlayFill extends IconBase {
 }
 
 export class FileEarmarkPlay extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-play";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M6 11.117V6.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z" />
@@ -6775,6 +7927,8 @@ export class FileEarmarkPlay extends IconBase {
 }
 
 export class FileEarmarkPlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6786,6 +7940,8 @@ export class FileEarmarkPlusFill extends IconBase {
 }
 
 export class FileEarmarkPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6799,6 +7955,8 @@ export class FileEarmarkPlus extends IconBase {
 }
 
 export class FileEarmarkPostFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-post-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6810,6 +7968,8 @@ export class FileEarmarkPostFill extends IconBase {
 }
 
 export class FileEarmarkPost extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-post";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6820,6 +7980,8 @@ export class FileEarmarkPost extends IconBase {
 }
 
 export class FileEarmarkPptFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-ppt-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6831,6 +7993,8 @@ export class FileEarmarkPptFill extends IconBase {
 }
 
 export class FileEarmarkPpt extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-ppt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6842,6 +8006,8 @@ export class FileEarmarkPpt extends IconBase {
 }
 
 export class FileEarmarkRichtextFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-richtext-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6853,6 +8019,8 @@ export class FileEarmarkRichtextFill extends IconBase {
 }
 
 export class FileEarmarkRichtext extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-richtext";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6866,6 +8034,8 @@ export class FileEarmarkRichtext extends IconBase {
 }
 
 export class FileEarmarkRuledFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-ruled-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6877,6 +8047,8 @@ export class FileEarmarkRuledFill extends IconBase {
 }
 
 export class FileEarmarkRuled extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-ruled";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M5 10H3V9h10v1H6v2h7v1H6v2H5v-2H3v-1h2v-2z" />
@@ -6887,6 +8059,8 @@ export class FileEarmarkRuled extends IconBase {
 }
 
 export class FileEarmarkSlidesFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-slides-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6898,6 +8072,8 @@ export class FileEarmarkSlidesFill extends IconBase {
 }
 
 export class FileEarmarkSlides extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-slides";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6911,6 +8087,8 @@ export class FileEarmarkSlides extends IconBase {
 }
 
 export class FileEarmarkSpreadsheetFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-spreadsheet-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6922,6 +8100,8 @@ export class FileEarmarkSpreadsheetFill extends IconBase {
 }
 
 export class FileEarmarkSpreadsheet extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-spreadsheet";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M5 10H3V9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2zm1 0v2h3v-2H6z" />
@@ -6932,6 +8112,8 @@ export class FileEarmarkSpreadsheet extends IconBase {
 }
 
 export class FileEarmarkTextFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-text-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6943,6 +8125,8 @@ export class FileEarmarkTextFill extends IconBase {
 }
 
 export class FileEarmarkText extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6956,6 +8140,8 @@ export class FileEarmarkText extends IconBase {
 }
 
 export class FileEarmarkWordFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-word-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6967,6 +8153,8 @@ export class FileEarmarkWordFill extends IconBase {
 }
 
 export class FileEarmarkWord extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-word";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -6980,6 +8168,8 @@ export class FileEarmarkWord extends IconBase {
 }
 
 export class FileEarmarkXFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-x-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -6991,6 +8181,8 @@ export class FileEarmarkXFill extends IconBase {
 }
 
 export class FileEarmarkX extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -7004,6 +8196,8 @@ export class FileEarmarkX extends IconBase {
 }
 
 export class FileEarmarkZipFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-zip-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7015,6 +8209,8 @@ export class FileEarmarkZipFill extends IconBase {
 }
 
 export class FileEarmarkZip extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark-zip";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -7029,6 +8225,8 @@ export class FileEarmarkZip extends IconBase {
 }
 
 export class FileEarmark extends IconBase {
+    static id: string = "bobrilstrap-icon-file-earmark";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -7038,6 +8236,8 @@ export class FileEarmark extends IconBase {
 }
 
 export class FileEaselFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-easel-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7049,6 +8249,8 @@ export class FileEaselFill extends IconBase {
 }
 
 export class FileEasel extends IconBase {
+    static id: string = "bobrilstrap-icon-file-easel";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7065,6 +8267,8 @@ export class FileEasel extends IconBase {
 }
 
 export class FileExcelFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-excel-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7076,6 +8280,8 @@ export class FileExcelFill extends IconBase {
 }
 
 export class FileExcel extends IconBase {
+    static id: string = "bobrilstrap-icon-file-excel";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7091,6 +8297,8 @@ export class FileExcel extends IconBase {
 }
 
 export class FileFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 0h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -7099,6 +8307,8 @@ export class FileFill extends IconBase {
 }
 
 export class FileFontFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-font-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7110,6 +8320,8 @@ export class FileFontFill extends IconBase {
 }
 
 export class FileFont extends IconBase {
+    static id: string = "bobrilstrap-icon-file-font";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7122,6 +8334,8 @@ export class FileFont extends IconBase {
 }
 
 export class FileImageFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-image-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7133,6 +8347,8 @@ export class FileImageFill extends IconBase {
 }
 
 export class FileImage extends IconBase {
+    static id: string = "bobrilstrap-icon-file-image";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7145,6 +8361,8 @@ export class FileImage extends IconBase {
 }
 
 export class FileLockFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-lock-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7156,6 +8374,8 @@ export class FileLockFill extends IconBase {
 }
 
 export class FileLock extends IconBase {
+    static id: string = "bobrilstrap-icon-file-lock";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7171,6 +8391,8 @@ export class FileLock extends IconBase {
 }
 
 export class FileLock2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-lock2-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7182,6 +8404,8 @@ export class FileLock2Fill extends IconBase {
 }
 
 export class FileLock2 extends IconBase {
+    static id: string = "bobrilstrap-icon-file-lock2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7197,6 +8421,8 @@ export class FileLock2 extends IconBase {
 }
 
 export class FileMedicalFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-medical-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7208,6 +8434,8 @@ export class FileMedicalFill extends IconBase {
 }
 
 export class FileMedical extends IconBase {
+    static id: string = "bobrilstrap-icon-file-medical";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7223,6 +8451,8 @@ export class FileMedical extends IconBase {
 }
 
 export class FileMinusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-minus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7234,6 +8464,8 @@ export class FileMinusFill extends IconBase {
 }
 
 export class FileMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-file-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7246,6 +8478,8 @@ export class FileMinus extends IconBase {
 }
 
 export class FileMusicFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-music-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7257,6 +8491,8 @@ export class FileMusicFill extends IconBase {
 }
 
 export class FileMusic extends IconBase {
+    static id: string = "bobrilstrap-icon-file-music";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7272,6 +8508,8 @@ export class FileMusic extends IconBase {
 }
 
 export class FilePersonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-person-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7283,6 +8521,8 @@ export class FilePersonFill extends IconBase {
 }
 
 export class FilePerson extends IconBase {
+    static id: string = "bobrilstrap-icon-file-person";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7295,6 +8535,8 @@ export class FilePerson extends IconBase {
 }
 
 export class FilePlayFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-play-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7306,6 +8548,8 @@ export class FilePlayFill extends IconBase {
 }
 
 export class FilePlay extends IconBase {
+    static id: string = "bobrilstrap-icon-file-play";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7318,6 +8562,8 @@ export class FilePlay extends IconBase {
 }
 
 export class FilePlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7329,6 +8575,8 @@ export class FilePlusFill extends IconBase {
 }
 
 export class FilePlus extends IconBase {
+    static id: string = "bobrilstrap-icon-file-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7344,6 +8592,8 @@ export class FilePlus extends IconBase {
 }
 
 export class FilePostFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-post-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7355,6 +8605,8 @@ export class FilePostFill extends IconBase {
 }
 
 export class FilePost extends IconBase {
+    static id: string = "bobrilstrap-icon-file-post";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-8z" />
@@ -7368,6 +8620,8 @@ export class FilePost extends IconBase {
 }
 
 export class FilePptFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-ppt-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7379,6 +8633,8 @@ export class FilePptFill extends IconBase {
 }
 
 export class FilePpt extends IconBase {
+    static id: string = "bobrilstrap-icon-file-ppt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7392,6 +8648,8 @@ export class FilePpt extends IconBase {
 }
 
 export class FileRichtextFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-richtext-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7403,6 +8661,8 @@ export class FileRichtextFill extends IconBase {
 }
 
 export class FileRichtext extends IconBase {
+    static id: string = "bobrilstrap-icon-file-richtext";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7418,6 +8678,8 @@ export class FileRichtext extends IconBase {
 }
 
 export class FileRuledFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-ruled-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7429,6 +8691,8 @@ export class FileRuledFill extends IconBase {
 }
 
 export class FileRuled extends IconBase {
+    static id: string = "bobrilstrap-icon-file-ruled";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7440,6 +8704,8 @@ export class FileRuled extends IconBase {
 }
 
 export class FileSlidesFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-slides-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7451,6 +8717,8 @@ export class FileSlidesFill extends IconBase {
 }
 
 export class FileSlides extends IconBase {
+    static id: string = "bobrilstrap-icon-file-slides";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7467,6 +8735,8 @@ export class FileSlides extends IconBase {
 }
 
 export class FileSpreadsheetFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-spreadsheet-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7478,6 +8748,8 @@ export class FileSpreadsheetFill extends IconBase {
 }
 
 export class FileSpreadsheet extends IconBase {
+    static id: string = "bobrilstrap-icon-file-spreadsheet";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7489,6 +8761,8 @@ export class FileSpreadsheet extends IconBase {
 }
 
 export class FileTextFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-text-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7500,6 +8774,8 @@ export class FileTextFill extends IconBase {
 }
 
 export class FileText extends IconBase {
+    static id: string = "bobrilstrap-icon-file-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7515,6 +8791,8 @@ export class FileText extends IconBase {
 }
 
 export class FileWordFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-word-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7526,6 +8804,8 @@ export class FileWordFill extends IconBase {
 }
 
 export class FileWord extends IconBase {
+    static id: string = "bobrilstrap-icon-file-word";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7541,6 +8821,8 @@ export class FileWord extends IconBase {
 }
 
 export class FileXFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-x-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7552,6 +8834,8 @@ export class FileXFill extends IconBase {
 }
 
 export class FileX extends IconBase {
+    static id: string = "bobrilstrap-icon-file-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7567,6 +8851,8 @@ export class FileX extends IconBase {
 }
 
 export class FileZipFill extends IconBase {
+    static id: string = "bobrilstrap-icon-file-zip-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7578,6 +8864,8 @@ export class FileZipFill extends IconBase {
 }
 
 export class FileZip extends IconBase {
+    static id: string = "bobrilstrap-icon-file-zip";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7594,6 +8882,8 @@ export class FileZip extends IconBase {
 }
 
 export class File extends IconBase {
+    static id: string = "bobrilstrap-icon-file";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7605,6 +8895,8 @@ export class File extends IconBase {
 }
 
 export class FilesAlt extends IconBase {
+    static id: string = "bobrilstrap-icon-files-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7617,6 +8909,8 @@ export class FilesAlt extends IconBase {
 }
 
 export class Files extends IconBase {
+    static id: string = "bobrilstrap-icon-files";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7629,6 +8923,8 @@ export class Files extends IconBase {
 }
 
 export class Film extends IconBase {
+    static id: string = "bobrilstrap-icon-film";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7640,6 +8936,8 @@ export class Film extends IconBase {
 }
 
 export class FilterCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-filter-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7651,6 +8949,8 @@ export class FilterCircleFill extends IconBase {
 }
 
 export class FilterCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-filter-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -7663,6 +8963,8 @@ export class FilterCircle extends IconBase {
 }
 
 export class FilterLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-filter-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7674,6 +8976,8 @@ export class FilterLeft extends IconBase {
 }
 
 export class FilterRight extends IconBase {
+    static id: string = "bobrilstrap-icon-filter-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7685,6 +8989,8 @@ export class FilterRight extends IconBase {
 }
 
 export class FilterSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-filter-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7696,6 +9002,8 @@ export class FilterSquareFill extends IconBase {
 }
 
 export class FilterSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-filter-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7711,6 +9019,8 @@ export class FilterSquare extends IconBase {
 }
 
 export class Filter extends IconBase {
+    static id: string = "bobrilstrap-icon-filter";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7722,6 +9032,8 @@ export class Filter extends IconBase {
 }
 
 export class FlagFill extends IconBase {
+    static id: string = "bobrilstrap-icon-flag-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7733,6 +9045,8 @@ export class FlagFill extends IconBase {
 }
 
 export class Flag extends IconBase {
+    static id: string = "bobrilstrap-icon-flag";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7744,6 +9058,8 @@ export class Flag extends IconBase {
 }
 
 export class Flower1 extends IconBase {
+    static id: string = "bobrilstrap-icon-flower1";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7755,6 +9071,8 @@ export class Flower1 extends IconBase {
 }
 
 export class Flower2 extends IconBase {
+    static id: string = "bobrilstrap-icon-flower2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7766,6 +9084,8 @@ export class Flower2 extends IconBase {
 }
 
 export class Flower3 extends IconBase {
+    static id: string = "bobrilstrap-icon-flower3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7777,6 +9097,8 @@ export class Flower3 extends IconBase {
 }
 
 export class FolderCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-folder-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7792,6 +9114,8 @@ export class FolderCheck extends IconBase {
 }
 
 export class FolderFill extends IconBase {
+    static id: string = "bobrilstrap-icon-folder-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7803,6 +9127,8 @@ export class FolderFill extends IconBase {
 }
 
 export class FolderMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-folder-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7815,6 +9141,8 @@ export class FolderMinus extends IconBase {
 }
 
 export class FolderPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-folder-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7830,6 +9158,8 @@ export class FolderPlus extends IconBase {
 }
 
 export class FolderSymlinkFill extends IconBase {
+    static id: string = "bobrilstrap-icon-folder-symlink-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7841,6 +9171,8 @@ export class FolderSymlinkFill extends IconBase {
 }
 
 export class FolderSymlink extends IconBase {
+    static id: string = "bobrilstrap-icon-folder-symlink";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9.828 4a3 3 0 0 1-2.12-.879l-.83-.828A1 1 0 0 0 6.173 2H2.5a1 1 0 0 0-1 .981L1.546 4h-1L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3v1z" />
@@ -7854,6 +9186,8 @@ export class FolderSymlink extends IconBase {
 }
 
 export class FolderX extends IconBase {
+    static id: string = "bobrilstrap-icon-folder-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7869,6 +9203,8 @@ export class FolderX extends IconBase {
 }
 
 export class Folder extends IconBase {
+    static id: string = "bobrilstrap-icon-folder";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9.828 4a3 3 0 0 1-2.12-.879l-.83-.828A1 1 0 0 0 6.173 2H2.5a1 1 0 0 0-1 .981L1.546 4h-1L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3v1z" />
@@ -7881,6 +9217,8 @@ export class Folder extends IconBase {
 }
 
 export class Folder2Open extends IconBase {
+    static id: string = "bobrilstrap-icon-folder2-open";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7892,6 +9230,8 @@ export class Folder2Open extends IconBase {
 }
 
 export class Folder2 extends IconBase {
+    static id: string = "bobrilstrap-icon-folder2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7903,6 +9243,8 @@ export class Folder2 extends IconBase {
 }
 
 export class Fonts extends IconBase {
+    static id: string = "bobrilstrap-icon-fonts";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M12.258 3H3.747l-.082 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.43.013c1.935.062 2.434.301 2.694 1.846h.479L12.258 3z" />
@@ -7911,6 +9253,8 @@ export class Fonts extends IconBase {
 }
 
 export class ForwardFill extends IconBase {
+    static id: string = "bobrilstrap-icon-forward-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9.77 12.11l4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z" />
@@ -7919,6 +9263,8 @@ export class ForwardFill extends IconBase {
 }
 
 export class Forward extends IconBase {
+    static id: string = "bobrilstrap-icon-forward";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7930,6 +9276,8 @@ export class Forward extends IconBase {
 }
 
 export class Front extends IconBase {
+    static id: string = "bobrilstrap-icon-front";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7941,6 +9289,8 @@ export class Front extends IconBase {
 }
 
 export class FullscreenExit extends IconBase {
+    static id: string = "bobrilstrap-icon-fullscreen-exit";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7952,6 +9302,8 @@ export class FullscreenExit extends IconBase {
 }
 
 export class Fullscreen extends IconBase {
+    static id: string = "bobrilstrap-icon-fullscreen";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7963,6 +9315,8 @@ export class Fullscreen extends IconBase {
 }
 
 export class FunnelFill extends IconBase {
+    static id: string = "bobrilstrap-icon-funnel-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7974,6 +9328,8 @@ export class FunnelFill extends IconBase {
 }
 
 export class Funnel extends IconBase {
+    static id: string = "bobrilstrap-icon-funnel";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7985,6 +9341,8 @@ export class Funnel extends IconBase {
 }
 
 export class GearFill extends IconBase {
+    static id: string = "bobrilstrap-icon-gear-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -7996,6 +9354,8 @@ export class GearFill extends IconBase {
 }
 
 export class GearWideConnected extends IconBase {
+    static id: string = "bobrilstrap-icon-gear-wide-connected";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8008,6 +9368,8 @@ export class GearWideConnected extends IconBase {
 }
 
 export class GearWide extends IconBase {
+    static id: string = "bobrilstrap-icon-gear-wide";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8019,6 +9381,8 @@ export class GearWide extends IconBase {
 }
 
 export class Gear extends IconBase {
+    static id: string = "bobrilstrap-icon-gear";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8034,6 +9398,8 @@ export class Gear extends IconBase {
 }
 
 export class Gem extends IconBase {
+    static id: string = "bobrilstrap-icon-gem";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8045,6 +9411,8 @@ export class Gem extends IconBase {
 }
 
 export class GeoAltFill extends IconBase {
+    static id: string = "bobrilstrap-icon-geo-alt-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -8053,6 +9421,8 @@ export class GeoAltFill extends IconBase {
 }
 
 export class GeoAlt extends IconBase {
+    static id: string = "bobrilstrap-icon-geo-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8065,6 +9435,8 @@ export class GeoAlt extends IconBase {
 }
 
 export class GeoFill extends IconBase {
+    static id: string = "bobrilstrap-icon-geo-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8076,6 +9448,8 @@ export class GeoFill extends IconBase {
 }
 
 export class Geo extends IconBase {
+    static id: string = "bobrilstrap-icon-geo";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8087,6 +9461,8 @@ export class Geo extends IconBase {
 }
 
 export class GiftFill extends IconBase {
+    static id: string = "bobrilstrap-icon-gift-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8099,6 +9475,8 @@ export class GiftFill extends IconBase {
 }
 
 export class Gift extends IconBase {
+    static id: string = "bobrilstrap-icon-gift";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8110,6 +9488,8 @@ export class Gift extends IconBase {
 }
 
 export class Globe extends IconBase {
+    static id: string = "bobrilstrap-icon-globe";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8121,6 +9501,8 @@ export class Globe extends IconBase {
 }
 
 export class Globe2 extends IconBase {
+    static id: string = "bobrilstrap-icon-globe2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8132,6 +9514,8 @@ export class Globe2 extends IconBase {
 }
 
 export class GraphDown extends IconBase {
+    static id: string = "bobrilstrap-icon-graph-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8143,6 +9527,8 @@ export class GraphDown extends IconBase {
 }
 
 export class GraphUp extends IconBase {
+    static id: string = "bobrilstrap-icon-graph-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8154,6 +9540,8 @@ export class GraphUp extends IconBase {
 }
 
 export class Grid1x2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-grid-1x2-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z" />
@@ -8162,6 +9550,8 @@ export class Grid1x2Fill extends IconBase {
 }
 
 export class Grid1x2 extends IconBase {
+    static id: string = "bobrilstrap-icon-grid-1x2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8173,6 +9563,8 @@ export class Grid1x2 extends IconBase {
 }
 
 export class Grid3x2GapFill extends IconBase {
+    static id: string = "bobrilstrap-icon-grid-3x2-gap-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M1 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V4zM1 9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V9zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V9z" />
@@ -8181,6 +9573,8 @@ export class Grid3x2GapFill extends IconBase {
 }
 
 export class Grid3x2Gap extends IconBase {
+    static id: string = "bobrilstrap-icon-grid-3x2-gap";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8192,6 +9586,8 @@ export class Grid3x2Gap extends IconBase {
 }
 
 export class Grid3x2 extends IconBase {
+    static id: string = "bobrilstrap-icon-grid-3x2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8203,6 +9599,8 @@ export class Grid3x2 extends IconBase {
 }
 
 export class Grid3x3GapFill extends IconBase {
+    static id: string = "bobrilstrap-icon-grid-3x3-gap-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
@@ -8211,6 +9609,8 @@ export class Grid3x3GapFill extends IconBase {
 }
 
 export class Grid3x3Gap extends IconBase {
+    static id: string = "bobrilstrap-icon-grid-3x3-gap";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8222,6 +9622,8 @@ export class Grid3x3Gap extends IconBase {
 }
 
 export class Grid3x3 extends IconBase {
+    static id: string = "bobrilstrap-icon-grid-3x3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8233,6 +9635,8 @@ export class Grid3x3 extends IconBase {
 }
 
 export class GridFill extends IconBase {
+    static id: string = "bobrilstrap-icon-grid-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8244,6 +9648,8 @@ export class GridFill extends IconBase {
 }
 
 export class Grid extends IconBase {
+    static id: string = "bobrilstrap-icon-grid";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8255,6 +9661,8 @@ export class Grid extends IconBase {
 }
 
 export class GripHorizontal extends IconBase {
+    static id: string = "bobrilstrap-icon-grip-horizontal";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M2 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
@@ -8263,6 +9671,8 @@ export class GripHorizontal extends IconBase {
 }
 
 export class GripVertical extends IconBase {
+    static id: string = "bobrilstrap-icon-grip-vertical";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
@@ -8271,6 +9681,8 @@ export class GripVertical extends IconBase {
 }
 
 export class Hammer extends IconBase {
+    static id: string = "bobrilstrap-icon-hammer";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9.812 1.952a.5.5 0 0 1-.312.89c-1.671 0-2.852.596-3.616 1.185L4.857 5.073V6.21a.5.5 0 0 1-.146.354L3.425 7.853a.5.5 0 0 1-.708 0L.146 5.274a.5.5 0 0 1 0-.706l1.286-1.29a.5.5 0 0 1 .354-.146H2.84C4.505 1.228 6.216.862 7.557 1.04a5.009 5.009 0 0 1 2.077.782l.178.129z" />
@@ -8283,6 +9695,8 @@ export class Hammer extends IconBase {
 }
 
 export class HandIndexThumb extends IconBase {
+    static id: string = "bobrilstrap-icon-hand-index-thumb";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8294,6 +9708,8 @@ export class HandIndexThumb extends IconBase {
 }
 
 export class HandIndex extends IconBase {
+    static id: string = "bobrilstrap-icon-hand-index";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8305,6 +9721,8 @@ export class HandIndex extends IconBase {
 }
 
 export class HandThumbsDown extends IconBase {
+    static id: string = "bobrilstrap-icon-hand-thumbs-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8316,6 +9734,8 @@ export class HandThumbsDown extends IconBase {
 }
 
 export class HandThumbsUp extends IconBase {
+    static id: string = "bobrilstrap-icon-hand-thumbs-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8327,6 +9747,8 @@ export class HandThumbsUp extends IconBase {
 }
 
 export class HandbagFill extends IconBase {
+    static id: string = "bobrilstrap-icon-handbag-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8 1a2 2 0 0 0-2 2v2H5V3a3 3 0 0 1 6 0v2h-1V3a2 2 0 0 0-2-2zM5 5H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11v1.5a.5.5 0 0 1-1 0V5H6v1.5a.5.5 0 0 1-1 0V5z" />
@@ -8335,6 +9757,8 @@ export class HandbagFill extends IconBase {
 }
 
 export class Handbag extends IconBase {
+    static id: string = "bobrilstrap-icon-handbag";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8346,6 +9770,8 @@ export class Handbag extends IconBase {
 }
 
 export class Hash extends IconBase {
+    static id: string = "bobrilstrap-icon-hash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.39 12.648a1.32 1.32 0 0 0-.015.18c0 .305.21.508.5.508.266 0 .492-.172.555-.477l.554-2.703h1.204c.421 0 .617-.234.617-.547 0-.312-.188-.53-.617-.53h-.985l.516-2.524h1.265c.43 0 .618-.227.618-.547 0-.313-.188-.524-.618-.524h-1.046l.476-2.304a1.06 1.06 0 0 0 .016-.164.51.51 0 0 0-.516-.516.54.54 0 0 0-.539.43l-.523 2.554H7.617l.477-2.304c.008-.04.015-.118.015-.164a.512.512 0 0 0-.523-.516.539.539 0 0 0-.531.43L6.53 5.484H5.414c-.43 0-.617.22-.617.532 0 .312.187.539.617.539h.906l-.515 2.523H4.609c-.421 0-.609.219-.609.531 0 .313.188.547.61.547h.976l-.516 2.492c-.008.04-.015.125-.015.18 0 .305.21.508.5.508.265 0 .492-.172.554-.477l.555-2.703h2.242l-.515 2.492zm-1-6.109h2.266l-.515 2.563H6.859l.532-2.563z" />
@@ -8354,6 +9780,8 @@ export class Hash extends IconBase {
 }
 
 export class HddFill extends IconBase {
+    static id: string = "bobrilstrap-icon-hdd-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8366,6 +9794,8 @@ export class HddFill extends IconBase {
 }
 
 export class HddNetworkFill extends IconBase {
+    static id: string = "bobrilstrap-icon-hdd-network-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8377,6 +9807,8 @@ export class HddNetworkFill extends IconBase {
 }
 
 export class HddNetwork extends IconBase {
+    static id: string = "bobrilstrap-icon-hdd-network";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8393,6 +9825,8 @@ export class HddNetwork extends IconBase {
 }
 
 export class HddRackFill extends IconBase {
+    static id: string = "bobrilstrap-icon-hdd-rack-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8404,6 +9838,8 @@ export class HddRackFill extends IconBase {
 }
 
 export class HddRack extends IconBase {
+    static id: string = "bobrilstrap-icon-hdd-rack";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8422,6 +9858,8 @@ export class HddRack extends IconBase {
 }
 
 export class HddStackFill extends IconBase {
+    static id: string = "bobrilstrap-icon-hdd-stack-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8433,6 +9871,8 @@ export class HddStackFill extends IconBase {
 }
 
 export class HddStack extends IconBase {
+    static id: string = "bobrilstrap-icon-hdd-stack";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8450,6 +9890,8 @@ export class HddStack extends IconBase {
 }
 
 export class Hdd extends IconBase {
+    static id: string = "bobrilstrap-icon-hdd";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8466,6 +9908,8 @@ export class Hdd extends IconBase {
 }
 
 export class Headphones extends IconBase {
+    static id: string = "bobrilstrap-icon-headphones";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 3a5 5 0 0 0-5 5v4.5H2V8a6 6 0 1 1 12 0v4.5h-1V8a5 5 0 0 0-5-5z" />
@@ -8475,6 +9919,8 @@ export class Headphones extends IconBase {
 }
 
 export class Headset extends IconBase {
+    static id: string = "bobrilstrap-icon-headset";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 1a5 5 0 0 0-5 5v4.5H2V6a6 6 0 1 1 12 0v4.5h-1V6a5 5 0 0 0-5-5z" />
@@ -8489,6 +9935,8 @@ export class Headset extends IconBase {
 }
 
 export class HeartFill extends IconBase {
+    static id: string = "bobrilstrap-icon-heart-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
@@ -8497,6 +9945,8 @@ export class HeartFill extends IconBase {
 }
 
 export class HeartHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-heart-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 1.314C3.562-3.248-7.534 4.735 8 15V1.314z" />
@@ -8509,6 +9959,8 @@ export class HeartHalf extends IconBase {
 }
 
 export class Heart extends IconBase {
+    static id: string = "bobrilstrap-icon-heart";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8520,6 +9972,8 @@ export class Heart extends IconBase {
 }
 
 export class HeptagonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-heptagon-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8531,6 +9985,8 @@ export class HeptagonFill extends IconBase {
 }
 
 export class HeptagonHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-heptagon-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8542,6 +9998,8 @@ export class HeptagonHalf extends IconBase {
 }
 
 export class Heptagon extends IconBase {
+    static id: string = "bobrilstrap-icon-heptagon";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8553,6 +10011,8 @@ export class Heptagon extends IconBase {
 }
 
 export class HexagonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-hexagon-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8564,6 +10024,8 @@ export class HexagonFill extends IconBase {
 }
 
 export class HexagonHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-hexagon-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8575,6 +10037,8 @@ export class HexagonHalf extends IconBase {
 }
 
 export class Hexagon extends IconBase {
+    static id: string = "bobrilstrap-icon-hexagon";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8586,6 +10050,8 @@ export class Hexagon extends IconBase {
 }
 
 export class HourglassBottom extends IconBase {
+    static id: string = "bobrilstrap-icon-hourglass-bottom";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8597,6 +10063,8 @@ export class HourglassBottom extends IconBase {
 }
 
 export class HourglassSplit extends IconBase {
+    static id: string = "bobrilstrap-icon-hourglass-split";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8608,6 +10076,8 @@ export class HourglassSplit extends IconBase {
 }
 
 export class HourglassTop extends IconBase {
+    static id: string = "bobrilstrap-icon-hourglass-top";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8619,6 +10089,8 @@ export class HourglassTop extends IconBase {
 }
 
 export class Hourglass extends IconBase {
+    static id: string = "bobrilstrap-icon-hourglass";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8630,6 +10102,8 @@ export class Hourglass extends IconBase {
 }
 
 export class HouseDoorFill extends IconBase {
+    static id: string = "bobrilstrap-icon-house-door-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z" />
@@ -8639,6 +10113,8 @@ export class HouseDoorFill extends IconBase {
 }
 
 export class HouseDoor extends IconBase {
+    static id: string = "bobrilstrap-icon-house-door";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8651,6 +10127,8 @@ export class HouseDoor extends IconBase {
 }
 
 export class HouseFill extends IconBase {
+    static id: string = "bobrilstrap-icon-house-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8666,6 +10144,8 @@ export class HouseFill extends IconBase {
 }
 
 export class House extends IconBase {
+    static id: string = "bobrilstrap-icon-house";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8681,6 +10161,8 @@ export class House extends IconBase {
 }
 
 export class Hr extends IconBase {
+    static id: string = "bobrilstrap-icon-hr";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M0 8a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5A.5.5 0 0 1 0 8z" />
@@ -8690,6 +10172,8 @@ export class Hr extends IconBase {
 }
 
 export class ImageAlt extends IconBase {
+    static id: string = "bobrilstrap-icon-image-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M10.648 6.646a.5.5 0 0 1 .577-.093l4.777 3.947V15a1 1 0 0 1-1 1h-14a1 1 0 0 1-1-1v-2l3.646-4.354a.5.5 0 0 1 .63-.062l2.66 2.773 3.71-4.71z" />
@@ -8699,6 +10183,8 @@ export class ImageAlt extends IconBase {
 }
 
 export class ImageFill extends IconBase {
+    static id: string = "bobrilstrap-icon-image-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8710,6 +10196,8 @@ export class ImageFill extends IconBase {
 }
 
 export class Image extends IconBase {
+    static id: string = "bobrilstrap-icon-image";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8721,6 +10209,8 @@ export class Image extends IconBase {
 }
 
 export class Images extends IconBase {
+    static id: string = "bobrilstrap-icon-images";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8736,6 +10226,8 @@ export class Images extends IconBase {
 }
 
 export class InboxFill extends IconBase {
+    static id: string = "bobrilstrap-icon-inbox-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8747,6 +10239,8 @@ export class InboxFill extends IconBase {
 }
 
 export class Inbox extends IconBase {
+    static id: string = "bobrilstrap-icon-inbox";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8758,6 +10252,8 @@ export class Inbox extends IconBase {
 }
 
 export class InboxesFill extends IconBase {
+    static id: string = "bobrilstrap-icon-inboxes-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8769,6 +10265,8 @@ export class InboxesFill extends IconBase {
 }
 
 export class Inboxes extends IconBase {
+    static id: string = "bobrilstrap-icon-inboxes";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8780,6 +10278,8 @@ export class Inboxes extends IconBase {
 }
 
 export class InfoCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-info-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8791,6 +10291,8 @@ export class InfoCircleFill extends IconBase {
 }
 
 export class InfoCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-info-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -8801,6 +10303,8 @@ export class InfoCircle extends IconBase {
 }
 
 export class InfoSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-info-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8812,6 +10316,8 @@ export class InfoSquareFill extends IconBase {
 }
 
 export class InfoSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-info-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8829,6 +10335,8 @@ export class InfoSquare extends IconBase {
 }
 
 export class Info extends IconBase {
+    static id: string = "bobrilstrap-icon-info";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
@@ -8838,6 +10346,8 @@ export class Info extends IconBase {
 }
 
 export class InputCursorText extends IconBase {
+    static id: string = "bobrilstrap-icon-input-cursor-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8850,6 +10360,8 @@ export class InputCursorText extends IconBase {
 }
 
 export class InputCursor extends IconBase {
+    static id: string = "bobrilstrap-icon-input-cursor";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M10 5h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4v1h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4v1zM6 5V4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4z" />
@@ -8859,6 +10371,8 @@ export class InputCursor extends IconBase {
 }
 
 export class Intersect extends IconBase {
+    static id: string = "bobrilstrap-icon-intersect";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -8870,6 +10384,8 @@ export class Intersect extends IconBase {
 }
 
 export class JournalAlbum extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-album";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8880,6 +10396,8 @@ export class JournalAlbum extends IconBase {
 }
 
 export class JournalArrowDown extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-arrow-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8893,6 +10411,8 @@ export class JournalArrowDown extends IconBase {
 }
 
 export class JournalArrowUp extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-arrow-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8906,6 +10426,8 @@ export class JournalArrowUp extends IconBase {
 }
 
 export class JournalBookmarkFill extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-bookmark-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8916,6 +10438,8 @@ export class JournalBookmarkFill extends IconBase {
 }
 
 export class JournalBookmark extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-bookmark";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8929,6 +10453,8 @@ export class JournalBookmark extends IconBase {
 }
 
 export class JournalCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8942,6 +10468,8 @@ export class JournalCheck extends IconBase {
 }
 
 export class JournalCode extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-code";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8955,6 +10483,8 @@ export class JournalCode extends IconBase {
 }
 
 export class JournalMedical extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-medical";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8968,6 +10498,8 @@ export class JournalMedical extends IconBase {
 }
 
 export class JournalMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8978,6 +10510,8 @@ export class JournalMinus extends IconBase {
 }
 
 export class JournalPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -8991,6 +10525,8 @@ export class JournalPlus extends IconBase {
 }
 
 export class JournalRichtext extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-richtext";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -9004,6 +10540,8 @@ export class JournalRichtext extends IconBase {
 }
 
 export class JournalText extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-text";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -9017,6 +10555,8 @@ export class JournalText extends IconBase {
 }
 
 export class JournalX extends IconBase {
+    static id: string = "bobrilstrap-icon-journal-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -9030,6 +10570,8 @@ export class JournalX extends IconBase {
 }
 
 export class Journal extends IconBase {
+    static id: string = "bobrilstrap-icon-journal";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -9039,6 +10581,8 @@ export class Journal extends IconBase {
 }
 
 export class Journals extends IconBase {
+    static id: string = "bobrilstrap-icon-journals";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2z" />
@@ -9048,6 +10592,8 @@ export class Journals extends IconBase {
 }
 
 export class Joystick extends IconBase {
+    static id: string = "bobrilstrap-icon-joystick";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.106 15.553L.553 12.276A1 1 0 0 1 0 11.382V9.471a1 1 0 0 1 .606-.89L6 6.269v1.088L1 9.5l5.658 2.83a3 3 0 0 0 2.684 0L15 9.5l-5-2.143V6.27l5.394 2.312a1 1 0 0 1 .606.89v1.911a1 1 0 0 1-.553.894l-6.553 3.277a2 2 0 0 1-1.788 0z" />
@@ -9058,6 +10604,8 @@ export class Joystick extends IconBase {
 }
 
 export class JustifyLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-justify-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9069,6 +10617,8 @@ export class JustifyLeft extends IconBase {
 }
 
 export class JustifyRight extends IconBase {
+    static id: string = "bobrilstrap-icon-justify-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9080,6 +10630,8 @@ export class JustifyRight extends IconBase {
 }
 
 export class Justify extends IconBase {
+    static id: string = "bobrilstrap-icon-justify";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9091,6 +10643,8 @@ export class Justify extends IconBase {
 }
 
 export class KanbanFill extends IconBase {
+    static id: string = "bobrilstrap-icon-kanban-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9102,6 +10656,8 @@ export class KanbanFill extends IconBase {
 }
 
 export class Kanban extends IconBase {
+    static id: string = "bobrilstrap-icon-kanban";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9114,6 +10670,8 @@ export class Kanban extends IconBase {
 }
 
 export class KeyFill extends IconBase {
+    static id: string = "bobrilstrap-icon-key-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9125,6 +10683,8 @@ export class KeyFill extends IconBase {
 }
 
 export class Key extends IconBase {
+    static id: string = "bobrilstrap-icon-key";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9137,6 +10697,8 @@ export class Key extends IconBase {
 }
 
 export class KeyboardFill extends IconBase {
+    static id: string = "bobrilstrap-icon-keyboard-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9148,6 +10710,8 @@ export class KeyboardFill extends IconBase {
 }
 
 export class Keyboard extends IconBase {
+    static id: string = "bobrilstrap-icon-keyboard";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9160,6 +10724,8 @@ export class Keyboard extends IconBase {
 }
 
 export class Ladder extends IconBase {
+    static id: string = "bobrilstrap-icon-ladder";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9171,6 +10737,8 @@ export class Ladder extends IconBase {
 }
 
 export class LampFill extends IconBase {
+    static id: string = "bobrilstrap-icon-lamp-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M2 3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3z" />
@@ -9183,6 +10751,8 @@ export class LampFill extends IconBase {
 }
 
 export class Lamp extends IconBase {
+    static id: string = "bobrilstrap-icon-lamp";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9194,6 +10764,8 @@ export class Lamp extends IconBase {
 }
 
 export class LaptopFill extends IconBase {
+    static id: string = "bobrilstrap-icon-laptop-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M2.5 2A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11z" />
@@ -9203,6 +10775,8 @@ export class LaptopFill extends IconBase {
 }
 
 export class Laptop extends IconBase {
+    static id: string = "bobrilstrap-icon-laptop";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9215,6 +10789,8 @@ export class Laptop extends IconBase {
 }
 
 export class LayersFill extends IconBase {
+    static id: string = "bobrilstrap-icon-layers-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9230,6 +10806,8 @@ export class LayersFill extends IconBase {
 }
 
 export class LayersHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-layers-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9245,6 +10823,8 @@ export class LayersHalf extends IconBase {
 }
 
 export class Layers extends IconBase {
+    static id: string = "bobrilstrap-icon-layers";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9260,6 +10840,8 @@ export class Layers extends IconBase {
 }
 
 export class LayoutSidebarInsetReverse extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-sidebar-inset-reverse";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9272,6 +10854,8 @@ export class LayoutSidebarInsetReverse extends IconBase {
 }
 
 export class LayoutSidebarInset extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-sidebar-inset";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9284,6 +10868,8 @@ export class LayoutSidebarInset extends IconBase {
 }
 
 export class LayoutSidebarReverse extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-sidebar-reverse";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9296,6 +10882,8 @@ export class LayoutSidebarReverse extends IconBase {
 }
 
 export class LayoutSidebar extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-sidebar";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9308,6 +10896,8 @@ export class LayoutSidebar extends IconBase {
 }
 
 export class LayoutSplit extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-split";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9320,6 +10910,8 @@ export class LayoutSplit extends IconBase {
 }
 
 export class LayoutTextSidebarReverse extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-text-sidebar-reverse";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9335,6 +10927,8 @@ export class LayoutTextSidebarReverse extends IconBase {
 }
 
 export class LayoutTextSidebar extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-text-sidebar";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9350,6 +10944,8 @@ export class LayoutTextSidebar extends IconBase {
 }
 
 export class LayoutTextWindowReverse extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-text-window-reverse";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9365,6 +10961,8 @@ export class LayoutTextWindowReverse extends IconBase {
 }
 
 export class LayoutTextWindow extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-text-window";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9380,6 +10978,8 @@ export class LayoutTextWindow extends IconBase {
 }
 
 export class LayoutThreeColumns extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-three-columns";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9392,6 +10992,8 @@ export class LayoutThreeColumns extends IconBase {
 }
 
 export class LayoutWtf extends IconBase {
+    static id: string = "bobrilstrap-icon-layout-wtf";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9403,6 +11005,8 @@ export class LayoutWtf extends IconBase {
 }
 
 export class LifePreserver extends IconBase {
+    static id: string = "bobrilstrap-icon-life-preserver";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9414,6 +11018,8 @@ export class LifePreserver extends IconBase {
 }
 
 export class LightningFill extends IconBase {
+    static id: string = "bobrilstrap-icon-lightning-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9425,6 +11031,8 @@ export class LightningFill extends IconBase {
 }
 
 export class Lightning extends IconBase {
+    static id: string = "bobrilstrap-icon-lightning";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9436,6 +11044,8 @@ export class Lightning extends IconBase {
 }
 
 export class Link45deg extends IconBase {
+    static id: string = "bobrilstrap-icon-link-45deg";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
@@ -9445,6 +11055,8 @@ export class Link45deg extends IconBase {
 }
 
 export class Link extends IconBase {
+    static id: string = "bobrilstrap-icon-link";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
@@ -9454,6 +11066,8 @@ export class Link extends IconBase {
 }
 
 export class ListCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-list-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9465,6 +11079,8 @@ export class ListCheck extends IconBase {
 }
 
 export class ListNested extends IconBase {
+    static id: string = "bobrilstrap-icon-list-nested";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9476,6 +11092,8 @@ export class ListNested extends IconBase {
 }
 
 export class ListOl extends IconBase {
+    static id: string = "bobrilstrap-icon-list-ol";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9488,6 +11106,8 @@ export class ListOl extends IconBase {
 }
 
 export class ListStars extends IconBase {
+    static id: string = "bobrilstrap-icon-list-stars";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9500,6 +11120,8 @@ export class ListStars extends IconBase {
 }
 
 export class ListTask extends IconBase {
+    static id: string = "bobrilstrap-icon-list-task";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z" />
@@ -9513,6 +11135,8 @@ export class ListTask extends IconBase {
 }
 
 export class ListUl extends IconBase {
+    static id: string = "bobrilstrap-icon-list-ul";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9524,6 +11148,8 @@ export class ListUl extends IconBase {
 }
 
 export class List extends IconBase {
+    static id: string = "bobrilstrap-icon-list";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9535,6 +11161,8 @@ export class List extends IconBase {
 }
 
 export class LockFill extends IconBase {
+    static id: string = "bobrilstrap-icon-lock-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
@@ -9544,6 +11172,8 @@ export class LockFill extends IconBase {
 }
 
 export class Lock extends IconBase {
+    static id: string = "bobrilstrap-icon-lock";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9555,6 +11185,8 @@ export class Lock extends IconBase {
 }
 
 export class Mailbox extends IconBase {
+    static id: string = "bobrilstrap-icon-mailbox";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9568,6 +11200,8 @@ export class Mailbox extends IconBase {
 }
 
 export class Mailbox2 extends IconBase {
+    static id: string = "bobrilstrap-icon-mailbox2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9579,6 +11213,8 @@ export class Mailbox2 extends IconBase {
 }
 
 export class MapFill extends IconBase {
+    static id: string = "bobrilstrap-icon-map-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9590,6 +11226,8 @@ export class MapFill extends IconBase {
 }
 
 export class Map extends IconBase {
+    static id: string = "bobrilstrap-icon-map";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9601,6 +11239,8 @@ export class Map extends IconBase {
 }
 
 export class MarkdownFill extends IconBase {
+    static id: string = "bobrilstrap-icon-markdown-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9612,6 +11252,8 @@ export class MarkdownFill extends IconBase {
 }
 
 export class Markdown extends IconBase {
+    static id: string = "bobrilstrap-icon-markdown";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9629,6 +11271,8 @@ export class Markdown extends IconBase {
 }
 
 export class MenuAppFill extends IconBase {
+    static id: string = "bobrilstrap-icon-menu-app-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9644,6 +11288,8 @@ export class MenuAppFill extends IconBase {
 }
 
 export class MenuApp extends IconBase {
+    static id: string = "bobrilstrap-icon-menu-app";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9659,6 +11305,8 @@ export class MenuApp extends IconBase {
 }
 
 export class MenuButtonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-menu-button-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9674,6 +11322,8 @@ export class MenuButtonFill extends IconBase {
 }
 
 export class MenuButtonWideFill extends IconBase {
+    static id: string = "bobrilstrap-icon-menu-button-wide-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9689,6 +11339,8 @@ export class MenuButtonWideFill extends IconBase {
 }
 
 export class MenuButtonWide extends IconBase {
+    static id: string = "bobrilstrap-icon-menu-button-wide";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9705,6 +11357,8 @@ export class MenuButtonWide extends IconBase {
 }
 
 export class MenuButton extends IconBase {
+    static id: string = "bobrilstrap-icon-menu-button";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9721,6 +11375,8 @@ export class MenuButton extends IconBase {
 }
 
 export class MenuDown extends IconBase {
+    static id: string = "bobrilstrap-icon-menu-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9736,6 +11392,8 @@ export class MenuDown extends IconBase {
 }
 
 export class MenuUp extends IconBase {
+    static id: string = "bobrilstrap-icon-menu-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9751,6 +11409,8 @@ export class MenuUp extends IconBase {
 }
 
 export class MicFill extends IconBase {
+    static id: string = "bobrilstrap-icon-mic-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z" />
@@ -9763,6 +11423,8 @@ export class MicFill extends IconBase {
 }
 
 export class MicMuteFill extends IconBase {
+    static id: string = "bobrilstrap-icon-mic-mute-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9774,6 +11436,8 @@ export class MicMuteFill extends IconBase {
 }
 
 export class MicMute extends IconBase {
+    static id: string = "bobrilstrap-icon-mic-mute";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9785,6 +11449,8 @@ export class MicMute extends IconBase {
 }
 
 export class Mic extends IconBase {
+    static id: string = "bobrilstrap-icon-mic";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9797,6 +11463,8 @@ export class Mic extends IconBase {
 }
 
 export class MinecartLoaded extends IconBase {
+    static id: string = "bobrilstrap-icon-minecart-loaded";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9812,6 +11480,8 @@ export class MinecartLoaded extends IconBase {
 }
 
 export class Minecart extends IconBase {
+    static id: string = "bobrilstrap-icon-minecart";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9823,6 +11493,8 @@ export class Minecart extends IconBase {
 }
 
 export class Moon extends IconBase {
+    static id: string = "bobrilstrap-icon-moon";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z" />
@@ -9831,6 +11503,8 @@ export class Moon extends IconBase {
 }
 
 export class Mouse extends IconBase {
+    static id: string = "bobrilstrap-icon-mouse";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9842,6 +11516,8 @@ export class Mouse extends IconBase {
 }
 
 export class Mouse2 extends IconBase {
+    static id: string = "bobrilstrap-icon-mouse2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9853,6 +11529,8 @@ export class Mouse2 extends IconBase {
 }
 
 export class Mouse3 extends IconBase {
+    static id: string = "bobrilstrap-icon-mouse3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9868,6 +11546,8 @@ export class Mouse3 extends IconBase {
 }
 
 export class MusicNoteBeamed extends IconBase {
+    static id: string = "bobrilstrap-icon-music-note-beamed";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z" />
@@ -9878,6 +11558,8 @@ export class MusicNoteBeamed extends IconBase {
 }
 
 export class MusicNoteList extends IconBase {
+    static id: string = "bobrilstrap-icon-music-note-list";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
@@ -9892,6 +11574,8 @@ export class MusicNoteList extends IconBase {
 }
 
 export class MusicNote extends IconBase {
+    static id: string = "bobrilstrap-icon-music-note";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
@@ -9902,6 +11586,8 @@ export class MusicNote extends IconBase {
 }
 
 export class MusicPlayerFill extends IconBase {
+    static id: string = "bobrilstrap-icon-music-player-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9914,6 +11600,8 @@ export class MusicPlayerFill extends IconBase {
 }
 
 export class MusicPlayer extends IconBase {
+    static id: string = "bobrilstrap-icon-music-player";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9930,6 +11618,8 @@ export class MusicPlayer extends IconBase {
 }
 
 export class Newspaper extends IconBase {
+    static id: string = "bobrilstrap-icon-newspaper";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9942,6 +11632,8 @@ export class Newspaper extends IconBase {
 }
 
 export class NodeMinusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-node-minus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9953,6 +11645,8 @@ export class NodeMinusFill extends IconBase {
 }
 
 export class NodeMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-node-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9964,6 +11658,8 @@ export class NodeMinus extends IconBase {
 }
 
 export class NodePlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-node-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9975,6 +11671,8 @@ export class NodePlusFill extends IconBase {
 }
 
 export class NodePlus extends IconBase {
+    static id: string = "bobrilstrap-icon-node-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9986,6 +11684,8 @@ export class NodePlus extends IconBase {
 }
 
 export class NutFill extends IconBase {
+    static id: string = "bobrilstrap-icon-nut-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -9997,6 +11697,8 @@ export class NutFill extends IconBase {
 }
 
 export class Nut extends IconBase {
+    static id: string = "bobrilstrap-icon-nut";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10012,6 +11714,8 @@ export class Nut extends IconBase {
 }
 
 export class OctagonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-octagon-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M11.107 0a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146A.5.5 0 0 1 4.893 0h6.214z" />
@@ -10020,6 +11724,8 @@ export class OctagonFill extends IconBase {
 }
 
 export class OctagonHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-octagon-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10031,6 +11737,8 @@ export class OctagonHalf extends IconBase {
 }
 
 export class Octagon extends IconBase {
+    static id: string = "bobrilstrap-icon-octagon";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10042,6 +11750,8 @@ export class Octagon extends IconBase {
 }
 
 export class Option extends IconBase {
+    static id: string = "bobrilstrap-icon-option";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10053,6 +11763,8 @@ export class Option extends IconBase {
 }
 
 export class Outlet extends IconBase {
+    static id: string = "bobrilstrap-icon-outlet";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10069,6 +11781,8 @@ export class Outlet extends IconBase {
 }
 
 export class Paperclip extends IconBase {
+    static id: string = "bobrilstrap-icon-paperclip";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10080,6 +11794,8 @@ export class Paperclip extends IconBase {
 }
 
 export class Paragraph extends IconBase {
+    static id: string = "bobrilstrap-icon-paragraph";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 1h4.5a.5.5 0 0 1 0 1H11v12.5a.5.5 0 0 1-1 0V2H9v12.5a.5.5 0 0 1-1 0V1z" />
@@ -10089,6 +11805,8 @@ export class Paragraph extends IconBase {
 }
 
 export class PatchCheckFll extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-check-fll";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10100,6 +11818,8 @@ export class PatchCheckFll extends IconBase {
 }
 
 export class PatchCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10115,6 +11835,8 @@ export class PatchCheck extends IconBase {
 }
 
 export class PatchExclamationFll extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-exclamation-fll";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10126,6 +11848,8 @@ export class PatchExclamationFll extends IconBase {
 }
 
 export class PatchExclamation extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-exclamation";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
@@ -10138,6 +11862,8 @@ export class PatchExclamation extends IconBase {
 }
 
 export class PatchMinusFll extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-minus-fll";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10149,6 +11875,8 @@ export class PatchMinusFll extends IconBase {
 }
 
 export class PatchMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M5.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z" />
@@ -10161,6 +11889,8 @@ export class PatchMinus extends IconBase {
 }
 
 export class PatchPlusFll extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-plus-fll";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10172,6 +11902,8 @@ export class PatchPlusFll extends IconBase {
 }
 
 export class PatchPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10185,6 +11917,8 @@ export class PatchPlus extends IconBase {
 }
 
 export class PatchQuestionFll extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-question-fll";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10196,6 +11930,8 @@ export class PatchQuestionFll extends IconBase {
 }
 
 export class PatchQuestion extends IconBase {
+    static id: string = "bobrilstrap-icon-patch-question";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM8.05 9.6c.336 0 .504-.24.554-.627.04-.534.198-.815.847-1.26.673-.475 1.049-1.09 1.049-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.71 1.71 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745z" />
@@ -10208,6 +11944,8 @@ export class PatchQuestion extends IconBase {
 }
 
 export class PauseFill extends IconBase {
+    static id: string = "bobrilstrap-icon-pause-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
@@ -10216,6 +11954,8 @@ export class PauseFill extends IconBase {
 }
 
 export class Pause extends IconBase {
+    static id: string = "bobrilstrap-icon-pause";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10227,6 +11967,8 @@ export class Pause extends IconBase {
 }
 
 export class PeaceFill extends IconBase {
+    static id: string = "bobrilstrap-icon-peace-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M14 13.292A8 8 0 0 0 8.5.015v7.778l5.5 5.5zm-.708.708L8.5 9.206v6.778a7.967 7.967 0 0 0 4.792-1.986zM7.5 15.985V9.207L2.708 14A7.967 7.967 0 0 0 7.5 15.985zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5z" />
@@ -10235,6 +11977,8 @@ export class PeaceFill extends IconBase {
 }
 
 export class Peace extends IconBase {
+    static id: string = "bobrilstrap-icon-peace";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10246,6 +11990,8 @@ export class Peace extends IconBase {
 }
 
 export class PenFill extends IconBase {
+    static id: string = "bobrilstrap-icon-pen-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10257,6 +12003,8 @@ export class PenFill extends IconBase {
 }
 
 export class Pen extends IconBase {
+    static id: string = "bobrilstrap-icon-pen";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10268,6 +12016,8 @@ export class Pen extends IconBase {
 }
 
 export class PencilFill extends IconBase {
+    static id: string = "bobrilstrap-icon-pencil-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10279,6 +12029,8 @@ export class PencilFill extends IconBase {
 }
 
 export class PencilSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-pencil-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -10291,6 +12043,8 @@ export class PencilSquare extends IconBase {
 }
 
 export class Pencil extends IconBase {
+    static id: string = "bobrilstrap-icon-pencil";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10302,6 +12056,8 @@ export class Pencil extends IconBase {
 }
 
 export class PentagonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-pentagon-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8 0l8 6.5-3 9.5H3L0 6.5 8 0z" />
@@ -10310,6 +12066,8 @@ export class PentagonFill extends IconBase {
 }
 
 export class PentagonHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-pentagon-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 1.288V15h4.267l2.575-8.153L8 1.288zM16 6.5L8 0 0 6.5 3 16h10l3-9.5z" />
@@ -10318,6 +12076,8 @@ export class PentagonHalf extends IconBase {
 }
 
 export class Pentagon extends IconBase {
+    static id: string = "bobrilstrap-icon-pentagon";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 1.288l-6.842 5.56L3.733 15h8.534l2.575-8.153L8 1.288zM16 6.5L8 0 0 6.5 3 16h10l3-9.5z" />
@@ -10326,6 +12086,8 @@ export class Pentagon extends IconBase {
 }
 
 export class PeopleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-people-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10337,6 +12099,8 @@ export class PeopleFill extends IconBase {
 }
 
 export class People extends IconBase {
+    static id: string = "bobrilstrap-icon-people";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10348,6 +12112,8 @@ export class People extends IconBase {
 }
 
 export class Percent extends IconBase {
+    static id: string = "bobrilstrap-icon-percent";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10359,6 +12125,8 @@ export class Percent extends IconBase {
 }
 
 export class PersonBadgeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-person-badge-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10370,6 +12138,8 @@ export class PersonBadgeFill extends IconBase {
 }
 
 export class PersonBadge extends IconBase {
+    static id: string = "bobrilstrap-icon-person-badge";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10382,6 +12152,8 @@ export class PersonBadge extends IconBase {
 }
 
 export class PersonBoundingBox extends IconBase {
+    static id: string = "bobrilstrap-icon-person-bounding-box";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10394,6 +12166,8 @@ export class PersonBoundingBox extends IconBase {
 }
 
 export class PersonCheckFill extends IconBase {
+    static id: string = "bobrilstrap-icon-person-check-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10405,6 +12179,8 @@ export class PersonCheckFill extends IconBase {
 }
 
 export class PersonCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-person-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10416,6 +12192,8 @@ export class PersonCheck extends IconBase {
 }
 
 export class PersonCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-person-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
@@ -10426,6 +12204,8 @@ export class PersonCircle extends IconBase {
 }
 
 export class PersonDashFill extends IconBase {
+    static id: string = "bobrilstrap-icon-person-dash-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10437,6 +12217,8 @@ export class PersonDashFill extends IconBase {
 }
 
 export class PersonDash extends IconBase {
+    static id: string = "bobrilstrap-icon-person-dash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10448,6 +12230,8 @@ export class PersonDash extends IconBase {
 }
 
 export class PersonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-person-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -10456,6 +12240,8 @@ export class PersonFill extends IconBase {
 }
 
 export class PersonLinesFill extends IconBase {
+    static id: string = "bobrilstrap-icon-person-lines-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10467,6 +12253,8 @@ export class PersonLinesFill extends IconBase {
 }
 
 export class PersonPlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-person-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10478,6 +12266,8 @@ export class PersonPlusFill extends IconBase {
 }
 
 export class PersonPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-person-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10489,6 +12279,8 @@ export class PersonPlus extends IconBase {
 }
 
 export class PersonSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-person-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10501,6 +12293,8 @@ export class PersonSquare extends IconBase {
 }
 
 export class PersonXFill extends IconBase {
+    static id: string = "bobrilstrap-icon-person-x-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10512,6 +12306,8 @@ export class PersonXFill extends IconBase {
 }
 
 export class PersonX extends IconBase {
+    static id: string = "bobrilstrap-icon-person-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10523,6 +12319,8 @@ export class PersonX extends IconBase {
 }
 
 export class Person extends IconBase {
+    static id: string = "bobrilstrap-icon-person";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10534,6 +12332,8 @@ export class Person extends IconBase {
 }
 
 export class PhoneFill extends IconBase {
+    static id: string = "bobrilstrap-icon-phone-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10545,6 +12345,8 @@ export class PhoneFill extends IconBase {
 }
 
 export class PhoneLandscapeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-phone-landscape-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10556,6 +12358,8 @@ export class PhoneLandscapeFill extends IconBase {
 }
 
 export class PhoneLandscape extends IconBase {
+    static id: string = "bobrilstrap-icon-phone-landscape";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10568,6 +12372,8 @@ export class PhoneLandscape extends IconBase {
 }
 
 export class PhoneVibrate extends IconBase {
+    static id: string = "bobrilstrap-icon-phone-vibrate";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10583,6 +12389,8 @@ export class PhoneVibrate extends IconBase {
 }
 
 export class Phone extends IconBase {
+    static id: string = "bobrilstrap-icon-phone";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10595,6 +12403,8 @@ export class Phone extends IconBase {
 }
 
 export class PieChartFill extends IconBase {
+    static id: string = "bobrilstrap-icon-pie-chart-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z" />
@@ -10603,6 +12413,8 @@ export class PieChartFill extends IconBase {
 }
 
 export class PieChart extends IconBase {
+    static id: string = "bobrilstrap-icon-pie-chart";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -10612,6 +12424,8 @@ export class PieChart extends IconBase {
 }
 
 export class PipFill extends IconBase {
+    static id: string = "bobrilstrap-icon-pip-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10623,6 +12437,8 @@ export class PipFill extends IconBase {
 }
 
 export class Pip extends IconBase {
+    static id: string = "bobrilstrap-icon-pip";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10635,6 +12451,8 @@ export class Pip extends IconBase {
 }
 
 export class PlayFill extends IconBase {
+    static id: string = "bobrilstrap-icon-play-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
@@ -10643,6 +12461,8 @@ export class PlayFill extends IconBase {
 }
 
 export class Play extends IconBase {
+    static id: string = "bobrilstrap-icon-play";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10654,6 +12474,8 @@ export class Play extends IconBase {
 }
 
 export class PlugFill extends IconBase {
+    static id: string = "bobrilstrap-icon-plug-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10665,6 +12487,8 @@ export class PlugFill extends IconBase {
 }
 
 export class Plug extends IconBase {
+    static id: string = "bobrilstrap-icon-plug";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10676,6 +12500,8 @@ export class Plug extends IconBase {
 }
 
 export class PlusCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-plus-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10687,6 +12513,8 @@ export class PlusCircleFill extends IconBase {
 }
 
 export class PlusCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-plus-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -10699,6 +12527,8 @@ export class PlusCircle extends IconBase {
 }
 
 export class PlusSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-plus-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10710,6 +12540,8 @@ export class PlusSquareFill extends IconBase {
 }
 
 export class PlusSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-plus-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10725,6 +12557,8 @@ export class PlusSquare extends IconBase {
 }
 
 export class Plus extends IconBase {
+    static id: string = "bobrilstrap-icon-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10736,6 +12570,8 @@ export class Plus extends IconBase {
 }
 
 export class Power extends IconBase {
+    static id: string = "bobrilstrap-icon-power";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z" />
@@ -10745,6 +12581,8 @@ export class Power extends IconBase {
 }
 
 export class PrinterFill extends IconBase {
+    static id: string = "bobrilstrap-icon-printer-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5z" />
@@ -10758,6 +12596,8 @@ export class PrinterFill extends IconBase {
 }
 
 export class Printer extends IconBase {
+    static id: string = "bobrilstrap-icon-printer";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M11 2H5a1 1 0 0 0-1 1v2H3V3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2h-1V3a1 1 0 0 0-1-1zm3 4H2a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h1v1H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1z" />
@@ -10771,6 +12611,8 @@ export class Printer extends IconBase {
 }
 
 export class PuzzleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-puzzle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10782,6 +12624,8 @@ export class PuzzleFill extends IconBase {
 }
 
 export class Puzzle extends IconBase {
+    static id: string = "bobrilstrap-icon-puzzle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4.605 2.5V2v.5zM3.61 3.6l.498-.043V3.55l-.498.05zM7 2.5h.5A.5.5 0 0 0 7 2v.5zm-.676 1.454l.304.397-.304-.397zm3.352 0l-.304.397.304-.397zM9 2.5V2a.5.5 0 0 0-.5.5H9zm3.39 1.1l-.498-.05v.007l.498.043zM12.1 7l-.498-.043a.5.5 0 0 0 .498.543V7zm1.854-.676l.397.304-.397-.304zm0 3.352l.397-.304-.397.304zM12.1 9v-.5a.5.5 0 0 0-.498.542L12.1 9zm.29 3.4l-.498.043v.007l.498-.05zM9 13.5h-.5a.5.5 0 0 0 .5.5v-.5zm.676-1.454l-.304-.397.304.397zm-3.352 0l.304-.397-.304.397zM7 13.5v.5a.5.5 0 0 0 .5-.5H7zm-2.395 0V13v.5zm-.995-1.1l.498.05v-.007L3.61 12.4zM3.9 9l.498.042A.5.5 0 0 0 3.9 8.5V9zm-1.854.676l-.397-.304.397.304zm0-3.352l-.397.304.397-.304zM3.9 7v.5a.5.5 0 0 0 .498-.543L3.9 7zm.705-5a1.5 1.5 0 0 0-1.493 1.65l.995-.1A.5.5 0 0 1 4.605 3V2zM7 2H4.605v1H7V2zm.5.882V2.5h-1v.382h1zm-.872 1.469c.375-.287.872-.773.872-1.469h-1c0 .195-.147.42-.48.675l.608.794zM6.5 4.5l.001-.006a.113.113 0 0 1 .012-.025.459.459 0 0 1 .115-.118l-.608-.794c-.274.21-.52.528-.52.943h1zM8 5c-.491 0-.912-.1-1.19-.24a.86.86 0 0 1-.271-.194.213.213 0 0 1-.039-.063V4.5h-1c0 .568.447.947.862 1.154C6.807 5.877 7.387 6 8 6V5zm1.5-.5v.003a.213.213 0 0 1-.039.064.86.86 0 0 1-.27.193C8.91 4.9 8.49 5 8 5v1c.613 0 1.193-.123 1.638-.346.415-.207.862-.586.862-1.154h-1zm-.128-.15c.065.05.099.092.115.119.008.013.01.021.012.025L9.5 4.5h1c0-.415-.246-.733-.52-.943l-.608.794zM8.5 2.883c0 .696.497 1.182.872 1.469l.608-.794c-.333-.255-.48-.48-.48-.675h-1zm0-.382v.382h1V2.5h-1zm2.895-.5H9v1h2.395V2zm1.493 1.65A1.5 1.5 0 0 0 11.395 2v1a.5.5 0 0 1 .498.55l.995.1zm-.29 3.392l.29-3.4-.996-.085-.29 3.4.996.085zm.284-.542H12.1v1h.782v-1zm.675-.48c-.255.333-.48.48-.675.48v1c.696 0 1.182-.497 1.469-.872l-.794-.608zm.943-.52c-.415 0-.733.246-.943.52l.794.608a.459.459 0 0 1 .118-.115.113.113 0 0 1 .025-.012L14.5 6.5v-1zM16 8c0-.613-.123-1.193-.346-1.638-.207-.415-.586-.862-1.154-.862v1h.003l.01.003a.237.237 0 0 1 .053.036.86.86 0 0 1 .194.27c.14.28.24.7.24 1.191h1zm-1.5 2.5c.568 0 .947-.447 1.154-.862C15.877 9.193 16 8.613 16 8h-1c0 .491-.1.912-.24 1.19a.86.86 0 0 1-.194.271.214.214 0 0 1-.063.039H14.5v1zm-.943-.52c.21.274.528.52.943.52v-1l-.006-.001a.113.113 0 0 1-.025-.012.458.458 0 0 1-.118-.115l-.794.608zm-.675-.48c.195 0 .42.147.675.48l.794-.608c-.287-.375-.773-.872-1.469-.872v1zm-.782 0h.782v-1H12.1v1zm.788 2.858l-.29-3.4-.996.084.29 3.401.996-.085zM11.395 14a1.5 1.5 0 0 0 1.493-1.65l-.995.1a.5.5 0 0 1-.498.55v1zM9 14h2.395v-1H9v1zm.5-.5v-.382h-1v.382h1zm0-.382c0-.195.147-.42.48-.675l-.608-.794c-.375.287-.872.773-.872 1.469h1zm.48-.675c.274-.21.52-.528.52-.943h-1l-.001.006a.113.113 0 0 1-.012.025.459.459 0 0 1-.115.118l.608.794zm.52-.943c0-.568-.447-.947-.862-1.154C9.193 10.123 8.613 10 8 10v1c.492 0 .912.1 1.19.24.14.07.226.14.271.194a.214.214 0 0 1 .039.063v.003h1zM8 10c-.613 0-1.193.123-1.638.346-.415.207-.862.586-.862 1.154h1v-.003l.003-.01a.214.214 0 0 1 .036-.053.859.859 0 0 1 .27-.194C7.09 11.1 7.51 11 8 11v-1zm-2.5 1.5c0 .415.246.733.52.943l.608-.794a.459.459 0 0 1-.115-.118.113.113 0 0 1-.012-.025L6.5 11.5h-1zm.52.943c.333.255.48.48.48.675h1c0-.696-.497-1.182-.872-1.469l-.608.794zm.48.675v.382h1v-.382h-1zM4.605 14H7v-1H4.605v1zm-1.493-1.65A1.5 1.5 0 0 0 4.605 14v-1a.5.5 0 0 1-.498-.55l-.995-.1zm.29-3.393l-.29 3.401.996.085.29-3.4-.996-.086zm-.284.543H3.9v-1h-.782v1zm-.675.48c.255-.333.48-.48.675-.48v-1c-.696 0-1.182.497-1.469.872l.794.608zm-.943.52c.415 0 .733-.246.943-.52l-.794-.608a.459.459 0 0 1-.118.115.112.112 0 0 1-.025.012L1.5 9.5v1zM0 8c0 .613.123 1.193.346 1.638.207.415.586.862 1.154.862v-1h-.003a.213.213 0 0 1-.064-.039.86.86 0 0 1-.193-.27C1.1 8.91 1 8.49 1 8H0zm1.5-2.5c-.568 0-.947.447-1.154.862C.123 6.807 0 7.387 0 8h1c0-.492.1-.912.24-1.19a.86.86 0 0 1 .194-.271.213.213 0 0 1 .063-.039H1.5v-1zm.943.52c-.21-.274-.528-.52-.943-.52v1l.006.001a.112.112 0 0 1 .025.012c.027.016.068.05.118.115l.794-.608zm.675.48c-.195 0-.42-.147-.675-.48l-.794.608c.287.375.773.872 1.469.872v-1zm.782 0h-.782v1H3.9v-1zm-.788-2.858l.29 3.4.996-.085-.29-3.4-.996.085z" />
@@ -10790,6 +12634,8 @@ export class Puzzle extends IconBase {
 }
 
 export class QuestionCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-question-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10801,6 +12647,8 @@ export class QuestionCircleFill extends IconBase {
 }
 
 export class QuestionCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-question-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -10810,6 +12658,8 @@ export class QuestionCircle extends IconBase {
 }
 
 export class QuestionDiamondFill extends IconBase {
+    static id: string = "bobrilstrap-icon-question-diamond-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10821,6 +12671,8 @@ export class QuestionDiamondFill extends IconBase {
 }
 
 export class QuestionDiamond extends IconBase {
+    static id: string = "bobrilstrap-icon-question-diamond";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10833,6 +12685,8 @@ export class QuestionDiamond extends IconBase {
 }
 
 export class QuestionOctagonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-question-octagon-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10844,6 +12698,8 @@ export class QuestionOctagonFill extends IconBase {
 }
 
 export class QuestionOctagon extends IconBase {
+    static id: string = "bobrilstrap-icon-question-octagon";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10856,6 +12712,8 @@ export class QuestionOctagon extends IconBase {
 }
 
 export class QuestionSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-question-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10867,6 +12725,8 @@ export class QuestionSquareFill extends IconBase {
 }
 
 export class QuestionSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-question-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10879,6 +12739,8 @@ export class QuestionSquare extends IconBase {
 }
 
 export class Question extends IconBase {
+    static id: string = "bobrilstrap-icon-question";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
@@ -10887,6 +12749,8 @@ export class Question extends IconBase {
 }
 
 export class ReceiptCutoff extends IconBase {
+    static id: string = "bobrilstrap-icon-receipt-cutoff";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10902,6 +12766,8 @@ export class ReceiptCutoff extends IconBase {
 }
 
 export class Receipt extends IconBase {
+    static id: string = "bobrilstrap-icon-receipt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10917,6 +12783,8 @@ export class Receipt extends IconBase {
 }
 
 export class Reception0 extends IconBase {
+    static id: string = "bobrilstrap-icon-reception-0";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 13.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
@@ -10925,6 +12793,8 @@ export class Reception0 extends IconBase {
 }
 
 export class Reception1 extends IconBase {
+    static id: string = "bobrilstrap-icon-reception-1";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
@@ -10933,6 +12803,8 @@ export class Reception1 extends IconBase {
 }
 
 export class Reception2 extends IconBase {
+    static id: string = "bobrilstrap-icon-reception-2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4 5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
@@ -10941,6 +12813,8 @@ export class Reception2 extends IconBase {
 }
 
 export class Reception3 extends IconBase {
+    static id: string = "bobrilstrap-icon-reception-3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
@@ -10949,6 +12823,8 @@ export class Reception3 extends IconBase {
 }
 
 export class Reception4 extends IconBase {
+    static id: string = "bobrilstrap-icon-reception-4";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z" />
@@ -10957,6 +12833,8 @@ export class Reception4 extends IconBase {
 }
 
 export class ReplyAllFill extends IconBase {
+    static id: string = "bobrilstrap-icon-reply-all-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.079 11.9l4.568-3.281a.719.719 0 0 0 0-1.238L8.079 4.1A.716.716 0 0 0 7 4.719V6c-1.5 0-6 0-7 8 2.5-4.5 7-4 7-4v1.281c0 .56.606.898 1.079.62z" />
@@ -10969,6 +12847,8 @@ export class ReplyAllFill extends IconBase {
 }
 
 export class ReplyAll extends IconBase {
+    static id: string = "bobrilstrap-icon-reply-all";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -10984,6 +12864,8 @@ export class ReplyAll extends IconBase {
 }
 
 export class ReplyFill extends IconBase {
+    static id: string = "bobrilstrap-icon-reply-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9.079 11.9l4.568-3.281a.719.719 0 0 0 0-1.238L9.079 4.1A.716.716 0 0 0 8 4.719V6c-1.5 0-6 0-7 8 2.5-4.5 7-4 7-4v1.281c0 .56.606.898 1.079.62z" />
@@ -10992,6 +12874,8 @@ export class ReplyFill extends IconBase {
 }
 
 export class Reply extends IconBase {
+    static id: string = "bobrilstrap-icon-reply";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11003,6 +12887,8 @@ export class Reply extends IconBase {
 }
 
 export class RssFill extends IconBase {
+    static id: string = "bobrilstrap-icon-rss-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11014,6 +12900,8 @@ export class RssFill extends IconBase {
 }
 
 export class Rss extends IconBase {
+    static id: string = "bobrilstrap-icon-rss";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11030,6 +12918,8 @@ export class Rss extends IconBase {
 }
 
 export class Scissors extends IconBase {
+    static id: string = "bobrilstrap-icon-scissors";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11041,6 +12931,8 @@ export class Scissors extends IconBase {
 }
 
 export class Screwdriver extends IconBase {
+    static id: string = "bobrilstrap-icon-screwdriver";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11052,6 +12944,8 @@ export class Screwdriver extends IconBase {
 }
 
 export class Search extends IconBase {
+    static id: string = "bobrilstrap-icon-search";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
@@ -11061,6 +12955,8 @@ export class Search extends IconBase {
 }
 
 export class SegmentedNav extends IconBase {
+    static id: string = "bobrilstrap-icon-segmented-nav";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11073,6 +12969,8 @@ export class SegmentedNav extends IconBase {
 }
 
 export class Server extends IconBase {
+    static id: string = "bobrilstrap-icon-server";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11084,6 +12982,8 @@ export class Server extends IconBase {
 }
 
 export class ShareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-share-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11095,6 +12995,8 @@ export class ShareFill extends IconBase {
 }
 
 export class Share extends IconBase {
+    static id: string = "bobrilstrap-icon-share";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11106,6 +13008,8 @@ export class Share extends IconBase {
 }
 
 export class ShieldCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11121,6 +13025,8 @@ export class ShieldCheck extends IconBase {
 }
 
 export class ShieldExclamation extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-exclamation";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11133,6 +13039,8 @@ export class ShieldExclamation extends IconBase {
 }
 
 export class ShieldFillCheck extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-fill-check";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11144,6 +13052,8 @@ export class ShieldFillCheck extends IconBase {
 }
 
 export class ShieldFillExclamation extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-fill-exclamation";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11155,6 +13065,8 @@ export class ShieldFillExclamation extends IconBase {
 }
 
 export class ShieldFillMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-fill-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11166,6 +13078,8 @@ export class ShieldFillMinus extends IconBase {
 }
 
 export class ShieldFillPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-fill-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11177,6 +13091,8 @@ export class ShieldFillPlus extends IconBase {
 }
 
 export class ShieldFillX extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-fill-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11188,6 +13104,8 @@ export class ShieldFillX extends IconBase {
 }
 
 export class ShieldFill extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11199,6 +13117,8 @@ export class ShieldFill extends IconBase {
 }
 
 export class ShieldLockFill extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-lock-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11210,6 +13130,8 @@ export class ShieldLockFill extends IconBase {
 }
 
 export class ShieldLock extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-lock";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11222,6 +13144,8 @@ export class ShieldLock extends IconBase {
 }
 
 export class ShieldMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11234,6 +13158,8 @@ export class ShieldMinus extends IconBase {
 }
 
 export class ShieldPlus extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11249,6 +13175,8 @@ export class ShieldPlus extends IconBase {
 }
 
 export class ShieldShaded extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-shaded";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11261,6 +13189,8 @@ export class ShieldShaded extends IconBase {
 }
 
 export class ShieldSlashFill extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-slash-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M1.357 3.478c-.42 3.969.87 6.928 2.423 8.911a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586.466-.32.983-.74 1.502-1.263L1.357 3.478zm11.787 7.545c1.145-1.984 1.902-4.644 1.444-8a1.454 1.454 0 0 0-1.003-1.183 61.09 61.09 0 0 0-2.772-.815C9.77.749 8.663.5 8 .5c-.662 0-1.77.249-2.813.525-.548.145-1.1.303-1.59.45l9.547 9.548z" />
@@ -11270,6 +13200,8 @@ export class ShieldSlashFill extends IconBase {
 }
 
 export class ShieldSlash extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-slash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M1.357 3.478c-.42 3.969.87 6.928 2.423 8.911a11.192 11.192 0 0 0 2.417 2.3c.371.256.715.451 1.007.586.27.124.558.225.796.225s.527-.101.796-.225c.292-.135.636-.33 1.007-.586.466-.32.983-.74 1.502-1.263l-.707-.707a9.692 9.692 0 0 1-1.362 1.147 5.934 5.934 0 0 1-.857.5c-.116.053-.21.089-.282.11A.73.73 0 0 1 8 14.5c-.007-.001-.038-.005-.097-.023a2.273 2.273 0 0 1-.282-.111 5.934 5.934 0 0 1-.857-.5 10.197 10.197 0 0 1-2.197-2.093C3.262 10.107 2.145 7.672 2.289 4.41l-.932-.932zm11.053 6.81c.971-1.785 1.594-4.15 1.187-7.129a.454.454 0 0 0-.315-.366c-.626-.2-1.682-.526-2.725-.802C9.491 1.71 8.51 1.5 8 1.5c-.51 0-1.49.21-2.557.491a45.4 45.4 0 0 0-1.041.29l-.806-.806a52.727 52.727 0 0 1 1.591-.45C6.23.749 7.337.5 8 .5c.662 0 1.77.249 2.813.525a61.09 61.09 0 0 1 2.772.815c.528.168.926.623 1.003 1.184.458 3.355-.299 6.015-1.444 7.999l-.735-.735z" />
@@ -11279,6 +13211,8 @@ export class ShieldSlash extends IconBase {
 }
 
 export class ShieldX extends IconBase {
+    static id: string = "bobrilstrap-icon-shield-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11294,6 +13228,8 @@ export class ShieldX extends IconBase {
 }
 
 export class Shield extends IconBase {
+    static id: string = "bobrilstrap-icon-shield";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11305,6 +13241,8 @@ export class Shield extends IconBase {
 }
 
 export class ShiftFill extends IconBase {
+    static id: string = "bobrilstrap-icon-shift-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11316,6 +13254,8 @@ export class ShiftFill extends IconBase {
 }
 
 export class Shift extends IconBase {
+    static id: string = "bobrilstrap-icon-shift";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11327,6 +13267,8 @@ export class Shift extends IconBase {
 }
 
 export class ShopWindow extends IconBase {
+    static id: string = "bobrilstrap-icon-shop-window";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11338,6 +13280,8 @@ export class ShopWindow extends IconBase {
 }
 
 export class Shop extends IconBase {
+    static id: string = "bobrilstrap-icon-shop";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11349,6 +13293,8 @@ export class Shop extends IconBase {
 }
 
 export class Shuffle extends IconBase {
+    static id: string = "bobrilstrap-icon-shuffle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11361,6 +13307,8 @@ export class Shuffle extends IconBase {
 }
 
 export class Signpost2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-signpost-2-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 1.414V16h2V1.414a1 1 0 0 0-2 0z" />
@@ -11370,6 +13318,8 @@ export class Signpost2Fill extends IconBase {
 }
 
 export class Signpost2 extends IconBase {
+    static id: string = "bobrilstrap-icon-signpost-2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 1.414V2h2v-.586a1 1 0 0 0-2 0z" />
@@ -11383,6 +13333,8 @@ export class Signpost2 extends IconBase {
 }
 
 export class SignpostFill extends IconBase {
+    static id: string = "bobrilstrap-icon-signpost-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 1.414V4h2V1.414a1 1 0 0 0-2 0zM1 5a1 1 0 0 1 1-1h10.532a1 1 0 0 1 .768.36l1.933 2.32a.5.5 0 0 1 0 .64L13.3 9.64a1 1 0 0 1-.768.36H2a1 1 0 0 1-1-1V5zm6 5h2v6H7v-6z" />
@@ -11391,6 +13343,8 @@ export class SignpostFill extends IconBase {
 }
 
 export class SignpostSplitFill extends IconBase {
+    static id: string = "bobrilstrap-icon-signpost-split-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 16h2V6h5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.8 2.4A1 1 0 0 0 14 2H9v-.586a1 1 0 0 0-2 0V7H2a1 1 0 0 0-.8.4L.225 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4h5v5z" />
@@ -11399,6 +13353,8 @@ export class SignpostSplitFill extends IconBase {
 }
 
 export class SignpostSplit extends IconBase {
+    static id: string = "bobrilstrap-icon-signpost-split";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 16h2V6H8V2h1v-.586a1 1 0 0 0-2 0V7h1v4H7v5z" />
@@ -11411,6 +13367,8 @@ export class SignpostSplit extends IconBase {
 }
 
 export class Signpost extends IconBase {
+    static id: string = "bobrilstrap-icon-signpost";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 1.414V4h2V1.414a1 1 0 0 0-2 0z" />
@@ -11424,6 +13382,8 @@ export class Signpost extends IconBase {
 }
 
 export class SimFill extends IconBase {
+    static id: string = "bobrilstrap-icon-sim-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11435,6 +13395,8 @@ export class SimFill extends IconBase {
 }
 
 export class Sim extends IconBase {
+    static id: string = "bobrilstrap-icon-sim";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11450,6 +13412,8 @@ export class Sim extends IconBase {
 }
 
 export class SkipBackwardFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-backward-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V4a.5.5 0 0 0-.5-.5z" />
@@ -11460,6 +13424,8 @@ export class SkipBackwardFill extends IconBase {
 }
 
 export class SkipBackward extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-backward";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11471,6 +13437,8 @@ export class SkipBackward extends IconBase {
 }
 
 export class SkipEndFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-end-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M12 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z" />
@@ -11480,6 +13448,8 @@ export class SkipEndFill extends IconBase {
 }
 
 export class SkipEnd extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-end";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M12 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z" />
@@ -11492,6 +13462,8 @@ export class SkipEnd extends IconBase {
 }
 
 export class SkipForwardFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-forward-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z" />
@@ -11502,6 +13474,8 @@ export class SkipForwardFill extends IconBase {
 }
 
 export class SkipForward extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-forward";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11513,6 +13487,8 @@ export class SkipForward extends IconBase {
 }
 
 export class SkipStartFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-start-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4.5 3.5A.5.5 0 0 0 4 4v8a.5.5 0 0 0 1 0V4a.5.5 0 0 0-.5-.5z" />
@@ -11522,6 +13498,8 @@ export class SkipStartFill extends IconBase {
 }
 
 export class SkipStart extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-start";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4.5 3.5A.5.5 0 0 0 4 4v8a.5.5 0 0 0 1 0V4a.5.5 0 0 0-.5-.5z" />
@@ -11534,6 +13512,8 @@ export class SkipStart extends IconBase {
 }
 
 export class SlashCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-slash-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11545,6 +13525,8 @@ export class SlashCircleFill extends IconBase {
 }
 
 export class SlashCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-slash-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -11554,6 +13536,8 @@ export class SlashCircle extends IconBase {
 }
 
 export class SlashSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-slash-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11565,6 +13549,8 @@ export class SlashSquareFill extends IconBase {
 }
 
 export class SlashSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-slash-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11577,6 +13563,8 @@ export class SlashSquare extends IconBase {
 }
 
 export class Slash extends IconBase {
+    static id: string = "bobrilstrap-icon-slash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M11.354 4.646a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708l6-6a.5.5 0 0 1 .708 0z" />
@@ -11585,6 +13573,8 @@ export class Slash extends IconBase {
 }
 
 export class Sliders extends IconBase {
+    static id: string = "bobrilstrap-icon-sliders";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11596,6 +13586,8 @@ export class Sliders extends IconBase {
 }
 
 export class Smartwatch extends IconBase {
+    static id: string = "bobrilstrap-icon-smartwatch";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M14 5h.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H14V5z" />
@@ -11610,6 +13602,8 @@ export class Smartwatch extends IconBase {
 }
 
 export class SortAlphaDownAlt extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-alpha-down-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11A.5.5 0 0 1 4 2z" />
@@ -11623,6 +13617,8 @@ export class SortAlphaDownAlt extends IconBase {
 }
 
 export class SortAlphaDown extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-alpha-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11A.5.5 0 0 1 4 2z" />
@@ -11636,6 +13632,8 @@ export class SortAlphaDown extends IconBase {
 }
 
 export class SortAlphaUpAlt extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-alpha-up-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 14a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-1 0v11a.5.5 0 0 0 .5.5z" />
@@ -11649,6 +13647,8 @@ export class SortAlphaUpAlt extends IconBase {
 }
 
 export class SortAlphaUp extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-alpha-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 14a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-1 0v11a.5.5 0 0 0 .5.5z" />
@@ -11662,6 +13662,8 @@ export class SortAlphaUp extends IconBase {
 }
 
 export class SortDownAlt extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-down-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M3 3a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-1 0v-10A.5.5 0 0 1 3 3z" />
@@ -11674,6 +13676,8 @@ export class SortDownAlt extends IconBase {
 }
 
 export class SortDown extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M3 2a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-1 0v-10A.5.5 0 0 1 3 2z" />
@@ -11686,6 +13690,8 @@ export class SortDown extends IconBase {
 }
 
 export class SortNumericDownAlt extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-numeric-down-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11A.5.5 0 0 1 4 2z" />
@@ -11699,6 +13705,8 @@ export class SortNumericDownAlt extends IconBase {
 }
 
 export class SortNumericDown extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-numeric-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-1 0v-11A.5.5 0 0 1 4 2z" />
@@ -11712,6 +13720,8 @@ export class SortNumericDown extends IconBase {
 }
 
 export class SortNumericUpAlt extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-numeric-up-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 14a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-1 0v11a.5.5 0 0 0 .5.5z" />
@@ -11725,6 +13735,8 @@ export class SortNumericUpAlt extends IconBase {
 }
 
 export class SortNumericUp extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-numeric-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M4 14a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-1 0v11a.5.5 0 0 0 .5.5z" />
@@ -11738,6 +13750,8 @@ export class SortNumericUp extends IconBase {
 }
 
 export class SortUpAlt extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-up-alt";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M3 14a.5.5 0 0 0 .5-.5v-10a.5.5 0 0 0-1 0v10a.5.5 0 0 0 .5.5z" />
@@ -11750,6 +13764,8 @@ export class SortUpAlt extends IconBase {
 }
 
 export class SortUp extends IconBase {
+    static id: string = "bobrilstrap-icon-sort-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M3 13a.5.5 0 0 0 .5-.5v-10a.5.5 0 0 0-1 0v10a.5.5 0 0 0 .5.5z" />
@@ -11762,6 +13778,8 @@ export class SortUp extends IconBase {
 }
 
 export class Soundwave extends IconBase {
+    static id: string = "bobrilstrap-icon-soundwave";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11773,6 +13791,8 @@ export class Soundwave extends IconBase {
 }
 
 export class SpeakerFill extends IconBase {
+    static id: string = "bobrilstrap-icon-speaker-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-2.5 6.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z" />
@@ -11785,6 +13805,8 @@ export class SpeakerFill extends IconBase {
 }
 
 export class Speaker extends IconBase {
+    static id: string = "bobrilstrap-icon-speaker";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11800,6 +13822,8 @@ export class Speaker extends IconBase {
 }
 
 export class Spellcheck extends IconBase {
+    static id: string = "bobrilstrap-icon-spellcheck";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11815,6 +13839,8 @@ export class Spellcheck extends IconBase {
 }
 
 export class SquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
@@ -11823,6 +13849,8 @@ export class SquareFill extends IconBase {
 }
 
 export class SquareHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-square-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11834,6 +13862,8 @@ export class SquareHalf extends IconBase {
 }
 
 export class Square extends IconBase {
+    static id: string = "bobrilstrap-icon-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11845,6 +13875,8 @@ export class Square extends IconBase {
 }
 
 export class StarFill extends IconBase {
+    static id: string = "bobrilstrap-icon-star-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -11853,6 +13885,8 @@ export class StarFill extends IconBase {
 }
 
 export class StarHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-star-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11864,6 +13898,8 @@ export class StarHalf extends IconBase {
 }
 
 export class Star extends IconBase {
+    static id: string = "bobrilstrap-icon-star";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11875,6 +13911,8 @@ export class Star extends IconBase {
 }
 
 export class StickiesFill extends IconBase {
+    static id: string = "bobrilstrap-icon-stickies-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0H13a1 1 0 0 1 1 1H1.5a.5.5 0 0 0-.5.5V14a1 1 0 0 1-1-1V1.5z" />
@@ -11887,6 +13925,8 @@ export class StickiesFill extends IconBase {
 }
 
 export class Stickies extends IconBase {
+    static id: string = "bobrilstrap-icon-stickies";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 0 1 1.5 0H13a1 1 0 0 1 1 1H1.5a.5.5 0 0 0-.5.5V14a1 1 0 0 1-1-1V1.5z" />
@@ -11900,6 +13940,8 @@ export class Stickies extends IconBase {
 }
 
 export class StickyFill extends IconBase {
+    static id: string = "bobrilstrap-icon-sticky-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11911,6 +13953,8 @@ export class StickyFill extends IconBase {
 }
 
 export class Sticky extends IconBase {
+    static id: string = "bobrilstrap-icon-sticky";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11923,6 +13967,8 @@ export class Sticky extends IconBase {
 }
 
 export class StopFill extends IconBase {
+    static id: string = "bobrilstrap-icon-stop-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z" />
@@ -11931,6 +13977,8 @@ export class StopFill extends IconBase {
 }
 
 export class Stop extends IconBase {
+    static id: string = "bobrilstrap-icon-stop";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11942,6 +13990,8 @@ export class Stop extends IconBase {
 }
 
 export class StoplightsFill extends IconBase {
+    static id: string = "bobrilstrap-icon-stoplights-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11954,6 +14004,8 @@ export class StoplightsFill extends IconBase {
 }
 
 export class Stoplights extends IconBase {
+    static id: string = "bobrilstrap-icon-stoplights";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9.5 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -11967,6 +14019,8 @@ export class Stoplights extends IconBase {
 }
 
 export class StopwatchFill extends IconBase {
+    static id: string = "bobrilstrap-icon-stopwatch-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11978,6 +14032,8 @@ export class StopwatchFill extends IconBase {
 }
 
 export class Stopwatch extends IconBase {
+    static id: string = "bobrilstrap-icon-stopwatch";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -11989,6 +14045,8 @@ export class Stopwatch extends IconBase {
 }
 
 export class Subtract extends IconBase {
+    static id: string = "bobrilstrap-icon-subtract";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12000,6 +14058,8 @@ export class Subtract extends IconBase {
 }
 
 export class SuitClubFill extends IconBase {
+    static id: string = "bobrilstrap-icon-suit-club-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M11.5 4.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
@@ -12011,6 +14071,8 @@ export class SuitClubFill extends IconBase {
 }
 
 export class SuitClub extends IconBase {
+    static id: string = "bobrilstrap-icon-suit-club";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12022,6 +14084,8 @@ export class SuitClub extends IconBase {
 }
 
 export class SuitDiamondFill extends IconBase {
+    static id: string = "bobrilstrap-icon-suit-diamond-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M2.45 7.4L7.2 1.067a1 1 0 0 1 1.6 0L13.55 7.4a1 1 0 0 1 0 1.2L8.8 14.933a1 1 0 0 1-1.6 0L2.45 8.6a1 1 0 0 1 0-1.2z" />
@@ -12030,6 +14094,8 @@ export class SuitDiamondFill extends IconBase {
 }
 
 export class SuitDiamond extends IconBase {
+    static id: string = "bobrilstrap-icon-suit-diamond";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12041,6 +14107,8 @@ export class SuitDiamond extends IconBase {
 }
 
 export class SuitHeartFill extends IconBase {
+    static id: string = "bobrilstrap-icon-suit-heart-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
@@ -12049,6 +14117,8 @@ export class SuitHeartFill extends IconBase {
 }
 
 export class SuitHeart extends IconBase {
+    static id: string = "bobrilstrap-icon-suit-heart";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12060,6 +14130,8 @@ export class SuitHeart extends IconBase {
 }
 
 export class SuitSpadeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-suit-spade-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5.602 14.153C6.272 13.136 7.348 11.28 8 9c.652 2.28 1.727 4.136 2.398 5.153.231.35-.02.847-.438.847H6.04c-.419 0-.67-.497-.438-.847z" />
@@ -12069,6 +14141,8 @@ export class SuitSpadeFill extends IconBase {
 }
 
 export class SuitSpade extends IconBase {
+    static id: string = "bobrilstrap-icon-suit-spade";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12080,6 +14154,8 @@ export class SuitSpade extends IconBase {
 }
 
 export class Sun extends IconBase {
+    static id: string = "bobrilstrap-icon-sun";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3.5 8a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0z" />
@@ -12092,6 +14168,8 @@ export class Sun extends IconBase {
 }
 
 export class Sunglasses extends IconBase {
+    static id: string = "bobrilstrap-icon-sunglasses";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12103,6 +14181,8 @@ export class Sunglasses extends IconBase {
 }
 
 export class Table extends IconBase {
+    static id: string = "bobrilstrap-icon-table";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12114,6 +14194,8 @@ export class Table extends IconBase {
 }
 
 export class TabletFill extends IconBase {
+    static id: string = "bobrilstrap-icon-tablet-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12125,6 +14207,8 @@ export class TabletFill extends IconBase {
 }
 
 export class TabletLandscapeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-tablet-landscape-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12136,6 +14220,8 @@ export class TabletLandscapeFill extends IconBase {
 }
 
 export class TabletLandscape extends IconBase {
+    static id: string = "bobrilstrap-icon-tablet-landscape";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12148,6 +14234,8 @@ export class TabletLandscape extends IconBase {
 }
 
 export class Tablet extends IconBase {
+    static id: string = "bobrilstrap-icon-tablet";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12160,6 +14248,8 @@ export class Tablet extends IconBase {
 }
 
 export class TagFill extends IconBase {
+    static id: string = "bobrilstrap-icon-tag-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12171,6 +14261,8 @@ export class TagFill extends IconBase {
 }
 
 export class Tag extends IconBase {
+    static id: string = "bobrilstrap-icon-tag";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12183,6 +14275,8 @@ export class Tag extends IconBase {
 }
 
 export class TagsFill extends IconBase {
+    static id: string = "bobrilstrap-icon-tags-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12195,6 +14289,8 @@ export class TagsFill extends IconBase {
 }
 
 export class Tags extends IconBase {
+    static id: string = "bobrilstrap-icon-tags";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12208,6 +14304,8 @@ export class Tags extends IconBase {
 }
 
 export class TelephoneFill extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12219,6 +14317,8 @@ export class TelephoneFill extends IconBase {
 }
 
 export class TelephoneForwardFill extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-forward-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12230,6 +14330,8 @@ export class TelephoneForwardFill extends IconBase {
 }
 
 export class TelephoneForward extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-forward";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12241,6 +14343,8 @@ export class TelephoneForward extends IconBase {
 }
 
 export class TelephoneInboundFill extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-inbound-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12252,6 +14356,8 @@ export class TelephoneInboundFill extends IconBase {
 }
 
 export class TelephoneInbound extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-inbound";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12263,6 +14369,8 @@ export class TelephoneInbound extends IconBase {
 }
 
 export class TelephoneMinusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-minus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12274,6 +14382,8 @@ export class TelephoneMinusFill extends IconBase {
 }
 
 export class TelephoneMinus extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-minus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12285,6 +14395,8 @@ export class TelephoneMinus extends IconBase {
 }
 
 export class TelephoneOutboundFill extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-outbound-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12296,6 +14408,8 @@ export class TelephoneOutboundFill extends IconBase {
 }
 
 export class TelephoneOutbound extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-outbound";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12307,6 +14421,8 @@ export class TelephoneOutbound extends IconBase {
 }
 
 export class TelephonePlusFill extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-plus-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12318,6 +14434,8 @@ export class TelephonePlusFill extends IconBase {
 }
 
 export class TelephonePlus extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-plus";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12329,6 +14447,8 @@ export class TelephonePlus extends IconBase {
 }
 
 export class TelephoneXFill extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-x-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12340,6 +14460,8 @@ export class TelephoneXFill extends IconBase {
 }
 
 export class TelephoneX extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12351,6 +14473,8 @@ export class TelephoneX extends IconBase {
 }
 
 export class Telephone extends IconBase {
+    static id: string = "bobrilstrap-icon-telephone";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12362,6 +14486,8 @@ export class Telephone extends IconBase {
 }
 
 export class TerminalFill extends IconBase {
+    static id: string = "bobrilstrap-icon-terminal-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12373,6 +14499,8 @@ export class TerminalFill extends IconBase {
 }
 
 export class Terminal extends IconBase {
+    static id: string = "bobrilstrap-icon-terminal";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12388,6 +14516,8 @@ export class Terminal extends IconBase {
 }
 
 export class TextCenter extends IconBase {
+    static id: string = "bobrilstrap-icon-text-center";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12399,6 +14529,8 @@ export class TextCenter extends IconBase {
 }
 
 export class TextIndentLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-text-indent-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12410,6 +14542,8 @@ export class TextIndentLeft extends IconBase {
 }
 
 export class TextIndentRight extends IconBase {
+    static id: string = "bobrilstrap-icon-text-indent-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12421,6 +14555,8 @@ export class TextIndentRight extends IconBase {
 }
 
 export class TextLeft extends IconBase {
+    static id: string = "bobrilstrap-icon-text-left";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12432,6 +14568,8 @@ export class TextLeft extends IconBase {
 }
 
 export class TextParagraph extends IconBase {
+    static id: string = "bobrilstrap-icon-text-paragraph";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12443,6 +14581,8 @@ export class TextParagraph extends IconBase {
 }
 
 export class TextRight extends IconBase {
+    static id: string = "bobrilstrap-icon-text-right";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12454,6 +14594,8 @@ export class TextRight extends IconBase {
 }
 
 export class TextareaResize extends IconBase {
+    static id: string = "bobrilstrap-icon-textarea-resize";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12465,6 +14607,8 @@ export class TextareaResize extends IconBase {
 }
 
 export class TextareaT extends IconBase {
+    static id: string = "bobrilstrap-icon-textarea-t";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12477,6 +14621,8 @@ export class TextareaT extends IconBase {
 }
 
 export class Textarea extends IconBase {
+    static id: string = "bobrilstrap-icon-textarea";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12488,6 +14634,8 @@ export class Textarea extends IconBase {
 }
 
 export class ThermometerHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-thermometer-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12501,6 +14649,8 @@ export class ThermometerHalf extends IconBase {
 }
 
 export class Thermometer extends IconBase {
+    static id: string = "bobrilstrap-icon-thermometer";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12513,6 +14663,8 @@ export class Thermometer extends IconBase {
 }
 
 export class ThreeDotsVertical extends IconBase {
+    static id: string = "bobrilstrap-icon-three-dots-vertical";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12524,6 +14676,8 @@ export class ThreeDotsVertical extends IconBase {
 }
 
 export class ThreeDots extends IconBase {
+    static id: string = "bobrilstrap-icon-three-dots";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12535,6 +14689,8 @@ export class ThreeDots extends IconBase {
 }
 
 export class ToggleOff extends IconBase {
+    static id: string = "bobrilstrap-icon-toggle-off";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12546,6 +14702,8 @@ export class ToggleOff extends IconBase {
 }
 
 export class ToggleOn extends IconBase {
+    static id: string = "bobrilstrap-icon-toggle-on";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
@@ -12554,6 +14712,8 @@ export class ToggleOn extends IconBase {
 }
 
 export class Toggle2Off extends IconBase {
+    static id: string = "bobrilstrap-icon-toggle2-off";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M9 11c.628-.836 1-1.874 1-3a4.978 4.978 0 0 0-1-3h4a3 3 0 1 1 0 6H9z" />
@@ -12563,6 +14723,8 @@ export class Toggle2Off extends IconBase {
 }
 
 export class Toggle2On extends IconBase {
+    static id: string = "bobrilstrap-icon-toggle2-on";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 5H3a3 3 0 0 0 0 6h4a4.995 4.995 0 0 1-.584-1H3a2 2 0 1 1 0-4h3.416c.156-.357.352-.692.584-1z" />
@@ -12572,6 +14734,8 @@ export class Toggle2On extends IconBase {
 }
 
 export class Toggles extends IconBase {
+    static id: string = "bobrilstrap-icon-toggles";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12583,6 +14747,8 @@ export class Toggles extends IconBase {
 }
 
 export class Toggles2 extends IconBase {
+    static id: string = "bobrilstrap-icon-toggles2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h8a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2zm2-1a1 1 0 0 0 0 2h8a1 1 0 1 0 0-2H4z" />
@@ -12594,6 +14760,8 @@ export class Toggles2 extends IconBase {
 }
 
 export class Tools extends IconBase {
+    static id: string = "bobrilstrap-icon-tools";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12609,6 +14777,8 @@ export class Tools extends IconBase {
 }
 
 export class TrashFill extends IconBase {
+    static id: string = "bobrilstrap-icon-trash-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12620,6 +14790,8 @@ export class TrashFill extends IconBase {
 }
 
 export class Trash extends IconBase {
+    static id: string = "bobrilstrap-icon-trash";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
@@ -12632,6 +14804,8 @@ export class Trash extends IconBase {
 }
 
 export class Trash2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-trash2-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M2.037 3.225l1.684 10.104A2 2 0 0 0 5.694 15h4.612a2 2 0 0 0 1.973-1.671l1.684-10.104C13.627 4.224 11.085 5 8 5c-3.086 0-5.627-.776-5.963-1.775z" />
@@ -12644,6 +14818,8 @@ export class Trash2Fill extends IconBase {
 }
 
 export class Trash2 extends IconBase {
+    static id: string = "bobrilstrap-icon-trash2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12660,6 +14836,8 @@ export class Trash2 extends IconBase {
 }
 
 export class TreeFill extends IconBase {
+    static id: string = "bobrilstrap-icon-tree-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12672,6 +14850,8 @@ export class TreeFill extends IconBase {
 }
 
 export class Tree extends IconBase {
+    static id: string = "bobrilstrap-icon-tree";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12684,6 +14864,8 @@ export class Tree extends IconBase {
 }
 
 export class TriangleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-triangle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12695,6 +14877,8 @@ export class TriangleFill extends IconBase {
 }
 
 export class TriangleHalf extends IconBase {
+    static id: string = "bobrilstrap-icon-triangle-half";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12706,6 +14890,8 @@ export class TriangleHalf extends IconBase {
 }
 
 export class Triangle extends IconBase {
+    static id: string = "bobrilstrap-icon-triangle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12717,6 +14903,8 @@ export class Triangle extends IconBase {
 }
 
 export class TrophyFill extends IconBase {
+    static id: string = "bobrilstrap-icon-trophy-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12728,6 +14916,8 @@ export class TrophyFill extends IconBase {
 }
 
 export class Trophy extends IconBase {
+    static id: string = "bobrilstrap-icon-trophy";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12739,6 +14929,8 @@ export class Trophy extends IconBase {
 }
 
 export class TruckFlatbed extends IconBase {
+    static id: string = "bobrilstrap-icon-truck-flatbed";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12750,6 +14942,8 @@ export class TruckFlatbed extends IconBase {
 }
 
 export class Truck extends IconBase {
+    static id: string = "bobrilstrap-icon-truck";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12761,6 +14955,8 @@ export class Truck extends IconBase {
 }
 
 export class TvFill extends IconBase {
+    static id: string = "bobrilstrap-icon-tv-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12772,6 +14968,8 @@ export class TvFill extends IconBase {
 }
 
 export class Tv extends IconBase {
+    static id: string = "bobrilstrap-icon-tv";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12783,6 +14981,8 @@ export class Tv extends IconBase {
 }
 
 export class TypeBold extends IconBase {
+    static id: string = "bobrilstrap-icon-type-bold";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.21 13c2.106 0 3.412-1.087 3.412-2.823 0-1.306-.984-2.283-2.324-2.386v-.055a2.176 2.176 0 0 0 1.852-2.14c0-1.51-1.162-2.46-3.014-2.46H3.843V13H8.21zM5.908 4.674h1.696c.963 0 1.517.451 1.517 1.244 0 .834-.629 1.32-1.73 1.32H5.908V4.673zm0 6.788V8.598h1.73c1.217 0 1.88.492 1.88 1.415 0 .943-.643 1.449-1.832 1.449H5.907z" />
@@ -12791,6 +14991,8 @@ export class TypeBold extends IconBase {
 }
 
 export class TypeH1 extends IconBase {
+    static id: string = "bobrilstrap-icon-type-h1";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.637 13V3.669H7.379V7.62H2.758V3.67H1.5V13h1.258V8.728h4.62V13h1.259zm5.329 0V3.669h-1.244L10.5 5.316v1.265l2.16-1.565h.062V13h1.244z" />
@@ -12799,6 +15001,8 @@ export class TypeH1 extends IconBase {
 }
 
 export class TypeH2 extends IconBase {
+    static id: string = "bobrilstrap-icon-type-h2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.638 13V3.669H6.38V7.62H1.759V3.67H.5V13h1.258V8.728h4.62V13h1.259zm3.022-6.733v-.048c0-.889.63-1.668 1.716-1.668.957 0 1.675.608 1.675 1.572 0 .855-.554 1.504-1.067 2.085l-3.513 3.999V13H15.5v-1.094h-4.245v-.075l2.481-2.844c.875-.998 1.586-1.784 1.586-2.953 0-1.463-1.155-2.556-2.919-2.556-1.941 0-2.966 1.326-2.966 2.74v.049h1.223z" />
@@ -12807,6 +15011,8 @@ export class TypeH2 extends IconBase {
 }
 
 export class TypeH3 extends IconBase {
+    static id: string = "bobrilstrap-icon-type-h3";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.637 13V3.669H6.379V7.62H1.758V3.67H.5V13h1.258V8.728h4.62V13h1.259zm3.625-4.272h1.018c1.142 0 1.935.67 1.949 1.674.013 1.005-.78 1.737-2.01 1.73-1.08-.007-1.853-.588-1.935-1.32H9.108c.069 1.327 1.224 2.386 3.083 2.386 1.935 0 3.343-1.155 3.309-2.789-.027-1.51-1.251-2.16-2.037-2.249v-.068c.704-.123 1.764-.91 1.723-2.229-.035-1.353-1.176-2.4-2.954-2.385-1.873.006-2.857 1.162-2.898 2.358h1.196c.062-.69.711-1.299 1.696-1.299.998 0 1.695.622 1.695 1.525.007.922-.718 1.592-1.695 1.592h-.964v1.074z" />
@@ -12815,6 +15021,8 @@ export class TypeH3 extends IconBase {
 }
 
 export class TypeItalic extends IconBase {
+    static id: string = "bobrilstrap-icon-type-italic";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7.991 11.674L9.53 4.455c.123-.595.246-.71 1.347-.807l.11-.52H7.211l-.11.52c1.06.096 1.128.212 1.005.807L6.57 11.674c-.123.595-.246.71-1.346.806l-.11.52h3.774l.11-.52c-1.06-.095-1.129-.211-1.006-.806z" />
@@ -12823,6 +15031,8 @@ export class TypeItalic extends IconBase {
 }
 
 export class TypeStrikethrough extends IconBase {
+    static id: string = "bobrilstrap-icon-type-strikethrough";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M8.527 13.164c-2.153 0-3.589-1.107-3.705-2.81h1.23c.144 1.06 1.129 1.703 2.544 1.703 1.34 0 2.31-.705 2.31-1.675 0-.827-.547-1.374-1.914-1.675L8.046 8.5h3.45c.468.437.675.994.675 1.697 0 1.826-1.436 2.967-3.644 2.967zM6.602 6.5H5.167a2.776 2.776 0 0 1-.099-.76c0-1.627 1.436-2.768 3.48-2.768 1.969 0 3.39 1.175 3.445 2.85h-1.23c-.11-1.08-.964-1.743-2.25-1.743-1.23 0-2.18.602-2.18 1.607 0 .31.083.581.27.814z" />
@@ -12832,6 +15042,8 @@ export class TypeStrikethrough extends IconBase {
 }
 
 export class TypeUnderline extends IconBase {
+    static id: string = "bobrilstrap-icon-type-underline";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M5.313 3.136h-1.23V9.54c0 2.105 1.47 3.623 3.917 3.623s3.917-1.518 3.917-3.623V3.136h-1.23v6.323c0 1.49-.978 2.57-2.687 2.57-1.709 0-2.687-1.08-2.687-2.57V3.136z" />
@@ -12841,6 +15053,8 @@ export class TypeUnderline extends IconBase {
 }
 
 export class Type extends IconBase {
+    static id: string = "bobrilstrap-icon-type";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M2.244 13.081l.943-2.803H6.66l.944 2.803H8.86L5.54 3.75H4.322L1 13.081h1.244zm2.7-7.923L6.34 9.314H3.51l1.4-4.156h.034zm9.146 7.027h.035v.896h1.128V8.125c0-1.51-1.114-2.345-2.646-2.345-1.736 0-2.59.916-2.666 2.174h1.108c.068-.718.595-1.19 1.517-1.19.971 0 1.518.52 1.518 1.464v.731H12.19c-1.647.007-2.522.8-2.522 2.058 0 1.319.957 2.18 2.345 2.18 1.06 0 1.716-.43 2.078-1.011zm-1.763.035c-.752 0-1.456-.397-1.456-1.244 0-.65.424-1.115 1.408-1.115h1.805v.834c0 .896-.752 1.525-1.757 1.525z" />
@@ -12849,6 +15063,8 @@ export class Type extends IconBase {
 }
 
 export class UiChecksGrid extends IconBase {
+    static id: string = "bobrilstrap-icon-ui-checks-grid";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12860,6 +15076,8 @@ export class UiChecksGrid extends IconBase {
 }
 
 export class UiChecks extends IconBase {
+    static id: string = "bobrilstrap-icon-ui-checks";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1z" />
@@ -12877,6 +15095,8 @@ export class UiChecks extends IconBase {
 }
 
 export class UiRadiosGrid extends IconBase {
+    static id: string = "bobrilstrap-icon-ui-radios-grid";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12888,6 +15108,8 @@ export class UiRadiosGrid extends IconBase {
 }
 
 export class UiRadios extends IconBase {
+    static id: string = "bobrilstrap-icon-ui-radios";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zM0 12a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm7-1.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1z" />
@@ -12900,6 +15122,8 @@ export class UiRadios extends IconBase {
 }
 
 export class Union extends IconBase {
+    static id: string = "bobrilstrap-icon-union";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12911,6 +15135,8 @@ export class Union extends IconBase {
 }
 
 export class UnlockFill extends IconBase {
+    static id: string = "bobrilstrap-icon-unlock-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
@@ -12920,6 +15146,8 @@ export class UnlockFill extends IconBase {
 }
 
 export class Unlock extends IconBase {
+    static id: string = "bobrilstrap-icon-unlock";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12931,6 +15159,8 @@ export class Unlock extends IconBase {
 }
 
 export class UpcScan extends IconBase {
+    static id: string = "bobrilstrap-icon-upc-scan";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12943,6 +15173,8 @@ export class UpcScan extends IconBase {
 }
 
 export class Upc extends IconBase {
+    static id: string = "bobrilstrap-icon-upc";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z" />
@@ -12951,6 +15183,8 @@ export class Upc extends IconBase {
 }
 
 export class Upload extends IconBase {
+    static id: string = "bobrilstrap-icon-upload";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12966,6 +15200,8 @@ export class Upload extends IconBase {
 }
 
 export class VectorPen extends IconBase {
+    static id: string = "bobrilstrap-icon-vector-pen";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12978,6 +15214,8 @@ export class VectorPen extends IconBase {
 }
 
 export class ViewList extends IconBase {
+    static id: string = "bobrilstrap-icon-view-list";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -12989,6 +15227,8 @@ export class ViewList extends IconBase {
 }
 
 export class ViewStacked extends IconBase {
+    static id: string = "bobrilstrap-icon-view-stacked";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13000,6 +15240,8 @@ export class ViewStacked extends IconBase {
 }
 
 export class Voicemail extends IconBase {
+    static id: string = "bobrilstrap-icon-voicemail";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13011,6 +15253,8 @@ export class Voicemail extends IconBase {
 }
 
 export class VolumeDownFill extends IconBase {
+    static id: string = "bobrilstrap-icon-volume-down-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13023,6 +15267,8 @@ export class VolumeDownFill extends IconBase {
 }
 
 export class VolumeDown extends IconBase {
+    static id: string = "bobrilstrap-icon-volume-down";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13035,6 +15281,8 @@ export class VolumeDown extends IconBase {
 }
 
 export class VolumeMuteFill extends IconBase {
+    static id: string = "bobrilstrap-icon-volume-mute-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13047,6 +15295,8 @@ export class VolumeMuteFill extends IconBase {
 }
 
 export class VolumeMute extends IconBase {
+    static id: string = "bobrilstrap-icon-volume-mute";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13059,6 +15309,8 @@ export class VolumeMute extends IconBase {
 }
 
 export class VolumeOffFill extends IconBase {
+    static id: string = "bobrilstrap-icon-volume-off-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13070,6 +15322,8 @@ export class VolumeOffFill extends IconBase {
 }
 
 export class VolumeOff extends IconBase {
+    static id: string = "bobrilstrap-icon-volume-off";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13081,6 +15335,8 @@ export class VolumeOff extends IconBase {
 }
 
 export class VolumeUpFill extends IconBase {
+    static id: string = "bobrilstrap-icon-volume-up-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z" />
@@ -13095,6 +15351,8 @@ export class VolumeUpFill extends IconBase {
 }
 
 export class VolumeUp extends IconBase {
+    static id: string = "bobrilstrap-icon-volume-up";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13109,6 +15367,8 @@ export class VolumeUp extends IconBase {
 }
 
 export class Vr extends IconBase {
+    static id: string = "bobrilstrap-icon-vr";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M3 12V4a1 1 0 0 1 1-1h2.5V2H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5v-1H4a1 1 0 0 1-1-1zm6.5 1v1H12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H9.5v1H12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H9.5z" />
@@ -13118,6 +15378,8 @@ export class Vr extends IconBase {
 }
 
 export class WalletFill extends IconBase {
+    static id: string = "bobrilstrap-icon-wallet-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z" />
@@ -13127,6 +15389,8 @@ export class WalletFill extends IconBase {
 }
 
 export class Wallet extends IconBase {
+    static id: string = "bobrilstrap-icon-wallet";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13138,6 +15402,8 @@ export class Wallet extends IconBase {
 }
 
 export class Wallet2 extends IconBase {
+    static id: string = "bobrilstrap-icon-wallet2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13149,6 +15415,8 @@ export class Wallet2 extends IconBase {
 }
 
 export class Watch extends IconBase {
+    static id: string = "bobrilstrap-icon-watch";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13162,6 +15430,8 @@ export class Watch extends IconBase {
 }
 
 export class Wifi1 extends IconBase {
+    static id: string = "bobrilstrap-icon-wifi-1";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M11.046 10.454c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.611-.091l.015-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.708-.707z" />
@@ -13170,6 +15440,8 @@ export class Wifi1 extends IconBase {
 }
 
 export class Wifi2 extends IconBase {
+    static id: string = "bobrilstrap-icon-wifi-2";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M13.229 8.271c.216-.216.194-.578-.063-.745A9.456 9.456 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.577 1.336c.205.132.48.108.652-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.408.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.611-.091l.015-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .708 0l.707-.707z" />
@@ -13178,6 +15450,8 @@ export class Wifi2 extends IconBase {
 }
 
 export class WifiOff extends IconBase {
+    static id: string = "bobrilstrap-icon-wifi-off";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M10.706 3.294A12.545 12.545 0 0 0 8 3 12.44 12.44 0 0 0 .663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c.63 0 1.249.05 1.852.148l.854-.854zM8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065 8.448 8.448 0 0 1 3.51-1.27L8 6zm2.596 1.404l.785-.785c.63.24 1.228.545 1.785.907a.482.482 0 0 1 .063.745.525.525 0 0 1-.652.065 8.462 8.462 0 0 0-1.98-.932zM8 10l.934-.933a6.454 6.454 0 0 1 2.012.637c.285.145.326.524.1.75l-.015.015a.532.532 0 0 1-.611.09A5.478 5.478 0 0 0 8 10zm4.905-4.905l.747-.747c.59.3 1.153.645 1.685 1.03a.485.485 0 0 1 .048.737.518.518 0 0 1-.668.05 11.496 11.496 0 0 0-1.812-1.07zM9.02 11.78c.238.14.236.464.04.66l-.706.706a.5.5 0 0 1-.708 0l-.707-.707c-.195-.195-.197-.518.04-.66A1.99 1.99 0 0 1 8 11.5c.373 0 .722.102 1.02.28zm4.355-9.905a.53.53 0 1 1 .75.75l-10.75 10.75a.53.53 0 0 1-.75-.75l10.75-10.75z" />
@@ -13186,6 +15460,8 @@ export class WifiOff extends IconBase {
 }
 
 export class Wifi extends IconBase {
+    static id: string = "bobrilstrap-icon-wifi";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M15.385 6.115a.485.485 0 0 0-.048-.736A12.443 12.443 0 0 0 8 3 12.44 12.44 0 0 0 .663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.717 2.164.204.148.489.13.668-.049z" />
@@ -13195,6 +15471,8 @@ export class Wifi extends IconBase {
 }
 
 export class Window extends IconBase {
+    static id: string = "bobrilstrap-icon-window";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13208,6 +15486,8 @@ export class Window extends IconBase {
 }
 
 export class Wrench extends IconBase {
+    static id: string = "bobrilstrap-icon-wrench";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13219,6 +15499,8 @@ export class Wrench extends IconBase {
 }
 
 export class XCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-x-circle-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13230,6 +15512,8 @@ export class XCircleFill extends IconBase {
 }
 
 export class XCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-x-circle";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -13242,6 +15526,8 @@ export class XCircle extends IconBase {
 }
 
 export class XDiamondFill extends IconBase {
+    static id: string = "bobrilstrap-icon-x-diamond-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13253,6 +15539,8 @@ export class XDiamondFill extends IconBase {
 }
 
 export class XDiamond extends IconBase {
+    static id: string = "bobrilstrap-icon-x-diamond";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13268,6 +15556,8 @@ export class XDiamond extends IconBase {
 }
 
 export class XOctagonFill extends IconBase {
+    static id: string = "bobrilstrap-icon-x-octagon-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13279,6 +15569,8 @@ export class XOctagonFill extends IconBase {
 }
 
 export class XOctagon extends IconBase {
+    static id: string = "bobrilstrap-icon-x-octagon";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13294,6 +15586,8 @@ export class XOctagon extends IconBase {
 }
 
 export class XSquareFill extends IconBase {
+    static id: string = "bobrilstrap-icon-x-square-fill";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13305,6 +15599,8 @@ export class XSquareFill extends IconBase {
 }
 
 export class XSquare extends IconBase {
+    static id: string = "bobrilstrap-icon-x-square";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13320,6 +15616,8 @@ export class XSquare extends IconBase {
 }
 
 export class X extends IconBase {
+    static id: string = "bobrilstrap-icon-x";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path
@@ -13331,6 +15629,8 @@ export class X extends IconBase {
 }
 
 export class ZoomIn extends IconBase {
+    static id: string = "bobrilstrap-icon-zoom-in";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
@@ -13344,6 +15644,8 @@ export class ZoomIn extends IconBase {
 }
 
 export class ZoomOut extends IconBase {
+    static id: string = "bobrilstrap-icon-zoom-out";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />

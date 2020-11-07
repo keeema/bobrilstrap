@@ -23,6 +23,8 @@ function createComponents(files: string[]): string {
         const pureLines = lines.slice(1, lines.length - 1);
 
         result += `export class ${iconName} extends IconBase {
+    static id: string = "bobrilstrap-icon-${path.parse(filePath).name}";
+
     svgChildren = (): b.IBobrilChildren => (
         <>
             ${pureLines.join("\n")}

@@ -20,7 +20,7 @@ function createComponents(files) {
         var iconName = toPascalCase(path.parse(filePath).name);
         var lines = fs.readFileSync(path.join(bootstrapIconsPath, filePath)).toString().split("\n");
         var pureLines = lines.slice(1, lines.length - 1);
-        result += "export class " + iconName + " extends IconBase {\n    svgChildren = (): b.IBobrilChildren => (\n        <>\n            " + pureLines.join("\n") + "\n        </>\n    );\n}\n\n";
+        result += "export class " + iconName + " extends IconBase {\n    static id: string = \"bobrilstrap-icon-" + path.parse(filePath).name + "\";\n\n    svgChildren = (): b.IBobrilChildren => (\n        <>\n            " + pureLines.join("\n") + "\n        </>\n    );\n}\n\n";
     }
     return result;
 }

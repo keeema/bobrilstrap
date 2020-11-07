@@ -58,7 +58,7 @@ export interface IAttrs {
 
 export type IAllAttrs = IAttrs & IAria & IDataAttrs & IKnownAttrs & b.IBubblingAndBroadcastEvents;
 
-export interface IBaseElementData extends IAllAttrs {
+interface IBaseElementDataBase extends IAllAttrs {
     as?: Tags;
     style?: b.IBobrilStyles;
     visible?: boolean;
@@ -67,7 +67,11 @@ export interface IBaseElementData extends IAllAttrs {
     active?: boolean;
 }
 
-export interface IBaseElementDataWithChildren extends b.IDataWithChildren, IBaseElementData {}
+export interface IBaseElementData extends IBaseElementDataBase {
+    children?: never;
+}
+
+export interface IBaseElementDataWithChildren extends b.IDataWithChildren, IBaseElementDataBase {}
 
 export const baseStyles = {
     visible: b.styleDef("visible"),
@@ -75,7 +79,7 @@ export const baseStyles = {
     active: b.styleDef("active"),
 };
 
-export abstract class BaseElement<TData extends IBaseElementData> extends b.Component<TData> {
+export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.Component<TData> {
     abstract readonly componentProperties: (keyof TData)[];
 
     get tag(): string {

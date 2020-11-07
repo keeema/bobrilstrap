@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { BaseElement, IAllAttrs, IBaseElementData } from "../components/BaseElement";
+import { BaseElement, IAllAttrs, IBaseElementData, IBaseElementDataWithChildren } from "../components/BaseElement";
 
 export const iconStyles = {
     icon: b.styleDef("bi"),
@@ -19,7 +19,7 @@ export abstract class IconBase extends BaseElement<IIconData> {
     }
 
     render(): b.IBobrilNode {
-        this.data.children = this.svgChildren();
+        (this.data as IBaseElementDataWithChildren).children = this.svgChildren();
         return super.render();
     }
 

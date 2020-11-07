@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export type BadgeVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
 
@@ -16,7 +16,7 @@ export const badgeStyles = {
     pill: b.styleDef("badge-pill"),
 };
 
-export interface IBadgeData extends IBaseElementData {
+export interface IBadgeData extends IBaseElementDataWithChildren {
     variant?: BadgeVariant;
     pill?: boolean;
     href?: string;

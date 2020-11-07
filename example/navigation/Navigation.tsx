@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import * as routes from "../routes";
-import { Navbar, backgroundColor, Nav, margin } from "../../index";
+import { Navbar, backgroundColor, Nav, margin, Icon } from "../../index";
 import { LinkItem } from "./Item";
 import { BobrilstrapIcon } from "./BobrilstrapIcon";
 import { NpmLink } from "./NpmLink";
@@ -23,6 +23,9 @@ export function Navigation(): b.IBobrilNode {
                     <LinkItem name={routes.documentation.name}>Documentation</LinkItem>
                 </Nav>
                 <Nav navbar style={margin({ side: "l", size: "auto", breakpoint: "md" })}>
+                    <Icon name="alarm" width="1em" height="1em" />
+                </Nav>
+                <Nav navbar>
                     <NpmLink />
                 </Nav>
             </Navbar.Collapse>

@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { pick } from "../../helpers/objectHelper";
 import { NavItem } from "./NavItem";
 import { NavLink } from "./NavLink";
@@ -26,7 +26,7 @@ interface INavElementData {
     navbar?: boolean;
 }
 
-export type INavData = INavElementData & IBaseElementData;
+export type INavData = INavElementData & IBaseElementDataWithChildren;
 
 export class Nav extends BaseElement<INavData> {
     static id: string = "bobrilstrap-nav";

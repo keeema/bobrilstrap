@@ -1,12 +1,12 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const carouselItemStyles = {
     carouselItem: b.styleDef("carousel-item"),
     slide: b.styleDef("slide"),
 };
 
-export interface ICarouselItemData extends IBaseElementData {
+export interface ICarouselItemData extends IBaseElementDataWithChildren {
     active?: boolean;
 }
 

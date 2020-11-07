@@ -1,11 +1,11 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const cardImageOverlayStyles = {
     cardImageOverlay: b.styleDef("card-img-overlay"),
 };
 
-export interface ICardImageOverlayData extends IBaseElementData {}
+export interface ICardImageOverlayData extends IBaseElementDataWithChildren {}
 
 export class CardImageOverlay extends BaseElement<ICardImageOverlayData> {
     static id: string = "bobrilstrap-card-image-overlay";

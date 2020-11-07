@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "../components/BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "../components/BaseElement";
 import { pick } from "../../helpers/objectHelper";
 import { createDictionary } from "../../helpers/dict";
 import { SpanBase, spanBaseScale } from "./Col";
@@ -23,7 +23,7 @@ export interface IRowElementData {
     "no-gutters"?: boolean;
 }
 
-export type IRowData = IRowElementData & IBaseElementData;
+export type IRowData = IRowElementData & IBaseElementDataWithChildren;
 
 export class Row extends BaseElement<IRowData> {
     static id: string = "bobrilstrap-row";

@@ -1,11 +1,11 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const cardLinkStyles = {
     cardLink: b.styleDef("card-link"),
 };
 
-export interface ICardLinkData extends IBaseElementData {
+export interface ICardLinkData extends IBaseElementDataWithChildren {
     href?: string;
 }
 

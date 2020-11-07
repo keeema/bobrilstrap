@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement, IAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAttrs } from "./BaseElement";
 
 export const carouselControlStyles = {
     carouselControlPrev: b.styleDef("carousel-control-prev"),
@@ -8,7 +8,7 @@ export const carouselControlStyles = {
     carouselControlNextIcon: b.styleDef("carousel-control-next-icon"),
 };
 
-export interface ICarouselControlData extends IBaseElementData {}
+export interface ICarouselControlData extends IBaseElementDataWithChildren {}
 
 abstract class CarouselControl extends BaseElement<ICarouselControlData> {
     readonly componentProperties: (keyof ICarouselControlData)[] = [];

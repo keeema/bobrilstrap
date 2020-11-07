@@ -66,3 +66,5 @@ export * from "./src/utilities/screenReaders";
 export * from "./src/utilities/sizing";
 export * from "./src/utilities/spacing";
 export * from "./src/utilities/textAlign";
+export * from "./src/icons/iconName";
+export * from "./src/icons/Icons";

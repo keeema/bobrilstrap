@@ -1,11 +1,11 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const carouselIndicatorStyles = {
     carouselIndicators: b.styleDef("carousel-indicators"),
 };
 
-export interface ICarouselIndicatorsItemData extends IBaseElementData {
+export interface ICarouselIndicatorsItemData extends IBaseElementDataWithChildren {
     active?: boolean;
 }
 
@@ -20,7 +20,7 @@ export class CarouselIndicatorsItem extends BaseElement<ICarouselIndicatorsItemD
         return [];
     }
 }
-export interface ICarouselIndicatorsData extends IBaseElementData {}
+export interface ICarouselIndicatorsData extends IBaseElementDataWithChildren {}
 
 export class CarouselIndicators extends BaseElement<ICarouselIndicatorsData> {
     static Item = CarouselIndicatorsItem;

@@ -2,7 +2,7 @@ import * as b from "bobril";
 import * as $ from "jquery";
 import { AlertHeading } from "./AlertHeading";
 import { AlertLink } from "./AlertLink";
-import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export type AlertVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
 export const alertStyles = {
@@ -20,7 +20,7 @@ export const alertStyles = {
     show: b.styleDef("show"),
 };
 
-export interface IAlertData extends IBaseElementData {
+export interface IAlertData extends IBaseElementDataWithChildren {
     variant?: AlertVariant;
     dismissible?: boolean;
     "dismiss-aria-label"?: string;

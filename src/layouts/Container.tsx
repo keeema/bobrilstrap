@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "../components/BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "../components/BaseElement";
 import { Breakpoint } from "./breakpoint";
 
 export const containerStyles = {
@@ -11,7 +11,7 @@ export const containerStyles = {
     xl: b.styleDef("container-xl"),
 };
 
-export interface IContainerData extends IBaseElementData {
+export interface IContainerData extends IBaseElementDataWithChildren {
     fluid?: boolean | Breakpoint;
 }
 

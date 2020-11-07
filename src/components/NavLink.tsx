@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const navLinkStyles = {
     navLink: b.styleDef("nav-link"),
@@ -12,7 +12,7 @@ interface INavLinkElementData {
     href?: string;
 }
 
-export type INavLinkData = INavLinkElementData & IBaseElementData;
+export type INavLinkData = INavLinkElementData & IBaseElementDataWithChildren;
 
 export class NavLink extends BaseElement<INavLinkData> {
     static id: string = "bobrilstrap-nav-link";

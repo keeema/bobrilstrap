@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { CardBody } from "./CardBody";
 import { CardColumns } from "./CardColumns";
 import { CardDeck } from "./CardDeck";
@@ -16,7 +16,7 @@ export const cardStyles = {
     card: b.styleDef("card"),
 };
 
-export interface ICardData extends IBaseElementData {}
+export interface ICardData extends IBaseElementDataWithChildren {}
 
 export class Card extends BaseElement<ICardData> {
     static id: string = "bobrilstrap-card";

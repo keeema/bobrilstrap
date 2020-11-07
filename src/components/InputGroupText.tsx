@@ -1,11 +1,11 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const inputGroupTextStyles = {
     inputGroupText: b.styleDef("input-group-text"),
 };
 
-export interface IInputGroupTextData extends IBaseElementData {}
+export interface IInputGroupTextData extends IBaseElementDataWithChildren {}
 
 export class InputGroupText extends BaseElement<IInputGroupTextData> {
     static id: string = "bobrilstrap-input-group-text";

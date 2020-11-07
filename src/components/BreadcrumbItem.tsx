@@ -1,11 +1,11 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const breadcrumbItemStyles = {
     breadcrumbItem: b.styleDef("breadcrumb-item"),
 };
 
-export interface IBreadcrumbItemData extends IBaseElementData {
+export interface IBreadcrumbItemData extends IBaseElementDataWithChildren {
     active?: boolean;
 }
 

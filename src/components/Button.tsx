@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createFilledDictionary } from "../../helpers/dict";
 import { ButtonToolbar } from "./ButtonToolbar";
@@ -46,7 +46,7 @@ export const buttonStyles = {
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`btn-${breakpoint}`)])),
 };
 
-export interface IButtonData extends IBaseElementData {
+export interface IButtonData extends IBaseElementDataWithChildren {
     as?: "button" | "a" | "input";
     variant?: ButtonVariant;
     href?: string;

@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const navbarBrandStyles = {
     navbarBrand: b.styleDef("navbar-brand"),
@@ -9,7 +9,7 @@ interface INavbarBrandElementData {
     href?: string;
 }
 
-export type INavbarBrandData = INavbarBrandElementData & IBaseElementData;
+export type INavbarBrandData = INavbarBrandElementData & IBaseElementDataWithChildren;
 
 export class NavbarBrand extends BaseElement<INavbarBrandData> {
     static id: string = "bobrilstrap-navbar-brand";

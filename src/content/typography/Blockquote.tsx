@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "../../components/BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "../../components/BaseElement";
 import { cardBodyStyles } from "../../components/CardBody";
 import { BlockquoteFooter } from "./BlockquoteFooter";
 
@@ -7,7 +7,7 @@ export const blockquoteStyles = {
     blockquote: b.styleDef("blockquote"),
 };
 
-export interface IBlockquoteData extends IBaseElementData {
+export interface IBlockquoteData extends IBaseElementDataWithChildren {
     "card-body"?: boolean;
 }
 

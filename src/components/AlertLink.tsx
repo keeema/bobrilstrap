@@ -1,11 +1,11 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const alertLinkStyles = {
     alertLink: b.styleDef("alert-link"),
 };
 
-export interface IAlertLinkData extends IBaseElementData {
+export interface IAlertLinkData extends IBaseElementDataWithChildren {
     href?: string;
 }
 

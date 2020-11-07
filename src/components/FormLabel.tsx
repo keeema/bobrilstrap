@@ -1,7 +1,7 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
-export interface IFormLabelData extends IBaseElementData {}
+export interface IFormLabelData extends IBaseElementDataWithChildren {}
 
 export class FormLabel extends BaseElement<IFormLabelData> {
     static id: string = "bobrilstrap-form-label";

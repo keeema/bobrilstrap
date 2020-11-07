@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { ListGroupItem } from "./ListGroupItem";
 
 export const listGroupStyles = {
@@ -7,7 +7,7 @@ export const listGroupStyles = {
     flush: b.styleDef("list-group-flush"),
 };
 
-export interface IListGroupData extends IBaseElementData {
+export interface IListGroupData extends IBaseElementDataWithChildren {
     flush?: boolean;
 }
 

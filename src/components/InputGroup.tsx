@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { createFilledDictionary } from "../../helpers/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { InputGroupAppend } from "./InputGroupAppend";
 import { InputGroupPrepend } from "./InputGroupPrepend";
 import { InputGroupText } from "./InputGroupText";
@@ -11,7 +11,7 @@ export const inputGroupStyles = {
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`input-group-${breakpoint}`)])),
 };
 
-export interface IInputGroupData extends IBaseElementData {
+export interface IInputGroupData extends IBaseElementDataWithChildren {
     size?: Breakpoint;
 }
 

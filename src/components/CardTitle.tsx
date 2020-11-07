@@ -1,11 +1,11 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const cardTitleStyles = {
     cardTitle: b.styleDef("card-title"),
 };
 
-export interface ICardTitleData extends IBaseElementData {}
+export interface ICardTitleData extends IBaseElementDataWithChildren {}
 
 export class CardTitle extends BaseElement<ICardTitleData> {
     static id: string = "bobrilstrap-card-title";

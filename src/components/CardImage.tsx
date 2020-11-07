@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { CardImageOverlay } from "./CardImageOverlay";
 
 export type CardPosition = "top" | "bottom";
@@ -10,7 +10,7 @@ export const cardImageStyles = {
     bottom: b.styleDef("card-img-bottom"),
 };
 
-export interface ICardImageData extends IBaseElementData {
+export interface ICardImageData extends IBaseElementDataWithChildren {
     position?: CardPosition;
 }
 

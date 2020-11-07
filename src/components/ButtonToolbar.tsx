@@ -1,11 +1,11 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const buttonToolbarStyles = {
     buttonToolbar: b.styleDef("btn-toolbar"),
 };
 
-export interface IButtonToolbarData extends IBaseElementData {}
+export interface IButtonToolbarData extends IBaseElementDataWithChildren {}
 
 export class ButtonToolbar extends BaseElement<IButtonToolbarData> {
     static id: string = "bobrilstrap-button-toolbar";

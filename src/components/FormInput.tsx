@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export type InputType =
     | "button"
@@ -29,7 +29,7 @@ export const formInputStyles = {
     formControl: b.styleDef("form-control"),
 };
 
-export interface IFormInputData extends IBaseElementData {
+export interface IFormInputData extends IBaseElementDataWithChildren {
     type: InputType;
 }
 

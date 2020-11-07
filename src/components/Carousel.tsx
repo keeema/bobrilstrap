@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import $ from "jquery";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { CarouselOption, CarouselEventHandler } from "bootstrap";
 import { pick } from "../../helpers/objectHelper";
 import { CarouselInner } from "./CarouselInner";
@@ -25,7 +25,7 @@ interface ICarouselElementData {
     onSlide?(event: CarouselEventHandler<HTMLDivElement>): void;
 }
 
-export type ICarouselData = ICarouselElementData & CarouselOption & IBaseElementData;
+export type ICarouselData = ICarouselElementData & CarouselOption & IBaseElementDataWithChildren;
 
 export class Carousel extends BaseElement<ICarouselData> {
     static Inner = CarouselInner;

@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import $ from "jquery";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const collapseStyles = {
     collapse: b.styleDef("collapse"),
@@ -12,7 +12,7 @@ interface ICollapseElementData {
     onShown?: () => void;
 }
 
-export type ICollapseData = ICollapseElementData & IBaseElementData;
+export type ICollapseData = ICollapseElementData & IBaseElementDataWithChildren;
 
 export class Collapse extends BaseElement<ICollapseData> {
     static id: string = "bobrilstrap-collapse";

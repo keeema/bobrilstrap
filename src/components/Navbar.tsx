@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { BaseElement, IBaseElementData } from "./BaseElement";
+import { BaseElement, IBaseElementDataWithChildren } from "./BaseElement";
 import { pick } from "../../helpers/objectHelper";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createDictionary } from "../../helpers/dict";
@@ -30,7 +30,7 @@ interface INavbarElementData {
     "color-schema"?: NavbarColorSchema;
 }
 
-export type INavbarData = INavbarElementData & IBaseElementData;
+export type INavbarData = INavbarElementData & IBaseElementDataWithChildren;
 
 export class Navbar extends BaseElement<INavbarData> {
     static id: string = "bobrilstrap-navbar";

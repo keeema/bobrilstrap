@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { createFilledDictionary } from "../../helpers/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
-import { IBaseElementData, BaseElement, IAllAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const buttonGroupStyles = {
     buttonGroup: b.styleDef("btn-group"),
@@ -9,7 +9,7 @@ export const buttonGroupStyles = {
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`btn-group-${breakpoint}`)])),
 };
 
-export interface IButtonGroupData extends IBaseElementData {
+export interface IButtonGroupData extends IBaseElementDataWithChildren {
     size?: Breakpoint;
     vertical?: boolean;
 }

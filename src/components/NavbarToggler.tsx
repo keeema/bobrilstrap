@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const navbarTogglerStyles = {
     navbarToggler: b.styleDef("navbar-toggler"),
@@ -7,7 +7,7 @@ export const navbarTogglerStyles = {
 
 interface INavbarTogglerElementData {}
 
-export type INavbarTogglerData = INavbarTogglerElementData & IBaseElementData;
+export type INavbarTogglerData = INavbarTogglerElementData & IBaseElementDataWithChildren;
 
 export class NavbarToggler extends BaseElement<INavbarTogglerData> {
     static id: string = "bobrilstrap-navbar-toggler";

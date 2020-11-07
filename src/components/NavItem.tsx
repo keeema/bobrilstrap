@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const navItemStyles = {
     navItem: b.styleDef("nav-item"),
@@ -7,7 +7,7 @@ export const navItemStyles = {
 
 interface INavItemElementData {}
 
-export type INavItemData = INavItemElementData & IBaseElementData;
+export type INavItemData = INavItemElementData & IBaseElementDataWithChildren;
 
 export class NavItem extends BaseElement<INavItemData> {
     static id: string = "bobrilstrap-nav-item";

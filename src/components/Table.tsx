@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createFilledDictionary } from "../../helpers/dict";
 
@@ -17,7 +17,7 @@ export const tableStyles = {
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`table-${breakpoint}`)])),
 };
 
-export interface ITableData extends IBaseElementData {
+export interface ITableData extends IBaseElementDataWithChildren {
     variant?: TableVariant;
     bordered?: boolean;
     striped?: boolean;

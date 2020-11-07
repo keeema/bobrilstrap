@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { pick } from "../../helpers/objectHelper";
 import { createDictionary } from "../../helpers/dict";
-import { IBaseElementData, BaseElement } from "../components/BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "../components/BaseElement";
 
 export type SpanBase = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 export type Span = "auto" | SpanBase;
@@ -45,7 +45,7 @@ export const colStyles = {
     xlOffset: createDictionary(offsetScale.map((value) => [value, b.styleDef(`offset-xl-${value}`)])),
 };
 
-export type IColData = IColElementData & IBaseElementData;
+export type IColData = IColElementData & IBaseElementDataWithChildren;
 export class Col extends BaseElement<IColData> {
     static id: string = "bobrilstrap-col";
     readonly componentProperties: (keyof IColElementData)[] = [

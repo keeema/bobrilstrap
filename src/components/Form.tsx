@@ -1,12 +1,12 @@
 import * as b from "bobril";
-import { IBaseElementData, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { FormGroup } from "./FormGroup";
 import { FormInput } from "./FormInput";
 import { FormLabel } from "./FormLabel";
 
 export const formStyles = {};
 
-export interface IFormData extends IBaseElementData {}
+export interface IFormData extends IBaseElementDataWithChildren {}
 
 export class Form extends BaseElement<IFormData> {
     static id: string = "bobrilstrap-form";

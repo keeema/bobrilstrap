@@ -24,7 +24,7 @@ export abstract class IconBase extends BaseElement<IIconData> {
     }
 
     componentAdditionalAttributes(): IAllAttrs {
-        return { fill: "currentColor" };
+        return { fill: "currentColor", role: "img" };
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

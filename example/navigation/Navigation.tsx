@@ -1,9 +1,11 @@
 import * as b from "bobril";
 import * as routes from "../routes";
-import { Navbar, backgroundColor, Nav, margin, Icon, textColor } from "../../index";
+import { Navbar, backgroundColor, Nav, margin } from "../../index";
 import { LinkItem } from "./Item";
 import { BobrilstrapIcon } from "./BobrilstrapIcon";
 import { NpmLink } from "./NpmLink";
+import { GithubLink } from "./Github";
+import { BootstrapLink } from "./Bootstrap";
 
 // TODO: temporary until icons are added
 const togglerIcon = b.styleDef("navbar-toggler-icon");
@@ -23,9 +25,8 @@ export function Navigation(): b.IBobrilNode {
                     <LinkItem name={routes.documentation.name}>Documentation</LinkItem>
                 </Nav>
                 <Nav navbar style={margin({ side: "l", size: "auto", breakpoint: "md" })}>
-                    <Icon.Gift width="1em" height="1em" style={textColor("primary")} />
-                </Nav>
-                <Nav navbar>
+                    <GithubLink />
+                    <BootstrapLink />
                     <NpmLink />
                 </Nav>
             </Navbar.Collapse>

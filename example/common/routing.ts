@@ -8,6 +8,7 @@ export interface IRouteWithNavDefinition extends IRouteWithName {
     label: string;
     subs: IRouteWithNavDefinition[];
     default?: IRouteWithNavDefinition;
+    oneLevel?: boolean;
 }
 
 export function bobrilNavRoute(route: IRouteWithNavDefinition): b.IRoute {

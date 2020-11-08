@@ -6,7 +6,9 @@ import { documentation } from "../routeDefs";
 
 export function SecondarySidebar(): b.IBobrilNode {
     const currentFirstLevelDocumentationRoute = currentActiveSubRoute(documentation);
-    const currentSecondLevelDocumentationRoute = currentActiveSubRoute(currentFirstLevelDocumentationRoute);
+    const currentSecondLevelDocumentationRoute = currentFirstLevelDocumentationRoute.oneLevel
+        ? currentFirstLevelDocumentationRoute
+        : currentActiveSubRoute(currentFirstLevelDocumentationRoute);
     return (
         <Col as="nav" xl={2} style={[sidebarStyle, display("none"), display("block", "xl")]}>
             <ul style={sectionStyle}>

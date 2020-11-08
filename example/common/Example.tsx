@@ -3,7 +3,7 @@ import { clearfix } from "../../index";
 
 export function Example({ children }: b.IDataWithChildren): b.IBobrilNode {
     return (
-        <div style={exampleRowStyle}>
+        <div style={[exampleRowStyle]}>
             <div style={[exampleStyle, clearfix]}>{children}</div>
         </div>
     );

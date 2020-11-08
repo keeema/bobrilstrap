@@ -7,7 +7,13 @@ export function HomeContent(): b.IBobrilNode {
             <Row>
                 <Paragraph>
                     <h4>Powered by Bobril</h4>
-                    <p>Bobrilstrap transforms Bootstrap framework to components, styles and utilities for react-like framework Bobril.</p>
+                    <p>
+                        Bobrilstrap transforms Bootstrap framework to components, styles and utilities for react-like framework{" "}
+                        <a href="https://bobril.com" target="_blank">
+                            Bobril
+                        </a>
+                        .
+                    </p>
                 </Paragraph>
                 <Paragraph>
                     <h4>Type Safe</h4>

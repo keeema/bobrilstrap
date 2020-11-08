@@ -9,7 +9,7 @@ export function SidebarItem({ route }: { route: IRouteWithNavDefinition }): b.IB
             <a href={b.urlOfRoute(route.name)} style={[sidebarLinkStyle, mainItemActive && sidebarLinkActiveStyle]}>
                 {route.label}
             </a>
-            {mainItemActive && (
+            {mainItemActive && !route.oneLevel && (
                 <Nav as="ul" style={navStyle}>
                     {route.subs.map((sub) => {
                         const subActive = b.isActive(sub.name);

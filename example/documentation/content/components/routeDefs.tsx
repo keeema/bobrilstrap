@@ -7,6 +7,7 @@ import { breadcrumbsRoute } from "./parts/Breadcrumbs";
 import { buttonsRoute } from "./parts/Buttons";
 import { buttonGroupRoute } from "./parts/ButtonGroup";
 import { cardsRoute } from "./parts/Cards";
+import { carouselRoute } from "./parts/Carousel";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -14,5 +15,5 @@ export const components: IRouteWithNavDefinition = {
     label: "Components",
     handler: (data) => <Components {...data} />,
     default: alertsRoute,
-    subs: [alertsRoute, badgesRoute, breadcrumbsRoute, buttonsRoute, buttonGroupRoute, cardsRoute],
+    subs: [alertsRoute, badgesRoute, breadcrumbsRoute, buttonsRoute, buttonGroupRoute, cardsRoute, carouselRoute],
 };

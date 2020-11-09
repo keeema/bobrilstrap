@@ -23,6 +23,7 @@ export * from "./src/components/CardSubtitle";
 export * from "./src/components/CardText";
 export * from "./src/components/CardTitle";
 export * from "./src/components/Carousel";
+export * from "./src/components/CarouselCaption";
 export * from "./src/components/CarouselControl";
 export * from "./src/components/CarouselIndicators";
 export * from "./src/components/CarouselInner";

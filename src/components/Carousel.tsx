@@ -7,6 +7,7 @@ import { CarouselInner } from "./CarouselInner";
 import { CarouselItem } from "./CarouselItem";
 import { CarouselControlPrev, CarouselControlNext } from "./CarouselControl";
 import { CarouselIndicators } from "./CarouselIndicators";
+import { CarouselCaption } from "./CarouselCaption";
 
 export const carouselStyles = {
     carousel: b.styleDef("carousel"),
@@ -28,10 +29,11 @@ interface ICarouselElementData {
 export type ICarouselData = ICarouselElementData & CarouselOption & IBaseElementDataWithChildren;
 
 export class Carousel extends BaseElement<ICarouselData> {
-    static Inner = CarouselInner;
-    static Item = CarouselItem;
+    static Caption = CarouselCaption;
     static Control = { Prev: CarouselControlPrev, Next: CarouselControlNext };
     static Indicators = CarouselIndicators;
+    static Inner = CarouselInner;
+    static Item = CarouselItem;
 
     static id: string = "bobrilstrap-carousel-inner";
     readonly carouselConfigProperties: (keyof CarouselOption)[] = ["interval", "keyboard", "slide", "pause", "ride", "wrap", "touch"];

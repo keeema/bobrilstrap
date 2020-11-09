@@ -16,7 +16,7 @@ abstract class CarouselControl extends BaseElement<ICarouselControlData> {
         return "a";
     }
     componentAdditionalAttributes(): IAttrs {
-        return { href: "javascript:void(0);" };
+        return { href: "javascript:void(0);", role: "button" };
     }
 }
 

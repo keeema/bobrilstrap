@@ -6,6 +6,7 @@ import { BobrilstrapIcon } from "./BobrilstrapIcon";
 import { NpmLink } from "./NpmLink";
 import { GithubLink } from "./Github";
 import { BootstrapLink } from "./Bootstrap";
+import { BobrilLink } from "./Bobril";
 
 // TODO: temporary until icons are added
 const togglerIcon = b.styleDef("navbar-toggler-icon");
@@ -26,6 +27,7 @@ export function Navigation(): b.IBobrilNode {
                 </Nav>
                 <Nav navbar style={margin({ side: "l", size: "auto", breakpoint: "md" })}>
                     <GithubLink />
+                    <BobrilLink />
                     <BootstrapLink />
                     <NpmLink />
                 </Nav>

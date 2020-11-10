@@ -21,12 +21,13 @@ export interface ICarouselActions {
 
 interface ICarouselElementData {
     "cross-fade"?: boolean;
+    slide?: boolean;
     onCarouselCreated?(carousel: ICarouselActions, element: JQuery<HTMLDivElement>): void;
     onSlid?(event: CarouselEventHandler<HTMLDivElement>): void;
     onSlide?(event: CarouselEventHandler<HTMLDivElement>): void;
 }
 
-export type ICarouselData = ICarouselElementData & CarouselOption & IBaseElementDataWithChildren;
+export type ICarouselData = ICarouselElementData & Omit<CarouselOption, "slide"> & IBaseElementDataWithChildren;
 
 export class Carousel extends BaseElement<ICarouselData> {
     static Caption = CarouselCaption;
@@ -36,12 +37,12 @@ export class Carousel extends BaseElement<ICarouselData> {
     static Item = CarouselItem;
 
     static id: string = "bobrilstrap-carousel-inner";
-    readonly carouselConfigProperties: (keyof CarouselOption)[] = ["interval", "keyboard", "slide", "pause", "ride", "wrap", "touch"];
-    readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "cross-fade"];
+    readonly carouselConfigProperties: (keyof Omit<CarouselOption, "slide">)[] = ["interval", "keyboard", "pause", "ride", "wrap", "touch"];
+    readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "slide", "cross-fade"];
     readonly componentProperties: (keyof ICarouselData)[] = [...this.carouselDataProperties, ...this.carouselConfigProperties];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [carouselStyles.carousel, carouselStyles.slide, this.data["cross-fade"] && carouselStyles.carouselFade];
+        return [carouselStyles.carousel, this.data.slide && carouselStyles.slide, this.data["cross-fade"] && carouselStyles.carouselFade];
     }
 
     postInitDom(): void {

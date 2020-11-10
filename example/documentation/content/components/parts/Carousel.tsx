@@ -46,7 +46,11 @@ export function Carousels(): b.IBobrilNode {
                 required. Add and customize as you see fit.
             </p>
             <p>
-                The <code>active</code> prop needs to be added to one of the slides otherwise the carousel will not be visible.
+                The <code>active</code> prop needs to be added to <strong>exactly one</strong> of the slides otherwise the carousel will not
+                work properly.
+            </p>
+            <p>
+                Add <code>cross-fade</code> prop as an addition to <code>slide</code> prop to animate transition with fading.
             </p>
             <Example>
                 <CarouselExample images={exampleImages} />
@@ -57,7 +61,7 @@ export function Carousels(): b.IBobrilNode {
 
     return (
         <Carousel
-            cross-fade
+            slide
             pause={false}
             ride="carousel"
             keyboard
@@ -71,7 +75,7 @@ export function Carousels(): b.IBobrilNode {
             </Carousel.Indicators>
             <Carousel.Inner>
                 {images.map((image, index) => (
-                    <Carousel.Item active={carouselIndex === index}>
+                    <Carousel.Item active={index === 0}>
                         <img src={image.data} style={width(100)} />
                         <Carousel.Caption>
                             <h5>{image.caption}</h5>
@@ -109,6 +113,26 @@ export function Carousels(): b.IBobrilNode {
                             defaultValue: "5000",
                             description:
                                 "The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.",
+                        }}
+                    </OptionsRow>
+                    <OptionsRow>
+                        {{
+                            name: "slide",
+                            type: "boolean",
+                            defaultValue: "false",
+                            description: "Whether to slide images or just simply switch.",
+                        }}
+                    </OptionsRow>
+                    <OptionsRow>
+                        {{
+                            name: "cross-fade",
+                            type: "boolean",
+                            defaultValue: "false",
+                            description: (
+                                <p>
+                                    Whether to slide with cross-fade animation. Prop <code>slide</code> is required.
+                                </p>
+                            ),
                         }}
                     </OptionsRow>
                     <OptionsRow>
@@ -202,7 +226,7 @@ export function CarouselExample({ images }: { images: { data: string; caption: s
 
     return (
         <Carousel
-            cross-fade
+            slide
             pause={false}
             ride="carousel"
             keyboard
@@ -216,7 +240,7 @@ export function CarouselExample({ images }: { images: { data: string; caption: s
             </Carousel.Indicators>
             <Carousel.Inner>
                 {images.map((image, index) => (
-                    <Carousel.Item active={carouselIndex === index}>
+                    <Carousel.Item active={index === 0}>
                         <img src={image.data} style={width(100)} />
                         <Carousel.Caption>
                             <h5>{image.caption}</h5>

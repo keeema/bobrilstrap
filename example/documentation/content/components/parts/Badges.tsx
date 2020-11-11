@@ -20,7 +20,7 @@ export const badgesRoute: IRouteWithNavDefinition = {
         },
         {
             url: "contextual-variations",
-            name: "badges-examples",
+            name: "badges-contextual-variations",
             label: "Contextual variations",
             subs: [],
         },

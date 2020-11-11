@@ -1,4 +1,5 @@
 import "bootstrap";
+export * from "./src/components/Accordion";
 export * from "./src/components/Alert";
 export * from "./src/components/AlertHeading";
 export * from "./src/components/AlertLink";

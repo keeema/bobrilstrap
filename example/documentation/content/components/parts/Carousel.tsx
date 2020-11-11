@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Carousel, ICarouselActions, srOnly, Table } from "../../../../../index";
+import { Carousel, ICarouselActions, srOnly } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { image1, image2, image3 } from "./carouselImages";
@@ -104,118 +104,116 @@ export function Carousels(): b.IBobrilNode {
                 Carousel is controlled by <code>controlActions</code> provided in the callback prop <code>onCarouselCreated</code>. It is
                 recommended to use control logic similar to the example.
             </p>
-            <Table bordered striped>
-                <OptionsTable>
-                    <OptionsRow>
-                        {{
-                            name: "interval",
-                            type: "number",
-                            defaultValue: "5000",
-                            description:
-                                "The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.",
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "slide",
-                            type: "boolean",
-                            defaultValue: "false",
-                            description: "Whether to slide images or just simply switch.",
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "cross-fade",
-                            type: "boolean",
-                            defaultValue: "false",
-                            description: (
-                                <p>
-                                    Whether to slide with cross-fade animation. Prop <code>slide</code> is required.
-                                </p>
-                            ),
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "keyboard",
-                            type: "boolean",
-                            defaultValue: "true",
-                            description: "Whether the carousel should react to keyboard events.",
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "pause",
-                            type: `"hover" | false`,
-                            defaultValue: "hover",
-                            description: (
-                                <p>
-                                    If set to <code>"hover"</code>, pauses the cycling of the carousel on <code>mouseenter</code> and
-                                    resumes the cycling of the carousel on <code>mouseleave</code>. If set to <code>false</code>, hovering
-                                    over the carousel won't pause it.
-                                </p>
-                            ),
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "ride",
-                            type: `"carousel" | boolean`,
-                            defaultValue: "false",
-                            description: `Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on load.`,
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "wrap",
-                            type: "boolean",
-                            defaultValue: "true",
-                            description: "Whether the carousel should cycle continuously or have hard stops.",
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "touch",
-                            type: "boolean",
-                            defaultValue: "true",
-                            description: "Whether the carousel should support left/right swipe interactions on touchscreen devices.",
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "onCarouselCreated",
-                            type: "(carousel: ICarouselActions, element: JQuery<HTMLDivElement>): void",
-                            defaultValue: "undefined",
-                            description: (
-                                <p>
-                                    This callback is fired when carousel is initialized and provides <code>carouselActions</code> as
-                                    controller instance.
-                                </p>
-                            ),
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "onSlid",
-                            type: "CarouselEventHandler<HTMLDivElement>): void",
-                            defaultValue: "undefined",
-                            description: "This callback is fired when the carousel has completed its slide transition.",
-                        }}
-                    </OptionsRow>
-                    <OptionsRow>
-                        {{
-                            name: "onSlide",
-                            type: "CarouselEventHandler<HTMLDivElement>): void",
-                            defaultValue: "undefined",
-                            description: (
-                                <p>
-                                    This callback fires immediately when the <code>slide</code> instance method is invoked.
-                                </p>
-                            ),
-                        }}
-                    </OptionsRow>
-                </OptionsTable>
-            </Table>
+            <OptionsTable>
+                <OptionsRow>
+                    {{
+                        name: "interval",
+                        type: "number",
+                        defaultValue: "5000",
+                        description:
+                            "The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "slide",
+                        type: "boolean",
+                        defaultValue: "false",
+                        description: "Whether to slide images or just simply switch.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "cross-fade",
+                        type: "boolean",
+                        defaultValue: "false",
+                        description: (
+                            <p>
+                                Whether to slide with cross-fade animation. Prop <code>slide</code> is required.
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "keyboard",
+                        type: "boolean",
+                        defaultValue: "true",
+                        description: "Whether the carousel should react to keyboard events.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "pause",
+                        type: `"hover" | false`,
+                        defaultValue: "hover",
+                        description: (
+                            <p>
+                                If set to <code>"hover"</code>, pauses the cycling of the carousel on <code>mouseenter</code> and resumes
+                                the cycling of the carousel on <code>mouseleave</code>. If set to <code>false</code>, hovering over the
+                                carousel won't pause it.
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "ride",
+                        type: `"carousel" | boolean`,
+                        defaultValue: "false",
+                        description: `Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on load.`,
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "wrap",
+                        type: "boolean",
+                        defaultValue: "true",
+                        description: "Whether the carousel should cycle continuously or have hard stops.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "touch",
+                        type: "boolean",
+                        defaultValue: "true",
+                        description: "Whether the carousel should support left/right swipe interactions on touchscreen devices.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onCarouselCreated",
+                        type: "(carousel: ICarouselActions, element: JQuery<HTMLDivElement>): void",
+                        defaultValue: "undefined",
+                        description: (
+                            <p>
+                                This callback is fired when carousel is initialized and provides <code>carouselActions</code> as controller
+                                instance.
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onSlid",
+                        type: "CarouselEventHandler<HTMLDivElement>): void",
+                        defaultValue: "undefined",
+                        description: "This callback is fired when the carousel has completed its slide transition.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onSlide",
+                        type: "CarouselEventHandler<HTMLDivElement>): void",
+                        defaultValue: "undefined",
+                        description: (
+                            <p>
+                                This callback fires immediately when the <code>slide</code> instance method is invoked.
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+            </OptionsTable>
         </>
     );
 }

@@ -9,7 +9,9 @@ export const collapseStyles = {
 interface ICollapseElementData {
     collapsed: boolean;
     onCollapsed?: () => void;
+    onCollapse?: () => void;
     onShown?: () => void;
+    onShow?: () => void;
 }
 
 export type ICollapseData = ICollapseElementData & IBaseElementDataWithChildren;
@@ -46,7 +48,9 @@ export class Collapse extends BaseElement<ICollapseData> {
         $(element).collapse({ toggle: !this.data.collapsed });
         this.collapsed = this.data.collapsed;
         this.firstLoad = false;
+        $(element).on("hide.bs.collapse", () => this.data.onCollapse && this.data.onCollapse());
         $(element).on("hidden.bs.collapse", () => this.data.onCollapsed && this.data.onCollapsed());
+        $(element).on("show.bs.collapse", () => this.data.onShow && this.data.onShow());
         $(element).on("shown.bs.collapse", () => this.data.onShown && this.data.onShown());
     }
 

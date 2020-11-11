@@ -70,7 +70,7 @@
             "            </Anchor>",
             "            <p>Example</p>",
             "            <Example></Example>",
-            "            <Code language=\"tsx\">{\"\"}</Code>",
+            "            <Code language=\"tsx\">{``}</Code>",
             "        </>",
             "    );",
             "}"

@@ -1,5 +1,6 @@
 import * as b from "bobril";
 import { ButtonGroup, IButtonGroupData } from "./ButtonGroup";
+import { DropdownDivider } from "./DropdownDivider";
 import { DropdownItem } from "./DropdownItem";
 import { DropdownMenu } from "./DropdownMenu";
 import { DropdownToggle } from "./DropdownToggle";
@@ -8,7 +9,7 @@ export type Direction = "up" | "down" | "left" | "right" | "responsive";
 
 export const dropdownStyles = {
     down: b.styleDef("dropdown"),
-    up: b.styleDef("dropdown"),
+    up: b.styleDef("dropup"),
     left: b.styleDef("dropleft"),
     right: b.styleDef("dropright"),
 };
@@ -19,6 +20,7 @@ export interface IDropdownData extends IButtonGroupData {
 
 export class Dropdown extends ButtonGroup<IDropdownData> {
     static id: string = "bobrilstrap-dropdown";
+    static Divider = DropdownDivider;
     static Item = DropdownItem;
     static Menu = DropdownMenu;
     static Toggle = DropdownToggle;

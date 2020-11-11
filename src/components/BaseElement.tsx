@@ -80,6 +80,7 @@ export const baseStyles = {
 };
 
 export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.Component<TData> {
+    // TODO: move to function and use in derived components
     abstract readonly componentProperties: (keyof TData)[];
 
     get tag(): string {

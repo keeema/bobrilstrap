@@ -63,6 +63,7 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
     static Toolbar = ButtonToolbar;
     static Group = ButtonGroup;
 
+    // Note: keep synced with all derived components
     readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , "href" */, "type", "block"];
 
     get tag(): string {
@@ -82,6 +83,7 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
             type: this.data.type ?? (this.isButtonOrInput ? "button" : undefined),
             role: this.data.role ?? (this.isAnchor && "button"),
             href: this.data.href ?? (this.isAnchor ? "javascript:void(0)" : undefined),
+            "aria-disabled": this.data.disabled ?? undefined,
         };
     }
 

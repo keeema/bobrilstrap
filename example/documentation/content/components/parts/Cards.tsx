@@ -581,7 +581,7 @@ export function Cards(): b.IBobrilNode {
                                 <Nav.Link href="javascript:void(0)">Link</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link href="javascript:void(0)" disabled tabindex={-1} aria-disabled>
+                                <Nav.Link href="javascript:void(0)" disabled tabindex={-1}>
                                     Disabled
                                 </Nav.Link>
                             </Nav.Item>
@@ -607,7 +607,7 @@ export function Cards(): b.IBobrilNode {
                 <Nav.Link href="javascript:void(0)">Link</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="javascript:void(0)" disabled tabindex={-1} aria-disabled>
+                <Nav.Link href="javascript:void(0)" disabled tabindex={-1}>
                     Disabled
                 </Nav.Link>
             </Nav.Item>
@@ -633,7 +633,7 @@ export function Cards(): b.IBobrilNode {
                                 <Nav.Link href="javascript:void(0)">Link</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link href="javascript:void(0)" disabled tabindex={-1} aria-disabled>
+                                <Nav.Link href="javascript:void(0)" disabled tabindex={-1}>
                                     Disabled
                                 </Nav.Link>
                             </Nav.Item>
@@ -659,7 +659,7 @@ export function Cards(): b.IBobrilNode {
                 <Nav.Link href="javascript:void(0)">Link</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="javascript:void(0)" disabled tabindex={-1} aria-disabled>
+                <Nav.Link href="javascript:void(0)" disabled tabindex={-1}>
                     Disabled
                 </Nav.Link>
             </Nav.Item>

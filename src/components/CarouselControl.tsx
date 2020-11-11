@@ -16,7 +16,10 @@ abstract class CarouselControl extends BaseElement<ICarouselControlData> {
         return "a";
     }
     componentAdditionalAttributes(): IAttrs {
-        return { href: "javascript:void(0);", role: "button" };
+        return {
+            href: "javascript:void(0);",
+            role: "button",
+        };
     }
 }
 
@@ -25,6 +28,10 @@ abstract class CarouselControlIcon extends BaseElement<ICarouselControlData> {
         return "span";
     }
     readonly componentProperties: (keyof ICarouselControlData)[] = [];
+
+    componentAdditionalAttributes(): IAttrs {
+        return { "aria-hidden": this.data["aria-hidden"] !== undefined ? this.data["aria-hidden"] : true };
+    }
 }
 
 class CarouselControlPrevIcon extends CarouselControlIcon {

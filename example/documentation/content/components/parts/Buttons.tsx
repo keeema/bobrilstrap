@@ -217,23 +217,23 @@ export function Buttons(): b.IBobrilNode {
                 Make buttons look inactive by adding the disabled boolean prop to any <code>{"<Button>"}</code> component.
             </p>
             <Example>
-                <Button variant="primary" size="lg" disabled aria-disabled>
+                <Button variant="primary" size="lg" disabled>
                     Primary button
                 </Button>{" "}
-                <Button variant="secondary" size="lg" disabled aria-disabled>
+                <Button variant="secondary" size="lg" disabled>
                     Button
                 </Button>{" "}
-                <Button href="javascript:void(0)" variant="secondary" size="lg" disabled aria-disabled>
+                <Button href="javascript:void(0)" variant="secondary" size="lg" disabled>
                     Link
                 </Button>
             </Example>
-            <Code language="tsx">{`<Button variant="primary" size="lg" disabled aria-disabled>
+            <Code language="tsx">{`<Button variant="primary" size="lg" disabled>
     Primary button
 </Button>{" "}
-<Button variant="secondary" size="lg" disabled aria-disabled>
+<Button variant="secondary" size="lg" disabled>
     Button
 </Button>{" "}
-<Button href="javascript:void(0)" variant="secondary" size="lg" disabled aria-disabled>
+<Button href="javascript:void(0)" variant="secondary" size="lg" disabled>
     Link
 </Button>`}</Code>
         </>

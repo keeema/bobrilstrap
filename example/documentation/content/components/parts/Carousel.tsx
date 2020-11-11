@@ -85,11 +85,11 @@ export function Carousels(): b.IBobrilNode {
                 ))}
             </Carousel.Inner>
             <Carousel.Control.Prev onClick={() => carouselActions("prev")}>
-                <Carousel.Control.Prev.Icon aria-hidden />
+                <Carousel.Control.Prev.Icon />
                 <span style={srOnly}>Previous</span>
             </Carousel.Control.Prev>
             <Carousel.Control.Next onClick={() => carouselActions("next")}>
-                <Carousel.Control.Next.Icon aria-hidden />
+                <Carousel.Control.Next.Icon />
                 <span style={srOnly}>Next</span>
             </Carousel.Control.Next>
         </Carousel>
@@ -248,11 +248,11 @@ export function CarouselExample({ images }: { images: { data: string; caption: s
                 ))}
             </Carousel.Inner>
             <Carousel.Control.Prev onClick={() => carouselActions("prev")}>
-                <Carousel.Control.Prev.Icon aria-hidden />
+                <Carousel.Control.Prev.Icon />
                 <span style={srOnly}>Previous</span>
             </Carousel.Control.Prev>
             <Carousel.Control.Next onClick={() => carouselActions("next")}>
-                <Carousel.Control.Next.Icon aria-hidden />
+                <Carousel.Control.Next.Icon />
                 <span style={srOnly}>Next</span>
             </Carousel.Control.Next>
         </Carousel>

@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button, Dropdown, srOnly } from "../../../../../index";
+import { Button, Dropdown, margin, srOnly, textColor, padding, Form } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 
@@ -67,6 +67,56 @@ export const dropdownsRoute: IRouteWithNavDefinition = {
                     subs: [],
                 },
             ],
+        },
+        {
+            url: "menu-alignment",
+            name: "dropdowns-menu-alignment",
+            label: "Menu alignment",
+            subs: [
+                {
+                    url: "responsive",
+                    name: "dropdowns-menu-alignment-responsive",
+                    label: "Responsive alignment",
+                    subs: [],
+                },
+            ],
+        },
+        {
+            url: "menu-content",
+            name: "dropdowns-menu-content",
+            label: "Menu content",
+            subs: [
+                {
+                    url: "headers",
+                    name: "dropdowns-menu-content-headers",
+                    label: "Headers",
+                    subs: [],
+                },
+                {
+                    url: "dividers",
+                    name: "dropdowns-menu-content-dividers",
+                    label: "Dividers",
+                    subs: [],
+                },
+                {
+                    url: "text",
+                    name: "dropdowns-menu-content-text",
+                    label: "Text",
+                    subs: [],
+                },
+                {
+                    url: "forms",
+                    name: "dropdowns-menu-content-forms",
+                    label: "Forms",
+                    subs: [],
+                },
+            ],
+        },
+        {
+            url: "offset",
+            name: "dropdowns-offset",
+            label: "Offset",
+            subs: [],
         },
     ],
 };
@@ -373,6 +423,253 @@ export function DropdownsDoc(): b.IBobrilNode {
         <Dropdown.Item>Action</Dropdown.Item>
         <Dropdown.Item disabled>Another action</Dropdown.Item>
         <Dropdown.Item>Something else here</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>`}</Code>
+            <Anchor name="dropdowns-menu-alignment">
+                <h2>Menu alignment</h2>
+            </Anchor>
+            <p>
+                By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add set{" "}
+                <code>align="right"</code> to right align the dropdown menu.
+            </p>
+            <Example>
+                <Dropdown>
+                    <Dropdown.Toggle variant="secondary" display-static>
+                        Right-aligned menu
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu align="right">
+                        <Dropdown.Item>Action</Dropdown.Item>
+                        <Dropdown.Item>Another action</Dropdown.Item>
+                        <Dropdown.Item>Something else here</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Example>
+            <Code language="tsx">{`<Dropdown>
+    <Dropdown.Toggle variant="secondary" display-static>Right-aligned menu/Dropdown.Toggle>
+    <Dropdown.Menu align="right">
+        <Dropdown.Item>Action</Dropdown.Item>
+        <Dropdown.Item>Another action</Dropdown.Item>
+        <Dropdown.Item>Something else here</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>`}</Code>
+            <Anchor name="dropdowns-menu-alignment-responsive">
+                <h3>Responsive alignment</h3>
+            </Anchor>
+            <p>
+                If you want to use responsive alignment, disable dynamic positioning by adding the <code>display-static</code> prop and use
+                the responsive variation props.
+            </p>
+            <Example>
+                <Dropdown>
+                    <Dropdown.Toggle variant="secondary" display-static>
+                        Left-aligned but right aligned when large screen
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu align-lg="right">
+                        <Dropdown.Item>Action</Dropdown.Item>
+                        <Dropdown.Item>Another action</Dropdown.Item>
+                        <Dropdown.Item>Something else here</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Example>
+            <Code language="tsx">{`<Dropdown>
+    <Dropdown.Toggle variant="secondary" display-static>Left-aligned but right aligned when large screen</Dropdown.Toggle>
+    <Dropdown.Menu align-lg="right">
+        <Dropdown.Item>Action</Dropdown.Item>
+        <Dropdown.Item>Another action</Dropdown.Item>
+        <Dropdown.Item>Something else here</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>`}</Code>
+            <Example>
+                <Dropdown>
+                    <Dropdown.Toggle variant="secondary" display-static>
+                        Right-aligned but left aligned when large screen
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu align="right" align-lg="left">
+                        <Dropdown.Item>Action</Dropdown.Item>
+                        <Dropdown.Item>Another action</Dropdown.Item>
+                        <Dropdown.Item>Something else here</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Example>
+            <Code language="tsx">{`<Dropdown>
+    <Dropdown.Toggle variant="secondary" display-static>Right-aligned but left aligned when large screen</Dropdown.Toggle>
+    <Dropdown.Menu align="right" align-lg="left">
+        <Dropdown.Item>Action</Dropdown.Item>
+        <Dropdown.Item>Another action</Dropdown.Item>
+        <Dropdown.Item>Something else here</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>`}</Code>
+            <Anchor name="dropdowns-menu-content">
+                <h2>Menu content</h2>
+            </Anchor>
+            <Anchor name="dropdowns-menu-content-headers">
+                <h3>Headers</h3>
+            </Anchor>
+            <p>Add a header to label sections of actions in any dropdown menu.</p>
+            <Example>
+                <Dropdown>
+                    <Dropdown.Toggle variant="secondary" display-static>
+                        Dropdown with header
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Header>Dropdown header</Dropdown.Header>
+                        <Dropdown.Item>Action</Dropdown.Item>
+                        <Dropdown.Item>Another action</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Example>
+            <Code language="tsx">{`<Dropdown>
+    <Dropdown.Toggle variant="secondary" display-static>
+        Dropdown with header
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+        <Dropdown.Header>Dropdown header</Dropdown.Header>
+        <Dropdown.Item>Action</Dropdown.Item>
+        <Dropdown.Item>Another action</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>`}</Code>
+            <Anchor name="dropdowns-menu-content-dividers">
+                <h3>Dividers</h3>
+            </Anchor>
+            <p>Separate groups of related menu items with a divider.</p>
+            <Example>
+                <Dropdown>
+                    <Dropdown.Toggle variant="secondary">Dropdown with divider</Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item>Action</Dropdown.Item>
+                        <Dropdown.Item>Another action</Dropdown.Item>
+                        <Dropdown.Item>Something else here</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item>Separated action</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Example>
+            <Code language="tsx">{`<Dropdown>
+    <Dropdown.Toggle variant="secondary">Dropdown with divider</Dropdown.Toggle>
+    <Dropdown.Menu>
+        <Dropdown.Item>Action</Dropdown.Item>
+        <Dropdown.Item>Another action</Dropdown.Item>
+        <Dropdown.Item>Something else here</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item>Separated action</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>`}</Code>
+            <Anchor name="dropdowns-menu-content-text">
+                <h3>Text</h3>
+            </Anchor>
+            <p>
+                Place any freeform text within a dropdown menu with text and use spacing utilities. Note that you’ll likely need additional
+                sizing styles to constrain the menu width.
+            </p>
+            <Example>
+                <Dropdown>
+                    <Dropdown.Toggle variant="secondary">Dropdown with text</Dropdown.Toggle>
+                    <Dropdown.Menu style={[padding(4), textColor("muted"), { maxWidth: 200 }]}>
+                        <p>Some example text that's free-flowing within the dropdown menu.</p>
+                        <p style={margin({ side: "b", size: 0 })}>And this is more example text.</p>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Example>
+            <Code language="tsx">{`<Dropdown>
+    <Dropdown.Toggle variant="secondary">Dropdown with text</Dropdown.Toggle>
+    <Dropdown.Menu style={[padding(4), textColor("muted"), { maxWidth: 200 }]}>
+        <p>Some example text that's free-flowing within the dropdown menu.</p>
+        <p style={margin({ side: "b", size: 0 })}>And this is more example text.</p>
+    </Dropdown.Menu>
+</Dropdown>`}</Code>
+            <Anchor name="dropdowns-menu-content-forms">
+                <h3>Forms</h3>
+            </Anchor>
+            <p>
+                Put a form within a dropdown menu, or make it into a dropdown menu, and use margin or padding utilities to give it the
+                negative space you require.
+            </p>
+            <Example>
+                <Dropdown>
+                    <Dropdown.Toggle variant="secondary">Dropdown with form</Dropdown.Toggle>
+                    <Dropdown.Menu style={{ minWidth: 250 }}>
+                        <Form style={[padding(4)]}>
+                            <Form.Group>
+                                <Form.Label for="exampleDropdownFormEmail">Email address</Form.Label>
+                                <Form.Input type="email" placeholder="email@example.com" id="exampleDropdownFormEmail"></Form.Input>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label for="exampleDropdownFormPassword">Password</Form.Label>
+                                <Form.Input type="password" placeholder="Password" id="exampleDropdownFormPassword"></Form.Input>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Check>
+                                    <Form.Input type="checkbox" id="dropdownCheck" />
+                                    <Form.Label for="dropdownCheck">Remember me</Form.Label>
+                                </Form.Check>
+                            </Form.Group>
+                            <Button type="submit" variant="primary">
+                                Sign in
+                            </Button>
+                        </Form>
+                        <Dropdown.Divider />
+                        <Dropdown.Item>New around here? Sign up</Dropdown.Item>
+                        <Dropdown.Item>Forgot password?</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Example>
+            <Code language="tsx">{`<Dropdown>
+    <Dropdown.Toggle variant="secondary">Dropdown with form</Dropdown.Toggle>
+    <Dropdown.Menu style={{ minWidth: 250 }}>
+        <Form style={[padding(4)]}>
+            <Form.Group>
+                <Form.Label for="exampleDropdownFormEmail">Email address</Form.Label>
+                <Form.Input type="email" placeholder="email@example.com" id="exampleDropdownFormEmail"></Form.Input>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label for="exampleDropdownFormPassword">Password</Form.Label>
+                <Form.Input type="password" placeholder="Password" id="exampleDropdownFormPassword"></Form.Input>
+            </Form.Group>
+            <Form.Group>
+                <Form.Check>
+                    <Form.Input type="checkbox" id="dropdownCheck" />
+                    <Form.Label for="dropdownCheck">Remember me</Form.Label>
+                </Form.Check>
+            </Form.Group>
+            <Button type="submit" variant="primary">
+                Sign in
+            </Button>
+        </Form>
+        <Dropdown.Divider />
+        <Dropdown.Item>New around here? Sign up</Dropdown.Item>
+        <Dropdown.Item>Forgot password?</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>`}</Code>
+            <Anchor name="dropdowns-offset">
+                <h2>Offset</h2>
+            </Anchor>
+            <p>
+                Use <code>offset</code> prop to change location of dropdown.
+            </p>
+            <Example>
+                <Dropdown>
+                    <Dropdown.Toggle variant="secondary" offset="10,20">
+                        Dropdown with offset
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item>Action</Dropdown.Item>
+                        <Dropdown.Item>Another action</Dropdown.Item>
+                        <Dropdown.Item>Something else here</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item>Separated action</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </Example>
+            <Code language="tsx">{`<Dropdown>
+    <Dropdown.Toggle variant="secondary" offset="10,20">
+        Dropdown with offset
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+        <Dropdown.Item>Action</Dropdown.Item>
+        <Dropdown.Item>Another action</Dropdown.Item>
+        <Dropdown.Item>Something else here</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item>Separated action</Dropdown.Item>
     </Dropdown.Menu>
 </Dropdown>`}</Code>
         </>

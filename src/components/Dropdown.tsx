@@ -1,6 +1,7 @@
 import * as b from "bobril";
 import { ButtonGroup, IButtonGroupData } from "./ButtonGroup";
 import { DropdownDivider } from "./DropdownDivider";
+import { DropdownHeader } from "./DropdownHeader";
 import { DropdownItem } from "./DropdownItem";
 import { DropdownMenu } from "./DropdownMenu";
 import { DropdownToggle } from "./DropdownToggle";
@@ -21,6 +22,7 @@ export interface IDropdownData extends IButtonGroupData {
 export class Dropdown extends ButtonGroup<IDropdownData> {
     static id: string = "bobrilstrap-dropdown";
     static Divider = DropdownDivider;
+    static Header = DropdownHeader;
     static Item = DropdownItem;
     static Menu = DropdownMenu;
     static Toggle = DropdownToggle;

@@ -27,6 +27,7 @@ export type InputType =
 
 export const formInputStyles = {
     formControl: b.styleDef("form-control"),
+    formCheckInput: b.styleDef("form-check-input"),
 };
 
 export interface IFormInputData extends IBaseElementDataWithChildren {
@@ -44,6 +45,6 @@ export class FormInput extends BaseElement<IFormInputData> {
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [formInputStyles.formControl];
+        return [this.data.type === "checkbox" ? formInputStyles.formCheckInput : formInputStyles.formControl];
     }
 }

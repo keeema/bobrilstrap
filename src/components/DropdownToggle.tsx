@@ -9,18 +9,30 @@ export const dropdownToggleStyles = {
 
 export interface IDropdownToggleData extends IButtonData {
     split?: boolean;
+    "display-static"?: boolean;
+    offset?: string;
 }
 
 export class DropdownToggle extends Button<IDropdownToggleData> {
     static id: string = "bobrilstrap-dropdown-toggle";
 
-    readonly componentProperties: (keyof IButtonData)[] = ["variant", "size" /* , "href" */, "type", "block", "split"];
+    readonly componentProperties: (keyof IButtonData)[] = [
+        "variant",
+        "size" /* , "href" */,
+        "type",
+        "block",
+        "split",
+        "display-static",
+        "offset",
+    ];
 
     componentAdditionalAttributes(): IAllAttrs {
         return {
             ...super.componentAdditionalAttributes(),
             ["data-toggle"]: "dropdown",
             "aria-haspopup": this.data["aria-haspopup"] !== undefined ? this.data["aria-haspopup"] : true,
+            "data-display": this.data["display-static"] ? "static" : this.data["data-display"],
+            "data-offset": this.data.offset || this.data["data-offset"],
         };
     }
 

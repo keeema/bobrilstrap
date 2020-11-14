@@ -1,9 +1,10 @@
 import * as b from "bobril";
-import { Table } from "../../index";
+import { display, Table } from "../../index";
+import { tableStyle } from "./styles";
 
 export function OptionsTable({ children }: { children: b.IBobrilNode<IOptionRowData> | b.IBobrilNode<IOptionRowData>[] }): b.IBobrilNode {
     return (
-        <Table bordered striped>
+        <Table bordered striped style={[tableStyle, display("block"), display("table", "sm")]}>
             <thead>
                 <tr>
                     <th>Name</th>

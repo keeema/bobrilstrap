@@ -9,7 +9,7 @@ export interface IAlertHeadingData extends IBaseElementDataWithChildren {}
 
 export class AlertHeading extends BaseElement<IAlertHeadingData> {
     static id: string = "bobrilstrap-alert-heading";
-    readonly componentProperties: (keyof IAlertHeadingData)[] = [];
+    componentProperties = (): (keyof IAlertHeadingData)[] => [];
 
     get tag(): string {
         return "h4";

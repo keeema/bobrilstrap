@@ -9,7 +9,7 @@ export interface IDropdownHeaderData extends IBaseElementDataWithChildren {}
 
 export class DropdownHeader extends BaseElement<IDropdownHeaderData> {
     static id: string = "bobrilstrap-dropdown-header";
-    readonly componentProperties: (keyof IDropdownHeaderData)[] = [];
+    componentProperties = (): (keyof IDropdownHeaderData)[] => [];
 
     get tag(): string {
         return "h6";

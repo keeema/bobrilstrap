@@ -9,7 +9,7 @@ export interface ICardColumnsData extends IBaseElementDataWithChildren {}
 
 export class CardColumns extends BaseElement<ICardColumnsData> {
     static id: string = "bobrilstrap-card-columns";
-    readonly componentProperties: (keyof ICardColumnsData)[] = [];
+    componentProperties = (): (keyof ICardColumnsData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [cardColumnsStyles.cardColumns];

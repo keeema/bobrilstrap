@@ -9,7 +9,7 @@ export interface IInputGroupPrependData extends IBaseElementDataWithChildren {}
 
 export class InputGroupPrepend extends BaseElement<IInputGroupPrependData> {
     static id: string = "bobrilstrap-input-group-prepend";
-    readonly componentProperties: (keyof IInputGroupPrependData)[] = [];
+    componentProperties = (): (keyof IInputGroupPrependData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [inputGroupPrependStyles.inputGroupPrepend];

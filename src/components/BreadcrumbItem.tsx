@@ -11,7 +11,7 @@ export interface IBreadcrumbItemData extends IBaseElementDataWithChildren {
 
 export class BreadcrumbItem extends BaseElement<IBreadcrumbItemData> {
     static id: string = "bobrilstrap-breadcrumb-item";
-    readonly componentProperties: (keyof IBreadcrumbItemData)[] = [];
+    componentProperties = (): (keyof IBreadcrumbItemData)[] => [];
 
     get tag(): string {
         return "li";

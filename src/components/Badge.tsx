@@ -24,7 +24,7 @@ export interface IBadgeData extends IBaseElementDataWithChildren {
 
 export class Badge extends BaseElement<IBadgeData> {
     static id: string = "bobrilstrap-badge";
-    readonly componentProperties: (keyof IBadgeData)[] = ["variant", "pill" /* , href */];
+    componentProperties = (): (keyof IBadgeData)[] => ["variant", "pill" /* , href */];
 
     get tag(): string {
         return this.data.href ? "a" : "span";

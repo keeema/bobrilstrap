@@ -12,7 +12,7 @@ export interface ICarouselItemData extends IBaseElementDataWithChildren {
 
 export class CarouselItem extends BaseElement<ICarouselItemData> {
     static id: string = "bobrilstrap-carousel-item";
-    readonly componentProperties: (keyof ICarouselItemData)[] = [];
+    componentProperties = (): (keyof ICarouselItemData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [carouselItemStyles.carouselItem];

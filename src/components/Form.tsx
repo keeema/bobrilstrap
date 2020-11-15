@@ -4,6 +4,10 @@ import { FormCheck } from "./FormCheck";
 import { FormGroup } from "./FormGroup";
 import { FormInput } from "./FormInput";
 import { FormLabel } from "./FormLabel";
+import { FormOption } from "./FormOption";
+import { FormSelect } from "./FormSelect";
+import { FormText } from "./FormText";
+import { FormTextarea } from "./FormTextarea";
 
 export const formStyles = {};
 
@@ -15,8 +19,12 @@ export class Form extends BaseElement<IFormData> {
     static Group = FormGroup;
     static Input = FormInput;
     static Label = FormLabel;
+    static Option = FormOption;
+    static Select = FormSelect;
+    static Text = FormText;
+    static Textarea = FormTextarea;
 
-    readonly componentProperties: (keyof IFormData)[] = [];
+    componentProperties = (): (keyof IFormData)[] => [];
 
     get tag(): string {
         return "form";

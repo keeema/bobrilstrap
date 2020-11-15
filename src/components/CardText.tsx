@@ -9,7 +9,7 @@ export interface ICardTextData extends IBaseElementDataWithChildren {}
 
 export class CardText extends BaseElement<ICardTextData> {
     static id: string = "bobrilstrap-card-text";
-    readonly componentProperties: (keyof ICardTextData)[] = [];
+    componentProperties = (): (keyof ICardTextData)[] => [];
 
     get tag(): string {
         return "p";

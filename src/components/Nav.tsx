@@ -1,6 +1,5 @@
 import * as b from "bobril";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
-import { pick } from "../../helpers/objectHelper";
 import { NavItem } from "./NavItem";
 import { NavLink } from "./NavLink";
 
@@ -34,7 +33,7 @@ export class Nav extends BaseElement<INavData> {
     static Item = NavItem;
     static Link = NavLink;
 
-    readonly componentProperties: (keyof INavElementData)[] = [
+    componentProperties = (): (keyof INavData)[] => [
         "pills",
         "card-header-pills",
         "fill",
@@ -49,7 +48,7 @@ export class Nav extends BaseElement<INavData> {
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        const data = pick(this.data, ...this.componentProperties);
+        const data = this.data;
         return [
             data.navbar ? navStyles.navbarNav : navStyles.nav,
             data.pills && navStyles.pills,

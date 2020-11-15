@@ -24,7 +24,7 @@ export interface IDropdownMenuData extends IBaseElementDataWithChildren {
 
 export class DropdownMenu extends BaseElement<IDropdownMenuData> {
     static id: string = "bobrilstrap-dropdown-menu";
-    readonly componentProperties: (keyof IDropdownMenuData)[] = ["align", "align-sm", "align-md", "align-lg", "align-xl"];
+    componentProperties = (): (keyof IDropdownMenuData)[] => ["align", "align-sm", "align-md", "align-lg", "align-xl"];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [

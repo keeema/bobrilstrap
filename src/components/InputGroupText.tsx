@@ -9,7 +9,7 @@ export interface IInputGroupTextData extends IBaseElementDataWithChildren {}
 
 export class InputGroupText extends BaseElement<IInputGroupTextData> {
     static id: string = "bobrilstrap-input-group-text";
-    readonly componentProperties: (keyof IInputGroupTextData)[] = [];
+    componentProperties = (): (keyof IInputGroupTextData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [inputGroupTextStyles.inputGroupText];

@@ -9,7 +9,7 @@ export interface IBlockquoteFooterData extends IBaseElementDataWithChildren {}
 
 export class BlockquoteFooter extends BaseElement<IBlockquoteFooterData> {
     static id: string = "bobrilstrap-blockquote-footer";
-    readonly componentProperties: (keyof IBlockquoteFooterData)[] = [];
+    componentProperties = (): (keyof IBlockquoteFooterData)[] => [];
 
     get tag(): string {
         return "footer";

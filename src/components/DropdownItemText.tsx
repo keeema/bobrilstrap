@@ -9,7 +9,7 @@ export interface IDropdownItemTextData extends IBaseElementDataWithChildren {}
 
 export class DropdownItemText extends BaseElement<IDropdownItemTextData> {
     static id: string = "bobrilstrap-dropdown-item-text";
-    readonly componentProperties: (keyof IDropdownItemTextData)[] = [];
+    componentProperties = (): (keyof IDropdownItemTextData)[] => [];
 
     get tag(): string {
         return "span";

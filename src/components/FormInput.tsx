@@ -1,50 +1,15 @@
-import * as b from "bobril";
-import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
+import { FormControlBase, IFormControlBaseData, InputType } from "./FormControlBase";
 
-export type InputType =
-    | "button"
-    | "checkbox"
-    | "color"
-    | "date"
-    | "datetime-local"
-    | "email"
-    | "file"
-    | "hidden"
-    | "image"
-    | "month"
-    | "number"
-    | "password"
-    | "radio"
-    | "range"
-    | "reset"
-    | "search"
-    | "submit"
-    | "tel"
-    | "text"
-    | "time"
-    | "url"
-    | "week";
-
-export const formInputStyles = {
-    formControl: b.styleDef("form-control"),
-    formCheckInput: b.styleDef("form-check-input"),
-};
-
-export interface IFormInputData extends IBaseElementDataWithChildren {
+export const formInputStyles = {};
+export interface IFormInputData extends IFormControlBaseData {
     type: InputType;
 }
 
-export class FormInput extends BaseElement<IFormInputData> {
+export class FormInput extends FormControlBase<IFormInputData> {
     static id: string = "bobrilstrap-form-input";
-    readonly componentProperties: (keyof IFormInputData)[] = [
-        /* type */
-    ];
+    componentProperties = (): (keyof IFormInputData)[] => [...super.componentProperties() /* , type */];
 
     get tag(): string {
         return "input";
-    }
-
-    componentSpecificStyles(): b.IBobrilStyleArray {
-        return [this.data.type === "checkbox" ? formInputStyles.formCheckInput : formInputStyles.formControl];
     }
 }

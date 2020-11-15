@@ -27,7 +27,7 @@ export class Dropdown extends ButtonGroup<IDropdownData> {
     static Menu = DropdownMenu;
     static Toggle = DropdownToggle;
 
-    readonly componentProperties: (keyof IDropdownData)[] = ["direction", "size", "vertical"];
+    componentProperties = (): (keyof IDropdownData)[] => [...super.componentProperties(), "direction"];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [...super.componentSpecificStyles(), this.data.direction !== "responsive" && dropdownStyles[this.data.direction ?? "down"]];

@@ -34,7 +34,7 @@ export class Alert extends BaseElement<IAlertData> {
     static Heading = AlertHeading;
     static Link = AlertLink;
 
-    readonly componentProperties: (keyof IAlertData)[] = [
+    componentProperties = (): (keyof IAlertData)[] => [
         "variant",
         "dismissible",
         "dismissible-aria-label",
@@ -44,7 +44,7 @@ export class Alert extends BaseElement<IAlertData> {
     ];
 
     componentAdditionalAttributes(): IAllAttrs {
-        return { role: this.data.role || "alert" };
+        return { ...super.componentAdditionalAttributes(), role: this.data.role || "alert" };
     }
 
     render(): b.IBobrilNode {

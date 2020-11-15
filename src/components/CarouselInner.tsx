@@ -10,7 +10,7 @@ export interface ICarouselInnerData extends IBaseElementDataWithChildren {}
 
 export class CarouselInner extends BaseElement<ICarouselInnerData> {
     static id: string = "bobrilstrap-carousel-inner";
-    readonly componentProperties: (keyof ICarouselInnerData)[] = [];
+    componentProperties = (): (keyof ICarouselInnerData)[] => [];
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [carouselInnerStyles.carouselInner];
     }

@@ -9,7 +9,7 @@ export interface ICardFooterData extends IBaseElementDataWithChildren {}
 
 export class CardFooter extends BaseElement<ICardFooterData> {
     static id: string = "bobrilstrap-card-footer";
-    readonly componentProperties: (keyof ICardFooterData)[] = [];
+    componentProperties = (): (keyof ICardFooterData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [cardFooterStyles.cardFooter];

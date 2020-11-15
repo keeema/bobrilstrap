@@ -9,7 +9,7 @@ export interface ICardDeckData extends IBaseElementDataWithChildren {}
 
 export class CardDeck extends BaseElement<ICardDeckData> {
     static id: string = "bobrilstrap-card-deck";
-    readonly componentProperties: (keyof ICardDeckData)[] = [];
+    componentProperties = (): (keyof ICardDeckData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [cardDeckStyles.cardDeck];

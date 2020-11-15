@@ -15,7 +15,7 @@ export class Blockquote extends BaseElement<IBlockquoteData> {
     static id: string = "bobrilstrap-blockquote";
     static Footer = BlockquoteFooter;
 
-    readonly componentProperties: (keyof IBlockquoteData)[] = ["card-body"];
+    componentProperties = (): (keyof IBlockquoteData)[] => ["card-body"];
 
     get tag(): string {
         return "blockquote";

@@ -16,14 +16,14 @@ export type INavLinkData = INavLinkElementData & IBaseElementDataWithChildren;
 
 export class NavLink extends BaseElement<INavLinkData> {
     static id: string = "bobrilstrap-nav-link";
-    readonly componentProperties: (keyof INavLinkElementData)[] = ["disabled" /* , "href" */];
+    componentProperties = (): (keyof INavLinkData)[] => ["disabled" /* , "href" */];
 
     get tag(): string {
         return "a";
     }
 
     componentAdditionalAttributes(): IAllAttrs {
-        return { href: this.data.href ?? "javascript:void(0)" };
+        return { ...super.componentAdditionalAttributes(), href: this.data.href ?? "javascript:void(0)" };
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

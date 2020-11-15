@@ -11,7 +11,7 @@ export interface ICardLinkData extends IBaseElementDataWithChildren {
 
 export class CardLink extends BaseElement<ICardLinkData> {
     static id: string = "bobrilstrap-card-link";
-    readonly componentProperties: (keyof ICardLinkData)[] = [
+    componentProperties = (): (keyof ICardLinkData)[] => [
         /* , "href" */
     ];
 
@@ -20,7 +20,7 @@ export class CardLink extends BaseElement<ICardLinkData> {
     }
 
     componentAdditionalAttributes(): IAllAttrs {
-        return { href: this.data.href ?? "javascript:void(0)" };
+        return { ...super.componentAdditionalAttributes(), href: this.data.href ?? "javascript:void(0)" };
     }
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [cardLinkStyles.cardLink];

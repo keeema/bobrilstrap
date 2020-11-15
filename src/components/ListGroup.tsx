@@ -15,7 +15,7 @@ export class ListGroup extends BaseElement<IListGroupData> {
     static id: string = "bobrilstrap-list-group";
     static Item = ListGroupItem;
 
-    readonly componentProperties: (keyof IListGroupData)[] = ["flush"];
+    componentProperties = (): (keyof IListGroupData)[] => ["flush"];
 
     get tag(): string {
         return "ul";

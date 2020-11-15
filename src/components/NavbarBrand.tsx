@@ -13,14 +13,14 @@ export type INavbarBrandData = INavbarBrandElementData & IBaseElementDataWithChi
 
 export class NavbarBrand extends BaseElement<INavbarBrandData> {
     static id: string = "bobrilstrap-navbar-brand";
-    readonly componentProperties: (keyof INavbarBrandElementData)[] = ["href"];
+    componentProperties = (): (keyof INavbarBrandData)[] => ["href"];
 
     get tag(): string {
         return "a";
     }
 
     componentAdditionalAttributes(): INavbarBrandData {
-        return { href: this.data.href ?? "javascript:void(0)" };
+        return { ...super.componentAdditionalAttributes(), href: this.data.href ?? "javascript:void(0)" };
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

@@ -1,5 +1,4 @@
 import * as b from "bobril";
-import { pick } from "../../helpers/objectHelper";
 import { createDictionary } from "../../helpers/dict";
 import { IBaseElementDataWithChildren, BaseElement } from "../components/BaseElement";
 
@@ -46,24 +45,14 @@ export const colStyles = {
 };
 
 export type IColData = IColElementData & IBaseElementDataWithChildren;
-export class Col extends BaseElement<IColData> {
+export class Col<TData extends IColData> extends BaseElement<TData> {
     static id: string = "bobrilstrap-col";
-    readonly componentProperties: (keyof IColElementData)[] = [
-        "span",
-        "offset",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-        "offset-sm",
-        "offset-md",
-        "offset-lg",
-        "offset-xl",
-    ];
+    componentProperties(): (keyof TData)[] {
+        return ["span", "offset", "sm", "md", "lg", "xl", "offset-sm", "offset-md", "offset-lg", "offset-xl"];
+    }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        const colData = pick(this.data, ...this.componentProperties);
-        colData;
+        const colData = this.data;
         return [
             this.hasNoSpanStyle && colStyles.col,
             colData.span && colStyles.span(colData.span),

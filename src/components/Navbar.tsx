@@ -1,6 +1,5 @@
 import * as b from "bobril";
 import { BaseElement, IBaseElementDataWithChildren } from "./BaseElement";
-import { pick } from "../../helpers/objectHelper";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createDictionary } from "../../helpers/dict";
 import { NavbarBrand } from "./NavbarBrand";
@@ -40,14 +39,14 @@ export class Navbar extends BaseElement<INavbarData> {
     static Toggler = NavbarToggler;
     static Collapse = NavbarCollapse;
 
-    readonly componentProperties: (keyof INavbarElementData)[] = ["expand", "color-schema", "fixed-top"];
+    componentProperties = (): (keyof INavbarData)[] => ["expand", "color-schema", "fixed-top"];
 
     get tag(): string {
         return "nav";
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        const data = pick(this.data, ...this.componentProperties);
+        const data = this.data;
         return [
             navbarStyles.navbar,
             data.expand !== false && navbarStyles.expand(data.expand ?? true),

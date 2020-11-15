@@ -11,7 +11,7 @@ export interface IAlertLinkData extends IBaseElementDataWithChildren {
 
 export class AlertLink extends BaseElement<IAlertLinkData> {
     static id: string = "bobrilstrap-alert-link";
-    readonly componentProperties: (keyof IAlertLinkData)[] = [
+    componentProperties = (): (keyof IAlertLinkData)[] => [
         /* "href" */
     ];
 
@@ -20,7 +20,7 @@ export class AlertLink extends BaseElement<IAlertLinkData> {
     }
 
     componentAdditionalAttributes(): IAllAttrs {
-        return { href: this.data.href ?? "javascript:void(0)" };
+        return { ...super.componentAdditionalAttributes(), href: this.data.href ?? "javascript:void(0)" };
     }
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [alertLinkStyles.alertLink];

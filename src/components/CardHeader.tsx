@@ -9,7 +9,7 @@ export interface ICardHeaderData extends IBaseElementDataWithChildren {}
 
 export class CardHeader extends BaseElement<ICardHeaderData> {
     static id: string = "bobrilstrap-card-header";
-    readonly componentProperties: (keyof ICardHeaderData)[] = [];
+    componentProperties = (): (keyof ICardHeaderData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [cardHeaderStyles.cardHeader];

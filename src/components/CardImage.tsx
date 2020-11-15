@@ -17,7 +17,7 @@ export interface ICardImageData extends IBaseElementDataWithChildren {
 export class CardImage extends BaseElement<ICardImageData> {
     static id: string = "bobrilstrap-card-image";
     static Overlay = CardImageOverlay;
-    readonly componentProperties: (keyof ICardImageData)[] = ["position"];
+    componentProperties = (): (keyof ICardImageData)[] => ["position"];
 
     get tag(): string {
         return "img";

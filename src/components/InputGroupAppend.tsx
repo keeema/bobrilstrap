@@ -9,7 +9,7 @@ export interface IInputGroupAppendData extends IBaseElementDataWithChildren {}
 
 export class InputGroupAppend extends BaseElement<IInputGroupAppendData> {
     static id: string = "bobrilstrap-input-group-append";
-    readonly componentProperties: (keyof IInputGroupAppendData)[] = [];
+    componentProperties = (): (keyof IInputGroupAppendData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [inputGroupAppendStyles.inputGroupAppend];

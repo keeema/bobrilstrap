@@ -11,15 +11,12 @@ export const carouselControlStyles = {
 export interface ICarouselControlData extends IBaseElementDataWithChildren {}
 
 abstract class CarouselControl extends BaseElement<ICarouselControlData> {
-    readonly componentProperties: (keyof ICarouselControlData)[] = [];
+    componentProperties = (): (keyof ICarouselControlData)[] => [];
     get tag(): string {
         return "a";
     }
     componentAdditionalAttributes(): IAttrs {
-        return {
-            href: "javascript:void(0);",
-            role: "button",
-        };
+        return { ...super.componentAdditionalAttributes(), href: "javascript:void(0);", role: "button" };
     }
 }
 
@@ -27,10 +24,13 @@ abstract class CarouselControlIcon extends BaseElement<ICarouselControlData> {
     get tag(): string {
         return "span";
     }
-    readonly componentProperties: (keyof ICarouselControlData)[] = [];
+    componentProperties = (): (keyof ICarouselControlData)[] => [];
 
     componentAdditionalAttributes(): IAttrs {
-        return { "aria-hidden": this.data["aria-hidden"] !== undefined ? this.data["aria-hidden"] : true };
+        return {
+            ...super.componentAdditionalAttributes(),
+            "aria-hidden": this.data["aria-hidden"] !== undefined ? this.data["aria-hidden"] : true,
+        };
     }
 }
 
@@ -56,6 +56,6 @@ export class CarouselControlNext extends CarouselControl {
     componentSpecificStyles = (): b.IBobrilStyleArray => [carouselControlStyles.carouselControlNext];
 
     componentAdditionalAttributes(): IAttrs {
-        return { href: "javascript:void(0);" };
+        return { ...super.componentAdditionalAttributes(), href: "javascript:void(0);" };
     }
 }

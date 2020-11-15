@@ -33,7 +33,7 @@ export class Card extends BaseElement<ICardData> {
     static Text = CardText;
     static Title = CardTitle;
 
-    readonly componentProperties: (keyof ICardData)[] = [];
+    componentProperties = (): (keyof ICardData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [cardStyles.card];

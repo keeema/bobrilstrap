@@ -17,7 +17,7 @@ export interface IContainerData extends IBaseElementDataWithChildren {
 
 export class Container extends BaseElement<IContainerData> {
     static id: string = "bobrilstrap-container";
-    readonly componentProperties: (keyof IContainerData)[] = ["fluid"];
+    componentProperties = (): (keyof IContainerData)[] => ["fluid"];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [

@@ -9,10 +9,10 @@ export interface IButtonToolbarData extends IBaseElementDataWithChildren {}
 
 export class ButtonToolbar extends BaseElement<IButtonToolbarData> {
     static id: string = "bobrilstrap-button-toolbar";
-    readonly componentProperties: (keyof IButtonToolbarData)[] = [];
+    componentProperties = (): (keyof IButtonToolbarData)[] => [];
 
     componentAdditionalAttributes(): IAllAttrs {
-        return { role: this.data.role || "toolbar" };
+        return { ...super.componentAdditionalAttributes(), role: this.data.role || "toolbar" };
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

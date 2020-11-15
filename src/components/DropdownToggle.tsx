@@ -16,15 +16,7 @@ export interface IDropdownToggleData extends IButtonData {
 export class DropdownToggle extends Button<IDropdownToggleData> {
     static id: string = "bobrilstrap-dropdown-toggle";
 
-    readonly componentProperties: (keyof IButtonData)[] = [
-        "variant",
-        "size" /* , "href" */,
-        "type",
-        "block",
-        "split",
-        "display-static",
-        "offset",
-    ];
+    componentProperties = (): (keyof IDropdownToggleData)[] => [...super.componentProperties(), "split", "display-static", "offset"];
 
     componentAdditionalAttributes(): IAllAttrs {
         return {

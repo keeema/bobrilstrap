@@ -65,6 +65,7 @@ interface IBaseElementDataBase extends IAllAttrs {
     invisible?: boolean;
     disabled?: boolean;
     active?: boolean;
+    readonly?: boolean;
 }
 
 export interface IBaseElementData extends IBaseElementDataBase {
@@ -80,14 +81,14 @@ export const baseStyles = {
 };
 
 export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.Component<TData> {
-    // TODO: move to function and use in derived components
-    abstract readonly componentProperties: (keyof TData)[];
-
     get tag(): string {
         return "div";
     }
     componentAdditionalAttributes(): IAllAttrs {
-        return {};
+        return {
+            "aria-disabled": this.data.disabled ?? undefined,
+            "aria-readonly": this.data.readonly ?? undefined,
+        };
     }
 
     render(): b.IBobrilNode {
@@ -112,8 +113,10 @@ export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.
     }
 
     private get plainData(): IBaseElementDataWithChildren {
-        return omit(this.data, "style", "visible", "invisible", "active", "as", /* "disabled", */ ...this.componentProperties);
+        return omit(this.data, "style", "visible", "invisible", "active", "as", /* "disabled", "readonly" */ ...this.componentProperties());
     }
+
+    abstract componentProperties(): (keyof TData)[];
 
     abstract componentSpecificStyles(): b.IBobrilStyleArray;
 

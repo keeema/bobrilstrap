@@ -1,6 +1,5 @@
 import * as b from "bobril";
 import { IBaseElementDataWithChildren, BaseElement } from "../components/BaseElement";
-import { pick } from "../../helpers/objectHelper";
 import { createDictionary } from "../../helpers/dict";
 import { SpanBase, spanBaseScale } from "./Col";
 
@@ -27,10 +26,10 @@ export type IRowData = IRowElementData & IBaseElementDataWithChildren;
 
 export class Row extends BaseElement<IRowData> {
     static id: string = "bobrilstrap-row";
-    readonly componentProperties: (keyof IRowElementData)[] = ["span", "sm", "md", "lg", "xl", "no-gutters"];
+    componentProperties = (): (keyof IRowData)[] => ["span", "sm", "md", "lg", "xl", "no-gutters"];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        const rowData = pick(this.data, ...this.componentProperties);
+        const rowData = this.data;
         return [
             rowStyles.row,
             rowData.span && rowStyles.span(rowData.span),

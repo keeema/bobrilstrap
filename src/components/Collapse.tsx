@@ -19,11 +19,11 @@ export type ICollapseData = ICollapseElementData & IBaseElementDataWithChildren;
 export class Collapse extends BaseElement<ICollapseData> {
     static id: string = "bobrilstrap-collapse";
 
-    readonly componentProperties: (keyof ICollapseElementData)[] = ["collapsed", "onCollapsed", "onShown"];
-
     private collapsedElement?: HTMLElement;
     private collapsed?: boolean;
     private firstLoad: boolean = true;
+
+    componentProperties = (): (keyof ICollapseData)[] => ["collapsed", "onCollapsed", "onShown"];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [collapseStyles.collapse, !this.data.collapsed && this.firstLoad && noTransition];

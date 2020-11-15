@@ -20,7 +20,7 @@ export class InputGroup extends BaseElement<IInputGroupData> {
     static Append = InputGroupAppend;
     static Prepend = InputGroupPrepend;
     static Text = InputGroupText;
-    readonly componentProperties: (keyof IInputGroupData)[] = ["size"];
+    componentProperties = (): (keyof IInputGroupData)[] => ["size"];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [inputGroupStyles.inputGroup, this.data.size && inputGroupStyles.sizes(this.data.size)];

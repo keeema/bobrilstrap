@@ -12,7 +12,7 @@ export interface IIconData extends IBaseElementData {
 
 export abstract class IconBase extends BaseElement<IIconData> {
     static id: string = "bobrilstrap-icon";
-    readonly componentProperties: (keyof IIconData)[] = [/* width, height, */ "name"];
+    componentProperties = (): (keyof IIconData)[] => [/* width, height, */ "name"];
 
     get tag(): string {
         return "svg";
@@ -24,7 +24,7 @@ export abstract class IconBase extends BaseElement<IIconData> {
     }
 
     componentAdditionalAttributes(): IAllAttrs {
-        return { fill: "currentColor", role: "img" };
+        return { ...super.componentAdditionalAttributes(), fill: "currentColor", role: "img" };
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

@@ -9,7 +9,7 @@ export interface ICardGroupData extends IBaseElementDataWithChildren {}
 
 export class CardGroup extends BaseElement<ICardGroupData> {
     static id: string = "bobrilstrap-card-group";
-    readonly componentProperties: (keyof ICardGroupData)[] = [];
+    componentProperties = (): (keyof ICardGroupData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [cardGroupStyles.cardGroup];

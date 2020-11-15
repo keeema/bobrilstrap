@@ -39,7 +39,7 @@ export class Carousel extends BaseElement<ICarouselData> {
     static id: string = "bobrilstrap-carousel-inner";
     readonly carouselConfigProperties: (keyof Omit<CarouselOption, "slide">)[] = ["interval", "keyboard", "pause", "ride", "wrap", "touch"];
     readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "slide", "cross-fade"];
-    readonly componentProperties: (keyof ICarouselData)[] = [...this.carouselDataProperties, ...this.carouselConfigProperties];
+    componentProperties = (): (keyof ICarouselData)[] => [...this.carouselDataProperties, ...this.carouselConfigProperties];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [carouselStyles.carousel, this.data.slide && carouselStyles.slide, this.data["cross-fade"] && carouselStyles.carouselFade];

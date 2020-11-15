@@ -9,7 +9,7 @@ export interface ICardBodyData extends IBaseElementDataWithChildren {}
 
 export class CardBody extends BaseElement<ICardBodyData> {
     static id: string = "bobrilstrap-card-body";
-    readonly componentProperties: (keyof ICardBodyData)[] = [];
+    componentProperties = (): (keyof ICardBodyData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [cardBodyStyles.cardBody];

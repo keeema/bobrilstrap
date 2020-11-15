@@ -17,10 +17,12 @@ export interface IButtonGroupData extends IBaseElementDataWithChildren {
 export class ButtonGroup<TData extends IButtonGroupData> extends BaseElement<TData> {
     static id: string = "bobrilstrap-button-group";
 
-    readonly componentProperties: (keyof IButtonGroupData)[] = ["size", "vertical"];
+    componentProperties(): (keyof TData)[] {
+        return ["size", "vertical"];
+    }
 
     componentAdditionalAttributes(): IAllAttrs {
-        return { role: this.data.role || "group" };
+        return { ...super.componentAdditionalAttributes(), role: this.data.role || "group" };
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

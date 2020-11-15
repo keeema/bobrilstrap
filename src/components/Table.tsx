@@ -28,7 +28,7 @@ export interface ITableData extends IBaseElementDataWithChildren {
 }
 
 export class Table extends BaseElement<ITableData> {
-    readonly componentProperties: (keyof ITableData)[] = ["variant", "bordered", "borderless", "striped", "size", "responsive", "hover"];
+    componentProperties = (): (keyof ITableData)[] => ["variant", "bordered", "borderless", "striped", "size", "responsive", "hover"];
 
     get tag(): string {
         return "table";

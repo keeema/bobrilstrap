@@ -9,7 +9,7 @@ export interface IFormCheckData extends IBaseElementDataWithChildren {}
 
 export class FormCheck extends BaseElement<IFormCheckData> {
     static id: string = "bobrilstrap-form-check";
-    readonly componentProperties: (keyof IFormCheckData)[] = [];
+    componentProperties = (): (keyof IFormCheckData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [formCheckStyles.formCheck];

@@ -11,7 +11,7 @@ export type INavItemData = INavItemElementData & IBaseElementDataWithChildren;
 
 export class NavItem extends BaseElement<INavItemData> {
     static id: string = "bobrilstrap-nav-item";
-    readonly componentProperties: (keyof INavItemElementData)[] = [];
+    componentProperties = (): (keyof INavItemData)[] => [];
 
     get tag(): string {
         return "li";

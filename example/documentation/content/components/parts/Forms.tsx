@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button, Col, Form, margin, Row, textColor } from "../../../../../index";
+import { Button, Col, Form, margin, Row, textColor, position } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 
@@ -39,6 +39,37 @@ export const formsRoute: IRouteWithNavDefinition = {
                     url: "readonly-plain-text",
                     name: "forms-form-controls-readonly-plain-text",
                     label: "Readonly plain text",
+                    subs: [],
+                },
+            ],
+        },
+        {
+            url: "range-inputs",
+            name: "forms-range-inputs",
+            label: "Range inputs",
+            subs: [],
+        },
+        {
+            url: "checkboxes-and-radios",
+            name: "forms-checkboxes-and-radios",
+            label: "Checkboxes and radios",
+            subs: [
+                {
+                    url: "default-stacked",
+                    name: "forms-checkboxes-and-radios-default-stacked",
+                    label: "Default (stacked)",
+                    subs: [],
+                },
+                {
+                    url: "inline",
+                    name: "forms-checkboxes-and-radios-inline",
+                    label: "Inline",
+                    subs: [],
+                },
+                {
+                    url: "without-labels",
+                    name: "forms-checkboxes-and-radios-without-labels",
+                    label: "Without labels",
                     subs: [],
                 },
             ],
@@ -127,7 +158,7 @@ export function FormsDoc(): b.IBobrilNode {
                 <Form>
                     <Form.Group>
                         <Form.Label for="exampleFormControlInput1">Email address</Form.Label>
-                        <Form.Input type="email" id="exampleInputEmail1" placeholder="name@example.com" />
+                        <Form.Input type="email" id="exampleFormControlInput1" placeholder="name@example.com" />
                     </Form.Group>
                     <Form.Group>
                         <Form.Label for="exampleFormControlSelect1">Example select</Form.Label>
@@ -158,7 +189,7 @@ export function FormsDoc(): b.IBobrilNode {
             <Code language="tsx">{`<Form>
     <Form.Group>
         <Form.Label for="exampleFormControlInput1">Email address</Form.Label>
-        <Form.Input type="email" id="exampleInputEmail1" placeholder="name@example.com" />
+        <Form.Input type="email" id="exampleFormControlInput1" placeholder="name@example.com" />
     </Form.Group>
     <Form.Group>
         <Form.Label for="exampleFormControlSelect1">Example select</Form.Label>
@@ -270,6 +301,159 @@ export function FormsDoc(): b.IBobrilNode {
         </Col>
     </Form.Group>
 </Form>`}</Code>
+            <Anchor name="forms-range-inputs">
+                <h2>Range inputs</h2>
+            </Anchor>
+            <Example>
+                <Form>
+                    <Form.Group>
+                        <Form.Label for="formControlRange">Email</Form.Label>
+                        <Form.Input type="range" id="formControlRange" />
+                    </Form.Group>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
+    <Form.Group>
+        <Form.Label for="formControlRange">Email</Form.Label>
+        <Form.Input type="range" id="formControlRange" />
+    </Form.Group>
+</Form>`}</Code>
+            <Anchor name="forms-checkboxes-and-radios">
+                <h2>Checkboxes and radios</h2>
+            </Anchor>
+            <p>
+                Default checkboxes and radios are improved upon with the help of <code>{`<Form.Check>`}</code>, a single component for both
+                input types that improves the layout and behavior of their HTML elements. Checkboxes are for selecting one or several
+                options in a list, while radios are for selecting one option from many.
+            </p>
+            <p>
+                Disabled checkboxes and radios are supported. The <code>disabled</code> attribute will apply a lighter color to help
+                indicate the input’s state.
+            </p>
+            <p>
+                Checkboxes and radio buttons support HTML-based form validation and provide concise, accessible labels. As such, our{" "}
+                <code>{`<Form.Input>`}</code>s and <code>{`<Form.Label>`}</code>s are sibling elements as opposed to an{" "}
+                <code>{`<Form.Input>`}</code> within a <code>{`<Form.Label>`}</code>. This is slightly more verbose as you must specify{" "}
+                <code>id</code> and <code>for</code> attributes to relate the <code>{`<Form.Input>`}</code> and{" "}
+                <code>{`<Form.Label>`}</code>.
+            </p>
+            <Anchor name="forms-checkboxes-and-radios-default-stacked">
+                <h3>Default (stacked)</h3>
+            </Anchor>
+            <p>
+                By default, any number of checkboxes and radios that are immediate sibling will be vertically stacked and appropriately
+                spaced with <code>{`<Form.Check>`}</code>.
+            </p>
+            <Example>
+                <DefaultCheckboxesExample />
+            </Example>
+            <Code language="tsx">{`function DefaultCheckboxesExample(): b.IBobrilNode {
+    const [checkbox1, setCheckbox1] = b.useState(true);
+    return (
+        <>
+            <Form.Check>
+                <Form.Input type="checkbox" id="defaultCheck1" value={checkbox1} onChange={setCheckbox1} />
+                <Form.Label form-check for="defaultCheck1">
+                    Default checkbox
+                </Form.Label>
+            </Form.Check>
+            <Form.Check>
+                <Form.Input type="checkbox" id="defaultCheck2" value={true} disabled />
+                <Form.Label form-check for="defaultCheck2">
+                    Disabled checkbox
+                </Form.Label>
+            </Form.Check>
+            <Form.Text>Checkbox 1: {JSON.stringify(checkbox1)}</Form.Text>
+        </>
+    );
+}
+
+<DefaultCheckboxesExample />`}</Code>
+            <Example>
+                <DefaultRadiosExample />
+            </Example>
+            <Code language="tsx">{`function DefaultRadiosExample(): b.IBobrilNode {
+    const [radio, setRadio] = b.useState(1);
+    return (
+        <>
+            <Form.Check>
+                <Form.Input type="radio" name="radio" id="exampleRadios1" value={radio === 1} onClick={() => setRadio(1)} />
+                <Form.Label form-check for="exampleRadios1">
+                    Default radio
+                </Form.Label>
+            </Form.Check>
+            <Form.Check>
+                <Form.Input type="radio" name="radio" id="exampleRadios2" value={radio === 2} onClick={() => setRadio(2)} />
+                <Form.Label form-check for="exampleRadios2">
+                    Second radio
+                </Form.Label>
+            </Form.Check>
+            <Form.Check>
+                <Form.Input type="radio" name="radio" id="exampleRadios3" value={radio === 3} onClick={() => setRadio(3)} disabled />
+                <Form.Label form-check for="exampleRadios3">
+                    Disabled third radio
+                </Form.Label>
+            </Form.Check>
+            <Form.Text>Radio: {JSON.stringify(radio)}</Form.Text>
+        </>
+    );
+}
+
+<DefaultRadiosExample />`}</Code>
+            <Anchor name="forms-checkboxes-and-radios-inline">
+                <h3>Inline</h3>
+            </Anchor>
+            <p>
+                Group checkboxes or radios on the same horizontal row by adding <code>inline</code> prop.
+            </p>
+            <Example>
+                <Form.Check inline>
+                    <Form.Input type="checkbox" id="inlineCheckbox1" />
+                    <Form.Label form-check for="inlineCheckbox1">
+                        1
+                    </Form.Label>
+                </Form.Check>
+                <Form.Check inline>
+                    <Form.Input type="checkbox" id="inlineCheckbox2" disabled />
+                    <Form.Label form-check for="inlineCheckbox2">
+                        2
+                    </Form.Label>
+                </Form.Check>
+            </Example>
+            <Code language="tsx">{`<Form.Check inline>
+    <Form.Input type="checkbox" id="inlineCheckbox1" />
+    <Form.Label form-check for="inlineCheckbox1">
+        1
+    </Form.Label>
+</Form.Check>
+<Form.Check inline>
+    <Form.Input type="checkbox" id="inlineCheckbox2" disabled />
+    <Form.Label form-check for="inlineCheckbox2">
+        2
+    </Form.Label>
+</Form.Check>`}</Code>
+            <Anchor name="forms-checkboxes-and-radios-without-labels">
+                <h3>Without labels</h3>
+            </Anchor>
+            <p>
+                Add <code>position("static")</code> style to inputs within <code>{`<Form.Check>`}</code> that don’t have any label text.
+                Remember to still provide some form of accessible name for assistive technologies (for instance, using{" "}
+                <code>aria-label</code>).
+            </p>
+            <Example>
+                <Form.Check>
+                    <Form.Input type="checkbox" id="blankCheckbox" style={position("static")} aria-label="Blank" />
+                </Form.Check>
+                <Form.Check>
+                    <Form.Input type="radio" name="blankRadio" id="blankRadio1" style={position("static")} aria-label="Blank" />
+                </Form.Check>
+            </Example>
+            <Code language="tsx">{`<Form.Check>
+    <Form.Input type="checkbox" id="blankCheckbox" style={position("static")} aria-label="Blank" />
+</Form.Check>
+<Form.Check>
+    <Form.Input type="radio" name="blankRadio" id="blankRadio1" style={position("static")} aria-label="Blank" />
+</Form.Check>`}</Code>
         </>
     );
 }
@@ -310,6 +494,54 @@ function OverviewExample(): b.IBobrilNode {
                 <Col>Password: {password}</Col>
                 <Col>Remember me: {JSON.stringify(remember)}</Col>
             </Row>
+        </>
+    );
+}
+
+function DefaultCheckboxesExample(): b.IBobrilNode {
+    const [checkbox1, setCheckbox1] = b.useState(true);
+    return (
+        <>
+            <Form.Check>
+                <Form.Input type="checkbox" id="defaultCheck1" value={checkbox1} onChange={setCheckbox1} />
+                <Form.Label form-check for="defaultCheck1">
+                    Default checkbox
+                </Form.Label>
+            </Form.Check>
+            <Form.Check>
+                <Form.Input type="checkbox" id="defaultCheck2" value={true} disabled />
+                <Form.Label form-check for="defaultCheck2">
+                    Disabled checkbox
+                </Form.Label>
+            </Form.Check>
+            <Form.Text>Checkbox 1: {JSON.stringify(checkbox1)}</Form.Text>
+        </>
+    );
+}
+
+function DefaultRadiosExample(): b.IBobrilNode {
+    const [radio, setRadio] = b.useState(1);
+    return (
+        <>
+            <Form.Check>
+                <Form.Input type="radio" name="radio" id="exampleRadios1" value={radio === 1} onClick={() => setRadio(1)} />
+                <Form.Label form-check for="exampleRadios1">
+                    Default radio
+                </Form.Label>
+            </Form.Check>
+            <Form.Check>
+                <Form.Input type="radio" name="radio" id="exampleRadios2" value={radio === 2} onClick={() => setRadio(2)} />
+                <Form.Label form-check for="exampleRadios2">
+                    Second radio
+                </Form.Label>
+            </Form.Check>
+            <Form.Check>
+                <Form.Input type="radio" name="radio" id="exampleRadios3" value={radio === 3} onClick={() => setRadio(3)} disabled />
+                <Form.Label form-check for="exampleRadios3">
+                    Disabled third radio
+                </Form.Label>
+            </Form.Check>
+            <Form.Text>Radio: {JSON.stringify(radio)}</Form.Text>
         </>
     );
 }

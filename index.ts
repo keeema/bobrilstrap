@@ -72,6 +72,7 @@ export * from "./src/utilities/color";
 export * from "./src/utilities/display";
 export * from "./src/utilities/font";
 export * from "./src/utilities/order";
+export * from "./src/utilities/position";
 export * from "./src/utilities/screenReaders";
 export * from "./src/utilities/sizing";
 export * from "./src/utilities/spacing";

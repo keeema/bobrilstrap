@@ -32,12 +32,15 @@ export const formControlBaseStyles = {
     plainText: b.styleDef("form-control-plaintext"),
     formCheckInput: b.styleDef("form-check-input"),
     formControlFile: b.styleDef("form-control-file"),
+    formControlRange: b.styleDef("form-control-range"),
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`form-control-${breakpoint}`)])),
 };
 
 export const specificInputStyles: { [key: string]: b.IBobrilStyle } = {
     checkbox: formControlBaseStyles.formCheckInput,
+    radio: formControlBaseStyles.formCheckInput,
     file: formControlBaseStyles.formControlFile,
+    range: formControlBaseStyles.formControlRange,
 };
 
 export interface IFormControlBaseData extends IBaseElementDataWithChildren {

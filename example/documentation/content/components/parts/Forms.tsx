@@ -797,68 +797,68 @@ export function FormsDoc(): b.IBobrilNode {
                 </Form>
             </Example>
             <Code language="tsx">{`<Form>
-                    <Form.Group row>
-                        <Form.Label col sm={2} for="inputEmail3">
-                            Email
-                        </Form.Label>
-                        <Col sm={10}>
-                            <Form.Input type="email" id="inputEmail3" />
-                        </Col>
-                    </Form.Group>
-                    <Form.Group row>
-                        <Form.Label col sm={2} for="inputPassword3">
-                            Password
-                        </Form.Label>
-                        <Col sm={10}>
-                            <Form.Input type="password" id="inputPassword3" />
-                        </Col>
-                    </Form.Group>
-                    <Form.Group as="fieldset">
-                        <Row>
-                            <Form.Label col as="legend" sm={2} style={padding({ side: "t", size: 0 })}>
-                                Radios
-                            </Form.Label>
-                            <Col sm={10}>
-                                <Form.Check>
-                                    <Form.Input type="radio" name="gridRadios" id="gridRadios1" />
-                                    <Form.Label form-check for="gridRadios1">
-                                        First radio
-                                    </Form.Label>
-                                </Form.Check>
-                                <Form.Check>
-                                    <Form.Input type="radio" name="gridRadios" id="gridRadios2" />
-                                    <Form.Label form-check for="gridRadios2">
-                                        Second radio
-                                    </Form.Label>
-                                </Form.Check>
-                                <Form.Check>
-                                    <Form.Input type="radio" name="gridRadios" id="gridRadios3" disabled />
-                                    <Form.Label form-check for="gridRadios3">
-                                        Third disabled radio
-                                    </Form.Label>
-                                </Form.Check>
-                            </Col>
-                        </Row>
-                    </Form.Group>
-                    <Form.Group row>
-                        <Col sm={2}>Checkbox</Col>
-                        <Col sm={10}>
-                            <Form.Check>
-                                <Form.Input type="checkbox" id="gridCheck1" />
-                                <Form.Label check for="gridCheck1">
-                                    Example checkbox
-                                </Form.Label>
-                            </Form.Check>
-                        </Col>
-                    </Form.Group>
-                    <Form.Group row>
-                        <Col sm={10}>
-                            <Button type="submit" variant="primary">
-                                Sign in
-                            </Button>
-                        </Col>
-                    </Form.Group>
-                </Form>`}</Code>
+    <Form.Group row>
+        <Form.Label col sm={2} for="inputEmail3">
+            Email
+        </Form.Label>
+        <Col sm={10}>
+            <Form.Input type="email" id="inputEmail3" />
+        </Col>
+    </Form.Group>
+    <Form.Group row>
+        <Form.Label col sm={2} for="inputPassword3">
+            Password
+        </Form.Label>
+        <Col sm={10}>
+            <Form.Input type="password" id="inputPassword3" />
+        </Col>
+    </Form.Group>
+    <Form.Group as="fieldset">
+        <Row>
+            <Form.Label col as="legend" sm={2} style={padding({ side: "t", size: 0 })}>
+                Radios
+            </Form.Label>
+            <Col sm={10}>
+                <Form.Check>
+                    <Form.Input type="radio" name="gridRadios" id="gridRadios1" />
+                    <Form.Label form-check for="gridRadios1">
+                        First radio
+                    </Form.Label>
+                </Form.Check>
+                <Form.Check>
+                    <Form.Input type="radio" name="gridRadios" id="gridRadios2" />
+                    <Form.Label form-check for="gridRadios2">
+                        Second radio
+                    </Form.Label>
+                </Form.Check>
+                <Form.Check>
+                    <Form.Input type="radio" name="gridRadios" id="gridRadios3" disabled />
+                    <Form.Label form-check for="gridRadios3">
+                        Third disabled radio
+                    </Form.Label>
+                </Form.Check>
+            </Col>
+        </Row>
+    </Form.Group>
+    <Form.Group row>
+        <Col sm={2}>Checkbox</Col>
+        <Col sm={10}>
+            <Form.Check>
+                <Form.Input type="checkbox" id="gridCheck1" />
+                <Form.Label check for="gridCheck1">
+                    Example checkbox
+                </Form.Label>
+            </Form.Check>
+        </Col>
+    </Form.Group>
+    <Form.Group row>
+        <Col sm={10}>
+            <Button type="submit" variant="primary">
+                Sign in
+            </Button>
+        </Col>
+    </Form.Group>
+</Form>`}</Code>
         </>
     );
 }

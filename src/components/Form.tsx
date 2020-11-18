@@ -5,6 +5,7 @@ import { FormGroup } from "./FormGroup";
 import { FormInput } from "./FormInput";
 import { FormLabel } from "./FormLabel";
 import { FormOption } from "./FormOption";
+import { FormRow } from "./FormRow";
 import { FormSelect } from "./FormSelect";
 import { FormText } from "./FormText";
 import { FormTextarea } from "./FormTextarea";
@@ -20,6 +21,7 @@ export class Form extends BaseElement<IFormData> {
     static Input = FormInput;
     static Label = FormLabel;
     static Option = FormOption;
+    static Row = FormRow;
     static Select = FormSelect;
     static Text = FormText;
     static Textarea = FormTextarea;

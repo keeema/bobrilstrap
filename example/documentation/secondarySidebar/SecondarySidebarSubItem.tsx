@@ -7,6 +7,13 @@ export function SecondarySidebarSubItem({ route }: { route: IRouteWithNavDefinit
             <a href={b.urlOfRoute(route.name)} style={linkStyle}>
                 {route.label}
             </a>
+            {route.subs.length > 0 && (
+                <ul style={sectionStyle}>
+                    {route.subs.map((sub) => (
+                        <SecondarySidebarSubItem route={sub} />
+                    ))}
+                </ul>
+            )}
         </li>
     );
 }
@@ -29,3 +36,8 @@ const linkStyle = b.styleDef(
         },
     }
 );
+
+const sectionStyle = b.styleDef({
+    paddingLeft: 0,
+    listStyleType: "none",
+});

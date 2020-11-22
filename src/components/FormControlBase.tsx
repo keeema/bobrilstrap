@@ -34,6 +34,8 @@ export const formControlBaseStyles = {
     formControlFile: b.styleDef("form-control-file"),
     formControlRange: b.styleDef("form-control-range"),
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`form-control-${breakpoint}`)])),
+    valid: b.styleDef("is-valid"),
+    invalid: b.styleDef("is-invalid"),
 };
 
 export const specificInputStyles: { [key: string]: b.IBobrilStyle } = {
@@ -46,6 +48,7 @@ export const specificInputStyles: { [key: string]: b.IBobrilStyle } = {
 export interface IFormControlBaseData extends IBaseElementDataWithChildren {
     size?: Breakpoint;
     "plain-text"?: boolean;
+    valid?: boolean;
 }
 
 export interface IFormControlBaseWithTypeData extends IFormControlBaseData {
@@ -65,7 +68,8 @@ export abstract class FormControlBase<TData extends IFormControlBaseData> extend
                 (this.data["plain-text"] && formControlBaseStyles.plainText) ||
                 formControlBaseStyles.formControl,
             this.data.size && formControlBaseStyles.sizes(this.data.size),
-            ,
+            this.data.valid === true && formControlBaseStyles.valid,
+            this.data.valid === false && formControlBaseStyles.invalid,
         ];
     }
 }

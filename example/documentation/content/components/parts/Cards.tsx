@@ -25,6 +25,7 @@ import {
 } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { placeholderUri } from "../../../../common/placeholderGenerator";
+import { Callout } from "../../../../common/Callout";
 
 export const cardsRoute: IRouteWithNavDefinition = {
     url: "cards",
@@ -833,6 +834,7 @@ export function Cards(): b.IBobrilNode {
             <Anchor name="cards-styles-background-and-color">
                 <h3>Background and color</h3>
             </Anchor>
+            <p>Use text and background utilities to change the appearance of a card.</p>
             <Example>
                 {backgroundGradientColorScale.map((bgColor) => (
                     <Card
@@ -871,6 +873,15 @@ export function Cards(): b.IBobrilNode {
                     )
                     .join("\n")}
             </Code>
+            <Callout variant="warning">
+                <h5>Conveying meaning to assistive technologies</h5>
+                <p>
+                    Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive
+                    technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content
+                    itself (e.g. the visible text), or is included through alternative means, such as additional text hidden with the{" "}
+                    <code>srOnly</code> style utility.
+                </p>
+            </Callout>
             <Anchor name="cards-styles-border">
                 <h3>Border</h3>
             </Anchor>

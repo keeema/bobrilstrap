@@ -2,12 +2,23 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button, Col, Form, margin, Row, textColor, position, InputGroup } from "../../../../../index";
+import {
+    Button,
+    Col,
+    Form,
+    margin,
+    Row,
+    textColor,
+    position,
+    InputGroup,
+    padding,
+    alignItems,
+    srOnly,
+    Feedback,
+} from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { padding } from "../../../../../src/utilities/spacing";
-import { alignItems } from "../../../../../src/utilities/alignment";
-import { srOnly } from "../../../../../src/utilities/screenReaders";
+import { Callout } from "../../../../common/Callout";
 
 export const formsRoute: IRouteWithNavDefinition = {
     url: "forms",
@@ -123,6 +134,31 @@ export const formsRoute: IRouteWithNavDefinition = {
                     url: "inline-forms",
                     name: "forms-layout-inline-forms",
                     label: "Inline forms",
+                    subs: [],
+                },
+            ],
+        },
+        {
+            url: "help-text",
+            name: "forms-help-text",
+            label: "Help text",
+            subs: [],
+        },
+        {
+            url: "disabled-forms",
+            name: "forms-disabled-forms",
+            label: "Disabled forms",
+            subs: [],
+        },
+        {
+            url: "validations",
+            name: "forms-validations",
+            label: "Validations",
+            subs: [
+                {
+                    url: "validations-tooltips",
+                    name: "forms-validations-tooltips",
+                    label: "Tooltips",
                     subs: [],
                 },
             ],
@@ -1188,6 +1224,306 @@ export function FormsDoc(): b.IBobrilNode {
         Submit
     </Button>
 </Form>`}</Code>
+            <Anchor name="forms-help-text">
+                <h2>Help text</h2>
+            </Anchor>
+            <p>
+                Block-level help text in forms can be created using <code>{`<Form.Text>`}</code>. Inline help text can be flexibly
+                implemented using any inline HTML element and utility like <code>textColor("muted")</code>.
+            </p>
+            <Callout variant="warning">
+                <h5>Associating help text with form controls</h5>
+                <p>
+                    Help text should be explicitly associated with the form control it relates to using the <code>aria-describedby</code>{" "}
+                    attribute. This will ensure that assistive technologies—such as screen readers—will announce this help text when the
+                    user focuses or enters the control.
+                </p>
+            </Callout>
+            <Example>
+                <Form>
+                    <Form.Label for="inputPassword5">Password</Form.Label>
+                    <Form.Input type="password" id="inputPassword5" aria-describedby="passwordHelpBlock" />
+                    <Form.Text id="passwordHelpBlock" style={textColor("muted")}>
+                        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special
+                        characters, or emoji.
+                    </Form.Text>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
+    <Form.Label for="inputPassword5">Password</Form.Label>
+    <Form.Input type="password" id="inputPassword5" aria-describedby="passwordHelpBlock" />
+    <Form.Text id="passwordHelpBlock" style={textColor("muted")}>
+        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special
+        characters, or emoji.
+    </Form.Text>
+</Form>`}</Code>
+            <Anchor name="forms-disabled-forms">
+                <h2>Disabled forms</h2>
+            </Anchor>
+            <p>
+                Add the <code>disabled</code> boolean prop on an input to prevent user interactions and make it appear lighter.
+            </p>
+            <Code language="tsx">{`<Form.Input id="disabledInput" type="text" placeholder="Disabled input here..." disabled />`}</Code>
+            <Example>
+                <Form>
+                    <Form.Fieldset disabled>
+                        <Form.Group>
+                            <Form.Label for="disabledTextInput">Disabled input</Form.Label>
+                            <Form.Input type="text" id="disabledTextInput" placeholder="Disabled input" />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label for="disabledSelect">Disabled select menu</Form.Label>
+                            <Form.Select id="disabledSelect">
+                                <Form.Option>Disabled select</Form.Option>
+                            </Form.Select>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Check>
+                                <Form.Input type="checkbox" id="disabledFieldsetCheck" disabled />
+                                <Form.Label form-check for="disabledFieldsetCheck">
+                                    Can't check this
+                                </Form.Label>
+                            </Form.Check>
+                        </Form.Group>
+                        <Button type="submit" variant="primary">
+                            Submit
+                        </Button>
+                    </Form.Fieldset>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
+    <Form.Fieldset disabled>
+        <Form.Group>
+            <Form.Label for="disabledTextInput">Disabled input</Form.Label>
+            <Form.Input type="text" id="disabledTextInput" placeholder="Disabled input" />
+        </Form.Group>
+        <Form.Group>
+            <Form.Label for="disabledSelect">Disabled select menu</Form.Label>
+            <Form.Select id="disabledSelect">
+                <Form.Option>Disabled select</Form.Option>
+            </Form.Select>
+        </Form.Group>
+        <Form.Group>
+            <Form.Check>
+                <Form.Input type="checkbox" id="disabledFieldsetCheck" disabled />
+                <Form.Label form-check for="disabledFieldsetCheck">
+                    Can't check this
+                </Form.Label>
+            </Form.Check>
+        </Form.Group>
+        <Button type="submit" variant="primary">
+            Submit
+        </Button>
+    </Form.Fieldset>
+</Form>`}</Code>
+            <Callout variant="danger">
+                <h5>Cross-browser compatibility</h5>
+                <p>
+                    While Bootstrap will apply these styles in all browsers, Internet Explorer 11 and below don’t fully support the disabled
+                    attribute on a <code>{`<fieldset>`}</code>. Use custom JavaScript to disable the fieldset in these browsers.
+                </p>
+            </Callout>
+            <Anchor name="forms-validations">
+                <h2>Validations</h2>
+            </Anchor>
+            <p>
+                Use prop <code>valid</code> on any form control to indicate the validation state. Values:
+            </p>
+            <ul>
+                <li>
+                    <code>undefined</code> - not validated
+                </li>
+                <li>
+                    <code>true</code> - valid
+                </li>
+                <li>
+                    <code>false</code> - invalid{" "}
+                </li>
+            </ul>
+            <Example>
+                <ValidationExample />
+            </Example>
+            <Code language="tsx">{`export function ValidationExample(): b.IBobrilNode {
+    const [firstName, setFirstName] = b.useState("");
+    const [lastName, setLastName] = b.useState("");
+    const [city, setCity] = b.useState("");
+    const [state, setState] = b.useState("");
+    const [zip, setZip] = b.useState("");
+    const [confirmed, setConfirmed] = b.useState(false);
+
+    const [firstNameValid, setFirstNameValid] = b.useState<boolean | undefined>(undefined);
+    const [lastNameValid, setLastNameValid] = b.useState<boolean | undefined>(undefined);
+    const [cityValid, setCityValid] = b.useState<boolean | undefined>(undefined);
+    const [stateValid, setStateValid] = b.useState<boolean | undefined>(undefined);
+    const [zipValid, setZipValid] = b.useState<boolean | undefined>(undefined);
+    const [confirmedValid, setConfirmedValid] = b.useState<boolean | undefined>(undefined);
+
+    return (
+        <Form>
+            <Form.Row>
+                <Col md={6} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom01">First name</Form.Label>
+                    <Form.Input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom01"
+                        value={firstName}
+                        onChange={(val: string) => {
+                            setFirstName(val);
+                            setFirstNameValid(undefined);
+                        }}
+                        valid={firstNameValid}
+                    />
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please provide a first name.</Feedback.Invalid>
+                </Col>
+                <Col md={6} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom02">Last name</Form.Label>
+                    <Form.Input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom02"
+                        value={lastName}
+                        onChange={(val: string) => {
+                            setLastName(val);
+                            setLastNameValid(undefined);
+                        }}
+                        valid={lastNameValid}
+                    />
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please provide a last name.</Feedback.Invalid>
+                </Col>
+            </Form.Row>
+            <Form.Row>
+                <Col md={6} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom03">City</Form.Label>
+                    <Form.Input
+                        type="text"
+                        id="validationCustom03"
+                        value={city}
+                        onChange={(val: string) => {
+                            setCity(val);
+                            setCityValid(undefined);
+                        }}
+                        valid={cityValid}
+                    />
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please provide a valid city.</Feedback.Invalid>
+                </Col>
+                <Col md={3} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom04">State</Form.Label>
+                    <Form.Select
+                        id="validationCustom04"
+                        value={state}
+                        onChange={(val: string) => {
+                            setState(val);
+                            setStateValid(undefined);
+                        }}
+                        valid={stateValid}
+                    >
+                        <Form.Option selected={state === ""} disabled value="">
+                            Choose...
+                        </Form.Option>
+                        <Form.Option selected={state === "Czech Republic"} value="Czech Republic">
+                            Czech Republic
+                        </Form.Option>
+                    </Form.Select>
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please select a valid state.</Feedback.Invalid>
+                </Col>
+                <Col md={3} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom05">Zip</Form.Label>
+                    <Form.Input
+                        type="text"
+                        id="validationCustom05"
+                        value={zip}
+                        onChange={(val: string) => {
+                            setZip(val);
+                            setZipValid(undefined);
+                        }}
+                        valid={zipValid}
+                    />
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please provide a valid zip.</Feedback.Invalid>
+                </Col>
+            </Form.Row>
+            <Form.Group>
+                <Form.Check>
+                    <Form.Input
+                        type="checkbox"
+                        id="invalidCheck"
+                        value={confirmed}
+                        onChange={(val: boolean) => {
+                            setConfirmed(val);
+                            setConfirmedValid(undefined);
+                        }}
+                        valid={confirmedValid}
+                    />
+                    <Form.Label form-check for="invalidCheck">
+                        Agree to terms and conditions
+                    </Form.Label>
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>You must agree before submitting.</Feedback.Invalid>
+                </Form.Check>
+            </Form.Group>
+            <Button
+                type="submit"
+                onClick={() => {
+                    setFirstNameValid(firstName.length > 0);
+                    setLastNameValid(lastName.length > 0);
+                    setCityValid(city.length > 0);
+                    setStateValid(state.length > 0);
+                    setZipValid(zip.length > 0);
+                    setConfirmedValid(confirmed);
+                }}
+            >
+                Submit
+            </Button>
+        </Form>
+    );
+}
+
+<ValidationExample />`}</Code>
+            <Anchor name="forms-validations-tooltips">
+                <h3>Tooltips</h3>
+                <p>
+                    Change feedback to be displayed as tooltip with <code>tooltip</code> prop.
+                </p>
+                <Example>
+                    <Form>
+                        <Form.Row>
+                            <Col md={6} style={margin({ side: "b", size: 3 })}>
+                                <Form.Label for="validationTooltip01">First name</Form.Label>
+                                <Form.Input type="text" class="form-control" id="validationTooltip01" value="Mark" valid={true} />
+                                <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
+                                <Feedback.Invalid tooltip>Please provide a first name.</Feedback.Invalid>
+                            </Col>
+                            <Col md={6} style={margin({ side: "b", size: 3 })}>
+                                <Form.Label for="validationTooltip02">Last name</Form.Label>
+                                <Form.Input type="text" class="form-control" id="validationTooltip02" value="" valid={false} />
+                                <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
+                                <Feedback.Invalid tooltip>Please provide a last name.</Feedback.Invalid>
+                            </Col>
+                        </Form.Row>
+                    </Form>
+                </Example>
+                <Code language="tsx">{`<Form>
+    <Form.Row>
+        <Col md={6} style={margin({ side: "b", size: 3 })}>
+            <Form.Label for="validationTooltip01">First name</Form.Label>
+            <Form.Input type="text" class="form-control" id="validationTooltip01" value="Mark" valid={true} />
+            <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
+            <Feedback.Invalid tooltip>Please provide a first name.</Feedback.Invalid>
+        </Col>
+        <Col md={6} style={margin({ side: "b", size: 3 })}>
+            <Form.Label for="validationTooltip02">Last name</Form.Label>
+            <Form.Input type="text" class="form-control" id="validationTooltip02" value="" valid={false} />
+            <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
+            <Feedback.Invalid tooltip>Please provide a last name.</Feedback.Invalid>
+        </Col>
+    </Form.Row>
+</Form>`}</Code>
+            </Anchor>
         </>
     );
 }
@@ -1249,6 +1585,68 @@ function DefaultCheckboxesExample(): b.IBobrilNode {
                 </Form.Label>
             </Form.Check>
             <Form.Text>Checkbox 1: {JSON.stringify(checkbox1)}</Form.Text>
+            <Anchor name="forms-validation">
+                <h2>Validation</h2>
+            </Anchor>
+            <p>
+                Add the <code>disabled</code> boolean prop on an input to prevent user interactions and make it appear lighter.
+            </p>
+            <Code language="tsx">{`<Form.Input id="disabledInput" type="text" placeholder="Disabled input here..." disabled />`}</Code>
+            <Example>
+                <Form>
+                    <Form.Fieldset disabled>
+                        <Form.Group>
+                            <Form.Label for="disabledTextInput">Disabled input</Form.Label>
+                            <Form.Input type="text" id="disabledTextInput" placeholder="Disabled input" />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label for="disabledSelect">Disabled select menu</Form.Label>
+                            <Form.Select id="disabledSelect">
+                                <Form.Option>Disabled select</Form.Option>
+                            </Form.Select>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Check>
+                                <Form.Input type="checkbox" id="disabledFieldsetCheck" disabled />
+                                <Form.Label form-check for="disabledFieldsetCheck">
+                                    Can't check this
+                                </Form.Label>
+                            </Form.Check>
+                        </Form.Group>
+                        <Button type="submit" variant="primary">
+                            Submit
+                        </Button>
+                    </Form.Fieldset>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
+    <Form.Fieldset disabled>
+        <Form.Group>
+            <Form.Label for="disabledTextInput">Disabled input</Form.Label>
+            <Form.Input type="text" id="disabledTextInput" placeholder="Disabled input" />
+        </Form.Group>
+        <Form.Group>
+            <Form.Label for="disabledSelect">Disabled select menu</Form.Label>
+            <Form.Select id="disabledSelect">
+                <Form.Option>Disabled select</Form.Option>
+            </Form.Select>
+        </Form.Group>
+        <Form.Group>
+            <Form.Check>
+                <Form.Input type="checkbox" id="disabledFieldsetCheck" disabled />
+                <Form.Label form-check for="disabledFieldsetCheck">
+                    Can't check this
+                </Form.Label>
+            </Form.Check>
+        </Form.Group>
+        <Button type="submit" variant="primary">
+            Submit
+        </Button>
+    </Form.Fieldset>
+</Form>`}</Code>
+
+            {/* InputGroups workaround
+        Custom Formy */}
         </>
     );
 }
@@ -1277,5 +1675,145 @@ function DefaultRadiosExample(): b.IBobrilNode {
             </Form.Check>
             <Form.Text>Radio: {JSON.stringify(radio)}</Form.Text>
         </>
+    );
+}
+
+export function ValidationExample(): b.IBobrilNode {
+    const [firstName, setFirstName] = b.useState("");
+    const [lastName, setLastName] = b.useState("");
+    const [city, setCity] = b.useState("");
+    const [state, setState] = b.useState("");
+    const [zip, setZip] = b.useState("");
+    const [confirmed, setConfirmed] = b.useState(false);
+
+    const [firstNameValid, setFirstNameValid] = b.useState<boolean | undefined>(undefined);
+    const [lastNameValid, setLastNameValid] = b.useState<boolean | undefined>(undefined);
+    const [cityValid, setCityValid] = b.useState<boolean | undefined>(undefined);
+    const [stateValid, setStateValid] = b.useState<boolean | undefined>(undefined);
+    const [zipValid, setZipValid] = b.useState<boolean | undefined>(undefined);
+    const [confirmedValid, setConfirmedValid] = b.useState<boolean | undefined>(undefined);
+
+    return (
+        <Form>
+            <Form.Row>
+                <Col md={6} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom01">First name</Form.Label>
+                    <Form.Input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom01"
+                        value={firstName}
+                        onChange={(val: string) => {
+                            setFirstName(val);
+                            setFirstNameValid(undefined);
+                        }}
+                        valid={firstNameValid}
+                    />
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please provide a first name.</Feedback.Invalid>
+                </Col>
+                <Col md={6} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom02">Last name</Form.Label>
+                    <Form.Input
+                        type="text"
+                        class="form-control"
+                        id="validationCustom02"
+                        value={lastName}
+                        onChange={(val: string) => {
+                            setLastName(val);
+                            setLastNameValid(undefined);
+                        }}
+                        valid={lastNameValid}
+                    />
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please provide a last name.</Feedback.Invalid>
+                </Col>
+            </Form.Row>
+            <Form.Row>
+                <Col md={6} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom03">City</Form.Label>
+                    <Form.Input
+                        type="text"
+                        id="validationCustom03"
+                        value={city}
+                        onChange={(val: string) => {
+                            setCity(val);
+                            setCityValid(undefined);
+                        }}
+                        valid={cityValid}
+                    />
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please provide a valid city.</Feedback.Invalid>
+                </Col>
+                <Col md={3} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom04">State</Form.Label>
+                    <Form.Select
+                        id="validationCustom04"
+                        value={state}
+                        onChange={(val: string) => {
+                            setState(val);
+                            setStateValid(undefined);
+                        }}
+                        valid={stateValid}
+                    >
+                        <Form.Option selected={state === ""} disabled value="">
+                            Choose...
+                        </Form.Option>
+                        <Form.Option selected={state === "Czech Republic"} value="Czech Republic">
+                            Czech Republic
+                        </Form.Option>
+                    </Form.Select>
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please select a valid state.</Feedback.Invalid>
+                </Col>
+                <Col md={3} style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="validationCustom05">Zip</Form.Label>
+                    <Form.Input
+                        type="text"
+                        id="validationCustom05"
+                        value={zip}
+                        onChange={(val: string) => {
+                            setZip(val);
+                            setZipValid(undefined);
+                        }}
+                        valid={zipValid}
+                    />
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>Please provide a valid zip.</Feedback.Invalid>
+                </Col>
+            </Form.Row>
+            <Form.Group>
+                <Form.Check>
+                    <Form.Input
+                        type="checkbox"
+                        id="invalidCheck"
+                        value={confirmed}
+                        onChange={(val: boolean) => {
+                            setConfirmed(val);
+                            setConfirmedValid(undefined);
+                        }}
+                        valid={confirmedValid}
+                    />
+                    <Form.Label form-check for="invalidCheck">
+                        Agree to terms and conditions
+                    </Form.Label>
+                    <Feedback.Valid>Looks good!</Feedback.Valid>
+                    <Feedback.Invalid>You must agree before submitting.</Feedback.Invalid>
+                </Form.Check>
+            </Form.Group>
+            <Button
+                type="submit"
+                onClick={() => {
+                    setFirstNameValid(firstName.length > 0);
+                    setLastNameValid(lastName.length > 0);
+                    setCityValid(city.length > 0);
+                    setStateValid(state.length > 0);
+                    setZipValid(zip.length > 0);
+                    setConfirmedValid(confirmed);
+                }}
+            >
+                Submit
+            </Button>
+        </Form>
     );
 }

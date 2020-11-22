@@ -1,14 +1,17 @@
 import * as b from "bobril";
+import { createFilledDictionary } from "../../helpers/dict";
+import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { Col, IColData } from "../layouts/Col";
 
 export const formLabelStyles = {
     formCheckLabel: b.styleDef("form-check-label"),
     colFormLabel: b.styleDef("col-form-label"),
+    colFormLabelSizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`col-form-label-${breakpoint}`)])),
 };
 
 export interface IFormLabelData extends IColData {
     "form-check"?: boolean;
-    col?: boolean;
+    col?: boolean | Breakpoint;
 }
 
 export class FormLabel extends Col<IFormLabelData> {
@@ -21,6 +24,13 @@ export class FormLabel extends Col<IFormLabelData> {
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         const styles = [this.data["form-check"] && formLabelStyles.formCheckLabel];
-        return this.data.col ? [...super.componentSpecificStyles(), formLabelStyles.colFormLabel, ...styles] : styles;
+        return this.data.col
+            ? [
+                  ...super.componentSpecificStyles(),
+                  formLabelStyles.colFormLabel,
+                  this.data.col !== true && formLabelStyles.colFormLabelSizes(this.data.col),
+                  ...styles,
+              ]
+            : styles;
     }
 }

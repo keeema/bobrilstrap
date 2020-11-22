@@ -10,9 +10,13 @@ import { FormSelect } from "./FormSelect";
 import { FormText } from "./FormText";
 import { FormTextarea } from "./FormTextarea";
 
-export const formStyles = {};
+export const formStyles = {
+    inline: b.styleDef("form-inline"),
+};
 
-export interface IFormData extends IBaseElementDataWithChildren {}
+export interface IFormData extends IBaseElementDataWithChildren {
+    inline?: boolean;
+}
 
 export class Form extends BaseElement<IFormData> {
     static id: string = "bobrilstrap-form";
@@ -33,6 +37,6 @@ export class Form extends BaseElement<IFormData> {
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [];
+        return [this.data.inline && formStyles.inline];
     }
 }

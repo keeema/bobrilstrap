@@ -2,10 +2,12 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button, Col, Form, margin, Row, textColor, position } from "../../../../../index";
+import { Button, Col, Form, margin, Row, textColor, position, InputGroup } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { padding } from "../../../../../src/utilities/spacing";
+import { alignItems } from "../../../../../src/utilities/alignment";
+import { srOnly } from "../../../../../src/utilities/screenReaders";
 
 export const formsRoute: IRouteWithNavDefinition = {
     url: "forms",
@@ -858,6 +860,333 @@ export function FormsDoc(): b.IBobrilNode {
             </Button>
         </Col>
     </Form.Group>
+</Form>`}</Code>
+            <h5>Horizontal form label sizing</h5>
+            <p>
+                Be sure to use prop <code>col</code> with value <code>sm</code> or <code>lg</code> to correctly follow the size of form.
+            </p>
+            <Example>
+                <Form>
+                    <Form.Group row>
+                        <Form.Label for="colFormLabelSm" col="sm" sm={2}>
+                            Email
+                        </Form.Label>
+                        <Col span={10}>
+                            <Form.Input type="email" size="sm" id="colFormLabelSm" placeholder="sm" />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group row>
+                        <Form.Label for="colFormLabelSm" col sm={2}>
+                            Email
+                        </Form.Label>
+                        <Col span={10}>
+                            <Form.Input type="email" id="colFormLabel" placeholder="default" />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group row>
+                        <Form.Label for="colFormLabelLg" col="lg" sm={2}>
+                            Email
+                        </Form.Label>
+                        <Col span={10}>
+                            <Form.Input type="email" size="lg" id="colFormLabelLg" placeholder="lg" />
+                        </Col>
+                    </Form.Group>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
+                    <Form.Group row>
+                        <Form.Label for="colFormLabelSm" col="sm" sm={2}>
+                            Email
+                        </Form.Label>
+                        <Col span={10}>
+                            <Form.Input type="email" size="sm" id="colFormLabelSm" placeholder="sm" />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group row>
+                        <Form.Label for="colFormLabelSm" col sm={2}>
+                            Email
+                        </Form.Label>
+                        <Col span={10}>
+                            <Form.Input type="email" id="colFormLabel" placeholder="default" />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group row>
+                        <Form.Label for="colFormLabelLg" col="lg" sm={2}>
+                            Email
+                        </Form.Label>
+                        <Col span={10}>
+                            <Form.Input type="email" size="lg" id="colFormLabelLg" placeholder="lg" />
+                        </Col>
+                    </Form.Group>
+                </Form>`}</Code>
+            <Anchor name="forms-layout-form-grid-column-sizing">
+                <h4>Column sizing</h4>
+            </Anchor>
+            <p>
+                As shown in the previous examples, our grid system allows you to place any number of columns within a row. They’ll split the
+                available width equally between them. You may also pick a subset of your columns to take up more or less space, while the
+                remaining columns equally split the rest, with specific column span.
+            </p>
+            <Example>
+                <Form>
+                    <Form.Row>
+                        <Col span={7}>
+                            <Form.Input type="text" placeholder="City" />
+                        </Col>
+                        <Col>
+                            <Form.Input type="text" placeholder="State" />
+                        </Col>
+                        <Col>
+                            <Form.Input type="text" placeholder="Zip" />
+                        </Col>
+                    </Form.Row>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
+    <Form.Row>
+        <Col span={7}>
+            <Form.Input type="text" placeholder="City" />
+        </Col>
+        <Col>
+            <Form.Input type="text" placeholder="State" />
+        </Col>
+        <Col>
+            <Form.Input type="text" placeholder="Zip" />
+        </Col>
+    </Form.Row>
+</Form>`}</Code>
+            <Anchor name="forms-layout-form-grid-auto-sizing">
+                <h4>Auto-sizing</h4>
+            </Anchor>
+            <p>
+                The example below uses a flexbox utility to vertically center the contents and uses <code>span="auto"</code> so that your
+                columns only take up as much space as needed. Put another way, the column sizes itself based on the contents.
+            </p>
+            <Example>
+                <Form>
+                    <Form.Row style={alignItems("center")}>
+                        <Col span="auto">
+                            <Form.Label style={srOnly} for="inlineFormInput">
+                                Name
+                            </Form.Label>
+                            <Form.Input type="text" style={margin({ side: "b", size: 2 })} id="inlineFormInput" placeholder="Jane Doe" />
+                        </Col>
+                        <Col span="auto">
+                            <Form.Label style={srOnly} for="inlineFormInputGroup">
+                                Username
+                            </Form.Label>
+                            <InputGroup style={margin({ side: "b", size: 2 })}>
+                                <InputGroup.Prepend>
+                                    <InputGroup.Text>@</InputGroup.Text>
+                                </InputGroup.Prepend>
+                                <Form.Input type="text" id="inlineFormInputGroup" placeholder="Username" />
+                            </InputGroup>
+                        </Col>
+                        <Col span="auto">
+                            <Form.Check style={margin({ side: "b", size: 2 })}>
+                                <Form.Input type="checkbox" id="autoSizingCheck" />
+                                <Form.Label form-check for="autoSizingCheck">
+                                    Remember me
+                                </Form.Label>
+                            </Form.Check>
+                        </Col>
+                        <Col span="auto">
+                            <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+                                Submit
+                            </Button>
+                        </Col>
+                    </Form.Row>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
+    <Form.Row style={alignItems("center")}>
+        <Col span="auto">
+            <Form.Label style={srOnly} for="inlineFormInput">
+                Name
+            </Form.Label>
+            <Form.Input type="text" style={margin({ side: "b", size: 2 })} id="inlineFormInput" placeholder="Jane Doe" />
+        </Col>
+        <Col span="auto">
+            <Form.Label style={srOnly} for="inlineFormInputGroup">
+                Username
+            </Form.Label>
+            <InputGroup style={margin({ side: "b", size: 2 })}>
+                <InputGroup.Prepend>
+                    <InputGroup.Text>@</InputGroup.Text>
+                </InputGroup.Prepend>
+                <Form.Input type="text" id="inlineFormInputGroup" placeholder="Username" />
+            </InputGroup>
+        </Col>
+        <Col span="auto">
+            <Form.Check style={margin({ side: "b", size: 2 })}>
+                <Form.Input type="checkbox" id="autoSizingCheck" />
+                <Form.Label form-check for="autoSizingCheck">
+                    Remember me
+                </Form.Label>
+            </Form.Check>
+        </Col>
+        <Col span="auto">
+            <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+                Submit
+            </Button>
+        </Col>
+    </Form.Row>
+</Form>`}</Code>
+            <p>You can then remix that once again with size-specific column props.</p>
+            <Example>
+                <Form>
+                    <Form.Row style={alignItems("center")}>
+                        <Col sm={3} style={margin({ side: "y", size: 1 })}>
+                            <Form.Label style={srOnly} for="inlineFormInputName">
+                                Name
+                            </Form.Label>
+                            <Form.Input type="text" id="inlineFormInputName" placeholder="Jane Doe" />
+                        </Col>
+                        <Col sm={3} style={margin({ side: "y", size: 1 })}>
+                            <Form.Label style={srOnly} for="inlineFormInputGroupUsername">
+                                Username
+                            </Form.Label>
+                            <InputGroup>
+                                <InputGroup.Prepend>
+                                    <InputGroup.Text>@</InputGroup.Text>
+                                </InputGroup.Prepend>
+                                <Form.Input type="text" id="inlineFormInputGroupUsername" placeholder="Username" />
+                            </InputGroup>
+                        </Col>
+                        <Col span="auto" style={margin({ side: "y", size: 1 })}>
+                            <Form.Check>
+                                <Form.Input type="checkbox" id="autoSizingCheck2" />
+                                <Form.Label form-check for="autoSizingCheck2">
+                                    Remember me
+                                </Form.Label>
+                            </Form.Check>
+                        </Col>
+                        <Col span="auto" style={margin({ side: "y", size: 1 })}>
+                            <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+                                Submit
+                            </Button>
+                        </Col>
+                    </Form.Row>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
+                    <Form.Row style={alignItems("center")}>
+                        <Col sm={3} style={margin({ side: "y", size: 1 })}>
+                            <Form.Label style={srOnly} for="inlineFormInputName">
+                                Name
+                            </Form.Label>
+                            <Form.Input type="text" id="inlineFormInputName" placeholder="Jane Doe" />
+                        </Col>
+                        <Col sm={3} style={margin({ side: "y", size: 1 })}>
+                            <Form.Label style={srOnly} for="inlineFormInputGroupUsername">
+                                Username
+                            </Form.Label>
+                            <InputGroup>
+                                <InputGroup.Prepend>
+                                    <InputGroup.Text>@</InputGroup.Text>
+                                </InputGroup.Prepend>
+                                <Form.Input type="text" id="inlineFormInputGroupUsername" placeholder="Username" />
+                            </InputGroup>
+                        </Col>
+                        <Col span="auto" style={margin({ side: "y", size: 1 })}>
+                            <Form.Check>
+                                <Form.Input type="checkbox" id="autoSizingCheck2" />
+                                <Form.Label form-check for="autoSizingCheck2">
+                                    Remember me
+                                </Form.Label>
+                            </Form.Check>
+                        </Col>
+                        <Col span="auto" style={margin({ side: "y", size: 1 })}>
+                            <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+                                Submit
+                            </Button>
+                        </Col>
+                    </Form.Row>
+                </Form>`}</Code>
+            <Anchor name="forms-layout-inline-forms">
+                <h3>Inline forms</h3>
+            </Anchor>
+            <p>
+                Use the prop <code>inline</code> to display a series of labels, form controls, and buttons on a single horizontal row. Form
+                controls within inline forms vary slightly from their default states.
+            </p>
+            <ul>
+                <li>
+                    Controls are <code>display: flex</code>, collapsing any HTML white space and allowing you to provide alignment control
+                    with spacing and flexbox utilities.
+                </li>
+                <li>
+                    Controls and input groups receive <code>width: auto</code> to override the default <code>width: 100%</code>.
+                </li>
+                <li>
+                    Controls <strong>only appear inline in viewports that are at least 576px</strong> wide to account for narrow viewports
+                    on mobile devices.
+                </li>
+            </ul>
+            <p>
+                You may need to manually address the width and alignment of individual form controls with spacing utilities (as shown
+                below). Lastly, be sure to always include a <code>{`<Form.Label>`}</code> with each form control, even if you need to hide
+                it from non-screenreader visitors with <code>srOnly</code>.
+            </p>
+            <Example>
+                <Form inline>
+                    <Form.Label style={srOnly} for="inlineFormInputName2">
+                        Name
+                    </Form.Label>
+                    <Form.Input
+                        type="text"
+                        style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}
+                        id="inlineFormInputName2"
+                        placeholder="Jane Doe"
+                    />
+                    <Form.Label style={srOnly} for="inlineFormInputGroupUsername2">
+                        Username
+                    </Form.Label>
+                    <InputGroup style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}>
+                        <InputGroup.Prepend>
+                            <InputGroup.Text>@</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <Form.Input type="text" id="inlineFormInputGroupUsername2" placeholder="Username" />
+                    </InputGroup>
+                    <Form.Check style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}>
+                        <Form.Input type="checkbox" id="inlineFormCheck" />
+                        <Form.Label form-check for="inlineFormCheck">
+                            Remember me
+                        </Form.Label>
+                    </Form.Check>
+                    <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+                        Submit
+                    </Button>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form inline>
+    <Form.Label style={srOnly} for="inlineFormInputName2">
+        Name
+    </Form.Label>
+    <Form.Input
+        type="text"
+        style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}
+        id="inlineFormInputName2"
+        placeholder="Jane Doe"
+    />
+    <Form.Label style={srOnly} for="inlineFormInputGroupUsername2">
+        Username
+    </Form.Label>
+    <InputGroup style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}>
+        <InputGroup.Prepend>
+            <InputGroup.Text>@</InputGroup.Text>
+        </InputGroup.Prepend>
+        <Form.Input type="text" id="inlineFormInputGroupUsername2" placeholder="Username" />
+    </InputGroup>
+    <Form.Check style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}>
+        <Form.Input type="checkbox" id="inlineFormCheck" />
+        <Form.Label form-check for="inlineFormCheck">
+            Remember me
+        </Form.Label>
+    </Form.Check>
+    <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+        Submit
+    </Button>
 </Form>`}</Code>
         </>
     );

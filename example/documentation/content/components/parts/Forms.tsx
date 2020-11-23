@@ -342,7 +342,7 @@ export function FormsDoc(): b.IBobrilNode {
                 lighter (just like disabled inputs), but retain the standard cursor.
             </p>
             <Example>
-                <Form.Input type="text" placeholder="Readonly input here..." readonly onChange={(val: string) => alert(val)} />
+                <Form.Input type="text" placeholder="Readonly input here..." readonly />
             </Example>
             <Code language="tsx">{`<Form.Input type="text" placeholder="Readonly input here..." readonly />`}</Code>
             <Anchor name="forms-form-controls-readonly-plain-text">
@@ -1467,7 +1467,6 @@ export function FormsDoc(): b.IBobrilNode {
                 </Form.Check>
             </Form.Group>
             <Button
-                type="submit"
                 onClick={() => {
                     setFirstNameValid(firstName.length > 0);
                     setLastNameValid(lastName.length > 0);
@@ -1486,28 +1485,29 @@ export function FormsDoc(): b.IBobrilNode {
 <ValidationExample />`}</Code>
             <Anchor name="forms-validations-tooltips">
                 <h3>Tooltips</h3>
-                <p>
-                    Change feedback to be displayed as tooltip with <code>tooltip</code> prop.
-                </p>
-                <Example>
-                    <Form>
-                        <Form.Row>
-                            <Col md={6} style={margin({ side: "b", size: 3 })}>
-                                <Form.Label for="validationTooltip01">First name</Form.Label>
-                                <Form.Input type="text" class="form-control" id="validationTooltip01" value="Mark" valid={true} />
-                                <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
-                                <Feedback.Invalid tooltip>Please provide a first name.</Feedback.Invalid>
-                            </Col>
-                            <Col md={6} style={margin({ side: "b", size: 3 })}>
-                                <Form.Label for="validationTooltip02">Last name</Form.Label>
-                                <Form.Input type="text" class="form-control" id="validationTooltip02" value="" valid={false} />
-                                <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
-                                <Feedback.Invalid tooltip>Please provide a last name.</Feedback.Invalid>
-                            </Col>
-                        </Form.Row>
-                    </Form>
-                </Example>
-                <Code language="tsx">{`<Form>
+            </Anchor>
+            <p>
+                Change feedback to be displayed as tooltip with <code>tooltip</code> prop.
+            </p>
+            <Example>
+                <Form>
+                    <Form.Row>
+                        <Col md={6} style={margin({ side: "b", size: 3 })}>
+                            <Form.Label for="validationTooltip01">First name</Form.Label>
+                            <Form.Input type="text" class="form-control" id="validationTooltip01" value="Mark" valid={true} />
+                            <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
+                            <Feedback.Invalid tooltip>Please provide a first name.</Feedback.Invalid>
+                        </Col>
+                        <Col md={6} style={margin({ side: "b", size: 3 })}>
+                            <Form.Label for="validationTooltip02">Last name</Form.Label>
+                            <Form.Input type="text" class="form-control" id="validationTooltip02" value="" valid={false} />
+                            <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
+                            <Feedback.Invalid tooltip>Please provide a last name.</Feedback.Invalid>
+                        </Col>
+                    </Form.Row>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
     <Form.Row>
         <Col md={6} style={margin({ side: "b", size: 3 })}>
             <Form.Label for="validationTooltip01">First name</Form.Label>
@@ -1523,7 +1523,8 @@ export function FormsDoc(): b.IBobrilNode {
         </Col>
     </Form.Row>
 </Form>`}</Code>
-            </Anchor>
+            {/* InputGroups workaround
+        Custom Formy */}
         </>
     );
 }
@@ -1585,68 +1586,6 @@ function DefaultCheckboxesExample(): b.IBobrilNode {
                 </Form.Label>
             </Form.Check>
             <Form.Text>Checkbox 1: {JSON.stringify(checkbox1)}</Form.Text>
-            <Anchor name="forms-validation">
-                <h2>Validation</h2>
-            </Anchor>
-            <p>
-                Add the <code>disabled</code> boolean prop on an input to prevent user interactions and make it appear lighter.
-            </p>
-            <Code language="tsx">{`<Form.Input id="disabledInput" type="text" placeholder="Disabled input here..." disabled />`}</Code>
-            <Example>
-                <Form>
-                    <Form.Fieldset disabled>
-                        <Form.Group>
-                            <Form.Label for="disabledTextInput">Disabled input</Form.Label>
-                            <Form.Input type="text" id="disabledTextInput" placeholder="Disabled input" />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label for="disabledSelect">Disabled select menu</Form.Label>
-                            <Form.Select id="disabledSelect">
-                                <Form.Option>Disabled select</Form.Option>
-                            </Form.Select>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Check>
-                                <Form.Input type="checkbox" id="disabledFieldsetCheck" disabled />
-                                <Form.Label form-check for="disabledFieldsetCheck">
-                                    Can't check this
-                                </Form.Label>
-                            </Form.Check>
-                        </Form.Group>
-                        <Button type="submit" variant="primary">
-                            Submit
-                        </Button>
-                    </Form.Fieldset>
-                </Form>
-            </Example>
-            <Code language="tsx">{`<Form>
-    <Form.Fieldset disabled>
-        <Form.Group>
-            <Form.Label for="disabledTextInput">Disabled input</Form.Label>
-            <Form.Input type="text" id="disabledTextInput" placeholder="Disabled input" />
-        </Form.Group>
-        <Form.Group>
-            <Form.Label for="disabledSelect">Disabled select menu</Form.Label>
-            <Form.Select id="disabledSelect">
-                <Form.Option>Disabled select</Form.Option>
-            </Form.Select>
-        </Form.Group>
-        <Form.Group>
-            <Form.Check>
-                <Form.Input type="checkbox" id="disabledFieldsetCheck" disabled />
-                <Form.Label form-check for="disabledFieldsetCheck">
-                    Can't check this
-                </Form.Label>
-            </Form.Check>
-        </Form.Group>
-        <Button type="submit" variant="primary">
-            Submit
-        </Button>
-    </Form.Fieldset>
-</Form>`}</Code>
-
-            {/* InputGroups workaround
-        Custom Formy */}
         </>
     );
 }
@@ -1802,7 +1741,6 @@ export function ValidationExample(): b.IBobrilNode {
                 </Form.Check>
             </Form.Group>
             <Button
-                type="submit"
                 onClick={() => {
                     setFirstNameValid(firstName.length > 0);
                     setLastNameValid(lastName.length > 0);

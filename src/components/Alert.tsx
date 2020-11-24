@@ -15,14 +15,13 @@ export const alertStyles = {
     info: b.styleDef("alert-info"),
     light: b.styleDef("alert-light"),
     dark: b.styleDef("alert-dark"),
-    dismissible: b.styleDef("alert-dismissible fade show"),
+    dismissible: b.styleDef("alert-dismissible"),
     fade: b.styleDef("fade"),
     show: b.styleDef("show"),
 };
 
 export interface IAlertData extends IBaseElementDataWithChildren {
     variant?: AlertVariant;
-    animation?: boolean;
     dismissible?: boolean;
     "dismiss-aria-label"?: string;
     "dismiss-animation"?: boolean;
@@ -37,7 +36,6 @@ export class Alert extends BaseElement<IAlertData> {
 
     componentProperties = (): (keyof IAlertData)[] => [
         "variant",
-        "animation",
         "dismissible",
         "dismissible-aria-label",
         "dismiss-animation",
@@ -69,8 +67,8 @@ export class Alert extends BaseElement<IAlertData> {
             alertStyles.alert,
             alertStyles[this.data.variant ?? "primary"],
             this.data.dismissible && alertStyles.dismissible,
-            this.data.dismissible && this.data.animation && alertStyles.fade,
-            this.data.dismissible && this.data.animation && alertStyles.show,
+            this.data.dismissible && this.data["dismiss-animation"] && alertStyles.fade,
+            this.data.dismissible && this.data["dismiss-animation"] && alertStyles.show,
         ];
     }
 

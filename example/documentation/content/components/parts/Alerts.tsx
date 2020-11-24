@@ -129,10 +129,11 @@ export function Alerts(): b.IBobrilNode {
                 control the behavior.
             </p>
             <Anchor name="alerts-dismissing-reactive">
-                <h3>Reactive (recommended)</h3>
+                <h3>Reactive</h3>
             </Anchor>
             <p>
-                Use <code>bobril hooks</code> or another standard <code>bobril</code> behavior logic to control dismissing.
+                Use <code>bobril hooks</code> or another standard <code>bobril</code> behavior logic to control dismissing. Animations are
+                not supported in this case.
             </p>
             <Example>
                 <AlertDismissibleExample />

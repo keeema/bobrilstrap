@@ -22,6 +22,7 @@ export const alertStyles = {
 
 export interface IAlertData extends IBaseElementDataWithChildren {
     variant?: AlertVariant;
+    animation?: boolean;
     dismissible?: boolean;
     "dismiss-aria-label"?: string;
     "dismiss-animation"?: boolean;
@@ -36,6 +37,7 @@ export class Alert extends BaseElement<IAlertData> {
 
     componentProperties = (): (keyof IAlertData)[] => [
         "variant",
+        "animation",
         "dismissible",
         "dismissible-aria-label",
         "dismiss-animation",
@@ -49,7 +51,7 @@ export class Alert extends BaseElement<IAlertData> {
 
     render(): b.IBobrilNode {
         if (this.data.dismissible) {
-            this.data.children = [...this.data.children, <DismissButton />];
+            this.data.children = [...[this.data.children], <DismissButton />];
         }
         return super.render();
     }

@@ -29,6 +29,7 @@ export * from "./src/components/CarouselControl";
 export * from "./src/components/CarouselIndicators";
 export * from "./src/components/CarouselInner";
 export * from "./src/components/CarouselItem";
+export * from "./src/components/CustomControl";
 export * from "./src/components/Collapse";
 export * from "./src/components/Dropdown";
 export * from "./src/components/DropdownDivider";

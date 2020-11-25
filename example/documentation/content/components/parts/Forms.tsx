@@ -1414,6 +1414,7 @@ export function FormsDoc(): b.IBobrilNode {
                     <Form.Label for="validationCustom04">State</Form.Label>
                     <Form.Select
                         id="validationCustom04"
+                        custom
                         value={state}
                         onChange={(val: string) => {
                             setState(val);
@@ -1688,6 +1689,7 @@ export function ValidationExample(): b.IBobrilNode {
                     <Form.Label for="validationCustom04">State</Form.Label>
                     <Form.Select
                         id="validationCustom04"
+                        custom
                         value={state}
                         onChange={(val: string) => {
                             setState(val);

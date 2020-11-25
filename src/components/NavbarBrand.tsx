@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const navbarBrandStyles = {
@@ -15,7 +16,7 @@ export class NavbarBrand extends BaseElement<INavbarBrandData> {
     static id: string = "bobrilstrap-navbar-brand";
     componentProperties = (): (keyof INavbarBrandData)[] => ["href"];
 
-    get tag(): string {
+    get tag(): Tags {
         return "a";
     }
 

@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { FormCheck } from "./FormCheck";
 import { FormFieldset } from "./FormFieldset";
@@ -39,7 +40,7 @@ export class Form extends BaseElement<IFormData> {
 
     componentProperties = (): (keyof IFormData)[] => ["inline", "needs-validation", "was-validated" /* , "novalidate" */];
 
-    get tag(): string {
+    get tag(): Tags {
         return "form";
     }
 

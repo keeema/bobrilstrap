@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement, IAttrs } from "./BaseElement";
 
 export const carouselControlStyles = {
@@ -12,7 +13,7 @@ export interface ICarouselControlData extends IBaseElementDataWithChildren {}
 
 abstract class CarouselControl extends BaseElement<ICarouselControlData> {
     componentProperties = (): (keyof ICarouselControlData)[] => [];
-    get tag(): string {
+    get tag(): Tags {
         return "a";
     }
     componentAdditionalAttributes(): IAttrs {
@@ -21,7 +22,7 @@ abstract class CarouselControl extends BaseElement<ICarouselControlData> {
 }
 
 abstract class CarouselControlIcon extends BaseElement<ICarouselControlData> {
-    get tag(): string {
+    get tag(): Tags {
         return "span";
     }
     componentProperties = (): (keyof ICarouselControlData)[] => [];

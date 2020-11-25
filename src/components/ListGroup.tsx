@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { ListGroupItem } from "./ListGroupItem";
 
@@ -17,7 +18,7 @@ export class ListGroup extends BaseElement<IListGroupData> {
 
     componentProperties = (): (keyof IListGroupData)[] => ["flush"];
 
-    get tag(): string {
+    get tag(): Tags {
         return "ul";
     }
 

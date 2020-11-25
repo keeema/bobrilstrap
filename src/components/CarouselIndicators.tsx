@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const carouselIndicatorStyles = {
@@ -11,7 +12,7 @@ export interface ICarouselIndicatorsItemData extends IBaseElementDataWithChildre
 
 export class CarouselIndicatorsItem extends BaseElement<ICarouselIndicatorsItemData> {
     static id: string = "bobrilstrap-carousel-indicators-item";
-    get tag(): string {
+    get tag(): Tags {
         return "li";
     }
     componentProperties = (): (keyof ICarouselIndicatorsItemData)[] => [];
@@ -25,7 +26,7 @@ export interface ICarouselIndicatorsData extends IBaseElementDataWithChildren {}
 export class CarouselIndicators extends BaseElement<ICarouselIndicatorsData> {
     static Item = CarouselIndicatorsItem;
     static id: string = "bobrilstrap-carousel-indicators";
-    get tag(): string {
+    get tag(): Tags {
         return "ol";
     }
     componentProperties = (): (keyof ICarouselIndicatorsData)[] => [];

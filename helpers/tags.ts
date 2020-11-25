@@ -86,6 +86,7 @@ export type Tags =
     | "section"
     | "select"
     | "slot"
+    | "svg"
     | "small"
     | "source"
     | "span"

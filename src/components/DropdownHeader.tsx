@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const dropdownHeaderStyles = {
@@ -11,7 +12,7 @@ export class DropdownHeader extends BaseElement<IDropdownHeaderData> {
     static id: string = "bobrilstrap-dropdown-header";
     componentProperties = (): (keyof IDropdownHeaderData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "h6";
     }
 

@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const navItemStyles = {
@@ -13,7 +14,7 @@ export class NavItem extends BaseElement<INavItemData> {
     static id: string = "bobrilstrap-nav-item";
     componentProperties = (): (keyof INavItemData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "li";
     }
 

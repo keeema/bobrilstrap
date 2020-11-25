@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const formOptionStyles = {};
@@ -9,7 +10,7 @@ export class FormOption extends BaseElement<IFormOptionData> {
     static id: string = "bobrilstrap-form-option";
     componentProperties = (): (keyof IFormOptionData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "option";
     }
 

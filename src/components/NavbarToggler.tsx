@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const navbarTogglerStyles = {
@@ -13,7 +14,7 @@ export class NavbarToggler extends BaseElement<INavbarTogglerData> {
     static id: string = "bobrilstrap-navbar-toggler";
     componentProperties = (): (keyof INavbarTogglerData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "button";
     }
 

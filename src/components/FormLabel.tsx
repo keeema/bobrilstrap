@@ -1,5 +1,6 @@
 import * as b from "bobril";
 import { createFilledDictionary } from "../../helpers/dict";
+import { Tags } from "../../helpers/tags";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { Col, IColData } from "../layouts/Col";
 
@@ -18,7 +19,7 @@ export class FormLabel extends Col<IFormLabelData> {
     static id: string = "bobrilstrap-form-label";
     componentProperties = (): (keyof IFormLabelData)[] => [...super.componentProperties(), "form-check", "col"];
 
-    get tag(): string {
+    get tag(): Tags {
         return "label";
     }
 

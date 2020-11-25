@@ -4,6 +4,7 @@ import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createFilledDictionary } from "../../helpers/dict";
 import { ButtonToolbar } from "./ButtonToolbar";
 import { ButtonGroup } from "./ButtonGroup";
+import { Tags } from "../../helpers/tags";
 
 export type ButtonVariant =
     | "primary"
@@ -67,7 +68,7 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
         return ["variant", "size" /* , "href" */, "type", "block"];
     }
 
-    get tag(): string {
+    get tag(): Tags {
         return this.data.href ? "a" : "button";
     }
 

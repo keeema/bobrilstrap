@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { BreadcrumbItem } from "./BreadcrumbItem";
 
@@ -13,7 +14,7 @@ export class Breadcrumb extends BaseElement<IBreadcrumbData> {
     static Item = BreadcrumbItem;
     componentProperties = (): (keyof IBreadcrumbData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "ol";
     }
 

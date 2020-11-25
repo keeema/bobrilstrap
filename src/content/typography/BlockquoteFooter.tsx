@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "../../components/BaseElement";
 
 export const blockquoteFooterStyles = {
@@ -11,7 +12,7 @@ export class BlockquoteFooter extends BaseElement<IBlockquoteFooterData> {
     static id: string = "bobrilstrap-blockquote-footer";
     componentProperties = (): (keyof IBlockquoteFooterData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "footer";
     }
 

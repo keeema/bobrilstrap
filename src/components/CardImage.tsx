@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { CardImageOverlay } from "./CardImageOverlay";
 
@@ -19,7 +20,7 @@ export class CardImage extends BaseElement<ICardImageData> {
     static Overlay = CardImageOverlay;
     componentProperties = (): (keyof ICardImageData)[] => ["position"];
 
-    get tag(): string {
+    get tag(): Tags {
         return "img";
     }
 

@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const navLinkStyles = {
@@ -18,7 +19,7 @@ export class NavLink extends BaseElement<INavLinkData> {
     static id: string = "bobrilstrap-nav-link";
     componentProperties = (): (keyof INavLinkData)[] => ["disabled" /* , "href" */];
 
-    get tag(): string {
+    get tag(): Tags {
         return "a";
     }
 

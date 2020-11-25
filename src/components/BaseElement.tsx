@@ -81,7 +81,7 @@ export const baseStyles = {
 };
 
 export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.Component<TData> {
-    get tag(): string {
+    get tag(): Tags {
         return "div";
     }
     componentAdditionalAttributes(): IAllAttrs {

@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const listGroupItemStyles = {
@@ -11,7 +12,7 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
     static id: string = "bobrilstrap-list-group-item";
     componentProperties = (): (keyof IListGroupItemData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "li";
     }
 

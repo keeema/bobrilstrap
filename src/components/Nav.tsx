@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { NavItem } from "./NavItem";
 import { NavLink } from "./NavLink";
@@ -43,7 +44,7 @@ export class Nav extends BaseElement<INavData> {
         "navbar",
     ];
 
-    get tag(): string {
+    get tag(): Tags {
         return "nav";
     }
 

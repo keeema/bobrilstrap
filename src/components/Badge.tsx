@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export type BadgeVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
@@ -26,7 +27,7 @@ export class Badge extends BaseElement<IBadgeData> {
     static id: string = "bobrilstrap-badge";
     componentProperties = (): (keyof IBadgeData)[] => ["variant", "pill" /* , href */];
 
-    get tag(): string {
+    get tag(): Tags {
         return this.data.href ? "a" : "span";
     }
 

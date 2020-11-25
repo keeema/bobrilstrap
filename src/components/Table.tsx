@@ -2,6 +2,7 @@ import * as b from "bobril";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { createFilledDictionary } from "../../helpers/dict";
+import { Tags } from "../../helpers/tags";
 
 export type TableVariant = "dark";
 
@@ -30,7 +31,7 @@ export interface ITableData extends IBaseElementDataWithChildren {
 export class Table extends BaseElement<ITableData> {
     componentProperties = (): (keyof ITableData)[] => ["variant", "bordered", "borderless", "striped", "size", "responsive", "hover"];
 
-    get tag(): string {
+    get tag(): Tags {
         return "table";
     }
 

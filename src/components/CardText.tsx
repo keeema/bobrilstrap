@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const cardTextStyles = {
@@ -11,7 +12,7 @@ export class CardText extends BaseElement<ICardTextData> {
     static id: string = "bobrilstrap-card-text";
     componentProperties = (): (keyof ICardTextData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "p";
     }
 

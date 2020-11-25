@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const cardLinkStyles = {
@@ -15,7 +16,7 @@ export class CardLink extends BaseElement<ICardLinkData> {
         /* , "href" */
     ];
 
-    get tag(): string {
+    get tag(): Tags {
         return "a";
     }
 

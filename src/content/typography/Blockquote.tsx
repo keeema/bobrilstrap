@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "../../components/BaseElement";
 import { cardBodyStyles } from "../../components/CardBody";
 import { BlockquoteFooter } from "./BlockquoteFooter";
@@ -17,7 +18,7 @@ export class Blockquote extends BaseElement<IBlockquoteData> {
 
     componentProperties = (): (keyof IBlockquoteData)[] => ["card-body"];
 
-    get tag(): string {
+    get tag(): Tags {
         return "blockquote";
     }
 

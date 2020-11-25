@@ -6,6 +6,7 @@ import { NavbarBrand } from "./NavbarBrand";
 import { Nav } from "./Nav";
 import { NavbarToggler } from "./NavbarToggler";
 import { NavbarCollapse } from "./NavbarCollapse";
+import { Tags } from "../../helpers/tags";
 
 const breakpointsOrDefault: (Breakpoint | true)[] = [...breakpoints, true];
 
@@ -41,7 +42,7 @@ export class Navbar extends BaseElement<INavbarData> {
 
     componentProperties = (): (keyof INavbarData)[] => ["expand", "color-schema", "fixed-top"];
 
-    get tag(): string {
+    get tag(): Tags {
         return "nav";
     }
 

@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { BaseElement, IAllAttrs, IBaseElementData, IBaseElementDataWithChildren } from "../components/BaseElement";
 
 export const iconStyles = {
@@ -14,7 +15,7 @@ export abstract class IconBase extends BaseElement<IIconData> {
     static id: string = "bobrilstrap-icon";
     componentProperties = (): (keyof IIconData)[] => [/* width, height, */ "name"];
 
-    get tag(): string {
+    get tag(): Tags {
         return "svg";
     }
 

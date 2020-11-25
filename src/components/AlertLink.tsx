@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export const alertLinkStyles = {
@@ -15,7 +16,7 @@ export class AlertLink extends BaseElement<IAlertLinkData> {
         /* "href" */
     ];
 
-    get tag(): string {
+    get tag(): Tags {
         return "a";
     }
 

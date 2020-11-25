@@ -1,3 +1,4 @@
+import { Tags } from "../../helpers/tags";
 import { FormControlBase, IFormControlBaseData } from "./FormControlBase";
 
 export const formSelectStyles = {};
@@ -10,7 +11,7 @@ export class FormSelect extends FormControlBase<IFormSelectData> {
     static id: string = "bobrilstrap-form-select";
     componentProperties = (): (keyof IFormSelectData)[] => [...super.componentProperties() /* multiple , */];
 
-    get tag(): string {
+    get tag(): Tags {
         return "select";
     }
 }

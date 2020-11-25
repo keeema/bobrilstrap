@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const formTextStyles = {
@@ -11,7 +12,7 @@ export class FormText extends BaseElement<IFormTextData> {
     static id: string = "bobrilstrap-form-text";
     componentProperties = (): (keyof IFormTextData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "small";
     }
 

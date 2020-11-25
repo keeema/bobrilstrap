@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const cardSubtitleStyles = {
@@ -11,7 +12,7 @@ export class CardSubtitle extends BaseElement<ICardSubtitleData> {
     static id: string = "bobrilstrap-card-subtitle";
     componentProperties = (): (keyof ICardSubtitleData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "h6";
     }
 

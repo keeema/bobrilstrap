@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../helpers/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const dropdownItemTextStyles = {
@@ -11,7 +12,7 @@ export class DropdownItemText extends BaseElement<IDropdownItemTextData> {
     static id: string = "bobrilstrap-dropdown-item-text";
     componentProperties = (): (keyof IDropdownItemTextData)[] => [];
 
-    get tag(): string {
+    get tag(): Tags {
         return "span";
     }
 

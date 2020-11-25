@@ -15,6 +15,7 @@ import {
     alignItems,
     srOnly,
     Feedback,
+    CustomControl,
 } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
@@ -159,6 +160,68 @@ export const formsRoute: IRouteWithNavDefinition = {
                     url: "validations-tooltips",
                     name: "forms-validations-tooltips",
                     label: "Tooltips",
+                    subs: [],
+                },
+                {
+                    url: "supported-components",
+                    name: "forms-validations-supported-components",
+                    label: "Supported components",
+                    subs: [],
+                },
+            ],
+        },
+        {
+            url: "custom-forms",
+            name: "forms-custom-forms",
+            label: "Custom forms",
+            subs: [
+                {
+                    url: "checkboxes-and-radios",
+                    name: "forms-custom-forms-checkboxes-and-radios",
+                    label: "Checkboxes and radios",
+                    subs: [
+                        {
+                            url: "checkboxes",
+                            name: "forms-custom-forms-checkboxes-and-radios-checkboxes",
+                            label: "Checkboxes",
+                            subs: [],
+                        },
+                        {
+                            url: "radios",
+                            name: "forms-custom-forms-checkboxes-and-radios-radios",
+                            label: "Radios",
+                            subs: [],
+                        },
+                        {
+                            url: "disabled",
+                            name: "forms-custom-forms-checkboxes-and-radios-disabled",
+                            label: "Disabled",
+                            subs: [],
+                        },
+                        {
+                            url: "inline",
+                            name: "forms-custom-forms-checkboxes-and-radios-inline",
+                            label: "Inline",
+                            subs: [],
+                        },
+                    ],
+                },
+                {
+                    url: "custom-forms-switches",
+                    name: "forms-custom-forms-custom-forms-switches",
+                    label: "Switches",
+                    subs: [],
+                },
+                {
+                    url: "custom-forms-select-menu",
+                    name: "forms-custom-forms-select-menu",
+                    label: "Select menu",
+                    subs: [],
+                },
+                {
+                    url: "custom-forms-range",
+                    name: "forms-custom-forms-range",
+                    label: "Range",
                     subs: [],
                 },
             ],
@@ -1365,7 +1428,6 @@ export function FormsDoc(): b.IBobrilNode {
                     <Form.Label for="validationCustom01">First name</Form.Label>
                     <Form.Input
                         type="text"
-                        class="form-control"
                         id="validationCustom01"
                         value={firstName}
                         onChange={(val: string) => {
@@ -1381,7 +1443,6 @@ export function FormsDoc(): b.IBobrilNode {
                     <Form.Label for="validationCustom02">Last name</Form.Label>
                     <Form.Input
                         type="text"
-                        class="form-control"
                         id="validationCustom02"
                         value={lastName}
                         onChange={(val: string) => {
@@ -1495,13 +1556,13 @@ export function FormsDoc(): b.IBobrilNode {
                     <Form.Row>
                         <Col md={6} style={margin({ side: "b", size: 3 })}>
                             <Form.Label for="validationTooltip01">First name</Form.Label>
-                            <Form.Input type="text" class="form-control" id="validationTooltip01" value="Mark" valid={true} />
+                            <Form.Input type="text" id="validationTooltip01" value="Mark" valid={true} />
                             <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
                             <Feedback.Invalid tooltip>Please provide a first name.</Feedback.Invalid>
                         </Col>
                         <Col md={6} style={margin({ side: "b", size: 3 })}>
                             <Form.Label for="validationTooltip02">Last name</Form.Label>
-                            <Form.Input type="text" class="form-control" id="validationTooltip02" value="" valid={false} />
+                            <Form.Input type="text" id="validationTooltip02" value="" valid={false} />
                             <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
                             <Feedback.Invalid tooltip>Please provide a last name.</Feedback.Invalid>
                         </Col>
@@ -1512,20 +1573,205 @@ export function FormsDoc(): b.IBobrilNode {
     <Form.Row>
         <Col md={6} style={margin({ side: "b", size: 3 })}>
             <Form.Label for="validationTooltip01">First name</Form.Label>
-            <Form.Input type="text" class="form-control" id="validationTooltip01" value="Mark" valid={true} />
+            <Form.Input type="text" id="validationTooltip01" value="Mark" valid={true} />
             <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
             <Feedback.Invalid tooltip>Please provide a first name.</Feedback.Invalid>
         </Col>
         <Col md={6} style={margin({ side: "b", size: 3 })}>
             <Form.Label for="validationTooltip02">Last name</Form.Label>
-            <Form.Input type="text" class="form-control" id="validationTooltip02" value="" valid={false} />
+            <Form.Input type="text" id="validationTooltip02" value="" valid={false} />
             <Feedback.Valid tooltip>Looks good!</Feedback.Valid>
             <Feedback.Invalid tooltip>Please provide a last name.</Feedback.Invalid>
         </Col>
     </Form.Row>
 </Form>`}</Code>
-            {/* InputGroups workaround
-        Custom Formy */}
+            <Anchor name="forms-validations-supported-components">
+                <h3>Supported components</h3>
+            </Anchor>
+            <Example>
+                <Form>
+                    <div style={margin({ side: "b", size: 3 })}>
+                        <Form.Label for="validationTextarea">Textarea</Form.Label>
+                        <Form.Textarea valid={false} id="validationTextarea" placeholder="Required example textarea"></Form.Textarea>
+                        <Feedback.Invalid>Please enter a message in the textarea.</Feedback.Invalid>
+                    </div>
+
+                    <CustomControl type="checkbox" style={margin({ side: "b", size: 3 })}>
+                        <Form.Input type="checkbox" custom id="customControlValidation1" valid={false} />
+                        <Form.Label custom for="customControlValidation1">
+                            Check this custom checkbox
+                        </Form.Label>
+                        <Feedback.Invalid>Example invalid feedback text</Feedback.Invalid>
+                    </CustomControl>
+
+                    <CustomControl type="radio">
+                        <Form.Input type="radio" custom id="customControlValidation2" name="radio-stacked" valid={false} />
+                        <Form.Label custom for="customControlValidation2">
+                            Toggle this custom radio
+                        </Form.Label>
+                    </CustomControl>
+                    <CustomControl type="radio" style={margin({ side: "b", size: 3 })}>
+                        <Form.Input type="radio" custom id="customControlValidation3" name="radio-stacked" valid={false} />
+                        <Form.Label custom for="customControlValidation3">
+                            Or toggle this other custom radio
+                        </Form.Label>
+                        <Feedback.Invalid>More example invalid feedback text</Feedback.Invalid>
+                    </CustomControl>
+
+                    <div style={margin({ side: "b", size: 3 })}>
+                        <Form.Select custom valid={false}>
+                            <Form.Option value="">Choose...</Form.Option>
+                            <Form.Option value="1">One</Form.Option>
+                            <Form.Option value="2">Two</Form.Option>
+                            <Form.Option value="3">Three</Form.Option>
+                        </Form.Select>
+                        <Feedback.Invalid>Example invalid custom select feedback</Feedback.Invalid>
+                    </div>
+
+                    <CustomControl type="file" style={margin({ side: "b", size: 3 })}>
+                        <Form.Input custom type="file" id="validatedCustomFile" valid={false} />
+                        <Form.Label custom="file" for="validatedCustomFile">
+                            Choose file...
+                        </Form.Label>
+                        <Feedback.Invalid>Example invalid custom file feedback</Feedback.Invalid>
+                    </CustomControl>
+
+                    <div style={margin({ side: "b", size: 3 })}>
+                        <InputGroup valid={false}>
+                            <InputGroup.Prepend>
+                                <InputGroup.Text id="validatedInputGroupPrepend">@</InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <Form.Input type="text" valid={false} aria-describedby="validatedInputGroupPrepend" />
+                        </InputGroup>
+                        <Feedback.Invalid>Example invalid input group feedback</Feedback.Invalid>
+                    </div>
+
+                    <div style={margin({ side: "b", size: 3 })}>
+                        <InputGroup valid={false}>
+                            <InputGroup.Prepend>
+                                <InputGroup.Text as="label" for="validatedInputGroupSelect">
+                                    Options
+                                </InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <Form.Select custom id="validatedInputGroupSelect" valid={false}>
+                                <Form.Option value="">Choose...</Form.Option>
+                                <Form.Option value="1">One</Form.Option>
+                                <Form.Option value="2">Two</Form.Option>
+                                <Form.Option value="3">Three</Form.Option>
+                            </Form.Select>
+                        </InputGroup>
+                        <Feedback.Invalid>Example invalid input group feedback</Feedback.Invalid>
+                    </div>
+
+                    <InputGroup valid={false}>
+                        <CustomControl type="file">
+                            <Form.Input custom type="file" id="validatedInputGroupCustomFile" valid={false} />
+                            <Form.Label custom="file" for="validatedInputGroupCustomFile">
+                                Choose file...
+                            </Form.Label>
+                        </CustomControl>
+                        <InputGroup.Append>
+                            <Button variant="outline-secondary">Button</Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                    <Feedback.Invalid>Example invalid input group feedback</Feedback.Invalid>
+                </Form>
+            </Example>
+            <Code language="tsx">{`<Form>
+    <div style={margin({ side: "b", size: 3 })}>
+        <Form.Label for="validationTextarea">Textarea</Form.Label>
+        <Form.Textarea valid={false} id="validationTextarea" placeholder="Required example textarea"></Form.Textarea>
+        <Feedback.Invalid>Please enter a message in the textarea.</Feedback.Invalid>
+    </div>
+
+    <CustomControl type="checkbox" style={margin({ side: "b", size: 3 })}>
+        <Form.Input type="checkbox" custom id="customControlValidation1" valid={false} />
+        <Form.Label custom for="customControlValidation1">
+            Check this custom checkbox
+        </Form.Label>
+        <Feedback.Invalid>Example invalid feedback text</Feedback.Invalid>
+    </CustomControl>
+
+    <CustomControl type="radio">
+        <Form.Input type="radio" custom id="customControlValidation2" name="radio-stacked" valid={false} />
+        <Form.Label custom for="customControlValidation2">
+            Toggle this custom radio
+        </Form.Label>
+    </CustomControl>
+    <CustomControl type="radio" style={margin({ side: "b", size: 3 })}>
+        <Form.Input type="radio" custom id="customControlValidation3" name="radio-stacked" valid={false} />
+        <Form.Label custom for="customControlValidation3">
+            Or toggle this other custom radio
+        </Form.Label>
+        <Feedback.Invalid>More example invalid feedback text</Feedback.Invalid>
+    </CustomControl>
+
+    <div style={margin({ side: "b", size: 3 })}>
+        <Form.Select custom valid={false}>
+            <Form.Option value="">Choose...</Form.Option>
+            <Form.Option value="1">One</Form.Option>
+            <Form.Option value="2">Two</Form.Option>
+            <Form.Option value="3">Three</Form.Option>
+        </Form.Select>
+        <Feedback.Invalid>Example invalid custom select feedback</Feedback.Invalid>
+    </div>
+
+    <CustomControl type="file" style={margin({ side: "b", size: 3 })}>
+        <Form.Input custom type="file" id="validatedCustomFile" valid={false} />
+        <Form.Label custom="file" for="validatedCustomFile">
+            Choose file...
+        </Form.Label>
+        <Feedback.Invalid>Example invalid custom file feedback</Feedback.Invalid>
+    </CustomControl>
+
+    <div style={margin({ side: "b", size: 3 })}>
+        <InputGroup valid={false}>
+            <InputGroup.Prepend>
+                <InputGroup.Text id="validatedInputGroupPrepend">@</InputGroup.Text>
+            </InputGroup.Prepend>
+            <Form.Input type="text" valid={false} aria-describedby="validatedInputGroupPrepend" />
+        </InputGroup>
+        <Feedback.Invalid>Example invalid input group feedback</Feedback.Invalid>
+    </div>
+
+    <div style={margin({ side: "b", size: 3 })}>
+        <InputGroup valid={false}>
+            <InputGroup.Prepend>
+                <InputGroup.Text as="label" for="validatedInputGroupSelect">
+                    Options
+                </InputGroup.Text>
+            </InputGroup.Prepend>
+            <Form.Select custom id="validatedInputGroupSelect" valid={false}>
+                <Form.Option value="">Choose...</Form.Option>
+                <Form.Option value="1">One</Form.Option>
+                <Form.Option value="2">Two</Form.Option>
+                <Form.Option value="3">Three</Form.Option>
+            </Form.Select>
+        </InputGroup>
+        <Feedback.Invalid>Example invalid input group feedback</Feedback.Invalid>
+    </div>
+
+    <InputGroup valid={false}>
+        <CustomControl type="file">
+            <Form.Input custom type="file" id="validatedInputGroupCustomFile" valid={false} />
+            <Form.Label custom="file" for="validatedInputGroupCustomFile">
+                Choose file...
+            </Form.Label>
+        </CustomControl>
+        <InputGroup.Append>
+            <Button variant="outline-secondary">Button</Button>
+        </InputGroup.Append>
+    </InputGroup>
+    <Feedback.Invalid>Example invalid input group feedback</Feedback.Invalid>
+</Form>`}</Code>
+            <Anchor name="forms-custom-forms">
+                <h2>Custom forms</h2>
+            </Anchor>
+            <p>
+                For even more customization and cross browser consistency, use our completely custom form elements to replace the browser
+                defaults. They’re built on top of semantic and accessible markup, so they’re solid replacements for any default form
+                control.
+            </p>
         </>
     );
 }
@@ -1640,7 +1886,6 @@ export function ValidationExample(): b.IBobrilNode {
                     <Form.Label for="validationCustom01">First name</Form.Label>
                     <Form.Input
                         type="text"
-                        class="form-control"
                         id="validationCustom01"
                         value={firstName}
                         onChange={(val: string) => {
@@ -1656,7 +1901,6 @@ export function ValidationExample(): b.IBobrilNode {
                     <Form.Label for="validationCustom02">Last name</Form.Label>
                     <Form.Input
                         type="text"
-                        class="form-control"
                         id="validationCustom02"
                         value={lastName}
                         onChange={(val: string) => {

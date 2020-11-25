@@ -8,11 +8,14 @@ export const formLabelStyles = {
     formCheckLabel: b.styleDef("form-check-label"),
     colFormLabel: b.styleDef("col-form-label"),
     colFormLabelSizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`col-form-label-${breakpoint}`)])),
+    customControlLabel: b.styleDef("custom-control-label"),
+    customFileLabel: b.styleDef("custom-file-label"),
 };
 
 export interface IFormLabelData extends IColData {
     "form-check"?: boolean;
     col?: boolean | Breakpoint;
+    custom?: boolean | "file";
 }
 
 export class FormLabel extends Col<IFormLabelData> {
@@ -24,7 +27,10 @@ export class FormLabel extends Col<IFormLabelData> {
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        const styles = [this.data["form-check"] && formLabelStyles.formCheckLabel];
+        const styles = [
+            this.data["form-check"] && formLabelStyles.formCheckLabel,
+            this.data.custom && (this.data.custom === "file" ? formLabelStyles.customFileLabel : formLabelStyles.customControlLabel),
+        ];
         return this.data.col
             ? [
                   ...super.componentSpecificStyles(),

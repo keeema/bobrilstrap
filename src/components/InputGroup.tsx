@@ -9,10 +9,13 @@ import { InputGroupText } from "./InputGroupText";
 export const inputGroupStyles = {
     inputGroup: b.styleDef("input-group"),
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`input-group-${breakpoint}`)])),
+    valid: b.styleDef("is-valid"),
+    invalid: b.styleDef("is-invalid"),
 };
 
 export interface IInputGroupData extends IBaseElementDataWithChildren {
     size?: Breakpoint;
+    valid?: boolean;
 }
 
 export class InputGroup extends BaseElement<IInputGroupData> {
@@ -20,9 +23,15 @@ export class InputGroup extends BaseElement<IInputGroupData> {
     static Append = InputGroupAppend;
     static Prepend = InputGroupPrepend;
     static Text = InputGroupText;
-    componentProperties = (): (keyof IInputGroupData)[] => ["size"];
+
+    componentProperties = (): (keyof IInputGroupData)[] => ["size", "valid"];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [inputGroupStyles.inputGroup, this.data.size && inputGroupStyles.sizes(this.data.size)];
+        return [
+            inputGroupStyles.inputGroup,
+            this.data.size && inputGroupStyles.sizes(this.data.size),
+            this.data.valid === true && inputGroupStyles.valid,
+            this.data.valid === false && inputGroupStyles.invalid,
+        ];
     }
 }

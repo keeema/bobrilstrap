@@ -35,6 +35,7 @@ export const formControlBaseStyles = {
     formControlFile: b.styleDef("form-control-file"),
     formControlRange: b.styleDef("form-control-range"),
     customControlRange: b.styleDef("custom-control-range"),
+    customFileInput: b.styleDef("custom-file-input"),
     customSelect: b.styleDef("custom-select"),
     customSelectSizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`custom-select-${breakpoint}`)])),
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`form-control-${breakpoint}`)])),
@@ -51,6 +52,7 @@ export const specificInputStyles: { [key: string]: b.IBobrilStyle } = {
 
 export const specificCustomInputStyles: { [key: string]: b.IBobrilStyle } = {
     range: formControlBaseStyles.customControlRange,
+    file: formControlBaseStyles.customFileInput,
 };
 
 export interface IFormControlBaseData extends IBaseElementDataWithChildren {
@@ -67,7 +69,7 @@ export interface IFormControlBaseWithTypeData extends IFormControlBaseData {
 export abstract class FormControlBase<TData extends IFormControlBaseData> extends BaseElement<TData> {
     static id: string = "bobrilstrap-form-control-base";
     componentProperties(): (keyof TData)[] {
-        return ["size", "plain-text"];
+        return ["size", "plain-text" /* , "type" */, "valid", "custom"];
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

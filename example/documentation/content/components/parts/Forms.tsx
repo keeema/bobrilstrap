@@ -193,35 +193,41 @@ export const formsRoute: IRouteWithNavDefinition = {
                             subs: [],
                         },
                         {
-                            url: "disabled",
-                            name: "forms-custom-forms-checkboxes-and-radios-disabled",
-                            label: "Disabled",
-                            subs: [],
-                        },
-                        {
                             url: "inline",
                             name: "forms-custom-forms-checkboxes-and-radios-inline",
                             label: "Inline",
                             subs: [],
                         },
+                        {
+                            url: "disabled",
+                            name: "forms-custom-forms-checkboxes-and-radios-disabled",
+                            label: "Disabled",
+                            subs: [],
+                        },
                     ],
                 },
                 {
-                    url: "custom-forms-switches",
-                    name: "forms-custom-forms-custom-forms-switches",
+                    url: "switches",
+                    name: "forms-custom-forms-switches",
                     label: "Switches",
                     subs: [],
                 },
                 {
-                    url: "custom-forms-select-menu",
+                    url: "select-menu",
                     name: "forms-custom-forms-select-menu",
                     label: "Select menu",
                     subs: [],
                 },
                 {
-                    url: "custom-forms-range",
+                    url: "range",
                     name: "forms-custom-forms-range",
                     label: "Range",
+                    subs: [],
+                },
+                {
+                    url: "file-browser",
+                    name: "forms-custom-forms-file-browser",
+                    label: "File browser",
                     subs: [],
                 },
             ],
@@ -1771,6 +1777,312 @@ export function FormsDoc(): b.IBobrilNode {
                 For even more customization and cross browser consistency, use our completely custom form elements to replace the browser
                 defaults. They’re built on top of semantic and accessible markup, so they’re solid replacements for any default form
                 control.
+            </p>
+            <Anchor name="forms-custom-forms-checkboxes-and-radios">
+                <h3>Checkboxes and radios</h3>
+            </Anchor>
+            <p>
+                Each checkbox and radio <code>{`<Form.Input>`}</code> and <code>{`<Form.Label>`}</code> pairing is wrapped in a{" "}
+                <code>{`<CustomControl>`}</code> to create our custom control. Structurally, this is the same approach as our default{" "}
+                <code>{`<Form.Check>`}</code>.
+            </p>
+            <p>
+                There is used the sibling selector (~) for all <code>{`<Form.Input>`}</code> states—like <code>:checked</code>—to properly
+                style our custom form indicator. When combined with the <code>{`<Form.Label custom>`}</code> class, text for each item can
+                be also styled based on the <code>{`<Form.Input>`}</code>’s state.
+            </p>
+            <p>
+                The default <code>{`<input>`}</code> is hidden with <code>opacity</code> and it uses the{" "}
+                <code>{`<Form.Label custom>`}</code> to build a new custom form indicator in its place with <code>::before</code> and{" "}
+                <code>::after</code>. Unfortunately it can’t be build a custom one from just the <code>{`<Form.Input>`}</code> because CSS’s{" "}
+                <code>content</code> doesn’t work on that element.
+            </p>
+            <p>
+                In the checked states, it uses <strong>base64 embedded SVG icons</strong> from{" "}
+                <a href="https://github.com/iconic/open-iconic">Open Iconic</a>. This provides the best control for styling and positioning
+                across browsers and devices.
+            </p>
+            <Anchor name="forms-custom-forms-checkboxes-and-radios-checkboxes">
+                <h4>Checkboxes</h4>
+            </Anchor>
+            <Example>
+                <CustomControl type="checkbox">
+                    <Form.Input custom type="checkbox" id="customCheck1" />
+                    <Form.Label custom for="customCheck1">
+                        Check this custom checkbox
+                    </Form.Label>
+                </CustomControl>
+            </Example>
+            <Code language="tsx">{`<CustomControl type="checkbox">
+    <Form.Input custom type="checkbox" id="customCheck1" />
+    <Form.Label custom for="customCheck1">
+        Check this custom checkbox
+    </Form.Label>
+</CustomControl>`}</Code>
+            <Anchor name="forms-custom-forms-checkboxes-and-radios-radios">
+                <h4>Radios</h4>
+            </Anchor>
+            <Example>
+                <CustomControl type="radio">
+                    <Form.Input custom type="radio" id="customRadio1" name="customRadio" />
+                    <Form.Label custom for="customRadio1">
+                        Toggle this custom radio
+                    </Form.Label>
+                </CustomControl>
+                <CustomControl type="radio">
+                    <Form.Input custom type="radio" id="customRadio2" name="customRadio" />
+                    <Form.Label custom for="customRadio2">
+                        Or toggle this other custom radio
+                    </Form.Label>
+                </CustomControl>
+            </Example>
+            <Code language="tsx">{`<CustomControl type="radio">
+    <Form.Input custom type="radio" id="customRadio1" name="customRadio" />
+    <Form.Label custom for="customRadio1">
+        Toggle this custom radio
+    </Form.Label>
+</CustomControl>
+<CustomControl type="radio">
+    <Form.Input custom type="radio" id="customRadio2" name="customRadio" />
+    <Form.Label custom for="customRadio2">
+        Or toggle this other custom radio
+    </Form.Label>
+</CustomControl>`}</Code>
+            <Anchor name="forms-custom-forms-checkboxes-and-radios-inline">
+                <h4>Inline</h4>
+            </Anchor>
+            <Example>
+                <CustomControl type="radio" inline>
+                    <Form.Input custom type="radio" id="customRadioInline1" name="customRadio" />
+                    <Form.Label custom for="customRadioInline1">
+                        Toggle this custom radio
+                    </Form.Label>
+                </CustomControl>
+                <CustomControl type="radio" inline>
+                    <Form.Input custom type="radio" id="customRadioInline2" name="customRadio" />
+                    <Form.Label custom for="customRadioInline2">
+                        Or toggle this other custom radio
+                    </Form.Label>
+                </CustomControl>
+            </Example>
+            <Code language="tsx">{`<CustomControl type="radio" inline>
+    <Form.Input custom type="radio" id="customRadioInline1" name="customRadio" />
+    <Form.Label custom for="customRadioInline1">
+        Toggle this custom radio
+    </Form.Label>
+</CustomControl>
+<CustomControl type="radio" inline>
+    <Form.Input custom type="radio" id="customRadioInline2" name="customRadio" />
+    <Form.Label custom for="customRadioInline2">
+        Or toggle this other custom radio
+    </Form.Label>
+</CustomControl>`}</Code>
+            <Anchor name="forms-custom-forms-checkboxes-and-radios-disabled">
+                <h4>Disabled</h4>
+            </Anchor>
+            <Example>
+                <CustomControl type="checkbox">
+                    <Form.Input custom type="checkbox" id="customCheckDisabled1" disabled />
+                    <Form.Label custom for="customCheckDisabled1">
+                        Check this custom checkbox
+                    </Form.Label>
+                </CustomControl>
+                <CustomControl type="radio">
+                    <Form.Input custom type="radio" id="customRadioDisabled2" name="radioDisabled" disabled />
+                    <Form.Label custom for="customRadioDisabled2">
+                        Or toggle this other custom radio
+                    </Form.Label>
+                </CustomControl>
+            </Example>
+            <Code language="tsx">{`<CustomControl type="checkbox">
+    <Form.Input custom type="checkbox" id="customCheckDisabled1" disabled />
+    <Form.Label custom for="customCheckDisabled1">
+        Check this custom checkbox
+    </Form.Label>
+</CustomControl>
+<CustomControl type="radio">
+    <Form.Input custom type="radio" id="customRadioDisabled2" name="radioDisabled" disabled />
+    <Form.Label custom for="customRadioDisabled2">
+        Or toggle this other custom radio
+    </Form.Label>
+</CustomControl>`}</Code>
+            <Anchor name="forms-custom-forms-switches">
+                <h3>Switches</h3>
+            </Anchor>
+            <p>
+                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> class to render a
+                toggle switch. Switches also support the disabled attribute.
+            </p>
+            <Example>
+                <CustomControl type="switch">
+                    <Form.Input custom type="checkbox" id="customSwitch1" />
+                    <Form.Label custom for="customSwitch1">
+                        Toggle this switch element
+                    </Form.Label>
+                </CustomControl>
+                <CustomControl type="switch">
+                    <Form.Input custom type="checkbox" id="customSwitch2" disabled />
+                    <Form.Label custom for="customSwitch2">
+                        Disabled switch element
+                    </Form.Label>
+                </CustomControl>
+            </Example>
+            <Code language="tsx">{`<CustomControl type="switch">
+    <Form.Input custom type="checkbox" id="customSwitch1" />
+    <Form.Label custom for="customSwitch1">
+        Toggle this switch element
+    </Form.Label>
+</CustomControl>
+<CustomControl type="switch">
+    <Form.Input custom type="checkbox" id="customSwitch2" disabled />
+    <Form.Label custom for="customSwitch2">
+        Disabled switch element
+    </Form.Label>
+</CustomControl>`}</Code>
+            <Anchor name="forms-custom-forms-select-menu">
+                <h3>Select menu</h3>
+            </Anchor>
+            <p>
+                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> class to render a
+                toggle switch. Switches also support the disabled attribute.
+            </p>
+            <Example>
+                <Form.Select custom>
+                    <Form.Option selected>Open this select menu</Form.Option>
+                    <Form.Option value="1">One</Form.Option>
+                    <Form.Option value="2">Two</Form.Option>
+                    <Form.Option value="3">Three</Form.Option>
+                </Form.Select>
+            </Example>
+            <Code language="tsx">{`<Form.Select custom>
+    <Form.Option selected>Open this select menu</Form.Option>
+    <Form.Option value="1">One</Form.Option>
+    <Form.Option value="2">Two</Form.Option>
+    <Form.Option value="3">Three</Form.Option>
+</Form.Select>`}</Code>
+            <p>You may also choose from small and large custom selects to match our similarly sized text inputs.</p>
+            <Example>
+                <Form.Select custom size="lg" style={margin({ side: "b", size: 3 })}>
+                    <Form.Option selected>Open this select menu</Form.Option>
+                    <Form.Option value="1">One</Form.Option>
+                    <Form.Option value="2">Two</Form.Option>
+                    <Form.Option value="3">Three</Form.Option>
+                </Form.Select>
+                <Form.Select custom size="sm">
+                    <Form.Option selected>Open this select menu</Form.Option>
+                    <Form.Option value="1">One</Form.Option>
+                    <Form.Option value="2">Two</Form.Option>
+                    <Form.Option value="3">Three</Form.Option>
+                </Form.Select>
+            </Example>
+            <Code language="tsx">{`<Form.Select custom size="lg" style={margin({ side: "b", size: 3 })}>
+    <Form.Option selected>Open this select menu</Form.Option>
+    <Form.Option value="1">One</Form.Option>
+    <Form.Option value="2">Two</Form.Option>
+    <Form.Option value="3">Three</Form.Option>
+</Form.Select>
+<Form.Select custom size="sm">
+    <Form.Option selected>Open this select menu</Form.Option>
+    <Form.Option value="1">One</Form.Option>
+    <Form.Option value="2">Two</Form.Option>
+    <Form.Option value="3">Three</Form.Option>
+</Form.Select>`}</Code>
+            <p>
+                The <code>multiple</code> prop is also supported:
+            </p>
+            <Example>
+                <Form.Select custom multiple>
+                    <Form.Option selected>Open this select menu</Form.Option>
+                    <Form.Option value="1">One</Form.Option>
+                    <Form.Option value="2">Two</Form.Option>
+                    <Form.Option value="3">Three</Form.Option>
+                </Form.Select>
+            </Example>
+            <Code language="tsx">{`<Form.Select custom multiple>
+    <Form.Option selected>Open this select menu</Form.Option>
+    <Form.Option value="1">One</Form.Option>
+    <Form.Option value="2">Two</Form.Option>
+    <Form.Option value="3">Three</Form.Option>
+</Form.Select>`}</Code>
+            <p>
+                To change number of rows use the <code>rows</code> prop. It will be finally converted to native element size attribute (it
+                is because the <code>size</code> prop is used as a common sizing prop for all form controls).
+            </p>
+            <Example>
+                <Form.Select custom rows={2}>
+                    <Form.Option selected>Open this select menu</Form.Option>
+                    <Form.Option value="1">One</Form.Option>
+                    <Form.Option value="2">Two</Form.Option>
+                    <Form.Option value="3">Three</Form.Option>
+                </Form.Select>
+            </Example>
+            <Code language="tsx">{`<Form.Select custom rows={2}>
+    <Form.Option selected>Open this select menu</Form.Option>
+    <Form.Option value="1">One</Form.Option>
+    <Form.Option value="2">Two</Form.Option>
+    <Form.Option value="3">Three</Form.Option>
+</Form.Select>`}</Code>
+
+            <Anchor name="forms-custom-forms-range">
+                <h3>Range</h3>
+            </Anchor>
+            <p>
+                Create custom <code>{`<Form.Input type="range">`}</code> controls with <code>custom</code> prop. The track (the background)
+                and thumb (the value) are both styled to appear the same across browsers. As only IE and Firefox support “filling” their
+                track from the left or right of the thumb as a means to visually indicate progress, we do not currently support it.
+            </p>
+            <Example>
+                <Form.Label for="customRange1">Example range</Form.Label>
+                <Form.Input custom type="range" id="customRange1" />
+            </Example>
+            <Code language="tsx">{`<Form.Label for="customRange1">Example range</Form.Label>
+<Form.Input custom type="range" id="customRange1" />`}</Code>
+            <p>
+                Range inputs have implicit values for <code>min</code> and <code>max</code> - <code>0</code> and <code>100</code>,
+                respectively. You may specify new values for those using the <code>min</code> and <code>max</code> attributes.
+            </p>
+            <Example>
+                <Form.Label for="customRange2">Example range</Form.Label>
+                <Form.Input custom type="range" id="customRange2" min={0} max={5} />
+            </Example>
+            <Code language="tsx">{`<Form.Label for="customRange2">Example range</Form.Label>
+<Form.Input custom type="range" id="customRange2" min={0} max={5} />`}</Code>
+            <p>
+                By default, range inputs “snap” to integer values. To change this, you can specify a step value. In the example below, we
+                double the number of steps by using <code>{`step={0.5}`}</code>.
+            </p>
+            <Example>
+                <Form.Label for="customRange3">Example range</Form.Label>
+                <Form.Input custom type="range" id="customRange3" min={0} max={5} step={0.5} />
+            </Example>
+            <Code language="tsx">{`<Form.Label for="customRange2">Example range</Form.Label>
+<Form.Input custom type="range" id="customRange2" min={0} max={5} step={0.5} />`}</Code>
+            <Anchor name="forms-custom-forms-file-browser">
+                <h3>File browser</h3>
+            </Anchor>
+            <p>
+                The file input is the most gnarly of the bunch and requires additional JavaScript if you’d like to hook them up with
+                functional <em>Choose file…</em> and selected file name text. Use <code>{`<Form.Label>`}</code> with{" "}
+                <code>custom="file"</code> for this purpose.
+            </p>
+            <Example>
+                <CustomControl type="file">
+                    <Form.Input custom type="file" id="customFile" />
+                    <Form.Label custom="file" for="customFile">
+                        Choose file
+                    </Form.Label>
+                </CustomControl>
+            </Example>
+            <Code language="tsx">{`<CustomControl type="file">
+    <Form.Input custom type="file" id="customFile" />
+    <Form.Label custom="file" for="customFile">
+        Choose file
+    </Form.Label>
+</CustomControl>`}</Code>
+            <p>
+                It hides the default file <code>{`<Form.Input>`}</code> via <code>opacity</code> and instead style the{" "}
+                <code>{`<Form.Label>`}</code>. The button is generated and positioned with <code>::after</code>. Lastly, we declare a{" "}
+                <code>width</code> and <code>height</code> on the <code>{`<Form.Input>`}</code> for proper spacing for surrounding content.
             </p>
         </>
     );

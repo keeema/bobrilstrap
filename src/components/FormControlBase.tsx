@@ -34,7 +34,7 @@ export const formControlBaseStyles = {
     formCheckInput: b.styleDef("form-check-input"),
     formControlFile: b.styleDef("form-control-file"),
     formControlRange: b.styleDef("form-control-range"),
-    customControlRange: b.styleDef("custom-control-range"),
+    customControlRange: b.styleDef("custom-range"),
     customFileInput: b.styleDef("custom-file-input"),
     customSelect: b.styleDef("custom-select"),
     customSelectSizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`custom-select-${breakpoint}`)])),
@@ -75,7 +75,8 @@ export abstract class FormControlBase<TData extends IFormControlBaseData> extend
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [
             this.tryGetSpecificStyle || this.tryGetCustomStyle || this.tryGetPlainText || formControlBaseStyles.formControl,
-            this.data.size && formControlBaseStyles.sizes(this.data.size),
+            this.data.size &&
+                (this.data.custom ? formControlBaseStyles.customSelectSizes(this.data.size) : formControlBaseStyles.sizes(this.data.size)),
             this.data.valid === true && formControlBaseStyles.valid,
             this.data.valid === false && formControlBaseStyles.invalid,
         ];
@@ -86,14 +87,10 @@ export abstract class FormControlBase<TData extends IFormControlBaseData> extend
         return data.type && (data.custom ? specificCustomInputStyles[data.type] : specificInputStyles[data.type]);
     }
     get tryGetCustomStyle(): b.IBobrilStyle {
-        return this.data.custom && (this.tag === "select" ? this.customSelectStyle : formControlBaseStyles.customControlInput);
+        return this.data.custom && (this.tag === "select" ? formControlBaseStyles.customSelect : formControlBaseStyles.customControlInput);
     }
 
     get tryGetPlainText(): b.IBobrilStyle {
         return this.data["plain-text"] && formControlBaseStyles.plainText;
-    }
-
-    get customSelectStyle(): b.IBobrilStyle {
-        return this.data.size ? formControlBaseStyles.customSelectSizes(this.data.size) : formControlBaseStyles.customSelect;
     }
 }

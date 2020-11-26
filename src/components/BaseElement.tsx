@@ -56,7 +56,7 @@ export interface IAttrs {
     [key: string]: unknown;
 }
 
-export type IAllAttrs = IAttrs & IAria & IDataAttrs & IKnownAttrs & b.IBubblingAndBroadcastEvents;
+export type IAllAttrs = IAttrs & IAria & IDataAttrs & IKnownAttrs & b.IBobrilEvents;
 
 interface IBaseElementDataBase extends IAllAttrs {
     as?: Tags;

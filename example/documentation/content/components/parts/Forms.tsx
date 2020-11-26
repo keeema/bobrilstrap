@@ -1436,7 +1436,7 @@ export function FormsDoc(): b.IBobrilNode {
                         type="text"
                         id="validationCustom01"
                         value={firstName}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setFirstName(val);
                             setFirstNameValid(undefined);
                         }}
@@ -1451,7 +1451,7 @@ export function FormsDoc(): b.IBobrilNode {
                         type="text"
                         id="validationCustom02"
                         value={lastName}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setLastName(val);
                             setLastNameValid(undefined);
                         }}
@@ -1468,7 +1468,7 @@ export function FormsDoc(): b.IBobrilNode {
                         type="text"
                         id="validationCustom03"
                         value={city}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setCity(val);
                             setCityValid(undefined);
                         }}
@@ -1483,7 +1483,7 @@ export function FormsDoc(): b.IBobrilNode {
                         id="validationCustom04"
                         custom
                         value={state}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setState(val);
                             setStateValid(undefined);
                         }}
@@ -1505,7 +1505,7 @@ export function FormsDoc(): b.IBobrilNode {
                         type="text"
                         id="validationCustom05"
                         value={zip}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setZip(val);
                             setZipValid(undefined);
                         }}
@@ -1521,7 +1521,7 @@ export function FormsDoc(): b.IBobrilNode {
                         type="checkbox"
                         id="invalidCheck"
                         value={confirmed}
-                        onChange={(val: boolean) => {
+                        onChange={(val) => {
                             setConfirmed(val);
                             setConfirmedValid(undefined);
                         }}
@@ -2200,7 +2200,7 @@ export function ValidationExample(): b.IBobrilNode {
                         type="text"
                         id="validationCustom01"
                         value={firstName}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setFirstName(val);
                             setFirstNameValid(undefined);
                         }}
@@ -2215,7 +2215,7 @@ export function ValidationExample(): b.IBobrilNode {
                         type="text"
                         id="validationCustom02"
                         value={lastName}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setLastName(val);
                             setLastNameValid(undefined);
                         }}
@@ -2232,7 +2232,7 @@ export function ValidationExample(): b.IBobrilNode {
                         type="text"
                         id="validationCustom03"
                         value={city}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setCity(val);
                             setCityValid(undefined);
                         }}
@@ -2247,7 +2247,7 @@ export function ValidationExample(): b.IBobrilNode {
                         id="validationCustom04"
                         custom
                         value={state}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setState(val);
                             setStateValid(undefined);
                         }}
@@ -2269,7 +2269,7 @@ export function ValidationExample(): b.IBobrilNode {
                         type="text"
                         id="validationCustom05"
                         value={zip}
-                        onChange={(val: string) => {
+                        onChange={(val) => {
                             setZip(val);
                             setZipValid(undefined);
                         }}
@@ -2285,7 +2285,7 @@ export function ValidationExample(): b.IBobrilNode {
                         type="checkbox"
                         id="invalidCheck"
                         value={confirmed}
-                        onChange={(val: boolean) => {
+                        onChange={(val) => {
                             setConfirmed(val);
                             setConfirmedValid(undefined);
                         }}

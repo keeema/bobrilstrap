@@ -74,6 +74,7 @@ export * from "./src/utilities/clearfix";
 export * from "./src/utilities/color";
 export * from "./src/utilities/display";
 export * from "./src/utilities/font";
+export * from "./src/utilities/flex";
 export * from "./src/utilities/order";
 export * from "./src/utilities/position";
 export * from "./src/utilities/screenReaders";

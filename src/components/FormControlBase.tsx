@@ -60,6 +60,7 @@ export interface IFormControlBaseData extends IBaseElementDataWithChildren {
     "plain-text"?: boolean;
     valid?: boolean;
     custom?: boolean;
+    "no-form-control"?: boolean;
 }
 
 export interface IFormControlBaseWithTypeData extends IFormControlBaseData {
@@ -69,12 +70,15 @@ export interface IFormControlBaseWithTypeData extends IFormControlBaseData {
 export abstract class FormControlBase<TData extends IFormControlBaseData> extends BaseElement<TData> {
     static id: string = "bobrilstrap-form-control-base";
     componentProperties(): (keyof TData)[] {
-        return ["size", "plain-text" /* , "type" */, "valid", "custom"];
+        return ["size", "plain-text" /* , "type" */, "valid", "custom", "no-form-control"];
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [
-            this.tryGetSpecificStyle || this.tryGetCustomStyle || this.tryGetPlainText || formControlBaseStyles.formControl,
+            this.tryGetSpecificStyle ||
+                this.tryGetCustomStyle ||
+                this.tryGetPlainText ||
+                (!this.data["no-form-control"] && formControlBaseStyles.formControl),
             this.data.size &&
                 (this.data.custom ? formControlBaseStyles.customSelectSizes(this.data.size) : formControlBaseStyles.sizes(this.data.size)),
             this.data.valid === true && formControlBaseStyles.valid,
@@ -84,7 +88,11 @@ export abstract class FormControlBase<TData extends IFormControlBaseData> extend
 
     get tryGetSpecificStyle(): b.IBobrilStyle {
         const data = this.data as IFormControlBaseWithTypeData;
-        return data.type && (data.custom ? specificCustomInputStyles[data.type] : specificInputStyles[data.type]);
+        return (
+            data.type &&
+            !this.data["no-form-control"] &&
+            (data.custom ? specificCustomInputStyles[data.type] : specificInputStyles[data.type])
+        );
     }
     get tryGetCustomStyle(): b.IBobrilStyle {
         return this.data.custom && (this.tag === "select" ? formControlBaseStyles.customSelect : formControlBaseStyles.customControlInput);

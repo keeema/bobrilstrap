@@ -173,8 +173,8 @@ export function InputGroupDoc(): b.IBobrilNode {
                 <h2>Sizing</h2>
             </Anchor>
             <p>
-                Add the relative form sizing classes to the <code>{`<InputGroup>`}</code> itself and contents within will automatically
-                resize—no need for repeating the form control size classes on each element.
+                Add the relative form sizing prop to the <code>{`<InputGroup>`}</code> itself and contents within will automatically
+                resize—no need for repeating the form control size prop on each element.
             </p>
             <p>
                 <strong>Sizing on the individual input group elements isn’t supported.</strong>

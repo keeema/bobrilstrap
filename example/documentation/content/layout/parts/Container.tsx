@@ -61,7 +61,7 @@ export function Container(): b.IBobrilNode {
                 <h2>Responsive breakpoints</h2>
             </Anchor>
             <p>
-                Responsive containers allow you to specify a class that is 100% wide until the specified breakpoint is reached, after which
+                Responsive containers allow you to specify a style that is 100% wide until the specified breakpoint is reached, after which
                 bootstrap applies <code>max-width</code>s for each of the higher breakpoints. For example,{" "}
                 <code>{`<Container fluid="sm">`}</code> is 100% wide to start until the <code>sm</code> breakpoint is reached, where it will
                 scale up with <code>md</code>, <code>lg</code>, and <code>xl</code>.

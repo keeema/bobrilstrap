@@ -1788,7 +1788,7 @@ export function FormsDoc(): b.IBobrilNode {
             </p>
             <p>
                 There is used the sibling selector (~) for all <code>{`<Form.Input>`}</code> states—like <code>:checked</code>—to properly
-                style our custom form indicator. When combined with the <code>{`<Form.Label custom>`}</code> class, text for each item can
+                style our custom form indicator. When combined with the <code>{`<Form.Label custom>`}</code>, text for each item can
                 be also styled based on the <code>{`<Form.Input>`}</code>’s state.
             </p>
             <p>
@@ -1910,7 +1910,7 @@ export function FormsDoc(): b.IBobrilNode {
                 <h3>Switches</h3>
             </Anchor>
             <p>
-                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> class to render a
+                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> to render a
                 toggle switch. Switches also support the disabled attribute.
             </p>
             <Example>
@@ -1943,7 +1943,7 @@ export function FormsDoc(): b.IBobrilNode {
                 <h3>Select menu</h3>
             </Anchor>
             <p>
-                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> class to render a
+                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> to render a
                 toggle switch. Switches also support the disabled attribute.
             </p>
             <Example>

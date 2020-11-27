@@ -82,8 +82,8 @@ export function ButtonGroup(): b.IBobrilNode {
                 <h2>Button toolbar</h2>
             </Anchor>
             <p>
-                Combine sets of button groups into button toolbars for more complex components. Use utility classes as needed to space out
-                groups, buttons, and more.
+                Combine sets of button groups into button toolbars for more complex components. Use utilities as needed to space out groups,
+                buttons, and more.
             </p>
             <Example>
                 <Button.Toolbar aria-label="Toolbar with button groups">
@@ -209,7 +209,7 @@ export function ButtonGroup(): b.IBobrilNode {
                 <h2>Sizing</h2>
             </Anchor>
             <p>
-                Instead of applying button sizing classes to every button in a group, just add <code>size</code> prop.
+                Instead of applying button sizing prop to every button in a group, just add <code>size</code> prop.
             </p>
             <Example>
                 <Button.Group size="lg">

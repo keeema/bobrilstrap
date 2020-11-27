@@ -46,7 +46,7 @@ export function CollapseDoc(): b.IBobrilNode {
             <Anchor name="collapse">
                 <h1>Collapse</h1>
             </Anchor>
-            <Lead>Toggle the visibility of content across your project with a few classes and our JavaScript plugins.</Lead>
+            <Lead>Toggle the visibility of content across your project.</Lead>
             <Anchor name="collapse-how-it-works">
                 <h2>How it works</h2>
             </Anchor>

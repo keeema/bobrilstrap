@@ -2,9 +2,8 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Alert, AlertVariant, Button } from "../../../../../index";
+import { Alert, AlertDismissButton, AlertVariant, Button, margin } from "../../../../../index";
 import { Code } from "../../../../common/Code";
-import { margin } from "../../../../../src/utilities/spacing";
 import { Lead } from "../../../../common/Lead";
 
 export const alertsRoute: IRouteWithNavDefinition = {
@@ -145,15 +144,14 @@ export function Alerts(): b.IBobrilNode {
         return (
             <Alert variant="danger">
                 Holy guacamole! You should check in on some of those fields below.
-                <button type="button" class="close" onClick={() => setShow(false)}>
-                    &times;
-                </button>
+                <AlertDismissButton onClick={() => setShow(false)} />
             </Alert>
         );
     }
     return <Button onClick={() => setShow(true)}>Show Alert</Button>;
-}`}</Code>
-            <Code language="tsx">{`<AlertDismissibleExample />`}</Code>
+}
+
+<AlertDismissibleExample />`}</Code>
             <Anchor name="alerts-dismissing-native">
                 <h3>Native</h3>
             </Anchor>
@@ -185,9 +183,7 @@ function AlertDismissibleExample(): b.IBobrilNode {
         return (
             <Alert variant="danger">
                 Holy guacamole! You should check in on some of those fields below.
-                <button type="button" class="close" onClick={() => setShow(false)}>
-                    &times;
-                </button>
+                <AlertDismissButton onClick={() => setShow(false)} />
             </Alert>
         );
     }

@@ -1,8 +1,9 @@
 import * as b from "bobril";
 import * as $ from "jquery";
+import { Tags } from "../../helpers/tags";
 import { AlertHeading } from "./AlertHeading";
 import { AlertLink } from "./AlertLink";
-import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs, IAttrs } from "./BaseElement";
 
 export type AlertVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
 export const alertStyles = {
@@ -49,7 +50,7 @@ export class Alert extends BaseElement<IAlertData> {
 
     render(): b.IBobrilNode {
         if (this.data.dismissible) {
-            this.data.children = [...[this.data.children], <DismissButton />];
+            this.data.children = [...[this.data.children], <AlertDismissButton />];
         }
         return super.render();
     }
@@ -84,10 +85,38 @@ export class Alert extends BaseElement<IAlertData> {
     }
 }
 
-function DismissButton({ dismissAriaLabel }: IAlertData): b.IBobrilNode {
-    return (
-        <button type="button" class="close" data-dismiss="alert" aria-label={dismissAriaLabel ?? "Close"}>
-            <span aria-hidden>&times;</span>
-        </button>
-    );
+export const alertDismissButtonStyles = {
+    close: b.styleDef("close"),
+};
+
+export interface IAlertDismissButtonData extends IBaseElementDataWithChildren {
+    "dismiss-aria-label"?: string;
+}
+
+export class AlertDismissButton extends BaseElement<IAlertDismissButtonData> {
+    static id: string = "bobrilstrap-alert-dismiss-button";
+
+    get tag(): Tags {
+        return "button";
+    }
+
+    render(): b.IBobrilNode {
+        if (this.data.children === undefined) {
+            this.data.children = <span aria-hidden>&times;</span>;
+        }
+
+        return super.render();
+    }
+
+    componentProperties(): (keyof IAlertDismissButtonData)[] {
+        return ["dismiss-aria-label"];
+    }
+
+    componentAdditionalAttributes(): IAttrs {
+        return { ariaLabel: this.data["dismiss-aria-label"] ?? "Close", dataDismiss: "alert" };
+    }
+
+    componentSpecificStyles(): b.IBobrilStyleArray {
+        return [alertDismissButtonStyles.close];
+    }
 }

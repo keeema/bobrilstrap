@@ -194,9 +194,9 @@ export function Responsive(): b.IBobrilNode {
             <p>
                 Use the responsive <code>{`<Row span="*">`}</code> or e.g. <code>{`<Row sm="*">`}</code> props to quickly set the number of
                 columns that best render your content and layout. Whereas normal <code>{`<Col span="*">`}</code> props apply to the
-                individual columns, the row columns classes are set on the parent <code>{`<Row>`}</code> as a shortcut.
+                individual columns, the row columns props are set on the parent <code>{`<Row>`}</code> as a shortcut.
             </p>
-            <p>Use these row columns classes to quickly create basic grid layouts or to control your card layouts.</p>
+            <p>Use these row columns props to quickly create basic grid layouts or to control your card layouts.</p>
             <Example>
                 <Container>
                     <Row span={2}>

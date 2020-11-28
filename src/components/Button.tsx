@@ -84,7 +84,7 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
         return {
             ...super.componentAdditionalAttributes(),
             type: this.data.type ?? (this.isButtonOrInput ? "button" : undefined),
-            role: this.data.role ?? (this.isAnchor && "button"),
+            role: this.data.role ?? (this.isAnchor ? "button" : undefined),
             href: this.data.href ?? (this.isAnchor ? "javascript:void(0)" : undefined),
         };
     }

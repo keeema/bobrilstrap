@@ -58,7 +58,7 @@ function App(): b.IBobrilNode {
   );
 }
 
-b.init(()=><App />)`}</Code>
+b.init(() => <App />)`}</Code>
         </>
     );
 }

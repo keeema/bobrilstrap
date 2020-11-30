@@ -91,8 +91,12 @@ export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.
         };
     }
 
+    get recognizedTag(): Tags {
+        return this.data.as ?? this.tag;
+    }
+
     render(): b.IBobrilNode {
-        const Tag = (this.data.as ?? this.tag) as any;
+        const Tag = this.recognizedTag as any;
         return (
             <Tag style={this.styles} {...this.plainData} {...this.componentAdditionalAttributes()}>
                 {this.data.children}

@@ -37,7 +37,7 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
     componentProperties = (): (keyof IListGroupItemData)[] => ["action", "variant", "tab", "fade"];
 
     get tag(): Tags {
-        return this.data.href ? "a" : "li";
+        return this.data.href || this.data.action ? "a" : "li";
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
@@ -52,11 +52,11 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
     }
 
     private get isButton(): boolean {
-        return this.data.as === "button";
+        return this.recognizedTag === "button";
     }
 
     private get isAnchor(): boolean {
-        return this.tag === "a" || this.data.as === "a";
+        return this.recognizedTag === "a";
     }
 
     componentAdditionalAttributes(): IAllAttrs {

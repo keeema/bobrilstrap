@@ -13,6 +13,7 @@ import { dropdownsRoute } from "./parts/Dropdowns";
 import { formsRoute } from "./parts/Forms";
 import { inputGroupRoute } from "./parts/InputGroup";
 import { jumbotronRoute } from "./parts/Jumbotron";
+import { listGroupRoute } from "./parts/ListGroup";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -33,5 +34,6 @@ export const components: IRouteWithNavDefinition = {
         formsRoute,
         inputGroupRoute,
         jumbotronRoute,
+        listGroupRoute,
     ],
 };

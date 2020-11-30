@@ -73,11 +73,11 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
     }
 
     private get isButtonOrInput(): boolean {
-        return this.tag === "button" || this.data.as === "input";
+        return this.recognizedTag === "button" || this.data.recognizedTag === "input";
     }
 
     private get isAnchor(): boolean {
-        return this.tag === "a" || this.data.as === "a";
+        return this.recognizedTag === "a";
     }
 
     componentAdditionalAttributes(): IAllAttrs {

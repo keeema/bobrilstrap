@@ -44,7 +44,7 @@ export const alertsRoute: IRouteWithNavDefinition = {
                 {
                     url: "native",
                     name: "alerts-dismissing-native",
-                    label: "Native",
+                    label: "Bootstrap native",
                     subs: [],
                 },
             ],
@@ -153,7 +153,7 @@ export function Alerts(): b.IBobrilNode {
 
 <AlertDismissibleExample />`}</Code>
             <Anchor name="alerts-dismissing-native">
-                <h3>Native</h3>
+                <h3>Bootstrap native</h3>
             </Anchor>
             <p>
                 Use internal <code>Bootstrap</code> logic.

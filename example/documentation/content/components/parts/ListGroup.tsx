@@ -6,16 +6,20 @@ import {
     alignItems,
     Badge,
     breakpoints,
+    Col,
     display,
     justifyContent,
     ListGroup,
     listGroupItemVariants,
     margin,
+    Row,
+    TabContent,
     textColor,
 } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { Callout } from "../../../../common/Callout";
+import { TabPane } from "../../../../../src/components/TabPane";
 
 export const listGroupRoute: IRouteWithNavDefinition = {
     url: "list-group",
@@ -64,6 +68,19 @@ export const listGroupRoute: IRouteWithNavDefinition = {
             name: "list-group-custom-content",
             label: "Custom content",
             subs: [],
+        },
+        {
+            url: "tabbable-panes",
+            name: "list-group-tabbable-panes",
+            label: "Tabbable panes",
+            subs: [
+                {
+                    url: "native",
+                    name: "list-group-tabbable-panes-native",
+                    label: "Bootstrap native",
+                    subs: [],
+                },
+            ],
         },
     ],
 };
@@ -313,7 +330,7 @@ ${listGroupItemVariants
             <Anchor name="list-group-custom-content">
                 <h2>Custom content</h2>
             </Anchor>
-            <p>dd nearly any HTML within, even for linked list groups like the one below.</p>
+            <p>Add nearly any HTML within, even for linked list groups like the one below.</p>
             <Example>
                 <ListGroup>
                     <ListGroup.Item action active>
@@ -380,6 +397,93 @@ ${listGroupItemVariants
         <small style={textColor("muted")}>Donec id elit non mi porta.</small>
     </ListGroup.Item>
 </ListGroup>`}</Code>
+            <Anchor name="list-group-tabbable-panes">
+                <h2>Tabbable panes</h2>
+            </Anchor>
+            <p>You can design tabbable panes of local content reactively by hooks, bobx etc. or use the bootstrap native behavior.</p>
+            <Anchor name="list-group-tabbable-panes-native">
+                <h3>Bootstrap native</h3>
+            </Anchor>
+            <p>
+                Set prop <code>toggle-tab</code>. It is necessary to define all tab contents and link them with tabs by <code>id</code>s.
+            </p>
+            <Example>
+                <Row>
+                    <Col span={4}>
+                        <ListGroup actions tabs id="list-tab">
+                            <ListGroup.Item action tab toggle-tab active id="list-home-list" href="#list-home" aria-controls="home">
+                                Home
+                            </ListGroup.Item>
+                            <ListGroup.Item action tab toggle-tab id="list-profile-list" href="#list-profile" aria-controls="profile">
+                                Profile
+                            </ListGroup.Item>
+                            <ListGroup.Item action tab toggle-tab id="list-messages-list" href="#list-messages" aria-controls="messages">
+                                Messages
+                            </ListGroup.Item>
+                            <ListGroup.Item action tab toggle-tab id="list-settings-list" href="#list-settings" aria-controls="settings">
+                                Settings
+                            </ListGroup.Item>
+                        </ListGroup>
+                    </Col>
+                    <Col span={8}>
+                        <TabContent id="nav-tabContent">
+                            <TabPane active fade id="list-home" aria-labelledby="list-home-list">
+                                {contents[0]}
+                            </TabPane>
+                            <TabPane fade id="list-profile" aria-labelledby="list-profile-list">
+                                {contents[1]}
+                            </TabPane>
+                            <TabPane fade id="list-messages" aria-labelledby="list-messages-list">
+                                {contents[2]}
+                            </TabPane>
+                            <TabPane fade id="list-settings" aria-labelledby="list-settings-list">
+                                {contents[3]}
+                            </TabPane>
+                        </TabContent>
+                    </Col>
+                </Row>
+            </Example>
+            <Code language="tsx">{`<Row>
+                    <Col span={4}>
+                        <ListGroup actions tabs id="list-tab">
+                            <ListGroup.Item action tab active id="list-home-list" href="#list-home" aria-controls="home">
+                                Home
+                            </ListGroup.Item>
+                            <ListGroup.Item action tab id="list-profile-list" href="#list-profile" aria-controls="profile">
+                                Profile
+                            </ListGroup.Item>
+                            <ListGroup.Item action tab id="list-messages-list" href="#list-messages" aria-controls="messages">
+                                Messages
+                            </ListGroup.Item>
+                            <ListGroup.Item action tab id="list-settings-list" href="#list-settings" aria-controls="settings">
+                                Settings
+                            </ListGroup.Item>
+                        </ListGroup>
+                    </Col>
+                    <Col span={8}>
+                        <TabContent id="nav-tabContent">
+                            <TabPane active fade id="list-home" aria-labelledby="list-home-list">
+                                {contents[0]}
+                            </TabPane>
+                            <TabPane fade id="list-profile" aria-labelledby="list-profile-list">
+                                {contents[1]}
+                            </TabPane>
+                            <TabPane fade id="list-messages" aria-labelledby="list-messages-list">
+                                {contents[2]}
+                            </TabPane>
+                            <TabPane fade id="list-settings" aria-labelledby="list-settings-list">
+                                {contents[3]}
+                            </TabPane>
+                        </TabContent>
+                    </Col>
+                </Row>`}</Code>
         </>
     );
 }
+
+const contents = [
+    "Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor. Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim eu nostrud do aliquip veniam minim.",
+    "Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa commodo veniam incididunt veniam ad.",
+    "Ut ut do pariatur aliquip aliqua aliquip exercitation do nostrud commodo reprehenderit aute ipsum voluptate. Irure Lorem et laboris nostrud amet cupidatat cupidatat anim do ut velit mollit consequat enim tempor. Consectetur est minim nostrud nostrud consectetur irure labore voluptate irure. Ipsum id Lorem sit sint voluptate est pariatur eu ad cupidatat et deserunt culpa sit eiusmod deserunt. Consectetur et fugiat anim do eiusmod aliquip nulla laborum elit adipisicing pariatur cillum.",
+    "Irure enim occaecat labore sit qui aliquip reprehenderit amet velit. Deserunt ullamco ex elit nostrud ut dolore nisi officia magna sit occaecat laboris sunt dolor. Nisi eu minim cillum occaecat aute est cupidatat aliqua labore aute occaecat ea aliquip sunt amet. Aute mollit dolor ut exercitation irure commodo non amet consectetur quis amet culpa. Quis ullamco nisi amet qui aute irure eu. Magna labore dolor quis ex labore id nostrud deserunt dolor eiusmod eu pariatur culpa mollit in irure.",
+];

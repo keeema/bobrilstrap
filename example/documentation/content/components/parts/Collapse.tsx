@@ -33,8 +33,8 @@ export const collapseRoute: IRouteWithNavDefinition = {
         },
         {
             url: "options",
-            name: "collapse-options",
-            label: "Options",
+            name: "collapse-api",
+            label: "API",
             subs: [],
         },
     ],
@@ -46,7 +46,7 @@ export function CollapseDoc(): b.IBobrilNode {
             <Anchor name="collapse">
                 <h1>Collapse</h1>
             </Anchor>
-            <Lead>Toggle the visibility of content across your project.</Lead>
+            <Lead>Toggle the visibility of content across your project with bootstrap native Collapse.</Lead>
             <Anchor name="collapse-how-it-works">
                 <h2>How it works</h2>
             </Anchor>
@@ -188,8 +188,8 @@ export function CollapseDoc(): b.IBobrilNode {
 }
 
 <Accordions />`}</Code>
-            <Anchor name="collapse-options">
-                <h2>Accordion</h2>
+            <Anchor name="collapse-api">
+                <h2>API</h2>
             </Anchor>
             <OptionsTable>
                 <OptionsRow>

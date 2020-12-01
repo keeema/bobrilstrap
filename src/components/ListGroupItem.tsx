@@ -17,6 +17,10 @@ export const listGroupItemVariants: ListGroupItemVariant[] = [
     "dark",
 ];
 
+export interface ITabActions {
+    (action: "show" | "dispose"): void;
+}
+
 export const listGroupItemStyles = {
     listGroupItem: b.styleDef("list-group-item"),
     disabled: b.styleDef("disabled"),
@@ -28,12 +32,12 @@ export interface IListGroupItemData extends IBaseElementDataWithChildren {
     action?: boolean;
     variant?: ListGroupItemVariant;
     tab?: boolean;
-    "toggle-tab"?: boolean;
-    fade?: boolean;
+    toggleable?: boolean;
     onHidden?: () => void;
     onHide?: () => void;
     onShown?: () => void;
     onShow?: () => void;
+    onItemCreated?: (action: ITabActions, element: JQuery<HTMLElement>) => void;
 }
 
 export class ListGroupItem extends BaseElement<IListGroupItemData> {
@@ -42,8 +46,7 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
         "action",
         "variant",
         "tab",
-        "toggle-tab",
-        "fade",
+        "toggleable",
         "onShow",
         "onShown",
         "onHide",
@@ -77,7 +80,7 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
             type: this.data.type ?? (this.isButton ? "button" : undefined),
             href: this.data.href ?? (this.isAnchor ? "javascript:void(0)" : undefined),
             role: this.data.role ?? (this.data.tab ? "tab" : undefined),
-            ["data-toggle"]: this.data["data-toggle"] ?? (this.data.tab && this.data["toggle-tab"] ? "list" : undefined),
+            ["data-toggle"]: this.data["data-toggle"] ?? (this.data.tab && this.data.toggleable ? "list" : undefined),
         };
     }
 
@@ -87,5 +90,6 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
         element.on("hidden.bs.tab", () => this.data.onHidden && this.data.onHidden());
         element.on("show.bs.tab", () => this.data.onShow && this.data.onShow());
         element.on("shown.bs.tab", () => this.data.onShown && this.data.onShown());
+        this.data.onItemCreated && this.data.onItemCreated((action) => element.tab(action), element);
     }
 }

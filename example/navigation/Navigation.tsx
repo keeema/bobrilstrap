@@ -7,6 +7,7 @@ import { NpmLink } from "./NpmLink";
 import { GithubLink } from "./Github";
 import { BootstrapLink } from "./Bootstrap";
 import { BobrilLink } from "./Bobril";
+import { textAlign } from "../../src/utilities/textAlign";
 
 // TODO: temporary until icons are added
 const togglerIcon = b.styleDef("navbar-toggler-icon");
@@ -20,7 +21,7 @@ export function Navigation(): b.IBobrilNode {
             <Navbar.Toggler onClick={() => setCollapsed(!collapsed)}>
                 <span style={togglerIcon}></span>
             </Navbar.Toggler>
-            <Navbar.Collapse collapsed={collapsed} onClick={() => setCollapsed(true)}>
+            <Navbar.Collapse collapsed={collapsed} onClick={() => setCollapsed(true)} style={[textAlign("center")]}>
                 <Nav navbar>
                     <LinkItem name={routes.home.name}>Home</LinkItem>
                     <LinkItem name={routes.documentation.name}>Documentation</LinkItem>

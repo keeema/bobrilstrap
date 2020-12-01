@@ -15,11 +15,15 @@ import {
     Row,
     TabContent,
     textColor,
+    ButtonGroup,
+    Button,
 } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { Callout } from "../../../../common/Callout";
 import { TabPane } from "../../../../../src/components/TabPane";
+import { ITabActions } from "../../../../../src/components/ListGroupItem";
+import { OptionsTable, OptionsRow } from "../../../../common/OptionsTable";
 
 export const listGroupRoute: IRouteWithNavDefinition = {
     url: "list-group",
@@ -75,10 +79,23 @@ export const listGroupRoute: IRouteWithNavDefinition = {
             label: "Tabbable panes",
             subs: [
                 {
+                    url: "reactive",
+                    name: "list-group-tabbable-panes-reactive",
+                    label: "Reactive",
+                    subs: [],
+                },
+                {
                     url: "native",
                     name: "list-group-tabbable-panes-native",
                     label: "Bootstrap native",
-                    subs: [],
+                    subs: [
+                        {
+                            url: "api",
+                            name: "list-group-tabbable-panes-native-api",
+                            label: "API",
+                            subs: [],
+                        },
+                    ],
                 },
             ],
         },
@@ -401,89 +418,431 @@ ${listGroupItemVariants
                 <h2>Tabbable panes</h2>
             </Anchor>
             <p>You can design tabbable panes of local content reactively by hooks, bobx etc. or use the bootstrap native behavior.</p>
+            <Anchor name="list-group-tabbable-panes-reactive">
+                <h3>Reactive</h3>
+            </Anchor>
+            <Example>
+                <TabsReactiveExample />
+            </Example>
+            <Code language="tsx">{`function TabsReactiveExample(): b.IBobrilNode {
+    const [activeTab, setActiveTab] = b.useState(0);
+
+    return (
+        <>
+            <Row style={margin({ side: "b", size: 1 })}>
+                <Col span={4}>
+                    <ListGroup actions tabs id="list-tab">
+                        {contents.map((content, index) => (
+                            <ListGroup.Item
+                                tab
+                                active={activeTab === index}
+                                id={\`list-\${content.id}-list1\`}
+                                onClick={() => setActiveTab(index)}
+                            >
+                                {content.title}
+                            </ListGroup.Item>
+                        ))}
+                    </ListGroup>
+                </Col>
+                <Col span={8}>
+                    <TabContent id="nav-tab-content-1">
+                        <TabPane active aria-labelledby={\`list-\${contents[activeTab].id}-list1\`}>
+                            {contents[activeTab].text}
+                        </TabPane>
+                    </TabContent>
+                </Col>
+            </Row>
+        </>
+    );
+}
+
+<TabsReactiveExample />`}</Code>
             <Anchor name="list-group-tabbable-panes-native">
                 <h3>Bootstrap native</h3>
             </Anchor>
             <p>
-                Set prop <code>toggle-tab</code>. It is necessary to define all tab contents and link them with tabs by <code>id</code>s.
+                Set prop <code>toggleable</code> prop to switch predefined contents natively by Bootstrap. It is necessary to define all tab
+                contents and link them with tabs by <code>id</code>s.
+            </p>
+            <p>
+                Prop <code>active</code> is mandatory on initial tab. Add prop <code>fade</code> to animation to transition.
             </p>
             <Example>
                 <Row>
                     <Col span={4}>
                         <ListGroup actions tabs id="list-tab">
-                            <ListGroup.Item action tab toggle-tab active id="list-home-list" href="#list-home" aria-controls="home">
+                            <ListGroup.Item action tab toggleable active id="list-home-list" href="#list-home" aria-controls="home">
                                 Home
                             </ListGroup.Item>
-                            <ListGroup.Item action tab toggle-tab id="list-profile-list" href="#list-profile" aria-controls="profile">
+                            <ListGroup.Item action tab toggleable id="list-profile-list" href="#list-profile" aria-controls="profile">
                                 Profile
                             </ListGroup.Item>
-                            <ListGroup.Item action tab toggle-tab id="list-messages-list" href="#list-messages" aria-controls="messages">
+                            <ListGroup.Item action tab toggleable id="list-messages-list" href="#list-messages" aria-controls="messages">
                                 Messages
                             </ListGroup.Item>
-                            <ListGroup.Item action tab toggle-tab id="list-settings-list" href="#list-settings" aria-controls="settings">
+                            <ListGroup.Item action tab toggleable id="list-settings-list" href="#list-settings" aria-controls="settings">
                                 Settings
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
                     <Col span={8}>
-                        <TabContent id="nav-tabContent">
+                        <TabContent id="nav-tab-content-2">
                             <TabPane active fade id="list-home" aria-labelledby="list-home-list">
-                                {contents[0]}
+                                {contents[0].text}
                             </TabPane>
                             <TabPane fade id="list-profile" aria-labelledby="list-profile-list">
-                                {contents[1]}
+                                {contents[1].text}
                             </TabPane>
                             <TabPane fade id="list-messages" aria-labelledby="list-messages-list">
-                                {contents[2]}
+                                {contents[2].text}
                             </TabPane>
                             <TabPane fade id="list-settings" aria-labelledby="list-settings-list">
-                                {contents[3]}
+                                {contents[3].text}
                             </TabPane>
                         </TabContent>
                     </Col>
                 </Row>
             </Example>
             <Code language="tsx">{`<Row>
-                    <Col span={4}>
-                        <ListGroup actions tabs id="list-tab">
-                            <ListGroup.Item action tab active id="list-home-list" href="#list-home" aria-controls="home">
-                                Home
+    <Col span={4}>
+        <ListGroup actions tabs id="list-tab">
+            <ListGroup.Item action tab toggleable active id="list-home-list2" href="#list-home2" aria-controls="home">
+                Home
+            </ListGroup.Item>
+            <ListGroup.Item action tab toggleable id="list-profile-list2" href="#list-profile2" aria-controls="profile">
+                Profile
+            </ListGroup.Item>
+            <ListGroup.Item action tab toggleable id="list-messages-list2" href="#list-messages2" aria-controls="messages">
+                Messages
+            </ListGroup.Item>
+            <ListGroup.Item action tab toggleable id="list-settings-list2" href="#list-settings2" aria-controls="settings">
+                Settings
+            </ListGroup.Item>
+        </ListGroup>
+    </Col>
+    <Col span={8}>
+        <TabContent id="nav-tab-content-2">
+            <TabPane active fade id="list-home2" aria-labelledby="list-home-list2">
+                ${contents[0].text}
+            </TabPane>
+            <TabPane fade id="list-profile2" aria-labelledby="list-profile-list2">
+                ${contents[1].text}
+            </TabPane>
+            <TabPane fade id="list-messages2" aria-labelledby="list-messages-list2">
+                ${contents[2].text}
+            </TabPane>
+            <TabPane fade id="list-settings2" aria-labelledby="list-settings-list2">
+                ${contents[3].text}
+            </TabPane>
+        </TabContent>
+    </Col>
+</Row>`}</Code>
+
+            <p>
+                You can also control tab externally by actions returned from <code>onItemCreated</code>:
+            </p>
+            <Example>
+                <TabsNativeExample />
+            </Example>
+            <Code language="tsx">{`function TabsNativeExample(): b.IBobrilNode {
+    const [tabActions] = b.useState<ITabActions[]>(new Array<ITabActions>());
+
+    return (
+        <>
+            <Row style={margin({ side: "b", size: 1 })}>
+                <Col span={4}>
+                    <ListGroup actions tabs id="list-tab">
+                        <ListGroup.Item
+                            action
+                            tab
+                            toggleable
+                            active
+                            href="#list-home3"
+                            id="list-home-list3"
+                            onItemCreated={(actions) => (tabActions[0] = actions)}
+                        >
+                            Home
+                        </ListGroup.Item>
+                        <ListGroup.Item
+                            action
+                            tab
+                            toggleable
+                            href="#list-profile3"
+                            id="list-profile-list3"
+                            onItemCreated={(actions) => (tabActions[1] = actions)}
+                        >
+                            Profile
+                        </ListGroup.Item>
+                        <ListGroup.Item
+                            action
+                            tab
+                            toggleable
+                            href="#list-messages3"
+                            id="list-messages-list3"
+                            onItemCreated={(actions) => (tabActions[2] = actions)}
+                        >
+                            Messages
+                        </ListGroup.Item>
+                        <ListGroup.Item
+                            action
+                            tab
+                            toggleable
+                            href="#list-settings3"
+                            id="list-settings-list3"
+                            onItemCreated={(actions) => (tabActions[3] = actions)}
+                        >
+                            Settings
+                        </ListGroup.Item>
+                    </ListGroup>
+                </Col>
+                <Col span={8}>
+                    <TabContent id="nav-tab-content-3">
+                        <TabPane active fade id="list-home3" aria-labelledby="list-home-list3">
+                            ${contents[0].text}
+                        </TabPane>
+                        <TabPane fade id="list-profile3" aria-labelledby="list-profile-list3">
+                            ${contents[1].text}
+                        </TabPane>
+                        <TabPane fade id="list-messages3" aria-labelledby="list-messages-list3">
+                            ${contents[2].text}
+                        </TabPane>
+                        <TabPane fade id="list-settings3" aria-labelledby="list-settings-list3">
+                            ${contents[3].text}
+                        </TabPane>
+                    </TabContent>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <ButtonGroup>
+                        <Button onClick={() => tabActions[0]("show")}>Home</Button>
+                        <Button onClick={() => tabActions[1]("show")}>Profile</Button>
+                        <Button onClick={() => tabActions[2]("show")}>Messages</Button>
+                        <Button onClick={() => tabActions[3]("show")}>Settings</Button>
+                    </ButtonGroup>
+                </Col>
+            </Row>
+        </>
+    );
+}
+
+<TabsNativeExample />`}</Code>
+            <Anchor name="list-group-tabbable-panes-native-api">
+                <h4>API</h4>
+            </Anchor>
+            <OptionsTable>
+                <OptionsRow>
+                    {{
+                        name: "toggleable",
+                        type: "boolean",
+                        defaultValue: "false",
+                        description: "Turn bootstrap native toggling on.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "fade",
+                        type: "boolean",
+                        defaultValue: "false",
+                        description: "Add fade animation.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onHide",
+                        type: "() => void",
+                        defaultValue: "undefined",
+                        description: <p>This event is fired immediately when hiding is started.</p>,
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onHiding",
+                        type: "() => void",
+                        defaultValue: "undefined",
+                        description: (
+                            <p>
+                                This event is fired when a collapse element has been hidden from the user (will wait for CSS transitions to
+                                complete).
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onShow",
+                        type: "()) => void",
+                        defaultValue: "undefined",
+                        description: <p>This event fires immediately when the showing is started.</p>,
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onShown",
+                        type: "()) => void",
+                        defaultValue: "undefined",
+                        description: (
+                            <p>
+                                This event is fired when a collapse element has been made visible to the user (will wait for CSS transitions
+                                to complete).
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onItemCreated",
+                        type: "onItemCreated?: (action: ITabActions, element: JQuery<HTMLElement>) => void",
+                        defaultValue: "undefined",
+                        description: (
+                            <p>
+                                This callback is fired when item is initialized and provides <code>action</code> as controller instance.
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+            </OptionsTable>
+        </>
+    );
+}
+
+function TabsReactiveExample(): b.IBobrilNode {
+    const [activeTab, setActiveTab] = b.useState(0);
+
+    return (
+        <>
+            <Row style={margin({ side: "b", size: 1 })}>
+                <Col span={4}>
+                    <ListGroup actions tabs id="list-tab">
+                        {contents.map((content, index) => (
+                            <ListGroup.Item
+                                tab
+                                active={activeTab === index}
+                                id={`list-${content.id}-list1`}
+                                onClick={() => setActiveTab(index)}
+                            >
+                                {content.title}
                             </ListGroup.Item>
-                            <ListGroup.Item action tab id="list-profile-list" href="#list-profile" aria-controls="profile">
-                                Profile
-                            </ListGroup.Item>
-                            <ListGroup.Item action tab id="list-messages-list" href="#list-messages" aria-controls="messages">
-                                Messages
-                            </ListGroup.Item>
-                            <ListGroup.Item action tab id="list-settings-list" href="#list-settings" aria-controls="settings">
-                                Settings
-                            </ListGroup.Item>
-                        </ListGroup>
-                    </Col>
-                    <Col span={8}>
-                        <TabContent id="nav-tabContent">
-                            <TabPane active fade id="list-home" aria-labelledby="list-home-list">
-                                {contents[0]}
-                            </TabPane>
-                            <TabPane fade id="list-profile" aria-labelledby="list-profile-list">
-                                {contents[1]}
-                            </TabPane>
-                            <TabPane fade id="list-messages" aria-labelledby="list-messages-list">
-                                {contents[2]}
-                            </TabPane>
-                            <TabPane fade id="list-settings" aria-labelledby="list-settings-list">
-                                {contents[3]}
-                            </TabPane>
-                        </TabContent>
-                    </Col>
-                </Row>`}</Code>
+                        ))}
+                    </ListGroup>
+                </Col>
+                <Col span={8}>
+                    <TabContent id="nav-tab-content-1">
+                        <TabPane active aria-labelledby={`list-${contents[activeTab].id}-list1`}>
+                            {contents[activeTab].text}
+                        </TabPane>
+                    </TabContent>
+                </Col>
+            </Row>
+        </>
+    );
+}
+
+function TabsNativeExample(): b.IBobrilNode {
+    const [tabActions] = b.useState<ITabActions[]>(new Array<ITabActions>());
+
+    return (
+        <>
+            <Row style={margin({ side: "b", size: 1 })}>
+                <Col span={4}>
+                    <ListGroup actions tabs id="list-tab">
+                        <ListGroup.Item
+                            action
+                            tab
+                            toggleable
+                            active
+                            href="#list-home3"
+                            id="list-home-list3"
+                            onItemCreated={(actions) => (tabActions[0] = actions)}
+                        >
+                            Home
+                        </ListGroup.Item>
+                        <ListGroup.Item
+                            action
+                            tab
+                            toggleable
+                            href="#list-profile3"
+                            id="list-profile-list3"
+                            onItemCreated={(actions) => (tabActions[1] = actions)}
+                        >
+                            Profile
+                        </ListGroup.Item>
+                        <ListGroup.Item
+                            action
+                            tab
+                            toggleable
+                            href="#list-messages3"
+                            id="list-messages-list3"
+                            onItemCreated={(actions) => (tabActions[2] = actions)}
+                        >
+                            Messages
+                        </ListGroup.Item>
+                        <ListGroup.Item
+                            action
+                            tab
+                            toggleable
+                            href="#list-settings3"
+                            id="list-settings-list3"
+                            onItemCreated={(actions) => (tabActions[3] = actions)}
+                        >
+                            Settings
+                        </ListGroup.Item>
+                    </ListGroup>
+                </Col>
+                <Col span={8}>
+                    <TabContent id="nav-tab-content-3">
+                        <TabPane active fade id="list-home3" aria-labelledby="list-home-list3">
+                            {contents[0].text}
+                        </TabPane>
+                        <TabPane fade id="list-profile3" aria-labelledby="list-profile-list3">
+                            {contents[1].text}
+                        </TabPane>
+                        <TabPane fade id="list-messages3" aria-labelledby="list-messages-list3">
+                            {contents[2].text}
+                        </TabPane>
+                        <TabPane fade id="list-settings3" aria-labelledby="list-settings-list3">
+                            {contents[3].text}
+                        </TabPane>
+                    </TabContent>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <ButtonGroup>
+                        <Button onClick={() => tabActions[0]("show")}>Home</Button>
+                        <Button onClick={() => tabActions[1]("show")}>Profile</Button>
+                        <Button onClick={() => tabActions[2]("show")}>Messages</Button>
+                        <Button onClick={() => tabActions[3]("show")}>Settings</Button>
+                    </ButtonGroup>
+                </Col>
+            </Row>
         </>
     );
 }
 
 const contents = [
-    "Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor. Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim eu nostrud do aliquip veniam minim.",
-    "Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa commodo veniam incididunt veniam ad.",
-    "Ut ut do pariatur aliquip aliqua aliquip exercitation do nostrud commodo reprehenderit aute ipsum voluptate. Irure Lorem et laboris nostrud amet cupidatat cupidatat anim do ut velit mollit consequat enim tempor. Consectetur est minim nostrud nostrud consectetur irure labore voluptate irure. Ipsum id Lorem sit sint voluptate est pariatur eu ad cupidatat et deserunt culpa sit eiusmod deserunt. Consectetur et fugiat anim do eiusmod aliquip nulla laborum elit adipisicing pariatur cillum.",
-    "Irure enim occaecat labore sit qui aliquip reprehenderit amet velit. Deserunt ullamco ex elit nostrud ut dolore nisi officia magna sit occaecat laboris sunt dolor. Nisi eu minim cillum occaecat aute est cupidatat aliqua labore aute occaecat ea aliquip sunt amet. Aute mollit dolor ut exercitation irure commodo non amet consectetur quis amet culpa. Quis ullamco nisi amet qui aute irure eu. Magna labore dolor quis ex labore id nostrud deserunt dolor eiusmod eu pariatur culpa mollit in irure.",
+    {
+        id: "home",
+        text:
+            "Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor. Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat nisi ad non minim tempor sunt voluptate consectetur exercitation id ut nulla. Ea et fugiat aliquip nostrud sunt incididunt consectetur culpa aliquip eiusmod dolor. Anim ad Lorem aliqua in cupidatat nisi enim eu nostrud do aliquip veniam minim.",
+        title: "Home",
+    },
+    {
+        id: "profile",
+        text:
+            "Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex amet id ex. Officia anim incididunt laboris deserunt anim aute dolor incididunt veniam aute dolore do exercitation. Dolor nisi culpa ex ad irure in elit eu dolore. Ad laboris ipsum reprehenderit irure non commodo enim culpa commodo veniam incididunt veniam ad.",
+        title: "Profile",
+    },
+    {
+        id: "messages",
+        text:
+            "Ut ut do pariatur aliquip aliqua aliquip exercitation do nostrud commodo reprehenderit aute ipsum voluptate. Irure Lorem et laboris nostrud amet cupidatat cupidatat anim do ut velit mollit consequat enim tempor. Consectetur est minim nostrud nostrud consectetur irure labore voluptate irure. Ipsum id Lorem sit sint voluptate est pariatur eu ad cupidatat et deserunt culpa sit eiusmod deserunt. Consectetur et fugiat anim do eiusmod aliquip nulla laborum elit adipisicing pariatur cillum.",
+        title: "Messages",
+    },
+    {
+        id: "settings",
+        text:
+            "Irure enim occaecat labore sit qui aliquip reprehenderit amet velit. Deserunt ullamco ex elit nostrud ut dolore nisi officia magna sit occaecat laboris sunt dolor. Nisi eu minim cillum occaecat aute est cupidatat aliqua labore aute occaecat ea aliquip sunt amet. Aute mollit dolor ut exercitation irure commodo non amet consectetur quis amet culpa. Quis ullamco nisi amet qui aute irure eu. Magna labore dolor quis ex labore id nostrud deserunt dolor eiusmod eu pariatur culpa mollit in irure.",
+        title: "Settings",
+    },
 ];

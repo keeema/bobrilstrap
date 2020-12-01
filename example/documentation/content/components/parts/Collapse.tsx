@@ -224,7 +224,7 @@ export function CollapseDoc(): b.IBobrilNode {
                 <OptionsRow>
                     {{
                         name: "onShow",
-                        type: "()) => void",
+                        type: "() => void",
                         defaultValue: "undefined",
                         description: <p>This event fires immediately when the showing is started.</p>,
                     }}
@@ -232,7 +232,7 @@ export function CollapseDoc(): b.IBobrilNode {
                 <OptionsRow>
                     {{
                         name: "onShown",
-                        type: "()) => void",
+                        type: "() => void",
                         defaultValue: "undefined",
                         description: (
                             <p>

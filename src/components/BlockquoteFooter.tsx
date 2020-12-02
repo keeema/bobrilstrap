@@ -1,6 +1,6 @@
 import * as b from "bobril";
-import { Tags } from "../../../helpers/tags";
-import { IBaseElementDataWithChildren, BaseElement } from "../../components/BaseElement";
+import { Tags } from "../../helpers/tags";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const blockquoteFooterStyles = {
     footer: b.styleDef("blockquote-footer"),

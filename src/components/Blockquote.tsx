@@ -1,7 +1,7 @@
 import * as b from "bobril";
-import { Tags } from "../../../helpers/tags";
-import { IBaseElementDataWithChildren, BaseElement } from "../../components/BaseElement";
-import { cardBodyStyles } from "../../components/CardBody";
+import { Tags } from "../../helpers/tags";
+import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
+import { cardBodyStyles } from "./CardBody";
 import { BlockquoteFooter } from "./BlockquoteFooter";
 
 export const blockquoteStyles = {

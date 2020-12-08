@@ -27,6 +27,7 @@
         "compilerOptions": {
             "declaration": true,
             "strict": true,
+            "noUncheckedIndexedAccess": true,
             "noUnusedLocals": true,
             "noUnusedParameters": true,
             "noImplicitReturns": true,
@@ -44,7 +45,7 @@
     "dependencies": {
         "@types/bootstrap": "^4.5.0",
         "@types/jquery": "^3.5.3",
-        "bobril": "^14.15.0",
+        "bobril": "^14.17.0",
         "bootstrap": "^4.5.3",
         "jquery": "^3.5.1"
     },

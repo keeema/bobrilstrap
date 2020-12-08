@@ -425,7 +425,7 @@ ${listGroupItemVariants
                 <TabsReactiveExample />
             </Example>
             <Code language="tsx">{`function TabsReactiveExample(): b.IBobrilNode {
-    const [activeTab, setActiveTab] = b.useState(0);
+    const [activeTab, setActiveTab] = b.useState<0 | 1 | 2 | 3>(0);
 
     return (
         <>
@@ -435,9 +435,10 @@ ${listGroupItemVariants
                         {contents.map((content, index) => (
                             <ListGroup.Item
                                 tab
+                                action
                                 active={activeTab === index}
                                 id={\`list-\${content.id}-list1\`}
-                                onClick={() => setActiveTab(index)}
+                                onClick={() => setActiveTab(index as 0 | 1 | 2 | 3)}
                             >
                                 {content.title}
                             </ListGroup.Item>
@@ -545,7 +546,13 @@ ${listGroupItemVariants
                 <TabsNativeExample />
             </Example>
             <Code language="tsx">{`function TabsNativeExample(): b.IBobrilNode {
-    const [tabActions] = b.useState<ITabActions[]>(new Array<ITabActions>());
+    const defaultTabAction = () => {};
+    const [tabActions] = b.useState<[ITabActions, ITabActions, ITabActions, ITabActions]>([
+        defaultTabAction,
+        defaultTabAction,
+        defaultTabAction,
+        defaultTabAction,
+    ]);
 
     return (
         <>
@@ -598,16 +605,16 @@ ${listGroupItemVariants
                 <Col span={8}>
                     <TabContent id="nav-tab-content-3">
                         <TabPane active fade id="list-home3" aria-labelledby="list-home-list3">
-                            ${contents[0].text}
+                            {contents[0].text}
                         </TabPane>
                         <TabPane fade id="list-profile3" aria-labelledby="list-profile-list3">
-                            ${contents[1].text}
+                            {contents[1].text}
                         </TabPane>
                         <TabPane fade id="list-messages3" aria-labelledby="list-messages-list3">
-                            ${contents[2].text}
+                            {contents[2].text}
                         </TabPane>
                         <TabPane fade id="list-settings3" aria-labelledby="list-settings-list3">
-                            ${contents[3].text}
+                            {contents[3].text}
                         </TabPane>
                     </TabContent>
                 </Col>
@@ -707,7 +714,7 @@ ${listGroupItemVariants
 }
 
 function TabsReactiveExample(): b.IBobrilNode {
-    const [activeTab, setActiveTab] = b.useState(0);
+    const [activeTab, setActiveTab] = b.useState<0 | 1 | 2 | 3>(0);
 
     return (
         <>
@@ -717,9 +724,10 @@ function TabsReactiveExample(): b.IBobrilNode {
                         {contents.map((content, index) => (
                             <ListGroup.Item
                                 tab
+                                action
                                 active={activeTab === index}
                                 id={`list-${content.id}-list1`}
-                                onClick={() => setActiveTab(index)}
+                                onClick={() => setActiveTab(index as 0 | 1 | 2 | 3)}
                             >
                                 {content.title}
                             </ListGroup.Item>
@@ -739,7 +747,13 @@ function TabsReactiveExample(): b.IBobrilNode {
 }
 
 function TabsNativeExample(): b.IBobrilNode {
-    const [tabActions] = b.useState<ITabActions[]>(new Array<ITabActions>());
+    const defaultTabAction = () => {};
+    const [tabActions] = b.useState<[ITabActions, ITabActions, ITabActions, ITabActions]>([
+        defaultTabAction,
+        defaultTabAction,
+        defaultTabAction,
+        defaultTabAction,
+    ]);
 
     return (
         <>
@@ -820,7 +834,13 @@ function TabsNativeExample(): b.IBobrilNode {
     );
 }
 
-const contents = [
+interface IContent {
+    id: string;
+    text: string;
+    title: string;
+}
+
+const contents: [IContent, IContent, IContent, IContent] = [
     {
         id: "home",
         text:

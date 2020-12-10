@@ -22,7 +22,7 @@ import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { Callout } from "../../../../common/Callout";
 import { TabPane } from "../../../../../src/components/TabPane";
-import { ITabActions } from "../../../../../src/components/ListGroupItem";
+import { ITab } from "../../../../../src/components/ListGroupItem";
 import { OptionsTable, OptionsRow } from "../../../../common/OptionsTable";
 
 export const listGroupRoute: IRouteWithNavDefinition = {
@@ -547,7 +547,7 @@ ${listGroupItemVariants
             </Example>
             <Code language="tsx">{`function TabsNativeExample(): b.IBobrilNode {
     const defaultTabAction = () => {};
-    const [tabActions] = b.useState<[ITabActions, ITabActions, ITabActions, ITabActions]>([
+    const [tabActions] = b.useState<[ITab, ITab, ITab, ITab]>([
         defaultTabAction,
         defaultTabAction,
         defaultTabAction,
@@ -699,7 +699,7 @@ ${listGroupItemVariants
                 <OptionsRow>
                     {{
                         name: "onItemCreated",
-                        type: "onItemCreated?: (action: ITabActions, element: JQuery<HTMLElement>) => void",
+                        type: "onItemCreated?: (action: ITab, element: JQuery<HTMLElement>) => void",
                         defaultValue: "undefined",
                         description: (
                             <p>
@@ -747,13 +747,8 @@ function TabsReactiveExample(): b.IBobrilNode {
 }
 
 function TabsNativeExample(): b.IBobrilNode {
-    const defaultTabAction = () => {};
-    const [tabActions] = b.useState<[ITabActions, ITabActions, ITabActions, ITabActions]>([
-        defaultTabAction,
-        defaultTabAction,
-        defaultTabAction,
-        defaultTabAction,
-    ]);
+    const defaultTab = {} as ITab;
+    const [tabs] = b.useState<[ITab, ITab, ITab, ITab]>([defaultTab, defaultTab, defaultTab, defaultTab]);
 
     return (
         <>
@@ -767,7 +762,7 @@ function TabsNativeExample(): b.IBobrilNode {
                             active
                             href="#list-home3"
                             id="list-home-list3"
-                            onItemCreated={(actions) => (tabActions[0] = actions)}
+                            onItemCreated={(actions) => (tabs[0] = actions)}
                         >
                             Home
                         </ListGroup.Item>
@@ -777,7 +772,7 @@ function TabsNativeExample(): b.IBobrilNode {
                             toggleable
                             href="#list-profile3"
                             id="list-profile-list3"
-                            onItemCreated={(actions) => (tabActions[1] = actions)}
+                            onItemCreated={(actions) => (tabs[1] = actions)}
                         >
                             Profile
                         </ListGroup.Item>
@@ -787,7 +782,7 @@ function TabsNativeExample(): b.IBobrilNode {
                             toggleable
                             href="#list-messages3"
                             id="list-messages-list3"
-                            onItemCreated={(actions) => (tabActions[2] = actions)}
+                            onItemCreated={(actions) => (tabs[2] = actions)}
                         >
                             Messages
                         </ListGroup.Item>
@@ -797,7 +792,7 @@ function TabsNativeExample(): b.IBobrilNode {
                             toggleable
                             href="#list-settings3"
                             id="list-settings-list3"
-                            onItemCreated={(actions) => (tabActions[3] = actions)}
+                            onItemCreated={(actions) => (tabs[3] = actions)}
                         >
                             Settings
                         </ListGroup.Item>
@@ -823,10 +818,10 @@ function TabsNativeExample(): b.IBobrilNode {
             <Row>
                 <Col>
                     <ButtonGroup>
-                        <Button onClick={() => tabActions[0]("show")}>Home</Button>
-                        <Button onClick={() => tabActions[1]("show")}>Profile</Button>
-                        <Button onClick={() => tabActions[2]("show")}>Messages</Button>
-                        <Button onClick={() => tabActions[3]("show")}>Settings</Button>
+                        <Button onClick={() => tabs[0].show()}>Home</Button>
+                        <Button onClick={() => tabs[1].show()}>Profile</Button>
+                        <Button onClick={() => tabs[2].show()}>Messages</Button>
+                        <Button onClick={() => tabs[3].show()}>Settings</Button>
                     </ButtonGroup>
                 </Col>
             </Row>

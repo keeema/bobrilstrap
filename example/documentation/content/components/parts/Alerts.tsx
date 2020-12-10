@@ -142,7 +142,7 @@ export function Alerts(): b.IBobrilNode {
 
     if (show) {
         return (
-            <Alert variant="danger">
+            <Alert variant="danger" dismissible>
                 Holy guacamole! You should check in on some of those fields below.
                 <AlertDismissButton onClick={() => setShow(false)} />
             </Alert>
@@ -161,7 +161,7 @@ export function Alerts(): b.IBobrilNode {
             <Example>
                 <Alert
                     variant="warning"
-                    dismissible
+                    dismissible="native"
                     dismiss-animation
                     onDismiss={() => alert("Dismiss")}
                     onDismissed={() => alert("Dismissed")}
@@ -169,7 +169,7 @@ export function Alerts(): b.IBobrilNode {
                     Holy guacamole! You should check in on some of those fields below.
                 </Alert>
             </Example>
-            <Code language="tsx">{`<Alert variant="warning" dismissible dismiss-animation onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
+            <Code language="tsx">{`<Alert variant="warning" dismissible="native" dismiss-animation onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
     Holy guacamole! You should check in on some of those fields below.
 </Alert>`}</Code>
         </>
@@ -181,7 +181,7 @@ function AlertDismissibleExample(): b.IBobrilNode {
 
     if (show) {
         return (
-            <Alert variant="danger">
+            <Alert variant="danger" dismissible>
                 Holy guacamole! You should check in on some of those fields below.
                 <AlertDismissButton onClick={() => setShow(false)} />
             </Alert>

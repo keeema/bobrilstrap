@@ -3,11 +3,11 @@ import { createFilledDictionary } from "../../helpers/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
 export type SpacingType = "m" | "p";
-export type Side = "t" | "b" | "l" | "r" | "x" | "y" | "";
+export type Side = "t" | "b" | "s" | "e" | "x" | "y" | "";
 export type SpacingSize = -5 | -4 | -3 | -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | "auto";
 
 const spacingTypes: SpacingType[] = ["m", "p"];
-const sides: Side[] = ["t", "b", "l", "r", "x", "y", ""];
+const sides: Side[] = ["t", "b", "s", "e", "x", "y", ""];
 const spacingSizes: SpacingSize[] = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, "auto"];
 
 const spacings = createFilledDictionary(

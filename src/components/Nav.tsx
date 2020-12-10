@@ -45,7 +45,7 @@ export class Nav extends BaseElement<INavData> {
     ];
 
     get tag(): Tags {
-        return "nav";
+        return "ul";
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

@@ -8,7 +8,7 @@ import { Lead } from "../../../../common/Lead";
 import { Form } from "../../../../../src/components/Form";
 import { flex } from "../../../../../src/utilities/flex";
 import { Button } from "../../../../../src/components/Button";
-import { srOnly } from "../../../../../src/utilities/screenReaders";
+import { visuallyHidden } from "../../../../../src/helpers/screenReaders";
 import { CustomControl } from "../../../../../src/components/CustomControl";
 
 export const inputGroupRoute: IRouteWithNavDefinition = {
@@ -536,7 +536,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                     <InputGroup.Prepend>
                         <Button variant="outline-secondary">Action</Button>
                         <Dropdown.Toggle split variant="outline-secondary">
-                            <span style={srOnly}>Toggle Dropdown</span>
+                            <span style={visuallyHidden}>Toggle Dropdown</span>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item>Action</Dropdown.Item>
@@ -553,7 +553,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                     <InputGroup.Append>
                         <Button variant="outline-secondary">Action</Button>
                         <Dropdown.Toggle split variant="outline-secondary">
-                            <span style={srOnly}>Toggle Dropdown</span>
+                            <span style={visuallyHidden}>Toggle Dropdown</span>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item>Action</Dropdown.Item>

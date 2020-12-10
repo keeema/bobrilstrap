@@ -2,13 +2,10 @@ import * as b from "bobril";
 import { createFilledDictionary } from "../../helpers/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
-export type TextAlign = "left" | "center" | "right";
-export type TextJustify = "justify";
-export type TextAlignOrJustify = TextAlign | TextJustify;
-const textAligns: TextAlign[] = ["left", "center", "right"];
-const textAlignsOrJustifies: TextAlignOrJustify[] = [...textAligns, "justify"];
+export type TextAlign = "start" | "center" | "end";
+const textAligns: TextAlign[] = ["start", "center", "end"];
 
-export const alignsAll = createFilledDictionary(textAlignsOrJustifies.map((align) => [align, b.styleDef(`text-${align}`)]));
+export const alignsAll = createFilledDictionary(textAligns.map((align) => [align, b.styleDef(`text-${align}`)]));
 
 export const alignsOnBreakpoint = createFilledDictionary(
     breakpoints.map((breakpoint) => [
@@ -17,8 +14,6 @@ export const alignsOnBreakpoint = createFilledDictionary(
     ])
 );
 
-export function textAlign(align: TextAlignOrJustify): b.IBobrilStyle;
-export function textAlign(align: TextAlign, breakpoint: Breakpoint): b.IBobrilStyle;
-export function textAlign(align: TextAlign | TextAlignOrJustify, breakpoint?: Breakpoint): b.IBobrilStyle {
+export function textAlign(align: TextAlign, breakpoint?: Breakpoint): b.IBobrilStyle {
     return breakpoint ? alignsOnBreakpoint(breakpoint)(align as TextAlign) : alignsAll(align);
 }

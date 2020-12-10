@@ -48,8 +48,8 @@ export interface IKnownAttrs {
 }
 
 export interface IDataAttrs {
-    "data-toggle"?: string;
-    "data-target"?: string;
+    "data-bs-toggle"?: string;
+    "data-bs-target"?: string;
 }
 
 export interface IAttrs {

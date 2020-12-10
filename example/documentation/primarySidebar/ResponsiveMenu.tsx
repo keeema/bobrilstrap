@@ -10,7 +10,7 @@ interface IResponsiveMenu {
 }
 
 export function ResponsiveMenu({ collapsed, isSmallDevice, children, onClick }: IResponsiveMenu): b.IBobrilNode {
-    const styles = [linksStyle, textAlign("center"), textAlign("left", "md")];
+    const styles = [linksStyle, textAlign("center"), textAlign("start", "md")];
     return isSmallDevice ? (
         <Collapse as="nav" collapsed={collapsed} style={styles} onClick={onClick}>
             {children}

@@ -21,10 +21,10 @@ export class DropdownToggle extends Button<IDropdownToggleData> {
     componentAdditionalAttributes(): IAllAttrs {
         return {
             ...super.componentAdditionalAttributes(),
-            ["data-toggle"]: "dropdown",
+            ["data-bs-toggle"]: "dropdown",
             "aria-haspopup": this.data["aria-haspopup"] !== undefined ? this.data["aria-haspopup"] : true,
-            "data-display": this.data["display-static"] ? "static" : this.data["data-display"],
-            "data-offset": this.data.offset || this.data["data-offset"],
+            "data-bs-display": this.data["display-static"] ? "static" : this.data["data-bs-display"],
+            "data-bs-offset": this.data.offset || this.data["data-bs-offset"],
         };
     }
 

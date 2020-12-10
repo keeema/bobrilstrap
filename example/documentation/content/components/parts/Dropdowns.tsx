@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button, Dropdown, margin, srOnly, textColor, padding, Form } from "../../../../../index";
+import { Button, Dropdown, margin, visuallyHidden, textColor, padding, Form } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 
@@ -163,9 +163,7 @@ export function DropdownsDoc(): b.IBobrilNode {
             <p>Or as anchors:</p>
             <Example>
                 <Dropdown>
-                    <Dropdown.Toggle href="javascript:void(0)" variant="secondary">
-                        Dropdown link
-                    </Dropdown.Toggle>
+                    <Dropdown.Toggle variant="secondary">Dropdown link</Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item href="javascript:void(0)">Action</Dropdown.Item>
                         <Dropdown.Item href="javascript:void(0)">Another action</Dropdown.Item>
@@ -176,7 +174,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                 </Dropdown>
             </Example>
             <Code language="tsx">{`<Dropdown>
-    <Dropdown.Toggle href="javascript:void(0)" variant="secondary">
+    <Dropdown.Toggle variant="secondary">
         Dropdown link
     </Dropdown.Toggle>
     <Dropdown.Menu>
@@ -198,7 +196,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                 <Dropdown>
                     <Button variant="success">Success</Button>
                     <Dropdown.Toggle variant="success" split>
-                        <span style={srOnly}>Toggle Dropdown</span>
+                        <span style={visuallyHidden}>Toggle Dropdown</span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item>Action</Dropdown.Item>
@@ -243,7 +241,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                         Large split button
                     </Button>
                     <Dropdown.Toggle variant="secondary" size={"lg"} split>
-                        <span style={srOnly}>Toggle Dropdown</span>
+                        <span style={visuallyHidden}>Toggle Dropdown</span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item>Action</Dropdown.Item>
@@ -290,7 +288,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                 <Dropdown direction="up">
                     <Button variant="secondary">Split drop-up</Button>
                     <Dropdown.Toggle variant="secondary" split>
-                        <span style={srOnly}>Toggle Dropdown</span>
+                        <span style={visuallyHidden}>Toggle Dropdown</span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item>Action</Dropdown.Item>
@@ -303,7 +301,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                 <Dropdown direction="left">
                     <Button variant="secondary">Split drop-up</Button>
                     <Dropdown.Toggle variant="secondary" split>
-                        <span style={srOnly}>Toggle Dropdown</span>
+                        <span style={visuallyHidden}>Toggle Dropdown</span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item>Action</Dropdown.Item>
@@ -316,7 +314,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                 <Dropdown direction="right">
                     <Button variant="secondary">Split drop-right</Button>
                     <Dropdown.Toggle variant="secondary" split>
-                        <span style={srOnly}>Toggle Dropdown</span>
+                        <span style={visuallyHidden}>Toggle Dropdown</span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item>Action</Dropdown.Item>

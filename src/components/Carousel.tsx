@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import $ from "jquery";
+import bootstrap from "bootstrap";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
-import { CarouselOption, CarouselEventHandler } from "bootstrap";
 import { pick } from "../../helpers/objectHelper";
 import { CarouselInner } from "./CarouselInner";
 import { CarouselItem } from "./CarouselItem";
@@ -13,21 +13,28 @@ export const carouselStyles = {
     carousel: b.styleDef("carousel"),
     slide: b.styleDef("slide"),
     carouselFade: b.styleDef("carousel-fade"),
+    dark: b.styleDef("carousel-dark"),
 };
 
-export interface ICarouselActions {
-    (action: "cycle" | "pause" | number | "prev" | "next" | "dispose"): void;
+export type ICarousel = bootstrap.Carousel & { to: (index: number) => void };
+
+export interface ICarouselEvent extends JQuery.TriggeredEvent<HTMLDivElement, undefined, HTMLDivElement, HTMLDivElement> {
+    direction: "left" | "right";
+    relatedTarget: HTMLDivElement;
+    from: number;
+    to: number;
 }
 
 interface ICarouselElementData {
     "cross-fade"?: boolean;
     slide?: boolean;
-    onCarouselCreated?(carousel: ICarouselActions, element: JQuery<HTMLDivElement>): void;
-    onSlid?(event: CarouselEventHandler<HTMLDivElement>): void;
-    onSlide?(event: CarouselEventHandler<HTMLDivElement>): void;
+    dark?: boolean;
+    onCarouselCreated?(carousel: ICarousel, element: JQuery<HTMLDivElement>): void;
+    onSlid?(ev: ICarouselEvent): void;
+    onSlide?(ev: ICarouselEvent): void;
 }
 
-export type ICarouselData = ICarouselElementData & Omit<CarouselOption, "slide"> & IBaseElementDataWithChildren;
+export type ICarouselData = ICarouselElementData & Partial<Omit<bootstrap.Carousel.Options, "slide">> & IBaseElementDataWithChildren;
 
 export class Carousel extends BaseElement<ICarouselData> {
     static Caption = CarouselCaption;
@@ -37,21 +44,33 @@ export class Carousel extends BaseElement<ICarouselData> {
     static Item = CarouselItem;
 
     static id: string = "bobrilstrap-carousel-inner";
-    readonly carouselConfigProperties: (keyof Omit<CarouselOption, "slide">)[] = ["interval", "keyboard", "pause", "ride", "wrap", "touch"];
-    readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "slide", "cross-fade"];
+    readonly carouselConfigProperties: (keyof Omit<bootstrap.Carousel.Options, "slide">)[] = [
+        "interval",
+        "keyboard",
+        "pause",
+        "wrap",
+        "touch",
+    ];
+    readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "slide", "cross-fade", "dark"];
     componentProperties = (): (keyof ICarouselData)[] => [...this.carouselDataProperties, ...this.carouselConfigProperties];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [carouselStyles.carousel, this.data.slide && carouselStyles.slide, this.data["cross-fade"] && carouselStyles.carouselFade];
+        return [
+            carouselStyles.carousel,
+            this.data.slide && carouselStyles.slide,
+            this.data["cross-fade"] && carouselStyles.carouselFade,
+            this.data.dark && carouselStyles.dark,
+        ];
     }
 
     postInitDom(): void {
         const config = pick(this.data, ...this.carouselConfigProperties);
         const data = pick(this.data, ...this.carouselDataProperties);
-        const carouselEl = $(this.element);
-        carouselEl.carousel(config);
-        carouselEl.on("slide.bs.carousel", (ev) => this.data.onSlide && this.data.onSlide(ev));
-        carouselEl.on("slid.bs.carousel", (ev) => this.data.onSlid && this.data.onSlid(ev));
-        data.onCarouselCreated && data.onCarouselCreated((action) => carouselEl.carousel(action), carouselEl);
+        const jqueryElement = $(this.element);
+        const carouselElement = new bootstrap.Carousel(this.element, config);
+
+        jqueryElement.on("slide.bs.carousel", (ev) => this.data.onSlide && this.data.onSlide(ev as ICarouselEvent));
+        jqueryElement.on("slid.bs.carousel", (ev) => this.data.onSlid && this.data.onSlid(ev as ICarouselEvent));
+        data.onCarouselCreated && data.onCarouselCreated(carouselElement as ICarousel, jqueryElement);
     }
 }

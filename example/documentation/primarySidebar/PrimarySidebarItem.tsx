@@ -40,11 +40,11 @@ const sidebarLinkStyle = b.styleDef(
         padding: ".25rem 1.5rem",
         fontWeight: 600,
         color: "rgba(0,0,0,.65)",
+        textDecoration: "none",
     },
     {
         hover: {
             color: "rgba(0, 0, 0, .85)",
-            textDecoration: "none",
         },
     }
 );

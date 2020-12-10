@@ -11,6 +11,7 @@ export const inputGroupStyles = {
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`input-group-${breakpoint}`)])),
     valid: b.styleDef("is-valid"),
     invalid: b.styleDef("is-invalid"),
+    hasValidation: b.styleDef("has-validation"),
 };
 
 export interface IInputGroupData extends IBaseElementDataWithChildren {
@@ -32,6 +33,7 @@ export class InputGroup extends BaseElement<IInputGroupData> {
             this.data.size && inputGroupStyles.sizes(this.data.size),
             this.data.valid === true && inputGroupStyles.valid,
             this.data.valid === false && inputGroupStyles.invalid,
+            this.data.valid !== undefined && inputGroupStyles.hasValidation,
         ];
     }
 }

@@ -13,7 +13,7 @@ import {
     InputGroup,
     padding,
     alignItems,
-    srOnly,
+    visuallyHidden,
     Feedback,
     CustomControl,
 } from "../../../../../index";
@@ -1071,13 +1071,13 @@ export function FormsDoc(): b.IBobrilNode {
                 <Form>
                     <Form.Row style={alignItems("center")}>
                         <Col span="auto">
-                            <Form.Label style={srOnly} for="inlineFormInput">
+                            <Form.Label style={visuallyHidden} for="inlineFormInput">
                                 Name
                             </Form.Label>
                             <Form.Input type="text" style={margin({ side: "b", size: 2 })} id="inlineFormInput" placeholder="Jane Doe" />
                         </Col>
                         <Col span="auto">
-                            <Form.Label style={srOnly} for="inlineFormInputGroup">
+                            <Form.Label style={visuallyHidden} for="inlineFormInputGroup">
                                 Username
                             </Form.Label>
                             <InputGroup style={margin({ side: "b", size: 2 })}>
@@ -1142,13 +1142,13 @@ export function FormsDoc(): b.IBobrilNode {
                 <Form>
                     <Form.Row style={alignItems("center")}>
                         <Col sm={3} style={margin({ side: "y", size: 1 })}>
-                            <Form.Label style={srOnly} for="inlineFormInputName">
+                            <Form.Label style={visuallyHidden} for="inlineFormInputName">
                                 Name
                             </Form.Label>
                             <Form.Input type="text" id="inlineFormInputName" placeholder="Jane Doe" />
                         </Col>
                         <Col sm={3} style={margin({ side: "y", size: 1 })}>
-                            <Form.Label style={srOnly} for="inlineFormInputGroupUsername">
+                            <Form.Label style={visuallyHidden} for="inlineFormInputGroupUsername">
                                 Username
                             </Form.Label>
                             <InputGroup>
@@ -1235,25 +1235,25 @@ export function FormsDoc(): b.IBobrilNode {
             </p>
             <Example>
                 <Form inline>
-                    <Form.Label style={srOnly} for="inlineFormInputName2">
+                    <Form.Label style={visuallyHidden} for="inlineFormInputName2">
                         Name
                     </Form.Label>
                     <Form.Input
                         type="text"
-                        style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}
+                        style={[margin({ side: "b", size: 2 }), margin({ side: "e", size: 2, breakpoint: "sm" })]}
                         id="inlineFormInputName2"
                         placeholder="Jane Doe"
                     />
-                    <Form.Label style={srOnly} for="inlineFormInputGroupUsername2">
+                    <Form.Label style={visuallyHidden} for="inlineFormInputGroupUsername2">
                         Username
                     </Form.Label>
-                    <InputGroup style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}>
+                    <InputGroup style={[margin({ side: "b", size: 2 }), margin({ side: "e", size: 2, breakpoint: "sm" })]}>
                         <InputGroup.Prepend>
                             <InputGroup.Text>@</InputGroup.Text>
                         </InputGroup.Prepend>
                         <Form.Input type="text" id="inlineFormInputGroupUsername2" placeholder="Username" />
                     </InputGroup>
-                    <Form.Check style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}>
+                    <Form.Check style={[margin({ side: "b", size: 2 }), margin({ side: "e", size: 2, breakpoint: "sm" })]}>
                         <Form.Input type="checkbox" id="inlineFormCheck" />
                         <Form.Label form-check for="inlineFormCheck">
                             Remember me
@@ -1270,20 +1270,20 @@ export function FormsDoc(): b.IBobrilNode {
     </Form.Label>
     <Form.Input
         type="text"
-        style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}
+        style={[margin({ side: "b", size: 2 }), margin({ side: "e", size: 2, breakpoint: "sm" })]}
         id="inlineFormInputName2"
         placeholder="Jane Doe"
     />
     <Form.Label style={srOnly} for="inlineFormInputGroupUsername2">
         Username
     </Form.Label>
-    <InputGroup style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}>
+    <InputGroup style={[margin({ side: "b", size: 2 }), margin({ side: "e", size: 2, breakpoint: "sm" })]}>
         <InputGroup.Prepend>
             <InputGroup.Text>@</InputGroup.Text>
         </InputGroup.Prepend>
         <Form.Input type="text" id="inlineFormInputGroupUsername2" placeholder="Username" />
     </InputGroup>
-    <Form.Check style={[margin({ side: "b", size: 2 }), margin({ side: "r", size: 2, breakpoint: "sm" })]}>
+    <Form.Check style={[margin({ side: "b", size: 2 }), margin({ side: "e", size: 2, breakpoint: "sm" })]}>
         <Form.Input type="checkbox" id="inlineFormCheck" />
         <Form.Label form-check for="inlineFormCheck">
             Remember me
@@ -1788,8 +1788,8 @@ export function FormsDoc(): b.IBobrilNode {
             </p>
             <p>
                 There is used the sibling selector (~) for all <code>{`<Form.Input>`}</code> states—like <code>:checked</code>—to properly
-                style our custom form indicator. When combined with the <code>{`<Form.Label custom>`}</code>, text for each item can
-                be also styled based on the <code>{`<Form.Input>`}</code>’s state.
+                style our custom form indicator. When combined with the <code>{`<Form.Label custom>`}</code>, text for each item can be also
+                styled based on the <code>{`<Form.Input>`}</code>’s state.
             </p>
             <p>
                 The default <code>{`<input>`}</code> is hidden with <code>opacity</code> and it uses the{" "}
@@ -1910,8 +1910,8 @@ export function FormsDoc(): b.IBobrilNode {
                 <h3>Switches</h3>
             </Anchor>
             <p>
-                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> to render a
-                toggle switch. Switches also support the disabled attribute.
+                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> to render a toggle
+                switch. Switches also support the disabled attribute.
             </p>
             <Example>
                 <CustomControl type="switch">
@@ -1943,8 +1943,8 @@ export function FormsDoc(): b.IBobrilNode {
                 <h3>Select menu</h3>
             </Anchor>
             <p>
-                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> to render a
-                toggle switch. Switches also support the disabled attribute.
+                A switch has the markup of a custom checkbox but uses the <code>{`<CustomControl type="switch">`}</code> to render a toggle
+                switch. Switches also support the disabled attribute.
             </p>
             <Example>
                 <Form.Select custom>

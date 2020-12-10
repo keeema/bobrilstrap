@@ -32,7 +32,7 @@ function handleAnchorRoute(
     if (lastTransitionRunCount() === b.transitionRunCount) {
         return;
     }
-    scrollIntoView(b.getDomNode(me) as HTMLElement, 14);
+    scrollIntoView(b.getDomNode(me) as HTMLElement, 60);
     lastTransitionRunCount(b.transitionRunCount);
 }
 

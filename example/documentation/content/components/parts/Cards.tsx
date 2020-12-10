@@ -541,7 +541,7 @@ export function Cards(): b.IBobrilNode {
             </Anchor>
             <p>You can quickly change the text alignment of any card—in its entirety or specific parts.</p>
             <Example>
-                {new Array<TextAlign>("left", "center", "right").map((alignment) => (
+                {new Array<TextAlign>("start", "center", "end").map((alignment) => (
                     <Card style={[{ width: "18rem" }, textAlign(alignment)]}>
                         <Card.Body>
                             <Card.Title>Special title treatment</Card.Title>
@@ -552,7 +552,7 @@ export function Cards(): b.IBobrilNode {
                 ))}
             </Example>
             <Code language="tsx">
-                {new Array<TextAlign>("left", "center", "right")
+                {new Array<TextAlign>("start", "center", "end")
                     .map(
                         (alignment) =>
                             `<Card style={[{ width: "18rem" }, textAlign(${alignment})]}>
@@ -1738,7 +1738,7 @@ export function Cards(): b.IBobrilNode {
                     <Card>
                         <Card.Image src={placeholderUri(100, "%", 270, "px")} position="top" />
                     </Card>
-                    <Card style={[textAlign("right"), padding(3)]}>
+                    <Card style={[textAlign("end"), padding(3)]}>
                         <Blockquote style={margin({ side: "b", size: 0 })}>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                             <Blockquote.Footer style={textColor("muted")}>
@@ -1815,7 +1815,7 @@ export function Cards(): b.IBobrilNode {
     <Card>
         <Card.Image src={placeholderUri(100, "%", 270, "px")} position="top" />
     </Card>
-    <Card style={[textAlign("right"), padding(3)]}>
+    <Card style={[textAlign("end"), padding(3)]}>
         <Blockquote style={margin({ side: "b", size: 0 })}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
             <Blockquote.Footer style={textColor("muted")}>

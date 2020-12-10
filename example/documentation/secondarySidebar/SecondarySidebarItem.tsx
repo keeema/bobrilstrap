@@ -28,11 +28,11 @@ const linkStyle = b.styleDef(
         display: "block",
         padding: ".125rem 1.5rem",
         color: "#77757a",
+        textDecoration: "none",
     },
     {
         hover: {
             color: "rgba(0, 0, 0, .85)",
-            textDecoration: "none",
         },
     }
 );

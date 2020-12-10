@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Carousel, ICarouselActions, srOnly } from "../../../../../index";
+import { Carousel, ICarousel, visuallyHidden } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { image1, image2, image3 } from "./carouselImages";
@@ -220,20 +220,19 @@ export function Carousels(): b.IBobrilNode {
 
 export function CarouselExample({ images }: { images: { data: string; caption: string; text: string }[] }): b.IBobrilNode {
     const [carouselIndex, setCarouselIndex] = b.useState(0);
-    const [carouselActions, setCarouselActions] = b.useState<ICarouselActions>(() => new Function());
+    const [carouselActions, setCarouselActions] = b.useState<ICarousel>({} as ICarousel);
 
     return (
         <Carousel
             slide
             pause={false}
-            ride="carousel"
             keyboard
             onCarouselCreated={(actions) => setCarouselActions(() => actions)}
             onSlide={(ev) => setCarouselIndex(ev.to)}
         >
             <Carousel.Indicators>
                 {images.map((_, index) => (
-                    <Carousel.Indicators.Item active={carouselIndex === index} onClick={() => carouselActions(index)} />
+                    <Carousel.Indicators.Item active={carouselIndex === index} onClick={() => carouselActions.to(index)} />
                 ))}
             </Carousel.Indicators>
             <Carousel.Inner>
@@ -247,13 +246,13 @@ export function CarouselExample({ images }: { images: { data: string; caption: s
                     </Carousel.Item>
                 ))}
             </Carousel.Inner>
-            <Carousel.Control.Prev onClick={() => carouselActions("prev")}>
+            <Carousel.Control.Prev onClick={() => carouselActions.prev()}>
                 <Carousel.Control.Prev.Icon />
-                <span style={srOnly}>Previous</span>
+                <span style={visuallyHidden}>Previous</span>
             </Carousel.Control.Prev>
-            <Carousel.Control.Next onClick={() => carouselActions("next")}>
+            <Carousel.Control.Next onClick={() => carouselActions.next()}>
                 <Carousel.Control.Next.Icon />
-                <span style={srOnly}>Next</span>
+                <span style={visuallyHidden}>Next</span>
             </Carousel.Control.Next>
         </Carousel>
     );

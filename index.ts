@@ -84,7 +84,7 @@ export * from "./src/utilities/font";
 export * from "./src/utilities/flex";
 export * from "./src/utilities/order";
 export * from "./src/utilities/position";
-export * from "./src/utilities/screenReaders";
+export * from "./src/helpers/screenReaders";
 export * from "./src/utilities/sizing";
 export * from "./src/utilities/spacing";
 export * from "./src/utilities/textAlign";

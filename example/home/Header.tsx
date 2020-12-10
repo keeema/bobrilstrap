@@ -11,7 +11,7 @@ export function HomeHeader(): b.IBobrilNode {
                     <Col span={12} md={4} style={[margin({ side: "x", size: "auto" }), order(2, "md")]}>
                         <div style={[images.bobrilstrap, margin({ side: "x", size: "auto" })]}></div>
                     </Col>
-                    <Col md={8} style={[padding({ side: "r", size: 5, breakpoint: "md" }), textAlign("center"), textAlign("left", "md")]}>
+                    <Col md={8} style={[padding({ side: "e", size: 5, breakpoint: "md" }), textAlign("center"), textAlign("start", "md")]}>
                         <h1 style={masterHeadTitleStyle}>Bobrilstrap</h1>
                         <p style={leadStyle}>
                             Build awesome responsive mobile-first applications based on framework Bobril and its wrapper for Bootstrap.

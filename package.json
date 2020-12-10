@@ -43,10 +43,10 @@
         "tabWidth": 4
     },
     "dependencies": {
-        "@types/bootstrap": "^4.5.0",
+        "@types/bootstrap": "^5.0.1",
         "@types/jquery": "^3.5.3",
         "bobril": "^14.17.0",
-        "bootstrap": "^4.5.3",
+        "bootstrap": "5.0.0-beta1",
         "jquery": "^3.5.1"
     },
     "devDependencies": {

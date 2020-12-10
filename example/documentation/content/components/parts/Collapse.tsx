@@ -129,7 +129,7 @@ export function CollapseDoc(): b.IBobrilNode {
             <Card>
                 <Card.Header>
                     <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("left")} onClick={() => setCollapsed1(!collapsed1)}>
+                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed1(!collapsed1)}>
                             Collapsible Group Item #1
                         </Button>
                     </h2>
@@ -148,7 +148,7 @@ export function CollapseDoc(): b.IBobrilNode {
             <Card>
                 <Card.Header>
                     <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("left")} onClick={() => setCollapsed2(!collapsed2)}>
+                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed2(!collapsed2)}>
                             Collapsible Group Item #2
                         </Button>
                     </h2>
@@ -167,7 +167,7 @@ export function CollapseDoc(): b.IBobrilNode {
             <Card>
                 <Card.Header>
                     <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("left")} onClick={() => setCollapsed3(!collapsed3)}>
+                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed3(!collapsed3)}>
                             Collapsible Group Item #3
                         </Button>
                     </h2>
@@ -302,7 +302,7 @@ function Accordions(): b.IBobrilNode {
             <Card>
                 <Card.Header>
                     <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("left")} onClick={() => setCollapsed1(!collapsed1)}>
+                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed1(!collapsed1)}>
                             Collapsible Group Item #1
                         </Button>
                     </h2>
@@ -321,7 +321,7 @@ function Accordions(): b.IBobrilNode {
             <Card>
                 <Card.Header>
                     <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("left")} onClick={() => setCollapsed2(!collapsed2)}>
+                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed2(!collapsed2)}>
                             Collapsible Group Item #2
                         </Button>
                     </h2>
@@ -340,7 +340,7 @@ function Accordions(): b.IBobrilNode {
             <Card>
                 <Card.Header>
                     <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("left")} onClick={() => setCollapsed3(!collapsed3)}>
+                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed3(!collapsed3)}>
                             Collapsible Group Item #3
                         </Button>
                     </h2>

@@ -26,7 +26,6 @@ export type ButtonVariant =
 
 export const buttonStyles = {
     btn: b.styleDef("btn"),
-    block: b.styleDef("btn-block"),
     disabled: b.styleDef("disabled"),
     primary: b.styleDef("btn-primary"),
     secondary: b.styleDef("btn-secondary"),
@@ -53,7 +52,6 @@ export interface IButtonData extends IBaseElementDataWithChildren {
     href?: string;
     size?: Breakpoint;
     type?: "button" | "submit" | "reset";
-    block?: boolean;
 }
 
 // TODO: Check behavior of disabled link in old browsers
@@ -65,7 +63,7 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
 
     // Note: keep synced with all derived components
     componentProperties(): (keyof TData)[] {
-        return ["variant", "size" /* , "href" */, "type", "block"];
+        return ["variant", "size" /* , "href" */, "type"];
     }
 
     get tag(): Tags {
@@ -94,7 +92,6 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
             buttonStyles.btn,
             buttonStyles[this.data.variant ?? "primary"],
             this.data.size && buttonStyles.sizes(this.data.size),
-            this.data.block && buttonStyles.block,
             this.isAnchor && this.data.disabled && buttonStyles.disabled,
         ];
     }

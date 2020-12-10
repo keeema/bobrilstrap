@@ -9,6 +9,11 @@ export interface IDropdownDividerData extends IBaseElementDataWithChildren {}
 
 export class DropdownDivider extends BaseElement<IDropdownDividerData> {
     static id: string = "bobrilstrap-dropdown-divider";
+
+    render(): b.IBobrilNode {
+        return <li>{super.render()}</li>;
+    }
+
     componentProperties = (): (keyof IDropdownDividerData)[] => [];
 
     componentSpecificStyles(): b.IBobrilStyleArray {

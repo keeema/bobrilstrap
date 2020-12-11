@@ -29,7 +29,7 @@ interface ICarouselElementData {
     slide?: boolean;
     dark?: boolean;
     ride?: boolean;
-    onCarouselCreated?(carousel: ICarousel, element: HTMLDivElement): void;
+    "get-instance"?(carousel: ICarousel, element: HTMLDivElement): void;
     onSlid?(ev: ICarouselEvent): void;
     onSlide?(ev: ICarouselEvent): void;
 }
@@ -51,7 +51,7 @@ export class Carousel extends BaseElement<ICarouselData> {
         "wrap",
         "touch",
     ];
-    readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "slide", "cross-fade", "dark", "ride"];
+    readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["get-instance", "slide", "cross-fade", "dark", "ride"];
     componentProperties = (): (keyof ICarouselData)[] => [...this.carouselDataProperties, ...this.carouselConfigProperties];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
@@ -76,7 +76,7 @@ export class Carousel extends BaseElement<ICarouselData> {
         const carouselElement = new bootstrap.Carousel(this.element, config);
 
         this.registerCallbacks();
-        data.onCarouselCreated && data.onCarouselCreated(carouselElement as ICarousel, this.element);
+        data["get-instance"] && data["get-instance"](carouselElement as ICarousel, this.element);
     }
 
     postUpdateDom(): void {

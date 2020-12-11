@@ -540,19 +540,14 @@ ${listGroupItemVariants
 </Row>`}</Code>
 
             <p>
-                You can also control tab externally by actions returned from <code>onItemCreated</code>:
+                You can also control tab externally by tab controller returned from <code>get-instance</code>:
             </p>
             <Example>
                 <TabsNativeExample />
             </Example>
             <Code language="tsx">{`function TabsNativeExample(): b.IBobrilNode {
-    const defaultTabAction = () => {};
-    const [tabActions] = b.useState<[ITab, ITab, ITab, ITab]>([
-        defaultTabAction,
-        defaultTabAction,
-        defaultTabAction,
-        defaultTabAction,
-    ]);
+    const defaultTab = {} as ITab;
+    const [tabs] = b.useState<[ITab, ITab, ITab, ITab]>([defaultTab, defaultTab, defaultTab, defaultTab]);
 
     return (
         <>
@@ -566,7 +561,7 @@ ${listGroupItemVariants
                             active
                             href="#list-home3"
                             id="list-home-list3"
-                            onItemCreated={(actions) => (tabActions[0] = actions)}
+                            get-instance={(tab) => (tabs[0] = tab)}
                         >
                             Home
                         </ListGroup.Item>
@@ -576,7 +571,7 @@ ${listGroupItemVariants
                             toggleable
                             href="#list-profile3"
                             id="list-profile-list3"
-                            onItemCreated={(actions) => (tabActions[1] = actions)}
+                            get-instance={(tab) => (tabs[1] = tab)}
                         >
                             Profile
                         </ListGroup.Item>
@@ -586,7 +581,7 @@ ${listGroupItemVariants
                             toggleable
                             href="#list-messages3"
                             id="list-messages-list3"
-                            onItemCreated={(actions) => (tabActions[2] = actions)}
+                            get-instance={(tab) => (tabs[2] = tab)}
                         >
                             Messages
                         </ListGroup.Item>
@@ -596,7 +591,7 @@ ${listGroupItemVariants
                             toggleable
                             href="#list-settings3"
                             id="list-settings-list3"
-                            onItemCreated={(actions) => (tabActions[3] = actions)}
+                            get-instance={(tab) => (tabs[3] = tab)}
                         >
                             Settings
                         </ListGroup.Item>
@@ -622,10 +617,10 @@ ${listGroupItemVariants
             <Row>
                 <Col>
                     <ButtonGroup>
-                        <Button onClick={() => tabActions[0]("show")}>Home</Button>
-                        <Button onClick={() => tabActions[1]("show")}>Profile</Button>
-                        <Button onClick={() => tabActions[2]("show")}>Messages</Button>
-                        <Button onClick={() => tabActions[3]("show")}>Settings</Button>
+                        <Button onClick={() => tabs[0].show()}>Home</Button>
+                        <Button onClick={() => tabs[1].show()}>Profile</Button>
+                        <Button onClick={() => tabs[2].show()}>Messages</Button>
+                        <Button onClick={() => tabs[3].show()}>Settings</Button>
                     </ButtonGroup>
                 </Col>
             </Row>
@@ -698,12 +693,12 @@ ${listGroupItemVariants
                 </OptionsRow>
                 <OptionsRow>
                     {{
-                        name: "onItemCreated",
-                        type: "onItemCreated?: (action: ITab, element: JQuery<HTMLElement>) => void",
+                        name: "get-instance",
+                        type: "(tab: ITab, element: HTMLElement) => void",
                         defaultValue: "undefined",
                         description: (
                             <p>
-                                This callback is fired when item is initialized and provides <code>action</code> as controller instance.
+                                This callback is fired when item is initialized and provides <code>tab</code> as controller instance.
                             </p>
                         ),
                     }}
@@ -762,7 +757,7 @@ function TabsNativeExample(): b.IBobrilNode {
                             active
                             href="#list-home3"
                             id="list-home-list3"
-                            onItemCreated={(actions) => (tabs[0] = actions)}
+                            get-instance={(tab) => (tabs[0] = tab)}
                         >
                             Home
                         </ListGroup.Item>
@@ -772,7 +767,7 @@ function TabsNativeExample(): b.IBobrilNode {
                             toggleable
                             href="#list-profile3"
                             id="list-profile-list3"
-                            onItemCreated={(actions) => (tabs[1] = actions)}
+                            get-instance={(tab) => (tabs[1] = tab)}
                         >
                             Profile
                         </ListGroup.Item>
@@ -782,7 +777,7 @@ function TabsNativeExample(): b.IBobrilNode {
                             toggleable
                             href="#list-messages3"
                             id="list-messages-list3"
-                            onItemCreated={(actions) => (tabs[2] = actions)}
+                            get-instance={(tab) => (tabs[2] = tab)}
                         >
                             Messages
                         </ListGroup.Item>
@@ -792,7 +787,7 @@ function TabsNativeExample(): b.IBobrilNode {
                             toggleable
                             href="#list-settings3"
                             id="list-settings-list3"
-                            onItemCreated={(actions) => (tabs[3] = actions)}
+                            get-instance={(tab) => (tabs[3] = tab)}
                         >
                             Settings
                         </ListGroup.Item>

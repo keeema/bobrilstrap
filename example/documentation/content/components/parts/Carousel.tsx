@@ -57,7 +57,7 @@ export function Carousels(): b.IBobrilNode {
             </Example>
             <Code language="tsx">{`export function CarouselExample({ images }: { images: { data: string; caption: string; text: string }[] }): b.IBobrilNode {
     const [carouselIndex, setCarouselIndex] = b.useState(0);
-    const [carouselActions, setCarouselActions] = b.useState<ICarouselActions>(() => new Function());
+    const [carousel, setCarousel] = b.useState<ICarousel>({} as ICarousel);
 
     return (
         <Carousel
@@ -65,12 +65,12 @@ export function Carousels(): b.IBobrilNode {
             pause={false}
             ride
             keyboard
-            onCarouselCreated={(actions) => setCarouselActions(() => actions)}
+            get-instance={(actions) => setCarousel(() => actions)}
             onSlide={(ev) => setCarouselIndex(ev.to)}
         >
             <Carousel.Indicators>
                 {images.map((_, index) => (
-                    <Carousel.Indicators.Item active={carouselIndex === index} onClick={() => carouselActions(index)} />
+                    <Carousel.Indicators.Item active={carouselIndex === index} onClick={() => carousel.to(index)} />
                 ))}
             </Carousel.Indicators>
             <Carousel.Inner>
@@ -84,13 +84,13 @@ export function Carousels(): b.IBobrilNode {
                     </Carousel.Item>
                 ))}
             </Carousel.Inner>
-            <Carousel.Control.Prev onClick={() => carouselActions("prev")}>
+            <Carousel.Control.Prev onClick={() => carousel.prev()}>
                 <Carousel.Control.Prev.Icon />
-                <span style={srOnly}>Previous</span>
+                <span style={visuallyHidden}>Previous</span>
             </Carousel.Control.Prev>
-            <Carousel.Control.Next onClick={() => carouselActions("next")}>
+            <Carousel.Control.Next onClick={() => carousel.next()}>
                 <Carousel.Control.Next.Icon />
-                <span style={srOnly}>Next</span>
+                <span style={visuallyHidden}>Next</span>
             </Carousel.Control.Next>
         </Carousel>
     );
@@ -101,7 +101,7 @@ export function Carousels(): b.IBobrilNode {
                 <h2>API</h2>
             </Anchor>
             <p>
-                Carousel is controlled by <code>controlActions</code> provided in the callback prop <code>onCarouselCreated</code>. It is
+                Carousel is controlled by <code>carousel controller</code> provided in the callback prop <code>get-instance</code>. It is
                 recommended to use control logic similar to the example.
             </p>
             <OptionsTable>
@@ -182,12 +182,12 @@ export function Carousels(): b.IBobrilNode {
                 </OptionsRow>
                 <OptionsRow>
                     {{
-                        name: "onCarouselCreated",
-                        type: "(carousel: ICarouselActions, element: JQuery<HTMLDivElement>): void",
+                        name: "get-instance",
+                        type: "(carousel: ICarouselActions, element: HTMLDivElement): void",
                         defaultValue: "undefined",
                         description: (
                             <p>
-                                This callback is fired when carousel is initialized and provides <code>carouselActions</code> as controller
+                                This callback is fired when carousel is initialized and provides <code>carousel</code> as controller
                                 instance.
                             </p>
                         ),
@@ -220,7 +220,7 @@ export function Carousels(): b.IBobrilNode {
 
 export function CarouselExample({ images }: { images: { data: string; caption: string; text: string }[] }): b.IBobrilNode {
     const [carouselIndex, setCarouselIndex] = b.useState(0);
-    const [carouselActions, setCarouselActions] = b.useState<ICarousel>({} as ICarousel);
+    const [carousel, setCarousel] = b.useState<ICarousel>({} as ICarousel);
 
     return (
         <Carousel
@@ -228,12 +228,12 @@ export function CarouselExample({ images }: { images: { data: string; caption: s
             pause={false}
             ride
             keyboard
-            onCarouselCreated={(actions) => setCarouselActions(() => actions)}
+            get-instance={(actions) => setCarousel(() => actions)}
             onSlide={(ev) => setCarouselIndex(ev.to)}
         >
             <Carousel.Indicators>
                 {images.map((_, index) => (
-                    <Carousel.Indicators.Item active={carouselIndex === index} onClick={() => carouselActions.to(index)} />
+                    <Carousel.Indicators.Item active={carouselIndex === index} onClick={() => carousel.to(index)} />
                 ))}
             </Carousel.Indicators>
             <Carousel.Inner>
@@ -247,11 +247,11 @@ export function CarouselExample({ images }: { images: { data: string; caption: s
                     </Carousel.Item>
                 ))}
             </Carousel.Inner>
-            <Carousel.Control.Prev onClick={() => carouselActions.prev()}>
+            <Carousel.Control.Prev onClick={() => carousel.prev()}>
                 <Carousel.Control.Prev.Icon />
                 <span style={visuallyHidden}>Previous</span>
             </Carousel.Control.Prev>
-            <Carousel.Control.Next onClick={() => carouselActions.next()}>
+            <Carousel.Control.Next onClick={() => carousel.next()}>
                 <Carousel.Control.Next.Icon />
                 <span style={visuallyHidden}>Next</span>
             </Carousel.Control.Next>

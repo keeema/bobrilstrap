@@ -18,16 +18,16 @@ export function Reordering(): b.IBobrilNode {
                 <Container>
                     <Row>
                         <Col style={gridStyle}>First in DOM, no order applied</Col>
-                        <Col style={[order(12), gridStyle]}>Second in DOM, with a larger order</Col>
+                        <Col style={[order(5), gridStyle]}>Second in DOM, with a larger order</Col>
                         <Col style={[order(1), gridStyle]}>Third in DOM, with an order of 1</Col>
                     </Row>
                 </Container>
             </Example>
             <Code language="tsx">{`<Container>
     <Row>
-        <Col>First in DOM, no order applied</Col>
-        <Col style={order(12)}>Second in DOM, with a larger order</Col>
-        <Col style={order(1)}>Third in DOM, with an order of 1</Col>
+        <Col style={gridStyle}>First in DOM, no order applied</Col>
+        <Col style={[order(5), gridStyle]}>Second in DOM, with a larger order</Col>
+        <Col style={[order(1), gridStyle]}>Third in DOM, with an order of 1</Col>
     </Row>
 </Container>`}</Code>
             <p>
@@ -203,46 +203,6 @@ export function Reordering(): b.IBobrilNode {
         </Col>
         <Col span="auto">
             col-auto
-        </Col>
-    </Row>
-</Container>`}</Code>
-            <Anchor name="nesting">
-                <h2>Nesting</h2>
-            </Anchor>
-            <p>
-                To nest your content with the default grid, add a new <code>{`<Row>`}</code> within an existing <code>{`<Col>`}</code>{" "}
-                column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12
-                available columns).
-            </p>
-            <Example>
-                <Container>
-                    <Row>
-                        <Col sm={9} style={gridStyle}>
-                            Level 1: col-sm-9
-                            <Row>
-                                <Col span={8} sm={6} style={gridStyle}>
-                                    Level 2: col-8 col-sm-6
-                                </Col>
-                                <Col span={4} sm={6} style={gridStyle}>
-                                    Level 2: col-4 col-sm-6
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
-                </Container>
-            </Example>
-            <Code language="tsx">{`<Container>
-    <Row>
-        <Col sm={9}>
-            Level 1: col-sm-9
-            <Row>
-                <Col span={8} sm={6}>
-                    Level 2: col-8 col-sm-6
-                </Col>
-                <Col span={4} sm={6}>
-                    Level 2: col-4 col-sm-6
-                </Col>
-            </Row>
         </Col>
     </Row>
 </Container>`}</Code>

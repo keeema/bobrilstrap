@@ -9,6 +9,7 @@ export const containerStyles = {
     md: b.styleDef("container-md"),
     lg: b.styleDef("container-lg"),
     xl: b.styleDef("container-xl"),
+    xxl: b.styleDef("container-xxl"),
 };
 
 export interface IContainerData extends IBaseElementDataWithChildren {

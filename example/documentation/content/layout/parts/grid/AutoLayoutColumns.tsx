@@ -16,8 +16,8 @@ export function AutoLayoutColumns(): b.IBobrilNode {
                 <h3>Equal width</h3>
             </Anchor>
             <p>
-                For example, here are two grid layouts that apply to every device and viewport, from <code>xs</code> to <code>xl</code>. Add
-                any number of unit-less props for each breakpoint you need and every column will be the same width.
+                For example, here are two grid layouts that apply to every device and viewport, from <code>xs</code> to <code>xxl</code>.
+                Add any number of unit-less props for each breakpoint you need and every column will be the same width.
             </p>
             <Example>
                 <Container>

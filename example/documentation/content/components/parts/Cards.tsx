@@ -787,7 +787,7 @@ export function Cards(): b.IBobrilNode {
             <p>Using a combination of grid and utilities, cards can be made horizontal in a mobile-friendly and responsive way.</p>
             <Example>
                 <Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
-                    <Row no-gutters>
+                    <Row>
                         <Col md={4}>
                             <Card.Image src={placeholderUri(100, "%", 270, "px")} />
                         </Col>
@@ -808,7 +808,7 @@ export function Cards(): b.IBobrilNode {
             </Example>
             <Code language="tsx">
                 {`<Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
-    <Row no-gutters>
+    <Row>
         <Col md={4}>
             <Card.Image src="placeholderUri(100, "%", 270, "px")" />
         </Col>

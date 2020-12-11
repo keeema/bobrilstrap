@@ -162,31 +162,6 @@ export function Alignment(): b.IBobrilNode {
     </Row>
 </Container>`}
             </Code>
-            <Anchor name="no-gutters">
-                <h3>No gutters</h3>
-            </Anchor>
-            <p>
-                The gutters between columns can be removed with <code>no-gutters</code>. This removes the negative margins from{" "}
-                <code>{`<Row>`}</code> and the horizontal padding from all immediate children columns.
-            </p>
-            <Example>
-                <Container>
-                    <Row no-gutters>
-                        <Col sm={6} md={8} style={gridStyle}>
-                            col-sm-6 col-md-8
-                        </Col>
-                        <Col span={6} md={4} style={gridStyle}>
-                            col-6 col-md-4
-                        </Col>
-                    </Row>
-                </Container>
-            </Example>
-            <Code language="tsx">{`<Container>
-    <Row no-gutters>
-        <Col sm={6} md={8}>col-sm-6 col-md-8</Col>
-        <Col span={6} md={4}>col-6 col-md-4</Col>
-    </Row>
-</Container>`}</Code>
             <Anchor name="column-wrapping">
                 <h3>Column wrapping</h3>
             </Anchor>

@@ -64,13 +64,14 @@ export function Container(): b.IBobrilNode {
                 Responsive containers allow you to specify a style that is 100% wide until the specified breakpoint is reached, after which
                 bootstrap applies <code>max-width</code>s for each of the higher breakpoints. For example,{" "}
                 <code>{`<Container fluid="sm">`}</code> is 100% wide to start until the <code>sm</code> breakpoint is reached, where it will
-                scale up with <code>md</code>, <code>lg</code>, and <code>xl</code>.
+                scale up with <code>md</code>, <code>lg</code>, <code>xl</code> and <code>xxl</code>.
             </p>
             <Code language="tsx">{`<Container fluid="sm">100% wide until small breakpoint</Container>
 <Container fluid="md">100% wide until medium breakpoint</Container>
 <Container fluid="lg">100% wide until large breakpoint</Container>
-<Container fluid="xl">100% wide until extra large breakpoint</Container>`}</Code>
-            <Table bordered style={[tableStyle, display("block"), display("table", "sm")]}>
+<Container fluid="xl">100% wide until extra large breakpoint</Container>
+<Container fluid="xxl">100% wide until extra extra large breakpoint</Container>`}</Code>
+            <Table style={[tableStyle, display("block"), display("table", "sm")]}>
                 <thead>
                     <tr>
                         <th></th>
@@ -95,9 +96,14 @@ export function Container(): b.IBobrilNode {
                             <span style={font("normal")}>{"≥992px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>Extra large</span>
+                            <span style={font("bold")}>X-Large</span>
                             <br />
                             <span style={font("normal")}>{"≥1200px"}</span>
+                        </th>
+                        <th>
+                            <span style={font("bold")}>XX-Large</span>
+                            <br />
+                            <span style={font("normal")}>{"≥1400px"}</span>
                         </th>
                     </tr>
                 </thead>
@@ -111,6 +117,7 @@ export function Container(): b.IBobrilNode {
                         <td>720px</td>
                         <td>960px</td>
                         <td>1140px</td>
+                        <td>1320px</td>
                     </tr>
                     <tr>
                         <td>
@@ -121,6 +128,7 @@ export function Container(): b.IBobrilNode {
                         <td>720px</td>
                         <td>960px</td>
                         <td>1140px</td>
+                        <td>1320px</td>
                     </tr>
                     <tr>
                         <td>
@@ -131,6 +139,7 @@ export function Container(): b.IBobrilNode {
                         <td>720px</td>
                         <td>960px</td>
                         <td>1140px</td>
+                        <td>1320px</td>
                     </tr>
                     <tr>
                         <td>
@@ -141,6 +150,7 @@ export function Container(): b.IBobrilNode {
                         <td style={textColor("muted")}>100%</td>
                         <td>960px</td>
                         <td>1140px</td>
+                        <td>1320px</td>
                     </tr>
                     <tr>
                         <td>
@@ -151,11 +161,25 @@ export function Container(): b.IBobrilNode {
                         <td style={textColor("muted")}>100%</td>
                         <td style={textColor("muted")}>100%</td>
                         <td>1140px</td>
+                        <td>1320px</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <code>{`<Container fluid="xxl">`}</code>
+                        </td>
+                        <td style={textColor("muted")}>100%</td>
+                        <td style={textColor("muted")}>100%</td>
+                        <td style={textColor("muted")}>100%</td>
+                        <td style={textColor("muted")}>100%</td>
+                        <td style={textColor("muted")}>100%</td>
+                        <td>1320px</td>
                     </tr>
                     <tr>
                         <td>
                             <code>{"<Container fluid>"}</code>
                         </td>
+                        <td style={textColor("muted")}>100%</td>
                         <td style={textColor("muted")}>100%</td>
                         <td style={textColor("muted")}>100%</td>
                         <td style={textColor("muted")}>100%</td>

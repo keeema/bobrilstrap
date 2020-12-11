@@ -38,6 +38,11 @@ export function GridOptions(): b.IBobrilNode {
                             <span style={font("bold")}>Extra large</span>
                             <br />
                             <span style={font("normal")}>{"≥1200px"}</span>
+                        </th>{" "}
+                        <th>
+                            <span style={font("bold")}>Extra Extra large</span>
+                            <br />
+                            <span style={font("normal")}>{"≥1400px"}</span>
                         </th>
                     </tr>
                 </thead>
@@ -51,6 +56,7 @@ export function GridOptions(): b.IBobrilNode {
                         <td>720px</td>
                         <td>960px</td>
                         <td>1140px</td>
+                        <td>1320px</td>
                     </tr>
                     <tr>
                         <th>
@@ -71,24 +77,33 @@ export function GridOptions(): b.IBobrilNode {
                         <td>
                             <code>{`<Col xl>`}</code>
                         </td>
+                        <td>
+                            <code>{`<Col xxl>`}</code>
+                        </td>
                     </tr>
                     <tr>
                         <th>
                             <span style={font("bold")}># of columns</span>
                         </th>
-                        <td colspan="5">12</td>
+                        <td colspan="6">12</td>
                     </tr>
                     <tr>
                         <th>
                             <span style={font("bold")}>Gutter width</span>
                         </th>
-                        <td colspan="5">30px (15px on each side of a column)</td>
+                        <td colspan="6">1.5rem (.75rem on left and right)</td>
                     </tr>
+                    <tr>
+                        <th>
+                            <span style={font("bold")}>Custom gutters</span>
+                        </th>
+                        <td colspan="6">Yes</td>
+                    </tr>{" "}
                     <tr>
                         <th>
                             <span style={font("bold")}>Nestable</span>
                         </th>
-                        <td colspan="5">Yes</td>
+                        <td colspan="6">Yes</td>
                     </tr>
                     <tr>
                         <th>

@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { Col, Container, Row, margin, padding } from "../../../../../../index";
+import { Col, Container, Row } from "../../../../../../index";
 import { Anchor } from "../../../../../common/Anchor";
 import { Code } from "../../../../../common/Code";
 import { Example } from "../../../../../common/Example";
@@ -159,35 +159,6 @@ export function Responsive(): b.IBobrilNode {
         <Col span={6}>col-6</Col>
     </Row>
 </Container>`}</Code>
-            <Anchor name="gutters">
-                <h3>Gutters</h3>
-            </Anchor>
-            <p>
-                Gutters can be responsively adjusted by breakpoint-specific padding and negative margin utility functions. There is alse
-                simplified version e.g. <code>padding(2)</code> to define spacing for all sides and breakpoints.
-            </p>
-            <Example>
-                <Container style={padding({ side: "x", breakpoint: "lg", size: 5 })}>
-                    <Row style={margin({ side: "x", breakpoint: "lg", size: -5 })}>
-                        <Col style={[padding({ side: "y", size: 3 }), padding({ side: "x", breakpoint: "lg", size: 5 }), gridStyle]}>
-                            Custom column padding
-                        </Col>
-                        <Col style={[padding({ side: "y", size: 3 }), padding({ side: "x", breakpoint: "lg", size: 5 }), gridStyle]}>
-                            Custom column padding
-                        </Col>
-                    </Row>
-                </Container>
-            </Example>
-            <Code language="tsx">{`<Container style={padding({ side: "x", breakpoint: "lg", size: 5 })}>
-    <Row style={margin({ side: "x", breakpoint: "lg", size: -5 })}>
-        <Col style={[padding({ side: "y", size: 3 }), padding({ side: "x", breakpoint: "lg", size: 5 })]}>
-            Custom column padding
-        </Col>
-        <Col style={[padding({ side: "y", size: 3 }), padding({ side: "x", breakpoint: "lg", size: 5 })]}>
-            Custom column padding
-        </Col>
-    </Row>
-</Container>`}</Code>
             <Anchor name="row-columns">
                 <h3>Row columns</h3>
             </Anchor>
@@ -267,6 +238,46 @@ export function Responsive(): b.IBobrilNode {
         <Col>Column</Col>
         <Col>Column</Col>
         <Col>Column</Col>
+    </Row>
+</Container>`}</Code>
+            <Anchor name="nesting">
+                <h2>Nesting</h2>
+            </Anchor>
+            <p>
+                To nest your content with the default grid, add a new <code>{`<Row>`}</code> within an existing <code>{`<Col>`}</code>{" "}
+                column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12
+                available columns).
+            </p>
+            <Example>
+                <Container>
+                    <Row>
+                        <Col sm={9} style={gridStyle}>
+                            Level 1: col-sm-9
+                            <Row>
+                                <Col span={8} sm={6} style={gridStyle}>
+                                    Level 2: col-8 col-sm-6
+                                </Col>
+                                <Col span={4} sm={6} style={gridStyle}>
+                                    Level 2: col-4 col-sm-6
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Container>
+            </Example>
+            <Code language="tsx">{`<Container>
+    <Row>
+        <Col sm={9}>
+            Level 1: col-sm-9
+            <Row>
+                <Col span={8} sm={6}>
+                    Level 2: col-8 col-sm-6
+                </Col>
+                <Col span={4} sm={6}>
+                    Level 2: col-4 col-sm-6
+                </Col>
+            </Row>
+        </Col>
     </Row>
 </Container>`}</Code>
         </>

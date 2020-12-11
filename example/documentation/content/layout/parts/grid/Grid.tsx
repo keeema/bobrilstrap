@@ -3,8 +3,6 @@ import { IRouteWithNavDefinition } from "../../../../../common/routing";
 import { GridOptions } from "./GridOptions";
 import { AutoLayoutColumns } from "./AutoLayoutColumns";
 import { Responsive } from "./Responsive";
-import { Alignment } from "./Alignment";
-import { Reordering } from "./Reordering";
 import { HowItWorks } from "./HowItWorks";
 import { Anchor } from "../../../../../common/Anchor";
 
@@ -81,85 +79,10 @@ export const gridRoute: IRouteWithNavDefinition = {
                     subs: [],
                 },
                 {
-                    url: "gutters",
-                    name: "gutters",
-                    label: "Gutters",
-                    subs: [],
-                },
-                {
                     url: "row-columns",
                     name: "row-columns",
                     label: "Row columns",
                     subs: [],
-                },
-            ],
-        },
-        {
-            url: "alignment",
-            name: "alignment",
-            label: "Alignment",
-            subs: [
-                {
-                    url: "vertical-alignment",
-                    name: "vertical-alignment",
-                    label: "Vertical alignment",
-                    subs: [],
-                },
-                {
-                    url: "horizontal-alignment",
-                    name: "horizontal-alignment",
-                    label: "Horizontal alignment",
-                    subs: [],
-                },
-                {
-                    url: "no-gutters",
-                    name: "no-gutters",
-                    label: "No gutters",
-                    subs: [],
-                },
-                {
-                    url: "column-wrapping",
-                    name: "column-wrapping",
-                    label: "Column wrapping",
-                    subs: [],
-                },
-                {
-                    url: "column-breaks",
-                    name: "column-breaks",
-                    label: "Column breaks",
-                    subs: [],
-                },
-            ],
-        },
-        {
-            url: "reordering",
-            name: "reordering",
-            label: "Reordering",
-            subs: [
-                {
-                    url: "order-utilities",
-                    name: "order-utilities",
-                    label: "Order utilities",
-                    subs: [],
-                },
-                {
-                    url: "offsetting-columns",
-                    name: "offsetting-columns",
-                    label: "Offsetting columns",
-                    subs: [
-                        {
-                            url: "offsets",
-                            name: "offsets",
-                            label: "offsets",
-                            subs: [],
-                        },
-                        {
-                            url: "margin-utilities",
-                            name: "margin-utilities",
-                            label: "Margin utilities",
-                            subs: [],
-                        },
-                    ],
                 },
             ],
         },
@@ -182,8 +105,6 @@ export function Grid(): b.IBobrilNode {
             <GridOptions />
             <AutoLayoutColumns />
             <Responsive />
-            <Alignment />
-            <Reordering />
         </>
     );
 }

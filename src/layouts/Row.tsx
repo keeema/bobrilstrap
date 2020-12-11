@@ -5,7 +5,6 @@ import { SpanBase, spanBaseScale } from "./Col";
 
 export const rowStyles = {
     row: b.styleDef("row"),
-    noGutters: b.styleDef("no-gutters"),
     span: createDictionary(spanBaseScale.map((value) => [value, b.styleDef(`row-cols-${value}`)])),
     sm: createDictionary(spanBaseScale.map((value) => [value, b.styleDef(`row-cols-sm-${value}`)])),
     md: createDictionary(spanBaseScale.map((value) => [value, b.styleDef(`row-cols-md-${value}`)])),
@@ -19,14 +18,13 @@ export interface IRowElementData {
     md?: SpanBase;
     lg?: SpanBase;
     xl?: SpanBase;
-    "no-gutters"?: boolean;
 }
 
 export type IRowData = IRowElementData & IBaseElementDataWithChildren;
 
 export class Row extends BaseElement<IRowData> {
     static id: string = "bobrilstrap-row";
-    componentProperties = (): (keyof IRowData)[] => ["span", "sm", "md", "lg", "xl", "no-gutters"];
+    componentProperties = (): (keyof IRowData)[] => ["span", "sm", "md", "lg", "xl"];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         const rowData = this.data;
@@ -37,7 +35,6 @@ export class Row extends BaseElement<IRowData> {
             rowData.md && rowStyles.md(rowData.md),
             rowData.lg && rowStyles.lg(rowData.lg),
             rowData.xl && rowStyles.xl(rowData.xl),
-            rowData["no-gutters"] && rowStyles.noGutters,
         ];
     }
 }

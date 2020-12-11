@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createDictionary } from "../../helpers/dict";
+import { createDictionary } from "../../utils/dict";
 import { IBaseElementDataWithChildren, BaseElement } from "../components/BaseElement";
 
 export type SpanBase = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;

@@ -1,7 +1,7 @@
 import * as b from "bobril";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
-import { createFilledDictionary } from "../../helpers/dict";
+import { createFilledDictionary } from "../../utils/dict";
 
 export type InputType =
     | "button"

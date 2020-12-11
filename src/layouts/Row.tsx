@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import { IBaseElementDataWithChildren, BaseElement } from "../components/BaseElement";
-import { createDictionary } from "../../helpers/dict";
+import { createDictionary } from "../../utils/dict";
 import { SpanBase, spanBaseScale } from "./Col";
 
 export const rowStyles = {

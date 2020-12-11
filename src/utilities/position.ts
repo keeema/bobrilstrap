@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createFilledDictionary } from "../../helpers/dict";
+import { createFilledDictionary } from "../../utils/dict";
 
 export type Position = "static" | "relative" | "absolute" | "fixed" | "sticky";
 

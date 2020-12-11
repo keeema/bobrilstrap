@@ -2,7 +2,7 @@ import * as b from "bobril";
 import $ from "jquery";
 import bootstrap from "bootstrap";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
-import { pick } from "../../helpers/objectHelper";
+import { pick } from "../../utils/objectHelper";
 import { CarouselInner } from "./CarouselInner";
 import { CarouselItem } from "./CarouselItem";
 import { CarouselControlPrev, CarouselControlNext } from "./CarouselControl";

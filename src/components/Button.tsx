@@ -1,10 +1,10 @@
 import * as b from "bobril";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
-import { createFilledDictionary } from "../../helpers/dict";
+import { createFilledDictionary } from "../../utils/dict";
 import { ButtonToolbar } from "./ButtonToolbar";
 import { ButtonGroup } from "./ButtonGroup";
-import { Tags } from "../../helpers/tags";
+import { Tags } from "../../utils/tags";
 
 export type ButtonVariant =
     | "primary"

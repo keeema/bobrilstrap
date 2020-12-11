@@ -1,8 +1,8 @@
 import * as b from "bobril";
 import $ from "jquery";
 import bootstrap from "bootstrap";
-import { createFilledDictionary } from "../../helpers/dict";
-import { Tags } from "../../helpers/tags";
+import { createFilledDictionary } from "../../utils/dict";
+import { Tags } from "../../utils/tags";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export type ListGroupItemVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";

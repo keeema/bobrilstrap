@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createFilledDictionary } from "../../helpers/dict";
+import { createFilledDictionary } from "../../utils/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 

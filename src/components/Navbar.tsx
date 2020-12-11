@@ -1,12 +1,12 @@
 import * as b from "bobril";
 import { BaseElement, IBaseElementDataWithChildren } from "./BaseElement";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
-import { createDictionary } from "../../helpers/dict";
+import { createDictionary } from "../../utils/dict";
 import { NavbarBrand } from "./NavbarBrand";
 import { Nav } from "./Nav";
 import { NavbarToggler } from "./NavbarToggler";
 import { NavbarCollapse } from "./NavbarCollapse";
-import { Tags } from "../../helpers/tags";
+import { Tags } from "../../utils/tags";
 
 const breakpointsOrDefault: (Breakpoint | true)[] = [...breakpoints, true];
 

@@ -1,6 +1,6 @@
 import * as b from "bobril";
-import { createFilledDictionary } from "../../helpers/dict";
-import { Tags } from "../../helpers/tags";
+import { createFilledDictionary } from "../../utils/dict";
+import { Tags } from "../../utils/tags";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 import { ListGroupItem } from "./ListGroupItem";

@@ -1,4 +1,4 @@
-import { omit, pick } from "../../helpers/objectHelper";
+import { omit, pick } from "../../utils/objectHelper";
 
 describe("helpers", () => {
     describe("object", () => {

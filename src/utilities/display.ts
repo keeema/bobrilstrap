@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createFilledDictionary } from "../../helpers/dict";
+import { createFilledDictionary } from "../../utils/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
 export type Display = "none" | "inline" | "inline-block" | "block" | "table" | "table-cell" | "table-row" | "flex" | "inline-flex" | "grid";

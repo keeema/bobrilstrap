@@ -1,4 +1,4 @@
-import { Tags } from "../../helpers/tags";
+import { Tags } from "../../utils/tags";
 import { FormControlBase, IFormControlBaseData, InputType } from "./FormControlBase";
 
 export const formInputStyles = {};

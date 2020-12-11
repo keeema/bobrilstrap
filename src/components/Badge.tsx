@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { Tags } from "../../helpers/tags";
+import { Tags } from "../../utils/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export type BadgeVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";

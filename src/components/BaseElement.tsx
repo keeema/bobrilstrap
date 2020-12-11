@@ -1,6 +1,6 @@
 import * as b from "bobril";
-import { omit } from "../../helpers/objectHelper";
-import { Tags } from "../../helpers/tags";
+import { omit } from "../../utils/objectHelper";
+import { Tags } from "../../utils/tags";
 
 export interface IAria {
     "aria-activedescendant"?: string;

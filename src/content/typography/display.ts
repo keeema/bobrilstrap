@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createFilledDictionary } from "../../../helpers/dict";
+import { createFilledDictionary } from "../../../utils/dict";
 
 export type DisplayHeadingSize = 1 | 2 | 3 | 4 | 5 | 6;
 

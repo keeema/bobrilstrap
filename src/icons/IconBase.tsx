@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { Tags } from "../../helpers/tags";
+import { Tags } from "../../utils/tags";
 import { BaseElement, IAllAttrs, IBaseElementData, IBaseElementDataWithChildren } from "../components/BaseElement";
 
 export const iconStyles = {

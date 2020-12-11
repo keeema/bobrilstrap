@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createFilledDictionary } from "../../helpers/dict";
+import { createFilledDictionary } from "../../utils/dict";
 
 export type Percentage = 25 | 50 | 75 | 100 | "auto";
 const percentages: Percentage[] = [25, 50, 75, 100, "auto"];

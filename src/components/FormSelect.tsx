@@ -1,4 +1,4 @@
-import { Tags } from "../../helpers/tags";
+import { Tags } from "../../utils/tags";
 import { IAttrs } from "./BaseElement";
 import { FormControlBase, IFormControlBaseData } from "./FormControlBase";
 

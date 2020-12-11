@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { createFilledDictionary } from "../../helpers/dict";
+import { createFilledDictionary } from "../../utils/dict";
 
 export type Font = "bold" | "bolder" | "normal" | "light" | "lighter" | "italic";
 const fonts: Font[] = ["bold", "bolder", "normal", "light", "lighter", "italic"];

@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import * as $ from "jquery";
-import { Tags } from "../../helpers/tags";
+import { Tags } from "../../utils/tags";
 import { AlertHeading } from "./AlertHeading";
 import { AlertLink } from "./AlertLink";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs, IAttrs } from "./BaseElement";

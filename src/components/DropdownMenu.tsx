@@ -1,6 +1,6 @@
 import * as b from "bobril";
-import { createDictionary } from "../../helpers/dict";
-import { Tags } from "../../helpers/tags";
+import { createDictionary } from "../../utils/dict";
+import { Tags } from "../../utils/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export type DropdownMenuAlignment = "left" | "right";

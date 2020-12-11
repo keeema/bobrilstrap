@@ -1,7 +1,6 @@
 import * as b from "bobril";
-import $ from "jquery";
 import bootstrap from "bootstrap";
-import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 import { pick } from "../../utils/objectHelper";
 import { CarouselInner } from "./CarouselInner";
 import { CarouselItem } from "./CarouselItem";
@@ -18,7 +17,7 @@ export const carouselStyles = {
 
 export type ICarousel = bootstrap.Carousel & { to: (index: number) => void };
 
-export interface ICarouselEvent extends JQuery.TriggeredEvent<HTMLDivElement, undefined, HTMLDivElement, HTMLDivElement> {
+export interface ICarouselEvent extends Event {
     direction: "left" | "right";
     relatedTarget: HTMLDivElement;
     from: number;
@@ -29,7 +28,8 @@ interface ICarouselElementData {
     "cross-fade"?: boolean;
     slide?: boolean;
     dark?: boolean;
-    onCarouselCreated?(carousel: ICarousel, element: JQuery<HTMLDivElement>): void;
+    ride?: boolean;
+    onCarouselCreated?(carousel: ICarousel, element: HTMLDivElement): void;
     onSlid?(ev: ICarouselEvent): void;
     onSlide?(ev: ICarouselEvent): void;
 }
@@ -51,7 +51,7 @@ export class Carousel extends BaseElement<ICarouselData> {
         "wrap",
         "touch",
     ];
-    readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "slide", "cross-fade", "dark"];
+    readonly carouselDataProperties: (keyof ICarouselElementData)[] = ["onCarouselCreated", "slide", "cross-fade", "dark", "ride"];
     componentProperties = (): (keyof ICarouselData)[] => [...this.carouselDataProperties, ...this.carouselConfigProperties];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
@@ -63,14 +63,33 @@ export class Carousel extends BaseElement<ICarouselData> {
         ];
     }
 
+    componentAdditionalAttributes(): IAllAttrs {
+        return {
+            ...super.componentAdditionalAttributes(),
+            ["data-bs-ride"]: this.data["data-bs-ride"] !== undefined ? this.data["data-bs-ride"] : this.data.ride ? "carousel" : undefined,
+        };
+    }
+
     postInitDom(): void {
         const config = pick(this.data, ...this.carouselConfigProperties);
         const data = pick(this.data, ...this.carouselDataProperties);
-        const jqueryElement = $(this.element);
         const carouselElement = new bootstrap.Carousel(this.element, config);
 
-        jqueryElement.on("slide.bs.carousel", (ev) => this.data.onSlide && this.data.onSlide(ev as ICarouselEvent));
-        jqueryElement.on("slid.bs.carousel", (ev) => this.data.onSlid && this.data.onSlid(ev as ICarouselEvent));
-        data.onCarouselCreated && data.onCarouselCreated(carouselElement as ICarousel, jqueryElement);
+        this.registerCallbacks();
+        data.onCarouselCreated && data.onCarouselCreated(carouselElement as ICarousel, this.element);
+    }
+
+    postUpdateDom(): void {
+        this.registerCallbacks();
+    }
+
+    private registerCallbacks(): void {
+        const element = b.getDomNode(this.me) as HTMLElement;
+        if (!element) {
+            return;
+        }
+
+        this.registerEvent("slide.bs.carousel", (ev: ICarouselEvent) => this.data.onSlide && this.data.onSlide(ev));
+        this.registerEvent("slid.bs.carousel", (ev: ICarouselEvent) => this.data.onSlid && this.data.onSlid(ev));
     }
 }

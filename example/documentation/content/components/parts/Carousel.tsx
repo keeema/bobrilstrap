@@ -63,7 +63,7 @@ export function Carousels(): b.IBobrilNode {
         <Carousel
             slide
             pause={false}
-            ride="carousel"
+            ride
             keyboard
             onCarouselCreated={(actions) => setCarouselActions(() => actions)}
             onSlide={(ev) => setCarouselIndex(ev.to)}
@@ -226,6 +226,7 @@ export function CarouselExample({ images }: { images: { data: string; caption: s
         <Carousel
             slide
             pause={false}
+            ride
             keyboard
             onCarouselCreated={(actions) => setCarouselActions(() => actions)}
             onSlide={(ev) => setCarouselIndex(ev.to)}

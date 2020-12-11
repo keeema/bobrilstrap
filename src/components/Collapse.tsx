@@ -1,5 +1,4 @@
 import * as b from "bobril";
-import $ from "jquery";
 import bootstrap from "bootstrap";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
@@ -33,10 +32,11 @@ export class Collapse extends BaseElement<ICollapseData> {
 
     postInitDom(): void {
         this.registerNewCollapse();
+        this.registerCallbacks();
     }
 
     postUpdateDom(): void {
-        this.registerNewCollapse();
+        this.registerCallbacks();
         this.handleToggle();
     }
 
@@ -47,15 +47,16 @@ export class Collapse extends BaseElement<ICollapseData> {
         }
 
         this.collapsedElement = element;
-
+        this.firstLoad = false;
         this.collapse = new bootstrap.Collapse(element, { toggle: !this.data.collapsed });
 
         this.collapsed = this.data.collapsed;
-        this.firstLoad = false;
-        $(element).on("hide.bs.collapse", () => this.data.onCollapse && this.data.onCollapse());
-        $(element).on("hidden.bs.collapse", () => this.data.onCollapsed && this.data.onCollapsed());
-        $(element).on("show.bs.collapse", () => this.data.onShow && this.data.onShow());
-        $(element).on("shown.bs.collapse", () => this.data.onShown && this.data.onShown());
+    }
+    private registerCallbacks(): void {
+        this.registerEvent("hide.bs.collapse", () => this.data.onCollapse && this.data.onCollapse());
+        this.registerEvent("hidden.bs.collapse", () => this.data.onCollapsed && this.data.onCollapsed());
+        this.registerEvent("show.bs.collapse", () => this.data.onShow && this.data.onShow());
+        this.registerEvent("shown.bs.collapse", () => this.data.onShown && this.data.onShown());
     }
 
     private handleToggle(): void {

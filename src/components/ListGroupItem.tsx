@@ -1,5 +1,4 @@
 import * as b from "bobril";
-import $ from "jquery";
 import bootstrap from "bootstrap";
 import { createFilledDictionary } from "../../utils/dict";
 import { Tags } from "../../utils/tags";
@@ -36,7 +35,7 @@ export interface IListGroupItemData extends IBaseElementDataWithChildren {
     onHide?: () => void;
     onShown?: () => void;
     onShow?: () => void;
-    onItemCreated?: (tab: ITab, element: JQuery<HTMLElement>) => void;
+    onItemCreated?: (tab: ITab, element: HTMLElement) => void;
 }
 
 export class ListGroupItem extends BaseElement<IListGroupItemData> {
@@ -85,12 +84,20 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
 
     postInitDom(): void {
         const element = b.getDomNode(this.me) as HTMLDivElement;
-        const jQueryElement = $(element);
         const tab = new bootstrap.Tab(element);
-        jQueryElement.on("hide.bs.tab", () => this.data.onHide && this.data.onHide());
-        jQueryElement.on("hidden.bs.tab", () => this.data.onHidden && this.data.onHidden());
-        jQueryElement.on("show.bs.tab", () => this.data.onShow && this.data.onShow());
-        jQueryElement.on("shown.bs.tab", () => this.data.onShown && this.data.onShown());
-        this.data.onItemCreated && this.data.onItemCreated(tab, jQueryElement);
+        this.data.onItemCreated && this.data.onItemCreated(tab, element);
+
+        this.registerCallbacks();
+    }
+
+    postUpdateDom(): void {
+        this.registerCallbacks();
+    }
+
+    private registerCallbacks(): void {
+        this.registerEvent("hide.bs.tab", () => this.data.onHide && this.data.onHide());
+        this.registerEvent("hidden.bs.tab", () => this.data.onHidden && this.data.onHidden());
+        this.registerEvent("show.bs.tab", () => this.data.onShow && this.data.onShow());
+        this.registerEvent("shown.bs.tab", () => this.data.onShown && this.data.onShown());
     }
 }

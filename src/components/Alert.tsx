@@ -1,5 +1,4 @@
 import * as b from "bobril";
-import * as $ from "jquery";
 import { Tags } from "../../utils/tags";
 import { AlertHeading } from "./AlertHeading";
 import { AlertLink } from "./AlertLink";
@@ -82,10 +81,9 @@ export class Alert extends BaseElement<IAlertData> {
         if (!element) {
             return;
         }
-        $(element).off("closed.bs.alert");
-        $(element).off("close.bs.alert");
-        $(element).on("closed.bs.alert", () => this.data.onDismissed && this.data.onDismissed());
-        $(element).on("close.bs.alert", () => this.data.onDismiss && this.data.onDismiss());
+
+        this.registerEvent("closed.bs.alert", () => this.data.onDismissed && this.data.onDismissed());
+        this.registerEvent("close.bs.alert", () => this.data.onDismiss && this.data.onDismiss());
     }
 }
 

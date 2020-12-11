@@ -58,6 +58,10 @@ export interface IAttrs {
 
 export type IAllAttrs = IAttrs & IAria & IDataAttrs & IKnownAttrs & b.IBobrilEvents;
 
+export interface IEventHandler<TEvent extends Event> {
+    (event: TEvent): void;
+}
+
 interface IBaseElementDataBase extends IAllAttrs {
     as?: Tags;
     style?: b.IBobrilStyles;
@@ -81,9 +85,12 @@ export const baseStyles = {
 };
 
 export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.Component<TData> {
+    private registeredHandlers = new Map<string, IEventHandler<Event>>();
+
     get tag(): Tags {
         return "div";
     }
+
     componentAdditionalAttributes(): IAllAttrs {
         return {
             "aria-disabled": this.data.disabled ?? undefined,
@@ -102,6 +109,31 @@ export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.
                 {this.data.children}
             </Tag>
         );
+    }
+
+    destroy(): void {
+        const element = b.getDomNode(this.me) as HTMLElement;
+        if (!element) {
+            return;
+        }
+        this.registeredHandlers.forEach((handler, eventName) => {
+            const anyEventName = eventName as any;
+            element.removeEventListener(anyEventName, handler);
+        });
+    }
+
+    protected registerEvent<TEvent extends Event>(eventName: string, handler: IEventHandler<TEvent>): void {
+        const element = b.getDomNode(this.me) as HTMLElement;
+        if (!element) {
+            return;
+        }
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const anyEventName = eventName as any;
+
+        const currentHandler = this.registeredHandlers.get(eventName);
+        currentHandler && element.removeEventListener(anyEventName, currentHandler);
+        this.registeredHandlers.set(anyEventName, handler as IEventHandler<Event>);
+        element.addEventListener(anyEventName, handler);
     }
 
     private get styles(): b.IBobrilStyleArray {

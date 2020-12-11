@@ -14,8 +14,6 @@ export * from "./src/components/ButtonGroup";
 export * from "./src/components/ButtonToolbar";
 export * from "./src/components/Card";
 export * from "./src/components/CardBody";
-export * from "./src/components/CardColumns";
-export * from "./src/components/CardDeck";
 export * from "./src/components/CardFooter";
 export * from "./src/components/CardGroup";
 export * from "./src/components/CardHeader";

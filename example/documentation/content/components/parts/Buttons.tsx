@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button } from "../../../../../index";
+import { Button, Col, display, gap, justifyContent, margin } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { ButtonVariant } from "../../../../../src/components/Button";
@@ -47,6 +47,12 @@ export const buttonsRoute: IRouteWithNavDefinition = {
             url: "disabled-state",
             name: "buttons-disabled-state",
             label: "Disabled state",
+            subs: [],
+        },
+        {
+            url: "block-buttons",
+            name: "buttons-block-buttons",
+            label: "Block buttons",
             subs: [],
         },
     ],
@@ -117,11 +123,10 @@ export function Buttons(): b.IBobrilNode {
                     "outline-warning",
                     "outline-danger",
                     "outline-light",
-                    "outline-dark",
-                    "outline-link"
+                    "outline-dark"
                 ).map((variant) => (
                     <>
-                        <Button variant={variant}>{variant.toUpperCase()}</Button>{" "}
+                        <Button variant={variant}>{variant.split("-")[1]!.toUpperCase()}</Button>{" "}
                     </>
                 ))}
             </Example>
@@ -133,9 +138,8 @@ export function Buttons(): b.IBobrilNode {
                     "outline-warning",
                     "outline-danger",
                     "outline-light",
-                    "outline-dark",
-                    "outline-link"
-                ).map((variant) => `<Button variant="${variant}">${variant.toUpperCase()}</Button>{" "}\n`)}
+                    "outline-dark"
+                ).map((variant) => `<Button variant="${variant}">${variant.split("-")[1]!.toUpperCase()}</Button>{" "}\n`)}
             </Code>
             <Anchor name="buttons-sizes">
                 <h2>Sizes</h2>
@@ -236,6 +240,52 @@ export function Buttons(): b.IBobrilNode {
 <Button href="javascript:void(0)" variant="secondary" size="lg" disabled>
     Link
 </Button>`}</Code>
+            <Anchor name="buttons-block-buttons">
+                <h2>Block buttons</h2>
+            </Anchor>
+            <p>
+                Create responsive stacks of full-width, “block buttons” like those in Bootstrap 4 with a mix of our display and gap
+                utilities. By using utilities instead of button specific classes, we have much greater control over spacing, alignment, and
+                responsive behaviors.
+            </p>
+            <Example>
+                <div style={[display("grid"), gap(2)]}>
+                    <Button>Button</Button>
+                    <Button>Button</Button>
+                </div>
+            </Example>
+            <Code language="tsx">{`<div style={[display("grid"), gap(2)]}>
+    <Button>Button</Button>
+    <Button>Button</Button>
+</div>`}</Code>
+            <Example>
+                <div style={[display("grid"), gap(2), display("block", "md")]}>
+                    <Button>Button</Button> <Button>Button</Button>
+                </div>
+            </Example>
+            <Code language="tsx">{`<div style={[display("grid"), gap(2), display("block", "md")]}>
+    <Button>Button</Button> <Button>Button</Button>
+</div>`}</Code>
+            <Example>
+                <Col span={6} style={[display("grid"), gap(2), margin({ side: "x", size: "auto" })]}>
+                    <Button>Button</Button>
+                    <Button>Button</Button>
+                </Col>
+            </Example>
+            <Code language="tsx">{`<Col span={6} style={[display("grid"), gap(2), margin({ side: "x", size: "auto" })]}>
+    <Button>Button</Button>
+    <Button>Button</Button>
+</Col>`}</Code>
+            <Example>
+                <div style={[display("grid"), gap(2), display("flex", "md"), justifyContent("end", "md")]}>
+                    <Button style={margin({ side: "e", size: 2 })}>Button</Button>
+                    <Button>Button</Button>
+                </div>
+            </Example>
+            <Code language="tsx">{`<div style={[display("grid"), gap(2)]}>
+    <Button>Button</Button>
+    <Button>Button</Button>
+</div>`}</Code>
         </>
     );
 }

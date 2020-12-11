@@ -21,7 +21,7 @@ import {
     borderColorScale,
     borderColor,
     height,
-    padding,
+    gutter,
 } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { placeholderUri } from "../../../../common/placeholderGenerator";
@@ -176,21 +176,9 @@ export const cardsRoute: IRouteWithNavDefinition = {
                     subs: [],
                 },
                 {
-                    url: "decks",
-                    name: "cards-layout-decks",
-                    label: "Card decks",
-                    subs: [],
-                },
-                {
                     url: "grid",
                     name: "cards-layout-grid",
                     label: "Grid cards",
-                    subs: [],
-                },
-                {
-                    url: "columns",
-                    name: "cards-layout-columns",
-                    label: "Card columns",
                     subs: [],
                 },
             ],
@@ -787,7 +775,7 @@ export function Cards(): b.IBobrilNode {
             <p>Using a combination of grid and utilities, cards can be made horizontal in a mobile-friendly and responsive way.</p>
             <Example>
                 <Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
-                    <Row>
+                    <Row style={gutter(0)}>
                         <Col md={4}>
                             <Card.Image src={placeholderUri(100, "%", 270, "px")} />
                         </Col>
@@ -808,7 +796,7 @@ export function Cards(): b.IBobrilNode {
             </Example>
             <Code language="tsx">
                 {`<Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
-    <Row>
+    <Row style={gutter(0)}>
         <Col md={4}>
             <Card.Image src="placeholderUri(100, "%", 270, "px")" />
         </Col>
@@ -1107,179 +1095,6 @@ export function Cards(): b.IBobrilNode {
         </Card.Footer>
     </Card>
 </Card.Group>`}</Code>
-            <Anchor name="cards-layout-decks">
-                <h3>Card decks</h3>
-            </Anchor>
-            <p>Need a set of equal width and height cards that aren’t attached to one another? Use card decks.</p>
-            <Example>
-                <Card.Deck>
-                    <Card>
-                        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                                a little bit longer.
-                            </Card.Text>
-                            <Card.Text>
-                                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card>
-                        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                                a little bit longer.
-                            </Card.Text>
-                            <Card.Text>
-                                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card>
-                        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                                a little bit longer.
-                            </Card.Text>
-                            <Card.Text>
-                                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Card.Deck>
-            </Example>
-            <Code language="tsx">{`<Card.Deck>
-    <Card>
-        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-        <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                a little bit longer.
-            </Card.Text>
-            <Card.Text>
-                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-            </Card.Text>
-        </Card.Body>
-    </Card>
-    <Card>
-        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-        <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                a little bit longer.
-            </Card.Text>
-            <Card.Text>
-                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-            </Card.Text>
-        </Card.Body>
-    </Card>
-    <Card>
-        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-        <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                a little bit longer.
-            </Card.Text>
-            <Card.Text>
-                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-            </Card.Text>
-        </Card.Body>
-    </Card>
-</Card.Deck>`}</Code>
-            <p>Just like with card groups, card footers in decks will automatically line up.</p>
-            <Example>
-                <Card.Deck>
-                    <Card>
-                        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                                a little bit longer.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small style={textColor("muted")}>Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card>
-                        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                                a little bit longer.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small style={textColor("muted")}>Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card>
-                        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                                a little bit longer.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small style={textColor("muted")}>Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                </Card.Deck>
-            </Example>
-            <Code language="tsx">{`<Card.Deck>
-    <Card>
-        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-        <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                a little bit longer.
-            </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-            <small style={textColor("muted")}>Last updated 3 mins ago</small>
-        </Card.Footer>
-    </Card>
-    <Card>
-        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-        <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                a little bit longer.
-            </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-            <small style={textColor("muted")}>Last updated 3 mins ago</small>
-        </Card.Footer>
-    </Card>
-    <Card>
-        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-        <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                a little bit longer.
-            </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-            <small style={textColor("muted")}>Last updated 3 mins ago</small>
-        </Card.Footer>
-    </Card>
-</Card.Deck>`}</Code>
             <Anchor name="cards-layout-grid">
                 <h3>Grid cards</h3>
             </Anchor>
@@ -1289,8 +1104,8 @@ export function Cards(): b.IBobrilNode {
                 <code>md={2}</code> splitting four cards to equal width across multiple rows, from the medium breakpoint up.
             </p>
             <Example>
-                <Row span={1} md={2}>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                <Row span={1} md={2} style={gutter(4)}>
+                    <Col>
                         <Card>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1305,7 +1120,7 @@ export function Cards(): b.IBobrilNode {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                    <Col>
                         <Card>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1320,7 +1135,7 @@ export function Cards(): b.IBobrilNode {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                    <Col>
                         <Card>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1335,7 +1150,7 @@ export function Cards(): b.IBobrilNode {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                    <Col>
                         <Card>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1352,8 +1167,8 @@ export function Cards(): b.IBobrilNode {
                     </Col>
                 </Row>
             </Example>
-            <Code language="tsx">{`<Row span={1} md={2}>
-    <Col style={margin({ side: "b", size: 4 })}>
+            <Code language="tsx">{`<Row span={1} md={2} style={gutter(4)}>
+    <Col>
         <Card>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1368,7 +1183,7 @@ export function Cards(): b.IBobrilNode {
             </Card.Body>
         </Card>
     </Col>
-    <Col style={margin({ side: "b", size: 4 })}>
+    <Col>
         <Card>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1383,7 +1198,7 @@ export function Cards(): b.IBobrilNode {
             </Card.Body>
         </Card>
     </Col>
-    <Col style={margin({ side: "b", size: 4 })}>
+    <Col>
         <Card>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1398,7 +1213,7 @@ export function Cards(): b.IBobrilNode {
             </Card.Body>
         </Card>
     </Col>
-    <Col style={margin({ side: "b", size: 4 })}>
+    <Col>
         <Card>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1418,8 +1233,8 @@ export function Cards(): b.IBobrilNode {
                 Change it to <code>md={3}</code> and you’ll see the fourth card wrap.
             </p>
             <Example>
-                <Row span={1} md={3}>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                <Row span={1} md={3} style={gutter(4)}>
+                    <Col>
                         <Card>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1434,7 +1249,7 @@ export function Cards(): b.IBobrilNode {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                    <Col>
                         <Card>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1449,7 +1264,7 @@ export function Cards(): b.IBobrilNode {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                    <Col>
                         <Card>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1464,7 +1279,7 @@ export function Cards(): b.IBobrilNode {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                    <Col>
                         <Card>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1481,8 +1296,8 @@ export function Cards(): b.IBobrilNode {
                     </Col>
                 </Row>
             </Example>
-            <Code language="tsx">{`<Row span={1} md={3}>
-    <Col style={margin({ side: "b", size: 4 })}>
+            <Code language="tsx">{`<Row span={1} md={3} style={gutter(4)}>
+    <Col>
         <Card>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1497,7 +1312,7 @@ export function Cards(): b.IBobrilNode {
             </Card.Body>
         </Card>
     </Col>
-    <Col style={margin({ side: "b", size: 4 })}>
+    <Col>
         <Card>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1512,7 +1327,7 @@ export function Cards(): b.IBobrilNode {
             </Card.Body>
         </Card>
     </Col>
-    <Col style={margin({ side: "b", size: 4 })}>
+    <Col>
         <Card>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1527,7 +1342,7 @@ export function Cards(): b.IBobrilNode {
             </Card.Body>
         </Card>
     </Col>
-    <Col style={margin({ side: "b", size: 4 })}>
+    <Col>
         <Card>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1547,8 +1362,8 @@ export function Cards(): b.IBobrilNode {
                 When you need equal height, add <code>height(100)</code> style to the cards.
             </p>
             <Example>
-                <Row span={1} md={3}>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                <Row span={1} md={3} style={gutter(4)}>
+                    <Col>
                         <Card style={height(100)}>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1563,7 +1378,7 @@ export function Cards(): b.IBobrilNode {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                    <Col>
                         <Card style={height(100)}>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1578,7 +1393,7 @@ export function Cards(): b.IBobrilNode {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                    <Col>
                         <Card style={height(100)}>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1593,7 +1408,7 @@ export function Cards(): b.IBobrilNode {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col style={margin({ side: "b", size: 4 })}>
+                    <Col>
                         <Card style={height(100)}>
                             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
                             <Card.Body>
@@ -1610,8 +1425,8 @@ export function Cards(): b.IBobrilNode {
                     </Col>
                 </Row>
             </Example>
-            <Code language="tsx">{`<Row span={1} md={3}>
-    <Col style={margin({ side: "b", size: 4 })}>
+            <Code language="tsx">{`<Row span={1} md={3} style={gutter(4)}>
+    <Col>
         <Card style={height(100)}>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1626,7 +1441,7 @@ export function Cards(): b.IBobrilNode {
             </Card.Body>
         </Card>
     </Col>
-    <Col style={margin({ side: "b", size: 4 })}>
+    <Col>
         <Card style={height(100)}>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1641,7 +1456,7 @@ export function Cards(): b.IBobrilNode {
             </Card.Body>
         </Card>
     </Col>
-    <Col style={margin({ side: "b", size: 4 })}>
+    <Col>
         <Card style={height(100)}>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1656,7 +1471,7 @@ export function Cards(): b.IBobrilNode {
             </Card.Body>
         </Card>
     </Col>
-    <Col style={margin({ side: "b", size: 4 })}>
+    <Col>
         <Card style={height(100)}>
             <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
             <Card.Body>
@@ -1672,172 +1487,6 @@ export function Cards(): b.IBobrilNode {
         </Card>
     </Col>
 </Row>`}</Code>
-            <Anchor name="cards-layout-columns">
-                <h3>Card columns</h3>
-            </Anchor>
-            <p>
-                Cards can be organized into <a href="https://masonry.desandro.com/">Masonry</a>-like columns with just CSS by wrapping them
-                in <code>{`<Code.Columns>`}</code>. Cards are built with CSS <code>column</code> properties instead of flexbox for easier
-                alignment. Cards are ordered from top to bottom and left to right.
-            </p>
-            <p>
-                <strong>Heads up!</strong> Your mileage with card columns may vary. To prevent cards breaking across columns, we must set
-                them to <code>display: inline-block</code> as <code>column-break-inside: avoid</code> isn’t a bulletproof solution yet.
-            </p>
-            <Example>
-                <Card.Columns>
-                    <Card>
-                        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-                        <Card.Body>
-                            <Card.Title>Card title that wraps to a new line</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                                a little bit longer.
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card style={padding(3)}>
-                        <Blockquote card-body style={margin({ side: "b", size: 0 })}>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <Blockquote.Footer>
-                                <small style={textColor("muted")}>
-                                    Someone famous in <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </Blockquote.Footer>
-                        </Blockquote>
-                    </Card>
-                    <Card>
-                        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>This card has supporting text below as a natural lead-in to additional content.</Card.Text>
-                            <Card.Text>
-                                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card style={[backgroundColor("primary"), textColor("white"), textAlign("center"), padding(3)]}>
-                        <Blockquote style={margin({ side: "b", size: 0 })}>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                            <Blockquote.Footer style={textColor("white")}>
-                                <small>
-                                    Someone famous in <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </Blockquote.Footer>
-                        </Blockquote>
-                    </Card>
-                    <Card style={textAlign("center")}>
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>This card has a regular title and short paragraphy of text below it.</Card.Text>
-                            <Card.Text>
-                                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card>
-                        <Card.Image src={placeholderUri(100, "%", 270, "px")} position="top" />
-                    </Card>
-                    <Card style={[textAlign("end"), padding(3)]}>
-                        <Blockquote style={margin({ side: "b", size: 0 })}>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <Blockquote.Footer style={textColor("muted")}>
-                                <small>
-                                    Someone famous in <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </Blockquote.Footer>
-                        </Blockquote>
-                    </Card>
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is another card with title and supporting text below. This card has some additional content to make it
-                                slightly taller overall.
-                            </Card.Text>
-                            <Card.Text>
-                                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Card.Columns>
-            </Example>
-            <Code language="tsx">{`<Card.Columns>
-    <Card>
-        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-        <Card.Body>
-            <Card.Title>Card title that wraps to a new line</Card.Title>
-            <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-                a little bit longer.
-            </Card.Text>
-        </Card.Body>
-    </Card>
-    <Card style={padding(3)}>
-        <Blockquote card-body style={margin({ side: "b", size: 0 })}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <Blockquote.Footer>
-                <small style={textColor("muted")}>
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-            </Blockquote.Footer>
-        </Blockquote>
-    </Card>
-    <Card>
-        <Card.Image src={placeholderUri(100, "%", 180, "px")} position="top" />
-        <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>This card has supporting text below as a natural lead-in to additional content.</Card.Text>
-            <Card.Text>
-                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-            </Card.Text>
-        </Card.Body>
-    </Card>
-    <Card style={[backgroundColor("primary"), textColor("white"), textAlign("center"), padding(3)]}>
-        <Blockquote style={margin({ side: "b", size: 0 })}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-            <Blockquote.Footer style={textColor("white")}>
-                <small>
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-            </Blockquote.Footer>
-        </Blockquote>
-    </Card>
-    <Card style={textAlign("center")}>
-        <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>This card has a regular title and short paragraphy of text below it.</Card.Text>
-            <Card.Text>
-                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-            </Card.Text>
-        </Card.Body>
-    </Card>
-    <Card>
-        <Card.Image src={placeholderUri(100, "%", 270, "px")} position="top" />
-    </Card>
-    <Card style={[textAlign("end"), padding(3)]}>
-        <Blockquote style={margin({ side: "b", size: 0 })}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <Blockquote.Footer style={textColor("muted")}>
-                <small>
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-            </Blockquote.Footer>
-        </Blockquote>
-    </Card>
-    <Card>
-        <Card.Body>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
-                This is another card with title and supporting text below. This card has some additional content to make it
-                slightly taller overall.
-            </Card.Text>
-            <Card.Text>
-                <small style={textColor("muted")}>Last updated 3 mins ago</small>
-            </Card.Text>
-        </Card.Body>
-    </Card>
-</Card.Columns>`}</Code>
         </>
     );
 }

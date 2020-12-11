@@ -5,6 +5,7 @@ import { Example } from "../../../../common/Example";
 import { Badge, visuallyHidden, Button, BadgeVariant } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
+import { textColor } from "../../../../../src/utilities/color";
 
 export const badgesRoute: IRouteWithNavDefinition = {
     url: "badges",
@@ -96,11 +97,11 @@ export function Badges(): b.IBobrilNode {
             <p>Badges can be used as part of links or buttons to provide a counter.</p>
             <Example>
                 <Button>
-                    Notifications <Badge variant="light">4</Badge>
+                    Notifications <Badge variant="secondary">4</Badge>
                 </Button>
             </Example>
             <Code language="tsx">{`<Button>
-    Notifications <Badge variant="light">4</Badge>
+    Notifications <Badge variant="secondary">4</Badge>
 </Button>`}</Code>
             <p>
                 Note that depending on how they are used, badges may be confusing for users of screen readers and similar assistive
@@ -114,12 +115,12 @@ export function Badges(): b.IBobrilNode {
             </p>
             <Example>
                 <Button>
-                    Profile <Badge variant="light">9</Badge>
+                    Profile <Badge variant="secondary">9</Badge>
                     <span style={visuallyHidden}>unread messages</span>
                 </Button>
             </Example>
             <Code language="tsx">{`<Button>
-    Profile <Badge variant="light">9</Badge>
+    Profile <Badge variant="secondary">9</Badge>
     <span style={srOnly}>unread messages</span>
 </Button>`}</Code>
             <Anchor name="badges-contextual-variations">
@@ -129,12 +130,19 @@ export function Badges(): b.IBobrilNode {
             <Example>
                 {badgeVariants.map((variant) => (
                     <>
-                        <Badge variant={variant}>{variant.toUpperCase()}</Badge>{" "}
+                        <Badge variant={variant} style={["warning", "info", "light"].indexOf(variant) >= 0 && textColor("dark")}>
+                            {variant.toUpperCase()}
+                        </Badge>{" "}
                     </>
                 ))}
             </Example>
             <Code language="tsx">
-                {badgeVariants.map((variant) => `<Badge variant="${variant}">${variant.toUpperCase()}</Badge>{" "}\n`)}
+                {badgeVariants.map(
+                    (variant) =>
+                        `<Badge variant="${variant}"${
+                            ["warning", "info", "light"].indexOf(variant) >= 0 ? ` style={textColor("dark")}` : ""
+                        }>${variant.toUpperCase()}</Badge>{" "}\n`
+                )}
             </Code>
             <Anchor name="badges-pills">
                 <h2>Pills</h2>
@@ -143,14 +151,19 @@ export function Badges(): b.IBobrilNode {
             <Example>
                 {badgeVariants.map((variant) => (
                     <>
-                        <Badge variant={variant} pill>
+                        <Badge variant={variant} pill style={["warning", "info", "light"].indexOf(variant) >= 0 && textColor("dark")}>
                             {variant.toUpperCase()}
                         </Badge>{" "}
                     </>
                 ))}
             </Example>
             <Code language="tsx">
-                {badgeVariants.map((variant) => `<Badge variant="${variant}" pill>${variant.toUpperCase()}</Badge>{" "}\n`)}
+                {badgeVariants.map(
+                    (variant) =>
+                        `<Badge variant="${variant}" pill${
+                            ["warning", "info", "light"].indexOf(variant) >= 0 ? ` style={textColor("dark")}` : ""
+                        }>${variant.toUpperCase()}</Badge>{" "}\n`
+                )}
             </Code>
             <Anchor name="badges-links">
                 <h2>Links</h2>
@@ -162,7 +175,11 @@ export function Badges(): b.IBobrilNode {
             <Example>
                 {badgeVariants.map((variant) => (
                     <>
-                        <Badge variant={variant} href="javascript:void(0)">
+                        <Badge
+                            variant={variant}
+                            href="javascript:void(0)"
+                            style={["warning", "info", "light"].indexOf(variant) >= 0 && textColor("dark")}
+                        >
                             {variant.toUpperCase()}
                         </Badge>{" "}
                     </>
@@ -170,7 +187,10 @@ export function Badges(): b.IBobrilNode {
             </Example>
             <Code language="tsx">
                 {badgeVariants.map(
-                    (variant) => `<Badge variant="${variant}" href="javascript:void(0)">${variant.toUpperCase()}</Badge>{" "}\n`
+                    (variant) =>
+                        `<Badge variant="${variant}" href="javascript:void(0)"${
+                            ["warning", "info", "light"].indexOf(variant) >= 0 ? ` style={textColor("dark")}` : ""
+                        }>${variant.toUpperCase()}</Badge>{" "}\n`
                 )}
             </Code>
         </>

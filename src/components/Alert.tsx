@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import bootstrap from "bootstrap";
 import { Tags } from "../../utils/tags";
 import { AlertHeading } from "./AlertHeading";
 import { AlertLink } from "./AlertLink";
@@ -20,6 +21,8 @@ export const alertStyles = {
     show: b.styleDef("show"),
 };
 
+export type IAlert = bootstrap.Alert;
+
 export interface IAlertData extends IBaseElementDataWithChildren {
     variant?: AlertVariant;
     dismissible?: boolean | "native" | "native-white";
@@ -27,6 +30,7 @@ export interface IAlertData extends IBaseElementDataWithChildren {
     "dismiss-animation"?: boolean;
     onDismiss?: () => void;
     onDismissed?: () => void;
+    "get-instance"?: (alert: IAlert) => void;
 }
 
 export class Alert extends BaseElement<IAlertData> {
@@ -41,6 +45,7 @@ export class Alert extends BaseElement<IAlertData> {
         "dismiss-animation",
         "onDismiss",
         "onDismissed",
+        "get-instance",
     ];
 
     componentAdditionalAttributes(): IAllAttrs {
@@ -55,7 +60,7 @@ export class Alert extends BaseElement<IAlertData> {
     }
 
     postInitDom(): void {
-        this.isNativeDismiss && this.registerCallback();
+        this.isNativeDismiss && this.registerCallback() && this.registerAlert();
     }
 
     postUpdateDom(): void {
@@ -84,6 +89,11 @@ export class Alert extends BaseElement<IAlertData> {
 
         this.registerEvent("closed.bs.alert", () => this.data.onDismissed && this.data.onDismissed());
         this.registerEvent("close.bs.alert", () => this.data.onDismiss && this.data.onDismiss());
+    }
+
+    private registerAlert(): void {
+        const alert = new bootstrap.Alert(this.element);
+        this.data["get-instance"] && this.data["get-instance"](alert as IAlert);
     }
 }
 

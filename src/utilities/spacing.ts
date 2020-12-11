@@ -75,3 +75,9 @@ export function spacing(spacingType: SpacingType, definition: ISpacing | Spacing
 function isSpacingDefinition(definition: ISpacing | SpacingSize): definition is ISpacing {
     return typeof definition === "object" && definition.size !== undefined;
 }
+
+export type GapSize = 0 | 1 | 2 | 3 | 4 | 5 | "auto";
+
+const gapSizes: GapSize[] = [0, 1, 2, 3, 4, 5, "auto"];
+
+export const gap = createFilledDictionary(gapSizes.map((size) => [size, b.styleDef(`gap-${size}`)]));

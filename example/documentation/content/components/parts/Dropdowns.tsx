@@ -587,20 +587,18 @@ export function DropdownsDoc(): b.IBobrilNode {
                     <Dropdown.Toggle variant="secondary">Dropdown with form</Dropdown.Toggle>
                     <Dropdown.Menu style={{ minWidth: 250 }}>
                         <Form style={[padding(4)]}>
-                            <Form.Group>
+                            <div style={margin({ side: "b", size: 3 })}>
                                 <Form.Label for="exampleDropdownFormEmail">Email address</Form.Label>
                                 <Form.Input type="email" placeholder="email@example.com" id="exampleDropdownFormEmail"></Form.Input>
-                            </Form.Group>
-                            <Form.Group>
+                            </div>
+                            <div style={margin({ side: "b", size: 3 })}>
                                 <Form.Label for="exampleDropdownFormPassword">Password</Form.Label>
                                 <Form.Input type="password" placeholder="Password" id="exampleDropdownFormPassword"></Form.Input>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Check>
-                                    <Form.Input type="checkbox" id="dropdownCheck" />
-                                    <Form.Label for="dropdownCheck">Remember me</Form.Label>
-                                </Form.Check>
-                            </Form.Group>
+                            </div>
+                            <Form.Check style={margin({ side: "b", size: 3 })}>
+                                <Form.Input type="checkbox" id="dropdownCheck" />
+                                <Form.Label for="dropdownCheck">Remember me</Form.Label>
+                            </Form.Check>
                             <Button type="submit" variant="primary">
                                 Sign in
                             </Button>
@@ -615,20 +613,18 @@ export function DropdownsDoc(): b.IBobrilNode {
     <Dropdown.Toggle variant="secondary">Dropdown with form</Dropdown.Toggle>
     <Dropdown.Menu style={{ minWidth: 250 }}>
         <Form style={[padding(4)]}>
-            <Form.Group>
+            <div style={margin({ side: "b", size: 3 })}>
                 <Form.Label for="exampleDropdownFormEmail">Email address</Form.Label>
                 <Form.Input type="email" placeholder="email@example.com" id="exampleDropdownFormEmail"></Form.Input>
-            </Form.Group>
-            <Form.Group>
+            </div>
+            <div style={margin({ side: "b", size: 3 })}>
                 <Form.Label for="exampleDropdownFormPassword">Password</Form.Label>
                 <Form.Input type="password" placeholder="Password" id="exampleDropdownFormPassword"></Form.Input>
-            </Form.Group>
-            <Form.Group>
-                <Form.Check>
-                    <Form.Input type="checkbox" id="dropdownCheck" />
-                    <Form.Label for="dropdownCheck">Remember me</Form.Label>
-                </Form.Check>
-            </Form.Group>
+            </div>
+            <Form.Check style={margin({ side: "b", size: 3 })}>
+                <Form.Input type="checkbox" id="dropdownCheck" />
+                <Form.Label for="dropdownCheck">Remember me</Form.Label>
+            </Form.Check>
             <Button type="submit" variant="primary">
                 Sign in
             </Button>

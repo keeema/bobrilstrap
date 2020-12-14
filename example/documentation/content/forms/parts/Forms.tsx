@@ -21,7 +21,7 @@ import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { Callout } from "../../../../common/Callout";
 
-export const formsRoute: IRouteWithNavDefinition = {
+export const overviewRoute: IRouteWithNavDefinition = {
     url: "forms",
     name: "forms",
     label: "Forms",

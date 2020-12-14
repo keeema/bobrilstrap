@@ -10,8 +10,7 @@ import { cardsRoute } from "./parts/Cards";
 import { carouselRoute } from "./parts/Carousel";
 import { collapseRoute } from "./parts/Collapse";
 import { dropdownsRoute } from "./parts/Dropdowns";
-import { formsRoute } from "./parts/Forms";
-import { inputGroupRoute } from "./parts/InputGroup";
+//import { inputGroupRoute } from "./parts/InputGroup";
 import { listGroupRoute } from "./parts/ListGroup";
 import { accordionsRoute } from "./parts/Accordion";
 
@@ -32,8 +31,7 @@ export const components: IRouteWithNavDefinition = {
         carouselRoute,
         collapseRoute,
         dropdownsRoute,
-        formsRoute,
-        inputGroupRoute,
+        // inputGroupRoute,
         listGroupRoute,
     ],
 };

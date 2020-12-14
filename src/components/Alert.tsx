@@ -1,9 +1,8 @@
 import * as b from "bobril";
 import bootstrap from "bootstrap";
-import { Tags } from "../../utils/tags";
 import { AlertHeading } from "./AlertHeading";
 import { AlertLink } from "./AlertLink";
-import { IBaseElementDataWithChildren, BaseElement, IAllAttrs, IAttrs } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 
 export type AlertVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
 export const alertStyles = {
@@ -25,8 +24,7 @@ export type IAlert = bootstrap.Alert;
 
 export interface IAlertData extends IBaseElementDataWithChildren {
     variant?: AlertVariant;
-    dismissible?: boolean | "native" | "native-white";
-    "dismiss-aria-label"?: string;
+    dismissible?: boolean;
     "dismiss-animation"?: boolean;
     onDismiss?: () => void;
     onDismissed?: () => void;
@@ -41,7 +39,6 @@ export class Alert extends BaseElement<IAlertData> {
     componentProperties = (): (keyof IAlertData)[] => [
         "variant",
         "dismissible",
-        "dismissible-aria-label",
         "dismiss-animation",
         "onDismiss",
         "onDismissed",
@@ -52,33 +49,22 @@ export class Alert extends BaseElement<IAlertData> {
         return { ...super.componentAdditionalAttributes(), role: this.data.role || "alert" };
     }
 
-    render(): b.IBobrilNode {
-        if (this.isNativeDismiss) {
-            this.data.children = [...[this.data.children], <AlertDismissButton dismiss-native />];
-        }
-        return super.render();
-    }
-
     postInitDom(): void {
-        this.isNativeDismiss && this.registerCallback() && this.registerAlert();
+        this.data.dismissible && this.registerCallback() && this.registerAlert();
     }
 
     postUpdateDom(): void {
-        this.isNativeDismiss && this.registerCallback();
+        this.data.dismissible && this.registerCallback();
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [
             alertStyles.alert,
             alertStyles[this.data.variant ?? "primary"],
-            this.data.dismissible && alertStyles.dismissible,
-            this.isNativeDismiss && this.data["dismiss-animation"] && alertStyles.fade,
-            this.isNativeDismiss && this.data["dismiss-animation"] && alertStyles.show,
+            this.data.children && alertStyles.dismissible,
+            this.data.dismissible && this.data["dismiss-animation"] && alertStyles.fade,
+            this.data.dismissible && this.data["dismiss-animation"] && alertStyles.show,
         ];
-    }
-
-    private get isNativeDismiss(): boolean {
-        return this.data.dismissible === "native" || this.data.dismissible === "native-white";
     }
 
     private registerCallback(): void {
@@ -94,39 +80,5 @@ export class Alert extends BaseElement<IAlertData> {
     private registerAlert(): void {
         const alert = new bootstrap.Alert(this.element);
         this.data["get-instance"] && this.data["get-instance"](alert as IAlert);
-    }
-}
-
-export const alertDismissButtonStyles = {
-    close: b.styleDef("btn-close"),
-    closeWhite: b.styleDef("btn-close-white"),
-};
-
-export interface IAlertDismissButtonData extends IBaseElementDataWithChildren {
-    "dismiss-native"?: boolean;
-    "dismiss-aria-label"?: string;
-    white?: boolean;
-}
-
-export class AlertDismissButton extends BaseElement<IAlertDismissButtonData> {
-    static id: string = "bobrilstrap-alert-dismiss-button";
-
-    get tag(): Tags {
-        return "button";
-    }
-
-    componentProperties(): (keyof IAlertDismissButtonData)[] {
-        return ["dismiss-aria-label", "white", "dismiss-native"];
-    }
-
-    componentAdditionalAttributes(): IAttrs {
-        return {
-            ariaLabel: this.data["dismiss-aria-label"] ?? "Close",
-            "data-bs-dismiss": this.data["data-bs-dismiss"] || (this.data["dismiss-native"] ? "alert" : undefined),
-        };
-    }
-
-    componentSpecificStyles(): b.IBobrilStyleArray {
-        return [this.data.white ? alertDismissButtonStyles.closeWhite : alertDismissButtonStyles.close];
     }
 }

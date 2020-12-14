@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Accordion, Button, Card, Col, margin, Row, textAlign, Collapse } from "../../../../../index";
+import { Button, Card, Col, Row, Collapse } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { OptionsRow, OptionsTable } from "../../../../common/OptionsTable";
@@ -23,12 +23,6 @@ export const collapseRoute: IRouteWithNavDefinition = {
             url: "examples",
             name: "collapse-example",
             label: "Example",
-            subs: [],
-        },
-        {
-            url: "accordion",
-            name: "collapse-accordion",
-            label: "Accordion",
             subs: [],
         },
         {
@@ -90,16 +84,20 @@ export function CollapseDoc(): b.IBobrilNode {
                 <Col>
                     <Collapse collapsed={collapsed1}>
                         <Card>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            <Card.Body>
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+                                keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            </Card.Body>
                         </Card>
                     </Collapse>
                 </Col>
                 <Col>
                     <Collapse collapsed={collapsed2}>
                         <Card>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            <Card.Body>
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+                                keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            </Card.Body>
                         </Card>
                     </Collapse>
                 </Col>
@@ -109,85 +107,6 @@ export function CollapseDoc(): b.IBobrilNode {
 }
 
 <MultiCollapse />`}</Code>
-            <Anchor name="collapse-accordion">
-                <h2>Accordion</h2>
-            </Anchor>
-            <p>
-                Using the <code>{`<Card>`}</code> component, you can extend the default collapse behavior to create an accordion. To
-                properly achieve the accordion style, be sure to use <code>{`<Accordion>`}</code> as a wrapper.
-            </p>
-            <Example>
-                <Accordions />
-            </Example>
-            <Code language="tsx">{`function Accordions(): b.IBobrilNode {
-    const [collapsed1, setCollapsed1] = b.useState(true);
-    const [collapsed2, setCollapsed2] = b.useState(true);
-    const [collapsed3, setCollapsed3] = b.useState(true);
-
-    return (
-        <Accordion>
-            <Card>
-                <Card.Header>
-                    <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed1(!collapsed1)}>
-                            Collapsible Group Item #1
-                        </Button>
-                    </h2>
-                </Card.Header>
-                <Collapse collapsed={collapsed1}>
-                    <Card.Body>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-                        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                        accusamus labore sustainable VHS.
-                    </Card.Body>
-                </Collapse>
-            </Card>
-            <Card>
-                <Card.Header>
-                    <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed2(!collapsed2)}>
-                            Collapsible Group Item #2
-                        </Button>
-                    </h2>
-                </Card.Header>
-                <Collapse collapsed={collapsed2}>
-                    <Card.Body>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-                        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                        accusamus labore sustainable VHS.
-                    </Card.Body>
-                </Collapse>
-            </Card>
-            <Card>
-                <Card.Header>
-                    <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed3(!collapsed3)}>
-                            Collapsible Group Item #3
-                        </Button>
-                    </h2>
-                </Card.Header>
-                <Collapse collapsed={collapsed3}>
-                    <Card.Body>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-                        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                        accusamus labore sustainable VHS.
-                    </Card.Body>
-                </Collapse>
-            </Card>
-        </Accordion>
-    );
-}
-
-<Accordions />`}</Code>
             <Anchor name="collapse-api">
                 <h2>API</h2>
             </Anchor>
@@ -274,88 +193,24 @@ function MultiCollapse(): b.IBobrilNode {
                 <Col>
                     <Collapse collapsed={collapsed1}>
                         <Card>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            <Card.Body>
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+                                keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            </Card.Body>
                         </Card>
                     </Collapse>
                 </Col>
                 <Col>
                     <Collapse collapsed={collapsed2}>
                         <Card>
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-                            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            <Card.Body>
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+                                keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                            </Card.Body>
                         </Card>
                     </Collapse>
                 </Col>
             </Row>
         </>
-    );
-}
-
-function Accordions(): b.IBobrilNode {
-    const [collapsed1, setCollapsed1] = b.useState(true);
-    const [collapsed2, setCollapsed2] = b.useState(true);
-    const [collapsed3, setCollapsed3] = b.useState(true);
-
-    return (
-        <Accordion>
-            <Card>
-                <Card.Header>
-                    <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed1(!collapsed1)}>
-                            Collapsible Group Item #1
-                        </Button>
-                    </h2>
-                </Card.Header>
-                <Collapse collapsed={collapsed1}>
-                    <Card.Body>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-                        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                        accusamus labore sustainable VHS.
-                    </Card.Body>
-                </Collapse>
-            </Card>
-            <Card>
-                <Card.Header>
-                    <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed2(!collapsed2)}>
-                            Collapsible Group Item #2
-                        </Button>
-                    </h2>
-                </Card.Header>
-                <Collapse collapsed={collapsed2}>
-                    <Card.Body>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-                        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                        accusamus labore sustainable VHS.
-                    </Card.Body>
-                </Collapse>
-            </Card>
-            <Card>
-                <Card.Header>
-                    <h2 style={margin({ side: "b", size: 0 })}>
-                        <Button variant="link" block style={textAlign("start")} onClick={() => setCollapsed3(!collapsed3)}>
-                            Collapsible Group Item #3
-                        </Button>
-                    </h2>
-                </Card.Header>
-                <Collapse collapsed={collapsed3}>
-                    <Card.Body>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-                        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-                        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                        accusamus labore sustainable VHS.
-                    </Card.Body>
-                </Collapse>
-            </Card>
-        </Accordion>
     );
 }

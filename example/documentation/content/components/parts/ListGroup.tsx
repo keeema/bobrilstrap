@@ -237,8 +237,8 @@ export function ListGroupDoc(): b.IBobrilNode {
             </Anchor>
             <p>
                 Add <code>horizontal</code> prop to change the layout of list group items from vertical to horizontal across all
-                breakpoints. Alternatively, set its value <code>sm | md | lg | xl</code> to make a list group horizontal starting at that
-                breakpoint’s <code>min-width</code>. Currently horizontal list groups cannot be combined with flush list groups.
+                breakpoints. Alternatively, set its value <code>sm | md | lg | xl | xxl</code> to make a list group horizontal starting at
+                that breakpoint’s <code>min-width</code>. Currently horizontal list groups cannot be combined with flush list groups.
             </p>
             <Example>
                 <ListGroup horizontal>

@@ -183,7 +183,7 @@ export function Carousels(): b.IBobrilNode {
                 <OptionsRow>
                     {{
                         name: "get-instance",
-                        type: "(carousel: ICarouselActions, element: HTMLDivElement): void",
+                        type: "(carousel: ICarousel, element: HTMLDivElement): void",
                         defaultValue: "undefined",
                         description: (
                             <p>
@@ -196,7 +196,7 @@ export function Carousels(): b.IBobrilNode {
                 <OptionsRow>
                     {{
                         name: "onSlid",
-                        type: "CarouselEventHandler<HTMLDivElement>): void",
+                        type: "(ev: ICarouselEvent): void",
                         defaultValue: "undefined",
                         description: "This callback is fired when the carousel has completed its slide transition.",
                     }}
@@ -204,7 +204,7 @@ export function Carousels(): b.IBobrilNode {
                 <OptionsRow>
                     {{
                         name: "onSlide",
-                        type: "CarouselEventHandler<HTMLDivElement>): void",
+                        type: "(ev: ICarouselEvent): void",
                         defaultValue: "undefined",
                         description: (
                             <p>

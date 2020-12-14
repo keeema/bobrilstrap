@@ -2,9 +2,10 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Alert, AlertDismissButton, AlertVariant, Button, margin } from "../../../../../index";
+import { Alert, CloseButton, AlertVariant, Button, margin } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
+import { OptionsTable, OptionsRow } from "../../../../common/OptionsTable";
 
 export const alertsRoute: IRouteWithNavDefinition = {
     url: "alerts",
@@ -144,7 +145,7 @@ export function Alerts(): b.IBobrilNode {
         return (
             <Alert variant="danger" dismissible>
                 Holy guacamole! You should check in on some of those fields below.
-                <AlertDismissButton onClick={() => setShow(false)} />
+                <CloseButton onClick={() => setShow(false)} />
             </Alert>
         );
     }
@@ -161,17 +162,89 @@ export function Alerts(): b.IBobrilNode {
             <Example>
                 <Alert
                     variant="warning"
-                    dismissible="native"
+                    dismissible
                     dismiss-animation
                     onDismiss={() => alert("Dismiss")}
                     onDismissed={() => alert("Dismissed")}
                 >
                     Holy guacamole! You should check in on some of those fields below.
+                    <CloseButton dismiss-alert />
                 </Alert>
             </Example>
-            <Code language="tsx">{`<Alert variant="warning" dismissible="native" dismiss-animation onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
+            <Code language="tsx">{` <Alert
+    variant="warning"
+    dismissible
+    dismiss-animation
+    onDismiss={() => alert("Dismiss")}
+    onDismissed={() => alert("Dismissed")}
+>
     Holy guacamole! You should check in on some of those fields below.
+    <CloseButton dismiss-alert />
 </Alert>`}</Code>
+            <Anchor name="alerts-api">
+                <h2>API</h2>
+            </Anchor>
+            <p>
+                Carousel is controlled by <code>alert controller</code> provided in the callback prop <code>get-instance</code>.
+            </p>
+            <OptionsTable>
+                <OptionsRow>
+                    {{
+                        name: "dismissible",
+                        type: "boolean",
+                        defaultValue: "false",
+                        description: "Preserves layout for close button.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "dismiss-animation",
+                        type: "boolean",
+                        defaultValue: "false",
+                        description: "Animates alert dismiss.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "variant",
+                        type: "string",
+                        defaultValue: "none",
+                        description: "Alert variant.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "get-instance",
+                        type: "(alert: IAlert): void",
+                        defaultValue: "undefined",
+                        description: (
+                            <p>
+                                This callback is fired when alert is initialized and provides <code>alert</code> as controller instance.
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onDismissed",
+                        type: "(): void",
+                        defaultValue: "undefined",
+                        description: "This callback is fired when the alert has completed its dismissing transition.",
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "onDismiss",
+                        type: "(): void",
+                        defaultValue: "undefined",
+                        description: (
+                            <p>
+                                This callback fires immediately when the <code>dismiss</code> is invoked.
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+            </OptionsTable>
         </>
     );
 }
@@ -183,7 +256,7 @@ function AlertDismissibleExample(): b.IBobrilNode {
         return (
             <Alert variant="danger" dismissible>
                 Holy guacamole! You should check in on some of those fields below.
-                <AlertDismissButton onClick={() => setShow(false)} />
+                <CloseButton onClick={() => setShow(false)} />
             </Alert>
         );
     }

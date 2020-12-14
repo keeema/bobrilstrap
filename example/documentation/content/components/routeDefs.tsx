@@ -12,8 +12,8 @@ import { collapseRoute } from "./parts/Collapse";
 import { dropdownsRoute } from "./parts/Dropdowns";
 import { formsRoute } from "./parts/Forms";
 import { inputGroupRoute } from "./parts/InputGroup";
-import { jumbotronRoute } from "./parts/Jumbotron";
 import { listGroupRoute } from "./parts/ListGroup";
+import { accordionsRoute } from "./parts/Accordion";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -22,6 +22,7 @@ export const components: IRouteWithNavDefinition = {
     handler: (data) => <Components {...data} />,
     default: alertsRoute,
     subs: [
+        accordionsRoute,
         alertsRoute,
         badgesRoute,
         breadcrumbsRoute,
@@ -33,7 +34,6 @@ export const components: IRouteWithNavDefinition = {
         dropdownsRoute,
         formsRoute,
         inputGroupRoute,
-        jumbotronRoute,
         listGroupRoute,
     ],
 };

@@ -29,7 +29,6 @@ export type InputType =
 
 export const formControlBaseStyles = {
     formControl: b.styleDef("form-control"),
-    customControlInput: b.styleDef("custom-control-input"),
     plainText: b.styleDef("form-control-plaintext"),
     formCheckInput: b.styleDef("form-check-input"),
     formSelect: b.styleDef("form-select"),

@@ -47,7 +47,6 @@ export const buttonStyles = {
 };
 
 export interface IButtonData extends IBaseElementDataWithChildren {
-    as?: "button" | "a" | "input";
     variant?: ButtonVariant;
     href?: string;
     size?: Breakpoint;

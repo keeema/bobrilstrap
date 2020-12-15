@@ -3,6 +3,7 @@ import { IRouteWithNavDefinition } from "../../../common/routing";
 import { Forms } from "./Forms";
 import { formControlsRoute } from "./parts/FormsControls";
 import { overviewRoute } from "./parts/Overview";
+import { selectRoute } from "./parts/Select";
 
 export const forms: IRouteWithNavDefinition = {
     url: "forms",
@@ -10,5 +11,5 @@ export const forms: IRouteWithNavDefinition = {
     label: "Forms",
     handler: (data) => <Forms {...data} />,
     default: overviewRoute,
-    subs: [overviewRoute, formControlsRoute],
+    subs: [overviewRoute, formControlsRoute, selectRoute],
 };

@@ -32,6 +32,7 @@ export const formControlBaseStyles = {
     customControlInput: b.styleDef("custom-control-input"),
     plainText: b.styleDef("form-control-plaintext"),
     formCheckInput: b.styleDef("form-check-input"),
+    formSelect: b.styleDef("form-select"),
     formControlRange: b.styleDef("form-range"),
     formControlColor: b.styleDef("form-control-color"),
     customSelectSizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`form-select-${breakpoint}`)])),
@@ -72,7 +73,7 @@ export abstract class FormControlBase<TData extends IFormControlBaseData> extend
             this.tryGetSpecificStyle || this.tryGetPlainText || (!this.data["no-form-control"] && formControlBaseStyles.formControl),
             this.tryGetAdditionalSpecificStyle,
             this.data.size &&
-                (this.tag === "select"
+                (this.recognizedTag === "select"
                     ? formControlBaseStyles.customSelectSizes(this.data.size)
                     : formControlBaseStyles.sizes(this.data.size)),
             this.data.valid === true && formControlBaseStyles.valid,
@@ -82,6 +83,9 @@ export abstract class FormControlBase<TData extends IFormControlBaseData> extend
 
     get tryGetSpecificStyle(): b.IBobrilStyle {
         const data = this.data as IFormControlBaseWithTypeData;
+        if (this.recognizedTag === "select") {
+            return formControlBaseStyles.formSelect;
+        }
         return data.type && !this.data["no-form-control"] && specificInputStyles[data.type];
     }
 

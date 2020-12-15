@@ -6318,6 +6318,45 @@ export class Dice6 extends IconBase {
     );
 }
 
+export class DiscFill extends IconBase {
+    static id: string = "bobrilstrap-icon-disc-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-6 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM4 8a4 4 0 0 1 4-4 .5.5 0 0 0 0-1 5 5 0 0 0-5 5 .5.5 0 0 0 1 0zm9 0a.5.5 0 1 0-1 0 4 4 0 0 1-4 4 .5.5 0 0 0 0 1 5 5 0 0 0 5-5z"
+            />
+        </>
+    );
+}
+
+export class Disc extends IconBase {
+    static id: string = "bobrilstrap-icon-disc";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+            <path
+                fill-rule="evenodd"
+                d="M8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1zm4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5z"
+            />
+        </>
+    );
+}
+
+export class Discord extends IconBase {
+    static id: string = "bobrilstrap-icon-discord";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path d="M6.552 6.712c-.456 0-.816.4-.816.888s.368.888.816.888c.456 0 .816-.4.816-.888.008-.488-.36-.888-.816-.888zm2.92 0c-.456 0-.816.4-.816.888s.368.888.816.888c.456 0 .816-.4.816-.888s-.36-.888-.816-.888z" />
+            <path d="M13.36 0H2.64C1.736 0 1 .736 1 1.648v10.816c0 .912.736 1.648 1.64 1.648h9.072l-.424-1.48 1.024.952.968.896L15 16V1.648C15 .736 14.264 0 13.36 0zm-3.088 10.448s-.288-.344-.528-.648c1.048-.296 1.448-.952 1.448-.952-.328.216-.64.368-.92.472-.4.168-.784.28-1.16.344a5.604 5.604 0 0 1-2.072-.008 6.716 6.716 0 0 1-1.176-.344 4.688 4.688 0 0 1-.584-.272c-.024-.016-.048-.024-.072-.04-.016-.008-.024-.016-.032-.024-.144-.08-.224-.136-.224-.136s.384.64 1.4.944c-.24.304-.536.664-.536.664-1.768-.056-2.44-1.216-2.44-1.216 0-2.576 1.152-4.664 1.152-4.664 1.152-.864 2.248-.84 2.248-.84l.08.096c-1.44.416-2.104 1.048-2.104 1.048s.176-.096.472-.232c.856-.376 1.536-.48 1.816-.504.048-.008.088-.016.136-.016a6.521 6.521 0 0 1 4.024.752s-.632-.6-1.992-1.016l.112-.128s1.096-.024 2.248.84c0 0 1.152 2.088 1.152 4.664 0 0-.68 1.16-2.448 1.216z" />
+        </>
+    );
+}
+
 export class DisplayFill extends IconBase {
     static id: string = "bobrilstrap-icon-display-fill";
 
@@ -7170,6 +7209,19 @@ export class Eyeglasses extends IconBase {
             <path
                 fill-rule="evenodd"
                 d="M4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"
+            />
+        </>
+    );
+}
+
+export class Facebook extends IconBase {
+    static id: string = "bobrilstrap-icon-facebook";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
             />
         </>
     );
@@ -9487,6 +9539,19 @@ export class Gift extends IconBase {
     );
 }
 
+export class Github extends IconBase {
+    static id: string = "bobrilstrap-icon-github";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            />
+        </>
+    );
+}
+
 export class Globe extends IconBase {
     static id: string = "bobrilstrap-icon-globe";
 
@@ -9509,6 +9574,16 @@ export class Globe2 extends IconBase {
                 fill-rule="evenodd"
                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287V1.077zM4.249 3.539a8.372 8.372 0 0 1-1.198-.49 7.01 7.01 0 0 1 2.276-1.52 6.7 6.7 0 0 0-.597.932 8.854 8.854 0 0 0-.48 1.079zM3.509 7.5H1.017A6.964 6.964 0 0 1 2.38 3.825c.47.258.995.482 1.565.667A13.4 13.4 0 0 0 3.508 7.5zm1.4-2.741c.808.187 1.681.301 2.591.332V7.5H4.51c.035-.987.176-1.914.399-2.741zM8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5H7.5v2.409c-.91.03-1.783.145-2.591.332a12.343 12.343 0 0 1-.4-2.741zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741H8.5zm-3.282 3.696A12.63 12.63 0 0 1 7.5 11.91v3.014c-.67-.204-1.335-.82-1.887-1.855a7.776 7.776 0 0 1-.395-.872zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964a9.083 9.083 0 0 0-1.565.667A6.963 6.963 0 0 1 1.018 8.5h2.49a13.36 13.36 0 0 0 .437 3.008zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909c.81.03 1.577.13 2.282.287-.12.312-.252.604-.395.872-.552 1.035-1.218 1.65-1.887 1.855V11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5h-2.49a13.361 13.361 0 0 0-.437-3.008 9.123 9.123 0 0 0 1.565-.667A6.963 6.963 0 0 1 14.982 7.5zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343c-.705.157-1.473.257-2.282.287V1.077c.67.204 1.335.82 1.887 1.855.143.268.276.56.395.872z"
             />
+        </>
+    );
+}
+
+export class Google extends IconBase {
+    static id: string = "bobrilstrap-icon-google";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
         </>
     );
 }
@@ -10370,6 +10445,16 @@ export class InputCursor extends IconBase {
     );
 }
 
+export class Instagram extends IconBase {
+    static id: string = "bobrilstrap-icon-instagram";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+        </>
+    );
+}
+
 export class Intersect extends IconBase {
     static id: string = "bobrilstrap-icon-intersect";
 
@@ -11061,6 +11146,19 @@ export class Link extends IconBase {
         <>
             <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
             <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
+        </>
+    );
+}
+
+export class Linkedin extends IconBase {
+    static id: string = "bobrilstrap-icon-linkedin";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212h-2.4s.03-6.547 0-7.225h2.4v1.023a5.54 5.54 0 0 0-.016.025h.016v-.025c.32-.493.89-1.193 2.165-1.193 1.58 0 2.764 1.033 2.764 3.252v4.143h-2.4V9.529c0-.972-.348-1.634-1.217-1.634-.664 0-1.059.447-1.233.878-.063.154-.079.37-.079.586v4.035z"
+            />
         </>
     );
 }
@@ -11943,6 +12041,63 @@ export class PatchQuestion extends IconBase {
     );
 }
 
+export class PauseBtnFill extends IconBase {
+    static id: string = "bobrilstrap-icon-pause-btn-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm4.25 3C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z"
+            />
+        </>
+    );
+}
+
+export class PauseBtn extends IconBase {
+    static id: string = "bobrilstrap-icon-pause-btn";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
+            />
+            <path
+                fill-rule="evenodd"
+                d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z"
+            />
+        </>
+    );
+}
+
+export class PauseCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-pause-circle-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z"
+            />
+        </>
+    );
+}
+
+export class PauseCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-pause-circle";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+                fill-rule="evenodd"
+                d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z"
+            />
+        </>
+    );
+}
+
 export class PauseFill extends IconBase {
     static id: string = "bobrilstrap-icon-pause-fill";
 
@@ -12450,6 +12605,63 @@ export class Pip extends IconBase {
     );
 }
 
+export class PlayBtnFill extends IconBase {
+    static id: string = "bobrilstrap-icon-play-btn-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm4.79 3.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"
+            />
+        </>
+    );
+}
+
+export class PlayBtn extends IconBase {
+    static id: string = "bobrilstrap-icon-play-btn";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
+            />
+            <path
+                fill-rule="evenodd"
+                d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"
+            />
+        </>
+    );
+}
+
+export class PlayCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-play-circle-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"
+            />
+        </>
+    );
+}
+
+export class PlayCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-play-circle";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+                fill-rule="evenodd"
+                d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"
+            />
+        </>
+    );
+}
+
 export class PlayFill extends IconBase {
     static id: string = "bobrilstrap-icon-play-fill";
 
@@ -12828,6 +13040,96 @@ export class Reception4 extends IconBase {
     svgChildren = (): b.IBobrilChildren => (
         <>
             <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z" />
+        </>
+    );
+}
+
+export class RecordBtnFill extends IconBase {
+    static id: string = "bobrilstrap-icon-record-btn-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm6 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+            />
+        </>
+    );
+}
+
+export class RecordBtn extends IconBase {
+    static id: string = "bobrilstrap-icon-record-btn";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
+            />
+            <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+        </>
+    );
+}
+
+export class RecordCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-record-circle-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        </>
+    );
+}
+
+export class RecordCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-record-circle";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+        </>
+    );
+}
+
+export class RecordFill extends IconBase {
+    static id: string = "bobrilstrap-icon-record-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10z" />
+        </>
+    );
+}
+
+export class Record extends IconBase {
+    static id: string = "bobrilstrap-icon-record";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 1A5 5 0 1 0 8 3a5 5 0 0 0 0 10z" />
+        </>
+    );
+}
+
+export class Record2Fill extends IconBase {
+    static id: string = "bobrilstrap-icon-record2-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+            <path fill-rule="evenodd" d="M8 13A5 5 0 1 0 8 3a5 5 0 0 0 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        </>
+    );
+}
+
+export class Record2 extends IconBase {
+    static id: string = "bobrilstrap-icon-record2";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 1A5 5 0 1 0 8 3a5 5 0 0 0 0 10z" />
+            <path d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
         </>
     );
 }
@@ -13411,6 +13713,57 @@ export class Sim extends IconBase {
     );
 }
 
+export class SkipBackwardBtnFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-backward-btn-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm2.79 3.093A.5.5 0 0 0 4 5.5v5a.5.5 0 0 0 .79.407L7.5 8.972V10.5a.5.5 0 0 0 .79.407L11 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L8.29 5.093a.5.5 0 0 0-.79.407v1.528L4.79 5.093z"
+            />
+        </>
+    );
+}
+
+export class SkipBackwardBtn extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-backward-btn";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
+            />
+            <path d="M4.271 5.055a.5.5 0 0 1 .52.038L7.5 7.028V5.5a.5.5 0 0 1 .79-.407L11 7.028V5.5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-1 0V8.972l-2.71 1.935a.5.5 0 0 1-.79-.407V8.972l-2.71 1.935A.5.5 0 0 1 4 10.5v-5a.5.5 0 0 1 .271-.445z" />
+        </>
+    );
+}
+
+export class SkipBackwardCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-backward-circle-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.79 5.093A.5.5 0 0 0 4 5.5v5a.5.5 0 0 0 .79.407L7.5 8.972V10.5a.5.5 0 0 0 .79.407L11 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L8.29 5.093a.5.5 0 0 0-.79.407v1.528L4.79 5.093z"
+            />
+        </>
+    );
+}
+
+export class SkipBackwardCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-backward-circle";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M4.271 5.055a.5.5 0 0 1 .52.038L7.5 7.028V5.5a.5.5 0 0 1 .79-.407L11 7.028V5.5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-1 0V8.972l-2.71 1.935a.5.5 0 0 1-.79-.407V8.972l-2.71 1.935A.5.5 0 0 1 4 10.5v-5a.5.5 0 0 1 .271-.445z" />
+        </>
+    );
+}
+
 export class SkipBackwardFill extends IconBase {
     static id: string = "bobrilstrap-icon-skip-backward-fill";
 
@@ -13431,6 +13784,63 @@ export class SkipBackward extends IconBase {
             <path
                 fill-rule="evenodd"
                 d="M.5 3.5A.5.5 0 0 1 1 4v3.248l6.267-3.636c.52-.302 1.233.043 1.233.696v2.94l6.267-3.636c.52-.302 1.233.043 1.233.696v7.384c0 .653-.713.998-1.233.696L8.5 8.752v2.94c0 .653-.713.998-1.233.696L1 8.752V12a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm7 1.133L1.696 8 7.5 11.367V4.633zm7.5 0L9.196 8 15 11.367V4.633z"
+            />
+        </>
+    );
+}
+
+export class SkipEndBtnFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-end-btn-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm4.79 3.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407L9.5 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.79 5.093z"
+            />
+        </>
+    );
+}
+
+export class SkipEndBtn extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-end-btn";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
+            />
+            <path
+                fill-rule="evenodd"
+                d="M6.271 5.055a.5.5 0 0 1 .52.038L9.5 7.028V5.5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-1 0V8.972l-2.71 1.935A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"
+            />
+        </>
+    );
+}
+
+export class SkipEndCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-end-circle-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407L9.5 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.79 5.093z"
+            />
+        </>
+    );
+}
+
+export class SkipEndCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-end-circle";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+                fill-rule="evenodd"
+                d="M6.271 5.055a.5.5 0 0 1 .52.038L9.5 7.028V5.5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-1 0V8.972l-2.71 1.935A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"
             />
         </>
     );
@@ -13461,6 +13871,57 @@ export class SkipEnd extends IconBase {
     );
 }
 
+export class SkipForwardBtnFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-forward-btn-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm9.21 3.093A.5.5 0 0 1 12 5.5v5a.5.5 0 0 1-.79.407L8.5 8.972V10.5a.5.5 0 0 1-.79.407L5 8.972V10.5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 1 0v1.528l2.71-1.935a.5.5 0 0 1 .79.407v1.528l2.71-1.935z"
+            />
+        </>
+    );
+}
+
+export class SkipForwardBtn extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-forward-btn";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
+            />
+            <path d="M11.729 5.055a.5.5 0 0 0-.52.038L8.5 7.028V5.5a.5.5 0 0 0-.79-.407L5 7.028V5.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0V8.972l2.71 1.935a.5.5 0 0 0 .79-.407V8.972l2.71 1.935A.5.5 0 0 0 12 10.5v-5a.5.5 0 0 0-.271-.445z" />
+        </>
+    );
+}
+
+export class SkipForwardCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-forward-circle-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.79-2.907A.5.5 0 0 1 12 5.5v5a.5.5 0 0 1-.79.407L8.5 8.972V10.5a.5.5 0 0 1-.79.407L5 8.972V10.5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 1 0v1.528l2.71-1.935a.5.5 0 0 1 .79.407v1.528l2.71-1.935z"
+            />
+        </>
+    );
+}
+
+export class SkipForwardCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-forward-circle";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M11.729 5.055a.5.5 0 0 0-.52.038L8.5 7.028V5.5a.5.5 0 0 0-.79-.407L5 7.028V5.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0V8.972l2.71 1.935a.5.5 0 0 0 .79-.407V8.972l2.71 1.935A.5.5 0 0 0 12 10.5v-5a.5.5 0 0 0-.271-.445z" />
+        </>
+    );
+}
+
 export class SkipForwardFill extends IconBase {
     static id: string = "bobrilstrap-icon-skip-forward-fill";
 
@@ -13481,6 +13942,63 @@ export class SkipForward extends IconBase {
             <path
                 fill-rule="evenodd"
                 d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.752l-6.267 3.636c-.52.302-1.233-.043-1.233-.696v-2.94l-6.267 3.636C.713 12.69 0 12.345 0 11.692V4.308c0-.653.713-.998 1.233-.696L7.5 7.248v-2.94c0-.653.713-.998 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5zM1 4.633v6.734L6.804 8 1 4.633zm7.5 0v6.734L14.304 8 8.5 4.633z"
+            />
+        </>
+    );
+}
+
+export class SkipStartBtnFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-start-btn-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm7.71 3.093a.5.5 0 0 1 .79.407v5a.5.5 0 0 1-.79.407L7 8.972V10.5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 1 0v1.528l2.71-1.935z"
+            />
+        </>
+    );
+}
+
+export class SkipStartBtn extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-start-btn";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
+            />
+            <path
+                fill-rule="evenodd"
+                d="M5.771 10.945a.5.5 0 0 0 .52-.038L9 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.29 5.093a.5.5 0 0 0-.79.407v5a.5.5 0 0 0 .271.445z"
+            />
+        </>
+    );
+}
+
+export class SkipStartCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-start-circle-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-9.71 2.907a.5.5 0 0 1-.79-.407v-5a.5.5 0 0 1 .79-.407L9 7.028V5.5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-1 0V8.972l-2.71 1.935z"
+            />
+        </>
+    );
+}
+
+export class SkipStartCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-skip-start-circle";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+                fill-rule="evenodd"
+                d="M5.771 10.945a.5.5 0 0 0 .52-.038L9 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.29 5.093a.5.5 0 0 0-.79.407v5a.5.5 0 0 0 .271.445z"
             />
         </>
     );
@@ -13507,6 +14025,16 @@ export class SkipStart extends IconBase {
                 fill-rule="evenodd"
                 d="M5.696 8L11.5 4.633v6.734L5.696 8zm-.792-.696a.802.802 0 0 0 0 1.392l6.363 3.692c.52.302 1.233-.043 1.233-.696V4.308c0-.653-.713-.998-1.233-.696L4.904 7.304z"
             />
+        </>
+    );
+}
+
+export class Slack extends IconBase {
+    static id: string = "bobrilstrap-icon-slack";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.681 1.68-1.681h4.21zm6.749 1.682c0-.926.755-1.681 1.68-1.681.925 0 1.681.755 1.681 1.68 0 .925-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z" />
         </>
     );
 }
@@ -13962,6 +14490,63 @@ export class Sticky extends IconBase {
                 d="M1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v6.086a1.5 1.5 0 0 1-.44 1.06l-4.914 4.915a1.5 1.5 0 0 1-1.06.439H2.5A1.5 1.5 0 0 1 1 13.5v-11zM2.5 2a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h6.086a.5.5 0 0 0 .353-.146l4.915-4.915A.5.5 0 0 0 14 8.586V2.5a.5.5 0 0 0-.5-.5h-11z"
             />
             <path fill-rule="evenodd" d="M9.5 9a.5.5 0 0 0-.5.5v5H8v-5A1.5 1.5 0 0 1 9.5 8h5v1h-5z" />
+        </>
+    );
+}
+
+export class StopBtnFill extends IconBase {
+    static id: string = "bobrilstrap-icon-stop-btn-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm4.5 3A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z"
+            />
+        </>
+    );
+}
+
+export class StopBtn extends IconBase {
+    static id: string = "bobrilstrap-icon-stop-btn";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"
+            />
+            <path
+                fill-rule="evenodd"
+                d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3z"
+            />
+        </>
+    );
+}
+
+export class StopCircleFill extends IconBase {
+    static id: string = "bobrilstrap-icon-stop-circle-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z"
+            />
+        </>
+    );
+}
+
+export class StopCircle extends IconBase {
+    static id: string = "bobrilstrap-icon-stop-circle";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+                fill-rule="evenodd"
+                d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3z"
+            />
         </>
     );
 }
@@ -14980,6 +15565,27 @@ export class Tv extends IconBase {
     );
 }
 
+export class Twitch extends IconBase {
+    static id: string = "bobrilstrap-icon-twitch";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path d="M3.857 0L1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0H3.857zm9.714 7.429l-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142v6.286z" />
+            <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z" />
+        </>
+    );
+}
+
+export class Twitter extends IconBase {
+    static id: string = "bobrilstrap-icon-twitter";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+        </>
+    );
+}
+
 export class TypeBold extends IconBase {
     static id: string = "bobrilstrap-icon-type-bold";
 
@@ -15235,6 +15841,31 @@ export class ViewStacked extends IconBase {
                 fill-rule="evenodd"
                 d="M3 0h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3zm0 8h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3z"
             />
+        </>
+    );
+}
+
+export class VinylFill extends IconBase {
+    static id: string = "bobrilstrap-icon-vinyl-fill";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0zm4 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+            />
+        </>
+    );
+}
+
+export class Vinyl extends IconBase {
+    static id: string = "bobrilstrap-icon-vinyl";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path fill-rule="evenodd" d="M8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0z" />
+            <path d="M9 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
         </>
     );
 }
@@ -15623,6 +16254,19 @@ export class X extends IconBase {
             <path
                 fill-rule="evenodd"
                 d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+            />
+        </>
+    );
+}
+
+export class Youtube extends IconBase {
+    static id: string = "bobrilstrap-icon-youtube";
+
+    svgChildren = (): b.IBobrilChildren => (
+        <>
+            <path
+                fill-rule="evenodd"
+                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.122C.002 7.343.01 6.6.064 5.78l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
             />
         </>
     );

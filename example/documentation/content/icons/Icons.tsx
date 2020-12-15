@@ -70,7 +70,9 @@ export function Icons(): b.IBobrilNode {
             <Example>
                 <Row>
                     {Object.values(Icon).map((IconItem) => (
-                        <IconTile name={IconItem.id}>{b.createElement(IconItem, { width: "1em", height: "1em" })}</IconTile>
+                        <IconTile name={IconItem.id}>
+                            {b.createElement(IconItem, { width: "32", height: "32", viewBox: "0 0 16 16" })}
+                        </IconTile>
                     ))}
                 </Row>
             </Example>

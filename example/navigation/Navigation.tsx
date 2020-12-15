@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import * as routes from "../routes";
-import { Navbar, backgroundColor, Nav, margin } from "../../index";
+import { Navbar, backgroundColor, Nav, margin, Container } from "../../index";
 import { LinkItem } from "./Item";
 import { BobrilstrapIcon } from "./BobrilstrapIcon";
 import { NpmLink } from "./NpmLink";
@@ -17,22 +17,24 @@ export function Navigation(): b.IBobrilNode {
 
     return (
         <Navbar fixed-top expand="md" color-schema="dark" style={[navbarStyle, backgroundColor("dark")]}>
-            <BobrilstrapIcon />
-            <Navbar.Toggler onClick={() => setCollapsed(!collapsed)}>
-                <span style={togglerIcon}></span>
-            </Navbar.Toggler>
-            <Navbar.Collapse collapsed={collapsed} onClick={() => setCollapsed(true)} style={[textAlign("center")]}>
-                <Nav navbar>
-                    <LinkItem name={routes.home.name}>Home</LinkItem>
-                    <LinkItem name={routes.documentation.name}>Documentation</LinkItem>
-                </Nav>
-                <Nav navbar style={margin({ side: "s", size: "auto", breakpoint: "md" })}>
-                    <GithubLink />
-                    <BobrilLink />
-                    <BootstrapLink />
-                    <NpmLink />
-                </Nav>
-            </Navbar.Collapse>
+            <Container fluid>
+                <BobrilstrapIcon />
+                <Navbar.Toggler onClick={() => setCollapsed(!collapsed)}>
+                    <span style={togglerIcon}></span>
+                </Navbar.Toggler>
+                <Navbar.Collapse collapsed={collapsed} onClick={() => setCollapsed(true)} style={[textAlign("center")]}>
+                    <Nav navbar>
+                        <LinkItem name={routes.home.name}>Home</LinkItem>
+                        <LinkItem name={routes.documentation.name}>Documentation</LinkItem>
+                    </Nav>
+                    <Nav navbar style={margin({ side: "s", size: "auto", breakpoint: "md" })}>
+                        <GithubLink />
+                        <BobrilLink />
+                        <BootstrapLink />
+                        <NpmLink />
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
         </Navbar>
     );
 }

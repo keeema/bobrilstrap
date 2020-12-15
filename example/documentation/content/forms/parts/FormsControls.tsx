@@ -13,34 +13,45 @@ export const formControlsRoute: IRouteWithNavDefinition = {
     handler: () => <FormsDoc />,
     subs: [
         {
-            url: "form-controls",
+            url: "example",
             name: "form-controls-example",
             label: "Example",
             subs: [],
         },
         {
             url: "sizing",
-            name: "form-controls-form-controls-sizing",
+            name: "form-controls-sizing",
             label: "Sizing",
             subs: [],
         },
         {
             url: "readonly",
-            name: "form-controls-form-controls-readonly",
+            name: "form-controls-readonly",
             label: "Readonly",
             subs: [],
         },
         {
             url: "readonly-plain-text",
-            name: "form-controls-form-controls-readonly-plain-text",
+            name: "form-controls-readonly-plain-text",
             label: "Readonly plain text",
             subs: [],
         },
-
         {
-            url: "file-browser",
-            name: "form-controls-custom-form-controls-file-browser",
-            label: "File browser",
+            url: "file-input",
+            name: "form-controls-file-input",
+            label: "File input",
+            subs: [],
+        },
+        {
+            url: "color",
+            name: "form-controls-color",
+            label: "Color",
+            subs: [],
+        },
+        {
+            url: "datalist",
+            name: "form-controls-datalist",
+            label: "Datalist",
             subs: [],
         },
     ],
@@ -53,7 +64,7 @@ export function FormsDoc(): b.IBobrilNode {
                 <h1>Form controls</h1>
             </Anchor>
             <Lead>
-                Give textual form controls like <code>{`<Form.Input>`}</code>s, <code>{`Form.Select`}</code>s, and{" "}
+                Give textual form controls like <code>{`<Form.Input>`}</code>s, <code>{`<Form.Select>`}</code>s, and{" "}
                 <code>{`<Form.Textarea>`}</code>s an upgrade with custom styles, sizing, focus states, and more.
             </Lead>
             <Anchor name="form-controls-example">
@@ -81,7 +92,7 @@ export function FormsDoc(): b.IBobrilNode {
                         <Form.Textarea id="exampleFormControlTextarea1" rows="3" />
                     </div>
                 </Form>`}</Code>
-            <Anchor name="form-controls-form-controls-sizing">
+            <Anchor name="form-controls-sizing">
                 <h3>Sizing</h3>
             </Anchor>
             <p>
@@ -95,7 +106,7 @@ export function FormsDoc(): b.IBobrilNode {
             <Code language="tsx">{`<Form.Input type="text" size="lg" placeholder="lg" />
 <Form.Input type="text" placeholder="Default input" />
 <Form.Input type="text" size="sm" placeholder="sm" />`}</Code>
-            <Anchor name="form-controls-form-controls-readonly">
+            <Anchor name="form-controls-readonly">
                 <h3>Readonly</h3>
             </Anchor>
             <p>
@@ -106,7 +117,7 @@ export function FormsDoc(): b.IBobrilNode {
                 <Form.Input type="text" placeholder="Readonly input here..." readonly />
             </Example>
             <Code language="tsx">{`<Form.Input type="text" placeholder="Readonly input here..." readonly />`}</Code>
-            <Anchor name="form-controls-form-controls-readonly-plain-text">
+            <Anchor name="form-controls-readonly-plain-text">
                 <h3>Readonly plain text</h3>
             </Anchor>
             <p>
@@ -151,6 +162,93 @@ export function FormsDoc(): b.IBobrilNode {
         </Col>
     </Row>
 </Form>`}</Code>
+            <Anchor name="form-controls-file-input">
+                <h3>File input</h3>
+            </Anchor>
+            <Example>
+                <div style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="formFile">Default file input example</Form.Label>
+                    <Form.Input type="file" id="formFile" />
+                </div>
+                <div style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="formFileMultiple">Multiple files input example</Form.Label>
+                    <Form.Input type="file" id="formFileMultiple" multiple />
+                </div>
+                <div style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="formFileDisabled">Disabled file input example</Form.Label>
+                    <Form.Input type="file" id="formFileDisabled" disabled />
+                </div>
+                <div style={margin({ side: "b", size: 3 })}>
+                    <Form.Label for="formFileSm" class="form-label">
+                        Small file input example
+                    </Form.Label>
+                    <Form.Input size="sm" id="formFileSm" type="file" />
+                </div>
+                <div>
+                    <Form.Label for="formFileLg">Large file input example</Form.Label>
+                    <Form.Input size="lg" id="formFileLg" type="file" />
+                </div>
+            </Example>
+            <Code language="tsx">{`<div style={margin({ side: "b", size: 3 })}>
+    <Form.Label for="formFile">Default file input example</Form.Label>
+    <Form.Input type="file" id="formFile" />
+</div>
+<div style={margin({ side: "b", size: 3 })}>
+    <Form.Label for="formFileMultiple">Multiple files input example</Form.Label>
+    <Form.Input type="file" id="formFileMultiple" multiple />
+</div>
+<div style={margin({ side: "b", size: 3 })}>
+    <Form.Label for="formFileDisabled">Disabled file input example</Form.Label>
+    <Form.Input type="file" id="formFileDisabled" disabled />
+</div>
+<div style={margin({ side: "b", size: 3 })}>
+    <Form.Label for="formFileSm" class="form-label">
+        Small file input example
+    </Form.Label>
+    <Form.Input size="sm" id="formFileSm" type="file" />
+</div>
+<div>
+    <Form.Label for="formFileLg">Large file input example</Form.Label>
+    <Form.Input size="lg" id="formFileLg" type="file" />
+</div>`}</Code>
+            <Anchor name="form-controls-color">
+                <h3>Color</h3>
+            </Anchor>
+            <Example>
+                <Form.Label for="exampleColorInput">Color picker</Form.Label>
+                <Form.Input type="color" id="exampleColorInput" value="#563d7c" title="Choose your color" />
+            </Example>
+            <Code language="tsx">{`<Form.Label for="exampleColorInput">Color picker</Form.Label>
+<Form.Input type="color" id="exampleColorInput" value="#563d7c" title="Choose your color" />`}</Code>
+            <Anchor name="form-controls-datalist">
+                <h3>Datalist</h3>
+            </Anchor>
+            <p>
+                Datalists allow you to create a group of <code>{`<Form.Option>`}</code>s that can be accessed (and autocompleted) from
+                within an <code>{`<Form.Input>`}</code>. These are similar to <code>{`<Form.Select>`}</code>s, but come with more menu
+                styling limitations and differences. While most browsers and operating systems include some support for{" "}
+                <code>{`<Form.Datalist>`}</code>s, their styling is inconsistent at best.
+            </p>
+            <Example>
+                <Form.Label for="exampleDataList">Datalist example</Form.Label>
+                <Form.Input type="datalist" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." />
+                <Form.Datalist id="datalistOptions">
+                    <Form.Option value="San Francisco" />
+                    <Form.Option value="New York" />
+                    <Form.Option value="Seattle" />
+                    <Form.Option value="Los Angeles" />
+                    <Form.Option value="Chicago" />
+                </Form.Datalist>
+            </Example>
+            <Code language="tsx">{`<Form.Label for="exampleDataList">Datalist example</Form.Label>
+<Form.Input type="datalist" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." />
+<Form.Datalist id="datalistOptions">
+    <Form.Option value="San Francisco" />
+    <Form.Option value="New York" />
+    <Form.Option value="Seattle" />
+    <Form.Option value="Los Angeles" />
+    <Form.Option value="Chicago" />
+</Form.Datalist>`}</Code>
         </>
     );
 }

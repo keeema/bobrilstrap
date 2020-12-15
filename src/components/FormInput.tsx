@@ -3,12 +3,14 @@ import { FormControlBase, IFormControlBaseData, InputType } from "./FormControlB
 
 export const formInputStyles = {};
 export interface IFormInputData extends IFormControlBaseData {
-    type: InputType;
+    type: InputType | "datalist";
+    list?: string;
 }
 
 export class FormInput extends FormControlBase<IFormInputData> {
     static id: string = "bobrilstrap-form-input";
-    componentProperties = (): (keyof IFormInputData)[] => [...super.componentProperties() /* , type */];
+    componentProperties = (): (keyof IFormInputData)[] =>
+        this.data.type === "datalist" ? [...super.componentProperties(), "type"] : super.componentProperties();
 
     get tag(): Tags {
         return "input";

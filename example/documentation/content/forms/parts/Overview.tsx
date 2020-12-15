@@ -141,7 +141,15 @@ export function FormsDoc(): b.IBobrilNode {
             <p>
                 Add the <code>disabled</code> boolean prop on an input to prevent user interactions and make it appear lighter.
             </p>
+            <Example>
+                <Form.Input id="disabledInput" type="text" placeholder="Disabled input here..." disabled />
+            </Example>
             <Code language="tsx">{`<Form.Input id="disabledInput" type="text" placeholder="Disabled input here..." disabled />`}</Code>
+            <p>
+                Add the <code>disabled</code> attribute to a <code>{`<fieldset>`}</code> to disable all the controls within. Browsers treat
+                all native form controls inside a <code>{`<fieldset>`}</code> as disabled, preventing both keyboard and mouse interactions
+                on them.
+            </p>
             <Example>
                 <Form>
                     <Form.Fieldset disabled>

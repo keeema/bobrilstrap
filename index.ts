@@ -46,6 +46,7 @@ export * from "./src/components/DropdownToggle";
 export * from "./src/components/Feedback";
 export * from "./src/components/Form";
 export * from "./src/components/FormCheck";
+export * from "./src/components/FormDatalist";
 export * from "./src/components/FormFieldset";
 export * from "./src/components/FormInput";
 export * from "./src/components/FormLabel";

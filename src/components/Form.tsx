@@ -2,6 +2,7 @@ import * as b from "bobril";
 import { Tags } from "../../utils/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { FormCheck } from "./FormCheck";
+import { FormDatalist } from "./FormDatalist";
 import { FormFieldset } from "./FormFieldset";
 import { FormInput } from "./FormInput";
 import { FormLabel } from "./FormLabel";
@@ -24,6 +25,7 @@ export interface IFormData extends IBaseElementDataWithChildren {
 export class Form extends BaseElement<IFormData> {
     static id: string = "bobrilstrap-form";
     static Check = FormCheck;
+    static Datalist = FormDatalist;
     static Fieldset = FormFieldset;
     static Input = FormInput;
     static Label = FormLabel;

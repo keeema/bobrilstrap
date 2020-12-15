@@ -32,8 +32,8 @@ export const formControlBaseStyles = {
     customControlInput: b.styleDef("custom-control-input"),
     plainText: b.styleDef("form-control-plaintext"),
     formCheckInput: b.styleDef("form-check-input"),
-    formControlFile: b.styleDef("form-file"),
     formControlRange: b.styleDef("form-range"),
+    formControlColor: b.styleDef("form-control-color"),
     customSelectSizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`form-select-${breakpoint}`)])),
     sizes: createFilledDictionary(breakpoints.map((breakpoint) => [breakpoint, b.styleDef(`form-control-${breakpoint}`)])),
     valid: b.styleDef("is-valid"),
@@ -43,8 +43,11 @@ export const formControlBaseStyles = {
 export const specificInputStyles: { [key: string]: b.IBobrilStyle } = {
     checkbox: formControlBaseStyles.formCheckInput,
     radio: formControlBaseStyles.formCheckInput,
-    file: formControlBaseStyles.formControlFile,
     range: formControlBaseStyles.formControlRange,
+};
+
+export const additionalSpecificInputStyles: { [key: string]: b.IBobrilStyle } = {
+    color: formControlBaseStyles.formControlColor,
 };
 
 export interface IFormControlBaseData extends IBaseElementDataWithChildren {
@@ -67,6 +70,7 @@ export abstract class FormControlBase<TData extends IFormControlBaseData> extend
     componentSpecificStyles(): b.IBobrilStyleArray {
         return [
             this.tryGetSpecificStyle || this.tryGetPlainText || (!this.data["no-form-control"] && formControlBaseStyles.formControl),
+            this.tryGetAdditionalSpecificStyle,
             this.data.size &&
                 (this.tag === "select"
                     ? formControlBaseStyles.customSelectSizes(this.data.size)
@@ -79,6 +83,11 @@ export abstract class FormControlBase<TData extends IFormControlBaseData> extend
     get tryGetSpecificStyle(): b.IBobrilStyle {
         const data = this.data as IFormControlBaseWithTypeData;
         return data.type && !this.data["no-form-control"] && specificInputStyles[data.type];
+    }
+
+    get tryGetAdditionalSpecificStyle(): b.IBobrilStyle {
+        const data = this.data as IFormControlBaseWithTypeData;
+        return data.type && !this.data["no-form-control"] && additionalSpecificInputStyles[data.type];
     }
 
     get tryGetPlainText(): b.IBobrilStyle {

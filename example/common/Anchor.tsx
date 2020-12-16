@@ -37,5 +37,5 @@ function handleAnchorRoute(
 }
 
 function scrollIntoView(el: HTMLElement, offset = 0): void {
-    window.scroll(0, el.offsetTop - offset);
+    setTimeout(() => window.scroll(0, el.offsetTop - offset), 200);
 }

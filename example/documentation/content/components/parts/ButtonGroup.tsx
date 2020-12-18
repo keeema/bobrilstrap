@@ -134,9 +134,7 @@ export function ButtonGroup(): b.IBobrilNode {
                         <Button variant="secondary">4</Button>
                     </Button.Group>
                     <InputGroup>
-                        <InputGroup.Prepend>
-                            <InputGroup.Text id="btnGroupAddon">@</InputGroup.Text>
-                        </InputGroup.Prepend>
+                        <InputGroup.Text id="btnGroupAddon">@</InputGroup.Text>
                         <Form.Input
                             type="text"
                             placeholder="Input group example"
@@ -153,9 +151,7 @@ export function ButtonGroup(): b.IBobrilNode {
                         <Button variant="secondary">4</Button>
                     </Button.Group>
                     <InputGroup>
-                        <InputGroup.Prepend>
-                            <InputGroup.Text id="btnGroupAddon2">@</InputGroup.Text>
-                        </InputGroup.Prepend>
+                        <InputGroup.Text id="btnGroupAddon2">@</InputGroup.Text>
                         <Form.Input
                             type="text"
                             placeholder="Input group example"
@@ -174,9 +170,7 @@ export function ButtonGroup(): b.IBobrilNode {
         <Button variant="secondary">4</Button>
     </Button.Group>
     <InputGroup>
-        <InputGroup.Prepend>
-            <InputGroup.Text id="btnGroupAddon">@</InputGroup.Text>
-        </InputGroup.Prepend>
+        <InputGroup.Text id="btnGroupAddon">@</InputGroup.Text>
         <Form.Input
             type="text"
             placeholder="Input group example"
@@ -193,9 +187,7 @@ export function ButtonGroup(): b.IBobrilNode {
         <Button variant="secondary">4</Button>
     </Button.Group>
     <InputGroup>
-        <InputGroup.Prepend>
-            <InputGroup.Text id="btnGroupAddon2">@</InputGroup.Text>
-        </InputGroup.Prepend>
+        <InputGroup.Text id="btnGroupAddon2">@</InputGroup.Text>
         <Form.Input
             type="text"
             placeholder="Input group example"

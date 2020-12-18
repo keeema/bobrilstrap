@@ -1,23 +1,23 @@
 import * as b from "bobril";
 import { IBaseElementDataWithChildren, BaseElement } from "../components/BaseElement";
 import { createDictionary } from "../../utils/dict";
-import { SpanBase, spanBaseScale } from "./Col";
+import { Span, spanScale } from "./Col";
 
 export const rowStyles = {
     row: b.styleDef("row"),
-    span: createDictionary(spanBaseScale.map((value) => [value, b.styleDef(`row-cols-${value}`)])),
-    sm: createDictionary(spanBaseScale.map((value) => [value, b.styleDef(`row-cols-sm-${value}`)])),
-    md: createDictionary(spanBaseScale.map((value) => [value, b.styleDef(`row-cols-md-${value}`)])),
-    lg: createDictionary(spanBaseScale.map((value) => [value, b.styleDef(`row-cols-lg-${value}`)])),
-    xl: createDictionary(spanBaseScale.map((value) => [value, b.styleDef(`row-cols-xl-${value}`)])),
+    span: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-${value}`)])),
+    sm: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-sm-${value}`)])),
+    md: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-md-${value}`)])),
+    lg: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-lg-${value}`)])),
+    xl: createDictionary(spanScale.map((value) => [value, b.styleDef(`row-cols-xl-${value}`)])),
 };
 
 export interface IRowElementData {
-    span?: SpanBase;
-    sm?: SpanBase;
-    md?: SpanBase;
-    lg?: SpanBase;
-    xl?: SpanBase;
+    span?: Span;
+    sm?: Span;
+    md?: Span;
+    lg?: Span;
+    xl?: Span;
 }
 
 export type IRowData = IRowElementData & IBaseElementDataWithChildren;

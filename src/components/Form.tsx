@@ -4,6 +4,7 @@ import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { FormCheck } from "./FormCheck";
 import { FormDatalist } from "./FormDatalist";
 import { FormFieldset } from "./FormFieldset";
+import { FormFloating } from "./FormFloating";
 import { FormInput } from "./FormInput";
 import { FormLabel } from "./FormLabel";
 import { FormOption } from "./FormOption";
@@ -27,6 +28,7 @@ export class Form extends BaseElement<IFormData> {
     static Check = FormCheck;
     static Datalist = FormDatalist;
     static Fieldset = FormFieldset;
+    static Floating = FormFloating;
     static Input = FormInput;
     static Label = FormLabel;
     static Option = FormOption;

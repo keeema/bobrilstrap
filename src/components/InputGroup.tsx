@@ -2,8 +2,6 @@ import * as b from "bobril";
 import { createFilledDictionary } from "../../utils/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
-import { InputGroupAppend } from "./InputGroupAppend";
-import { InputGroupPrepend } from "./InputGroupPrepend";
 import { InputGroupText } from "./InputGroupText";
 
 export const inputGroupStyles = {
@@ -21,8 +19,6 @@ export interface IInputGroupData extends IBaseElementDataWithChildren {
 
 export class InputGroup extends BaseElement<IInputGroupData> {
     static id: string = "bobrilstrap-input-group";
-    static Append = InputGroupAppend;
-    static Prepend = InputGroupPrepend;
     static Text = InputGroupText;
 
     componentProperties = (): (keyof IInputGroupData)[] => ["size", "valid"];

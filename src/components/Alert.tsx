@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import bootstrap from "bootstrap";
+import * as bootstrap from "bootstrap";
 import { AlertHeading } from "./AlertHeading";
 import { AlertLink } from "./AlertLink";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";

@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import bootstrap from "bootstrap";
+import * as bootstrap from "bootstrap";
 import { createFilledDictionary } from "../../utils/dict";
 import { Tags } from "../../utils/tags";
 import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";

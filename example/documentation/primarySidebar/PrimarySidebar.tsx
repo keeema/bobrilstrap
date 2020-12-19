@@ -49,6 +49,7 @@ const standardHeight = b.styleDef({
 });
 
 const smallDeviceHeight = b.styleDef({
+    marginTop: 10,
     top: "0.65rem",
     minHeight: "3rem",
     display: "block",

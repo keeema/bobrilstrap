@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import bootstrap from "bootstrap";
+import * as bootstrap from "bootstrap";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
 export const collapseStyles = {

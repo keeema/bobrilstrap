@@ -68,11 +68,6 @@ export class Alert extends BaseElement<IAlertData> {
     }
 
     private registerCallback(): void {
-        const element = b.getDomNode(this.me) as HTMLElement;
-        if (!element) {
-            return;
-        }
-
         this.registerEvent("closed.bs.alert", () => this.data.onDismissed && this.data.onDismissed());
         this.registerEvent("close.bs.alert", () => this.data.onDismiss && this.data.onDismiss());
     }

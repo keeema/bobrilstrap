@@ -112,28 +112,26 @@ export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.
     }
 
     destroy(): void {
-        const element = b.getDomNode(this.me) as HTMLElement;
-        if (!element) {
+        if (!this.element) {
             return;
         }
         this.registeredHandlers.forEach((handler, eventName) => {
             const anyEventName = eventName as any;
-            element.removeEventListener(anyEventName, handler);
+            this.element.removeEventListener(anyEventName, handler);
         });
     }
 
     protected registerEvent<TEvent extends Event>(eventName: string, handler: IEventHandler<TEvent>): void {
-        const element = b.getDomNode(this.me) as HTMLElement;
-        if (!element) {
+        if (!this.element) {
             return;
         }
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const anyEventName = eventName as any;
 
         const currentHandler = this.registeredHandlers.get(eventName);
-        currentHandler && element.removeEventListener(anyEventName, currentHandler);
+        currentHandler && this.element.removeEventListener(anyEventName, currentHandler);
         this.registeredHandlers.set(anyEventName, handler as IEventHandler<Event>);
-        element.addEventListener(anyEventName, handler);
+        this.element.addEventListener(anyEventName, handler);
     }
 
     private get styles(): b.IBobrilStyleArray {
@@ -156,7 +154,7 @@ export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.
 
     abstract componentSpecificStyles(): b.IBobrilStyleArray;
 
-    protected get element(): HTMLDivElement {
-        return b.getDomNode(this.me) as HTMLDivElement;
+    protected get element(): HTMLElement {
+        return b.getDomNode(this.me) as HTMLElement;
     }
 }

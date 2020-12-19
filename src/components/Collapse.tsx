@@ -41,14 +41,13 @@ export class Collapse extends BaseElement<ICollapseData> {
     }
 
     private registerNewCollapse(): void {
-        const element = b.getDomNode(this.me) as HTMLElement;
-        if (!element || this.collapsedElement === element) {
+        if (!this.element || this.collapsedElement === this.element) {
             return;
         }
 
-        this.collapsedElement = element;
+        this.collapsedElement = this.element;
         this.firstLoad = false;
-        this.collapse = new bootstrap.Collapse(element, { toggle: !this.data.collapsed });
+        this.collapse = new bootstrap.Collapse(this.element, { toggle: !this.data.collapsed });
 
         this.collapsed = this.data.collapsed;
     }

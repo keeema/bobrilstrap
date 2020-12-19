@@ -76,7 +76,7 @@ export class Carousel extends BaseElement<ICarouselData> {
         const carouselElement = new bootstrap.Carousel(this.element, config);
 
         this.registerCallbacks();
-        data["get-instance"] && data["get-instance"](carouselElement as ICarousel, this.element);
+        data["get-instance"] && data["get-instance"](carouselElement as ICarousel, this.element as HTMLDivElement);
     }
 
     postUpdateDom(): void {
@@ -84,11 +84,6 @@ export class Carousel extends BaseElement<ICarouselData> {
     }
 
     private registerCallbacks(): void {
-        const element = b.getDomNode(this.me) as HTMLElement;
-        if (!element) {
-            return;
-        }
-
         this.registerEvent("slide.bs.carousel", (ev: ICarouselEvent) => this.data.onSlide && this.data.onSlide(ev));
         this.registerEvent("slid.bs.carousel", (ev: ICarouselEvent) => this.data.onSlid && this.data.onSlid(ev));
     }

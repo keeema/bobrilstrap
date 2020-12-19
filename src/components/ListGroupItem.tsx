@@ -84,9 +84,8 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
     }
 
     postInitDom(): void {
-        const element = b.getDomNode(this.me) as HTMLDivElement;
-        const tab = new bootstrap.Tab(element);
-        this.data["get-instance"] && this.data["get-instance"](tab, element);
+        const tab = new bootstrap.Tab(this.element);
+        this.data["get-instance"] && this.data["get-instance"](tab, this.element as HTMLDivElement);
 
         this.registerCallbacks();
     }

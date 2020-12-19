@@ -179,9 +179,7 @@ export function FormsDoc(): b.IBobrilNode {
                     <Form.Input type="file" id="formFileDisabled" disabled />
                 </div>
                 <div style={margin({ side: "b", size: 3 })}>
-                    <Form.Label for="formFileSm" class="form-label">
-                        Small file input example
-                    </Form.Label>
+                    <Form.Label for="formFileSm">Small file input example</Form.Label>
                     <Form.Input size="sm" id="formFileSm" type="file" />
                 </div>
                 <div>
@@ -202,7 +200,7 @@ export function FormsDoc(): b.IBobrilNode {
     <Form.Input type="file" id="formFileDisabled" disabled />
 </div>
 <div style={margin({ side: "b", size: 3 })}>
-    <Form.Label for="formFileSm" class="form-label">
+    <Form.Label for="formFileSm">
         Small file input example
     </Form.Label>
     <Form.Input size="sm" id="formFileSm" type="file" />

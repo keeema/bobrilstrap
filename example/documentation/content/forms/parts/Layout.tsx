@@ -14,9 +14,40 @@ export const formLayoutRoute: IRouteWithNavDefinition = {
     handler: () => <FormLayoutDoc />,
     subs: [
         {
-            url: "examples",
-            name: "form-layout-examples",
-            label: "Examples",
+            url: "form-grid",
+            name: "form-layout-form-grid",
+            label: "Form grid",
+            subs: [],
+        },
+        {
+            url: "gutters",
+            name: "form-layout-gutters",
+            label: "Gutters",
+            subs: [],
+        },
+        {
+            url: "horizontal-form",
+            name: "form-layout-horizontal-form",
+            label: "Horizontal form",
+            subs: [
+                {
+                    url: "horizontal-form-label-sizing",
+                    name: "form-layout-horizontal-form-horizontal-form-label-sizing",
+                    label: "Horizontal form label sizing",
+                    subs: [],
+                },
+            ],
+        },
+        {
+            url: "column-sizing",
+            name: "form-layout-column-sizing",
+            label: "Column sizing",
+            subs: [],
+        },
+        {
+            url: "auto-sizing",
+            name: "form-layout-auto-sizing",
+            label: "Auto sizing",
             subs: [],
         },
     ],
@@ -31,7 +62,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             <Lead>
                 Give your forms some structure—from inline to horizontal to custom grid implementations—with our form layout options.
             </Lead>
-            <Anchor name="forms-layout-form-grid">
+            <Anchor name="form-layout-form-grid">
                 <h2>Form grid</h2>
             </Anchor>
             <p>
@@ -56,7 +87,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
         <Form.Input type="text" placeholder="Last name" />
     </Col>
 </Row>`}</Code>
-            <Anchor name="forms-layout-gutters">
+            <Anchor name="form-layout-gutters">
                 <h2>Gutters</h2>
             </Anchor>
             <p>
@@ -172,7 +203,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
         <Button variant="primary">Sign in</Button>
     </Col>
 </Row>`}</Code>
-            <Anchor name="forms-layout-horizontal-form">
+            <Anchor name="form-layout-horizontal-form">
                 <h2>Horizontal form</h2>
             </Anchor>
             <p>
@@ -365,8 +396,8 @@ export function FormLayoutDoc(): b.IBobrilNode {
         </Col>
     </Row>
 </Form>`}</Code>
-            <Anchor name="forms-layout-form-grid-column-sizing">
-                <h4>Column sizing</h4>
+            <Anchor name="form-layout-column-sizing">
+                <h2>Column sizing</h2>
             </Anchor>
             <p>
                 As shown in the previous examples, our grid system allows you to place any number of columns within a row. They’ll split the
@@ -401,8 +432,8 @@ export function FormLayoutDoc(): b.IBobrilNode {
         </Col>
     </Row>
 </Form>`}</Code>
-            <Anchor name="forms-layout-form-grid-auto-sizing">
-                <h4>Auto-sizing</h4>
+            <Anchor name="form-layout-auto-sizing">
+                <h2>Auto-sizing</h2>
             </Anchor>
             <p>
                 The example below uses a flexbox utility to vertically center the contents and uses <code>span="auto"</code> so that your
@@ -590,7 +621,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
         </Col>
     </Row>
 </Form>`}</Code>
-            <Anchor name="forms-layout-inline-forms">
+            <Anchor name="form-layout-inline-forms">
                 <h3>Inline forms</h3>
             </Anchor>
             <p>

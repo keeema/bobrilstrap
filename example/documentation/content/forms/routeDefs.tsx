@@ -9,6 +9,7 @@ import { formLayoutRoute } from "./parts/Layout";
 import { overviewRoute } from "./parts/Overview";
 import { rangeRoute } from "./parts/Range";
 import { selectRoute } from "./parts/Select";
+import { validationsRoute } from "./parts/Validations";
 
 export const forms: IRouteWithNavDefinition = {
     url: "forms",
@@ -25,5 +26,6 @@ export const forms: IRouteWithNavDefinition = {
         inputGroupRoute,
         floatingLabelsRoute,
         formLayoutRoute,
+        validationsRoute,
     ],
 };

@@ -9,6 +9,7 @@ export function Anchor({ children, name, params }: { children: b.IBobrilChildren
 }
 
 function scrollIntoView(el: HTMLElement, offset = 0): boolean {
-    setTimeout(() => window.scroll(0, el.offsetTop - offset), 200);
+    const isMain = el.tagName.toLowerCase() === "h1";
+    setTimeout(() => (isMain ? window.scrollTo(0, 0) : window.scroll(0, el.offsetTop - offset)), 200);
     return true;
 }

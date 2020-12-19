@@ -18,6 +18,7 @@ export type IModal = bootstrap.Modal;
 interface IModalElementData {
     fade?: boolean;
     tabindex?: number;
+    show?: boolean;
     "static-backdrop"?: boolean;
     onHide?: () => void;
     onHidden?: () => void;
@@ -65,11 +66,15 @@ export class Modal extends BaseElement<IModalData> {
 
     postInitDom(): void {
         this.registerCallback();
-        this.registerAlert();
+        this.registerModal();
     }
 
     postUpdateDom(): void {
         this.registerCallback();
+    }
+
+    destroy(): void {
+        this.modal && this.modal.hide();
     }
 
     private registerCallback(): void {
@@ -79,8 +84,8 @@ export class Modal extends BaseElement<IModalData> {
         this.registerEvent("hidden.bs.modal", () => this.data.onHidden && this.data.onHidden());
     }
 
-    private registerAlert(): void {
+    private registerModal(): void {
         this.modal = new bootstrap.Modal(this.element);
-        this.data["get-instance"] && this.data["get-instance"](this.modal);
+        this.data["get-instance"] ? this.data["get-instance"](this.modal) : this.modal.show();
     }
 }

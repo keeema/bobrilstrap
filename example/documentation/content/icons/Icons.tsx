@@ -83,7 +83,7 @@ export function Icons(): b.IBobrilNode {
 function IconTile({ children, name }: b.IDataWithChildren & { name: string }): b.IBobrilNode {
     return (
         <Col>
-            <Card style={[{ width: "12rem", height: "6rem" }, textAlign("center"), margin({ side: "b", size: 3 })]}>
+            <Card style={[{ width: "12rem", height: "6rem" }, textAlign("center"), margin("b", 3)]}>
                 <Card.Body>
                     {children}
                     <Card.Text>

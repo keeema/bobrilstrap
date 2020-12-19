@@ -8,10 +8,10 @@ export function HomeHeader(): b.IBobrilNode {
         <main style={[masterHeadStyle]}>
             <Container>
                 <Row>
-                    <Col span={12} md={4} style={[margin({ side: "x", size: "auto" }), order(2, "md")]}>
-                        <div style={[images.bobrilstrap, margin({ side: "x", size: "auto" })]}></div>
+                    <Col span={12} md={4} style={[margin("x", "auto"), order(2, "md")]}>
+                        <div style={[images.bobrilstrap, margin("x", "auto")]}></div>
                     </Col>
-                    <Col md={8} style={[padding({ side: "e", size: 5, breakpoint: "md" }), textAlign("center"), textAlign("start", "md")]}>
+                    <Col md={8} style={[padding("e", 5, "md"), textAlign("center"), textAlign("start", "md")]}>
                         <h1 style={masterHeadTitleStyle}>Bobrilstrap</h1>
                         <p style={leadStyle}>
                             Build awesome responsive mobile-first applications based on framework Bobril and its wrapper for Bootstrap.

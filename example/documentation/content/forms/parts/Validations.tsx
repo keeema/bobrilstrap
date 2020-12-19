@@ -230,7 +230,7 @@ export function ValidationsDoc(): b.IBobrilNode {
                 column styles have this already, but your project may require an alternative setup.
             </p>
             <Example>
-                <div style={margin({ side: "b", size: 3 })}>
+                <div style={margin("b", 3)}>
                     <Row as="form" style={gutter(3)}>
                         <Col md={6} style={position("relative")}>
                             <Form.Label for="validationTooltip01">First name</Form.Label>
@@ -266,13 +266,13 @@ export function ValidationsDoc(): b.IBobrilNode {
             </Anchor>
             <Example>
                 <Form>
-                    <div style={margin({ side: "b", size: 3 })}>
+                    <div style={margin("b", 3)}>
                         <Form.Label for="validationTextarea">Textarea</Form.Label>
                         <Form.Textarea id="validationTextarea" placeholder="Required example textarea" valid={false} />
                         <Feedback.Invalid>Please enter a message in the textarea.</Feedback.Invalid>
                     </div>
 
-                    <Form.Check style={margin({ side: "b", size: 3 })}>
+                    <Form.Check style={margin("b", 3)}>
                         <Form.Input type="checkbox" id="validationFormCheck1" valid={false} />
                         <Form.Label for="validationFormCheck1">Check this checkbox</Form.Label>
                         <Feedback.Invalid>Example invalid feedback text</Feedback.Invalid>
@@ -282,13 +282,13 @@ export function ValidationsDoc(): b.IBobrilNode {
                         <Form.Input type="radio" id="validationFormCheck2" name="radio-stacked" valid={false} />
                         <Form.Label for="validationFormCheck2">Toggle this radio</Form.Label>
                     </Form.Check>
-                    <Form.Check style={margin({ side: "b", size: 3 })}>
+                    <Form.Check style={margin("b", 3)}>
                         <Form.Input type="radio" id="validationFormCheck3" name="radio-stacked" valid={false} />
                         <Form.Label for="validationFormCheck3">Or toggle this other radio</Form.Label>
                         <Feedback.Invalid>More example invalid feedback text</Feedback.Invalid>
                     </Form.Check>
 
-                    <div style={margin({ side: "b", size: 3 })}>
+                    <div style={margin("b", 3)}>
                         <Form.Select valid={false} aria-label="select example">
                             <Form.Option value="">Open this select menu</Form.Option>
                             <Form.Option value="1">One</Form.Option>
@@ -298,12 +298,12 @@ export function ValidationsDoc(): b.IBobrilNode {
                         <Feedback.Invalid>Example invalid select feedback</Feedback.Invalid>
                     </div>
 
-                    <div style={margin({ side: "b", size: 3 })}>
+                    <div style={margin("b", 3)}>
                         <Form.Input type="file" aria-label="file example" valid={false} />
                         <Feedback.Invalid>Example invalid form file feedback</Feedback.Invalid>
                     </div>
 
-                    <div style={margin({ side: "b", size: 3 })}>
+                    <div style={margin("b", 3)}>
                         <Button variant="primary" type="submit" disabled>
                             Submit form
                         </Button>
@@ -311,13 +311,13 @@ export function ValidationsDoc(): b.IBobrilNode {
                 </Form>
             </Example>
             <Code language="tsx">{`<Form>
-    <div style={margin({ side: "b", size: 3 })}>
+    <div style={margin("b", 3)}>
         <Form.Label for="validationTextarea">Textarea</Form.Label>
         <Form.Textarea id="validationTextarea" placeholder="Required example textarea" valid={false} />
         <Feedback.Invalid>Please enter a message in the textarea.</Feedback.Invalid>
     </div>
 
-    <Form.Check style={margin({ side: "b", size: 3 })}>
+    <Form.Check style={margin("b", 3)}>
         <Form.Input type="checkbox" id="validationFormCheck1" valid={false} />
         <Form.Label for="validationFormCheck1">Check this checkbox</Form.Label>
         <Feedback.Invalid>Example invalid feedback text</Feedback.Invalid>
@@ -327,13 +327,13 @@ export function ValidationsDoc(): b.IBobrilNode {
         <Form.Input type="radio" id="validationFormCheck2" name="radio-stacked" valid={false} />
         <Form.Label for="validationFormCheck2">Toggle this radio</Form.Label>
     </Form.Check>
-    <Form.Check style={margin({ side: "b", size: 3 })}>
+    <Form.Check style={margin("b", 3)}>
         <Form.Input type="radio" id="validationFormCheck3" name="radio-stacked" valid={false} />
         <Form.Label for="validationFormCheck3">Or toggle this other radio</Form.Label>
         <Feedback.Invalid>More example invalid feedback text</Feedback.Invalid>
     </Form.Check>
 
-    <div style={margin({ side: "b", size: 3 })}>
+    <div style={margin("b", 3)}>
         <Form.Select valid={false} aria-label="select example">
             <Form.Option value="">Open this select menu</Form.Option>
             <Form.Option value="1">One</Form.Option>
@@ -343,12 +343,12 @@ export function ValidationsDoc(): b.IBobrilNode {
         <Feedback.Invalid>Example invalid select feedback</Feedback.Invalid>
     </div>
 
-    <div style={margin({ side: "b", size: 3 })}>
+    <div style={margin("b", 3)}>
         <Form.Input type="file" aria-label="file example" valid={false} />
         <Feedback.Invalid>Example invalid form file feedback</Feedback.Invalid>
     </div>
 
-    <div style={margin({ side: "b", size: 3 })}>
+    <div style={margin("b", 3)}>
         <Button variant="primary" type="submit" disabled>
             Submit form
         </Button>

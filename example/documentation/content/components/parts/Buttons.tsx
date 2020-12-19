@@ -267,18 +267,18 @@ export function Buttons(): b.IBobrilNode {
     <Button>Button</Button> <Button>Button</Button>
 </div>`}</Code>
             <Example>
-                <Col span={6} style={[display("grid"), gap(2), margin({ side: "x", size: "auto" })]}>
+                <Col span={6} style={[display("grid"), gap(2), margin("x", "auto")]}>
                     <Button>Button</Button>
                     <Button>Button</Button>
                 </Col>
             </Example>
-            <Code language="tsx">{`<Col span={6} style={[display("grid"), gap(2), margin({ side: "x", size: "auto" })]}>
+            <Code language="tsx">{`<Col span={6} style={[display("grid"), gap(2), margin("x", "auto")]}>
     <Button>Button</Button>
     <Button>Button</Button>
 </Col>`}</Code>
             <Example>
                 <div style={[display("grid"), gap(2), display("flex", "md"), justifyContent("end", "md")]}>
-                    <Button style={margin({ side: "e", size: 2 })}>Button</Button>
+                    <Button style={margin("e", 2)}>Button</Button>
                     <Button>Button</Button>
                 </div>
             </Example>

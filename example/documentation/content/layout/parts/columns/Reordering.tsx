@@ -158,20 +158,20 @@ export function Reordering(): b.IBobrilNode {
                         <Col md={4} style={gridStyle}>
                             col-md-4
                         </Col>
-                        <Col md={4} style={[margin({ side: "s", size: "auto" }), gridStyle]}>
+                        <Col md={4} style={[margin("s", "auto"), gridStyle]}>
                             col-md-4 ml-auto
                         </Col>
                     </Row>
                     <Row>
-                        <Col md={3} style={[margin({ side: "s", size: "auto", breakpoint: "md" }), gridStyle]}>
+                        <Col md={3} style={[margin("s", "auto", "md"), gridStyle]}>
                             col-md-3 ml-md-auto
                         </Col>
-                        <Col md={3} style={[margin({ side: "s", size: "auto", breakpoint: "md" }), gridStyle]}>
+                        <Col md={3} style={[margin("s", "auto", "md"), gridStyle]}>
                             col-md-3 ml-md-auto
                         </Col>
                     </Row>
                     <Row>
-                        <Col span="auto" style={[margin({ side: "e", size: "auto" }), gridStyle]}>
+                        <Col span="auto" style={[margin("e", "auto"), gridStyle]}>
                             col-auto mr-auto
                         </Col>
                         <Col span="auto" style={gridStyle}>
@@ -185,20 +185,20 @@ export function Reordering(): b.IBobrilNode {
         <Col md={4}>
             col-md-4
         </Col>
-        <Col md={4} style={margin({ side: "s", size: "auto" })}>
+        <Col md={4} style={margin("s", "auto")}>
             col-md-4 ml-auto
         </Col>
     </Row>
     <Row>
-        <Col md={3} style={margin({ side: "s", size: "auto", breakpoint: "md" })}>
+        <Col md={3} style={margin("s", "auto", "md")}>
             col-md-3 ml-md-auto
         </Col>
-        <Col md={3} style={margin({ side: "s", size: "auto", breakpoint: "md" })}>
+        <Col md={3} style={margin("s", "auto", "md")}>
             col-md-3 ml-md-auto
         </Col>
     </Row>
     <Row>
-        <Col span="auto" style={margin({ side: "e", size: "auto" })}>
+        <Col span="auto" style={margin("e", "auto")}>
             col-auto mr-auto
         </Col>
         <Col span="auto">

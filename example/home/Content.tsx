@@ -33,7 +33,7 @@ export function HomeContent(): b.IBobrilNode {
 
 function Paragraph({ children }: { children: b.IBobrilChildren }): b.IBobrilNode {
     return (
-        <Col span={12} md={4} style={padding({ side: "t", size: 3 })}>
+        <Col span={12} md={4} style={padding("t", 3)}>
             {children}
         </Col>
     );

@@ -26,12 +26,12 @@ export function Alignment(): b.IBobrilNode {
                         <Col style={gridStyle}>One of three columns</Col>
                         <Col style={gridStyle}>One of three columns</Col>
                     </Row>
-                    <Row style={[alignItems("center"), rowBox, margin({ side: "t", size: 3 })]}>
+                    <Row style={[alignItems("center"), rowBox, margin("t", 3)]}>
                         <Col style={gridStyle}>One of three columns</Col>
                         <Col style={gridStyle}>One of three columns</Col>
                         <Col style={gridStyle}>One of three columns</Col>
                     </Row>
-                    <Row style={[alignItems("end"), rowBox, margin({ side: "t", size: 3 })]}>
+                    <Row style={[alignItems("end"), rowBox, margin("t", 3)]}>
                         <Col style={gridStyle}>One of three columns</Col>
                         <Col style={gridStyle}>One of three columns</Col>
                         <Col style={gridStyle}>One of three columns</Col>

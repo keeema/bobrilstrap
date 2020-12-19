@@ -111,12 +111,12 @@ export function InputGroupDoc(): b.IBobrilNode {
                 <code>{`<Form.Label>`}</code>s outside the input group.
             </p>
             <Example>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
                     <Form.Input type="text" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
                 </InputGroup>
 
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Form.Input
                         type="text"
                         placeholder="Recipient's username"
@@ -127,18 +127,18 @@ export function InputGroupDoc(): b.IBobrilNode {
                 </InputGroup>
 
                 <Form.Label for="basic-url">Your vanity URL</Form.Label>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <InputGroup.Text id="basic-addon3">https://example.com/users/</InputGroup.Text>
                     <Form.Input type="text" id="basic-url" aria-describedby="basic-addon3" />
                 </InputGroup>
 
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <InputGroup.Text>$</InputGroup.Text>
                     <Form.Input type="text" aria-label="Amount (to the nearest dollar)" />
                     <InputGroup.Text>.00</InputGroup.Text>
                 </InputGroup>
 
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Form.Input type="text" placeholder="Username" aria-label="Username" />
                     <InputGroup.Text>@</InputGroup.Text>
                     <Form.Input type="text" placeholder="Server" aria-label="Server" />
@@ -149,12 +149,12 @@ export function InputGroupDoc(): b.IBobrilNode {
                     <Form.Textarea aria-label="With textarea"></Form.Textarea>
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup style={margin("b", 3)}>
     <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
     <Form.Input type="text" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
 </InputGroup>
 
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <Form.Input
         type="text"
         placeholder="Recipient's username"
@@ -165,18 +165,18 @@ export function InputGroupDoc(): b.IBobrilNode {
 </InputGroup>
 
 <Form.Label for="basic-url">Your vanity URL</Form.Label>
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <InputGroup.Text id="basic-addon3">https://example.com/users/</InputGroup.Text>
     <Form.Input type="text" id="basic-url" aria-describedby="basic-addon3" />
 </InputGroup>
 
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <InputGroup.Text>$</InputGroup.Text>
     <Form.Input type="text" aria-label="Amount (to the nearest dollar)" />
     <InputGroup.Text>.00</InputGroup.Text>
 </InputGroup>
 
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <Form.Input type="text" placeholder="Username" aria-label="Username" />
     <InputGroup.Text>@</InputGroup.Text>
     <Form.Input type="text" placeholder="Server" aria-label="Server" />
@@ -216,37 +216,37 @@ export function InputGroupDoc(): b.IBobrilNode {
                 <strong>Sizing on the individual input group elements isn’t supported.</strong>
             </p>
             <Example>
-                <InputGroup size="sm" style={margin({ side: "b", size: 3 })}>
+                <InputGroup size="sm" style={margin("b", 3)}>
                     <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
 
                     <Form.Input type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
                 </InputGroup>
 
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <InputGroup.Text id="inputGroup-sizing-default">Default</InputGroup.Text>
 
                     <Form.Input type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
                 </InputGroup>
 
-                <InputGroup size="lg" style={margin({ side: "b", size: 3 })}>
+                <InputGroup size="lg" style={margin("b", 3)}>
                     <InputGroup.Text id="inputGroup-sizing-lg">Large</InputGroup.Text>
 
                     <Form.Input type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup size="sm" style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup size="sm" style={margin("b", 3)}>
     <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
 
     <Form.Input type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" />
 </InputGroup>
 
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <InputGroup.Text id="inputGroup-sizing-default">Default</InputGroup.Text>
 
     <Form.Input type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
 </InputGroup>
 
-<InputGroup size="lg" style={margin({ side: "b", size: 3 })}>
+<InputGroup size="lg" style={margin("b", 3)}>
     <InputGroup.Text id="inputGroup-sizing-lg">Large</InputGroup.Text>
 
     <Form.Input type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
@@ -258,7 +258,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                 Place any checkbox or radio option within an input group’s addon instead of text. <code>no-form-control</code> is necessary.
             </p>
             <Example>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <InputGroup.Text>
                         <Form.Input no-form-control type="checkbox" aria-label="Checkbox for following text input" />
                     </InputGroup.Text>
@@ -273,7 +273,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                     <Form.Input type="text" aria-label="Text input with radio button" />
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup style={margin("b", 3)}>
     <InputGroup.Text>
         <Form.Input no-form-control type="checkbox" aria-label="Checkbox for following text input" />
     </InputGroup.Text>
@@ -295,14 +295,14 @@ export function InputGroupDoc(): b.IBobrilNode {
                 with a single <code>{`<Form.Input>`}</code>.
             </p>
             <Example>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <InputGroup.Text>First and last name</InputGroup.Text>
 
                     <Form.Input type="text" aria-label="First name" placeholder="First name" />
                     <Form.Input type="text" aria-label="Last name" placeholder="Last name" />
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup style={margin("b", 3)}>
     <InputGroup.Text>First and last name</InputGroup.Text>
 
     <Form.Input type="text" aria-label="First name" placeholder="First name" />
@@ -313,7 +313,7 @@ export function InputGroupDoc(): b.IBobrilNode {
             </Anchor>
             <p>Multiple add-ons are supported and can be mixed with checkbox and radio input versions.</p>
             <Example>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <InputGroup.Text>$</InputGroup.Text>
                     <InputGroup.Text>0.00</InputGroup.Text>
 
@@ -334,7 +334,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                     <InputGroup.Text>0.00</InputGroup.Text>
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup style={margin("b", 3)}>
     <InputGroup.Text>$</InputGroup.Text>
     <InputGroup.Text>0.00</InputGroup.Text>
 
@@ -358,14 +358,14 @@ export function InputGroupDoc(): b.IBobrilNode {
                 <h2>Button addons</h2>
             </Anchor>
             <Example>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Button variant="outline-secondary" id="button-addon1">
                         Button
                     </Button>
 
                     <Form.Input type="text" aria-label="Example text with button addon" aria-describedby="button-addon1" />
                 </InputGroup>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Form.Input
                         type="text"
                         aria-label="Recipient's username"
@@ -377,7 +377,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                         Button
                     </Button>
                 </InputGroup>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Button variant="outline-secondary">Button</Button>
                     <Button variant="outline-secondary">Button</Button>
 
@@ -394,14 +394,14 @@ export function InputGroupDoc(): b.IBobrilNode {
                     <Button variant="outline-secondary">Button</Button>
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup style={margin("b", 3)}>
     <Button variant="outline-secondary" id="button-addon1">
         Button
     </Button>
 
     <Form.Input type="text" aria-label="Example text with button addon" aria-describedby="button-addon1" />
 </InputGroup>
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <Form.Input
         type="text"
         aria-label="Recipient's username"
@@ -413,7 +413,7 @@ export function InputGroupDoc(): b.IBobrilNode {
         Button
     </Button>
 </InputGroup>
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <Button variant="outline-secondary">Button</Button>
     <Button variant="outline-secondary">Button</Button>
 
@@ -433,7 +433,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                 <h2>Buttons with dropdowns</h2>
             </Anchor>
             <Example>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Dropdown.Toggle variant="outline-secondary">Dropdown</Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item>Action</Dropdown.Item>
@@ -458,7 +458,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                     </Dropdown.Menu>
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup style={margin("b", 3)}>
     <Dropdown.Toggle variant="outline-secondary">Dropdown</Dropdown.Toggle>
     <Dropdown.Menu>
         <Dropdown.Item>Action</Dropdown.Item>
@@ -486,7 +486,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                 <h2>Segmented buttons</h2>
             </Anchor>
             <Example>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Button variant="outline-secondary">Action</Button>
                     <Dropdown.Toggle split variant="outline-secondary">
                         <span style={visuallyHidden}>Toggle Dropdown</span>
@@ -517,7 +517,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                     </Dropdown.Menu>
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup style={margin("b", 3)}>
     <Button variant="outline-secondary">Action</Button>
     <Dropdown.Toggle split variant="outline-secondary">
         <span style={visuallyHidden}>Toggle Dropdown</span>
@@ -557,7 +557,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                 <h3>Custom select</h3>
             </Anchor>
             <Example>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <InputGroup.Text as="label" for="inputGroupSelect01">
                         Options
                     </InputGroup.Text>
@@ -570,7 +570,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                     </Form.Select>
                 </InputGroup>
 
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Form.Select id="inputGroupSelect02">
                         <Form.Option selected>Choose...</Form.Option>
                         <Form.Option value="1">One</Form.Option>
@@ -583,7 +583,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                     </InputGroup.Text>
                 </InputGroup>
 
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Button variant="outline-secondary">Button</Button>
 
                     <Form.Select id="inputGroupSelect03" aria-label="Example select with button addon">
@@ -605,7 +605,7 @@ export function InputGroupDoc(): b.IBobrilNode {
                     <Button variant="outline-secondary">Button</Button>
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup style={margin("b", 3)}>
     <InputGroup.Text as="label" for="inputGroupSelect01">
         Options
     </InputGroup.Text>
@@ -618,7 +618,7 @@ export function InputGroupDoc(): b.IBobrilNode {
     </Form.Select>
 </InputGroup>
 
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <Form.Select id="inputGroupSelect02">
         <Form.Option selected>Choose...</Form.Option>
         <Form.Option value="1">One</Form.Option>
@@ -631,7 +631,7 @@ export function InputGroupDoc(): b.IBobrilNode {
     </InputGroup.Text>
 </InputGroup>
 
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <Button variant="outline-secondary">Button</Button>
 
     <Form.Select id="inputGroupSelect03" aria-label="Example select with button addon">
@@ -656,19 +656,19 @@ export function InputGroupDoc(): b.IBobrilNode {
                 <h3>Custom file input</h3>
             </Anchor>
             <Example>
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <InputGroup.Text id="inputGroupFileAddon01">Upload</InputGroup.Text>
                     <Form.Input type="file" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
                 </InputGroup>
 
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Form.Input type="file" id="inputGroupFile02" aria-describedby="inputGroupFileAddon02" />
                     <InputGroup.Text as="label" id="inputGroupFileAddon02">
                         Upload
                     </InputGroup.Text>
                 </InputGroup>
 
-                <InputGroup style={margin({ side: "b", size: 3 })}>
+                <InputGroup style={margin("b", 3)}>
                     <Button variant="outline-secondary" id="inputGroupFileAddon03">
                         Button
                     </Button>
@@ -682,19 +682,19 @@ export function InputGroupDoc(): b.IBobrilNode {
                     </Button>
                 </InputGroup>
             </Example>
-            <Code language="tsx">{`<InputGroup style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<InputGroup style={margin("b", 3)}>
     <InputGroup.Text id="inputGroupFileAddon01">Upload</InputGroup.Text>
     <Form.Input type="file" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" />
 </InputGroup>
 
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <Form.Input type="file" id="inputGroupFile02" aria-describedby="inputGroupFileAddon02" />
     <InputGroup.Text as="label" id="inputGroupFileAddon02">
         Upload
     </InputGroup.Text>
 </InputGroup>
 
-<InputGroup style={margin({ side: "b", size: 3 })}>
+<InputGroup style={margin("b", 3)}>
     <Button variant="outline-secondary" id="inputGroupFileAddon03">
         Button
     </Button>

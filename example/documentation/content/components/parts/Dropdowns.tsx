@@ -564,7 +564,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                     <Dropdown.Toggle variant="secondary">Dropdown with text</Dropdown.Toggle>
                     <Dropdown.Menu style={[padding(4), textColor("muted"), { maxWidth: 200 }]}>
                         <p>Some example text that's free-flowing within the dropdown menu.</p>
-                        <p style={margin({ side: "b", size: 0 })}>And this is more example text.</p>
+                        <p style={margin("b", 0)}>And this is more example text.</p>
                     </Dropdown.Menu>
                 </Dropdown>
             </Example>
@@ -572,7 +572,7 @@ export function DropdownsDoc(): b.IBobrilNode {
     <Dropdown.Toggle variant="secondary">Dropdown with text</Dropdown.Toggle>
     <Dropdown.Menu style={[padding(4), textColor("muted"), { maxWidth: 200 }]}>
         <p>Some example text that's free-flowing within the dropdown menu.</p>
-        <p style={margin({ side: "b", size: 0 })}>And this is more example text.</p>
+        <p style={margin("b", 0)}>And this is more example text.</p>
     </Dropdown.Menu>
 </Dropdown>`}</Code>
             <Anchor name="dropdowns-menu-content-forms">
@@ -587,15 +587,15 @@ export function DropdownsDoc(): b.IBobrilNode {
                     <Dropdown.Toggle variant="secondary">Dropdown with form</Dropdown.Toggle>
                     <Dropdown.Menu style={{ minWidth: 250 }}>
                         <Form style={[padding(4)]}>
-                            <div style={margin({ side: "b", size: 3 })}>
+                            <div style={margin("b", 3)}>
                                 <Form.Label for="exampleDropdownFormEmail">Email address</Form.Label>
                                 <Form.Input type="email" placeholder="email@example.com" id="exampleDropdownFormEmail"></Form.Input>
                             </div>
-                            <div style={margin({ side: "b", size: 3 })}>
+                            <div style={margin("b", 3)}>
                                 <Form.Label for="exampleDropdownFormPassword">Password</Form.Label>
                                 <Form.Input type="password" placeholder="Password" id="exampleDropdownFormPassword"></Form.Input>
                             </div>
-                            <Form.Check style={margin({ side: "b", size: 3 })}>
+                            <Form.Check style={margin("b", 3)}>
                                 <Form.Input type="checkbox" id="dropdownCheck" />
                                 <Form.Label for="dropdownCheck">Remember me</Form.Label>
                             </Form.Check>
@@ -613,15 +613,15 @@ export function DropdownsDoc(): b.IBobrilNode {
     <Dropdown.Toggle variant="secondary">Dropdown with form</Dropdown.Toggle>
     <Dropdown.Menu style={{ minWidth: 250 }}>
         <Form style={[padding(4)]}>
-            <div style={margin({ side: "b", size: 3 })}>
+            <div style={margin("b", 3)}>
                 <Form.Label for="exampleDropdownFormEmail">Email address</Form.Label>
                 <Form.Input type="email" placeholder="email@example.com" id="exampleDropdownFormEmail"></Form.Input>
             </div>
-            <div style={margin({ side: "b", size: 3 })}>
+            <div style={margin("b", 3)}>
                 <Form.Label for="exampleDropdownFormPassword">Password</Form.Label>
                 <Form.Input type="password" placeholder="Password" id="exampleDropdownFormPassword"></Form.Input>
             </div>
-            <Form.Check style={margin({ side: "b", size: 3 })}>
+            <Form.Check style={margin("b", 3)}>
                 <Form.Input type="checkbox" id="dropdownCheck" />
                 <Form.Label for="dropdownCheck">Remember me</Form.Label>
             </Form.Check>

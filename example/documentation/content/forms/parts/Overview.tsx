@@ -70,18 +70,18 @@ export function FormsDoc(): b.IBobrilNode {
     return (
         <>
             <Form>
-                <div style={margin({ side: "b", size: 3 })}>
+                <div style={margin("b", 3)}>
                     <Form.Label for="exampleInputEmail1">Email address</Form.Label>
                     <Form.Input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" value={email} onChange={setEmail} />
                     <Form.Text small id="emailHelp" style={textColor("muted")}>
                         We'll never share your email with anyone else.
                     </Form.Text>
                 </div>
-                <div style={margin({ side: "b", size: 3 })}>
+                <div style={margin("b", 3)}>
                     <Form.Label for="exampleInputPassword1">Password</Form.Label>
                     <Form.Input type="password" id="exampleInputPassword1" value={password} onChange={setPassword} />
                 </div>
-                <Form.Check style={margin({ side: "b", size: 3 })}>
+                <Form.Check style={margin("b", 3)}>
                     <Form.Input type="checkbox" id="exampleCheck1" value={remember} onChange={setRemember} />
                     <Form.Label form-check for="exampleCheck1">
                         Check me out
@@ -91,7 +91,7 @@ export function FormsDoc(): b.IBobrilNode {
                     Submit
                 </Button>
             </Form>
-            <Row style={margin({ side: "t", size: 3 })}>
+            <Row style={margin("t", 3)}>
                 <Col>Email: {email}</Col>
                 <Col>Password: {password}</Col>
                 <Col>Remember me: {JSON.stringify(remember)}</Col>
@@ -153,17 +153,17 @@ export function FormsDoc(): b.IBobrilNode {
             <Example>
                 <Form>
                     <Form.Fieldset disabled>
-                        <div style={margin({ side: "b", size: 3 })}>
+                        <div style={margin("b", 3)}>
                             <Form.Label for="disabledTextInput">Disabled input</Form.Label>
                             <Form.Input type="text" id="disabledTextInput" placeholder="Disabled input" />
                         </div>
-                        <div style={margin({ side: "b", size: 3 })}>
+                        <div style={margin("b", 3)}>
                             <Form.Label for="disabledSelect">Disabled select menu</Form.Label>
                             <Form.Select id="disabledSelect">
                                 <Form.Option>Disabled select</Form.Option>
                             </Form.Select>
                         </div>
-                        <Form.Check style={margin({ side: "b", size: 3 })}>
+                        <Form.Check style={margin("b", 3)}>
                             <Form.Input type="checkbox" id="disabledFieldsetCheck" disabled />
                             <Form.Label form-check for="disabledFieldsetCheck">
                                 Can't check this
@@ -177,17 +177,17 @@ export function FormsDoc(): b.IBobrilNode {
             </Example>
             <Code language="tsx">{`<Form>
     <Form.Fieldset disabled>
-        <div style={margin({ side: "b", size: 3 })}>
+        <div style={margin("b", 3)}>
             <Form.Label for="disabledTextInput">Disabled input</Form.Label>
             <Form.Input type="text" id="disabledTextInput" placeholder="Disabled input" />
         </div>
-        <div style={margin({ side: "b", size: 3 })}>
+        <div style={margin("b", 3)}>
             <Form.Label for="disabledSelect">Disabled select menu</Form.Label>
             <Form.Select id="disabledSelect">
                 <Form.Option>Disabled select</Form.Option>
             </Form.Select>
         </div>
-        <Form.Check style={margin({ side: "b", size: 3 })}>
+        <Form.Check style={margin("b", 3)}>
             <Form.Input type="checkbox" id="disabledFieldsetCheck" disabled />
             <Form.Label form-check for="disabledFieldsetCheck">
                 Can't check this
@@ -210,18 +210,18 @@ function OverviewExample(): b.IBobrilNode {
     return (
         <>
             <Form>
-                <div style={margin({ side: "b", size: 3 })}>
+                <div style={margin("b", 3)}>
                     <Form.Label for="exampleInputEmail1">Email address</Form.Label>
                     <Form.Input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" value={email} onChange={setEmail} />
                     <Form.Text small id="emailHelp" style={textColor("muted")}>
                         We'll never share your email with anyone else.
                     </Form.Text>
                 </div>
-                <div style={margin({ side: "b", size: 3 })}>
+                <div style={margin("b", 3)}>
                     <Form.Label for="exampleInputPassword1">Password</Form.Label>
                     <Form.Input type="password" id="exampleInputPassword1" value={password} onChange={setPassword} />
                 </div>
-                <Form.Check style={margin({ side: "b", size: 3 })}>
+                <Form.Check style={margin("b", 3)}>
                     <Form.Input type="checkbox" id="exampleCheck1" value={remember} onChange={setRemember} />
                     <Form.Label form-check for="exampleCheck1">
                         Check me out
@@ -231,7 +231,7 @@ function OverviewExample(): b.IBobrilNode {
                     Submit
                 </Button>
             </Form>
-            <Row style={margin({ side: "t", size: 3 })}>
+            <Row style={margin("t", 3)}>
                 <Col>Email: {email}</Col>
                 <Col>Password: {password}</Col>
                 <Col>Remember me: {JSON.stringify(remember)}</Col>

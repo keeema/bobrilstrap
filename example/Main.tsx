@@ -22,7 +22,7 @@ export function Main(data: b.IRouteHandlerData): b.IBobrilNode {
 const btnStyle = b.style({}, buttonStyles.btn).className!;
 const btnDarkStyle = b.style({}, buttonStyles["outline-dark"]).className!;
 const btnSmallStyle = b.style({}, buttonStyles.sizes("sm")).className!;
-const marginBottomStyle = b.style({}, margin({ side: "b", size: 3 })).className!;
+const marginBottomStyle = b.style({}, margin("b", 3)).className!;
 
 function fixCopies(): void {
     const buttons = document.querySelectorAll("div.toolbar-item  button");

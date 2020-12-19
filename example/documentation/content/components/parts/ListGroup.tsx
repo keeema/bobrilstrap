@@ -352,30 +352,30 @@ ${listGroupItemVariants
                 <ListGroup>
                     <ListGroup.Item action active>
                         <div style={[display("flex"), justifyContent("between")]}>
-                            <h5 style={margin({ side: "b", size: 1 })}>List group item heading</h5>
+                            <h5 style={margin("b", 1)}>List group item heading</h5>
                             <small>3 days ago</small>
                         </div>
-                        <p style={margin({ side: "b", size: 1 })}>
+                        <p style={margin("b", 1)}>
                             Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
                         </p>
                         <small>Donec id elit non mi porta.</small>
                     </ListGroup.Item>
                     <ListGroup.Item action>
                         <div style={[display("flex"), justifyContent("between")]}>
-                            <h5 style={margin({ side: "b", size: 1 })}>List group item heading</h5>
+                            <h5 style={margin("b", 1)}>List group item heading</h5>
                             <small style={textColor("muted")}>3 days ago</small>
                         </div>
-                        <p style={margin({ side: "b", size: 1 })}>
+                        <p style={margin("b", 1)}>
                             Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
                         </p>
                         <small style={textColor("muted")}>Donec id elit non mi porta.</small>
                     </ListGroup.Item>
                     <ListGroup.Item action>
                         <div style={[display("flex"), justifyContent("between")]}>
-                            <h5 style={margin({ side: "b", size: 1 })}>List group item heading</h5>
+                            <h5 style={margin("b", 1)}>List group item heading</h5>
                             <small style={textColor("muted")}>3 days ago</small>
                         </div>
-                        <p style={margin({ side: "b", size: 1 })}>
+                        <p style={margin("b", 1)}>
                             Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
                         </p>
                         <small style={textColor("muted")}>Donec id elit non mi porta.</small>
@@ -385,30 +385,30 @@ ${listGroupItemVariants
             <Code language="tsx">{`<ListGroup>
     <ListGroup.Item action active>
         <div style={[display("flex"), justifyContent("between")]}>
-            <h5 style={margin({ side: "b", size: 1 })}>List group item heading</h5>
+            <h5 style={margin("b", 1)}>List group item heading</h5>
             <small>3 days ago</small>
         </div>
-        <p style={margin({ side: "b", size: 1 })}>
+        <p style={margin("b", 1)}>
             Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
         </p>
         <small>Donec id elit non mi porta.</small>
     </ListGroup.Item>
     <ListGroup.Item action>
         <div style={[display("flex"), justifyContent("between")]}>
-            <h5 style={margin({ side: "b", size: 1 })}>List group item heading</h5>
+            <h5 style={margin("b", 1)}>List group item heading</h5>
             <small style={textColor("muted")}>3 days ago</small>
         </div>
-        <p style={margin({ side: "b", size: 1 })}>
+        <p style={margin("b", 1)}>
             Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
         </p>
         <small style={textColor("muted")}>Donec id elit non mi porta.</small>
     </ListGroup.Item>
     <ListGroup.Item action>
         <div style={[display("flex"), justifyContent("between")]}>
-            <h5 style={margin({ side: "b", size: 1 })}>List group item heading</h5>
+            <h5 style={margin("b", 1)}>List group item heading</h5>
             <small style={textColor("muted")}>3 days ago</small>
         </div>
-        <p style={margin({ side: "b", size: 1 })}>
+        <p style={margin("b", 1)}>
             Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
         </p>
         <small style={textColor("muted")}>Donec id elit non mi porta.</small>
@@ -429,7 +429,7 @@ ${listGroupItemVariants
 
     return (
         <>
-            <Row style={margin({ side: "b", size: 1 })}>
+            <Row style={margin("b", 1)}>
                 <Col span={4}>
                     <ListGroup actions tabs id="list-tab">
                         {contents.map((content, index) => (
@@ -551,7 +551,7 @@ ${listGroupItemVariants
 
     return (
         <>
-            <Row style={margin({ side: "b", size: 1 })}>
+            <Row style={margin("b", 1)}>
                 <Col span={4}>
                     <ListGroup actions tabs id="list-tab">
                         <ListGroup.Item
@@ -713,7 +713,7 @@ function TabsReactiveExample(): b.IBobrilNode {
 
     return (
         <>
-            <Row style={margin({ side: "b", size: 1 })}>
+            <Row style={margin("b", 1)}>
                 <Col span={4}>
                     <ListGroup actions tabs id="list-tab">
                         {contents.map((content, index) => (
@@ -747,7 +747,7 @@ function TabsNativeExample(): b.IBobrilNode {
 
     return (
         <>
-            <Row style={margin({ side: "b", size: 1 })}>
+            <Row style={margin("b", 1)}>
                 <Col span={4}>
                     <ListGroup actions tabs id="list-tab">
                         <ListGroup.Item

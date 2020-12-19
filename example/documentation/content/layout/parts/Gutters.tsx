@@ -97,10 +97,10 @@ export function GuttersDoc(): b.IBobrilNode {
                 <code>gutterX(*)</code> classes can be used to control the horizontal gutter widths. The <code>{`<Container>`}</code> or{" "}
                 <code>{`<Container fluid>`}</code> parent may need to be adjusted if larger gutters are used too to avoid unwanted overflow,
                 using a matching padding utility. For example, in the following example we’ve increased the padding with{" "}
-                <code>{`padding({ side: "x", size: 4 })`}</code>:
+                <code>{`padding("x", 4)`}</code>:
             </p>
             <Example>
-                <Container style={padding({ side: "x", size: 4 })}>
+                <Container style={padding("x", 4)}>
                     <Row style={gutterX(5)}>
                         <Col>
                             <div style={[padding(3), gridStyle]}>Custom column padding</div>
@@ -111,7 +111,7 @@ export function GuttersDoc(): b.IBobrilNode {
                     </Row>
                 </Container>
             </Example>
-            <Code language="tsx">{`<Container style={padding({ side: "x", size: 4 })}>
+            <Code language="tsx">{`<Container style={padding("x", 4)}>
     <Row style={gutterX(5)}>
         <Col>
             <div style={[padding(3), gridStyle]}>Custom column padding</div>

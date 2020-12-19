@@ -263,7 +263,7 @@ export function Cards(): b.IBobrilNode {
                 <Card style={{ width: "18rem" }}>
                     <Card.Body>
                         <Card.Title>Card title</Card.Title>
-                        <Card.Subtitle style={[textColor("muted"), margin({ side: "b", size: 2 })]}>Card subtitle</Card.Subtitle>
+                        <Card.Subtitle style={[textColor("muted"), margin("b", 2)]}>Card subtitle</Card.Subtitle>
                         <Card.Text>
                             Some quick example text to build on the card title and make up the bulk of the card's content.
                         </Card.Text>
@@ -275,7 +275,7 @@ export function Cards(): b.IBobrilNode {
             <Code language="tsx">{`<Card style={{ width: "18rem" }}>
     <Card.Body>
         <Card.Title>Card title</Card.Title>
-        <Card.Subtitle style={[textColor("muted"), margin({ side: "b", size: 2 })]}>Card subtitle</Card.Subtitle>
+        <Card.Subtitle style={[textColor("muted"), margin("b", 2)]}>Card subtitle</Card.Subtitle>
         <Card.Text>
             Some quick example text to build on the card title and make up the bulk of the card's content.
         </Card.Text>
@@ -399,7 +399,7 @@ export function Cards(): b.IBobrilNode {
                 <Card>
                     <Card.Header>Quote</Card.Header>
                     <Card.Body>
-                        <Blockquote style={margin({ side: "b", size: 0 })}>
+                        <Blockquote style={margin("b", 0)}>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                             <Blockquote.Footer>
                                 Someone famous in <cite title="Source Title">Source Title</cite>
@@ -411,7 +411,7 @@ export function Cards(): b.IBobrilNode {
             <Code language="tsx">{`<Card>
     <Card.Header>Quote</Card.Header>
     <Card.Body>
-        <Blockquote style={margin({ side: "b", size: 0 })}>
+        <Blockquote style={margin("b", 0)}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
             <Blockquote.Footer>
                 Someone famous in <cite title="Source Title">Source Title</cite>
@@ -774,7 +774,7 @@ export function Cards(): b.IBobrilNode {
             </Anchor>
             <p>Using a combination of grid and utilities, cards can be made horizontal in a mobile-friendly and responsive way.</p>
             <Example>
-                <Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
+                <Card style={[margin("b", 3), { maxWidth: 540 }]}>
                     <Row style={gutter(0)}>
                         <Col md={4}>
                             <Card.Image src={placeholderUri(100, "%", 270, "px")} />
@@ -795,7 +795,7 @@ export function Cards(): b.IBobrilNode {
                 </Card>
             </Example>
             <Code language="tsx">
-                {`<Card style={[margin({ side: "b", size: 3 }), { maxWidth: 540 }]}>
+                {`<Card style={[margin("b", 3), { maxWidth: 540 }]}>
     <Row style={gutter(0)}>
         <Col md={4}>
             <Card.Image src="placeholderUri(100, "%", 270, "px")" />
@@ -829,7 +829,7 @@ export function Cards(): b.IBobrilNode {
                         style={[
                             textColor(bgColor === "light" ? "dark" : "white"),
                             backgroundColor(bgColor),
-                            margin({ side: "b", size: 3 }),
+                            margin("b", 3),
                             { width: "18rem" },
                         ]}
                     >
@@ -849,7 +849,7 @@ export function Cards(): b.IBobrilNode {
                         (bgColor) =>
                             `<Card style={[textColor("${
                                 bgColor === "light" ? "dark" : "white"
-                            }"), backgroundColor("${bgColor}"), margin({ side: "b", size: 3 }), { width: "18rem" }]}>
+                            }"), backgroundColor("${bgColor}"), margin("b", 3), { width: "18rem" }]}>
     <Card.Header>Header</Card.Header>
     <Card.Body>
         <Card.Title>Card title - ${bgColor}</Card.Title>
@@ -879,7 +879,7 @@ export function Cards(): b.IBobrilNode {
                         style={[
                             textColor(["white", "light"].indexOf(borderColorItem) >= 0 ? "dark" : borderColorItem),
                             borderColor(borderColorItem),
-                            margin({ side: "b", size: 3 }),
+                            margin("b", 3),
                             { width: "18rem" },
                         ]}
                     >
@@ -899,7 +899,7 @@ export function Cards(): b.IBobrilNode {
                         (borderColorItem) =>
                             `<Card style={[textColor("${
                                 ["white", "light"].indexOf(borderColorItem) >= 0 ? "dark" : borderColorItem
-                            }"), borderColor("${borderColorItem}"), margin({ side: "b", size: 3 }), { width: "18rem" }]}>
+                            }"), borderColor("${borderColorItem}"), margin("b", 3), { width: "18rem" }]}>
     <Card.Header>Header</Card.Header>
     <Card.Body>
         <Card.Title>Card title - ${borderColorItem}</Card.Title>

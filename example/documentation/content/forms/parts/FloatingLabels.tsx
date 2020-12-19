@@ -58,7 +58,7 @@ export function FloatingLabelsDoc(): b.IBobrilNode {
                 note that the <code>{`<Form.Input>`}</code> must come first so we can utilize a sibling selector (e.g., <code>~</code>).
             </p>
             <Example>
-                <Form.Floating style={margin({ side: "b", size: 3 })}>
+                <Form.Floating style={margin("b", 3)}>
                     <Form.Input type="email" id="floatingInput" placeholder="name@example.com" />
                     <Form.Label for="floatingInput">Email address</Form.Label>
                 </Form.Floating>
@@ -67,7 +67,7 @@ export function FloatingLabelsDoc(): b.IBobrilNode {
                     <Form.Label for="floatingPassword">Password</Form.Label>
                 </Form.Floating>
             </Example>
-            <Code language="tsx">{`<Form.Floating style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<Form.Floating style={margin("b", 3)}>
     <Form.Input type="email" id="floatingInput" placeholder="name@example.com" />
     <Form.Label for="floatingInput">Email address</Form.Label>
 </Form.Floating>

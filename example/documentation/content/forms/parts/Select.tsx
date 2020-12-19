@@ -64,7 +64,7 @@ export function SelectDoc(): b.IBobrilNode {
             </Anchor>
             <p>You may also choose from small and large custom selects to match our similarly sized text inputs.</p>
             <Example>
-                <Form.Select size="lg" style={margin({ side: "b", size: 3 })}>
+                <Form.Select size="lg" style={margin("b", 3)}>
                     <Form.Option selected>Open this select menu</Form.Option>
                     <Form.Option value="1">One</Form.Option>
                     <Form.Option value="2">Two</Form.Option>
@@ -77,7 +77,7 @@ export function SelectDoc(): b.IBobrilNode {
                     <Form.Option value="3">Three</Form.Option>
                 </Form.Select>
             </Example>
-            <Code language="tsx">{`<Form.Select size="lg" style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<Form.Select size="lg" style={margin("b", 3)}>
     <Form.Option selected>Open this select menu</Form.Option>
     <Form.Option value="1">One</Form.Option>
     <Form.Option value="2">Two</Form.Option>

@@ -27,7 +27,7 @@ export function Navigation(): b.IBobrilNode {
                         <LinkItem name={routes.home.name}>Home</LinkItem>
                         <LinkItem name={routes.documentation.name}>Documentation</LinkItem>
                     </Nav>
-                    <Nav navbar style={margin({ side: "s", size: "auto", breakpoint: "md" })}>
+                    <Nav navbar style={margin("s", "auto", "md")}>
                         <GithubLink />
                         <BobrilLink />
                         <BootstrapLink />

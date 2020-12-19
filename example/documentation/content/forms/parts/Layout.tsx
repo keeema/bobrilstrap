@@ -214,7 +214,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             <p>At times, you maybe need to use margin or padding utilities to create that perfect alignment you need.</p>
             <Example>
                 <Form>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Form.Label col sm={2} for="inputEmail3">
                             Email
                         </Form.Label>
@@ -222,7 +222,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             <Form.Input type="email" id="inputEmail3" />
                         </Col>
                     </Row>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Form.Label col sm={2} for="inputPassword3">
                             Password
                         </Form.Label>
@@ -230,8 +230,8 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             <Form.Input type="password" id="inputPassword3" />
                         </Col>
                     </Row>
-                    <Row style={margin({ side: "b", size: 3 })} as="fieldset">
-                        <Form.Label col sm={2} style={padding({ side: "t", size: 0 })}>
+                    <Row style={margin("b", 3)} as="fieldset">
+                        <Form.Label col sm={2} style={padding("t", 0)}>
                             Radios
                         </Form.Label>
                         <Col sm={10}>
@@ -255,7 +255,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             </Form.Check>
                         </Col>
                     </Row>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Col sm={2}>Checkbox</Col>
                         <Col sm={10}>
                             <Form.Check>
@@ -266,7 +266,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             </Form.Check>
                         </Col>
                     </Row>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Col sm={10}>
                             <Button type="submit" variant="primary">
                                 Sign in
@@ -276,7 +276,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                 </Form>
             </Example>
             <Code language="tsx">{`<Form>
-    <Row style={margin({ side: "b", size: 3 })}>
+    <Row style={margin("b", 3)}>
         <Form.Label col sm={2} for="inputEmail3">
             Email
         </Form.Label>
@@ -284,7 +284,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             <Form.Input type="email" id="inputEmail3" />
         </Col>
     </Row>
-    <Row style={margin({ side: "b", size: 3 })}>
+    <Row style={margin("b", 3)}>
         <Form.Label col sm={2} for="inputPassword3">
             Password
         </Form.Label>
@@ -292,8 +292,8 @@ export function FormLayoutDoc(): b.IBobrilNode {
             <Form.Input type="password" id="inputPassword3" />
         </Col>
     </Row>
-    <Row style={margin({ side: "b", size: 3 })} as="fieldset">
-        <Form.Label col sm={2} style={padding({ side: "t", size: 0 })}>
+    <Row style={margin("b", 3)} as="fieldset">
+        <Form.Label col sm={2} style={padding("t", 0)}>
             Radios
         </Form.Label>
         <Col sm={10}>
@@ -317,7 +317,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             </Form.Check>
         </Col>
     </Row>
-    <Row style={margin({ side: "b", size: 3 })}>
+    <Row style={margin("b", 3)}>
         <Col sm={2}>Checkbox</Col>
         <Col sm={10}>
             <Form.Check>
@@ -328,7 +328,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             </Form.Check>
         </Col>
     </Row>
-    <Row style={margin({ side: "b", size: 3 })}>
+    <Row style={margin("b", 3)}>
         <Col sm={10}>
             <Button type="submit" variant="primary">
                 Sign in
@@ -344,7 +344,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             </p>
             <Example>
                 <Form>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Form.Label for="colFormLabelSm" col="sm" sm={2}>
                             Email
                         </Form.Label>
@@ -352,7 +352,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             <Form.Input type="email" size="sm" id="colFormLabelSm" placeholder="sm" />
                         </Col>
                     </Row>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Form.Label for="colFormLabelSm" col sm={2}>
                             Email
                         </Form.Label>
@@ -360,7 +360,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             <Form.Input type="email" id="colFormLabel" placeholder="default" />
                         </Col>
                     </Row>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Form.Label for="colFormLabelLg" col="lg" sm={2}>
                             Email
                         </Form.Label>
@@ -371,7 +371,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                 </Form>
             </Example>
             <Code language="tsx">{`<Form>
-    <Row style={margin({ side: "b", size: 3 })}>
+    <Row style={margin("b", 3)}>
         <Form.Label for="colFormLabelSm" col="sm" sm={2}>
             Email
         </Form.Label>
@@ -379,7 +379,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             <Form.Input type="email" size="sm" id="colFormLabelSm" placeholder="sm" />
         </Col>
     </Row>
-    <Row style={margin({ side: "b", size: 3 })}>
+    <Row style={margin("b", 3)}>
         <Form.Label for="colFormLabelSm" col sm={2}>
             Email
         </Form.Label>
@@ -387,7 +387,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             <Form.Input type="email" id="colFormLabel" placeholder="default" />
         </Col>
     </Row>
-    <Row style={margin({ side: "b", size: 3 })}>
+    <Row style={margin("b", 3)}>
         <Form.Label for="colFormLabelLg" col="lg" sm={2}>
             Email
         </Form.Label>
@@ -406,7 +406,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             </p>
             <Example>
                 <Form>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Col sm={7}>
                             <Form.Input type="text" placeholder="City" />
                         </Col>
@@ -420,7 +420,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                 </Form>
             </Example>
             <Code language="tsx">{`<Form>
-    <Row style={margin({ side: "b", size: 3})}>
+    <Row style={margin("b", 3)}>
         <Col sm={7}>
             <Form.Input type="text" placeholder="City" />
         </Col>
@@ -446,7 +446,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             <Form.Label style={visuallyHidden} for="autoSizingInput">
                                 Name
                             </Form.Label>
-                            <Form.Input type="text" style={margin({ side: "b", size: 2 })} id="autoSizingInput" placeholder="Jane Doe" />
+                            <Form.Input type="text" style={margin("b", 2)} id="autoSizingInput" placeholder="Jane Doe" />
                         </Col>
                         <Col span="auto">
                             <Form.Label style={visuallyHidden} for="autoSizingInputGroup">
@@ -469,7 +469,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             </Form.Select>
                         </Col>
                         <Col span="auto">
-                            <Form.Check style={margin({ side: "b", size: 2 })}>
+                            <Form.Check style={margin("b", 2)}>
                                 <Form.Input type="checkbox" id="autoSizingCheck" />
                                 <Form.Label form-check for="autoSizingCheck">
                                     Remember me
@@ -477,7 +477,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             </Form.Check>
                         </Col>
                         <Col span="auto">
-                            <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+                            <Button type="submit" variant="primary" style={margin("b", 2)}>
                                 Submit
                             </Button>
                         </Col>
@@ -490,7 +490,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             <Form.Label style={visuallyHidden} for="autoSizingInput">
                 Name
             </Form.Label>
-            <Form.Input type="text" style={margin({ side: "b", size: 2 })} id="autoSizingInput" placeholder="Jane Doe" />
+            <Form.Input type="text" style={margin("b", 2)} id="autoSizingInput" placeholder="Jane Doe" />
         </Col>
         <Col span="auto">
             <Form.Label style={visuallyHidden} for="autoSizingInputGroup">
@@ -513,7 +513,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             </Form.Select>
         </Col>
         <Col span="auto">
-            <Form.Check style={margin({ side: "b", size: 2 })}>
+            <Form.Check style={margin("b", 2)}>
                 <Form.Input type="checkbox" id="autoSizingCheck" />
                 <Form.Label form-check for="autoSizingCheck">
                     Remember me
@@ -521,7 +521,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             </Form.Check>
         </Col>
         <Col span="auto">
-            <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+            <Button type="submit" variant="primary" style={margin("b", 2)}>
                 Submit
             </Button>
         </Col>
@@ -535,12 +535,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             <Form.Label style={visuallyHidden} for="specificSizingInput">
                                 Name
                             </Form.Label>
-                            <Form.Input
-                                type="text"
-                                style={margin({ side: "b", size: 2 })}
-                                id="specificSizingInput"
-                                placeholder="Jane Doe"
-                            />
+                            <Form.Input type="text" style={margin("b", 2)} id="specificSizingInput" placeholder="Jane Doe" />
                         </Col>
                         <Col sm={3}>
                             <Form.Label style={visuallyHidden} for="specificSizingInputGroup">
@@ -563,7 +558,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             </Form.Select>
                         </Col>
                         <Col span="auto">
-                            <Form.Check style={margin({ side: "b", size: 2 })}>
+                            <Form.Check style={margin("b", 2)}>
                                 <Form.Input type="checkbox" id="specificSizingCheck" />
                                 <Form.Label form-check for="specificSizingCheck">
                                     Remember me
@@ -571,7 +566,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
                             </Form.Check>
                         </Col>
                         <Col span="auto">
-                            <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+                            <Button type="submit" variant="primary" style={margin("b", 2)}>
                                 Submit
                             </Button>
                         </Col>
@@ -584,7 +579,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             <Form.Label style={visuallyHidden} for="specificSizingInput">
                 Name
             </Form.Label>
-            <Form.Input type="text" style={margin({ side: "b", size: 2 })} id="specificSizingInput" placeholder="Jane Doe" />
+            <Form.Input type="text" style={margin("b", 2)} id="specificSizingInput" placeholder="Jane Doe" />
         </Col>
         <Col sm={3}>
             <Form.Label style={visuallyHidden} for="specificSizingInputGroup">
@@ -607,7 +602,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             </Form.Select>
         </Col>
         <Col span="auto">
-            <Form.Check style={margin({ side: "b", size: 2 })}>
+            <Form.Check style={margin("b", 2)}>
                 <Form.Input type="checkbox" id="specificSizingCheck" />
                 <Form.Label form-check for="specificSizingCheck">
                     Remember me
@@ -615,7 +610,7 @@ export function FormLayoutDoc(): b.IBobrilNode {
             </Form.Check>
         </Col>
         <Col span="auto">
-            <Button type="submit" variant="primary" style={margin({ side: "b", size: 2 })}>
+            <Button type="submit" variant="primary" style={margin("b", 2)}>
                 Submit
             </Button>
         </Col>

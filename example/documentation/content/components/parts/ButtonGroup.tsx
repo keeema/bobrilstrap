@@ -87,13 +87,13 @@ export function ButtonGroup(): b.IBobrilNode {
             </p>
             <Example>
                 <Button.Toolbar aria-label="Toolbar with button groups">
-                    <Button.Group style={margin({ side: "e", size: 2 })} aria-label="First group">
+                    <Button.Group style={margin("e", 2)} aria-label="First group">
                         <Button variant="secondary">1</Button>
                         <Button variant="secondary">2</Button>
                         <Button variant="secondary">3</Button>
                         <Button variant="secondary">4</Button>
                     </Button.Group>
-                    <Button.Group style={margin({ side: "e", size: 2 })} aria-label="Secondary group">
+                    <Button.Group style={margin("e", 2)} aria-label="Secondary group">
                         <Button variant="secondary">5</Button>
                         <Button variant="secondary">6</Button>
                         <Button variant="secondary">7</Button>
@@ -105,13 +105,13 @@ export function ButtonGroup(): b.IBobrilNode {
             </Example>
             <Code language="tsx">
                 {`<Button.Toolbar aria-label="Toolbar with button groups">
-    <Button.Group style={margin({ side: "e", size: 2 })} aria-label="First group">
+    <Button.Group style={margin("e", 2)} aria-label="First group">
         <Button variant="secondary">1</Button>
         <Button variant="secondary">2</Button>
         <Button variant="secondary">3</Button>
         <Button variant="secondary">4</Button>
     </Button.Group>
-    <Button.Group style={margin({ side: "e", size: 2 })} aria-label="Secondary group">
+    <Button.Group style={margin("e", 2)} aria-label="Secondary group">
         <Button variant="secondary">5</Button>
         <Button variant="secondary">6</Button>
         <Button variant="secondary">7</Button>
@@ -126,8 +126,8 @@ export function ButtonGroup(): b.IBobrilNode {
                 utilities though to space things properly.
             </p>
             <Example>
-                <Button.Toolbar style={margin({ side: "b", size: 3 })} aria-label="Toolbar with button groups">
-                    <Button.Group style={margin({ side: "e", size: 2 })} aria-label="First group">
+                <Button.Toolbar style={margin("b", 3)} aria-label="Toolbar with button groups">
+                    <Button.Group style={margin("e", 2)} aria-label="First group">
                         <Button variant="secondary">1</Button>
                         <Button variant="secondary">2</Button>
                         <Button variant="secondary">3</Button>
@@ -144,7 +144,7 @@ export function ButtonGroup(): b.IBobrilNode {
                     </InputGroup>
                 </Button.Toolbar>
                 <Button.Toolbar style={justifyContent("between")} aria-label="Toolbar with button groups">
-                    <Button.Group style={margin({ side: "e", size: 2 })} aria-label="First group">
+                    <Button.Group style={margin("e", 2)} aria-label="First group">
                         <Button variant="secondary">1</Button>
                         <Button variant="secondary">2</Button>
                         <Button variant="secondary">3</Button>
@@ -162,8 +162,8 @@ export function ButtonGroup(): b.IBobrilNode {
                 </Button.Toolbar>
             </Example>
             <Code language="tsx">
-                {`<Button.Toolbar style={margin({ side: "b", size: 3 })} aria-label="Toolbar with button groups">
-    <Button.Group style={margin({ side: "e", size: 2 })} aria-label="First group">
+                {`<Button.Toolbar style={margin("b", 3)} aria-label="Toolbar with button groups">
+    <Button.Group style={margin("e", 2)} aria-label="First group">
         <Button variant="secondary">1</Button>
         <Button variant="secondary">2</Button>
         <Button variant="secondary">3</Button>
@@ -180,7 +180,7 @@ export function ButtonGroup(): b.IBobrilNode {
     </InputGroup>
 </Button.Toolbar>
 <Button.Toolbar style={justifyContent("between")} aria-label="Toolbar with button groups">
-    <Button.Group style={margin({ side: "e", size: 2 })} aria-label="First group">
+    <Button.Group style={margin("e", 2)} aria-label="First group">
         <Button variant="secondary">1</Button>
         <Button variant="secondary">2</Button>
         <Button variant="secondary">3</Button>

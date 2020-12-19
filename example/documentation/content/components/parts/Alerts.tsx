@@ -105,9 +105,7 @@ export function Alerts(): b.IBobrilNode {
                         you can see how spacing within an alert works with this kind of content.
                     </p>
                     <hr />
-                    <p style={margin({ side: "b", size: 0 })}>
-                        Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
-                    </p>
+                    <p style={margin("b", 0)}>Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
                 </Alert>
             </Example>
             <Code language="tsx">{`<Alert variant="success">
@@ -117,7 +115,7 @@ export function Alerts(): b.IBobrilNode {
         you can see how spacing within an alert works with this kind of content.
     </p>
     <hr />
-    <p style={margin({ side: "b", size: 0 })}>
+    <p style={margin("b", 0)}>
         Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
     </p>
 </Alert>`}</Code>

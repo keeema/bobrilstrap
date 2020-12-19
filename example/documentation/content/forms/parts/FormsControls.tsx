@@ -72,22 +72,22 @@ export function FormsDoc(): b.IBobrilNode {
             </Anchor>
             <Example>
                 <Form>
-                    <div style={margin({ side: "b", size: 3 })}>
+                    <div style={margin("b", 3)}>
                         <Form.Label for="exampleFormControlInput1">Email address</Form.Label>
                         <Form.Input type="email" id="exampleFormControlInput1" placeholder="name@example.com" />
                     </div>
-                    <div style={margin({ side: "b", size: 3 })}>
+                    <div style={margin("b", 3)}>
                         <Form.Label for="exampleFormControlTextarea1">Example textarea</Form.Label>
                         <Form.Textarea id="exampleFormControlTextarea1" rows="3" />
                     </div>
                 </Form>
             </Example>
             <Code language="tsx">{` <Form>
-                    <div style={margin({ side: "b", size: 3 })}>
+                    <div style={margin("b", 3)}>
                         <Form.Label for="exampleFormControlInput1">Email address</Form.Label>
                         <Form.Input type="email" id="exampleFormControlInput1" placeholder="name@example.com" />
                     </div>
-                    <div style={margin({ side: "b", size: 3 })}>
+                    <div style={margin("b", 3)}>
                         <Form.Label for="exampleFormControlTextarea1">Example textarea</Form.Label>
                         <Form.Textarea id="exampleFormControlTextarea1" rows="3" />
                     </div>
@@ -126,7 +126,7 @@ export function FormsDoc(): b.IBobrilNode {
             </p>
             <Example>
                 <Form>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Form.Label col sm={2} for="staticEmail">
                             Email
                         </Form.Label>
@@ -134,7 +134,7 @@ export function FormsDoc(): b.IBobrilNode {
                             <Form.Input type="text" readonly plain-text id="staticEmail" value="email@example.com" />
                         </Col>
                     </Row>
-                    <Row style={margin({ side: "b", size: 3 })}>
+                    <Row style={margin("b", 3)}>
                         <Form.Label col sm={2} for="inputPassword">
                             Password
                         </Form.Label>
@@ -145,7 +145,7 @@ export function FormsDoc(): b.IBobrilNode {
                 </Form>
             </Example>
             <Code language="tsx">{`<Form>
-    <Row style={margin({ side: "b", size: 3 })}>
+    <Row style={margin("b", 3)}>
         <Form.Label col sm={2} for="staticEmail">
             Email
         </Form.Label>
@@ -153,7 +153,7 @@ export function FormsDoc(): b.IBobrilNode {
             <Form.Input type="text" readonly plain-text id="staticEmail" value="email@example.com" />
         </Col>
     </Row>
-    <Row style={margin({ side: "b", size: 3 })}>
+    <Row style={margin("b", 3)}>
         <Form.Label col sm={2} for="inputPassword">
             Password
         </Form.Label>
@@ -166,19 +166,19 @@ export function FormsDoc(): b.IBobrilNode {
                 <h3>File input</h3>
             </Anchor>
             <Example>
-                <div style={margin({ side: "b", size: 3 })}>
+                <div style={margin("b", 3)}>
                     <Form.Label for="formFile">Default file input example</Form.Label>
                     <Form.Input type="file" id="formFile" />
                 </div>
-                <div style={margin({ side: "b", size: 3 })}>
+                <div style={margin("b", 3)}>
                     <Form.Label for="formFileMultiple">Multiple files input example</Form.Label>
                     <Form.Input type="file" id="formFileMultiple" multiple />
                 </div>
-                <div style={margin({ side: "b", size: 3 })}>
+                <div style={margin("b", 3)}>
                     <Form.Label for="formFileDisabled">Disabled file input example</Form.Label>
                     <Form.Input type="file" id="formFileDisabled" disabled />
                 </div>
-                <div style={margin({ side: "b", size: 3 })}>
+                <div style={margin("b", 3)}>
                     <Form.Label for="formFileSm">Small file input example</Form.Label>
                     <Form.Input size="sm" id="formFileSm" type="file" />
                 </div>
@@ -187,19 +187,19 @@ export function FormsDoc(): b.IBobrilNode {
                     <Form.Input size="lg" id="formFileLg" type="file" />
                 </div>
             </Example>
-            <Code language="tsx">{`<div style={margin({ side: "b", size: 3 })}>
+            <Code language="tsx">{`<div style={margin("b", 3)}>
     <Form.Label for="formFile">Default file input example</Form.Label>
     <Form.Input type="file" id="formFile" />
 </div>
-<div style={margin({ side: "b", size: 3 })}>
+<div style={margin("b", 3)}>
     <Form.Label for="formFileMultiple">Multiple files input example</Form.Label>
     <Form.Input type="file" id="formFileMultiple" multiple />
 </div>
-<div style={margin({ side: "b", size: 3 })}>
+<div style={margin("b", 3)}>
     <Form.Label for="formFileDisabled">Disabled file input example</Form.Label>
     <Form.Input type="file" id="formFileDisabled" disabled />
 </div>
-<div style={margin({ side: "b", size: 3 })}>
+<div style={margin("b", 3)}>
     <Form.Label for="formFileSm">
         Small file input example
     </Form.Label>

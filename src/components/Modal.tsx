@@ -18,8 +18,7 @@ export type IModal = bootstrap.Modal;
 interface IModalElementData {
     fade?: boolean;
     tabindex?: number;
-    show?: boolean;
-    "static-backdrop"?: boolean;
+    onHidePrevented?: () => void;
     onHide?: () => void;
     onHidden?: () => void;
     onShown?: () => void;
@@ -27,7 +26,7 @@ interface IModalElementData {
     "get-instance"?: (modal: IModal) => void;
 }
 
-export type IModalData = IModalElementData & IBaseElementDataWithChildren;
+export type IModalData = IModalElementData & IBaseElementDataWithChildren & Partial<bootstrap.Modal.Options>;
 
 export class Modal extends BaseElement<IModalData> {
     static id: string = "bobrilstrap-modal";
@@ -42,6 +41,7 @@ export class Modal extends BaseElement<IModalData> {
     private modal?: IModal;
 
     componentProperties = (): (keyof IModalData)[] => [
+        "onHidePrevented",
         "onHide",
         "onHidden",
         "onShown",
@@ -49,7 +49,9 @@ export class Modal extends BaseElement<IModalData> {
         "get-instance",
         /* "tabindex", */
         "fade",
-        "static-backdrop",
+        "backdrop",
+        "keyboard",
+        "focus",
     ];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
@@ -60,7 +62,6 @@ export class Modal extends BaseElement<IModalData> {
         return {
             ...super.componentAdditionalAttributes(),
             tabindex: this.data.tabindex || -1,
-            "data-bs-backdrop": this.data["static-backdrop"] ? "static" : this.data["data-bs-backdrop"],
         };
     }
 
@@ -80,12 +81,17 @@ export class Modal extends BaseElement<IModalData> {
     private registerCallback(): void {
         this.registerEvent("show.bs.modal", () => this.data.onShow && this.data.onShow());
         this.registerEvent("shown.bs.modal", () => this.data.onShown && this.data.onShown());
+        this.registerEvent("hidePrevented.bs.modal", () => this.data.onHidePrevented && this.data.onHidePrevented());
         this.registerEvent("hide.bs.modal", () => this.data.onHide && this.data.onHide());
         this.registerEvent("hidden.bs.modal", () => this.data.onHidden && this.data.onHidden());
     }
 
     private registerModal(): void {
-        this.modal = new bootstrap.Modal(this.element);
+        this.modal = new bootstrap.Modal(this.element, {
+            backdrop: this.data.backdrop ?? true,
+            keyboard: this.data.keyboard ?? true,
+            focus: this.data.focus ?? true,
+        });
         this.data["get-instance"] ? this.data["get-instance"](this.modal) : this.modal.show();
     }
 }

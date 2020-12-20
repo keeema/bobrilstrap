@@ -20,7 +20,7 @@
         "mixins",
         "popperjs",
         "prismjs",
-        "s",
+        "scrollable",
         "textareas",
         "tomasrut",
         "typeahead"

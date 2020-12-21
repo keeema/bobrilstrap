@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import { Tags } from "../../utils/tags";
-import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
+import { IBaseElementDataWithChildren, BaseElement, IAllAttrs } from "./BaseElement";
 import { NavItem } from "./NavItem";
 import { NavLink } from "./NavLink";
 
@@ -9,7 +9,7 @@ export const navStyles = {
     navbarNav: b.styleDef("navbar-nav"),
     pills: b.styleDef("nav-pills"),
     fill: b.styleDef("nav-fill"),
-    justified: b.styleDef("nav-justifed"),
+    justified: b.styleDef("nav-justified"),
     tabs: b.styleDef("nav-tabs"),
     cardHeaderTabs: b.styleDef("card-header-tabs"),
     cardHeaderPills: b.styleDef("card-header-pills"),
@@ -46,6 +46,13 @@ export class Nav extends BaseElement<INavData> {
 
     get tag(): Tags {
         return "ul";
+    }
+
+    componentAdditionalAttributes(): IAllAttrs {
+        return {
+            ...super.componentAdditionalAttributes(),
+            role: this.data.role || (this.data.tabs ? "tablist" : undefined),
+        };
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

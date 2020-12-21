@@ -1,6 +1,6 @@
 import * as b from "bobril";
 
-export type CalloutVariant = "warning" | "danger";
+export type CalloutVariant = "warning" | "danger" | "info";
 
 const calloutStyles = {
     callout: b.styleDef({
@@ -13,6 +13,7 @@ const calloutStyles = {
     }),
     warning: b.styleDef({ borderLeftColor: "#f0ad4e" }),
     danger: b.styleDef({ borderLeftColor: "#d9534f" }),
+    info: b.styleDef({ borderLeftColor: "#5bc0de" }),
 };
 
 export interface ICalloutData extends b.IDataWithChildren {

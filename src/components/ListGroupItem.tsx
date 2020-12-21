@@ -35,7 +35,7 @@ export interface IListGroupItemData extends IBaseElementDataWithChildren {
     onHide?: () => void;
     onShown?: () => void;
     onShow?: () => void;
-    "get-instance"?: (tab: ITab, element: HTMLElement) => void;
+    "get-instance"?: (tab: ITab) => void;
 }
 
 export class ListGroupItem extends BaseElement<IListGroupItemData> {
@@ -85,7 +85,7 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
 
     postInitDom(): void {
         const tab = new bootstrap.Tab(this.element);
-        this.data["get-instance"] && this.data["get-instance"](tab, this.element as HTMLDivElement);
+        this.data["get-instance"] && this.data["get-instance"](tab);
 
         this.registerCallbacks();
     }

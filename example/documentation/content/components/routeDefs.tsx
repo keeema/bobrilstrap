@@ -13,6 +13,7 @@ import { dropdownsRoute } from "./parts/Dropdowns";
 import { listGroupRoute } from "./parts/ListGroup";
 import { accordionsRoute } from "./parts/Accordion";
 import { modalRoute } from "./parts/Modal";
+import { navsAndTabsRoute } from "./parts/NavsTabs";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -33,5 +34,6 @@ export const components: IRouteWithNavDefinition = {
         dropdownsRoute,
         listGroupRoute,
         modalRoute,
+        navsAndTabsRoute,
     ],
 };

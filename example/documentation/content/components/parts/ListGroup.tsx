@@ -694,7 +694,7 @@ ${listGroupItemVariants
                 <OptionsRow>
                     {{
                         name: "get-instance",
-                        type: "(tab: ITab, element: HTMLElement) => void",
+                        type: "(tab: ITab) => void",
                         defaultValue: "undefined",
                         description: (
                             <p>

@@ -7,14 +7,15 @@ import { Nav } from "./Nav";
 import { NavbarToggler } from "./NavbarToggler";
 import { NavbarCollapse } from "./NavbarCollapse";
 import { Tags } from "../../utils/tags";
+import { NavbarText } from "./NavbarText";
 
 const breakpointsOrDefault: (Breakpoint | true)[] = [...breakpoints, true];
 
+export type NavbarPlacement = "fixed-top" | "fixed-bottom" | "sticky-top";
 export type NavbarColorSchema = "dark" | "light";
 
 export const navbarStyles = {
     navbar: b.styleDef("navbar"),
-    fixedTop: b.styleDef("fixed-top"),
     expand: createDictionary(
         breakpointsOrDefault.map((size) => [size, b.styleDef(size !== true ? `navbar-expand-${size}` : "navbar-expand")])
     ),
@@ -26,7 +27,6 @@ export const navbarStyles = {
 
 interface INavbarElementData {
     expand?: boolean | Breakpoint;
-    "fixed-top"?: boolean;
     "color-schema"?: NavbarColorSchema;
 }
 
@@ -36,11 +36,12 @@ export class Navbar extends BaseElement<INavbarData> {
     static id: string = "bobrilstrap-navbar";
 
     static Brand = NavbarBrand;
-    static Nav = Nav;
-    static Toggler = NavbarToggler;
     static Collapse = NavbarCollapse;
+    static Nav = Nav;
+    static Text = NavbarText;
+    static Toggler = NavbarToggler;
 
-    componentProperties = (): (keyof INavbarData)[] => ["expand", "color-schema", "fixed-top"];
+    componentProperties = (): (keyof INavbarData)[] => ["expand", "color-schema"];
 
     get tag(): Tags {
         return "nav";
@@ -50,8 +51,7 @@ export class Navbar extends BaseElement<INavbarData> {
         const data = this.data;
         return [
             navbarStyles.navbar,
-            data.expand !== false && navbarStyles.expand(data.expand ?? true),
-            data["fixed-top"] && navbarStyles.fixedTop,
+            data.expand && navbarStyles.expand(data.expand),
             data["color-schema"] && navbarStyles.colorSchema(data["color-schema"]),
         ];
     }

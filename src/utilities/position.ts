@@ -1,8 +1,30 @@
 import * as b from "bobril";
 import { createFilledDictionary } from "../../utils/dict";
+import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
-export type Position = "static" | "relative" | "absolute" | "fixed" | "sticky";
+export type PositionHelper = "static" | "relative" | "absolute" | "fixed" | "sticky";
 
-const positions: Position[] = ["static", "relative", "absolute", "fixed", "sticky"];
+const positionHelpers: PositionHelper[] = ["static", "relative", "absolute", "fixed", "sticky"];
+const positionHelper = createFilledDictionary(positionHelpers.map((value) => [value, b.styleDef(`position-${value}`)]));
 
-export const position = createFilledDictionary(positions.map((value) => [value, b.styleDef(`position-${value}`)]));
+export type PositionUtilityStickyTop = "sticky-top";
+export type PositionUtility = "fixed-top" | "fixed-bottom" | PositionUtilityStickyTop;
+
+const positionUtilities: PositionUtility[] = ["fixed-top", "fixed-bottom", "sticky-top"];
+const positionUtility = createFilledDictionary(positionUtilities.map((value) => [value, b.styleDef(`${value}`)]));
+const stickyTops = createFilledDictionary(breakpoints.map((value) => [value, b.styleDef(`sticky-${value}-top`)]));
+
+export function position(value: PositionUtility): b.IBobrilStyle;
+export function position(value: PositionHelper): b.IBobrilStyle;
+export function position(value: PositionUtilityStickyTop, breakpoint: Breakpoint): b.IBobrilStyle;
+export function position(value: PositionUtilityStickyTop | PositionHelper | PositionUtility, breakpoint?: Breakpoint): b.IBobrilStyle {
+    if (breakpoint !== undefined) {
+        return stickyTops(breakpoint);
+    }
+
+    return isPositionHelper(value) ? positionHelper(value) : positionUtility(value);
+}
+
+function isPositionHelper(value: PositionUtility | PositionHelper): value is PositionHelper {
+    return positionHelpers.indexOf(value as PositionHelper) >= 0;
+}

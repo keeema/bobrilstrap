@@ -73,6 +73,8 @@ export * from "./src/components/Navbar";
 export * from "./src/components/NavbarBrand";
 export * from "./src/components/NavbarCollapse";
 export * from "./src/components/NavbarToggler";
+export * from "./src/components/NavbarText";
+export * from "./src/components/NavbarTogglerIcon";
 export * from "./src/components/NavItem";
 export * from "./src/components/NavLink";
 export * from "./src/components/TabContent";

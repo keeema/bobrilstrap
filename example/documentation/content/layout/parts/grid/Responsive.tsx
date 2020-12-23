@@ -102,6 +102,7 @@ export function Responsive(): b.IBobrilNode {
             </p>
             <Example>
                 <Container>
+                    {/* Stack the columns on mobile by making one full-width and the other half-width */}
                     <Row>
                         <Col md={8} style={gridStyle}>
                             col-md-8
@@ -110,6 +111,7 @@ export function Responsive(): b.IBobrilNode {
                             col-6 col-md-4
                         </Col>
                     </Row>
+                    {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
                     <Row>
                         <Col span={6} md={4} style={gridStyle}>
                             col-6 col-md-4
@@ -121,6 +123,7 @@ export function Responsive(): b.IBobrilNode {
                             col-6 col-md-4
                         </Col>
                     </Row>
+                    {/* Columns are always 50% wide, on mobile and desktop  */}
                     <Row>
                         <Col span={6} style={gridStyle}>
                             col-6
@@ -132,33 +135,37 @@ export function Responsive(): b.IBobrilNode {
                 </Container>
             </Example>
             <Code language="tsx">{`<Container>
-    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-    <Row>
-        <Col md={8}>col-md-8</Col>
-        <Col span={6} md={4}>
-            col-6 col-md-4
-        </Col>
-    </Row>
-
-    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-    <Row>
-        <Col span={6} md={4}>
-            col-6 col-md-4
-        </Col>
-        <Col span={6} md={4}>
-            col-6 col-md-4
-        </Col>
-        <Col span={6} md={4}>
-            col-6 col-md-4
-        </Col>
-    </Row>
-
-    <!-- Columns are always 50% wide, on mobile and desktop -->
-    <Row>
-        <Col span={6}>col-6</Col>
-        <Col span={6}>col-6</Col>
-    </Row>
-</Container>`}</Code>
+                    {/* Stack the columns on mobile by making one full-width and the other half-width */}
+                    <Row>
+                        <Col md={8} style={gridStyle}>
+                            col-md-8
+                        </Col>
+                        <Col span={6} md={4} style={gridStyle}>
+                            col-6 col-md-4
+                        </Col>
+                    </Row>
+                    {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
+                    <Row>
+                        <Col span={6} md={4} style={gridStyle}>
+                            col-6 col-md-4
+                        </Col>
+                        <Col span={6} md={4} style={gridStyle}>
+                            col-6 col-md-4
+                        </Col>
+                        <Col span={6} md={4} style={gridStyle}>
+                            col-6 col-md-4
+                        </Col>
+                    </Row>
+                    {/* Columns are always 50% wide, on mobile and desktop  */}
+                    <Row>
+                        <Col span={6} style={gridStyle}>
+                            col-6
+                        </Col>
+                        <Col span={6} style={gridStyle}>
+                            col-6
+                        </Col>
+                    </Row>
+                </Container>`}</Code>
             <Anchor name="row-columns">
                 <h3>Row columns</h3>
             </Anchor>

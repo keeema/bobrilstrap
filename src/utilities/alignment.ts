@@ -43,6 +43,6 @@ export function justifyContent(alignment: Alignment, breakpoint?: Breakpoint): b
 }
 
 export type VerticalAlignment = "baseline" | "top" | "middle" | "bottom" | "text-bottom" | "text-top";
-const verticalAlignments = ["baseline", "top", "middle", "bottom", "text-bottom", "text-top"];
+const verticalAlignments: VerticalAlignment[] = ["baseline", "top", "middle", "bottom", "text-bottom", "text-top"];
 
 export const align = createDictionary(verticalAlignments.map((value) => [value, b.styleDef(`align-${value}`)]));

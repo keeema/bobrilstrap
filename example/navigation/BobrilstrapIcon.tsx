@@ -11,4 +11,4 @@ export function BobrilstrapIcon(): b.IBobrilNode {
     );
 }
 
-const bobrilstrapIconStyle = b.styleDef({ width: 32, height: 32, backgroundSize: 32 });
+export const bobrilstrapIconStyle = b.styleDef({ width: 32, height: 32, backgroundSize: 32 });

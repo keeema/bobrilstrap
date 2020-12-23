@@ -14,6 +14,7 @@ import { listGroupRoute } from "./parts/ListGroup";
 import { accordionsRoute } from "./parts/Accordion";
 import { modalRoute } from "./parts/Modal";
 import { navsAndTabsRoute } from "./parts/NavsTabs";
+import { navbarRoute } from "./parts/Navbar";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -35,5 +36,6 @@ export const components: IRouteWithNavDefinition = {
         listGroupRoute,
         modalRoute,
         navsAndTabsRoute,
+        navbarRoute,
     ],
 };

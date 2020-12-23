@@ -1,6 +1,6 @@
 import * as b from "bobril";
 import * as routes from "../routes";
-import { Navbar, backgroundColor, Nav, margin, Container } from "../../index";
+import { Navbar, backgroundColor, Nav, margin, Container, position } from "../../index";
 import { LinkItem } from "./Item";
 import { BobrilstrapIcon } from "./BobrilstrapIcon";
 import { NpmLink } from "./NpmLink";
@@ -9,18 +9,15 @@ import { BootstrapLink } from "./Bootstrap";
 import { BobrilLink } from "./Bobril";
 import { textAlign } from "../../src/utilities/textAlign";
 
-// TODO: temporary until icons are added
-const togglerIcon = b.styleDef("navbar-toggler-icon");
-
 export function Navigation(): b.IBobrilNode {
     const [collapsed, setCollapsed] = b.useState(true);
 
     return (
-        <Navbar fixed-top expand="md" color-schema="dark" style={[navbarStyle, backgroundColor("dark")]}>
+        <Navbar expand="md" color-schema="dark" style={[navbarStyle, backgroundColor("dark"), position("fixed-top")]}>
             <Container fluid>
                 <BobrilstrapIcon />
                 <Navbar.Toggler onClick={() => setCollapsed(!collapsed)}>
-                    <span style={togglerIcon}></span>
+                    <Navbar.Toggler.Icon />
                 </Navbar.Toggler>
                 <Navbar.Collapse collapsed={collapsed} onClick={() => setCollapsed(true)} style={[textAlign("center")]}>
                     <Nav navbar>

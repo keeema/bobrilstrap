@@ -143,8 +143,7 @@ export function NavbarDoc(): b.IBobrilNode {
                     <code>{`<Navbar.Nav navbar>`}</code> for a full-height and lightweight navigation (including support for dropdowns).
                 </li>
                 <li>
-                    <code>{`<Navbar.Toggler>`}</code> for use with our collapse plugin and other{" "}
-                    <a href="#responsive-behaviors">navigation toggling</a> behaviors.
+                    <code>{`<Navbar.Toggler>`}</code> for use with our collapse plugin and other navigation toggling behaviors.
                 </li>
                 <li>Flex and spacing utilities for any form controls and actions.</li>
                 <li>

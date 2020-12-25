@@ -93,8 +93,8 @@ export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.
 
     componentAdditionalAttributes(): IAllAttrs {
         return {
-            "aria-disabled": this.data.disabled ?? undefined,
-            "aria-readonly": this.data.readonly ?? undefined,
+            "aria-disabled": this.data.disabled ?? this.data["aria-disabled"],
+            "aria-readonly": this.data.readonly ?? this.data["aria-disabled"],
         };
     }
 

@@ -15,6 +15,7 @@ import { accordionsRoute } from "./parts/Accordion";
 import { modalRoute } from "./parts/Modal";
 import { navsAndTabsRoute } from "./parts/NavsTabs";
 import { navbarRoute } from "./parts/Navbar";
+import { paginationRoute } from "./parts/Pagination";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -37,5 +38,6 @@ export const components: IRouteWithNavDefinition = {
         modalRoute,
         navsAndTabsRoute,
         navbarRoute,
+        paginationRoute,
     ],
 };

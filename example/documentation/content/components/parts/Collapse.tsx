@@ -53,7 +53,11 @@ export function CollapseDoc(): b.IBobrilNode {
             <Anchor name="collapse-example">
                 <h2>Examples</h2>
             </Anchor>
-            <p>Click the buttons below to show and hide another element</p>
+            <p>Click the buttons below to show and hide another element.</p>
+            <p>
+                Collapse works automatically using <code>collapsed</code> prop with defined value or using controller from{" "}
+                <code>get-instance</code>prop.
+            </p>
             <Example>
                 <MultiCollapse />
             </Example>
@@ -157,6 +161,18 @@ export function CollapseDoc(): b.IBobrilNode {
                             <p>
                                 This event is fired when a collapse element has been made visible to the user (will wait for CSS transitions
                                 to complete).
+                            </p>
+                        ),
+                    }}
+                </OptionsRow>
+                <OptionsRow>
+                    {{
+                        name: "get-instance",
+                        type: "(collapse: ICollapse): void",
+                        defaultValue: "undefined",
+                        description: (
+                            <p>
+                                This callback is fired when alert is initialized and provides <code>collapse</code> as controller instance.
                             </p>
                         ),
                     }}

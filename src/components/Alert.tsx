@@ -25,7 +25,7 @@ export type IAlert = bootstrap.Alert;
 export interface IAlertData extends IBaseElementDataWithChildren {
     variant?: AlertVariant;
     dismissible?: boolean;
-    "dismiss-animation"?: boolean;
+    fade?: boolean;
     onDismiss?: () => void;
     onDismissed?: () => void;
     "get-instance"?: (alert: IAlert) => void;
@@ -36,25 +36,19 @@ export class Alert extends BaseElement<IAlertData> {
     static Heading = AlertHeading;
     static Link = AlertLink;
 
-    componentProperties = (): (keyof IAlertData)[] => [
-        "variant",
-        "dismissible",
-        "dismiss-animation",
-        "onDismiss",
-        "onDismissed",
-        "get-instance",
-    ];
+    componentProperties = (): (keyof IAlertData)[] => ["variant", "dismissible", "fade", "onDismiss", "onDismissed", "get-instance"];
 
     componentAdditionalAttributes(): IAllAttrs {
         return { ...super.componentAdditionalAttributes(), role: this.data.role || "alert" };
     }
 
     postInitDom(): void {
-        this.data.dismissible && this.registerCallback() && this.registerAlert();
+        this.registerAlert();
+        this.registerCallback();
     }
 
     postUpdateDom(): void {
-        this.data.dismissible && this.registerCallback();
+        this.registerCallback();
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
@@ -62,8 +56,8 @@ export class Alert extends BaseElement<IAlertData> {
             alertStyles.alert,
             alertStyles[this.data.variant ?? "primary"],
             this.data.children && alertStyles.dismissible,
-            this.data.dismissible && this.data["dismiss-animation"] && alertStyles.fade,
-            this.data.dismissible && this.data["dismiss-animation"] && alertStyles.show,
+            this.data.dismissible && this.data["fade"] && alertStyles.fade,
+            this.data.dismissible && this.data["fade"] && alertStyles.show,
         ];
     }
 

@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Alert, CloseButton, AlertVariant, Button, margin } from "../../../../../index";
+import { Alert, CloseButton, AlertVariant, Button, margin, IAlert } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { OptionsTable, OptionsRow } from "../../../../common/OptionsTable";
@@ -46,6 +46,13 @@ export const alertsRoute: IRouteWithNavDefinition = {
                     url: "native",
                     name: "alerts-dismissing-native",
                     label: "Bootstrap native",
+                    subs: [],
+                },
+
+                {
+                    url: "reactive-native",
+                    name: "alerts-dismissing-reactive-native",
+                    label: "Reactive and native",
                     subs: [],
                 },
             ],
@@ -134,9 +141,9 @@ export function Alerts(): b.IBobrilNode {
                 not supported in this case.
             </p>
             <Example>
-                <AlertDismissibleExample />
+                <AlertReactiveExample />
             </Example>
-            <Code language="tsx">{`function AlertDismissibleExample(): b.IBobrilNode {
+            <Code language="tsx">{`function AlertReactiveExample(): b.IBobrilNode {
     const [show, setShow] = b.useState(true);
 
     if (show) {
@@ -150,7 +157,7 @@ export function Alerts(): b.IBobrilNode {
     return <Button onClick={() => setShow(true)}>Show Alert</Button>;
 }
 
-<AlertDismissibleExample />`}</Code>
+<AlertReactiveExample />`}</Code>
             <Anchor name="alerts-dismissing-native">
                 <h3>Bootstrap native</h3>
             </Anchor>
@@ -158,27 +165,40 @@ export function Alerts(): b.IBobrilNode {
                 Use internal <code>Bootstrap</code> logic.
             </p>
             <Example>
-                <Alert
-                    variant="warning"
-                    dismissible
-                    dismiss-animation
-                    onDismiss={() => alert("Dismiss")}
-                    onDismissed={() => alert("Dismissed")}
-                >
+                <Alert variant="warning" dismissible fade onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
                     Holy guacamole! You should check in on some of those fields below.
                     <CloseButton dismiss-alert />
                 </Alert>
             </Example>
-            <Code language="tsx">{` <Alert
-    variant="warning"
-    dismissible
-    dismiss-animation
-    onDismiss={() => alert("Dismiss")}
-    onDismissed={() => alert("Dismissed")}
->
+            <Code language="tsx">{`<Alert variant="warning" dismissible fade onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
     Holy guacamole! You should check in on some of those fields below.
     <CloseButton dismiss-alert />
 </Alert>`}</Code>
+            <Anchor name="alerts-reactive-native">
+                <h3>Reactive and native</h3>
+            </Anchor>
+            <p>Better way is to combine reactive behavior with native controller and event callbacks:</p>
+            <Example>
+                <AlertReactiveNativeExample />
+            </Example>
+            <Code language="tsx">{`function AlertReactiveNativeExample(): b.IBobrilNode {
+    const [show, setShow] = b.useState(true);
+    const [alert, setAlert] = b.useState<IAlert>({} as IAlert);
+
+    if (show) {
+        return (
+            <span>
+                <Alert fade variant="danger" dismissible get-instance={(instance) => setAlert(instance)} onDismissed={() => setShow(false)}>
+                    Holy guacamole! You should check in on some of those fields below.
+                    <CloseButton onClick={() => alert.close()} />
+                </Alert>
+            </span>
+        );
+    }
+    return <Button onClick={() => setShow(true)}>Show Alert</Button>;
+}
+
+<AlertReactiveNativeExample />`}</Code>
             <Anchor name="alerts-api">
                 <h2>API</h2>
             </Anchor>
@@ -196,7 +216,7 @@ export function Alerts(): b.IBobrilNode {
                 </OptionsRow>
                 <OptionsRow>
                     {{
-                        name: "dismiss-animation",
+                        name: "fade",
                         type: "boolean",
                         defaultValue: "false",
                         description: "Animates alert dismiss.",
@@ -247,7 +267,7 @@ export function Alerts(): b.IBobrilNode {
     );
 }
 
-function AlertDismissibleExample(): b.IBobrilNode {
+function AlertReactiveExample(): b.IBobrilNode {
     const [show, setShow] = b.useState(true);
 
     if (show) {
@@ -256,6 +276,23 @@ function AlertDismissibleExample(): b.IBobrilNode {
                 Holy guacamole! You should check in on some of those fields below.
                 <CloseButton onClick={() => setShow(false)} />
             </Alert>
+        );
+    }
+    return <Button onClick={() => setShow(true)}>Show Alert</Button>;
+}
+
+function AlertReactiveNativeExample(): b.IBobrilNode {
+    const [show, setShow] = b.useState(true);
+    const [alert, setAlert] = b.useState<IAlert>({} as IAlert);
+
+    if (show) {
+        return (
+            <span>
+                <Alert fade variant="danger" dismissible get-instance={(instance) => setAlert(instance)} onDismissed={() => setShow(false)}>
+                    Holy guacamole! You should check in on some of those fields below.
+                    <CloseButton onClick={() => alert.close()} />
+                </Alert>
+            </span>
         );
     }
     return <Button onClick={() => setShow(true)}>Show Alert</Button>;

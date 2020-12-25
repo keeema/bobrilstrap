@@ -6,12 +6,15 @@ export const collapseStyles = {
     collapse: b.styleDef("collapse"),
 };
 
+export type ICollapse = bootstrap.Collapse;
+
 interface ICollapseElementData {
-    collapsed: boolean;
+    collapsed?: boolean;
     onCollapsed?: () => void;
     onCollapse?: () => void;
     onShown?: () => void;
     onShow?: () => void;
+    "get-instance"?: (collapse: ICollapse) => void;
 }
 
 export type ICollapseData = ICollapseElementData & IBaseElementDataWithChildren;
@@ -47,8 +50,10 @@ export class Collapse extends BaseElement<ICollapseData> {
 
         this.collapsedElement = this.element;
         this.firstLoad = false;
-        this.collapse = new bootstrap.Collapse(this.element, { toggle: !this.data.collapsed });
-
+        this.collapse = new bootstrap.Collapse(this.element, {
+            toggle: this.data.collapsed !== undefined ? !this.data.collapsed : undefined,
+        });
+        this.data["get-instance"] && this.data["get-instance"](this.collapse);
         this.collapsed = this.data.collapsed;
     }
     private registerCallbacks(): void {
@@ -59,9 +64,10 @@ export class Collapse extends BaseElement<ICollapseData> {
     }
 
     private handleToggle(): void {
-        if (!this.collapse) {
+        if (!this.collapse || this.data.collapsed === undefined) {
             return;
         }
+
         if (!!this.collapsed !== !!this.data.collapsed) {
             this.collapsed = !!this.data.collapsed;
             this.collapsed ? this.collapse.hide() : this.collapse.show();

@@ -218,10 +218,10 @@ export function Alignment(): b.IBobrilNode {
                         <Col span={6} sm={3} style={gridStyle}>
                             col-6 col-sm-3
                         </Col>
-
                         <Col span={6} sm={3} style={gridStyle}>
                             col-6 col-sm-3
                         </Col>
+                        {/* Force next columns to break to new line */}
                         <div style={width(100)} />
                         <Col span={6} sm={3} style={gridStyle}>
                             col-6 col-sm-3
@@ -240,7 +240,7 @@ export function Alignment(): b.IBobrilNode {
         <Col span={6} sm={3}>
             col-6 col-sm-3
         </Col>
-        <!-- Force next columns to break to new line -->
+        {/* Force next columns to break to new line */}
         <div style={width(100)} />
         <Col span={6} sm={3}>
             col-6 col-sm-3
@@ -257,10 +257,10 @@ export function Alignment(): b.IBobrilNode {
                         <Col span={6} sm={3} style={gridStyle}>
                             col-6 col-sm-3
                         </Col>
-
                         <Col span={6} sm={3} style={gridStyle}>
                             col-6 col-sm-3
                         </Col>
+                        {/* Force next columns to break to new line at md breakpoint and up */}
                         <div style={[width(100), display("none"), display("block", "md")]} />
                         <Col span={6} sm={3} style={gridStyle}>
                             col-6 col-sm-3
@@ -279,7 +279,7 @@ export function Alignment(): b.IBobrilNode {
         <Col span={6} sm={3}>
             col-6 col-sm-3
         </Col>
-        <!-- Force next columns to break to new line at md breakpoint and up -->
+        {/* Force next columns to break to new line at md breakpoint and up */}
         <div style={[width(100), display("none"), display("block", "md")]} />
         <Col span={6} sm={3}>
             col-6 col-sm-3

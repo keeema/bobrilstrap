@@ -46,7 +46,7 @@ export function Container(): b.IBobrilNode {
                 each breakpoint.
             </p>
             <Code language="tsx">{`<Container>
-  <!-- Content here -->
+  {/* Content here */}
 </Container>`}</Code>
             <Anchor name="fluid">
                 <h2>Fluid</h2>
@@ -55,7 +55,7 @@ export function Container(): b.IBobrilNode {
                 Use <code>{`<Container fluid>`}</code> for a full width container, spanning the entire width of the viewport.
             </p>
             <Code language="tsx">{`<Container fluid>
-  <!-- Content here -->
+  {/* Content here */}
 </Container>`}</Code>
             <Anchor name="responsive-breakpoints">
                 <h2>Responsive breakpoints</h2>

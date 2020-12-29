@@ -6,6 +6,7 @@ import { Button, display, Popover } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { OptionsRow, OptionsTable } from "../../../../common/OptionsTable";
+import { Callout } from "../../../../common/Callout";
 
 export const popoversRoute: IRouteWithNavDefinition = {
     url: "popovers",
@@ -100,6 +101,17 @@ export function PopoversDoc(): b.IBobrilNode {
                 Use the <code>focus</code> trigger to dismiss popovers on the user’s next click of a different element than the toggle
                 element.
             </p>
+            <Callout variant="danger">
+                <h5>Specific markup required for dismiss-on-next-click</h5>
+                <p>
+                    For proper cross-browser and cross-platform behavior, you must use the <code>{`<Button as="a">`}</code> and you also
+                    must include a{" "}
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex" target="_blank">
+                        <code>tabindex</code>
+                    </a>{" "}
+                    attribute.
+                </p>
+            </Callout>
             <Example>
                 <Popover trigger="focus" title="Dismissible popover" content="And here's some amazing content. It's very engaging. Right?">
                     <Button as="a" variant="danger" tabindex={0}>

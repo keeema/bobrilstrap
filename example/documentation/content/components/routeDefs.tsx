@@ -17,6 +17,7 @@ import { navsAndTabsRoute } from "./parts/NavsTabs";
 import { navbarRoute } from "./parts/Navbar";
 import { paginationRoute } from "./parts/Pagination";
 import { popoversRoute } from "./parts/Popovers";
+import { progressRoute } from "./parts/Progress";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -41,5 +42,6 @@ export const components: IRouteWithNavDefinition = {
         navbarRoute,
         paginationRoute,
         popoversRoute,
+        progressRoute,
     ],
 };

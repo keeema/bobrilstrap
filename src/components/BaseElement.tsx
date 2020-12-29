@@ -87,7 +87,7 @@ export const baseStyles = {
 export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.Component<TData> {
     private registeredHandlers = new Map<string, IEventHandler<Event>>();
 
-    get tag(): Tags {
+    get tag(): Tags | undefined {
         return "div";
     }
 
@@ -98,16 +98,17 @@ export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.
         };
     }
 
-    get recognizedTag(): Tags {
+    get recognizedTag(): Tags | undefined {
         return this.data.as ?? this.tag;
     }
 
     render(): b.IBobrilNode {
         const Tag = this.recognizedTag as any;
-        return (
-            <Tag style={this.styles} {...this.plainData} {...this.componentAdditionalAttributes()}>
-                {this.data.children}
-            </Tag>
+        const data = { style: this.styles, ...this.plainData, ...this.componentAdditionalAttributes() };
+        return Tag === undefined ? (
+            <b.Fragment {...data}>{this.data.children as b.IBobrilChildren}</b.Fragment>
+        ) : (
+            <Tag {...data}>{this.data.children}</Tag>
         );
     }
 

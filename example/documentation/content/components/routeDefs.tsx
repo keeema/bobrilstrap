@@ -16,6 +16,7 @@ import { modalRoute } from "./parts/Modal";
 import { navsAndTabsRoute } from "./parts/NavsTabs";
 import { navbarRoute } from "./parts/Navbar";
 import { paginationRoute } from "./parts/Pagination";
+import { popoversRoute } from "./parts/Popovers";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -39,5 +40,6 @@ export const components: IRouteWithNavDefinition = {
         navsAndTabsRoute,
         navbarRoute,
         paginationRoute,
+        popoversRoute,
     ],
 };

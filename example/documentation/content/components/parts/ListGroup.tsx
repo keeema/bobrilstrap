@@ -659,7 +659,7 @@ ${listGroupItemVariants
                 </OptionsRow>
                 <OptionsRow>
                     {{
-                        name: "onHiding",
+                        name: "onHidden",
                         type: "() => void",
                         defaultValue: "undefined",
                         description: (

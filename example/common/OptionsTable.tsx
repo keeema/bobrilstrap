@@ -4,7 +4,7 @@ import { tableStyle } from "./styles";
 
 export function OptionsTable({ children }: { children: b.IBobrilNode<IOptionRowData> | b.IBobrilNode<IOptionRowData>[] }): b.IBobrilNode {
     return (
-        <Table bordered striped style={[tableStyle, display("block"), display("table", "sm")]}>
+        <Table style={[tableStyle, display("block"), display("table", "sm")]}>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -30,9 +30,15 @@ export interface IOptionRowData {
 export function OptionsRow({ children }: IOptionRowData): b.IBobrilNode<IOptionRowData> {
     return (
         <tr>
-            <td>{children.name}</td>
-            <td>{children.type}</td>
-            <td>{children.defaultValue}</td>
+            <td>
+                <code>{children.name}</code>
+            </td>
+            <td>
+                <code>{children.type}</code>
+            </td>
+            <td>
+                <code>{children.defaultValue}</code>
+            </td>
             <td>{children.description}</td>
         </tr>
     );

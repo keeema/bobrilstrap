@@ -80,6 +80,7 @@ export * from "./src/components/NavLink";
 export * from "./src/components/Pagination";
 export * from "./src/components/PageItem";
 export * from "./src/components/PageLink";
+export * from "./src/components/Popover";
 export * from "./src/components/TabContent";
 export * from "./src/components/Table";
 export * from "./src/components/TabPane";

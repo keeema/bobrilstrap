@@ -421,7 +421,7 @@ export function ModalDoc(): b.IBobrilNode {
                     (breakpoint) => `<Modal.Dialog${breakpoint ? ` size="${breakpoint}"` : ""}>\n`
                 )}
             </Code>
-            <Anchor name="modal-fullscreen-model">
+            <Anchor name="modal-fullscreen-modal">
                 <h2>Fullscreen Modal</h2>
             </Anchor>
             <p>

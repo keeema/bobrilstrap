@@ -428,14 +428,14 @@ export function DropdownsDoc(): b.IBobrilNode {
             </Anchor>
             <p>
                 By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add set{" "}
-                <code>align="right"</code> to right align the dropdown menu.
+                <code>align="end"</code> to right align the dropdown menu.
             </p>
             <Example>
                 <Dropdown>
                     <Dropdown.Toggle variant="secondary" display-static>
                         Right-aligned menu
                     </Dropdown.Toggle>
-                    <Dropdown.Menu align="right">
+                    <Dropdown.Menu align="end">
                         <Dropdown.Item>Action</Dropdown.Item>
                         <Dropdown.Item>Another action</Dropdown.Item>
                         <Dropdown.Item>Something else here</Dropdown.Item>
@@ -444,7 +444,7 @@ export function DropdownsDoc(): b.IBobrilNode {
             </Example>
             <Code language="tsx">{`<Dropdown>
     <Dropdown.Toggle variant="secondary" display-static>Right-aligned menu/Dropdown.Toggle>
-    <Dropdown.Menu align="right">
+    <Dropdown.Menu align="end">
         <Dropdown.Item>Action</Dropdown.Item>
         <Dropdown.Item>Another action</Dropdown.Item>
         <Dropdown.Item>Something else here</Dropdown.Item>
@@ -462,7 +462,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                     <Dropdown.Toggle variant="secondary" display-static>
                         Left-aligned but right aligned when large screen
                     </Dropdown.Toggle>
-                    <Dropdown.Menu align-lg="right">
+                    <Dropdown.Menu align-lg="end">
                         <Dropdown.Item>Action</Dropdown.Item>
                         <Dropdown.Item>Another action</Dropdown.Item>
                         <Dropdown.Item>Something else here</Dropdown.Item>
@@ -471,7 +471,7 @@ export function DropdownsDoc(): b.IBobrilNode {
             </Example>
             <Code language="tsx">{`<Dropdown>
     <Dropdown.Toggle variant="secondary" display-static>Left-aligned but right aligned when large screen</Dropdown.Toggle>
-    <Dropdown.Menu align-lg="right">
+    <Dropdown.Menu align-lg="end">
         <Dropdown.Item>Action</Dropdown.Item>
         <Dropdown.Item>Another action</Dropdown.Item>
         <Dropdown.Item>Something else here</Dropdown.Item>
@@ -482,7 +482,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                     <Dropdown.Toggle variant="secondary" display-static>
                         Right-aligned but left aligned when large screen
                     </Dropdown.Toggle>
-                    <Dropdown.Menu align="right" align-lg="left">
+                    <Dropdown.Menu align="end" align-lg="start">
                         <Dropdown.Item>Action</Dropdown.Item>
                         <Dropdown.Item>Another action</Dropdown.Item>
                         <Dropdown.Item>Something else here</Dropdown.Item>
@@ -491,7 +491,7 @@ export function DropdownsDoc(): b.IBobrilNode {
             </Example>
             <Code language="tsx">{`<Dropdown>
     <Dropdown.Toggle variant="secondary" display-static>Right-aligned but left aligned when large screen</Dropdown.Toggle>
-    <Dropdown.Menu align="right" align-lg="left">
+    <Dropdown.Menu align="end" align-lg="start">
         <Dropdown.Item>Action</Dropdown.Item>
         <Dropdown.Item>Another action</Dropdown.Item>
         <Dropdown.Item>Something else here</Dropdown.Item>

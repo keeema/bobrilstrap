@@ -57,6 +57,12 @@ export const alertsRoute: IRouteWithNavDefinition = {
                 },
             ],
         },
+        {
+            url: "api",
+            name: "alerts-api",
+            label: "API",
+            subs: [],
+        },
     ],
 };
 
@@ -174,7 +180,7 @@ export function Alerts(): b.IBobrilNode {
     Holy guacamole! You should check in on some of those fields below.
     <CloseButton dismiss-alert />
 </Alert>`}</Code>
-            <Anchor name="alerts-reactive-native">
+            <Anchor name="alerts-dismissing-reactive-native">
                 <h3>Reactive and native</h3>
             </Anchor>
             <p>Better way is to combine reactive behavior with native controller and event callbacks:</p>

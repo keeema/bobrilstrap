@@ -3,8 +3,8 @@ import { createDictionary } from "../../utils/dict";
 import { Tags } from "../../utils/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 
-export type DropdownMenuAlignment = "left" | "right";
-const dropdownMenuAlignmentScale: DropdownMenuAlignment[] = ["left", "right"];
+export type DropdownMenuAlignment = "start" | "end";
+const dropdownMenuAlignmentScale: DropdownMenuAlignment[] = ["start", "end"];
 
 export const dropdownMenuStyles = {
     dropdownMenu: b.styleDef("dropdown-menu"),

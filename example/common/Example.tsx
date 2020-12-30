@@ -1,9 +1,9 @@
 import * as b from "bobril";
 import { clearfix } from "../../index";
 
-export function Example({ children }: b.IDataWithChildren): b.IBobrilNode {
+export function Example({ children, style }: b.IDataWithChildren & { style?: b.IBobrilStyles }): b.IBobrilNode {
     return (
-        <div style={[exampleRowStyle]}>
+        <div style={[exampleRowStyle, style]}>
             <div style={[exampleStyle, clearfix]}>{children}</div>
         </div>
     );

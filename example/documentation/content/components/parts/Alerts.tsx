@@ -154,7 +154,7 @@ export function Alerts(): b.IBobrilNode {
 
     if (show) {
         return (
-            <Alert variant="danger" dismissible>
+            <Alert variant="danger" >
                 Holy guacamole! You should check in on some of those fields below.
                 <CloseButton onClick={() => setShow(false)} />
             </Alert>
@@ -171,12 +171,12 @@ export function Alerts(): b.IBobrilNode {
                 Use internal <code>Bootstrap</code> logic.
             </p>
             <Example>
-                <Alert variant="warning" dismissible fade onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
+                <Alert variant="warning" fade onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
                     Holy guacamole! You should check in on some of those fields below.
                     <CloseButton dismiss-alert />
                 </Alert>
             </Example>
-            <Code language="tsx">{`<Alert variant="warning" dismissible fade onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
+            <Code language="tsx">{`<Alert variant="warning"  fade onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
     Holy guacamole! You should check in on some of those fields below.
     <CloseButton dismiss-alert />
 </Alert>`}</Code>
@@ -194,7 +194,7 @@ export function Alerts(): b.IBobrilNode {
     if (show) {
         return (
             <span>
-                <Alert fade variant="danger" dismissible get-instance={(instance) => setAlert(instance)} onDismissed={() => setShow(false)}>
+                <Alert fade variant="danger"  get-instance={(instance) => setAlert(instance)} onDismissed={() => setShow(false)}>
                     Holy guacamole! You should check in on some of those fields below.
                     <CloseButton onClick={() => alert.close()} />
                 </Alert>
@@ -212,14 +212,6 @@ export function Alerts(): b.IBobrilNode {
                 Carousel is controlled by <code>alert controller</code> provided in the callback prop <code>get-instance</code>.
             </p>
             <OptionsTable>
-                <OptionsRow>
-                    {{
-                        name: "dismissible",
-                        type: "boolean",
-                        defaultValue: "false",
-                        description: "Preserves layout for close button.",
-                    }}
-                </OptionsRow>
                 <OptionsRow>
                     {{
                         name: "fade",
@@ -278,7 +270,7 @@ function AlertReactiveExample(): b.IBobrilNode {
 
     if (show) {
         return (
-            <Alert variant="danger" dismissible>
+            <Alert variant="danger">
                 Holy guacamole! You should check in on some of those fields below.
                 <CloseButton onClick={() => setShow(false)} />
             </Alert>
@@ -294,7 +286,7 @@ function AlertReactiveNativeExample(): b.IBobrilNode {
     if (show) {
         return (
             <span>
-                <Alert fade variant="danger" dismissible get-instance={(instance) => setAlert(instance)} onDismissed={() => setShow(false)}>
+                <Alert fade variant="danger" get-instance={(instance) => setAlert(instance)} onDismissed={() => setShow(false)}>
                     Holy guacamole! You should check in on some of those fields below.
                     <CloseButton onClick={() => alert.close()} />
                 </Alert>

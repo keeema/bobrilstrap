@@ -24,7 +24,6 @@ export type IAlert = bootstrap.Alert;
 
 export interface IAlertData extends IBaseElementDataWithChildren {
     variant?: AlertVariant;
-    dismissible?: boolean;
     fade?: boolean;
     onDismiss?: () => void;
     onDismissed?: () => void;
@@ -36,7 +35,7 @@ export class Alert extends BaseElement<IAlertData> {
     static Heading = AlertHeading;
     static Link = AlertLink;
 
-    componentProperties = (): (keyof IAlertData)[] => ["variant", "dismissible", "fade", "onDismiss", "onDismissed", "get-instance"];
+    componentProperties = (): (keyof IAlertData)[] => ["variant", "fade", "onDismiss", "onDismissed", "get-instance"];
 
     componentAdditionalAttributes(): IAllAttrs {
         return { ...super.componentAdditionalAttributes(), role: this.data.role || "alert" };
@@ -55,9 +54,9 @@ export class Alert extends BaseElement<IAlertData> {
         return [
             alertStyles.alert,
             alertStyles[this.data.variant ?? "primary"],
-            this.data.children && alertStyles.dismissible,
-            this.data.dismissible && this.data["fade"] && alertStyles.fade,
-            this.data.dismissible && this.data["fade"] && alertStyles.show,
+            alertStyles.dismissible,
+            this.data["fade"] && alertStyles.fade,
+            this.data["fade"] && alertStyles.show,
         ];
     }
 

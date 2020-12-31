@@ -19,6 +19,7 @@ import { paginationRoute } from "./parts/Pagination";
 import { popoversRoute } from "./parts/Popovers";
 import { progressRoute } from "./parts/Progress";
 import { spinnersRoute } from "./parts/Spinners";
+import { toastsRoute } from "./parts/Toasts";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -45,5 +46,6 @@ export const components: IRouteWithNavDefinition = {
         popoversRoute,
         progressRoute,
         spinnersRoute,
+        toastsRoute,
     ],
 };

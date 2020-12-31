@@ -173,12 +173,12 @@ export function Alerts(): b.IBobrilNode {
             <Example>
                 <Alert variant="warning" fade onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
                     Holy guacamole! You should check in on some of those fields below.
-                    <CloseButton dismiss-alert />
+                    <CloseButton dismiss="alert" />
                 </Alert>
             </Example>
             <Code language="tsx">{`<Alert variant="warning"  fade onDismiss={() => alert("Dismiss")} onDismissed={() => alert("Dismissed")}>
     Holy guacamole! You should check in on some of those fields below.
-    <CloseButton dismiss-alert />
+    <CloseButton dismiss="alert" />
 </Alert>`}</Code>
             <Anchor name="alerts-dismissing-reactive-native">
                 <h3>Reactive and native</h3>
@@ -209,7 +209,7 @@ export function Alerts(): b.IBobrilNode {
                 <h2>API</h2>
             </Anchor>
             <p>
-                Carousel is controlled by <code>alert controller</code> provided in the callback prop <code>get-instance</code>.
+                Alert is controlled by <code>alert controller</code> provided in the callback prop <code>get-instance</code>.
             </p>
             <OptionsTable>
                 <OptionsRow>

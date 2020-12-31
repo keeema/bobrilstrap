@@ -51,6 +51,7 @@ export interface IButtonData extends IBaseElementDataWithChildren {
     href?: string;
     size?: Breakpoint;
     type?: "button" | "submit" | "reset";
+    dismiss?: "alert" | "toast";
 }
 
 // TODO: Check behavior of disabled link in old browsers
@@ -62,7 +63,7 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
 
     // Note: keep synced with all derived components
     componentProperties(): (keyof TData)[] {
-        return ["variant", "size" /* , "href" */, "type"];
+        return ["variant", "size" /* , "href" */, "type", "dismiss"];
     }
 
     get tag(): Tags {
@@ -83,6 +84,7 @@ export class Button<TData extends IButtonData> extends BaseElement<TData> {
             type: this.data.type ?? (this.isButtonOrInput ? "button" : undefined),
             role: this.data.role ?? (this.isAnchor ? "button" : undefined),
             href: this.data.href ?? (this.isAnchor ? "javascript:void(0)" : undefined),
+            "data-bs-dismiss": this.data["data-bs-dismiss"] ?? this.data.dismiss,
         };
     }
 

@@ -8,7 +8,7 @@ export const closeButtonStyles = {
 };
 
 export interface ICloseButtonData extends IBaseElementDataWithChildren {
-    "dismiss-alert"?: boolean;
+    dismiss?: "alert" | "toast";
     white?: boolean;
 }
 
@@ -25,11 +25,11 @@ export class CloseButton extends BaseElement<ICloseButtonData> {
 
     componentAdditionalAttributes(): IAttrs {
         return {
-            "data-bs-dismiss": this.data["data-bs-dismiss"] || (this.data["dismiss-alert"] ? "alert" : undefined),
+            "data-bs-dismiss": this.data["data-bs-dismiss"] ?? this.data.dismiss,
         };
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [this.data.white ? closeButtonStyles.closeWhite : closeButtonStyles.close];
+        return [closeButtonStyles.close, this.data.white && closeButtonStyles.closeWhite];
     }
 }

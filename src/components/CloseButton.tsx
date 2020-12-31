@@ -8,7 +8,7 @@ export const closeButtonStyles = {
 };
 
 export interface ICloseButtonData extends IBaseElementDataWithChildren {
-    dismiss?: "alert" | "toast";
+    dismiss?: "alert" | "toast" | "modal";
     white?: boolean;
 }
 

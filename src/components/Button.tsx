@@ -51,7 +51,7 @@ export interface IButtonData extends IBaseElementDataWithChildren {
     href?: string;
     size?: Breakpoint;
     type?: "button" | "submit" | "reset";
-    dismiss?: "alert" | "toast";
+    dismiss?: "alert" | "toast" | "modal";
 }
 
 // TODO: Check behavior of disabled link in old browsers

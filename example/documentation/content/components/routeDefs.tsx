@@ -20,6 +20,8 @@ import { popoversRoute } from "./parts/Popovers";
 import { progressRoute } from "./parts/Progress";
 import { spinnersRoute } from "./parts/Spinners";
 import { toastsRoute } from "./parts/Toasts";
+import { tooltipsRoute } from "./parts/Tooltips";
+import { closeButtonRoute } from "./parts/CloseButton";
 
 export const components: IRouteWithNavDefinition = {
     url: "components",
@@ -36,6 +38,7 @@ export const components: IRouteWithNavDefinition = {
         buttonGroupRoute,
         cardsRoute,
         carouselRoute,
+        closeButtonRoute,
         collapseRoute,
         dropdownsRoute,
         listGroupRoute,
@@ -47,5 +50,6 @@ export const components: IRouteWithNavDefinition = {
         progressRoute,
         spinnersRoute,
         toastsRoute,
+        tooltipsRoute,
     ],
 };

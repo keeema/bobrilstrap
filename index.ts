@@ -91,6 +91,7 @@ export * from "./src/components/Toast";
 export * from "./src/components/ToastBody";
 export * from "./src/components/ToastContainer";
 export * from "./src/components/ToastHeader";
+export * from "./src/components/Tooltip";
 export * from "./src/content/typography/display";
 export * from "./src/content/typography/lead";
 export * from "./src/layouts/breakpoint";

@@ -27,7 +27,7 @@ const spacings = createFilledDictionary(
     ])
 );
 
-export const spacingOnBreakpoints = createFilledDictionary(
+const spacingOnBreakpoints = createFilledDictionary(
     spacingTypes.map((spacingType) => [
         spacingType,
         createFilledDictionary(

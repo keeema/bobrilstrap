@@ -35,7 +35,7 @@ export const containersRoute: IRouteWithNavDefinition = {
 export function Container(): b.IBobrilNode {
     return (
         <>
-            <Anchor name="container">
+            <Anchor name="containers">
                 <h1>Container</h1>
             </Anchor>
             <Anchor name="all-in-one">

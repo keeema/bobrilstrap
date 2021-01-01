@@ -23,7 +23,7 @@ import { toastsRoute } from "./parts/Toasts";
 import { tooltipsRoute } from "./parts/Tooltips";
 import { closeButtonRoute } from "./parts/CloseButton";
 
-export const components: IRouteWithNavDefinition = {
+export const componentsRoute: IRouteWithNavDefinition = {
     url: "components",
     name: "components",
     label: "Components",

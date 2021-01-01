@@ -5,9 +5,9 @@ import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 export type Display = "none" | "inline" | "inline-block" | "block" | "table" | "table-cell" | "table-row" | "flex" | "inline-flex" | "grid";
 const displays: Display[] = ["none", "inline", "inline-block", "block", "table", "table-cell", "table-row", "flex", "inline-flex", "grid"];
 
-export const displaysOnAll = createFilledDictionary(displays.map((orderValue) => [orderValue, b.styleDef(`d-${orderValue}`)]));
+const displaysOnAll = createFilledDictionary(displays.map((orderValue) => [orderValue, b.styleDef(`d-${orderValue}`)]));
 
-export const displaysOnBreakpoint = createFilledDictionary(
+const displaysOnBreakpoint = createFilledDictionary(
     breakpoints.map((breakpoint) => [
         breakpoint,
         createFilledDictionary(displays.map((orderNo) => [orderNo, b.styleDef(`d-${breakpoint}-${orderNo}`)])),

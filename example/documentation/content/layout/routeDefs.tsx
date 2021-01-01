@@ -6,7 +6,7 @@ import { containersRoute } from "./parts/Container";
 import { gridRoute } from "./parts/grid/Grid";
 import { guttersRoute } from "./parts/Gutters";
 
-export const layout: IRouteWithNavDefinition = {
+export const layoutRoute: IRouteWithNavDefinition = {
     url: "layout",
     name: "layout",
     label: "Layout",

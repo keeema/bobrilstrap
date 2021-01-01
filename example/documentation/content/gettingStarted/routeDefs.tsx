@@ -3,7 +3,7 @@ import { IRouteWithNavDefinition } from "../../../common/routing";
 import { introductionRoute } from "./parts/Introduction";
 import { GettingStarted } from "./GettingStarted";
 
-export const gettingStarted: IRouteWithNavDefinition = {
+export const gettingStartedRoute: IRouteWithNavDefinition = {
     url: "getting-started",
     name: "getting-started",
     label: "Getting started",

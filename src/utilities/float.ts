@@ -5,9 +5,9 @@ import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 export type Float = "start" | "none" | "end";
 const floats: Float[] = ["start", "none", "end"];
 
-export const floatsAll = createFilledDictionary(floats.map((value) => [value, b.styleDef(`float-${value}`)]));
+const floatsAll = createFilledDictionary(floats.map((value) => [value, b.styleDef(`float-${value}`)]));
 
-export const floatsOnBreakpoint = createFilledDictionary(
+const floatsOnBreakpoint = createFilledDictionary(
     breakpoints.map((breakpoint) => [
         breakpoint,
         createFilledDictionary(floats.map((value) => [value, b.styleDef(`float-${breakpoint}-${value}`)])),

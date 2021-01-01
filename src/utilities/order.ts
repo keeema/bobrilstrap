@@ -5,9 +5,9 @@ import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 export type Order = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | "first" | "last";
 const orderScale: Order[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, "first", "last"];
 
-export const ordersOnAll = createFilledDictionary(orderScale.map((orderValue) => [orderValue, b.styleDef(`order-${orderValue}`)]));
+const ordersOnAll = createFilledDictionary(orderScale.map((orderValue) => [orderValue, b.styleDef(`order-${orderValue}`)]));
 
-export const ordersOnBreakpoint = createFilledDictionary(
+const ordersOnBreakpoint = createFilledDictionary(
     breakpoints.map((breakpoint) => [
         breakpoint,
         createFilledDictionary(orderScale.map((orderNo) => [orderNo, b.styleDef(`order-${breakpoint}-${orderNo}`)])),

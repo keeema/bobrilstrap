@@ -11,7 +11,7 @@ import { rangeRoute } from "./parts/Range";
 import { selectRoute } from "./parts/Select";
 import { validationsRoute } from "./parts/Validations";
 
-export const forms: IRouteWithNavDefinition = {
+export const formsRoute: IRouteWithNavDefinition = {
     url: "forms",
     name: "forms",
     label: "Forms",

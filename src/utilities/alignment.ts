@@ -2,9 +2,9 @@ import * as b from "bobril";
 import { createDictionary, createFilledDictionary } from "../../utils/dict";
 import { breakpoints, Breakpoint } from "../layouts/breakpoint";
 
-export type Alignment = "start" | "center" | "end" | "between" | "around";
+export type Alignment = "start" | "center" | "end" | "baseline" | "stretch";
 
-const alignments: Alignment[] = ["start", "center", "end", "between", "around"];
+const alignments: Alignment[] = ["start", "center", "end", "baseline", "stretch"];
 
 const alignsItems = createDictionary(alignments.map((value) => [value, b.styleDef(`align-items-${value}`)]));
 const alignsItemsOnBreakpoint = createFilledDictionary(
@@ -30,16 +30,20 @@ export function alignSelf(alignment: Alignment, breakpoint?: Breakpoint): b.IBob
     return breakpoint ? alignSelfsOnBreakpoint(breakpoint)(alignment as Alignment) : alignSelfs(alignment);
 }
 
-const justifyContents = createDictionary(alignments.map((value) => [value, b.styleDef(`justify-content-${value}`)]));
+export type ContentAlignment = "start" | "center" | "end" | "between" | "around" | "evenly";
+
+const contentAlignments: ContentAlignment[] = ["start", "center", "end", "between", "around", "evenly"];
+
+const justifyContents = createDictionary(contentAlignments.map((value) => [value, b.styleDef(`justify-content-${value}`)]));
 const justifyContentsOnBreakpoint = createFilledDictionary(
     breakpoints.map((breakpoint) => [
         breakpoint,
-        createFilledDictionary(alignments.map((value) => [value, b.styleDef(`justify-content-${breakpoint}-${value}`)])),
+        createFilledDictionary(contentAlignments.map((value) => [value, b.styleDef(`justify-content-${breakpoint}-${value}`)])),
     ])
 );
 
-export function justifyContent(alignment: Alignment, breakpoint?: Breakpoint): b.IBobrilStyle {
-    return breakpoint ? justifyContentsOnBreakpoint(breakpoint)(alignment as Alignment) : justifyContents(alignment);
+export function justifyContent(alignment: ContentAlignment, breakpoint?: Breakpoint): b.IBobrilStyle {
+    return breakpoint ? justifyContentsOnBreakpoint(breakpoint)(alignment) : justifyContents(alignment);
 }
 
 export type VerticalAlignment = "baseline" | "top" | "middle" | "bottom" | "text-bottom" | "text-top";

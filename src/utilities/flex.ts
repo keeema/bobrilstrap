@@ -2,11 +2,12 @@ import * as b from "bobril";
 import { createFilledDictionary } from "../../utils/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
-export type Flex = "nowrap" | "wrap" | "wrap-reverse" | "row" | "row-revers" | "column" | "column-reverse" | "fill";
+export type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
+export type Flex = "nowrap" | "wrap" | "wrap-reverse" | FlexDirection | "fill";
 export type FlexGrowShrink = "grow" | "shrink";
 export type FlexGrowShringValue = 0 | 1;
 
-const flexScale: Flex[] = ["nowrap", "wrap", "wrap-reverse", "row", "row-revers", "column", "column-reverse", "fill"];
+const flexScale: Flex[] = ["nowrap", "wrap", "wrap-reverse", "row", "row-reverse", "column", "column-reverse", "fill"];
 const flexGrowShrinkScale: FlexGrowShrink[] = ["grow", "shrink"];
 const flexGrowShrinkValueScale: FlexGrowShringValue[] = [0, 1];
 

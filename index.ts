@@ -1,4 +1,6 @@
+import * as b from "bobril";
 import "bootstrap";
+b.asset("./node_modules/bootstrap/dist/css/bootstrap.min.css.map");
 export * from "./src/components/Accordion";
 export * from "./src/components/AccordionItem";
 export * from "./src/components/AccordionHeader";
@@ -105,6 +107,7 @@ export * from "./src/helpers/stretchedLink";
 export * from "./src/helpers/textTruncate";
 export * from "./src/utilities/alignment";
 export * from "./src/helpers/clearfix";
+export * from "./src/utilities/border";
 export * from "./src/utilities/color";
 export * from "./src/utilities/display";
 export * from "./src/utilities/font";

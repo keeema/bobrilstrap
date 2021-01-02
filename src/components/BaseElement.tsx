@@ -1,6 +1,7 @@
 import * as b from "bobril";
 import { omit } from "../../utils/objectHelper";
 import { Tags } from "../../utils/tags";
+import { invisible, visible } from "../utilities/visibility";
 
 export interface IAria {
     "aria-activedescendant"?: string;
@@ -79,8 +80,8 @@ export interface IBaseElementData extends IBaseElementDataBase {
 export interface IBaseElementDataWithChildren extends b.IDataWithChildren, IBaseElementDataBase {}
 
 export const baseStyles = {
-    visible: b.styleDef("visible"),
-    invisible: b.styleDef("invisible"),
+    visible: visible,
+    invisible: invisible,
     active: b.styleDef("active"),
 };
 

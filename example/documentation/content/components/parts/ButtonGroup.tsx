@@ -5,7 +5,7 @@ import { Example } from "../../../../common/Example";
 import { Button, InputGroup, margin, justifyContent, Dropdown, Form } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { font } from "../../../../../src/utilities/font";
+import { fontWeight } from "../../../../../src/utilities/font";
 
 export const buttonGroupRoute: IRouteWithNavDefinition = {
     url: "button-groups",
@@ -278,7 +278,7 @@ export function ButtonGroup(): b.IBobrilNode {
             </Anchor>
             <p>
                 Make a set of buttons appear vertically stacked rather than horizontally.{" "}
-                <span style={font("bold")}>Split button dropdowns are not supported here.</span>
+                <span style={fontWeight("bold")}>Split button dropdowns are not supported here.</span>
             </p>
             <Example>
                 <Button.Group vertical aria-label="Vertical button group">

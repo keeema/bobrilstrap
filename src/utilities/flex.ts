@@ -3,13 +3,15 @@ import { createFilledDictionary } from "../../utils/dict";
 import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
 export type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
-export type Flex = "nowrap" | "wrap" | "wrap-reverse" | FlexDirection | "fill";
+export type FlexWrap = "nowrap" | "wrap" | "wrap-reverse";
+export type FlexFill = "fill";
+export type Flex = FlexWrap | FlexDirection | FlexFill;
 export type FlexGrowShrink = "grow" | "shrink";
-export type FlexGrowShringValue = 0 | 1;
+export type FlexGrowShrinkValue = 0 | 1;
 
 const flexScale: Flex[] = ["nowrap", "wrap", "wrap-reverse", "row", "row-reverse", "column", "column-reverse", "fill"];
 const flexGrowShrinkScale: FlexGrowShrink[] = ["grow", "shrink"];
-const flexGrowShrinkValueScale: FlexGrowShringValue[] = [0, 1];
+const flexGrowShrinkValueScale: FlexGrowShrinkValue[] = [0, 1];
 
 const flexOnAll = createFilledDictionary(flexScale.map((flexValue) => [flexValue, b.styleDef(`flex-${flexValue}`)]));
 const flexGrowShringOnAll = createFilledDictionary(
@@ -48,11 +50,11 @@ const flexGrowShringOnBreakpoint = createFilledDictionary(
     ])
 );
 
-export function flex(flexGrowShring: FlexGrowShrink, value: FlexGrowShringValue, breakpoint?: Breakpoint): b.IBobrilStyle;
-export function flex(flex: Flex, breakpoint?: Breakpoint): b.IBobrilStyle;
+export function flex(flexValue: Flex, breakpoint?: Breakpoint): b.IBobrilStyle;
+export function flex(flexGrowShring: FlexGrowShrink, value: FlexGrowShrinkValue, breakpoint?: Breakpoint): b.IBobrilStyle;
 export function flex(
     flexOrGrowShrink: Flex | FlexGrowShrink,
-    breakpointOrValue?: Breakpoint | FlexGrowShringValue,
+    breakpointOrValue?: Breakpoint | FlexGrowShrinkValue,
     breakpoint?: Breakpoint
 ): b.IBobrilStyle {
     if (typeof breakpointOrValue === "number") {

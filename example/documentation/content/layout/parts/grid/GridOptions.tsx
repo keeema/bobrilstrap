@@ -1,5 +1,5 @@
 import * as b from "bobril";
-import { display, font, Table } from "../../../../../../index";
+import { display, fontWeight, Table } from "../../../../../../index";
 import { Anchor } from "../../../../../common/Anchor";
 import { tableStyle } from "../../../../../common/styles";
 
@@ -15,41 +15,41 @@ export function GridOptions(): b.IBobrilNode {
                     <tr>
                         <th></th>
                         <th>
-                            <span style={font("bold")}>Extra small</span>
+                            <span style={fontWeight("bold")}>Extra small</span>
                             <br />
-                            <span style={font("normal")}>{"<576px"}</span>
+                            <span style={fontWeight("normal")}>{"<576px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>Small</span>
+                            <span style={fontWeight("bold")}>Small</span>
                             <br />
-                            <span style={font("normal")}>{"≥576px"}</span>
+                            <span style={fontWeight("normal")}>{"≥576px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>Medium</span>
+                            <span style={fontWeight("bold")}>Medium</span>
                             <br />
-                            <span style={font("normal")}>{"≥768px"}</span>
+                            <span style={fontWeight("normal")}>{"≥768px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>Large</span>
+                            <span style={fontWeight("bold")}>Large</span>
                             <br />
-                            <span style={font("normal")}>{"≥992px"}</span>
+                            <span style={fontWeight("normal")}>{"≥992px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>Extra large</span>
+                            <span style={fontWeight("bold")}>Extra large</span>
                             <br />
-                            <span style={font("normal")}>{"≥1200px"}</span>
+                            <span style={fontWeight("normal")}>{"≥1200px"}</span>
                         </th>{" "}
                         <th>
-                            <span style={font("bold")}>Extra Extra large</span>
+                            <span style={fontWeight("bold")}>Extra Extra large</span>
                             <br />
-                            <span style={font("normal")}>{"≥1400px"}</span>
+                            <span style={fontWeight("normal")}>{"≥1400px"}</span>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th>
-                            <span style={font("bold")}>Max container width</span>
+                            <span style={fontWeight("bold")}>Max container width</span>
                         </th>
                         <td>None (auto)</td>
                         <td>540px</td>
@@ -60,7 +60,7 @@ export function GridOptions(): b.IBobrilNode {
                     </tr>
                     <tr>
                         <th>
-                            <span style={font("bold")}>Component</span>
+                            <span style={fontWeight("bold")}>Component</span>
                         </th>
                         <td>
                             <code>{`<Col>`}</code>
@@ -83,31 +83,31 @@ export function GridOptions(): b.IBobrilNode {
                     </tr>
                     <tr>
                         <th>
-                            <span style={font("bold")}># of columns</span>
+                            <span style={fontWeight("bold")}># of columns</span>
                         </th>
                         <td colspan="6">12</td>
                     </tr>
                     <tr>
                         <th>
-                            <span style={font("bold")}>Gutter width</span>
+                            <span style={fontWeight("bold")}>Gutter width</span>
                         </th>
                         <td colspan="6">1.5rem (.75rem on left and right)</td>
                     </tr>
                     <tr>
                         <th>
-                            <span style={font("bold")}>Custom gutters</span>
+                            <span style={fontWeight("bold")}>Custom gutters</span>
                         </th>
                         <td colspan="6">Yes</td>
                     </tr>{" "}
                     <tr>
                         <th>
-                            <span style={font("bold")}>Nestable</span>
+                            <span style={fontWeight("bold")}>Nestable</span>
                         </th>
                         <td colspan="6">Yes</td>
                     </tr>
                     <tr>
                         <th>
-                            <span style={font("bold")}>Column ordering</span>
+                            <span style={fontWeight("bold")}>Column ordering</span>
                         </th>
                         <td colspan="5">Yes</td>
                     </tr>

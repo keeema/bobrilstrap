@@ -4,11 +4,12 @@ import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
 export type SpacingType = "m" | "p";
 export type Side = "t" | "b" | "s" | "e" | "x" | "y" | "";
-export type SpacingSize = -5 | -4 | -3 | -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | "auto";
+export type SpacingSize = 0 | 1 | 2 | 3 | 4 | 5 | "auto";
+export type MarginSpacingSize = -5 | -4 | -3 | -2 | -1 | SpacingSize;
 
 const spacingTypes: SpacingType[] = ["m", "p"];
 const sides: Side[] = ["t", "b", "s", "e", "x", "y", ""];
-const spacingSizes: SpacingSize[] = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, "auto"];
+const spacingSizes: MarginSpacingSize[] = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, "auto"];
 
 const spacings = createFilledDictionary(
     spacingTypes.map((spacingType) => [
@@ -57,12 +58,11 @@ export interface ISpacing {
     side?: Side;
 }
 
-export function margin(side: Side, size: SpacingSize, breakpoint?: Breakpoint): b.IBobrilStyle;
-export function margin(size: SpacingSize, breakpoint?: Breakpoint): b.IBobrilStyle;
-export function margin(definition: ISpacing): b.IBobrilStyle;
+export function margin(side: Side, size: MarginSpacingSize, breakpoint?: Breakpoint): b.IBobrilStyle;
+export function margin(size: MarginSpacingSize, breakpoint?: Breakpoint): b.IBobrilStyle;
 export function margin(
-    definitionOrSizeOrSide: ISpacing | SpacingSize | Side,
-    sizeOrBreakpoint?: SpacingSize | Breakpoint,
+    definitionOrSizeOrSide: ISpacing | MarginSpacingSize | Side,
+    sizeOrBreakpoint?: MarginSpacingSize | Breakpoint,
     breakpoint?: Breakpoint
 ): b.IBobrilStyle {
     return spacing("m", definitionOrSizeOrSide, sizeOrBreakpoint, breakpoint);
@@ -70,7 +70,6 @@ export function margin(
 
 export function padding(side: Side, size: SpacingSize, breakpoint?: Breakpoint): b.IBobrilStyle;
 export function padding(size: SpacingSize, breakpoint?: Breakpoint): b.IBobrilStyle;
-export function padding(definition: ISpacing): b.IBobrilStyle;
 export function padding(
     definitionOrSizeOrSide: ISpacing | SpacingSize | Side,
     sizeOrBreakpoint?: SpacingSize | Breakpoint,
@@ -81,8 +80,8 @@ export function padding(
 
 export function spacing(
     spacingType: SpacingType,
-    definitionOrSizeOrSide: ISpacing | SpacingSize | Side,
-    sizeOrBreakpoint?: SpacingSize | Breakpoint,
+    definitionOrSizeOrSide: ISpacing | MarginSpacingSize | Side,
+    sizeOrBreakpoint?: MarginSpacingSize | Breakpoint,
     breakpoint?: Breakpoint
 ): b.IBobrilStyle {
     const fullDef = isSpacingDefinition(definitionOrSizeOrSide)
@@ -93,19 +92,19 @@ export function spacing(
         : spacings(spacingType)(fullDef.side ?? "")(fullDef.size);
 }
 
-function isSpacingDefinition(definition: ISpacing | SpacingSize | Side): definition is ISpacing {
+function isSpacingDefinition(definition: ISpacing | MarginSpacingSize | Side): definition is ISpacing {
     return typeof definition === "object" && definition.size !== undefined;
 }
 
-export type GapSize = 0 | 1 | 2 | 3 | 4 | 5 | "auto";
+export type GapSize = 0 | 1 | 2 | 3 | 4 | 5;
 
-const gapSizes: GapSize[] = [0, 1, 2, 3, 4, 5, "auto"];
+const gapSizes: GapSize[] = [0, 1, 2, 3, 4, 5];
 
 export const gap = createFilledDictionary(gapSizes.map((size) => [size, b.styleDef(`gap-${size}`)]));
 
 function convertToSpaceDefinition(
-    sizeOrSide: SpacingSize | Side,
-    sizeOrBreakpoint?: SpacingSize | Breakpoint,
+    sizeOrSide: MarginSpacingSize | Side,
+    sizeOrBreakpoint?: MarginSpacingSize | Breakpoint,
     breakpoint?: Breakpoint
 ): ISpacing {
     return typeof sizeOrSide === "string" && sizeOrSide !== "auto"

@@ -14,17 +14,13 @@ export function createDictionary<TKey, TValue>(entries?: readonly (readonly [TKe
 }
 
 export interface IFilledDictionary<TKey, TValue> {
-    (key: TKey, value?: TValue): TValue;
+    (key: TKey): TValue;
 }
 
 export function createFilledDictionary<TKey, TValue>(entries: readonly (readonly [TKey, TValue])[]): IFilledDictionary<TKey, TValue> {
     const map = new Map<TKey, TValue>(entries);
-    return (key: TKey, value?: TValue) => {
-        if (value !== undefined) {
-            map.set(key, value);
-        }
-
-        value = map.get(key);
+    return (key: TKey) => {
+        const value = map.get(key);
         if (value === undefined && !map.has(key)) {
             throw new Error(`Key ${key} not found in dictionary where it should be.`);
         }

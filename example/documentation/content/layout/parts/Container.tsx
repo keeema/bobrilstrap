@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Code } from "../../../../common/Code";
-import { Table, font, display, textColor } from "../../../../../index";
+import { Table, fontWeight, display, textColor } from "../../../../../index";
 import { tableStyle } from "../../../../common/styles";
 
 export const containersRoute: IRouteWithNavDefinition = {
@@ -76,34 +76,34 @@ export function Container(): b.IBobrilNode {
                     <tr>
                         <th></th>
                         <th>
-                            <span style={font("bold")}>Extra small</span>
+                            <span style={fontWeight("bold")}>Extra small</span>
                             <br />
-                            <span style={font("normal")}>{"<576px"}</span>
+                            <span style={fontWeight("normal")}>{"<576px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>Small</span>
+                            <span style={fontWeight("bold")}>Small</span>
                             <br />
-                            <span style={font("normal")}>{"≥576px"}</span>
+                            <span style={fontWeight("normal")}>{"≥576px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>Medium</span>
+                            <span style={fontWeight("bold")}>Medium</span>
                             <br />
-                            <span style={font("normal")}>{"≥768px"}</span>
+                            <span style={fontWeight("normal")}>{"≥768px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>Large</span>
+                            <span style={fontWeight("bold")}>Large</span>
                             <br />
-                            <span style={font("normal")}>{"≥992px"}</span>
+                            <span style={fontWeight("normal")}>{"≥992px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>X-Large</span>
+                            <span style={fontWeight("bold")}>X-Large</span>
                             <br />
-                            <span style={font("normal")}>{"≥1200px"}</span>
+                            <span style={fontWeight("normal")}>{"≥1200px"}</span>
                         </th>
                         <th>
-                            <span style={font("bold")}>XX-Large</span>
+                            <span style={fontWeight("bold")}>XX-Large</span>
                             <br />
-                            <span style={font("normal")}>{"≥1400px"}</span>
+                            <span style={fontWeight("normal")}>{"≥1400px"}</span>
                         </th>
                     </tr>
                 </thead>

@@ -4,7 +4,7 @@ import { Breakpoint, breakpoints } from "../layouts/breakpoint";
 
 export type PositionHelper = "static" | "relative" | "absolute" | "fixed" | "sticky";
 
-const positionHelpers: PositionHelper[] = ["static", "relative", "absolute", "fixed", "sticky"];
+export const positionHelpers: PositionHelper[] = ["static", "relative", "absolute", "fixed", "sticky"];
 const positionHelper = createFilledDictionary(positionHelpers.map((value) => [value, b.styleDef(`position-${value}`)]));
 
 export type PositionUtilityStickyTop = "sticky-top";
@@ -36,3 +36,16 @@ export const top = createFilledDictionary(positionValues.map((value) => [value, 
 export const start = createFilledDictionary(positionValues.map((value) => [value, b.styleDef(`start-${value}`)]));
 export const bottom = createFilledDictionary(positionValues.map((value) => [value, b.styleDef(`bottom-${value}`)]));
 export const end = createFilledDictionary(positionValues.map((value) => [value, b.styleDef(`end-${value}`)]));
+
+export type TranslateMiddle = "x" | "y";
+const translateMiddles: TranslateMiddle[] = ["x", "y"];
+const translateMiddleValue = createFilledDictionary(
+    [undefined, ...translateMiddles].map((value) => [
+        value,
+        value ? b.styleDef(`translate-middle-${value}`) : b.styleDef(`translate-middle`),
+    ])
+);
+
+export function translateMiddle(axis?: TranslateMiddle): b.IBobrilStyle {
+    return translateMiddleValue(axis);
+}

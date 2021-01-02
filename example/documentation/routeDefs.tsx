@@ -8,12 +8,13 @@ import { iconsRoute } from "./content/icons/Icons";
 import { formsRoute } from "./content/forms/routeDefs";
 import { helpersRoute } from "./content/helpers/routeDefs";
 import { utilitiesRoute } from "./content/utilites/routeDefs";
+import { contentRoute } from "./content/content/routeDefs";
 
 export const documentation: IRouteWithNavDefinition = {
     url: "documentation",
     name: "documentation",
     label: "Documentation",
     handler: (data) => <Documentation {...data} />,
-    subs: [gettingStartedRoute, layoutRoute, componentsRoute, formsRoute, helpersRoute, utilitiesRoute, iconsRoute],
+    subs: [gettingStartedRoute, layoutRoute, contentRoute, formsRoute, componentsRoute, helpersRoute, utilitiesRoute, iconsRoute],
     default: gettingStartedRoute,
 };

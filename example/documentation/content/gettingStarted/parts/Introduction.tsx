@@ -41,7 +41,11 @@ export function Introduction(): b.IBobrilNode {
             </Anchor>
             <Lead>Learn how to create application with Bobrilstrap.</Lead>
             <p>
-                New in Bobril? See the <a href="https://bobril.com/">documentation page</a>.
+                New in Bobril? See the{" "}
+                <a href="https://bobril.com/" target="_blank">
+                    documentation page
+                </a>
+                .
             </p>
             <Anchor name="installation">
                 <h2>Installation</h2>

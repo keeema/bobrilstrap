@@ -2,11 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Col, gutter, Row } from "../../../../../index";
+import { Col, gutter, Row, Form, margin } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { Form } from "../../../../../src/components/Form";
-import { margin } from "../../../../../src/utilities/spacing";
 
 export const floatingLabelsRoute: IRouteWithNavDefinition = {
     url: "floating-labels",

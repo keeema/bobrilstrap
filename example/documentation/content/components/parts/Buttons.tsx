@@ -2,10 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button, Col, display, gap, justifyContent, margin } from "../../../../../index";
+import { Button, Col, display, gap, justifyContent, margin, ButtonVariant } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { ButtonVariant } from "../../../../../src/components/Button";
 
 export const buttonsRoute: IRouteWithNavDefinition = {
     url: "buttons",

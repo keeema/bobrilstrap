@@ -2,10 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button, InputGroup, margin, justifyContent, Dropdown, Form } from "../../../../../index";
+import { Button, InputGroup, margin, justifyContent, Dropdown, Form, fontWeight } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { fontWeight } from "../../../../../src/utilities/font";
 
 export const buttonGroupRoute: IRouteWithNavDefinition = {
     url: "button-groups",

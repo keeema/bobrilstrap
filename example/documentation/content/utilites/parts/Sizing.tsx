@@ -2,10 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { backgroundColor, display, padding, width, height } from "../../../../../index";
+import { backgroundColor, display, padding, width, height, margin } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { margin } from "../../../../../src/utilities/spacing";
 
 export const sizingRoute: IRouteWithNavDefinition = {
     url: "sizing",

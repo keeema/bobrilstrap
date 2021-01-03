@@ -2,14 +2,24 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Breakpoint, Button, Col, Container, display, IModal, Modal, Row, Table } from "../../../../../index";
+import {
+    Breakpoint,
+    Button,
+    Col,
+    Container,
+    display,
+    IModal,
+    Modal,
+    Row,
+    Table,
+    CloseButton,
+    margin,
+    breakpoints,
+} from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { CloseButton } from "../../../../../src/components/CloseButton";
 import { LongContent } from "../../../../common/LoremIpsim";
-import { margin } from "../../../../../src/utilities/spacing";
 import { gridStyle, tableStyle } from "../../../../common/styles";
-import { breakpoints } from "../../../../../src/layouts/breakpoint";
 import { OptionsTable, OptionsRow } from "../../../../common/OptionsTable";
 
 export const modalRoute: IRouteWithNavDefinition = {

@@ -4,9 +4,8 @@ import { Anchor } from "../../../common/Anchor";
 import { Code } from "../../../common/Code";
 import { Lead } from "../../../common/Lead";
 import { Example } from "../../../common/Example";
-import { Card, Icon, textColor, textAlign, Row, Col } from "../../../../index";
+import { Card, Icon, textColor, textAlign, Row, Col, margin } from "../../../../index";
 import { toPascalCase } from "../../../../utils/strings";
-import { margin } from "../../../../src/utilities/spacing";
 
 export const iconsRoute: IRouteWithNavDefinition = {
     url: "icons",

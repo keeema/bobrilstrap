@@ -2,10 +2,23 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Table, TBody, THead, Td, Th, Tr, borderColor, width, align, margin } from "../../../../../index";
+import {
+    Table,
+    TBody,
+    THead,
+    Td,
+    Th,
+    Tr,
+    borderColor,
+    width,
+    align,
+    margin,
+    tableResponsive,
+    tableVariants,
+    TFoot,
+} from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { tableResponsive, tableVariants, TFoot } from "../../../../../src/components/Table";
 import { Callout } from "../../../../common/Callout";
 
 export const tablesRoute: IRouteWithNavDefinition = {

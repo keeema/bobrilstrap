@@ -2,12 +2,10 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Dropdown, flex, ITab, Nav, TabContent, TabPane, textAlign } from "../../../../../index";
+import { Dropdown, flex, ITab, Nav, TabContent, TabPane, textAlign, justifyContent, margin } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { Callout } from "../../../../common/Callout";
-import { justifyContent } from "../../../../../src/utilities/alignment";
-import { margin } from "../../../../../src/utilities/spacing";
 
 export const navsAndTabsRoute: IRouteWithNavDefinition = {
     url: "navs-and-tabs",

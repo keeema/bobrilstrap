@@ -2,10 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { padding, Container, Row, Col, overflow } from "../../../../../index";
+import { padding, Container, Row, Col, overflow, gutter, gutterX, gutterY } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { gutter, gutterX, gutterY } from "../../../../../src/utilities/gutters";
 import { gridStyle } from "../../../../common/styles";
 
 export const guttersRoute: IRouteWithNavDefinition = {

@@ -17,12 +17,12 @@ import {
     textColor,
     ButtonGroup,
     Button,
+    TabPane,
+    ITab,
 } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { Callout } from "../../../../common/Callout";
-import { TabPane } from "../../../../../src/components/TabPane";
-import { ITab } from "../../../../../src/components/ListGroupItem";
 import { OptionsTable, OptionsRow } from "../../../../common/OptionsTable";
 
 export const listGroupRoute: IRouteWithNavDefinition = {

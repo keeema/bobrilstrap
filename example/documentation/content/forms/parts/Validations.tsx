@@ -2,11 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Button, Col, Form, margin, Row, Feedback, gutter } from "../../../../../index";
+import { Button, Col, Form, margin, Row, Feedback, gutter, position, InputGroup } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { position } from "../../../../../src/utilities/position";
-import { InputGroup } from "../../../../../src/components/InputGroup";
 
 export const validationsRoute: IRouteWithNavDefinition = {
     url: "validations",

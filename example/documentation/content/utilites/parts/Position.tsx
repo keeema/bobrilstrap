@@ -21,11 +21,12 @@ import {
     borderColor,
     rounded,
     Progress,
+    display,
+    margin,
+    padding,
 } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { display } from "../../../../../src/utilities/display";
-import { margin, padding } from "../../../../../src/utilities/spacing";
 
 export const positionRoute: IRouteWithNavDefinition = {
     url: "position-utility",

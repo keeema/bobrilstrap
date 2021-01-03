@@ -2,10 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Table } from "../../../../../index";
+import { Table, align, verticalAlignments } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { align, verticalAlignments } from "../../../../../src/utilities/alignment";
 
 export const verticalAlignmentRoute: IRouteWithNavDefinition = {
     url: "vertical-alignment",

@@ -2,10 +2,22 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Blockquote, Col, displayHeading, Figure, heading, initialism, lead, List, Row, textAlign, textColor } from "../../../../../index";
+import {
+    Blockquote,
+    Col,
+    displayHeading,
+    Figure,
+    heading,
+    initialism,
+    lead,
+    List,
+    Row,
+    textAlign,
+    textColor,
+    text,
+} from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { text } from "../../../../../src/utilities/text";
 
 export const typographyRoute: IRouteWithNavDefinition = {
     url: "typography",

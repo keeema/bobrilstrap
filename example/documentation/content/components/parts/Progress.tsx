@@ -2,10 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { margin, Progress, BackgroundGradientColor } from "../../../../../index";
+import { margin, Progress, BackgroundGradientColor, backgroundColor } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { backgroundColor } from "../../../../../src/utilities/color";
 
 export const progressRoute: IRouteWithNavDefinition = {
     url: "progress",

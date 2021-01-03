@@ -2,10 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { backgroundColor, margin, padding, rounded } from "../../../../../index";
+import { backgroundColor, margin, padding, rounded, shadow } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { shadow } from "../../../../../src/utilities/shadow";
 
 export const shadowsRoute: IRouteWithNavDefinition = {
     url: "shadows",

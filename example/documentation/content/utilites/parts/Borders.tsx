@@ -2,11 +2,10 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { border, borderColor, borderColorScale, borderWidths, rounded, roundedScale } from "../../../../../index";
+import { border, borderColor, borderColorScale, borderWidths, rounded, roundedScale, margin } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { placeholderUri } from "../../../../common/placeholderGenerator";
-import { margin } from "../../../../../src/utilities/spacing";
 
 export const bordersRoute: IRouteWithNavDefinition = {
     url: "borders",

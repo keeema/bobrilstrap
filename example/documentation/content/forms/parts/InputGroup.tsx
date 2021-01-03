@@ -2,14 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Dropdown, InputGroup, margin } from "../../../../../index";
+import { Dropdown, InputGroup, margin, Form, flex, Button, visuallyHidden } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { Form } from "../../../../../src/components/Form";
-import { flex } from "../../../../../src/utilities/flex";
-import { Button } from "../../../../../src/components/Button";
-import { visuallyHidden } from "../../../../../src/helpers/screenReaders";
-// import { CustomControl } from "../../../../../src/components/CustomControl";
 
 export const inputGroupRoute: IRouteWithNavDefinition = {
     url: "input-group",

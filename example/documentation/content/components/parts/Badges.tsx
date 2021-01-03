@@ -2,10 +2,9 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Badge, visuallyHidden, Button, BadgeVariant } from "../../../../../index";
+import { Badge, visuallyHidden, Button, BadgeVariant, textColor } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { textColor } from "../../../../../src/utilities/color";
 
 export const badgesRoute: IRouteWithNavDefinition = {
     url: "badges",

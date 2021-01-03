@@ -1,13 +1,12 @@
 import * as b from "bobril";
 import * as routes from "../routes";
-import { Navbar, backgroundColor, Nav, margin, Container, position } from "../../index";
+import { Navbar, backgroundColor, Nav, margin, Container, position, textAlign } from "../../index";
 import { LinkItem } from "./Item";
 import { BobrilstrapIcon } from "./BobrilstrapIcon";
 import { NpmLink } from "./NpmLink";
 import { GithubLink } from "./Github";
 import { BootstrapLink } from "./Bootstrap";
 import { BobrilLink } from "./Bobril";
-import { textAlign } from "../../src/utilities/textAlign";
 
 export function Navigation(): b.IBobrilNode {
     const [collapsed, setCollapsed] = b.useState(true);

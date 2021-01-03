@@ -2,10 +2,22 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { alignItems, Button, Col, Form, InputGroup, margin, padding, Row, visuallyHidden } from "../../../../../index";
+import {
+    alignItems,
+    Button,
+    Col,
+    Form,
+    InputGroup,
+    margin,
+    padding,
+    Row,
+    visuallyHidden,
+    gutter,
+    gutterX,
+    gutterY,
+} from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { gutter, gutterX, gutterY } from "../../../../../src/utilities/gutters";
 
 export const formLayoutRoute: IRouteWithNavDefinition = {
     url: "form-layout",

@@ -18,10 +18,11 @@ import {
     end,
     position,
     IToast,
+    margin,
+    padding,
 } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
-import { margin, padding } from "../../../../../src/utilities/spacing";
 import { OptionsTable, OptionsRow } from "../../../../common/OptionsTable";
 
 export const bobrilstrapIconStyle = b.styleDef({ width: 21, height: 21, backgroundSize: 21 });

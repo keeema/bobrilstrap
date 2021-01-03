@@ -2,11 +2,10 @@ import * as b from "bobril";
 import { IRouteWithNavDefinition } from "../../../../common/routing";
 import { Anchor } from "../../../../common/Anchor";
 import { Example } from "../../../../common/Example";
-import { Carousel, ICarousel, visuallyHidden } from "../../../../../index";
+import { Carousel, ICarousel, visuallyHidden, width } from "../../../../../index";
 import { Code } from "../../../../common/Code";
 import { Lead } from "../../../../common/Lead";
 import { image1, image2, image3 } from "./carouselImages";
-import { width } from "../../../../../src/utilities/sizing";
 import { OptionsRow, OptionsTable } from "../../../../common/OptionsTable";
 
 export const carouselRoute: IRouteWithNavDefinition = {

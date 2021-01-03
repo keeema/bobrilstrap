@@ -10,8 +10,17 @@ export function SecondarySidebar(): b.IBobrilNode {
         ? currentFirstLevelDocumentationRoute
         : currentActiveSubRoute(currentFirstLevelDocumentationRoute);
     return (
-        <Col as="nav" xl={2} style={[sidebarStyle, display("none"), display("block", "xl")]}>
-            <ul style={[sectionStyle, currentSecondLevelDocumentationRoute.subs.length && sectionBorderStyle]}>
+        <Col
+            as="nav"
+            xl={2}
+            style={[
+                sidebarStyle,
+                display("none"),
+                display("block", "xl"),
+                currentSecondLevelDocumentationRoute.subs.length && sectionBorderStyle,
+            ]}
+        >
+            <ul style={[sectionStyle]}>
                 {currentSecondLevelDocumentationRoute.subs.map((sub) => (
                     <SecondarySidebarItem route={sub} />
                 ))}

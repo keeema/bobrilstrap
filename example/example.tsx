@@ -12,4 +12,6 @@ import "../node_modules/prism-themes/themes/prism-darcula.css";
 import * as routes from "./routes";
 import { bobrilNavRoute } from "./common/routing";
 
+b.asset("../node_modules/bootstrap/dist/css/bootstrap.min.css.map");
+
 b.routes(b.route(routes.main, [b.route(routes.home), bobrilNavRoute(routes.documentation), b.routeDefault(routes.home)]));

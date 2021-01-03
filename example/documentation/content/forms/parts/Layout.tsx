@@ -50,6 +50,13 @@ export const formLayoutRoute: IRouteWithNavDefinition = {
             label: "Auto sizing",
             subs: [],
         },
+
+        {
+            url: "inline-forms",
+            name: "form-layout-inline-forms",
+            label: "Inline forms",
+            subs: [],
+        },
     ],
 };
 

@@ -83,6 +83,7 @@ export const baseStyles = {
     visible: visible,
     invisible: invisible,
     active: b.styleDef("active"),
+    tableActive: b.styleDef("table-active"),
 };
 
 export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.Component<TData> {
@@ -144,7 +145,8 @@ export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.
         return [
             (this.data.visible === true || this.data.invisible === false) && baseStyles.visible,
             (this.data.invisible === true || this.data.visible === false) && baseStyles.invisible,
-            this.data.active && baseStyles.active,
+            this.data.active &&
+                (["th", "td", "tr"].indexOf(this.recognizedTag as string) >= 0 ? baseStyles.tableActive : baseStyles.active),
         ];
     }
 

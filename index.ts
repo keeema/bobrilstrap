@@ -1,7 +1,4 @@
-import * as b from "bobril";
 import "bootstrap";
-b.asset("./node_modules/bootstrap/dist/css/bootstrap.min.css.map");
-
 export * from "./src/components/Accordion";
 export * from "./src/components/AccordionItem";
 export * from "./src/components/AccordionHeader";

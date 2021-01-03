@@ -137,10 +137,7 @@ export function TypographyDoc(): b.IBobrilNode {
             <Anchor name="typography-global-settings">
                 <h2>Global settings</h2>
             </Anchor>
-            <p>
-                Basic global display, typography, and link styles are set. When more control is needed, check out the textual utility
-                classes.
-            </p>
+            <p>Basic global display, typography, and link styles are set. When more control is needed, check out the textual utility.</p>
             <Anchor name="typography-headings">
                 <h2>Headings</h2>
             </Anchor>
@@ -162,8 +159,8 @@ export function TypographyDoc(): b.IBobrilNode {
 <h5>h5 heading</h5>
 <h6>h6 heading</h6>`}</Code>
             <p>
-                <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a
-                heading but cannot use the associated HTML element.
+                <code>heading(1)</code> through <code>heading(6)</code> utilities are also available, for when you want to match the font
+                styling of a heading but cannot use the associated HTML element.
             </p>
             <Example>
                 <p style={heading(1)}>h1 heading</p>
@@ -182,7 +179,7 @@ export function TypographyDoc(): b.IBobrilNode {
             <Anchor name="typography-headings-customizing-headings">
                 <h3>Customizing headings</h3>
             </Anchor>
-            <p>Use the included utility classes to recreate the small secondary heading text from Bootstrap 3.</p>
+            <p>Use the included utilities to recreate the small secondary heading text from Bootstrap 3.</p>
             <Example>
                 <h3>
                     Fancy display heading <small style={textColor("muted")}> With faded secondary text</small>
@@ -430,8 +427,8 @@ export function TypographyDoc(): b.IBobrilNode {
             </Anchor>
             <p>
                 Remove the default <code>list-style</code> and left margin on list items (immediate children only).{" "}
-                <strong>This only applies to immediate children list items</strong>, meaning you will need to add the class for any nested
-                lists as well.
+                <strong>This only applies to immediate children list items</strong>, meaning you will need to use the component for any
+                nested lists as well.
             </p>
             <Example>
                 <List unstyled>
@@ -498,7 +495,7 @@ export function TypographyDoc(): b.IBobrilNode {
                 <h3>Description list alignment</h3>
             </Anchor>
             <p>
-                Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic mixins). For longer
+                Align terms and descriptions horizontally by using our grid system’s predefined styles (or semantic mixins). For longer
                 terms, you can optionally add a <code>text("truncate")</code> style to truncate the text with an ellipsis.
             </p>
             <Example>

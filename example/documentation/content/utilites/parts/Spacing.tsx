@@ -61,8 +61,8 @@ export function SpacingDoc(): b.IBobrilNode {
             </Anchor>
             <p>
                 Spacing utilities that apply to all breakpoints, from <code>xs</code> to <code>xxl</code>, have no breakpoint abbreviation
-                in them. This is because those classes are applied from <code>min-width: 0</code> and up, and thus are not bound by a media
-                query. The remaining breakpoints, however, do include a breakpoint abbreviation.
+                in them. This is because those utility styles are applied from <code>min-width: 0</code> and up, and thus are not bound by a
+                media query. The remaining breakpoints, however, do include a breakpoint abbreviation.
             </p>
             <p>
                 The utility functions are named using the format <code>{`{property}("{sides}", {size})`}</code> for <code>xs</code> and{" "}

@@ -71,7 +71,7 @@ export function PositionDoc(): b.IBobrilNode {
             <Anchor name="position-utility-values">
                 <h2>Position values</h2>
             </Anchor>
-            <p>Quick positioning classes are available, though they are not responsive.</p>
+            <p>Quick positioning utilities are available, though they are not responsive.</p>
             <Code language="tsx">{positionHelpers.map((pos) => `<div style={position("${pos}"}>...</div>\n`)}</Code>
             <Anchor name="position-utility-arrange-elements">
                 <h2>Arrange elements</h2>
@@ -135,11 +135,11 @@ export function PositionDoc(): b.IBobrilNode {
                 <h2>Center elements</h2>
             </Anchor>
             <p>
-                This class applies the transformations <code>translateX(-50%)</code> and <code>translateY(-50%)</code> to the element which,
-                in combination with the edge positioning utilities, allows you to absolute center an element.
+                This utility applies the transformations <code>translateX(-50%)</code> and <code>translateY(-50%)</code> to the element
+                which, in combination with the edge positioning utilities, allows you to absolute center an element.
             </p>
             <p>
-                In addition, you can also center the elements with the transform utility class <code>translateMiddle</code>.
+                In addition, you can also center the elements with the transform utility <code>translateMiddle</code>.
             </p>
             <Example>
                 <div style={[position("relative"), backgroundColor("secondary"), h200pxStyle]}>

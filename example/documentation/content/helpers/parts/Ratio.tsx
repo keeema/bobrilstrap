@@ -64,7 +64,7 @@ export function RatioDoc(): b.IBobrilNode {
             </Anchor>
             <p>
                 Wrap any embed, like an <code>&lt;iframe&gt;</code>, in a parent element with <code>ratio</code> style and an aspect ratio
-                class. The immediate child element is automatically sized thanks to universal style <code>ratio-*</code>.
+                utility. The immediate child element is automatically sized thanks to universal style <code>ratio-*</code>.
             </p>
             <Example>
                 <div style={ratio("16x9")}>
@@ -77,7 +77,7 @@ export function RatioDoc(): b.IBobrilNode {
             <Anchor name="ratio-aspect-ratios">
                 <h2>Aspect ratios</h2>
             </Anchor>
-            <p>Aspect ratios can be customized with modifier classes. By default the following ratio classes are provided: </p>
+            <p>Aspect ratios can be customized with modifier utilities. By default the following ratio utilities are provided: </p>
             <Example>
                 {ratioScale.map((scale) => (
                     <>

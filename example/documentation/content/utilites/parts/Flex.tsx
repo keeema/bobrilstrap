@@ -119,19 +119,15 @@ export function FlexDoc(): b.IBobrilNode {
                 into flex items. Flex containers and items are able to be modified further with additional flex properties.
             </p>
             <Example>
-                <div style={[display("flex"), padding(2), gridStyle]} class="d-flex p-2 bd-highlight">
-                    I'm a flexbox container!
-                </div>
+                <div style={[display("flex"), padding(2), gridStyle]}>I'm a flexbox container!</div>
             </Example>
-            <Code language="tsx">{`<div style={[display("flex"), padding(2), gridStyle]} class="d-flex p-2 bd-highlight">
+            <Code language="tsx">{`<div style={[display("flex"), padding(2), gridStyle]}>
     I'm a flexbox container!
 </div>`}</Code>
             <Example>
-                <div style={[display("inline-flex"), padding(2), gridStyle]} class="d-flex p-2 bd-highlight">
-                    I'm an inline flexbox container!
-                </div>
+                <div style={[display("inline-flex"), padding(2), gridStyle]}>I'm an inline flexbox container!</div>
             </Example>
-            <Code language="tsx">{`<div style={[display("inline-flex"), padding(2), gridStyle]} class="d-flex p-2 bd-highlight">
+            <Code language="tsx">{`<div style={[display("inline-flex"), padding(2), gridStyle]}>
     I'm an inline flexbox container!
 </div>`}</Code>
             <Anchor name="flex-direction">

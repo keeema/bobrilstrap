@@ -22,8 +22,7 @@ export function OverflowDoc(): b.IBobrilNode {
             </Anchor>
             <Lead>Use these shorthand utilities for quickly configuring how content overflows an element.</Lead>
             <p>
-                Adjust the <code>overflow</code> property on the fly with four default values and classes. These classes are not responsive
-                by default.
+                Adjust the <code>overflow</code> utility on the fly with four default values. These utilities are not responsive by default.
             </p>
             <Example>
                 <div style={[display("flex"), flex("row")]}>

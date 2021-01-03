@@ -84,7 +84,7 @@ export function GuttersDoc(): b.IBobrilNode {
                 </li>
                 <li>
                     <p>
-                        <strong>Gutters can be responsively adjusted.</strong> Use breakpoint-specific gutter classes to modify horizontal
+                        <strong>Gutters can be responsively adjusted.</strong> Use breakpoint-specific gutter utilities to modify horizontal
                         gutters, vertical gutters, and all gutters.
                     </p>
                 </li>
@@ -93,7 +93,7 @@ export function GuttersDoc(): b.IBobrilNode {
                 <h2>Horizontal gutters</h2>
             </Anchor>
             <p>
-                <code>gutterX(*)</code> classes can be used to control the horizontal gutter widths. The <code>{`<Container>`}</code> or{" "}
+                <code>gutterX(*)</code> utilities can be used to control the horizontal gutter widths. The <code>{`<Container>`}</code> or{" "}
                 <code>{`<Container fluid>`}</code> parent may need to be adjusted if larger gutters are used too to avoid unwanted overflow,
                 using a matching padding utility. For example, in the following example we’ve increased the padding with{" "}
                 <code>{`padding("x", 4)`}</code>:
@@ -150,9 +150,9 @@ export function GuttersDoc(): b.IBobrilNode {
                 <h2>Vertical gutters</h2>
             </Anchor>
             <p>
-                <code>gutterY(*)</code> classes can be used to control the vertical gutter widths. Like the horizontal gutters, the vertical
-                gutters can cause some overflow below the <code>.row</code> at the end of a page. If this occurs, you add a wrapper around{" "}
-                <code>{`<Row>`}</code> with the <code>overflow("hidden")</code> utility:
+                <code>gutterY(*)</code> utilities can be used to control the vertical gutter widths. Like the horizontal gutters, the
+                vertical gutters can cause some overflow below the <code>.row</code> at the end of a page. If this occurs, you add a wrapper
+                around <code>{`<Row>`}</code> with the <code>overflow("hidden")</code> utility:
             </p>
             <Example>
                 <Container style={overflow("hidden")}>
@@ -192,7 +192,7 @@ export function GuttersDoc(): b.IBobrilNode {
                 <h2>Horizontal and vertical gutters</h2>
             </Anchor>
             <p>
-                <code>gutter(*)</code> classes can be used to control the horizontal gutter widths, for the following example we use a
+                <code>gutter(*)</code> utilities can be used to control the horizontal gutter widths, for the following example we use a
                 smaller gutter width, so there won’t be a need to add the <code>overflow("hidden")</code> wrapper utility.
             </p>
             <Example>
@@ -233,8 +233,8 @@ export function GuttersDoc(): b.IBobrilNode {
                 <h2>Row columns gutters</h2>
             </Anchor>
             <p>
-                Gutter classes can also be added to row columns. In the following example, we use responsive row columns and responsive
-                gutter classes.
+                Gutter utilities can also be added to row columns. In the following example, we use responsive row columns and responsive
+                gutter utilities.
             </p>
             <Example>
                 <Container>
@@ -310,7 +310,7 @@ export function GuttersDoc(): b.IBobrilNode {
                 <h2>No gutters</h2>
             </Anchor>
             <p>
-                The gutters between columns in our predefined grid classes can be removed with <code>gutter(0)</code>. This removes the
+                The gutters between columns in our predefined grid components can be removed with <code>gutter(0)</code>. This removes the
                 negative <code>margin</code>s from <code>{`<Row>`}</code> and the horizontal <code>padding</code> from all immediate
                 children columns.
             </p>
@@ -319,7 +319,7 @@ export function GuttersDoc(): b.IBobrilNode {
                 <code>{`<Container fluid>`}</code>.
             </p>
             <p>
-                In practice, here’s how it looks. Note you can continue to use this with all other predefined grid classes (including column
+                In practice, here’s how it looks. Note you can continue to use this with all other predefined grid styles (including column
                 widths, responsive tiers, reorders, and more).
             </p>
             <Example>

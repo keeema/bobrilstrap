@@ -49,14 +49,13 @@ export function ColorsDoc(): b.IBobrilNode {
                 <h1>Colors</h1>
             </Anchor>
             <Lead>
-                Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states,
-                too.
+                Convey meaning through color with a handful of color utilities. Includes support for styling links with hover states, too.
             </Lead>
             <Callout variant="info">
                 <h5>Dealing with specificity</h5>
                 <p>
-                    Sometimes contextual classes cannot be applied due to the specificity of another selector. In some cases, a sufficient
-                    workaround is to wrap your element’s content in a <code>&lt;div&gt;</code> with the class.
+                    Sometimes contextual utilities cannot be applied due to the specificity of another selector. In some cases, a sufficient
+                    workaround is to wrap your element’s content in a <code>&lt;div&gt;</code> with the utility.
                 </p>
             </Callout>
             <Callout variant="info">

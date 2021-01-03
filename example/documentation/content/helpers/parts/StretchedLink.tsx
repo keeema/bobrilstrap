@@ -37,14 +37,14 @@ export function StretchedLinkDoc(): b.IBobrilNode {
             </Anchor>
             <Lead>Make any HTML element or Bootstrap component clickable by “stretching” a nested link via CSS.</Lead>
             <p>
-                Add <code>.stretched-link</code> to a link to make its{" "}
+                Add <code>stretchedLink</code> to a link to make its{" "}
                 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block">containing block</a> clickable via a{" "}
                 <code>::after</code> pseudo element. In most cases, this means that an element with <code>position: relative;</code> that
-                contains a link with the <code>.stretched-link</code> class is clickable.
+                contains a link with the <code>stretchedLink</code> style is clickable.
             </p>
             <p>
                 Cards have <code>position: relative</code> by default in Bootstrap, so in this case you can safely add the{" "}
-                <code>.stretched-link</code> class to a link in the card without any other HTML changes.
+                <code>stretchedLink</code> style to a link in the card without any other HTML changes.
             </p>
             <p>
                 Multiple links and tap targets are not recommended with stretched links. However, some <code>position</code> and{" "}

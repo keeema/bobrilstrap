@@ -103,8 +103,8 @@ export function TextDoc(): b.IBobrilNode {
                 <h2>Text alignment</h2>
             </Anchor>
             <p>
-                Easily realign text to components with text alignment classes. For start, end, and center alignment, responsive classes are
-                available that use the same viewport width breakpoints as the grid system.
+                Easily realign text to components with text alignment utilities. For start, end, and center alignment, responsive utilities
+                are available that use the same viewport width breakpoints as the grid system.
             </p>
             <Example>
                 <p style={textAlign("start")}>Start aligned text on all viewport sizes.</p>
@@ -163,7 +163,7 @@ export function TextDoc(): b.IBobrilNode {
             <Anchor name="text-text-transform">
                 <h2>Text transform</h2>
             </Anchor>
-            <p>Transform text in components with text capitalization classes.</p>
+            <p>Transform text in components with text capitalization utilities.</p>
             <Example>
                 <p style={text("lowercase")}>Lowercased text.</p>
                 <p style={text("uppercase")}>Uppercased text.</p>

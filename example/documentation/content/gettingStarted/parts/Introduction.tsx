@@ -53,7 +53,7 @@ export function Introduction(): b.IBobrilNode {
             <p>Bobrilstrap is ready as an npm package. To create new project, start by npm project initialization?</p>
             <Code language="bash">{`npm init`}</Code>
             <p>Then install bobril and bobrilstrap.</p>
-            <Code language="bash">{`npm i bobril bobrilstrap --save`}</Code>
+            <Code language="bash">{`npm i bobril bobrilstrap bootstrap@5.0.0-beta1 --save`}</Code>
             <Anchor name="importing-packages">
                 <h2>Importing Packages and Components</h2>
             </Anchor>
@@ -67,7 +67,6 @@ export function Introduction(): b.IBobrilNode {
                 </Button>
             </Example>
             <Code language="tsx">{`import * as b from "bobril";
-import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "bobrilstrap";
 

@@ -1,4 +1,5 @@
 import "bootstrap";
+import "@popperjs/core";
 export * from "./src/components/Accordion";
 export * from "./src/components/AccordionItem";
 export * from "./src/components/AccordionHeader";

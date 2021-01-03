@@ -1,5 +1,4 @@
 import * as b from "bobril";
-import "../index";
 import "prismjs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/prismjs/plugins/toolbar/prism-toolbar";

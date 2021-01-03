@@ -1,7 +1,7 @@
 {
     "name": "bobrilstrap",
-    "version": "3.4.4",
-    "description": "Bobril wrapper for bootstrap",
+    "version": "5.0.0",
+    "description": "Bobril wrapper for bootstrap 5",
     "author": "Tomáš Růt",
     "license": "MIT",
     "bugs": {
@@ -19,13 +19,15 @@
         "main": "index.ts"
     },
     "bobril": {
-        "example": "example.ts",
-        "title": "Bobrilstrap",
+        "buildOutputDir": "docs",
+        "example": "example/example.tsx",
+        "title": "Bobrilstrap 5",
         "additionalResourcesDirectory": "example/assets",
-        "head": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" /><link rel=\"manifest\" href=\"manifest.json\"><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"><meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#6f5499\"><meta name=\"apple-mobile-web-app-title\" content=\"Bobrilstrap\"><link rel=\"apple-touch-icon\" href=\"/icons/icon-152x152.png\"><meta name=\"description\" content=\"Bobril wrapper of the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web - Bootstrap.\"><meta name=\"theme-color\" content=\"#6f5499\" />",
+        "head": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><link rel=\"shortcut icon\" type=\"image/ico\" href=\"favicon.ico\" />",
         "compilerOptions": {
             "declaration": true,
             "strict": true,
+            "noUncheckedIndexedAccess": true,
             "noUnusedLocals": true,
             "noUnusedParameters": true,
             "noImplicitReturns": true,
@@ -41,21 +43,22 @@
         "tabWidth": 4
     },
     "dependencies": {
-        "@types/bootstrap": "^3.3.35",
-        "@types/bootstrap-3-typeahead": "^4.0.1",
-        "@types/jquery": "^3.3.36",
-        "bobril": "^14.6.1",
-        "bootstrap": "^3.4.0",
-        "bootstrap-3-typeahead": "^4.0.2",
-        "jquery": "^3.5.0"
+        "@types/bootstrap": "^5.0.1",
+        "bobril": "^14.18.0",
+        "bootstrap": "5.0.0-beta1"
     },
     "devDependencies": {
+        "@popperjs/core": "^2.4.0",
+        "@types/node": "^14.14.6",
+        "@types/prismjs": "^1.16.1",
         "@typescript-eslint/eslint-plugin": "^2.30.0",
         "@typescript-eslint/parser": "^2.30.0",
         "eslint": "^6.8.0",
         "eslint-config-bobril": "^1.0.2",
         "prettier": "^2.0.5",
+        "prism-themes": "^1.3.0",
+        "prismjs": "^1.21.0",
         "pwa-install-handler": "^2.0.6",
-        "typescript": "^3.9.2"
+        "typescript": "^4.1.2"
     }
 }

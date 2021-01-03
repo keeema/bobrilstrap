@@ -6,9 +6,26 @@
         "dist": true
     },
     "cSpell.words": [
+        "Bobrilstrap",
+        "Bobrilstrap’s",
+        "Datalists",
+        "Navbars",
+        "Navs",
+        "Tabbable",
+        "bbcore",
         "bobril",
         "bobrilstrap",
         "bootstrap",
+        "darcula",
+        "downlevel",
+        "flexbox",
+        "lightgray",
+        "mixins",
+        "popperjs",
+        "prismjs",
+        "scrollable",
+        "textareas",
+        "tomasrut",
         "typeahead"
     ]
 }

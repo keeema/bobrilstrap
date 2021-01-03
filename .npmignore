@@ -1,7 +1,12 @@
-/**/node_modules
+node_modules
 dist
+tools
+docs
 example
-example.ts
-tsconfig.json
-tslint.json
+spec
+debug.log
 *.xcf
+.eslintrc
+.gitignore
+.DS_Store
+.vscode

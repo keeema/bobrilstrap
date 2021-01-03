@@ -1,6 +1,6 @@
 {
     "name": "bobrilstrap",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "description": "Bobril wrapper for bootstrap 5",
     "author": "Tomáš Růt",
     "license": "MIT",
@@ -44,11 +44,11 @@
     },
     "dependencies": {
         "@types/bootstrap": "^5.0.1",
+        "@popperjs/core": "^2.6.0",
         "bobril": "^14.18.0",
         "bootstrap": "5.0.0-beta1"
     },
     "devDependencies": {
-        "@popperjs/core": "^2.4.0",
         "@types/node": "^14.14.6",
         "@types/prismjs": "^1.16.1",
         "@typescript-eslint/eslint-plugin": "^2.30.0",

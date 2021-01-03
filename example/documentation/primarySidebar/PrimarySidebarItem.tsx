@@ -2,7 +2,7 @@ import * as b from "bobril";
 import { Nav } from "../../../index";
 import { IRouteWithNavDefinition } from "../../common/routing";
 
-export function SidebarItem({ route }: { route: IRouteWithNavDefinition }): b.IBobrilNode {
+export function SidebarItem({ route, onClick }: { route: IRouteWithNavDefinition; onClick: () => void }): b.IBobrilNode {
     const mainItemActive = b.isActive(route.name);
     return (
         <div style={[sidebarItemStyle, mainItemActive && sidebarItemActiveStyle]}>
@@ -19,6 +19,7 @@ export function SidebarItem({ route }: { route: IRouteWithNavDefinition }): b.IB
                                     href={b.urlOfRoute(sub.name)}
                                     active={subActive}
                                     style={[navItemLinkStyle, subActive && navItemLinkActiveStyle]}
+                                    onClick={onClick}
                                 >
                                     {sub.label}
                                 </Nav.Link>

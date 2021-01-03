@@ -29,9 +29,9 @@ export function PrimarySidebar(): b.IBobrilNode {
             >
                 Part
             </Button>
-            <ResponsiveMenu collapsed={collapsed} isSmallDevice={smallDevice()} onClick={() => setCollapsed(smallDevice())}>
+            <ResponsiveMenu collapsed={collapsed} isSmallDevice={smallDevice()}>
                 {documentation.subs.map((sub) => (
-                    <SidebarItem route={sub} />
+                    <SidebarItem route={sub} onClick={() => setCollapsed(smallDevice())} />
                 ))}
             </ResponsiveMenu>
         </Col>

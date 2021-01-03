@@ -6,7 +6,7 @@ interface IResponsiveMenu {
     collapsed: boolean;
     children: b.IBobrilChildren;
     isSmallDevice: boolean;
-    onClick: () => void;
+    onClick?: () => void;
 }
 
 export function ResponsiveMenu({ collapsed, isSmallDevice, children, onClick }: IResponsiveMenu): b.IBobrilNode {

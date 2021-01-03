@@ -7,6 +7,8 @@ import { NpmLink } from "./NpmLink";
 import { GithubLink } from "./Github";
 import { BootstrapLink } from "./Bootstrap";
 import { BobrilLink } from "./Bobril";
+import { VersionSelection } from "./VersionSelection";
+import { DonateLink } from "./DonateLink";
 
 export function Navigation(): b.IBobrilNode {
     const [collapsed, setCollapsed] = b.useState(true);
@@ -27,7 +29,9 @@ export function Navigation(): b.IBobrilNode {
                         <GithubLink />
                         <BobrilLink />
                         <BootstrapLink />
+                        <DonateLink />
                         <NpmLink />
+                        <VersionSelection />
                     </Nav>
                 </Navbar.Collapse>
             </Container>

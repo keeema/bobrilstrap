@@ -13,7 +13,7 @@ export class BlockquoteFooter extends BaseElement<IBlockquoteFooterData> {
     componentProperties = (): (keyof IBlockquoteFooterData)[] => [];
 
     get tag(): Tags {
-        return "footer";
+        return "figcaption";
     }
 
     componentSpecificStyles(): b.IBobrilStyleArray {

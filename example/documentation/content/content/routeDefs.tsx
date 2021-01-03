@@ -5,6 +5,7 @@ import { figuresRoute } from "./parts/Figures";
 import { imagesRoute } from "./parts/Images";
 import { rebootRoute } from "./parts/Reboot";
 import { tablesRoute } from "./parts/Tables";
+import { typographyRoute } from "./parts/Typography";
 
 export const contentRoute: IRouteWithNavDefinition = {
     url: "content",
@@ -12,5 +13,5 @@ export const contentRoute: IRouteWithNavDefinition = {
     label: "Content",
     handler: (data) => <Content {...data} />,
     default: rebootRoute,
-    subs: [rebootRoute, imagesRoute, tablesRoute, figuresRoute],
+    subs: [rebootRoute, typographyRoute, imagesRoute, tablesRoute, figuresRoute],
 };

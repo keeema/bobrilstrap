@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { Tags } from "../../utils/tags";
 import { IBaseElementDataWithChildren, BaseElement } from "./BaseElement";
 import { ListInlineItem } from "./ListInlineItem";
 
@@ -15,6 +16,10 @@ export interface IListData extends IBaseElementDataWithChildren {
 export class List extends BaseElement<IListData> {
     static id: string = "bobrilstrap-list";
     static InlineItem = ListInlineItem;
+
+    get tag(): Tags {
+        return "ul";
+    }
 
     componentProperties(): (keyof IListData)[] {
         return ["unstyled", "inline"];

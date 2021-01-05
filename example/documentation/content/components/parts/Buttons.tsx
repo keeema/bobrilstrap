@@ -174,23 +174,6 @@ export function Buttons(): b.IBobrilNode {
 <Button variant="secondary" size="sm">
     Small button
 </Button>`}</Code>
-            <p>
-                Create block level buttons—those that span the full width of a parent—by adding <code>block</code>.
-            </p>
-            <Example>
-                <Button variant="primary" size="lg" block>
-                    Block level button
-                </Button>
-                <Button variant="secondary" size="lg" block>
-                    Block level button
-                </Button>
-            </Example>
-            <Code language="tsx">{`<Button variant="primary" size="lg" block>
-    Block level button
-</Button>
-<Button variant="secondary" size="lg" block>
-    Block level button
-</Button>`}</Code>
             <Anchor name="buttons-active-state">
                 <h2>Active state</h2>
             </Anchor>

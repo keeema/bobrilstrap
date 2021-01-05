@@ -1,9 +1,9 @@
 import * as b from "bobril";
 import { Navbar, textColor } from "../../index";
 
-export function DonateLink(): b.IBobrilNode {
+export function DonateLink({ onClick }: { onClick: () => void }): b.IBobrilNode {
     return (
-        <Navbar.Nav.Item>
+        <Navbar.Nav.Item onClick={onClick}>
             <Navbar.Nav.Link href={b.urlOfRoute("donation")}>
                 <svg viewBox="0 0 64 64" width="24" height="24" style={textColor("white")}>
                     <g>

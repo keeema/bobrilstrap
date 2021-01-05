@@ -1,9 +1,9 @@
 import * as b from "bobril";
 import { Navbar, textColor } from "../../index";
 
-export function GithubLink(): b.IBobrilNode {
+export function GithubLink({ onClick }: { onClick: () => void }): b.IBobrilNode {
     return (
-        <Navbar.Nav.Item>
+        <Navbar.Nav.Item onClick={onClick}>
             <Navbar.Nav.Link href="https://github.com/keeema/bobrilstrap" target="_blank">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

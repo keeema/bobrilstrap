@@ -20,18 +20,18 @@ export function Navigation(): b.IBobrilNode {
                 <Navbar.Toggler onClick={() => setCollapsed(!collapsed)}>
                     <Navbar.Toggler.Icon />
                 </Navbar.Toggler>
-                <Navbar.Collapse collapsed={collapsed} onClick={() => setCollapsed(true)} style={[textAlign("center")]}>
-                    <Nav navbar>
+                <Navbar.Collapse collapsed={collapsed} style={[textAlign("center")]}>
+                    <Nav navbar onClick={() => setCollapsed(true)}>
                         <LinkItem name={routes.home.name}>Home</LinkItem>
                         <LinkItem name={routes.documentation.name}>Documentation</LinkItem>
                     </Nav>
                     <Nav navbar style={margin("s", "auto", "md")}>
-                        <GithubLink />
-                        <BobrilLink />
-                        <BootstrapLink />
-                        <DonateLink />
-                        <NpmLink />
-                        <VersionSelection />
+                        <GithubLink onClick={() => setCollapsed(true)} />
+                        <BobrilLink onClick={() => setCollapsed(true)} />
+                        <BootstrapLink onClick={() => setCollapsed(true)} />
+                        <DonateLink onClick={() => setCollapsed(true)} />
+                        <NpmLink onClick={() => setCollapsed(true)} />
+                        <VersionSelection onClick={() => setCollapsed(true)} />
                     </Nav>
                 </Navbar.Collapse>
             </Container>

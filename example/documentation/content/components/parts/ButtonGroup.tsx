@@ -247,7 +247,7 @@ export function ButtonGroup(): b.IBobrilNode {
                 <Button.Group aria-label="Button group with nested dropdown">
                     <Button variant="secondary">1</Button>
                     <Button variant="secondary">2</Button>
-                    <Dropdown>
+                    <Dropdown btn-group>
                         {/* Variant of Button.Group */}
                         <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
                         <Dropdown.Menu>
@@ -261,7 +261,7 @@ export function ButtonGroup(): b.IBobrilNode {
                 {`<Button.Group aria-label="Button group with nested dropdown">
     <Button variant="secondary">1</Button>
     <Button variant="secondary">2</Button>
-    <Dropdown>
+    <Dropdown btn-group>
         {/* Variant of Button.Group */}
         <Dropdown.Toggle variant="secondary">Dropdown</Dropdown.Toggle>
         <Dropdown.Menu>

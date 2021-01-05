@@ -1,9 +1,9 @@
 import * as b from "bobril";
 import { Navbar } from "../../index";
 
-export function BobrilLink(): b.IBobrilNode {
+export function BobrilLink({ onClick }: { onClick: () => void }): b.IBobrilNode {
     return (
-        <Navbar.Nav.Item>
+        <Navbar.Nav.Item onClick={onClick}>
             <Navbar.Nav.Link href="https://bobril.com" target="_blank">
                 <svg
                     version="1.2"

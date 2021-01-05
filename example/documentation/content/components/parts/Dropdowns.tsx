@@ -190,10 +190,11 @@ export function DropdownsDoc(): b.IBobrilNode {
             </Anchor>
             <p>
                 Similarly, create split button dropdowns with virtually the same markup as single button dropdowns, but with the addition of
-                <code>split</code> prop for proper spacing around the dropdown caret.
+                button group styling by <code>btn-group</code> prop and <code>split</code> prop for proper spacing around the dropdown
+                caret.
             </p>
             <Example>
-                <Dropdown>
+                <Dropdown btn-group>
                     <Button variant="success">Success</Button>
                     <Dropdown.Toggle variant="success" split>
                         <span style={visuallyHidden}>Toggle Dropdown</span>
@@ -207,7 +208,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                     </Dropdown.Menu>
                 </Dropdown>
             </Example>
-            <Code language="tsx">{`<Dropdown>
+            <Code language="tsx">{`<Dropdown btn-group>
     <Button variant="success">Success</Button>
     <Dropdown.Toggle variant="success" split>
         <span style={srOnly}>Toggle Dropdown</span>
@@ -224,7 +225,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                 <h2>Sizing</h2>
             </Anchor>
             <Example>
-                <Dropdown>
+                <Dropdown style={margin("b", 3)}>
                     <Dropdown.Toggle variant="secondary" size={"lg"}>
                         Large button
                     </Dropdown.Toggle>
@@ -236,7 +237,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                         <Dropdown.Item>Separated action</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>{" "}
-                <Dropdown>
+                <Dropdown btn-group>
                     <Button variant="secondary" size={"lg"}>
                         Large split button
                     </Button>
@@ -264,7 +265,7 @@ export function DropdownsDoc(): b.IBobrilNode {
         <Dropdown.Item>Separated action</Dropdown.Item>
     </Dropdown.Menu>
 </Dropdown>{" "}
-<Dropdown>
+<Dropdown btn-group>
     <Button variant="secondary" size={"lg"}>
         Large split button
     </Button>
@@ -285,7 +286,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                 Trigger both single and split dropdown menus in specific direction with <code>direction</code> prop.
             </p>
             <Example>
-                <Dropdown direction="up">
+                <Dropdown direction="up" btn-group>
                     <Button variant="secondary">Split drop-up</Button>
                     <Dropdown.Toggle variant="secondary" split>
                         <span style={visuallyHidden}>Toggle Dropdown</span>
@@ -298,8 +299,8 @@ export function DropdownsDoc(): b.IBobrilNode {
                         <Dropdown.Item>Separated action</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>{" "}
-                <Dropdown direction="left">
-                    <Button variant="secondary">Split drop-up</Button>
+                <Dropdown direction="start" btn-group>
+                    <Button variant="secondary">Split drop-left</Button>
                     <Dropdown.Toggle variant="secondary" split>
                         <span style={visuallyHidden}>Toggle Dropdown</span>
                     </Dropdown.Toggle>
@@ -311,7 +312,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                         <Dropdown.Item>Separated action</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>{" "}
-                <Dropdown direction="right">
+                <Dropdown direction="end" btn-group>
                     <Button variant="secondary">Split drop-right</Button>
                     <Dropdown.Toggle variant="secondary" split>
                         <span style={visuallyHidden}>Toggle Dropdown</span>
@@ -325,9 +326,10 @@ export function DropdownsDoc(): b.IBobrilNode {
                     </Dropdown.Menu>
                 </Dropdown>
             </Example>
-            <Code language="tsx">{`<Dropdown>
-    <Dropdown.Toggle variant="secondary" size={"lg"}>
-        Large button
+            <Code language="tsx">{`<Dropdown direction="up" btn-group>
+    <Button variant="secondary">Split drop-up</Button>
+    <Dropdown.Toggle variant="secondary" split>
+        <span style={visuallyHidden}>Toggle Dropdown</span>
     </Dropdown.Toggle>
     <Dropdown.Menu>
         <Dropdown.Item>Action</Dropdown.Item>
@@ -337,12 +339,23 @@ export function DropdownsDoc(): b.IBobrilNode {
         <Dropdown.Item>Separated action</Dropdown.Item>
     </Dropdown.Menu>
 </Dropdown>{" "}
-<Dropdown>
-    <Button variant="secondary" size={"lg"}>
-        Success
-    </Button>
-    <Dropdown.Toggle variant="secondary" size={"lg"} split>
-        <span style={srOnly}>Large split button</span>
+<Dropdown direction="start" btn-group>
+    <Button variant="secondary">Split drop-left</Button>
+    <Dropdown.Toggle variant="secondary" split>
+        <span style={visuallyHidden}>Toggle Dropdown</span>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+        <Dropdown.Item>Action</Dropdown.Item>
+        <Dropdown.Item>Another action</Dropdown.Item>
+        <Dropdown.Item>Something else here</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item>Separated action</Dropdown.Item>
+    </Dropdown.Menu>
+</Dropdown>{" "}
+<Dropdown direction="end" btn-group>
+    <Button variant="secondary">Split drop-right</Button>
+    <Dropdown.Toggle variant="secondary" split>
+        <span style={visuallyHidden}>Toggle Dropdown</span>
     </Dropdown.Toggle>
     <Dropdown.Menu>
         <Dropdown.Item>Action</Dropdown.Item>
@@ -431,7 +444,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                 <code>align="end"</code> to right align the dropdown menu.
             </p>
             <Example>
-                <Dropdown>
+                <Dropdown btn-group>
                     <Dropdown.Toggle variant="secondary" display-static>
                         Right-aligned menu
                     </Dropdown.Toggle>
@@ -442,7 +455,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                     </Dropdown.Menu>
                 </Dropdown>
             </Example>
-            <Code language="tsx">{`<Dropdown>
+            <Code language="tsx">{`<Dropdown btn-group>
     <Dropdown.Toggle variant="secondary" display-static>Right-aligned menu/Dropdown.Toggle>
     <Dropdown.Menu align="end">
         <Dropdown.Item>Action</Dropdown.Item>
@@ -458,7 +471,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                 the responsive variation props.
             </p>
             <Example>
-                <Dropdown>
+                <Dropdown btn-group>
                     <Dropdown.Toggle variant="secondary" display-static>
                         Left-aligned but right aligned when large screen
                     </Dropdown.Toggle>
@@ -469,7 +482,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                     </Dropdown.Menu>
                 </Dropdown>
             </Example>
-            <Code language="tsx">{`<Dropdown>
+            <Code language="tsx">{`<Dropdown btn-group>
     <Dropdown.Toggle variant="secondary" display-static>Left-aligned but right aligned when large screen</Dropdown.Toggle>
     <Dropdown.Menu align-lg="end">
         <Dropdown.Item>Action</Dropdown.Item>
@@ -478,7 +491,7 @@ export function DropdownsDoc(): b.IBobrilNode {
     </Dropdown.Menu>
 </Dropdown>`}</Code>
             <Example>
-                <Dropdown>
+                <Dropdown btn-group>
                     <Dropdown.Toggle variant="secondary" display-static>
                         Right-aligned but left aligned when large screen
                     </Dropdown.Toggle>
@@ -489,7 +502,7 @@ export function DropdownsDoc(): b.IBobrilNode {
                     </Dropdown.Menu>
                 </Dropdown>
             </Example>
-            <Code language="tsx">{`<Dropdown>
+            <Code language="tsx">{`<Dropdown btn-group>
     <Dropdown.Toggle variant="secondary" display-static>Right-aligned but left aligned when large screen</Dropdown.Toggle>
     <Dropdown.Menu align="end" align-lg="start">
         <Dropdown.Item>Action</Dropdown.Item>

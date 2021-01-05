@@ -8,18 +8,19 @@ import { DropdownMenu } from "./DropdownMenu";
 import { DropdownToggle } from "./DropdownToggle";
 import { navItemStyles } from "./NavItem";
 
-export type Direction = "up" | "down" | "left" | "right" | "responsive";
+export type Direction = "up" | "down" | "start" | "end";
 
 export const dropdownStyles = {
     down: b.styleDef("dropdown"),
     up: b.styleDef("dropup"),
-    left: b.styleDef("dropleft"),
-    right: b.styleDef("dropright"),
+    start: b.styleDef("dropstart"),
+    end: b.styleDef("dropend"),
 };
 
 export interface IDropdownData extends IButtonGroupData {
     direction?: Direction;
     "nav-item"?: boolean;
+    "btn-group"?: boolean;
 }
 
 export class Dropdown extends ButtonGroup<IDropdownData> {
@@ -34,13 +35,12 @@ export class Dropdown extends ButtonGroup<IDropdownData> {
         return this.data["nav-item"] ? "li" : "div";
     }
 
-    componentProperties = (): (keyof IDropdownData)[] => [...super.componentProperties(), "direction", "nav-item"];
+    componentProperties = (): (keyof IDropdownData)[] => [...super.componentProperties(), "direction", "nav-item", "btn-group"];
 
     componentSpecificStyles(): b.IBobrilStyleArray {
-        return [
-            ...super.componentSpecificStyles(),
-            this.data.direction !== "responsive" && dropdownStyles[this.data.direction ?? "down"],
-            this.data["nav-item"] && navItemStyles.navItem,
-        ];
+        const styles = [dropdownStyles[this.data.direction ?? "down"], this.data["nav-item"] && navItemStyles.navItem];
+
+        this.data["btn-group"] && styles.push(...super.componentSpecificStyles());
+        return styles;
     }
 }

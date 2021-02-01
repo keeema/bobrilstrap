@@ -1,6 +1,6 @@
 {
     "name": "bobrilstrap",
-    "version": "5.0.2",
+    "version": "5.0.3",
     "description": "Bobril wrapper for bootstrap 5",
     "author": "Tomáš Růt",
     "license": "MIT",
@@ -45,7 +45,7 @@
     "dependencies": {
         "@types/bootstrap": "^5.0.1",
         "@popperjs/core": "^2.6.0",
-        "bobril": "^14.18.0",
+        "bobril": "^14.18.0 || ^15.0.1",
         "bootstrap": "5.0.0-beta1"
     },
     "devDependencies": {

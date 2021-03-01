@@ -105,7 +105,7 @@ export function RatioDoc(): b.IBobrilNode {
                 </div>
             </Example>
             <Code language="tsx">
-                {`const customRatioStyle = b.styleDef({ "--aspect-ratio": "50%" });
+                {`const customRatioStyle = b.styleDef({ "--bs-aspect-ratio": "50%" });
 
 <div style={[ratio(), customRatioStyle]}>
     <div>2x1</div>
@@ -115,7 +115,7 @@ export function RatioDoc(): b.IBobrilNode {
     );
 }
 
-const customRatioStyle = b.styleDef({ "--aspect-ratio": "50%" });
+const customRatioStyle = b.styleDef({ "--bs-aspect-ratio": "50%" });
 
 const ratioContentStyle = b.styleDef({
     display: "flex",

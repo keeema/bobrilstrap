@@ -1,4 +1,5 @@
 import * as b from "bobril";
+import { IDataWithChildren } from "bobril";
 import { omit } from "../../utils/objectHelper";
 import { Tags } from "../../utils/tags";
 import { invisible, visible } from "../utilities/visibility";
@@ -71,6 +72,7 @@ interface IBaseElementDataBase extends IAllAttrs {
     disabled?: boolean;
     active?: boolean;
     readonly?: boolean;
+    role?: string;
 }
 
 export interface IBaseElementData extends IBaseElementDataBase {
@@ -108,9 +110,9 @@ export abstract class BaseElement<TData extends IBaseElementDataBase> extends b.
         const Tag = this.recognizedTag as any;
         const data = { style: this.styles, ...this.plainData, ...this.componentAdditionalAttributes() };
         return Tag === undefined ? (
-            <b.Fragment {...data}>{this.data.children as b.IBobrilChildren}</b.Fragment>
+            <b.Fragment {...data}>{(this.data as IDataWithChildren).children as b.IBobrilChildren}</b.Fragment>
         ) : (
-            <Tag {...data}>{this.data.children}</Tag>
+            <Tag {...data}>{(this.data as IDataWithChildren).children}</Tag>
         );
     }
 

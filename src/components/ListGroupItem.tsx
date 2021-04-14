@@ -28,6 +28,7 @@ export const listGroupItemStyles = {
 
 export interface IListGroupItemData extends IBaseElementDataWithChildren {
     action?: boolean;
+    href?: string;
     variant?: ListGroupItemVariant;
     tab?: boolean;
     toggleable?: boolean;
@@ -76,7 +77,7 @@ export class ListGroupItem extends BaseElement<IListGroupItemData> {
     componentAdditionalAttributes(): IAllAttrs {
         return {
             ...super.componentAdditionalAttributes(),
-            type: this.data.type ?? (this.isButton ? "button" : undefined),
+            type: this.data["type"] ?? (this.isButton ? "button" : undefined),
             href: this.data.href ?? (this.isAnchor ? "javascript:void(0)" : undefined),
             role: this.data.role ?? (this.data.tab ? "tab" : undefined),
             ["data-bs-toggle"]: this.data["data-bs-toggle"] ?? (this.data.tab && this.data.toggleable ? "list" : undefined),

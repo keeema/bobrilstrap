@@ -41,7 +41,7 @@ export class DropdownToggle extends Button<IDropdownToggleData> {
         };
 
         if (this.data["nav-link"] && this.data.href === undefined) {
-            attrs.href = "#";
+            attrs["href"] = "#";
         }
         return attrs;
     }

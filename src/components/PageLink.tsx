@@ -6,7 +6,9 @@ export const pageLinkStyles = {
     pageLink: b.styleDef("page-link"),
 };
 
-export interface IPageLinkData extends IBaseElementDataWithChildren {}
+export interface IPageLinkData extends IBaseElementDataWithChildren {
+    href?: string;
+}
 
 export class PageLink extends BaseElement<IPageLinkData> {
     static id: string = "bobrilstrap-page-link";

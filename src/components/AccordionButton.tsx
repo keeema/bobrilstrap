@@ -21,7 +21,7 @@ export class AccordionButton extends BaseElement<IAccordionButtonData> {
     componentAdditionalAttributes(): IAllAttrs {
         return {
             ...super.componentAdditionalAttributes(),
-            type: this.data.type || "button",
+            type: this.data["type"] || "button",
             "aria-expanded": !this.data.collapsed,
         };
     }

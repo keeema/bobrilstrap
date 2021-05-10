@@ -42,7 +42,6 @@ export class Tooltip extends BaseElement<ITooltipData> {
         "template",
         "title",
         "trigger",
-        "whiteList",
     ];
 
     private tooltip?: bootstrap.Tooltip;

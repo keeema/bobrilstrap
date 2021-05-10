@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.0.6] - 2021-05-10
+
+### Added
+
+-   bootstrap@5.0.0
+-   bobril@17.0.3
+-   popper@2.9.2
+
 ## [5.0.5] - 2021-04-14
 
 ### Added

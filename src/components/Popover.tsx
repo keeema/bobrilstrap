@@ -42,7 +42,6 @@ export class Popover extends BaseElement<IPopoverData> {
         "template",
         "title",
         "trigger",
-        "whiteList",
     ];
 
     private popover?: bootstrap.Popover;

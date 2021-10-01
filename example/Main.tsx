@@ -25,10 +25,12 @@ const btnSmallStyle = b.style({}, buttonStyles.sizes("sm")).className!;
 const marginBottomStyle = b.style({}, margin("b", 3)).className!;
 
 function fixCopies(): void {
-    const buttons = document.querySelectorAll("div.toolbar-item  button");
+    const buttons = document.querySelectorAll(".copy-to-clipboard-button");
+
     for (let i = 0; i < buttons.length; i++) {
         const button = buttons[i] as HTMLButtonElement;
-        if (button.classList.length === 0) {
+
+        if (!button.classList.contains(btnStyle)) {
             button.classList.add(btnStyle, btnDarkStyle, btnSmallStyle, marginBottomStyle);
         }
     }

@@ -4,4 +4,4 @@
 
 Build awesome responsive mobile-first applications based on framework Bobril and its wrapper for Bootstrap.
 
-For more information see [Bobrilstrap pages](https://bobrilstrap.com).
+For more information see [Bobrilstrap pages](https://keeema.github.io/bobrilstrap).
